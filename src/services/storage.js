@@ -1,8 +1,17 @@
-const STORAGE_KEY = 'lss_black_belt_study_data_v1';
+import { getCurrentUser } from './auth';
+
 const THEME_KEY = 'lss_app_theme';
 
-// Dữ liệu mặc định
-const initialData = {
+const getStorageKey = () => {
+  const user = getCurrentUser();
+  if (user && user.id) {
+    return `lss_study_data_${user.id}`;
+  }
+  return 'lss_study_data_guest';
+};
+
+// Dữ liệu mặc định ban đầu
+const getInitialData = () => ({
   completedLessons: {}, // { 'lss-1': '2026-09-19T...' }
   bookmarkedLessons: {}, // { 'lss-1': true }
   notes: {}, // { 'lss-1': 'Ghi chú cho bài học...' }
@@ -12,12 +21,14 @@ const initialData = {
   streak: 1,
   lastStudyDate: new Date().toISOString().split('T')[0],
   activeLessonId: 'lss-1'
-};
+});
 
 export const getStudyData = () => {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return initialData;
+    const key = getStorageKey();
+    const raw = localStorage.getItem(key);
+    const initial = getInitialData();
+    if (!raw) return initial;
     const parsed = JSON.parse(raw);
     
     // Cập nhật streak nếu ngày học liên tiếp
@@ -34,16 +45,17 @@ export const getStudyData = () => {
       parsed.lastStudyDate = today;
       saveStudyData(parsed);
     }
-    return { ...initialData, ...parsed };
+    return { ...initial, ...parsed };
   } catch (e) {
     console.error('Lỗi khi đọc dữ liệu học tập:', e);
-    return initialData;
+    return getInitialData();
   }
 };
 
 export const saveStudyData = (data) => {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    const key = getStorageKey();
+    localStorage.setItem(key, JSON.stringify(data));
   } catch (e) {
     console.error('Lỗi khi lưu dữ liệu học tập:', e);
   }
@@ -117,13 +129,20 @@ export const setAppTheme = (theme) => {
 
 // Export & Import Dữ Liệu
 export const exportDataAsJSON = () => {
+  const user = getCurrentUser();
   const data = getStudyData();
-  const jsonStr = JSON.stringify(data, null, 2);
+  const payload = {
+    user: user ? { name: user.name, email: user.email, beltTrack: user.beltTrack } : 'Guest',
+    exportedAt: new Date().toISOString(),
+    studyData: data
+  };
+  const jsonStr = JSON.stringify(payload, null, 2);
   const blob = new Blob([jsonStr], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `LSS_BlackBelt_Progress_${new Date().toISOString().split('T')[0]}.json`;
+  const userPrefix = user ? user.name.replace(/\s+/g, '_') : 'Guest';
+  a.download = `LSS_Progress_${userPrefix}_${new Date().toISOString().split('T')[0]}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -136,9 +155,9 @@ export const importDataFromJSON = (jsonString) => {
     if (!parsed || typeof parsed !== 'object') {
       throw new Error('Dữ liệu JSON không hợp lệ');
     }
-    const merged = { ...initialData, ...parsed };
-    saveStudyData(merged);
-    return { success: true, data: merged };
+    const dataToSave = parsed.studyData ? parsed.studyData : parsed;
+    saveStudyData(dataToSave);
+    return { success: true, data: dataToSave };
   } catch (err) {
     return { success: false, error: err.message };
   }

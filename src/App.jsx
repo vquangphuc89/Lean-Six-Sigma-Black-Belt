@@ -11,11 +11,15 @@ import {
   setAppTheme 
 } from './services/storage';
 
+import { getCurrentUser } from './services/auth';
+
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import LessonReader from './components/LessonReader';
 import PracticeArena from './components/PracticeArena';
 import ExportModal from './components/ExportModal';
+import AuthModal from './components/AuthModal';
+import UserProfileModal from './components/UserProfileModal';
 
 import { 
   Award, 
@@ -28,15 +32,20 @@ import {
   LayoutDashboard, 
   Sparkles,
   ChevronRight,
-  Flame
+  Flame,
+  User,
+  LogIn
 } from 'lucide-react';
 
 export default function App() {
+  const [user, setUser] = useState(() => getCurrentUser());
   const [studyData, setStudyData] = useState(() => getStudyData());
   const [theme, setTheme] = useState(() => getAppTheme());
   const [currentView, setCurrentView] = useState('dashboard'); // 'dashboard' | 'reader' | 'arena'
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showExportModal, setShowExportModal] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [showProfileModal, setShowProfileModal] = useState(false);
 
   // Flatten all lessons into linear list for easy prev/next navigation
   const allLessons = useMemo(() => {
@@ -59,6 +68,17 @@ export default function App() {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     setAppTheme(newTheme);
+  };
+
+  const handleLoginSuccess = (loggedInUser) => {
+    setUser(loggedInUser);
+    // Reload study data specifically for this user
+    setStudyData(getStudyData());
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    setStudyData(getStudyData());
   };
 
   const handleSelectLesson = (lesson) => {
@@ -205,8 +225,95 @@ export default function App() {
             >
               {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
             </button>
+
+            {/* User Account / Profile Area */}
+            {user ? (
+              <div 
+                onClick={() => setShowProfileModal(true)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: 'var(--bg-card)',
+                  border: '1px solid var(--border-color)',
+                  padding: '4px 10px 4px 6px',
+                  borderRadius: '24px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--emerald-vibrant)'}
+                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
+                title="Xem hồ sơ cá nhân và cài đặt tài khoản"
+              >
+                <div style={{
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  background: user.avatarBg || 'var(--emerald)',
+                  color: '#ffffff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '0.82rem',
+                  fontWeight: '800'
+                }}>
+                  {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                  <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--text-primary)', lineHeight: '1.2' }}>
+                    {user.name}
+                  </span>
+                  <span style={{ fontSize: '0.68rem', color: 'var(--emerald-mint)' }}>
+                    {user.beltTrack?.split(' ')[0] || 'Black'} Belt
+                  </span>
+                </div>
+              </div>
+            ) : (
+              <button
+                className="btn btn-primary"
+                onClick={() => setShowAuthModal(true)}
+                style={{ fontSize: '0.82rem', padding: '6px 14px' }}
+              >
+                <LogIn size={15} /> Đăng Nhập
+              </button>
+            )}
           </div>
         </header>
+
+        {/* User Login Banner on Dashboard if not logged in */}
+        {!user && currentView === 'dashboard' && (
+          <div style={{
+            background: 'linear-gradient(90deg, rgba(5, 150, 105, 0.2) 0%, rgba(2, 44, 34, 0.4) 100%)',
+            borderBottom: '1px solid var(--border-color)',
+            padding: '10px 24px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.84rem', color: 'var(--emerald-mint)' }}>
+              <Sparkles size={16} color="var(--emerald-vibrant)" />
+              <span>
+                Đăng nhập tài khoản để lưu giữ tiến độ cá nhân, sổ tay ghi chú và chứng chỉ của bạn!
+              </span>
+            </div>
+            <button
+              onClick={() => setShowAuthModal(true)}
+              style={{
+                background: 'var(--emerald-vibrant)',
+                border: 'none',
+                color: '#ffffff',
+                padding: '4px 12px',
+                borderRadius: '6px',
+                fontSize: '0.78rem',
+                fontWeight: '700',
+                cursor: 'pointer'
+              }}
+            >
+              Đăng Nhập Ngay
+            </button>
+          </div>
+        )}
 
         {/* View Switcher */}
         {currentView === 'dashboard' && (
@@ -249,6 +356,25 @@ export default function App() {
           studyData={studyData}
           onClose={() => setShowExportModal(false)}
           onDataUpdated={(newData) => setStudyData(newData)}
+        />
+      )}
+
+      {/* Auth Modal (Login / Register) */}
+      {showAuthModal && (
+        <AuthModal 
+          onClose={() => setShowAuthModal(false)}
+          onLoginSuccess={handleLoginSuccess}
+        />
+      )}
+
+      {/* User Profile Modal */}
+      {showProfileModal && user && (
+        <UserProfileModal 
+          user={user}
+          studyData={studyData}
+          onClose={() => setShowProfileModal(false)}
+          onUserUpdated={(updatedUser) => setUser(updatedUser)}
+          onLogout={handleLogout}
         />
       )}
     </div>

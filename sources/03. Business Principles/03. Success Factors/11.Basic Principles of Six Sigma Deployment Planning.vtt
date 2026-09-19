@@ -1,0 +1,289 @@
+1
+00:00:00.000 --> 00:00:05.000
+Basic Principles of Six Sigma Deployment Planning
+Các Nguyên tắc Cơ bản của Lập kế hoạch Triển khai Six Sigma
+
+2
+00:00:05.000 --> 00:00:09.933
+Welcome back to our session on Six Sigma success factors.
+Chào mừng bạn trở lại phiên thảo luận của chúng ta về các yếu tố thành công của Six Sigma.
+
+3
+00:00:09.933 --> 00:00:14.266
+You'll recall that we considered things like need, leadership, goals, resources,
+Bạn sẽ nhớ lại rằng chúng ta đã xem xét những thứ như nhu cầu, lãnh đạo, mục tiêu, nguồn lực,
+
+4
+00:00:14.266 --> 00:00:21.299
+infrastructure, supporting systems, will, projects, capable people, and compelling ideas.
+cơ sở hạ tầng, hệ thống hỗ trợ, ý chí, dự án, những người có năng lực và những ý tưởng hấp dẫn.
+
+5
+00:00:21.300 --> 00:00:25.933
+As being some of the things that have to be present to have success with Six Sigma.
+Là một số điều phải có để thành công với Six Sigma.
+
+6
+00:00:25.933 --> 00:00:30.666
+Well, I want to present another one. And that's the idea
+À, tôi muốn trình bày một điều nữa. Và đó là ý tưởng
+
+7
+00:00:30.666 --> 00:00:35.866
+of having a deployment focus.
+về việc tập trung vào triển khai.
+
+8
+00:00:35.866 --> 00:00:42.332
+Now, what do I mean by a deployment focus? Well let’s take the word deployment.
+Bây giờ, ý tôi là gì khi nói tập trung vào triển khai? Hãy xem xét từ triển khai.
+
+9
+00:00:42.333 --> 00:00:47.566
+Deployment is an interesting word.
+Triển khai là một từ thú vị.
+
+10
+00:00:47.566 --> 00:00:54.599
+Deploy, implement,
+Triển khai, thực hiện,
+
+11
+00:00:54.600 --> 00:01:01.633
+and apply.
+và áp dụng.
+
+12
+00:01:01.633 --> 00:01:08.099
+Deploy is like, and I’m going to use a military example here.
+Triển khai giống như, và tôi sẽ sử dụng một ví dụ quân sự ở đây.
+
+13
+00:01:08.100 --> 00:01:13.933
+We deploy troops on a battlefield.
+Chúng ta triển khai quân đội trên chiến trường.
+
+14
+00:01:13.933 --> 00:01:20.933
+In our war on variation, we deploy black belts throughout the organization.
+Trong cuộc chiến chống lại sự biến động của chúng ta, chúng ta triển khai các đai đen trên toàn tổ chức.
+
+15
+00:01:20.933 --> 00:01:26.133
+Into our processes. We deploy green belts into it.
+Vào các quy trình của chúng ta. Chúng ta triển khai các đai xanh vào đó.
+
+16
+00:01:26.133 --> 00:01:31.566
+In turn, they implement the tools of Six Sigma.
+Đến lượt mình, họ triển khai các công cụ của Six Sigma.
+
+17
+00:01:31.566 --> 00:01:36.532
+And they implement the principles of Six Sigma,
+Và họ triển khai các nguyên tắc của Six Sigma,
+
+18
+00:01:36.533 --> 00:01:42.966
+by applying the tools that realize those principles,
+bằng cách áp dụng các công cụ hiện thực hóa các nguyên tắc đó,
+
+19
+00:01:42.966 --> 00:01:49.399
+in the process. On specific independent variables.
+trong quá trình. Trên các biến độc lập cụ thể.
+
+20
+00:01:49.400 --> 00:01:53.666
+So again, we deploy people.
+Vậy thì một lần nữa, chúng ta triển khai con người.
+
+21
+00:01:53.666 --> 00:01:58.499
+We deploy knowledge in the form of training.
+Chúng ta triển khai kiến thức dưới hình thức đào tạo.
+
+22
+00:01:58.500 --> 00:02:05.400
+Then we implement the principles of that knowledge. Usually at the local level.
+Sau đó, chúng ta thực hiện các nguyên tắc của kiến thức đó. Thường là ở cấp địa phương.
+
+23
+00:02:05.400 --> 00:02:12.433
+We deploy from the global level and implement at the local level and apply at the process level.
+Chúng ta triển khai từ cấp độ toàn cầu và thực hiện ở cấp độ địa phương và áp dụng ở cấp độ quy trình.
+
+24
+00:02:12.433 --> 00:02:18.499
+That's another way to look at that. So we can largely say,
+Đó là một cách khác để nhìn nhận vấn đề. Vì vậy, chúng ta có thể nói một cách tổng quát,
+
+25
+00:02:18.500 --> 00:02:21.300
+BOP.
+BOP.
+
+26
+00:02:21.300 --> 00:02:24.733
+We deploy at the business level, implement at the operations level,
+Chúng ta triển khai ở cấp độ kinh doanh, thực hiện ở cấp độ vận hành,
+
+27
+00:02:24.733 --> 00:02:28.133
+and apply at the process level.
+và áp dụng ở cấp độ quy trình.
+
+28
+00:02:28.133 --> 00:02:35.099
+And what we're concerned with here is strategy, tactics, and tools.
+Và những gì chúng ta quan tâm ở đây là chiến lược, chiến thuật và công cụ.
+
+29
+00:02:35.100 --> 00:02:40.666
+Remember, a tactic is a maneuver that exploits the full power of a tool.
+Hãy nhớ rằng, chiến thuật là một thao tác khai thác toàn bộ sức mạnh của một công cụ.
+
+30
+00:02:40.666 --> 00:02:46.299
+Implementation tactics, deployment strategy, and application tools.
+Chiến thuật thực hiện, chiến lược triển khai và công cụ ứng dụng.
+
+31
+00:02:46.300 --> 00:02:51.400
+Deployment strategy, implementation tactics, application tools.
+Chiến lược triển khai, chiến thuật thực hiện, công cụ ứng dụng.
+
+32
+00:02:51.400 --> 00:02:55.933
+See, that's what we mean by a deployment focus.
+Bạn thấy đấy, đó là ý chúng ta muốn nói về việc tập trung vào triển khai.
+
+33
+00:02:55.933 --> 00:03:02.899
+And remember by having a deployment focus, this helps us, in a lot of ways,
+Và hãy nhớ rằng bằng cách tập trung vào triển khai, điều này giúp chúng ta, theo nhiều cách,
+
+34
+00:03:02.900 --> 00:03:09.866
+be global, yet local.
+vừa mang tính toàn cầu, vừa mang tính địa phương.
+
+35
+00:03:09.866 --> 00:03:13.499
+Global planning.
+Lập kế hoạch toàn cầu.
+
+36
+00:03:13.500 --> 00:03:19.166
+Local application. That's what we're out to do.
+Ứng dụng tại địa phương. Đó là những gì chúng ta đang hướng tới.
+
+37
+00:03:19.166 --> 00:03:25.632
+Have the benefit of strategic global planning to gain synergies among business units.
+Có được lợi ích từ việc lập kế hoạch chiến lược toàn cầu để đạt được sự phối hợp giữa các đơn vị kinh doanh.
+
+38
+00:03:25.633 --> 00:03:31.833
+But yet localized, in its application. So, this deployment focus.
+Nhưng vẫn mang tính địa phương trong ứng dụng. Vì vậy, việc tập trung vào triển khai này.
+
+39
+00:03:31.833 --> 00:03:38.799
+Remember, we deploy people. We deploy knowledge,
+Hãy nhớ rằng, chúng ta triển khai con người. Chúng ta triển khai kiến thức,
+
+40
+00:03:38.800 --> 00:03:44.966
+and we deploy resources.
+và chúng ta triển khai các nguồn lực.
+
+41
+00:03:44.966 --> 00:03:51.132
+Those are the things that we are attempting to deploy.
+Đó là những điều mà chúng ta đang cố gắng triển khai.
+
+42
+00:03:51.133 --> 00:03:57.433
+And then of course, we implement that knowledge.
+Và sau đó tất nhiên, chúng ta thực hiện kiến thức đó.
+
+43
+00:03:57.433 --> 00:04:01.166
+We try to find the right implementation tactics
+Chúng ta cố gắng tìm ra các chiến thuật thực hiện phù hợp
+
+44
+00:04:01.166 --> 00:04:05.366
+that exploits the full leadership power, and knowledge power of people,
+khai thác toàn bộ sức mạnh lãnh đạo và sức mạnh kiến thức của con người,
+
+45
+00:04:05.366 --> 00:04:09.932
+in the resources that we get. What are the tactics?
+trong các nguồn lực mà chúng ta có được. Các chiến thuật là gì?
+
+46
+00:04:09.933 --> 00:04:16.166
+Implementation tactics, that helps us to exploit those sources of power.
+Chiến thuật thực hiện, giúp chúng ta khai thác những nguồn sức mạnh đó.
+
+47
+00:04:16.166 --> 00:04:22.099
+And then finally, we apply the tools.
+Và cuối cùng, chúng ta áp dụng các công cụ.
+
+48
+00:04:22.100 --> 00:04:29.100
+Like control charts, design of experiments, statistical process control.
+Chẳng hạn như biểu đồ kiểm soát, thiết kế thí nghiệm, kiểm soát quá trình bằng thống kê.
+
+49
+00:04:29.100 --> 00:04:35.366
+Again, design of experiments, statistical process control.
+Một lần nữa, thiết kế thí nghiệm, kiểm soát quá trình bằng thống kê.
+
+50
+00:04:35.366 --> 00:04:42.366
+Things like that are the tools that we want to apply to the projects,
+Những thứ như vậy là những công cụ mà chúng ta muốn áp dụng cho các dự án,
+
+51
+00:04:42.366 --> 00:04:49.366
+to the processes, to the process projects, at the local level.
+cho các quy trình, cho các dự án quy trình ở cấp địa phương.
+
+52
+00:04:49.366 --> 00:04:53.666
+By doing that we're able to derive gains.
+Bằng cách đó, chúng ta có thể thu được lợi nhuận.
+
+53
+00:04:53.666 --> 00:04:57.999
+That are passed back to the global level.
+Được chuyển lại cấp độ toàn cầu.
+
+54
+00:04:58.000 --> 00:05:00.833
+In turn, the global level,
+Đến lượt mình, cấp độ toàn cầu,
+
+55
+00:05:00.833 --> 00:05:05.599
+plans and puts down for more at the local in this cycle of improvement,
+lên kế hoạch và đầu tư thêm vào địa phương trong chu kỳ cải tiến này,
+
+56
+00:05:05.600 --> 00:05:10.833
+that leads to breakthrough all because we have a deployment focus.
+điều đó dẫn đến đột phá tất cả là do chúng ta tập trung vào triển khai.
+
+57
+00:05:10.833 --> 00:05:13.999
+That's what deployment is all about.
+Đó là tất cả những gì về triển khai.
+
+58
+00:05:14.000 --> 00:05:19.000
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

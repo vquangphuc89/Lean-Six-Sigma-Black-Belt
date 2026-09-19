@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hiệu Suất Vận Hành & Chi Phí Chất Lượng Kém (COPQ) | MBB Masterclass</title>
+<style>
+
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.7;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  /* HERO HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.25; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; font-style: italic; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+
+  /* PILLAR SECTION CARDS */
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  /* NATIVE PURE HTML/CSS MATH CARD */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-var { font-style: italic; color: #ffffff; }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* DATA TABLES */
+  table.data-table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin: 18px 0; }
+  table.data-table th {
+    background: linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color: #fff; padding: 12px 14px; text-align: left; vertical-align: top;
+  }
+  table.data-table th .th-vi { display: block; color: #a7f3d0; font-style: italic; font-weight: 500; font-size: 0.8rem; margin-top: 2px; }
+  table.data-table td { padding: 12px 14px; border-bottom: 1px solid #d1fae5; vertical-align: top; background: #fff; }
+  table.data-table td .td-sub { display: block; color: var(--vi-green-2); font-style: italic; font-size: 0.85rem; margin-top: 2px; }
+  table.data-table tr:nth-child(even) td { background: #f7fcf9; }
+
+  /* CASE STUDIES & COMPARISON */
+  .case-card {
+    background: #fdfefe;
+    border: 1px solid #cbf3e3;
+    border-left: 5px solid var(--emerald);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  .case-badge {
+    display: inline-block;
+    background: var(--emerald-vibrant);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .case-title { font-size: 1.15rem; font-weight: 800; color: var(--wood-dark); margin: 0 0 8px; }
+
+  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; margin: 22px 0; }
+  @media(max-width:768px){ .vs-grid { grid-template-columns: 1fr; } }
+  .vs-col { border-radius: 10px; padding: 20px; }
+  .vs-col.bad { background: #fef2f2; border: 2px solid #ef4444; }
+  .vs-col.good { background: #ecfdf5; border: 2px solid var(--emerald-vibrant); }
+  .vs-badge {
+    display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;
+    padding: 4px 10px; border-radius: 14px; color: #fff; margin-bottom: 10px; text-transform: uppercase;
+  }
+  .vs-badge.bad { background: var(--red); }
+  .vs-badge.good { background: var(--green); }
+  .vs-divider { display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--wood-dark); font-size: 1.3rem; }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { margin-bottom: 8px; font-size: 0.9rem; }
+
+  /* MBB PRO-TIP BOX */
+  .mbb-box {
+    background: var(--gold-bg); border: 1px solid #fef08a; border-left: 5px solid var(--gold-border);
+    border-radius: 8px; padding: 20px 24px; margin: 22px 0;
+  }
+  .mbb-box .title { color: var(--wood-bark); font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; }
+  .mbb-box p { margin: 0; color: #78350f; font-size: 0.95rem; }
+
+  /* INTERACTIVE ARENA */
+  .interactive-arena {
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color: #fff; border-radius: 14px; padding: 36px 40px; margin: 40px 0;
+    box-shadow: 0 8px 28px rgba(2,44,34,0.3); border: 2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2 { color: #fff; margin-top: 0; font-size: 1.6rem; font-weight: 800; }
+  .interactive-arena .arena-desc { color: var(--emerald-mint); font-style: italic; font-size: 0.98rem; margin-bottom: 24px; }
+  
+  .quiz-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 10px; padding: 22px 24px; margin-bottom: 22px;
+  }
+  .quiz-tag { display: inline-block; background: var(--emerald); color: #fff; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  .quiz-tag.tier-1 { background: #0284c7; }
+  .quiz-tag.tier-2 { background: #d97706; }
+  .quiz-tag.tier-3 { background: #7c3aed; }
+  .quiz-q { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.45; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(2,44,34,0.7); border: 1px solid rgba(52,211,153,0.4); color: #ecfdf5;
+    padding: 12px 16px; border-radius: 8px; font-size: 0.92rem; text-align: left; cursor: pointer;
+    transition: all 0.2s ease; font-family: inherit; line-height: 1.4;
+  }
+  .quiz-btn:hover { background: rgba(16,185,129,0.25); border-color: var(--emerald-mint); }
+  .quiz-btn.correct { background: #065f46 !important; border-color: #34d399 !important; color: #fff !important; }
+  .quiz-btn.wrong { background: #7f1d1d !important; border-color: #f87171 !important; color: #fff !important; }
+  .quiz-fb { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 8px; font-size: 0.92rem; line-height: 1.5; }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.success { background: rgba(16,185,129,0.2); border: 1px solid #34d399; color: #d1fae5; }
+  .quiz-fb.error { background: rgba(239,68,68,0.2); border: 1px solid #f87171; color: #fecaca; }
+
+  /* FLASHCARDS */
+  .flashcards-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 16px; margin-top: 16px; }
+  .flashcard {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(110,231,183,0.3); border-radius: 10px;
+    padding: 20px; cursor: pointer; min-height: 150px; display: flex; flex-direction: column;
+    justify-content: center; text-align: center; transition: transform 0.2s ease; user-select: none;
+  }
+  .flashcard:hover { transform: translateY(-3px); border-color: var(--emerald-mint); }
+  .flashcard .front { font-size: 1.05rem; font-weight: 800; color: var(--emerald-mint); }
+  .flashcard .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 6px; opacity: 0.85; }
+  .flashcard .back { display: none; font-size: 0.9rem; color: #fff; line-height: 1.45; }
+  .flashcard.flipped .front, .flashcard.flipped .hint { display: none; }
+  .flashcard.flipped .back { display: block; }
+
+  /* ACTION CHECKLIST & TEMPLATE */
+  .action-item { display: flex; align-items: flex-start; gap: 12px; background: #f4fbf7; border: 1px solid #d1fae5; padding: 14px 18px; border-radius: 8px; margin-bottom: 12px; }
+  .action-item input { width: 19px; height: 19px; accent-color: var(--emerald); cursor: pointer; margin-top: 3px; flex-shrink: 0; }
+  .action-text { font-size: 0.95rem; color: #0f241d; line-height: 1.5; }
+  .action-text strong { color: var(--wood-dark); }
+  
+  .template-box {
+    background: #ffffff; border: 1.5px dashed var(--emerald); border-radius: 10px;
+    padding: 22px 26px; margin-top: 20px;
+  }
+  .template-box h4 { margin: 0 0 12px; color: var(--wood-dark); font-size: 1.1rem; }
+  .template-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .template-field { display: flex; flex-direction: column; gap: 4px; }
+  .template-field label { font-size: 0.82rem; font-weight: 700; color: var(--vi-green-2); text-transform: uppercase; }
+  .template-field input, .template-field select {
+    padding: 8px 12px; border: 1px solid #a7f3d0; border-radius: 6px; font-family: inherit; font-size: 0.9rem; background: #f0fdf4;
+  }
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">03. Business Principles &bull; 06. Underpinning Economics &bull; Lesson 01</span>
+    <h1 class="hero-title">Hiệu Suất Six Sigma & Chi Phí Chất Lượng</h1>
+    <div class="hero-title-en">Six Sigma Performance and the Cost of Quality &minus; The DAF Loop & The Hidden Factory</div>
+    <p class="hero-desc">
+      Khám phá nền tảng kinh tế học cốt lõi của Six Sigma: Vòng lặp lãng phí DAF (Detect &minus; Analyze &minus; Fix), khái niệm "Nhà máy ngầm" (Hidden Factory) đang âm thầm bào mòn lợi nhuận doanh nghiệp và cách chuyển hóa chi phí chất lượng kém thành lợi thế cạnh tranh chiến lược.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 / Pillar 1</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành 60 Giây</h2>
+    <div class="section-subheading">Executive Summary &minus; Core Economic Insights</div>
+    
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Bản chất của Six Sigma là Kinh Tế Học Lượng Hóa:</strong> Six Sigma không đơn thuần là kỹ thuật kiểm soát chất lượng (QC) mà là chiến lược tối ưu hóa cấu trúc chi phí và giải phóng dòng vốn bị giam cầm trong các chu trình vô hình.</li>
+        <li><strong>Vòng Lặp DAF (Detect &minus; Analyze &minus; Fix):</strong> Khi sản phẩm hoặc dịch vụ bị lỗi, doanh nghiệp phải kích hoạt quy trình phụ: <em>Phát hiện (Detect) &rarr; Phân tích (Analyze) &rarr; Sửa chữa (Fix)</em>. Chu trình này tiêu tốn thời gian, mặt bằng, nhân công và chi phí cơ hội mà không tạo thêm bất kỳ 1 xu giá trị nào cho khách hàng.</li>
+        <li><strong>Hiểm Họa "Nhà Máy Ngầm" (The Hidden Factory):</strong> Vòng lặp DAF vận hành như một doanh nghiệp thứ hai hoạt động song song trong công ty bạn. Doanh nghiệp phụ này chỉ tiêu thụ nguồn lực, ngốn ngân sách nhưng không tạo ra doanh thu hay lợi nhuận.</li>
+        <li><strong>Chuyển Dịch Sang Làm Đúng Ngay Từ Đầu (First-Time-Right):</strong> Mục tiêu tối thượng của Six Sigma là triệt tiêu hoàn toàn nhu cầu phải kiểm tra và sửa sai bằng cách chủ động ngăn ngừa khuyết tật ngay từ khâu thiết kế và vận hành (<i>Y = f(X)</i>).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 / Pillar 2</span>
+    <h2 class="section-heading">Bản Đồ Khái Niệm & Mô Hình Kinh Tế Lượng Hóa</h2>
+    <div class="section-subheading">Core Frameworks & The Quantitative DAF Resource Model</div>
+
+    <p>
+      Trong một quy trình sản xuất hoặc dịch vụ truyền thống, dòng chảy công việc bị phân mảnh khi khuyết tật xuất hiện. Thay vì đi thẳng từ đầu vào sang đầu ra đạt chuẩn (Value Entitlement), sản phẩm lỗi bị chuyển hướng sang chuỗi hoạt động phi giá trị:
+    </p>
+
+    <!-- Native HTML Diagram -->
+    <div style="background:#022c22; color:#fff; border-radius:10px; padding:24px; margin:20px 0; border:1px solid var(--emerald);">
+      <div style="text-align:center; font-weight:800; color:var(--emerald-mint); margin-bottom:16px; text-transform:uppercase; letter-spacing:1px;">
+        Sơ Đồ Dòng Chảy Giá Trị & Vòng Lặp DAF (Hidden Factory Flow)
+      </div>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:12px; font-size:0.95rem;">
+        <div style="background:#064e3b; border:1.5px solid #34d399; padding:12px 16px; border-radius:8px; text-align:center;">
+          <strong>Đầu Vào (Inputs)</strong><br><span style="font-size:0.8rem; color:#a7f3d0;">Nguyên liệu / Dữ liệu (X)</span>
+        </div>
+        <div style="color:var(--emerald-mint); font-weight:bold; font-size:1.4rem;">&rarr;</div>
+        <div style="background:#047857; border:2px solid #6ee7b7; padding:14px 18px; border-radius:8px; text-align:center;">
+          <strong>Quy Trình Chính (Operation i)</strong><br><span style="font-size:0.8rem; color:#ecfdf5;">Tạo Giá Trị Gia Tăng (VA)</span>
+        </div>
+        <div style="color:var(--emerald-mint); font-weight:bold; font-size:1.4rem;">&rarr;</div>
+        <div style="background:#064e3b; border:1.5px solid #34d399; padding:12px 16px; border-radius:8px; text-align:center;">
+          <strong>Đầu Ra Đạt Chuẩn (Outputs)</strong><br><span style="font-size:0.8rem; color:#a7f3d0;">Đáp ứng CTQ / Khách hàng (Y)</span>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin:16px 0 8px; color:#f87171; font-weight:700;">
+        &darr; <em>Khi Phát Sinh Lỗi (Defect Outflow)</em> &darr;
+      </div>
+
+      <div style="background:rgba(185,28,28,0.25); border:1.5px dashed #f87171; border-radius:8px; padding:16px; display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; gap:12px;">
+        <div style="text-align:center;">
+          <strong style="color:#fca5a5;">1. DETECT (Phát Hiện)</strong><br>
+          <span style="font-size:0.8rem; color:#fee2e2;">Test, Thanh tra, Sensor</span>
+        </div>
+        <div style="color:#fca5a5; font-weight:bold;">&rarr;</div>
+        <div style="text-align:center;">
+          <strong style="color:#fca5a5;">2. ANALYZE (Phân Tích)</strong><br>
+          <span style="font-size:0.8rem; color:#fee2e2;">Tìm nguyên nhân, Họp đánh giá</span>
+        </div>
+        <div style="color:#fca5a5; font-weight:bold;">&rarr;</div>
+        <div style="text-align:center;">
+          <strong style="color:#fca5a5;">3. FIX (Sửa Chữa / Tái Chế)</strong><br>
+          <span style="font-size:0.8rem; color:#fee2e2;">Làm lại, Nghiền nhựa, Phế phẩm</span>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:0.82rem; color:#fca5a5; margin-top:8px;">
+        ⚠️ Toàn bộ vùng đỏ thuộc "Nhà máy ngầm" &minus; 100% chi phí này là Chi Phí Chất Lượng Kém (COPQ).
+      </div>
+    </div>
+
+    <!-- Math Card 1: Total Process Cost -->
+    <div class="math-card">
+      <div class="title">1. Mô Hình Lượng Hóa Tổng Chi Phí Quy Trình & Tổn Thất DAF</div>
+      <div class="math-equation">
+        <span class="math-var">Cost<sub>total</sub></span> = 
+        <span class="math-var">Cost<sub>VA</sub></span> + 
+        <div class="math-frac">
+          <div class="math-num"><span class="math-var">N<sub>defects</sub></span> &times; (<span class="math-var">C<sub>detect</sub></span> + <span class="math-var">C<sub>analyze</sub></span> + <span class="math-var">C<sub>fix</sub></span> + <span class="math-var">C<sub>re-verify</sub></span>)</div>
+          <div class="math-den"><span class="math-var">Y<sub>FTY</sub></span></div>
+        </div>
+      </div>
+      <div class="desc">
+        <strong>Trong đó:</strong><br>
+        &bull; <strong>Cost<sub>total</sub>:</strong> Tổng chi phí thực tế để sản xuất ra một đơn vị thành phẩm đạt chuẩn.<br>
+        &bull; <strong>Cost<sub>VA</sub>:</strong> Chi phí lý tưởng khi làm đúng ngay lần đầu (Value-Added Entitlement Cost).<br>
+        &bull; <strong>N<sub>defects</sub>:</strong> Tổng số cơ hội phát sinh lỗi trong quá trình xử lý.<br>
+        &bull; <strong>C<sub>detect</sub>, C<sub>analyze</sub>, C<sub>fix</sub>, C<sub>re-verify</sub>:</strong> Đơn giá tài nguyên tiêu hao tại từng mắt xích của vòng lặp DAF.<br>
+        &bull; <strong>Y<sub>FTY</sub>:</strong> Tỷ lệ năng suất đạt chuẩn ngay lần đầu (First-Time-Yield, 0 &lt; <i>Y<sub>FTY</sub></i> &le; 1). Khi <i>Y<sub>FTY</sub></i> giảm, hệ số tổn thất DAF tăng phi mã theo cấp số nhân.
+      </div>
+    </div>
+
+    <!-- MBB Pro Tip -->
+    <div class="mbb-box">
+      <div class="title">💡 Master Black Belt Insight: Cái Giá Của Sự Thỏa Hiệp Với Vòng Lặp Sửa Chữa</div>
+      <p>
+        Nhiều giám đốc sản xuất tự hào: <em>"Dây chuyền của tôi tỷ lệ giao hàng đạt 99.5%!"</em>. Tuy nhiên, khi MBB bóc tách dữ liệu, năng suất lần đầu (First-Time-Yield) thực tế chỉ đạt 68%. Để có được 99.5% giao hàng, công ty phải duy trì 4 trạm sửa chữa (Rework Stations), 12 kỹ thuật viên phân tích lỗi và diện tích kho chứa hàng chờ sửa lên đến 300 m<sup>2</sup>. Doanh nghiệp đang vô tình trả lương cho một "nhà máy ngầm" hoạt động 3 ca chỉ để dọn dẹp sai lầm của chính mình!
+      </p>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 / Pillar 3</span>
+    <h2 class="section-heading">Tình Huống Thực Chiến & Đối Chiếu Quản Trị</h2>
+    <div class="section-subheading">Real-World Case Studies & Paradigm Shift</div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Sản Xuất / Automotive Electronics</span>
+      <h3 class="case-title">Case Study 1: Triệt Tiêu Vòng Lặp DAF Trên Dây Chuyền Hàn Bảng Mạch SMT</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Một nhà máy sản xuất linh kiện điện tử ô tô gặp sự cố mối hàn bi (BGA solder voids) với tỷ lệ lỗi ban đầu là 4.2% (~3.2 Sigma). Nhà máy thiết lập 2 trạm kiểm tra quang học AOI và bố trí 6 thợ hàn tay bậc 5/7 để soi kính hiển vi và hàn dặm lại bo mạch lỗi.<br>
+        <strong>Giải pháp Six Sigma:</strong> Thay vì tuyển thêm thợ sửa, Đội dự án Black Belt áp dụng DOE (Thiết kế thực nghiệm) tối ưu hóa profile nhiệt độ lò hàn đối lưu và độ nhớt kem hàn (Solder paste).<br>
+        <strong>Kết quả:</strong> Tỷ lệ lỗi giảm từ 42.000 DPMO xuống dưới 50 DPMO (&gt; 5.4 Sigma). Trạm sửa dặm thủ công được giải tán hoàn toàn, tiết kiệm 380.000 USD chi phí nhân công và linh kiện hỏng nhiệt mỗi năm.
+      </p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Dịch Vụ / FinTech & Banking</span>
+      <h3 class="case-title">Case Study 2: Nhà Máy Ngầm Trong Quy Trình Phê Duyệt Tín Dụng Doanh Nghiệp</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Một ngân hàng thương mại mất trung bình 9.5 ngày để phê duyệt một hồ sơ vay vốn doanh nghiệp. Hồ sơ liên tục bị gửi trả qua lại giữa Chuyên viên QHKH (RM) và Bộ phận Thẩm định Rủi ro để bổ sung chứng từ (vòng lặp DAF trong tài chính).<br>
+        <strong>Phân tích MBB:</strong> 64% thời gian xử lý hồ sơ thực chất là thời gian "chết" nằm chờ bổ sung báo cáo tài chính kiểm toán và giấy tờ pháp lý bị thiếu sót từ khâu thu thập ban đầu.<br>
+        <strong>Cải tiến:</strong> Ứng dụng Poka-Yoke số hóa bằng cổng Portal tiếp nhận có tính năng chặn nộp hồ sơ tự động nếu thiếu dữ liệu cốt lõi (Input Gate Control). Thời gian phê duyệt rút ngắn xuống còn 1.8 ngày, tỷ lệ hồ sơ làm đúng ngay lần đầu (FTY) tăng từ 41% lên 94%.
+      </p>
+    </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px; font-size:1.25rem;">Bảng Đối Chiếu Tư Duy Quản Trị Cũ vs Chuẩn Mực Six Sigma</h3>
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Tư Duy Lỗi Thời (Traditional Trap)</span>
+        <ul>
+          <li>Coi kiểm tra, thanh tra và sửa chữa là công đoạn tất yếu của quá trình vận hành.</li>
+          <li>Đầu tư thêm thiết bị kiểm tra hiện đại và tuyển thêm thanh tra chất lượng (QC) để "bắt" lỗi trước khi xuất xưởng.</li>
+          <li>Chấp nhận tỷ lệ làm lại (Rework) cố định và cộng chi phí này vào giá thành định mức.</li>
+          <li>Đánh giá năng lực quản lý dựa trên số lượng lỗi mà trạm QC phát hiện và sửa chữa thành công.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Chuẩn Mực Six Sigma (MBB Standard)</span>
+        <ul>
+          <li>Nhìn nhận trạm kiểm tra và sửa chữa là lãng phí NVA bắt nguồn từ sự thiếu tin cậy vào quy trình.</li>
+          <li>Đầu tư vào việc thấu hiểu biến số đầu vào <i>X</i>, nâng cao năng lực quy trình <i>C<sub>pk</sub></i> để ngăn ngừa lỗi phát sinh.</li>
+          <li>Triệt tiêu tận gốc vòng lặp DAF, hướng tới 100% First-Time-Yield để đóng cửa "nhà máy ngầm".</li>
+          <li>Đánh giá thành công bằng việc giảm thiểu sự phụ thuộc vào trạm kiểm tra và giảm chi phí chất lượng kém (COPQ).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num" style="background:#059669; color:#fff;">Trụ Cột 4 / Pillar 4</span>
+    <h2>Đấu Trường Tương Tác & Bài Tập Tình Huống</h2>
+    <div class="arena-desc">Interactive Arena &minus; Scenario-Based Quizzes & 3D Flashcards</div>
+
+    <!-- QUIZ 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Nhận Biết & Thuật Ngữ</span>
+      <div class="quiz-q">1. Thuật ngữ viết tắt "DAF" trong bài giảng của TS. Mikel Harry đại diện cho chu trình hoạt động nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Incorrect. DAF stands specifically for Detect, Analyze, and Fix.', 'Sai. DAF là viết tắt của Detect (Phát hiện), Analyze (Phân tích) và Fix (Sửa chữa).')">A. Design &minus; Automate &minus; Finalize (Thiết kế &minus; Tự động hóa &minus; Hoàn thiện)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q1', 'Correct! DAF stands for Detect, Analyze, and Fix &minus; the fundamental non-value-added loop when defects occur.', 'Chính xác! DAF là chu trình Phát hiện &minus; Phân tích &minus; Sửa chữa, chuỗi hoạt động không tạo giá trị khi có lỗi.')">B. Detect &minus; Analyze &minus; Fix (Phát hiện &minus; Phân tích &minus; Sửa chữa)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Incorrect. Defect Allocation Framework is not the term defined by Dr. Harry.', 'Sai. Đây không phải thuật ngữ được TS. Mikel Harry định nghĩa.')">C. Defect &minus; Allocate &minus; Forecast (Khuyết tật &minus; Phân bổ &minus; Dự báo)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Incorrect. DMAIC is the project methodology, while DAF is the operational rework loop.', 'Sai. DMAIC là phương pháp luận dự án, còn DAF là vòng lặp sửa lỗi trong vận hành.')">D. Define &minus; Align &minus; Formulate (Xác định &minus; Căn chỉnh &minus; Xây dựng)</button>
+      </div>
+      <div id="fb-q1" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Hiểu Bản Chất</span>
+      <div class="quiz-q">2. Vì sao TS. Mikel Harry lại gọi các công đoạn sửa chữa và làm lại là "Nhà máy ngầm" (Hidden Factory)?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Incorrect. It is called hidden not because of physical location, but because traditional accounting hides its resource consumption.', 'Sai. Gọi là ngầm không phải vì vị trí địa lý hay ca đêm, mà vì kế toán truyền thống không bóc tách được chi phí của nó.')">A. Vì các hoạt động này diễn ra vào ban đêm hoặc ở các kho xưởng bí mật bên ngoài công ty.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q2', 'Correct! It consumes capital, floor space, and labor to fix defects, but produces zero net marketable output and is often masked in gross overhead.', 'Chính xác! Nó tiêu tốn tài nguyên, lao động, mặt bằng nhưng không tạo ra thêm sản phẩm thương mại mới và thường bị ẩn trong chi phí chung.')">B. Vì nó tiêu tốn tài nguyên, lao động, mặt bằng nhưng không tạo ra thêm sản phẩm thương mại mới và thường bị ẩn trong chi phí chung.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Incorrect. Six Sigma seeks to eliminate this hidden factory, not formalize it into an official business unit.', 'Sai. Six Sigma hướng tới triệt tiêu nhà máy ngầm chứ không phải hợp thức hóa nó thành đơn vị chính thức.')">C. Vì nó là mô hình kinh doanh thứ hai được pháp luật cho phép để tối ưu thuế thu nhập doanh nghiệp.</button>
+      </div>
+      <div id="fb-q2" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Phân Tích & Tính Toán</span>
+      <div class="quiz-q">3. Một phân xưởng lắp ráp sản xuất 10.000 sản phẩm/tháng với chi phí tiêu chuẩn 50 USD/sp. Tỷ lệ lỗi là 8%. Mỗi sản phẩm lỗi tốn trung bình 5 USD để phát hiện (Detect), 8 USD để phân tích (Analyze) và 12 USD để thay thế linh kiện (Fix). Chi phí lãng phí hàng năm do "Nhà máy ngầm" DAF gây ra là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Incorrect. 800 defects * 25 USD = 20,000 USD/month. Annual = 240,000 USD.', 'Sai. 800 sp lỗi * 25 USD = 20.000 USD/tháng. Hàng năm là 240.000 USD.')">A. 20.000 USD / năm</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3', 'Correct! Calculation: 10,000 * 8% = 800 defects/month. Cost per defect = 5 + 8 + 12 = 25 USD. Monthly = 20,000 USD. Annual = 20,000 * 12 = 240,000 USD.', 'Chính xác! Tính toán: 10.000 * 8% = 800 sp lỗi/tháng. Chi phí DAF/sp = 5 + 8 + 12 = 25 USD. Hàng tháng = 20.000 USD. Cả năm = 20.000 * 12 = 240.000 USD!')">B. 240.000 USD / năm</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Incorrect. Did you multiply by 12 months?', 'Sai. Bạn đã quên nhân với 12 tháng hoặc tính sai đơn giá DAF.')">C. 120.000 USD / năm</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Incorrect. Check your math again.', 'Sai. Hãy rà soát lại phép tính theo công thức DAF.')">D. 480.000 USD / năm</button>
+      </div>
+      <div id="fb-q3" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Đọc Tình Huống Vận Hành</span>
+      <div class="quiz-q">4. Trong một bệnh viện tư nhân, hồ sơ bệnh án chuyển từ Khoa Khám bệnh sang Khoa Xét nghiệm bị sai sót mã định danh bệnh nhân ở mức 5%. Nhân viên hành chính phải gọi điện xác minh và nhập lại thông tin. Hành động này phản ánh:</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q4', 'Correct! Admin calling and re-entering data is pure non-value added DAF loop in the service sector.', 'Chính xác! Việc gọi điện và nhập lại dữ liệu chính là vòng lặp DAF phi giá trị trong ngành dịch vụ.')">A. Vòng lặp DAF phi giá trị gia tăng trong môi trường dịch vụ y tế, tiêu hao thời gian và làm tăng thời gian chờ của bệnh nhân.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Incorrect. Administrative error correction is NVA, not customer service enhancement.', 'Sai. Việc sửa sai hồ sơ là hoạt động lãng phí NVA, không phải là nâng cao trải nghiệm khách hàng.')">B. Hoạt động chăm sóc khách hàng tạo giá trị gia tăng cao (Value-Added) vì đảm bảo an toàn tuyệt đối.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Incorrect. It is a defect prevention failure, not an unavoidable protocol.', 'Sai. Đây là sự thất bại trong việc kiểm soát dữ liệu đầu vào, không phải quy trình chuẩn không thể tránh.')">C. Quy trình chuẩn mực không thể loại bỏ của ngành y tế.</button>
+      </div>
+      <div id="fb-q4" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Ra Quyết Định Điều Hành (Executive Decision)</span>
+      <div class="quiz-q">5. Giám đốc Vận hành đề xuất chi 150.000 USD mua máy quang học tự động kiểm tra lỗi bề mặt (Automated Visual Inspection) để thay thế 4 nhân viên kiểm tra thủ công. Với tư cách Master Black Belt, bạn nên tư vấn gì cho Tổng Giám Đốc (CEO)?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Incorrect. Buying faster inspection machines only automates the DAF loop, without addressing the root cause generating defects.', 'Sai. Mua máy kiểm tra tự động chỉ là tự động hóa khâu phát hiện lỗi (Detect), không giải quyết nguyên nhân gốc rễ sinh ra lỗi.')">A. Ủng hộ 100% vì máy tự động sẽ phát hiện lỗi nhanh hơn và giảm được chi phí 4 nhân sự.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q5', 'Correct! Inspection is NVA. An MBB should recommend investing in root cause elimination (Y=f(X)) upstream to prevent defects from being produced in the first place, rather than spending capital to automate defect detection.', 'Chính xác! Thanh tra là hoạt động không tạo giá trị. MBB cần khuyến nghị đầu tư nghiên cứu nguyên nhân gốc rễ ở đầu nguồn quy trình (Y=f(X)) để không tạo ra lỗi, thay vì chi tiền vốn lớn chỉ để tự động hóa việc phát hiện sản phẩm hỏng.')">B. Khuyến nghị tạm dừng dự án mua máy; phân bổ ngân sách nghiên cứu tối ưu hóa thông số quy trình đầu nguồn để triệt tiêu nguyên nhân sinh ra lỗi, từ đó loại bỏ hoàn toàn nhu cầu kiểm tra bề mặt.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Incorrect. Expanding repair stations increases the hidden factory footprint.', 'Sai. Mở rộng khu vực sửa chữa chỉ làm phình to nhà máy ngầm và lãng phí vốn.')">C. Khuyên công ty giữ nguyên nhân sự và thuê thêm thợ sửa chữa tay nghề cao để xử lý nhanh hàng lỗi sau khi máy phát hiện.</button>
+      </div>
+      <div id="fb-q5" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Chiến Lược Phân Bổ Nguồn Lực</span>
+      <div class="quiz-q">6. Khi một công ty liên tục đạt chỉ tiêu giao hàng đúng hạn (OTD 98%) nhưng biên lợi nhuận ròng liên tục giảm từ 18% xuống 7%, dấu hiệu kinh tế nào cho thấy có sự tồn tại của "Nhà máy ngầm"?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q6', 'Correct! High on-time delivery achieved through massive internal rework and overtime is the classic symptom of a massive hidden factory eating away profit margins.', 'Chính xác! Giao hàng đúng hạn đạt được nhờ tăng ca, làm lại và sửa hàng gấp rút là triệu chứng kinh điển của nhà máy ngầm đang bào mòn biên lợi nhuận.')">A. Tỷ lệ First-Time-Yield thấp, giờ làm thêm (Overtime) của đội ngũ sửa hàng tăng cao, và chi phí phế phẩm/linh kiện bù hao hụt tăng vọt.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Incorrect. Market pricing pressure is external, but internal margin collapse despite steady sales is driven by COPQ and hidden factory loops.', 'Sai. Dấu hiệu này thuộc về vận hành nội bộ chứ không đơn thuần do biến động giá thị trường.')">B. Giá bán sản phẩm trên thị trường giảm do đối thủ cạnh tranh phá giá.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Incorrect. Depreciation has predictable effects, but sudden operational margin erosion is driven by scrap, rework, and DAF loops.', 'Sai. Khấu hao tài sản cố định diễn ra theo kế hoạch, không giải thích được sự sụt giảm bất thường của chi phí vận hành do lỗi.')">C. Chi phí khấu hao tài sản cố định của nhà máy tăng theo chu kỳ kế toán thông thường.</button>
+      </div>
+      <div id="fb-q6" class="quiz-fb"></div>
+    </div>
+
+    <!-- 3D FLASHCARDS -->
+    <h3 style="color:#fff; margin-top:36px; font-size:1.3rem;">Thẻ Lật 3D Ôn Tập Nhanh (Executive Flashcards)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">DAF Loop</div>
+        <div class="hint">Nhấp để xem bản chất kinh tế &bull; Click to flip</div>
+        <div class="back"><strong>Detect &minus; Analyze &minus; Fix</strong><br>Chuỗi hoạt động không tạo giá trị (NVA) kích hoạt khi sản phẩm lỗi, tiêu tốn thời gian, tiền bạc và nhân lực.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Hidden Factory</div>
+        <div class="hint">Nhấp để xem định nghĩa MBB &bull; Click to flip</div>
+        <div class="back"><strong>Nhà Máy Ngầm</strong><br>Hệ thống trạm kiểm tra, sửa chữa, làm lại và lưu kho ngầm nằm trong doanh nghiệp, tiêu thụ từ 15% &minus; 40% chi phí vận hành mà không tạo ra lợi nhuận.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">First-Time-Yield (FTY)</div>
+        <div class="hint">Nhấp để xem công thức & ý nghĩa &bull; Click to flip</div>
+        <div class="back"><strong>Năng Suất Lần Đầu</strong><br>Tỷ lệ sản phẩm đi qua toàn bộ quy trình đạt chuẩn 100% ngay lần đầu mà không cần qua bất kỳ bước kiểm tra lại hay sửa chữa nào.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Six Sigma Economics Aim</div>
+        <div class="hint">Nhấp để xem mục tiêu cốt lõi &bull; Click to flip</div>
+        <div class="back"><strong>Mục Tiêu Kinh Tế Six Sigma</strong><br>Loại bỏ hoàn toàn sự cần thiết của trạm kiểm tra và sửa chữa bằng cách đưa năng lực quy trình đạt mức làm đúng ngay từ đầu (&ge; 5&sigma; &rarr; 6&sigma;).</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: ACTION CHECKLIST & TEMPLATE -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 / Pillar 5</span>
+    <h2 class="section-heading">1-Page Action Checklist & Biểu Mẫu Nhận Diện Nhà Máy Ngầm</h2>
+    <div class="section-subheading">Action Checklist & Hidden Factory Audit Template</div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk1">
+      <div class="action-text">
+        <label for="chk1"><strong>Hành Động 1: Nhận Diện Vùng DAF Tại Hiện Trường (Gemba Walk)</strong><br>
+        Đi dọc dây chuyền sản xuất hoặc quy trình xử lý dịch vụ, lập danh sách tất cả các bàn làm việc, giá kệ hoặc phần mềm đang dùng để chứa hàng lỗi, xử lý ngoại lệ hoặc sửa chữa bo mạch/hồ sơ.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk2">
+      <div class="action-text">
+        <label for="chk2"><strong>Hành Động 2: Lượng Hóa Nguồn Lực Đang Cấp Cho "Nhà Máy Ngầm"</strong><br>
+        Tính tổng số nhân sự chuyên trách hoặc bán thời gian cho việc kiểm tra, phân loại phế phẩm và làm lại; tính diện tích mặt bằng kho bãi dành riêng cho hàng chờ sửa.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk3">
+      <div class="action-text">
+        <label for="chk3"><strong>Hành Động 3: Thiết Lập Chỉ Số Đo Lường Năng Suất Lần Đầu (FTY)</strong><br>
+        Tách biệt hoàn toàn chỉ số Final Yield (Đạt sau sửa chữa) và First-Time-Yield (Đạt ngay lần đầu) trong báo cáo giao ban hàng ngày của ban giám đốc.</label>
+      </div>
+    </div>
+
+    <!-- Audit Template -->
+    <div class="template-box">
+      <h4>📋 Biểu Mẫu Kiểm Toán Nhà Máy Ngầm (Hidden Factory Assessment Template)</h4>
+      <div class="template-grid">
+        <div class="template-field">
+          <label>Tên Quy Trình / Phân Xưởng</label>
+          <input type="text" placeholder="VD: Dây chuyền dập khung / Duyệt thẻ tín dụng">
+        </div>
+        <div class="template-field">
+          <label>Sản Lượng Đầu Vào (Units/Tháng)</label>
+          <input type="number" placeholder="VD: 50000">
+        </div>
+        <div class="template-field">
+          <label>Năng Suất Lần Đầu FTY (%)</label>
+          <input type="number" placeholder="VD: 75.5">
+        </div>
+        <div class="template-field">
+          <label>Số Nhân Sự Thuộc Vòng Lặp DAF</label>
+          <input type="number" placeholder="VD: 8 nhân sự">
+        </div>
+        <div class="template-field">
+          <label>Ước Tính Chi Phí DAF Hàng Tháng ($)</label>
+          <input type="number" placeholder="VD: 45000">
+        </div>
+        <div class="template-field">
+          <label>Kế Hoạch Triệt Tiêu Điểm Kiểm Tra</label>
+          <input type="text" placeholder="VD: Triển khai dự án DMAIC tối ưu thông số X">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

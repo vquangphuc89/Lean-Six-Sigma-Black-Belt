@@ -1,0 +1,284 @@
+1
+00:00:00.000 --> 00:00:05.000
+Maintaining a Customer Focus to Ensure Improvement
+Duy trì Sự tập trung vào Khách hàng để Đảm bảo Cải thiện
+
+2
+00:00:05.000 --> 00:00:10.966
+Welcome back to this session on the success factors of Six Sigma.
+Chào mừng bạn trở lại phiên này về các yếu tố thành công của Six Sigma.
+
+3
+00:00:10.966 --> 00:00:15.766
+Many times people asked the question, what are the major contributors
+Nhiều lần người ta hỏi câu hỏi, những đóng góp chính nào
+
+4
+00:00:15.766 --> 00:00:20.966
+to the successful deployment and utilization of Six Sigma?
+cho việc triển khai và sử dụng thành công Six Sigma?
+
+5
+00:00:20.966 --> 00:00:27.699
+Well, I believe there are twelve fundamental factors that need to be considered.
+Tôi tin rằng có mười hai yếu tố cơ bản cần được xem xét.
+
+6
+00:00:27.700 --> 00:00:32.566
+The first factor. Factor number one,
+Yếu tố đầu tiên. Yếu tố số một,
+
+7
+00:00:32.566 --> 00:00:39.599
+is the driving need.
+là nhu cầu thúc đẩy.
+
+8
+00:00:39.600 --> 00:00:46.566
+What is the driving need or driving force behind Six Sigma?
+Nhu cầu thúc đẩy hoặc động lực đằng sau Six Sigma là gì?
+
+9
+00:00:46.566 --> 00:00:52.932
+We gotta have a reason to do this, there's any number of reasons, but the main one.
+Chúng ta phải có lý do để làm điều này, có vô số lý do, nhưng lý do chính.
+
+10
+00:00:52.933 --> 00:00:59.666
+The need is its business related. We’re concerned about improving the business.
+Nhu cầu liên quan đến kinh doanh. Chúng tôi quan tâm đến việc cải thiện doanh nghiệp.
+
+11
+00:00:59.666 --> 00:01:06.699
+And as we start to look internal to the business, we recognize its connectivity.
+Và khi chúng ta bắt đầu nhìn vào bên trong doanh nghiệp, chúng ta nhận ra sự kết nối của nó.
+
+12
+00:01:06.700 --> 00:01:13.733
+From the business level, to the operations level, to the process level.
+Từ cấp độ kinh doanh, đến cấp độ vận hành, đến cấp độ quy trình.
+
+13
+00:01:13.733 --> 00:01:19.999
+We understand that there is need that is connected
+Chúng tôi hiểu rằng có một nhu cầu được kết nối
+
+14
+00:01:20.000 --> 00:01:23.266
+throughout the hierarchy of an organization.
+trong toàn bộ hệ thống phân cấp của một tổ chức.
+
+15
+00:01:23.266 --> 00:01:28.266
+Here is some scale of a need.
+Đây là một số quy mô của một nhu cầu.
+
+16
+00:01:28.266 --> 00:01:34.432
+Could be a quality need, an economic need, whatever.  It’s some need that we have.
+Có thể là nhu cầu về chất lượng, nhu cầu về kinh tế, bất cứ điều gì. Đó là một số nhu cầu mà chúng ta có.
+
+17
+00:01:34.433 --> 00:01:41.399
+Now we have a current O, observed condition.
+Bây giờ chúng ta có một O hiện tại, điều kiện quan sát được.
+
+18
+00:01:41.400 --> 00:01:48.366
+This is the observed O. I'll abbreviate that further OBS.
+Đây là O quan sát được. Tôi sẽ viết tắt thêm là OBS.
+
+19
+00:01:48.366 --> 00:01:53.266
+Then we have some expected E condition.
+Sau đó, chúng ta có một số điều kiện E dự kiến.
+
+20
+00:01:53.266 --> 00:01:56.266
+Could be greater than the observed. Could be less than the observed.
+Có thể lớn hơn quan sát được. Có thể nhỏ hơn quan sát được.
+
+21
+00:01:56.266 --> 00:02:02.332
+Nonetheless, it's an expected condition.
+Tuy nhiên, đó là một điều kiện dự kiến.
+
+22
+00:02:02.333 --> 00:02:06.299
+As we start to zero in and look at this,
+Khi chúng ta bắt đầu tập trung và nhìn vào điều này,
+
+23
+00:02:06.300 --> 00:02:11.066
+the difference
+sự khác biệt
+
+24
+00:02:11.066 --> 00:02:17.199
+between the observed and the expected. I'm going to show that as delta.
+giữa cái đã quan sát và cái mong đợi. Tôi sẽ biểu diễn nó bằng delta.
+
+25
+00:02:17.200 --> 00:02:24.233
+Greek symbol delta. So, I can very conveniently say,
+Ký hiệu Hy Lạp delta. Vì vậy, tôi có thể rất thuận tiện nói,
+
+26
+00:02:24.233 --> 00:02:29.066
+that Delta is equal to
+delta bằng
+
+27
+00:02:29.066 --> 00:02:34.532
+the observed minus the expected.
+giá trị quan sát được trừ đi giá trị mong đợi.
+
+28
+00:02:34.533 --> 00:02:40.999
+Now that could be an observed state and expected state of something.
+Bây giờ, đó có thể là trạng thái quan sát được và trạng thái mong đợi của một cái gì đó.
+
+29
+00:02:41.000 --> 00:02:47.966
+For example, the observed state of our capacity.
+Ví dụ, trạng thái quan sát được về năng lực của chúng ta.
+
+30
+00:02:47.966 --> 00:02:53.999
+Process capacity.
+Năng lực quy trình.
+
+31
+00:02:54.000 --> 00:02:58.900
+The expected process capacity. The difference between observed capacity
+Năng lực quy trình dự kiến. Sự khác biệt giữa năng lực quan sát được
+
+32
+00:02:58.900 --> 00:03:02.733
+and expected capacity is some difference.
+và năng lực dự kiến là một số khác biệt.
+
+33
+00:03:02.733 --> 00:03:09.233
+That difference is the driving force that difference is our need.
+Sự khác biệt đó là động lực, sự khác biệt đó là nhu cầu của chúng ta.
+
+34
+00:03:09.233 --> 00:03:15.866
+That is the gap that we have to close related to capacity.
+Đó là khoảng cách mà chúng ta phải thu hẹp liên quan đến năng lực.
+
+35
+00:03:15.866 --> 00:03:20.799
+Or it could be related to capability.
+Hoặc nó có thể liên quan đến khả năng.
+
+36
+00:03:20.800 --> 00:03:25.866
+Our business capability, operations, or process capability.
+Khả năng kinh doanh, khả năng vận hành hoặc khả năng quy trình của chúng ta.
+
+37
+00:03:25.866 --> 00:03:32.532
+Our business capacity, operations capacity, or process capacity.
+Năng lực kinh doanh, năng lực vận hành hoặc năng lực quy trình của chúng ta.
+
+38
+00:03:32.533 --> 00:03:36.699
+Capability and capacity.
+Khả năng và năng lực.
+
+39
+00:03:36.700 --> 00:03:42.400
+Observed capability. Expected capability. The difference between those again is the gap.
+Khả năng quan sát được. Khả năng dự kiến. Sự khác biệt giữa chúng một lần nữa là khoảng cách.
+
+40
+00:03:42.400 --> 00:03:49.366
+That gap is the driving need. We have to close it. Very simple, very simple.
+Khoảng cách đó là nhu cầu thúc đẩy. Chúng ta phải thu hẹp nó. Rất đơn giản, rất đơn giản.
+
+41
+00:03:49.366 --> 00:03:53.366
+If we take a further look, we may have a customer focus.
+Nếu chúng ta xem xét kỹ hơn, chúng ta có thể tập trung vào khách hàng.
+
+42
+00:03:53.366 --> 00:04:00.066
+This might be a provider focus. We might have a customer focus that we look at.
+Đây có thể là sự tập trung vào nhà cung cấp. Chúng ta có thể có sự tập trung vào khách hàng mà chúng ta xem xét.
+
+43
+00:04:00.066 --> 00:04:07.066
+Now, if we have a customer focus,
+Bây giờ, nếu chúng ta tập trung vào khách hàng,
+
+44
+00:04:07.066 --> 00:04:12.799
+our delta, our improvement, and I’ll show that again.
+delta của chúng ta, sự cải thiện của chúng ta, và tôi sẽ chỉ ra điều đó một lần nữa.
+
+45
+00:04:12.800 --> 00:04:19.800
+Observed. Expected. Gap.
+Đã quan sát. Dự kiến. Khoảng cách.
+
+46
+00:04:19.800 --> 00:04:24.900
+What could it be for the customer? What does a customer want?
+Nó có thể là gì đối với khách hàng? Khách hàng muốn gì?
+
+47
+00:04:24.900 --> 00:04:31.900
+Well, the customer wants a high quality product or service.
+Khách hàng muốn một sản phẩm hoặc dịch vụ chất lượng cao.
+
+48
+00:04:31.900 --> 00:04:35.000
+So we can have a quality gap.
+Vậy chúng ta có thể có một khoảng cách về chất lượng.
+
+49
+00:04:35.000 --> 00:04:41.966
+This gap, this region, could be related to quality.
+Khoảng trống này, vùng này, có thể liên quan đến chất lượng.
+
+50
+00:04:41.966 --> 00:04:45.966
+Could be a pricing gap.
+Có thể là một khoảng cách về giá.
+
+51
+00:04:45.966 --> 00:04:49.966
+Could be the ability to deliver gap.
+Có thể là khả năng cung cấp khoảng cách.
+
+52
+00:04:49.966 --> 00:04:53.966
+Nonetheless, we need a driving need.
+Tuy nhiên, chúng ta cần một nhu cầu thúc đẩy.
+
+53
+00:04:53.966 --> 00:05:00.632
+Without a driving need, well, we’re just going to go nowhere,
+Nếu không có nhu cầu thúc đẩy, thì chúng ta sẽ không đi đến đâu cả,
+
+54
+00:05:00.633 --> 00:05:03.999
+because Six Sigma is then without a purpose.
+bởi vì Six Sigma khi đó sẽ vô mục đích.
+
+55
+00:05:04.000 --> 00:05:10.400
+So, that's one of the key success factors is to understand what the driving need,
+Vì vậy, đó là một trong những yếu tố thành công quan trọng là hiểu được nhu cầu thúc đẩy là gì,
+
+56
+00:05:10.400 --> 00:05:14.233
+the driving force, behind Six Sigma will be.
+động lực đằng sau Six Sigma sẽ là gì.
+
+57
+00:05:14.233 --> 00:05:19.233
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

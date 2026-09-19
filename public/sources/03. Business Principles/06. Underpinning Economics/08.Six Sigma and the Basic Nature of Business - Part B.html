@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Six Sigma & Bản Chất Cơ Bản Của Kinh Doanh (Phần B) | MBB Masterclass</title>
+<style>
+
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.7;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  /* HERO HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.25; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; font-style: italic; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+
+  /* PILLAR SECTION CARDS */
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  /* NATIVE PURE HTML/CSS MATH CARD */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-var { font-style: italic; color: #ffffff; }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* DATA TABLES */
+  table.data-table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin: 18px 0; }
+  table.data-table th {
+    background: linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color: #fff; padding: 12px 14px; text-align: left; vertical-align: top;
+  }
+  table.data-table th .th-vi { display: block; color: #a7f3d0; font-style: italic; font-weight: 500; font-size: 0.8rem; margin-top: 2px; }
+  table.data-table td { padding: 12px 14px; border-bottom: 1px solid #d1fae5; vertical-align: top; background: #fff; }
+  table.data-table td .td-sub { display: block; color: var(--vi-green-2); font-style: italic; font-size: 0.85rem; margin-top: 2px; }
+  table.data-table tr:nth-child(even) td { background: #f7fcf9; }
+
+  /* CASE STUDIES & COMPARISON */
+  .case-card {
+    background: #fdfefe;
+    border: 1px solid #cbf3e3;
+    border-left: 5px solid var(--emerald);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  .case-badge {
+    display: inline-block;
+    background: var(--emerald-vibrant);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .case-title { font-size: 1.15rem; font-weight: 800; color: var(--wood-dark); margin: 0 0 8px; }
+
+  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; margin: 22px 0; }
+  @media(max-width:768px){ .vs-grid { grid-template-columns: 1fr; } }
+  .vs-col { border-radius: 10px; padding: 20px; }
+  .vs-col.bad { background: #fef2f2; border: 2px solid #ef4444; }
+  .vs-col.good { background: #ecfdf5; border: 2px solid var(--emerald-vibrant); }
+  .vs-badge {
+    display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;
+    padding: 4px 10px; border-radius: 14px; color: #fff; margin-bottom: 10px; text-transform: uppercase;
+  }
+  .vs-badge.bad { background: var(--red); }
+  .vs-badge.good { background: var(--green); }
+  .vs-divider { display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--wood-dark); font-size: 1.3rem; }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { margin-bottom: 8px; font-size: 0.9rem; }
+
+  /* MBB PRO-TIP BOX */
+  .mbb-box {
+    background: var(--gold-bg); border: 1px solid #fef08a; border-left: 5px solid var(--gold-border);
+    border-radius: 8px; padding: 20px 24px; margin: 22px 0;
+  }
+  .mbb-box .title { color: var(--wood-bark); font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; }
+  .mbb-box p { margin: 0; color: #78350f; font-size: 0.95rem; }
+
+  /* INTERACTIVE ARENA */
+  .interactive-arena {
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color: #fff; border-radius: 14px; padding: 36px 40px; margin: 40px 0;
+    box-shadow: 0 8px 28px rgba(2,44,34,0.3); border: 2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2 { color: #fff; margin-top: 0; font-size: 1.6rem; font-weight: 800; }
+  .interactive-arena .arena-desc { color: var(--emerald-mint); font-style: italic; font-size: 0.98rem; margin-bottom: 24px; }
+  
+  .quiz-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 10px; padding: 22px 24px; margin-bottom: 22px;
+  }
+  .quiz-tag { display: inline-block; background: var(--emerald); color: #fff; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  .quiz-tag.tier-1 { background: #0284c7; }
+  .quiz-tag.tier-2 { background: #d97706; }
+  .quiz-tag.tier-3 { background: #7c3aed; }
+  .quiz-q { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.45; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(2,44,34,0.7); border: 1px solid rgba(52,211,153,0.4); color: #ecfdf5;
+    padding: 12px 16px; border-radius: 8px; font-size: 0.92rem; text-align: left; cursor: pointer;
+    transition: all 0.2s ease; font-family: inherit; line-height: 1.4;
+  }
+  .quiz-btn:hover { background: rgba(16,185,129,0.25); border-color: var(--emerald-mint); }
+  .quiz-btn.correct { background: #065f46 !important; border-color: #34d399 !important; color: #fff !important; }
+  .quiz-btn.wrong { background: #7f1d1d !important; border-color: #f87171 !important; color: #fff !important; }
+  .quiz-fb { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 8px; font-size: 0.92rem; line-height: 1.5; }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.success { background: rgba(16,185,129,0.2); border: 1px solid #34d399; color: #d1fae5; }
+  .quiz-fb.error { background: rgba(239,68,68,0.2); border: 1px solid #f87171; color: #fecaca; }
+
+  /* FLASHCARDS */
+  .flashcards-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 16px; margin-top: 16px; }
+  .flashcard {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(110,231,183,0.3); border-radius: 10px;
+    padding: 20px; cursor: pointer; min-height: 150px; display: flex; flex-direction: column;
+    justify-content: center; text-align: center; transition: transform 0.2s ease; user-select: none;
+  }
+  .flashcard:hover { transform: translateY(-3px); border-color: var(--emerald-mint); }
+  .flashcard .front { font-size: 1.05rem; font-weight: 800; color: var(--emerald-mint); }
+  .flashcard .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 6px; opacity: 0.85; }
+  .flashcard .back { display: none; font-size: 0.9rem; color: #fff; line-height: 1.45; }
+  .flashcard.flipped .front, .flashcard.flipped .hint { display: none; }
+  .flashcard.flipped .back { display: block; }
+
+  /* ACTION CHECKLIST & TEMPLATE */
+  .action-item { display: flex; align-items: flex-start; gap: 12px; background: #f4fbf7; border: 1px solid #d1fae5; padding: 14px 18px; border-radius: 8px; margin-bottom: 12px; }
+  .action-item input { width: 19px; height: 19px; accent-color: var(--emerald); cursor: pointer; margin-top: 3px; flex-shrink: 0; }
+  .action-text { font-size: 0.95rem; color: #0f241d; line-height: 1.5; }
+  .action-text strong { color: var(--wood-dark); }
+  
+  .template-box {
+    background: #ffffff; border: 1.5px dashed var(--emerald); border-radius: 10px;
+    padding: 22px 26px; margin-top: 20px;
+  }
+  .template-box h4 { margin: 0 0 12px; color: var(--wood-dark); font-size: 1.1rem; }
+  .template-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .template-field { display: flex; flex-direction: column; gap: 4px; }
+  .template-field label { font-size: 0.82rem; font-weight: 700; color: var(--vi-green-2); text-transform: uppercase; }
+  .template-field input, .template-field select {
+    padding: 8px 12px; border: 1px solid #a7f3d0; border-radius: 6px; font-family: inherit; font-size: 0.9rem; background: #f0fdf4;
+  }
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">03. Business Principles &bull; 06. Underpinning Economics &bull; Lesson 08</span>
+    <h1 class="hero-title">Six Sigma & Bản Chất Cơ Bản Của Kinh Doanh (Phần B)</h1>
+    <div class="hero-title-en">Six Sigma and the Basic Nature of Business &minus; Part B: Variance Reduction & 6-Sigma Robustness Against Mean Shifts</div>
+    <p class="hero-desc">
+      Tổng kết toàn diện học thuyết kinh tế học Six Sigma của TS. Mikel Harry: Sức mạnh thần kỳ của việc giảm phương sai chi phí biến đổi, cơ chế miễn nhiễm tài chính (Robustness) ở mức năng lực 6 Sigma trước các biến động dịch chuyển tâm quy trình (1.5&sigma; shift), và sứ mệnh tối thượng của SSMI.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 / Pillar 1</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành 60 Giây</h2>
+    <div class="section-subheading">Executive Summary &minus; Variance Reduction & Robustness</div>
+    
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Sức Mạnh Của Việc Giảm Phương Sai (&sigma;<sup>2</sup> &darr;):</strong> Ngay cả khi chi phí trung bình (&mu;) giữ nguyên, việc giảm phương sai của chi phí biến đổi sẽ co hẹp diện tích đuôi phân phối, làm giảm mạnh xác suất vượt giá bán và triệt tiêu rủi ro thua lỗ kinh tế.</li>
+        <li><strong>Tính Vững Tuyệt Đối Ở Mức 6 Sigma (6-Sigma Robustness):</strong> Khi một quy trình đạt năng lực Six Sigma (<i>C<sub>pk</sub> &ge; 2.0</i>), dù tâm quy trình có bị dao động hoặc trôi dạt tự nhiên theo thời gian (1.5&sigma; shift), xác suất bị lỗ và tỷ lệ lỗi vẫn không thay đổi đáng kể về mặt thực tiễn (vẫn giữ vững mức chất lượng đẳng cấp thế giới).</li>
+        <li><strong>Mối Liên Kết Trực Tiếp: Năng Lực Quy Trình & Chi Phí Chất Lượng:</strong> Chi phí chất lượng kém (COPQ) tỷ lệ nghịch trực tiếp với năng lực quy trình <i>C<sub>pk</sub></i>. Tăng <i>C<sub>pk</sub></i> là đòn bẩy mạnh nhất để triệt tiêu COPQ và giải phóng dòng tiền thặng dư.</li>
+        <li><strong>Sứ Mệnh Cốt Lõi Của Six Sigma (The Aim of Six Sigma):</strong> Six Sigma sinh ra không phải để làm toán thống kê phức tạp, mà để mang lại sự vững vàng về mặt kinh tế (Economic Robustness), bảo vệ dòng tiền lợi nhuận của doanh nghiệp trước mọi biến động thị trường.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 / Pillar 2</span>
+    <h2 class="section-heading">Mô Hình Nén Phương Sai & Cơ Chế Miễn Nhiễm Dịch Tâm 1.5&sigma;</h2>
+    <div class="section-subheading">Variance Compression & The 1.5-Sigma Shift Economic Immunity Model</div>
+
+    <p>
+      Hãy cùng phân tích cơ chế tương tác giữa việc giảm phương sai và tính vững trước hiện tượng trôi dạt tâm quy trình theo thời gian:
+    </p>
+
+    <!-- Visual Variance & Shift Box -->
+    <div style="background:#022c22; color:#fff; border-radius:10px; padding:24px; margin:20px 0; border:1.5px solid var(--emerald);">
+      <div style="text-align:center; font-weight:800; color:var(--emerald-mint); margin-bottom:18px; text-transform:uppercase; letter-spacing:1px;">
+        Cơ Chế Tính Vững Kinh Tế Của Six Sigma (Economic Robustness Model)
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <!-- Left: Low Sigma Process with Shift -->
+        <div style="background:rgba(239,68,68,0.15); border:1.5px solid #f87171; border-radius:8px; padding:18px;">
+          <strong style="color:#fca5a5; font-size:1.05rem; display:block; margin-bottom:10px; text-align:center;">
+            1. Quy Trình Năng Lực Thấp (3&sigma; &minus; 4&sigma;)
+          </strong>
+          <p style="font-size:0.88rem; color:#fee2e2; line-height:1.5;">
+            &bull; Phương sai lớn (&sigma; rộng) &rarr; Đuôi chi phí áp sát Giá bán.<br>
+            &bull; Khi có biến động nhỏ về căn chỉnh hoặc ca kíp (Dịch tâm 1.5&sigma;), diện tích đuôi <strong>tràn mạnh qua vạch Giá bán</strong>.<br>
+            &bull; <em>Hệ quả:</em> Công ty lập tức rơi vào khủng hoảng thua lỗ và phát sinh chi phí lỗi hàng loạt.
+          </p>
+          <div style="text-align:center; background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; color:#fca5a5; font-weight:bold; font-size:0.85rem;">
+            ❌ Cực kỳ nhạy cảm và dễ tổn thương trước biến động!
+          </div>
+        </div>
+
+        <!-- Right: Six Sigma Process with Shift -->
+        <div style="background:rgba(16,185,129,0.15); border:1.5px solid #34d399; border-radius:8px; padding:18px;">
+          <strong style="color:#6ee7b7; font-size:1.05rem; display:block; margin-bottom:10px; text-align:center;">
+            2. Quy Trình Six Sigma Vững Vàng (6&sigma;)
+          </strong>
+          <p style="font-size:0.88rem; color:#d1fae5; line-height:1.5;">
+            &bull; Phương sai siêu nhỏ (&sigma; cực hẹp) &rarr; Tâm chi phí cách rất xa Giá bán.<br>
+            &bull; Dù tâm quy trình có bị trôi lệch tối đa 1.5&sigma; trong dài hạn, phân phối chi phí vẫn <strong>nằm trọn vẹn trong vùng có lãi</strong>.<br>
+            &bull; <em>Hệ quả:</em> Xác suất lỗ thực tế vẫn giữ mức &lt; 3.4 phần triệu (Không đổi về mặt thực tiễn).
+          </p>
+          <div style="text-align:center; background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; color:#6ee7b7; font-weight:bold; font-size:0.85rem;">
+            ✅ Miễn nhiễm kinh tế & Bền vững tuyệt đối!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Math Card 1: Variance Reduction Impact -->
+    <div class="math-card">
+      <div class="title">1. Tác Động Của Việc Giảm Phương Sai Lên Xác Suất Rủi Ro (Variance Reduction Impact)</div>
+      <div class="math-equation">
+        <span class="math-var">Var(Cost<sub>total</sub>)</span> = 
+        <span class="math-var">&sigma;<sub>VC</sub><sup>2</sup></span> = 
+        &sum;<sub>i=1</sub><sup>k</sup> <span class="math-var">w<sub>i</sub><sup>2</sup> &sigma;<sub>X<sub>i</sub></sub><sup>2</sup></span>
+      </div>
+      <div class="desc">
+        <strong>Ý nghĩa kiểm soát nguyên nhân gốc (<i>Y = f(X)</i>):</strong><br>
+        &bull; <strong>Var(Cost<sub>total</sub>):</strong> Tổng phương sai chi phí biến đổi của doanh nghiệp.<br>
+        &bull; <strong>&sigma;<sub>X<sub>i</sub></sub><sup>2</sup>:</strong> Phương sai biến động của các biến số đầu vào <i>X<sub>i</sub></i> (nhiệt độ, áp suất, kỹ năng nhân viên, chất lượng nguyên liệu nhà cung cấp).<br>
+        &bull; <strong>w<sub>i</sub>:</strong> Trọng số tác động của từng biến số <i>X<sub>i</sub></i> lên chi phí đầu ra.<br>
+        &bull; Khi Black Belt ứng dụng các công cụ Six Sigma để kiểm soát chặt từng biến số <i>X<sub>i</sub></i>, tổng phương sai &sigma;<sub>VC</sub><sup>2</sup> sẽ giảm theo hàm bậc hai, giúp nén chặt đường cong phân phối chi phí và loại bỏ hoàn toàn rủi ro vượt giá bán.
+      </div>
+    </div>
+
+    <!-- Math Card 2: 1.5-Sigma Shift Robustness Equation -->
+    <div class="math-card">
+      <div class="title">2. Phương Trình Tính Vững Trước Độ Trôi Dạt Dài Hạn 1.5-Sigma (Long-term Robustness Equation)</div>
+      <div class="math-equation">
+        <span class="math-var">Z<sub>long_term</sub></span> = 
+        <span class="math-var">Z<sub>short_term</sub></span> &minus; 
+        1.5&sigma; &ge; 
+        6.0 &minus; 1.5 = 4.5
+      </div>
+      <div class="desc">
+        <strong>Trong đó:</strong><br>
+        &bull; <strong>Z<sub>short_term</sub>:</strong> Năng lực ngắn hạn ban đầu của quy trình (6.0&sigma;).<br>
+        &bull; <strong>1.5&sigma;:</strong> Mức dịch chuyển tâm trung bình theo thời gian đã được chứng minh bằng thực nghiệm tại Motorola.<br>
+        &bull; <strong>Z<sub>long_term</sub> = 4.5:</strong> Tương ứng với tỷ lệ lỗi tối đa chỉ là <strong>3.4 DPMO</strong> và COPQ &lt; 1%. Điều này chứng minh quy trình Six Sigma luôn giữ được biên an toàn tài chính cực kỳ vững chắc ngay cả trong điều kiện vận hành xấu nhất.
+      </div>
+    </div>
+
+    <!-- MBB Box -->
+    <div class="mbb-box">
+      <div class="title">💡 Lời Kết Của TS. Mikel Harry Về Nền Tảng Kinh Tế Six Sigma</div>
+      <p>
+        <em>"As my variable cost moves around over time, if I start with the Six Sigma level of capability, then as I have little perturbations in centering, the probability of loss does not appreciably change in a practical or pragmatic way. It also reduces the cost of quality because it is directly related to process capability. That is how it all comes together and what the aim of Six Sigma is."</em><br>
+        (Khi chi phí biến đổi dao động theo thời gian, nếu xuất phát ở mức năng lực Six Sigma, thì dù có những xáo trộn nhỏ về tâm quy trình, xác suất bị lỗ cũng không hề thay đổi đáng kể về mặt thực tiễn. Nó cũng triệt tiêu chi phí chất lượng vì liên quan trực tiếp đến năng lực quy trình. Đó chính là cách mọi mảnh ghép liên kết lại và là mục tiêu tối thượng của Six Sigma).
+      </p>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 / Pillar 3</span>
+    <h2 class="section-heading">Tình Huống Thực Chiến & Đối Chiếu Quản Trị</h2>
+    <div class="section-subheading">Real-World Case Studies & Long-Term Robustness</div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Dược Phẩm / High-Speed Pharmaceutical Packaging</span>
+      <h3 class="case-title">Case Study 1: Tính Vững Của Dây Chuyền Đóng Gói Vỉ Thuốc Trước Biến Động Nhiệt Độ Môi Trường</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Dây chuyền hàn nhiệt vỉ thuốc viên nén hoạt động ở mức 3.8 Sigma. Vào mùa hè khi nhiệt độ và độ ẩm nhà xưởng tăng lên (dịch tâm quy trình 1.2&sigma;), tỷ lệ rò rỉ khí của vỉ thuốc tăng từ 0.8% lên 4.5%, khiến nhà máy phải dừng chuyền liên tục để kiểm tra, thiệt hại 650.000 USD/tháng.<br>
+        <strong>Triển khai Six Sigma:</strong> Nhóm Black Belt thiết kế hệ thống điều khiển phản hồi kín (Closed-loop PID) tự động bù nhiệt và áp suất theo cảm biến môi trường, nâng năng lực ngắn hạn lên 6.2 Sigma.<br>
+        <strong>Kết quả dài hạn:</strong> Bất chấp nhiệt độ môi trường thay đổi giữa các mùa, tỷ lệ rò rỉ duy trì ổn định &lt; 2 phần triệu trong suốt 3 năm liên tiếp. Chi phí vận hành không hề bị xáo trộn.
+      </p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Điện Toán Đám Mây / Enterprise Cloud SLA Compliance</span>
+      <h3 class="case-title">Case Study 2: Đảm Bảo Cam Kết SLA 99.999% Cho Hạ Tầng Cơ Sở Dữ Liệu</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Nhà cung cấp dịch vụ Database-as-a-Service cam kết thời gian phản hồi truy vấn &lt; 50ms cho các ngân hàng đối tác. Mức phạt vi phạm SLA là 100.000 USD/giờ nếu vi phạm quá 0.01% tổng số truy vấn.<br>
+        <strong>Thách thức:</strong> Vào các khung giờ cao điểm (Peak hours), tải hệ thống tăng đột biến (Mean shift), thời gian phản hồi bị kéo dài và gây phạt hợp đồng hàng quý.<br>
+        <strong>Tối ưu hóa Six Sigma:</strong> Áp dụng thuật toán phân bổ tải động (Dynamic Load Sharding) và tối ưu hóa bộ nhớ đệm đưa năng lực phản hồi lên mức 6 Sigma.<br>
+        <strong>Hiệu quả kinh tế:</strong> Hệ thống hoàn toàn miễn nhiễm trước các đợt bùng nổ truy vấn ngày Black Friday, tiền phạt vi phạm SLA giảm về 0 USD và uy tín thương hiệu được nâng lên tầm thế giới.
+      </p>
+    </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px; font-size:1.25rem;">Bảng So Sánh Tổng Kết Toàn Diện: 4-Sigma vs 6-Sigma Economics</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Đặc Tính Kinh Tế<span class="th-vi">Economic Characteristic</span></th>
+          <th>Doanh Nghiệp Mức 4 Sigma<span class="th-vi">4-Sigma Typical Enterprise</span></th>
+          <th>Doanh Nghiệp Đẳng Cấp 6 Sigma<span class="th-vi">6-Sigma World-Class Enterprise</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tỷ lệ khuyết tật (DPMO)</strong></td>
+          <td>6.210 DPMO (~0.62% lỗi).<span class="td-sub">Chấp nhận sai sót ở mức trung bình</span></td>
+          <td>3.4 DPMO (&lt; 0.00034% lỗi).<span class="td-sub">Gần như hoàn hảo tuyệt đối (Chênh lệch 2.000X)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tổn thất doanh thu COPQ</strong></td>
+          <td>15% &minus; 25% tổng doanh thu hàng năm.<span class="td-sub">Nuôi "nhà máy ngầm" khổng lồ</span></td>
+          <td>Dưới 1% tổng doanh thu.<span class="td-sub">Giải phóng 19% biên lợi nhuận ròng</span></td>
+        </tr>
+        <tr>
+          <td><strong>Độ nhạy cảm trước biến động</strong></td>
+          <td>Cực kỳ mong manh; một sự cố nhỏ sẽ làm bùng nổ chi phí lỗi.<span class="td-sub">High vulnerability to mean shifts</span></td>
+          <td>Miễn nhiễm tuyệt đối; giữ vững lợi nhuận trước mọi dao động 1.5&sigma;.<span class="td-sub">Robust economic immunity</span></td>
+        </tr>
+        <tr>
+          <td><strong>Trọng tâm quản trị</strong></td>
+          <td>Kiểm tra, phát hiện, sửa lỗi và chữa cháy sự cố (Reactive DAF).<span class="td-sub">Chi phí kiểm soát ngày càng đắt</span></td>
+          <td>Kiểm soát biến số đầu vào <i>Y = f(X)</i> và phòng ngừa chủ động.<span class="td-sub">Lowest total cost leadership</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num" style="background:#059669; color:#fff;">Trụ Cột 4 / Pillar 4</span>
+    <h2>Đấu Trường Tương Tác & Bài Tập Tình Huống</h2>
+    <div class="arena-desc">Interactive Arena &minus; Scenario-Based Quizzes & 3D Flashcards</div>
+
+    <!-- QUIZ 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Hiểu Nguyên Lý Giảm Phương Sai</span>
+      <div class="quiz-q">1. Khi doanh nghiệp giảm thành công phương sai của chi phí biến đổi (&sigma;<sub>VC</sub><sup>2</sup> &darr;) trong khi chi phí trung bình (&mu;<sub>VC</sub>) giữ nguyên, điều gì sẽ xảy ra với xác suất thua lỗ?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-8-q1', 'Correct! Reducing variance narrows the distribution spread, compressing the tail area beyond the sales price and significantly lowering the probability of loss.', 'Chính xác! Giảm phương sai làm co hẹp độ phân tán của phân phối, thu nhỏ phần diện tích đuôi vượt qua giá bán và làm giảm mạnh xác suất thua lỗ kinh tế!')">A. Xác suất thua lỗ giảm xuống rõ rệt vì phần diện tích đuôi vượt qua giá bán đã bị co hẹp lại.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q1', 'Incorrect. Variance reduction directly lowers tail risk even if the mean is constant.', 'Sai. Giảm phương sai trực tiếp làm giảm rủi ro đuôi ngay cả khi trung bình không đổi.')">B. Xác suất thua lỗ không đổi vì chi phí trung bình vẫn như cũ.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q1', 'Incorrect. Tail area decreases, reducing loss risk.', 'Sai. Diện tích đuôi giảm đi chứ không làm tăng nguy cơ lỗ.')">C. Xác suất thua lỗ tăng lên do chi phí cố định bị ảnh hưởng.</button>
+      </div>
+      <div id="fb-8-q1" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Khái Niệm Robustness</span>
+      <div class="quiz-q">2. Khái niệm "Economic Robustness" (Tính vững kinh tế) ở mức năng lực Six Sigma có nghĩa là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q2', 'Incorrect. It is not about zero variation, but about being resilient against practical mean shifts without losing profitability.', 'Sai. Không có quy trình nào hoàn toàn không biến động; tính vững là khả năng chống chịu trước các biến động dịch tâm thực tế mà không làm suy giảm lợi nhuận.')">A. Quy trình hoàn toàn đóng băng và không bao giờ có bất kỳ biến động nào xảy ra.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-8-q2', 'Correct! 6-Sigma capability ensures that minor centering perturbations and long-term 1.5-Sigma drifts do not appreciably change the probability of loss in a pragmatic way.', 'Chính xác! Năng lực Six Sigma đảm bảo rằng những dao động nhỏ về căn chỉnh tâm quy trình và độ trôi dạt dài hạn 1.5 Sigma không làm thay đổi đáng kể xác suất thua lỗ về mặt thực tiễn!')">B. Khả năng quy trình duy trì xác suất thua lỗ và chi phí chất lượng kém ở mức cực thấp (&lt;1%) bất chấp những dao động dịch chuyển tâm tự nhiên (1.5&sigma; shift) theo thời gian.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q2', 'Incorrect. It is achieved through upstream variance control, not inventory buffers.', 'Sai. Tính vững đạt được nhờ kiểm soát phương sai tại nguồn, không phải nhờ tăng kho hàng đệm.')">C. Khả năng công ty vay được nhiều vốn ngân hàng hơn trong thời kỳ khủng hoảng.</button>
+      </div>
+      <div id="fb-8-q2" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: So Sánh Hai Quy Trình</span>
+      <div class="quiz-q">3. Dây chuyền A có &mu; = 80 USD, &sigma; = 10 USD. Dây chuyền B có &mu; = 80 USD, &sigma; = 3 USD. Giá bán sản phẩm là 100 USD (bỏ qua định phí). Nhận định nào sau đây là chính xác về mặt tài chính?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q3', 'Incorrect. Z_A = (100 - 80) / 10 = 2.0 (P_loss = 2.28%). Z_B = (100 - 80) / 3 = 6.67 (P_loss ~ 0). B is far safer!', 'Sai. Z_A = 2.0 (Xác suất lỗ 2.28%). Z_B = 6.67 (Xác suất lỗ tiệm cận 0). Dây chuyền B an toàn vượt trội!')">A. Hai dây chuyền có mức độ rủi ro thua lỗ hoàn toàn giống nhau vì chi phí trung bình đều bằng 80 USD.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-8-q3', 'Correct! Z_A = (100-80)/10 = 2.0 -> P(Loss) = 2.28%. Z_B = (100-80)/3 = 6.67 -> P(Loss) < 0.000001%. Line B possesses near absolute economic immunity!', 'Chính xác! <i>Z<sub>A</sub></i> = (100&minus;80)/10 = 2.0 &rarr; <i>P(Loss)</i> &approx; 2.28%. Trong khi <i>Z<sub>B</sub></i> = (100&minus;80)/3 = 6.67 &rarr; <i>P(Loss)</i> &lt; 0.000001%. Dây chuyền B sở hữu tính vững kinh tế tuyệt đối!')">B. Dây chuyền B an toàn gấp hàng nghìn lần dây chuyền A vì độ lệch chuẩn nhỏ hơn giúp đẩy chỉ số <i>Z</i> lên tới 6.67, triệt tiêu hoàn toàn rủi ro bán lỗ.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q3', 'Incorrect. Line A has higher variance, meaning higher tail risk.', 'Sai. Dây chuyền A có phương sai lớn hơn nên rủi ro thua lỗ cao hơn nhiều.')">C. Dây chuyền A tốt hơn vì có độ linh hoạt chi phí cao hơn.</button>
+      </div>
+      <div id="fb-8-q3" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Phân Tích Độ Trôi Dạt 1.5-Sigma</span>
+      <div class="quiz-q">4. Một quy trình đạt năng lực ngắn hạn <i>Z<sub>short_term</sub></i> = 6.0. Khi xét trong dài hạn với giả định tâm quy trình bị trôi lệch điển hình 1.5&sigma;, năng lực dài hạn <i>Z<sub>long_term</sub></i> và tỷ lệ khuyết tật kỳ vọng là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q4', 'Incorrect. 6.0 - 1.5 = 4.5 Sigma, which equals 3.4 DPMO.', 'Sai. 6.0 - 1.5 = 4.5 Sigma, tương ứng chính xác với 3.4 DPMO.')">A. <i>Z<sub>long_term</sub></i> = 4.0 và 6.210 DPMO</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-8-q4', 'Correct! 6.0 - 1.5 = 4.5 Sigma, which corresponds exactly to the world-famous benchmark of 3.4 DPMO &minus; the foundational definition of Six Sigma quality.', 'Chính xác! <i>Z<sub>long_term</sub></i> = 6.0 &minus; 1.5 = 4.5&sigma;, tương ứng chính xác với định chuẩn thế giới 3.4 DPMO &minus; định nghĩa nền tảng của chất lượng Six Sigma!')">B. <i>Z<sub>long_term</sub></i> = 4.5 và 3.4 DPMO</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q4', 'Incorrect. 233 DPMO is for 5.0 Sigma long-term.', 'Sai. 233 DPMO là của mức 5.0 Sigma dài hạn.')">C. <i>Z<sub>long_term</sub></i> = 5.0 và 233 DPMO</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q4', 'Incorrect. 308,537 DPMO is for 2.0 Sigma.', 'Sai. 308.537 DPMO là của mức 2.0 Sigma.')">D. <i>Z<sub>long_term</sub></i> = 2.0 và 308.537 DPMO</button>
+      </div>
+      <div id="fb-8-q4" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Tuyên Ngôn Sứ Mệnh Của Black Belt</span>
+      <div class="quiz-q">5. Đâu là định nghĩa chuẩn xác nhất về mục tiêu cốt lõi của Six Sigma (The Aim of Six Sigma) theo TS. Mikel Harry?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q5', 'Incorrect. Statistical tools and software are merely means, not the ultimate economic aim.', 'Sai. Công cụ thống kê và phần mềm chỉ là phương tiện kỹ thuật, không phải mục tiêu tối thượng.')">A. Áp dụng tối đa các công thức toán học và phần mềm thống kê phức tạp vào mọi cuộc họp công ty.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-8-q5', 'Correct! The ultimate aim of Six Sigma is to create economic robustness by aligning process capability directly with cost reduction, variance minimization, and profit protection.', 'Chính xác! Mục tiêu tối thượng của Six Sigma là thiết lập tính vững vàng kinh tế bằng cách liên kết trực tiếp năng lực quy trình với việc cắt giảm chi phí chất lượng kém, nén chặt phương sai và bảo vệ dòng tiền lợi nhuận trước mọi biến động!')">B. Tạo dựng tính vững vàng kinh tế (Economic Robustness) cho tổ chức thông qua việc nâng cao năng lực quy trình, nén chặt phương sai biến phí và triệt tiêu COPQ để bảo vệ lợi nhuận bền vững.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q5', 'Incorrect. Six Sigma aims to cut appraisal costs, not increase inspection teams.', 'Sai. Six Sigma hướng tới loại bỏ trạm kiểm tra chứ không phải mở rộng phòng QC.')">C. Thành lập một phòng ban Kiểm tra Chất lượng thật lớn để giám sát nhân viên.</button>
+      </div>
+      <div id="fb-8-q5" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Hoạch Định Chiến Lược Doanh Nghiệp 5 Năm</span>
+      <div class="quiz-q">6. Khi xây dựng chiến lược phát triển 5 năm cho một tập đoàn đa ngành, Chủ tịch Hội đồng Quản trị nên tích hợp triết lý kinh tế Six Sigma vào chỉ tiêu nào sau đây để đảm bảo tăng trưởng bền vững nhất?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-8-q6', 'Correct! Mandating Cpk >= 2.0 (6 Sigma) across all core processes guarantees world-class cost leadership, near-zero COPQ (<1%), and immunity against market shifts.', 'Chính xác! Đưa chỉ tiêu năng lực quy trình <i>C<sub>pk</sub> &ge; 2.0</i> (Six Sigma) vào toàn bộ các quy trình cốt lõi &minus; đảm bảo dẫn đầu về chi phí thấp nhất ngành, giải phóng 19% biên lợi nhuận và miễn nhiễm trước các cú sốc thị trường!')">A. Đưa chỉ tiêu năng lực quy trình <i>C<sub>pk</sub> &ge; 2.0</i> (Six Sigma) vào các quy trình kinh doanh trọng yếu, gắn liền việc giảm COPQ (&lt;1% doanh thu) với chỉ tiêu KPI tài chính của toàn bộ Ban Điều Hành.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q6', 'Incorrect. Revenue growth without process capability leads to scaled-up COPQ bleed.', 'Sai. Tăng trưởng doanh thu mà quy trình yếu kém chỉ làm nhân rộng số tiền thất thoát cho nhà máy ngầm.')">B. Chỉ đặt mục tiêu tăng trưởng doanh thu 30%/năm bằng mọi giá mà không cần quan tâm đến tỷ lệ lỗi nội bộ.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q6', 'Incorrect. Pure cost cutting without variance control triggers quality collapses.', 'Sai. Cắt giảm chi phí hành chính thuần túy mà không kiểm soát biến động quy trình sẽ dẫn đến sụp đổ chất lượng.')">C. Cắt giảm 20% lương của toàn bộ nhân viên để cải thiện lợi nhuận ngắn hạn.</button>
+      </div>
+      <div id="fb-8-q6" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Khép Lại Toàn Bộ Chương Underpinning Economics</span>
+      <div class="quiz-q">7. Điểm cốt lõi xuyên suốt toàn bộ 8 bài học của chương "Underpinning Economics" là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-8-q7', 'Correct! Quality is not an added cost &minus; poor quality is the massive hidden cost destroying businesses. Six Sigma capability is the ultimate financial weapon for competitive advantage.', 'Chính xác! Chất lượng không làm tăng chi phí &minus; chính chất lượng kém mới là chi phí khổng lồ đang phá hủy doanh nghiệp. Năng lực Six Sigma là vũ khí tài chính tối thượng mang lại lợi thế cạnh tranh áp đảo!')">A. Chất lượng không phải là khoản chi phí phát sinh &minus; chính chất lượng kém (COPQ) mới là gánh nặng chi phí khổng lồ (15% &minus; 40% doanh thu) đang bào mòn doanh nghiệp. Six Sigma là chiến lược kinh tế tài chính giúp đạt chi phí thấp nhất và biên lợi nhuận cao nhất.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q7', 'Incorrect. Quality inspection is NVA; prevention delivers financial victory.', 'Sai. Kiểm tra chất lượng là lãng phí; phòng ngừa mới là chìa khóa chiến thắng.')">B. Kiểm tra chất lượng càng nhiều thì công ty càng kiếm được nhiều tiền.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-8-q7', 'Incorrect. Traditional accounting has massive blindspots.', 'Sai. Kế toán truyền thống bị mù trước các chi phí ẩn của chất lượng kém.')">C. Hệ thống kế toán truyền thống đã hoàn hảo và không cần cải tiến thêm.</button>
+      </div>
+      <div id="fb-8-q7" class="quiz-fb"></div>
+    </div>
+
+    <!-- 3D FLASHCARDS -->
+    <h3 style="color:#fff; margin-top:36px; font-size:1.3rem;">Thẻ Lật 3D Ôn Tập Nhanh (Executive Flashcards)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Variance Reduction</div>
+        <div class="hint">Nhấp để xem bản chất nén phương sai &bull; Click to flip</div>
+        <div class="back"><strong>Nén Phương Sai Biến Phí</strong><br>Giảm &sigma;<sup>2</sup> giúp co hẹp dải chi phí &rarr; Triệt tiêu phần đuôi rủi ro vượt giá bán &rarr; Đảm bảo 100% đơn hàng sinh lời.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">1.5&sigma; Shift Immunity</div>
+        <div class="hint">Nhấp để xem miễn nhiễm trôi tâm &bull; Click to flip</div>
+        <div class="back"><strong>Miễn Nhiễm Dịch Tâm 1.5&sigma;</strong><br>Ở mức 6&sigma; ngắn hạn, dù tâm có trôi 1.5&sigma; trong dài hạn thì chất lượng vẫn đạt 4.5&sigma; (3.4 DPMO) &minus; Miễn nhiễm trước rủi ro kinh tế!</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Capability &harr; COPQ Link</div>
+        <div class="hint">Nhấp để xem mối liên kết trực tiếp &bull; Click to flip</div>
+        <div class="back"><strong>Liên Kết C<sub>pk</sub> & COPQ</strong><br>Năng lực quy trình tăng &rarr; COPQ giảm tiệm cận 0 &rarr; Doanh nghiệp sở hữu lợi thế chi phí thấp nhất toàn cầu.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">The Ultimate Aim</div>
+        <div class="hint">Nhấp để xem sứ mệnh tối thượng &bull; Click to flip</div>
+        <div class="back"><strong>Mục Tiêu Tối Thượng Của Six Sigma</strong><br>Thiết lập tính vững vàng kinh tế (Economic Robustness), bảo vệ dòng tiền lợi nhuận thuần cho tổ chức trường tồn.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: ACTION CHECKLIST & TEMPLATE -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 / Pillar 5</span>
+    <h2 class="section-heading">1-Page Action Checklist & Lộ Trình Triển Khai Tính Vững Six Sigma</h2>
+    <div class="section-subheading">Action Checklist & Six Sigma Economic Robustness Roadmap</div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk8-1">
+      <div class="action-text">
+        <label for="chk8-1"><strong>Hành Động 1: Nhận Diện Các Biến Số Đầu Vào Gây Ra Phương Sai Chi Phí</strong><br>
+        Sử dụng biểu đồ xương cá (Ishikawa) và Ma trận Nguyên nhân - Kết quả (C&E Matrix) để xác định các biến số <i>X</i> có độ biến động cao nhất ảnh hưởng đến biến phí.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk8-2">
+      <div class="action-text">
+        <label for="chk8-2"><strong>Hành Động 2: Thiết Lập Cơ Chế Kiểm Soát Thống Kê Quá Trình (SPC)</strong><br>
+        Lắp đặt biểu đồ kiểm soát (X̄ &minus; R) hoặc (X̄ &minus; S) tại các công đoạn trọng yếu để phát hiện sớm xu hướng dịch tâm trước khi phát sinh lỗi.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk8-3">
+      <div class="action-text">
+        <label for="chk8-3"><strong>Hành Động 3: Tổng Kết Giá Trị Kinh Tế Của Toàn Bộ Chương Học</strong><br>
+        Trình bày bản báo cáo Executive Summary cho Ban Giám đốc về lợi ích giải phóng 19% biên lợi nhuận thông qua việc chuyển dịch từ 4&sigma; lên 6&sigma;.</label>
+      </div>
+    </div>
+
+    <!-- Final Strategy Template -->
+    <div class="template-box">
+      <h4>📋 Kế Hoạch Chiến Lược Xây Dựng Tính Vững Kinh Tế (Economic Robustness Plan)</h4>
+      <div class="template-grid">
+        <div class="template-field">
+          <label>Tên Dự Án Chiến Lược</label>
+          <input type="text" placeholder="VD: Six Sigma Variance Compression 2026">
+        </div>
+        <div class="template-field">
+          <label>Mục Tiêu Năng Lực Quy Trình Cpk</label>
+          <input type="text" placeholder="VD: Nâng từ Cpk = 1.2 lên Cpk >= 2.0">
+        </div>
+        <div class="template-field">
+          <label>Chỉ Số Z-Score Đến Giá Bán Kỳ Vọng</label>
+          <input type="text" placeholder="VD: Z >= 6.0 (P(Loss) tiệm cận 0)">
+        </div>
+        <div class="template-field">
+          <label>Mức Tiết Kiệm COPQ Mục Tiêu ($/năm)</label>
+          <input type="number" placeholder="VD: 5500000">
+        </div>
+        <div class="template-field">
+          <label>Cơ Chế Khóa Tâm Quy Trình</label>
+          <input type="text" placeholder="VD: Poka-Yoke cơ khí + Cảm biến IoT tự động">
+        </div>
+        <div class="template-field">
+          <label>Chủ Nhiệm Dự Án (Lead MBB)</label>
+          <input type="text" placeholder="VD: Master Black Belt Team Lead">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

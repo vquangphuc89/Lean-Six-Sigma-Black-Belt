@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phát Triển Đường Cơ Sở Năng Lực Quy Trình — Six Sigma Masterclass</title>
+<style>
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.68;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  .pro-tip {
+    background: var(--gold-bg);
+    border: 1px solid #fde68a;
+    border-left: 6px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 22px 0;
+  }
+  .pro-tip-title { font-size: 0.95rem; font-weight: 800; color: var(--wood-bark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pro-tip-desc { font-size: 0.96rem; color: #713f12; margin: 0; }
+
+  /* Native Math Cards */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* VS Grid */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: stretch;
+    margin: 22px 0;
+  }
+  .vs-col {
+    padding: 22px 24px;
+    border-radius: 12px;
+  }
+  .vs-col.bad {
+    background: #fef2f2;
+    border: 1.5px solid #fecaca;
+    border-left: 5px solid var(--red);
+  }
+  .vs-col.good {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-left: 5px solid var(--green);
+  }
+  .vs-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .vs-badge.bad { background: #fee2e2; color: var(--red); }
+  .vs-badge.good { background: #dcfce7; color: var(--green); }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { font-size: 0.93rem; margin-bottom: 8px; color: #1e293b; }
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: var(--wood-dark);
+    font-size: 1.1rem;
+    padding: 0 6px;
+  }
+
+  /* Case Study Cards */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 22px 0;
+  }
+  .case-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .case-card.mfg { border-top: 4px solid #0284c7; }
+  .case-card.svc { border-top: 4px solid #7c3aed; }
+  .case-tag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .case-tag.mfg { color: #0284c7; }
+  .case-tag.svc { color: #7c3aed; }
+  .case-title { font-size: 1.12rem; font-weight: 700; color: var(--wood-dark); margin: 0 0 8px; }
+  .case-body { font-size: 0.92rem; color: #334155; line-height: 1.6; }
+  .case-metric {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: #0f172a;
+  }
+
+  /* Interactive Arena */
+  .interactive-arena {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    border-radius: 16px;
+    padding: 38px 40px;
+    margin: 40px 0;
+    color: #ffffff;
+    box-shadow: 0 12px 36px rgba(2,44,34,0.4);
+    border: 2px solid var(--emerald);
+  }
+  .interactive-arena h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px;
+  }
+  .arena-desc {
+    color: var(--emerald-mint);
+    font-size: 1.02rem;
+    margin-bottom: 28px;
+  }
+
+  .quiz-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+  .quiz-tag {
+    display: inline-block;
+    background: rgba(16,185,129,0.25);
+    border: 1px solid var(--emerald-mint);
+    color: var(--emerald-mint);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .quiz-q {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ecfdf5;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.96rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .quiz-btn:hover {
+    background: rgba(16,185,129,0.2);
+    border-color: var(--emerald-mint);
+    transform: translateX(4px);
+  }
+  .quiz-btn.correct {
+    background: var(--green) !important;
+    border-color: #86efac !important;
+    color: #ffffff !important;
+    font-weight: 700;
+  }
+  .quiz-btn.wrong {
+    background: var(--red) !important;
+    border-color: #fca5a5 !important;
+    color: #ffffff !important;
+  }
+  .quiz-fb {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+  .quiz-fb.show { display: block; animation: fadeIn 0.3s ease; }
+  .quiz-fb.success {
+    background: rgba(22,163,74,0.25);
+    border: 1px solid #86efac;
+    color: #dcfce7;
+  }
+  .quiz-fb.error {
+    background: rgba(185,28,28,0.25);
+    border: 1px solid #fca5a5;
+    color: #fee2e2;
+  }
+
+  /* 3D Flashcards */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .flashcard {
+    perspective: 1000px;
+    min-height: 190px;
+    cursor: pointer;
+  }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 12px;
+  }
+  .flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+  }
+  .flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 22px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flashcard-front {
+    background: linear-gradient(145deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
+    border: 1.5px solid var(--emerald-mint);
+    color: #ffffff;
+  }
+  .flashcard-front .term { font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
+  .flashcard-front .term-vi { font-size: 0.9rem; color: var(--emerald-mint); font-style: italic; }
+  .flashcard-front .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
+  
+  .flashcard-back {
+    background: linear-gradient(145deg, #064e3b, #047857);
+    border: 1.5px solid #86efac;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    text-align: left;
+  }
+  .flashcard-back strong { color: #fef08a; }
+  .flashcard-back .vi { display: block; margin-top: 8px; color: #d1fae5; font-size: 0.86rem; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 6px; }
+
+  /* Action Checklist */
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #e2e8f0;
+  }
+  .action-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--emerald);
+    cursor: pointer;
+    margin-top: 3px;
+  }
+  .action-text {
+    font-size: 0.96rem;
+    color: #1e293b;
+    line-height: 1.55;
+  }
+  .action-text strong { color: var(--wood-dark); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media(max-width: 768px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-divider { display: none; }
+    .case-grid { grid-template-columns: 1fr; }
+    .section-card { padding: 22px 18px; }
+    .interactive-arena { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">04. Process Management • 04. Establishing Baselines</span>
+    <h1 class="hero-title">Phát Triển Đường Cơ Sở Năng Lực Quy Trình</h1>
+    <div class="hero-title-en">Development of Process Capability Baselines</div>
+    <p class="hero-desc">Quy trình 5 bước phát triển đường cơ sở năng lực chuẩn tắc: Tách biệt biến động ngắn hạn Z_ST và dài hạn Z_LT, tích hợp phân tích tiềm năng Cp và thực tế Cpk.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PHẦN 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Phần 1 • Executive Summary</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành (Executive Summary)</h2>
+    <div class="section-subheading">Nắm trọn tinh hoa bài học trong 60 giây</div>
+    <div class="exec-summary"><ul><li>Đường cơ sở năng lực (Process Capability Baseline) là bản tổng phổ đánh giá khả năng đáp ứng yêu cầu kỹ thuật của khách hàng.</li><li>Phân biệt rõ ràng giữa Năng lực Tiềm năng ($C_p$) và Năng lực Thực tế ($C_{pk}$): $C_p$ phản ánh độ rộng của phân bố, $C_{pk}$ phản ánh độ lệch tâm so với Target.</li><li>Dịch chuyển 1.5 Sigma của Motorola: Năng lực ngắn hạn ($Z_{ST}$) luôn vượt trội hơn năng lực dài hạn ($Z_{LT}$) một khoảng $1.5\sigma$ do trôi dạt nhiệt độ, mòn dao cụ và nguyên vật liệu.</li><li>Tác động điều hành: Đạt $C_{pk} \ge 1.67$ ($5.0\sigma$) ở trạng thái ngắn hạn đảm bảo trong dài hạn quy trình luôn vận hành an toàn trên $3.5\sigma$ ($C_{pk} \ge 1.17$).</li></ul></div>
+    <div class="pro-tip">
+      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Insight)</div>
+      <p class="pro-tip-desc">Đừng bao giờ nhầm lẫn giữa Z_ST và Z_LT. Khi báo cáo cho khách hàng, hãy chỉ rõ: 'Đây là năng lực ngắn hạn Z_ST = 6.0 hay năng lực dài hạn Z_LT = 4.5'!</p>
+    </div>
+  </section>
+
+  <!-- PHẦN 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Phần 2 • Core Frameworks &amp; Real Math</span>
+    <h2 class="section-heading">Nguyên Lý &amp; Công Thức Lượng Hóa</h2>
+    <div class="section-subheading">Các mô hình định lượng và công thức chuyển hóa hiệu suất thực chiến</div>
+    <p>Trong bài học thứ tám, Dr. Mikel Harry chuẩn hóa toán học phát triển đường cơ sở năng lực:</p>
+    
+    <div class="math-card">
+      <div class="title">1. Bộ Đôi Năng Lực Ngắn Hạn vs Dài Hạn / Short-Term vs Long-Term Z</div>
+      <div class="math-equation"><i>Z</i><sub>ST</sub> = <div class="math-frac"><div class="math-num"><i>Tolerance Width</i> / 2</div><div class="math-den"><i>&sigma;</i><sub>Within (ST)</sub></div></div> &nbsp;|&nbsp; <i>Z</i><sub>LT</sub> = <i>Z</i><sub>ST</sub> &minus; 1.50 <i>&sigma;</i></div>
+      <div class="desc"><strong>Mô hình Motorola:</strong><br>&bull; <strong>Z<sub>ST</sub> (Short-Term):</strong> Năng lực công nghệ tức thời trong 1 ca máy.<br>&bull; <strong>Z<sub>LT</sub> (Long-Term):</strong> Năng lực thực tế khách hàng trải nghiệm qua 6-12 tháng có tính đến trôi dạt 1.5&sigma;.</div>
+    </div>
+    <div class="math-card">
+      <div class="title">2. Mối Quan Hệ Giữa Cpk Và Z-Score / Cpk to Z Relationship</div>
+      <div class="math-equation"><i>Z</i><sub>ST</sub> &approx; 3 &times; <i>C<sub>pk</sub></i> &nbsp;&rArr;&nbsp; <i>C<sub>pk</sub></i> = 1.33 &hArr; <i>Z</i><sub>ST</sub> = 4.0&sigma; &nbsp;|&nbsp; <i>C<sub>pk</sub></i> = 2.00 &hArr; <i>Z</i><sub>ST</sub> = 6.0&sigma;</div>
+      <div class="desc"><strong>Quy đổi nhanh MBB:</strong><br>&bull; Nhân 3 lần chỉ số Cpk để ước lượng mức Sigma ngắn hạn tương ứng.</div>
+    </div>
+    <div class="math-card">
+      <div class="title">3. Hệ Số Lệch Tâm K / Off-Centering Index k</div>
+      <div class="math-equation"><i>k</i> = <div class="math-frac"><div class="math-num">|&mu; &minus; <i>Target</i>|</div><div class="math-den">(<i>USL</i> &minus; <i>LSL</i>)/2</div></div> &nbsp;&rArr;&nbsp; <i>C<sub>pk</sub></i> = <i>C<sub>p</sub></i> &times; (1 &minus; <i>k</i>)</div>
+      <div class="desc"><strong>Đo lường độ lệch tâm:</strong><br>&bull; k = 0 khi quy trình căn đúng tâm tuyệt đối; k &ge; 1 khi tâm quy trình vượt ra ngoài dung sai.</div>
+    </div>
+    <div class="pro-tip">
+      <div class="pro-tip-title">MBB Interpretation • Diễn giải điều hành</div>
+      <p class="pro-tip-desc">Phát triển đường cơ sở năng lực cho phép doanh nghiệp nhìn thấy trước tương lai. Nếu Z_ST chỉ đạt 3.0 Sigma, chắc chắn trong dài hạn Z_LT sẽ tụt xuống 1.5 Sigma và tạo ra thảm họa 66,800 DPMO phế phẩm.</p>
+    </div>
+  </section>
+
+  <!-- PHẦN 3: CASE STUDIES -->
+  <section class="section-card">
+    <span class="section-num">Phần 3 • Real-World Case Studies &amp; VS Comparison</span>
+    <h2 class="section-heading">Tình Huống Thực Chiến &amp; Bảng Đối Chiếu</h2>
+    <div class="section-subheading">Một lăng kính cho sản xuất, một lăng kính cho dịch vụ</div>
+    <div class="case-grid">
+      <div class="case-card mfg">
+        <span class="case-tag mfg">Sản xuất • Đúc nẹp kính chắn gió xe hơi</span>
+        <h3 class="case-title">Xác lập Baseline Cpk ngắn hạn và dài hạn</h3>
+        <p class="case-body">Đo lường 50 mẫu trong ca sáng: &mu; = 15.02 mm, &sigma;_within = 0.04 mm (Dung sai 15.00 &plusmn; 0.20 mm). Nhóm tính Z_ST = 0.18 / 0.04 = 4.5 Sigma (Cpk = 1.50). Khi theo dõi dữ liệu dài hạn 6 tháng: &sigma;_total = 0.09 mm do trôi nhiệt độ mùa hè/mùa đông. Z_LT thực tế chỉ đạt 3.0 Sigma.</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Lắp đặt phòng đúc kiểm soát nhiệt độ phòng &plusmn;1°C, đưa Z_LT dài hạn lên 4.6 Sigma, Cpk dài hạn đạt 1.53.</div>
+      </div>
+      <div class="case-card svc">
+        <span class="case-tag svc">Dịch vụ • Trung tâm Xử lý Giao dịch Chứng khoán</span>
+        <h3 class="case-title">Năng lực xử lý lệnh khớp trong giờ cao điểm</h3>
+        <p class="case-body">Thời gian khớp lệnh yêu cầu &le; 200 ms. Trong điều kiện thường (Ngắn hạn): &mu; = 45 ms, &sigma; = 15 ms &rarr; Z_ST = (200 - 45)/15 = 10.3 Sigma. Trong ngày đáo hạn phái sinh (Dài hạn): Lượng lệnh tăng đột biến khiến &mu; = 140 ms, &sigma; = 35 ms &rarr; Z_LT = 1.71 Sigma (Nhiều lệnh bị trễ &gt; 200 ms).</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Nâng cấp cụm máy chủ xử lý song song, bảo đảm Z_LT trong giờ cao điểm luôn &ge; 5.2 Sigma (Cpk &ge; 1.73).</div>
+      </div></div>
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Bad / Trap • Tư duy sai lầm</span>
+        <ul><li>Báo cáo hiệu suất chỉ bằng con số Năng suất cổ điển (Classic Yield) che giấu phế phẩm làm lại.</li><li>Bỏ qua sự khác biệt giữa Năng lực ngắn hạn (Z_ST) và Năng lực dài hạn (Z_LT), làm mất cơ sở dịch chuyển 1.5 Sigma.</li><li>Tính toán Baseline trên dữ liệu quy trình đang mất ổn định thống kê (Out of Control) có nguyên nhân đặc biệt.</li><li>Xem việc thiết lập đường cơ sở chỉ là thủ tục giấy tờ mà không gắn kết với mô hình chuyển đổi xác suất Poisson.</li></ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Good / MBB • Chuẩn Six Sigma</span>
+        <ul><li>Thiết lập Đường cơ sở Năng lực (Capability Baseline) khách quan dựa trên phân phối chuẩn tắc và dữ liệu ổn định.</li><li>Làm chủ họ Năng suất toàn diện: FTY (First Time Yield), RTY (Rolled Throughput Yield) và Y_norm (Normalized Yield).</li><li>Ứng dụng phân phối Poisson Y = e^(-DPU) để kết nối số lượng khuyết tật trên đơn vị với xác suất không có lỗi.</li><li>Chuyển đổi minh bạch giữa Xác suất lỗi, DPMO, Z_ST, Z_LT và các chỉ số Cpk trong báo cáo quản trị cấp cao.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num">Phần 4 • Interactive Arena</span>
+    <h2>Đấu Trường Trắc Nghiệm Tình Huống (Scenario-Based Practice)</h2>
+    <p class="arena-desc">Chọn một đáp án để nhận phản hồi tức thì bằng tiếng Anh chuyên ngành và tiếng Việt ứng dụng.</p>
+    
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 1 • Tầng 1 • Recall & Concept</span>
+      <div class="quiz-q">Theo mô hình chất lượng Six Sigma của Motorola, mức dịch chuyển tiêu chuẩn giữa năng lực ngắn hạn (Z_ST) và dài hạn (Z_LT) là bao nhiêu?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-1', &quot;Motorola standardizes a 1.50&amp;sigma; shift between short-term capability (Z_ST) and long-term reality (Z_LT).&quot;, &quot;Quy chuẩn Six Sigma tính đến độ trôi dạt 1.5 Sigma của quy trình trong dài hạn.&quot;)">A. Dịch chuyển 1.50 Sigma (Z_LT = Z_ST - 1.50&amp;sigma;)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-1', &quot;Motorola standardizes a 1.50&amp;sigma; shift between short-term capability (Z_ST) and long-term reality (Z_LT).&quot;, &quot;Quy chuẩn Six Sigma tính đến độ trôi dạt 1.5 Sigma của quy trình trong dài hạn.&quot;)">B. Dịch chuyển 0.50 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-1', &quot;Motorola standardizes a 1.50&amp;sigma; shift between short-term capability (Z_ST) and long-term reality (Z_LT).&quot;, &quot;Quy chuẩn Six Sigma tính đến độ trôi dạt 1.5 Sigma của quy trình trong dài hạn.&quot;)">C. Không có sự dịch chuyển nào</button></div>
+      <div id="fb-q8-1" class="quiz-fb"></div>
+    </div>
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 2 • Tầng 1 • Recall & Concept</span>
+      <div class="quiz-q">Khi một quy trình có chỉ số Cpk = 1.33, mức Sigma ngắn hạn (Z_ST) ước lượng tương đương là bao nhiêu?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-2', &quot;Z_ST &amp;approx; 3 × Cpk = 3 × 1.33 = 4.0 Sigma.&quot;, &quot;Quy tắc nhân 3: Cpk = 1.33 tương đương với mức năng lực ngắn hạn 4.0 Sigma.&quot;)">A. Z_ST &amp;approx; 3 × 1.33 = 4.0 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-2', &quot;Z_ST &amp;approx; 3 × Cpk = 3 × 1.33 = 4.0 Sigma.&quot;, &quot;Quy tắc nhân 3: Cpk = 1.33 tương đương với mức năng lực ngắn hạn 4.0 Sigma.&quot;)">B. Z_ST = 1.33 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-2', &quot;Z_ST &amp;approx; 3 × Cpk = 3 × 1.33 = 4.0 Sigma.&quot;, &quot;Quy tắc nhân 3: Cpk = 1.33 tương đương với mức năng lực ngắn hạn 4.0 Sigma.&quot;)">C. Z_ST = 6.0 Sigma</button></div>
+      <div id="fb-q8-2" class="quiz-fb"></div>
+    </div>
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 3 • Tầng 2 • Analytical & Math</span>
+      <div class="quiz-q">Dung sai USL = 50, LSL = 30 (Bề rộng = 20, Target = 40). Dữ liệu đo được &amp;mu; = 42, &amp;sigma; = 1.0. Hệ số lệch tâm k = |42 - 40| / 10 = 2 / 10 = 0.20. Chỉ số Cp và Cpk là bao nhiêu?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-3', &quot;Cp = 20 / 6 = 3.33; Cpk = 3.33 × (1 - 0.20) = 2.66.&quot;, &quot;Cp = 3.33 phản ánh tiềm năng cực lớn; độ lệch tâm k = 0.20 làm giảm Cpk thực tế xuống 2.66.&quot;)">A. Cp = 20 / (6 × 1) = 3.33; Cpk = 3.33 × (1 - 0.20) = 2.66</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-3', &quot;Cp = 20 / 6 = 3.33; Cpk = 3.33 × (1 - 0.20) = 2.66.&quot;, &quot;Cp = 3.33 phản ánh tiềm năng cực lớn; độ lệch tâm k = 0.20 làm giảm Cpk thực tế xuống 2.66.&quot;)">B. Cp = 1.00; Cpk = 0.80</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-3', &quot;Cp = 20 / 6 = 3.33; Cpk = 3.33 × (1 - 0.20) = 2.66.&quot;, &quot;Cp = 3.33 phản ánh tiềm năng cực lớn; độ lệch tâm k = 0.20 làm giảm Cpk thực tế xuống 2.66.&quot;)">C. Cp = 2.00; Cpk = 2.00</button></div>
+      <div id="fb-q8-3" class="quiz-fb"></div>
+    </div>
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 4 • Tầng 2 • Analytical & Math</span>
+      <div class="quiz-q">Để đảm bảo trong dài hạn quy trình đạt chất lượng tối thiểu Z_LT &amp;ge; 4.0 Sigma, mức năng lực ngắn hạn Z_ST tối thiểu cần thiết lập ở giai đoạn bàn giao dự án là bao nhiêu?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-4', &quot;Required Z_ST = Z_LT + 1.50&amp;sigma; = 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83).&quot;, &quot;Phải thiết kế năng lực ngắn hạn đạt 5.5 Sigma để bù đắp cho độ trôi dạt 1.5 Sigma trong dài hạn.&quot;)">A. Z_ST &amp;ge; 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-4', &quot;Required Z_ST = Z_LT + 1.50&amp;sigma; = 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83).&quot;, &quot;Phải thiết kế năng lực ngắn hạn đạt 5.5 Sigma để bù đắp cho độ trôi dạt 1.5 Sigma trong dài hạn.&quot;)">B. Z_ST = 4.0 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-4', &quot;Required Z_ST = Z_LT + 1.50&amp;sigma; = 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83).&quot;, &quot;Phải thiết kế năng lực ngắn hạn đạt 5.5 Sigma để bù đắp cho độ trôi dạt 1.5 Sigma trong dài hạn.&quot;)">C. Z_ST = 3.0 Sigma</button></div>
+      <div id="fb-q8-4" class="quiz-fb"></div>
+    </div>
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 5 • Tầng 3 • Executive Decision</span>
+      <div class="quiz-q">Một nhà cung cấp nộp báo cáo chất lượng ghi: &#x27;Năng lực đạt 6 Sigma (Z = 6.0)&#x27;. Là MBB, câu hỏi kỹ thuật đầu tiên bạn cần chất vấn là gì?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-5', &quot;Always clarify whether reported Sigma is short-term (Z_ST) or long-term (Z_LT) to evaluate real defect risk.&quot;, &quot;Bắt buộc phải phân định rõ Z_ST và Z_LT để đánh giá đúng rủi ro sai lỗi thực tế của nhà cung cấp.&quot;)">A. Yêu cầu làm rõ: &#x27;Con số Z = 6.0 này là Z_ST (Ngắn hạn - 3.4 DPMO) hay Z_LT (Dài hạn - 0.001 DPMO) và phương pháp tính toán cụ thể là gì?&#x27;</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-5', &quot;Always clarify whether reported Sigma is short-term (Z_ST) or long-term (Z_LT) to evaluate real defect risk.&quot;, &quot;Bắt buộc phải phân định rõ Z_ST và Z_LT để đánh giá đúng rủi ro sai lỗi thực tế của nhà cung cấp.&quot;)">B. Ký duyệt hợp đồng ngay lập tức</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-5', &quot;Always clarify whether reported Sigma is short-term (Z_ST) or long-term (Z_LT) to evaluate real defect risk.&quot;, &quot;Bắt buộc phải phân định rõ Z_ST và Z_LT để đánh giá đúng rủi ro sai lỗi thực tế của nhà cung cấp.&quot;)">C. Yêu cầu giảm giá 10%</button></div>
+      <div id="fb-q8-5" class="quiz-fb"></div>
+    </div>
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 6 • Tầng 3 • Executive Decision</span>
+      <div class="quiz-q">Chiến lược nào là tối ưu nhất để thu hẹp khoảng cách trôi dạt 1.5 Sigma giữa ngắn hạn và dài hạn trong nhà máy?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-6', &quot;Minimize long-term drift via TPM predictive maintenance, environmental climate control, and Poka-Yoke parameter locks.&quot;, &quot;Kiểm soát môi trường, bảo trì chuẩn TPM và Poka-Yoke giúp thu hẹp độ trôi dài hạn xuống dưới 0.5 Sigma.&quot;)">A. Áp dụng bảo trì dự đoán TPM, kiểm soát môi trường nhiệt độ/độ ẩm và khóa thông số máy bằng Poka-Yoke</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-6', &quot;Minimize long-term drift via TPM predictive maintenance, environmental climate control, and Poka-Yoke parameter locks.&quot;, &quot;Kiểm soát môi trường, bảo trì chuẩn TPM và Poka-Yoke giúp thu hẹp độ trôi dài hạn xuống dưới 0.5 Sigma.&quot;)">B. Tăng thêm nhân viên kiểm tra chất lượng</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-6', &quot;Minimize long-term drift via TPM predictive maintenance, environmental climate control, and Poka-Yoke parameter locks.&quot;, &quot;Kiểm soát môi trường, bảo trì chuẩn TPM và Poka-Yoke giúp thu hẹp độ trôi dài hạn xuống dưới 0.5 Sigma.&quot;)">C. Chấp nhận mức trôi dạt như một điều tất yếu</button></div>
+      <div id="fb-q8-6" class="quiz-fb"></div>
+    </div>
+    <h3 style="color:#fff; margin-top:38px; font-size:1.25rem;">🎴 Flashcards Ôn Tập Nhanh (Click để lật thẻ 3D)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Short-Term Capability (Z_ST)</div>
+            <div class="term-vi">Năng lực ngắn hạn Z_ST</div>
+            <div class="hint">Click to reveal • Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Instantaneous capability driven purely by within-subgroup variation</strong>
+            <span class="vi">Năng lực công nghệ thuần túy trong một khoảng thời gian ngắn.</span>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Long-Term Capability (Z_LT)</div>
+            <div class="term-vi">Năng lực dài hạn Z_LT</div>
+            <div class="hint">Click to reveal • Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Customer-experienced capability including 1.5&amp;sigma; process drift</strong>
+            <span class="vi">Năng lực thực tế bao gồm toàn bộ các biến động trôi dạt theo thời gian.</span>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">1.5 Sigma Shift</div>
+            <div class="term-vi">Độ dịch chuyển 1.5 Sigma</div>
+            <div class="hint">Click to reveal • Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Empirical drift allowance established by Motorola</strong>
+            <span class="vi">Khoảng trôi dạt kinh nghiệm được tính toán vào chuẩn Six Sigma.</span>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Process Potential (Cp)</div>
+            <div class="term-vi">Năng lực tiềm năng Cp</div>
+            <div class="hint">Click to reveal • Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Tolerance spread divided by 6&amp;sigma; without centering offset</strong>
+            <span class="vi">Chỉ số đo lường độ hẹp của phân bố nếu căn chỉnh đúng tâm.</span>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Process Capability (Cpk)</div>
+            <div class="term-vi">Năng lực thực tế Cpk</div>
+            <div class="hint">Click to reveal • Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Cp discounted by off-centering factor k</strong>
+            <span class="vi">Chỉ số phản ánh năng lực thực tế có tính đến độ lệch tâm so với Target.</span>
+          </div>
+        </div>
+      </div></div>
+  </section>
+
+  <!-- PHẦN 5: ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">Phần 5 • 1-Page Action Checklist &amp; Template</span>
+    <h2 class="section-heading">Checklist Hành Động Tại Doanh Nghiệp</h2>
+    <div class="section-subheading">Thực thi quản trị quy trình theo chuẩn mực Master Black Belt</div>
+    <label class="action-item"><input type="checkbox"><span class="action-text"><strong>Tính toán đồng thời Cp, Cpk và Z_ST:</strong> Thu thập dữ liệu phụ nhóm (Subgroups) để tách biệt phương sai trong và giữa các nhóm.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Ước lượng năng lực dài hạn Z_LT = Z_ST - 1.5:</strong> Dự báo tỷ lệ DPMO thực tế mà khách hàng sẽ nhận được.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Khử độ lệch tâm k để đưa Cpk tiệm cận Cp:</strong> Hiệu chỉnh điểm đặt máy (Offset) để đưa trung bình về đúng Target.</span></label>
+    <h3 style="color:var(--wood-dark); margin-top:28px;">Template Quản Trị Quy Trình (Process Management Template)</h3>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; margin-top:12px; font-size:0.92rem; background:#ffffff;">
+        <thead><tr style="background:#064e3b; color:#fff;">
+          <th style="padding:10px; text-align:left; border-radius:6px 0 0 0;">Hạng mục thực thi</th>
+          <th style="padding:10px; text-align:left;">Thông số / Dữ liệu cần xác lập</th>
+          <th style="padding:10px; text-align:left; border-radius:0 6px 0 0;">Tiêu chuẩn kiểm chứng (Deliverable)</th>
+        </tr></thead>
+        <tbody><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Quy trình / Đặc tính CTQ</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Năng lực ngắn hạn (Z_ST / Cp)</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Năng lực dài hạn (Z_LT / Cpk)</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Nẹp kính chắn gió xe hơi</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z_ST = 4.50&amp;sigma;, Cp = 1.50</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z_LT = 3.00&amp;sigma;, Cpk = 1.00</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Khớp lệnh chứng khoán</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z_ST = 10.3&amp;sigma;, Cp = 3.44</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z_LT = 5.20&amp;sigma;, Cpk = 1.73</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Hàn mạch điện thoại</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z_ST = 3.60&amp;sigma;, Cp = 1.20</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z_LT = 2.10&amp;sigma;, Cpk = 0.70</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Độ dày lớp sơn tĩnh điện</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z_ST = 5.10&amp;sigma;, Cp = 1.70</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z_LT = 3.60&amp;sigma;, Cpk = 1.20</td></tr></tbody>
+      </table>
+    </div>
+    <p style="margin-top:18px; color:var(--vi-green-2);"><strong>Định nghĩa hoàn tất:</strong> Đo lường chính xác sức mạnh hệ thống đo, xác lập đường cơ sở Baseline, thiết lập benchmark và đếm cơ hội sai lỗi theo chuẩn Six Sigma quốc tế.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
+    &copy; Six Sigma Master Black Belt Executive Curriculum • Process Management Architecture
+  </p>
+</footer>
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

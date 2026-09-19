@@ -1,0 +1,384 @@
+1
+00:00:00.000 --> 00:00:05.033
+Expert View of Quality Performance
+Quan điểm chuyên gia về Hiệu suất Chất lượng
+
+2
+00:00:05.033 --> 00:00:10.599
+Hello, Mike Harry back with you again. Where we’re looking at some descriptive statistics,
+Xin chào, Mike Harry đã trở lại với bạn. Nơi chúng ta đang xem xét một số thống kê mô tả,
+
+3
+00:00:10.600 --> 00:00:16.033
+by some of the quality gurus of the 20th century.
+bởi một số гуру chất lượng của thế kỷ 20.
+
+4
+00:00:16.033 --> 00:00:20.933
+We started understanding Crosby saying, that it's conformance to requirement.
+Chúng tôi bắt đầu hiểu Crosby nói rằng đó là sự tuân thủ các yêu cầu.
+
+5
+00:00:20.933 --> 00:00:23.899
+And of course, we believe
+Và tất nhiên, chúng tôi tin rằng
+
+6
+00:00:23.900 --> 00:00:28.633
+that true excellence goes beyond just simple conformance to requirements.
+sự xuất sắc thực sự vượt xa sự tuân thủ đơn giản các yêu cầu.
+
+7
+00:00:28.633 --> 00:00:32.799
+It's going beyond just conformance to requirements,
+Nó vượt xa sự tuân thủ các yêu cầu,
+
+8
+00:00:32.800 --> 00:00:37.800
+recognizing that quality has many attributes as we have discussed.
+nhận thấy rằng chất lượng có nhiều thuộc tính như chúng ta đã thảo luận.
+
+9
+00:00:37.800 --> 00:00:41.800
+In doing it right the first time, Well we want to do it right every time.
+Làm đúng ngay từ đầu, chúng tôi muốn làm đúng mọi lúc.
+
+10
+00:00:41.800 --> 00:00:45.200
+And Junichi Taguchi, excellent thought,
+Và Junichi Taguchi, một suy nghĩ tuyệt vời,
+
+11
+00:00:45.200 --> 00:00:49.766
+loss of product causes to society after being shipped.
+tổn thất sản phẩm gây ra cho xã hội sau khi được vận chuyển.
+
+12
+00:00:49.766 --> 00:00:54.632
+And Dr. Taguchi exemplifies this with the quadratic loss function.
+Và Tiến sĩ Taguchi minh họa điều này bằng hàm tổn thất bậc hai.
+
+13
+00:00:54.633 --> 00:00:58.299
+That the more that we move away from the ideal condition,
+Càng rời xa điều kiện lý tưởng,
+
+14
+00:00:58.300 --> 00:01:01.300
+of a characteristic, of a critical characteristic,
+của một đặc tính, một đặc tính quan trọng,
+
+15
+00:01:01.300 --> 00:01:07.000
+the loss to society increases at a nonlinear rate.
+tổn thất cho xã hội tăng theo tốc độ phi tuyến tính.
+
+16
+00:01:07.000 --> 00:01:12.366
+Now, Juran, Dr. Juran, another great practitioner
+Bây giờ, Juran, Tiến sĩ Juran, một chuyên gia thực hành tuyệt vời khác
+
+17
+00:01:12.366 --> 00:01:17.832
+in the field of quality. That the world owes a lot to for his contributions
+trong lĩnh vực chất lượng. Thế giới nợ ông rất nhiều vì những đóng góp của ông
+
+18
+00:01:17.833 --> 00:01:23.166
+from the 50’s, and 60’s, and 70’s, and 80’s, and even into the 90’s.
+từ những năm 50, 60, 70, 80 và thậm chí đến những năm 90.
+
+19
+00:01:23.166 --> 00:01:26.132
+So again, Dr. Juran is one of those greats.
+Vậy thì một lần nữa, Tiến sĩ Juran là một trong những vĩ nhân đó.
+
+20
+00:01:26.133 --> 00:01:30.466
+And we need to listen to these individuals because they have a lot of years
+Và chúng ta cần lắng nghe những cá nhân này vì họ có rất nhiều năm
+
+21
+00:01:30.466 --> 00:01:34.032
+of experience and we can learn from these.
+kinh nghiệm và chúng ta có thể học hỏi từ họ.
+
+22
+00:01:34.033 --> 00:01:38.466
+Just because we take exception, doesn't mean we don't agree.
+Chỉ vì chúng ta có ý kiến khác, không có nghĩa là chúng ta không đồng ý.
+
+23
+00:01:38.466 --> 00:01:42.099
+But we can incorporate them, and build on them, in the evolution
+Nhưng chúng ta có thể kết hợp chúng và xây dựng dựa trên chúng trong quá trình phát triển
+
+24
+00:01:42.100 --> 00:01:45.133
+of the definition of quality.
+của định nghĩa về chất lượng.
+
+25
+00:01:45.133 --> 00:01:48.766
+Much like defining a problem, as you define a problem wrong
+Tương tự như việc xác định một vấn đề, nếu bạn xác định vấn đề sai
+
+26
+00:01:48.766 --> 00:01:54.132
+or insufficiently, it can lead people to the improper solution.
+hoặc không đầy đủ, nó có thể dẫn mọi người đến giải pháp không phù hợp.
+
+27
+00:01:54.133 --> 00:02:00.533
+It can predispose them to failure. And the same thing is true with our understanding of quality.
+Nó có thể khiến họ dễ thất bại. Và điều tương tự cũng đúng với sự hiểu biết của chúng ta về chất lượng.
+
+28
+00:02:00.533 --> 00:02:04.566
+If we define it wrong, it can lead people in a wrong direction.
+Nếu chúng ta định nghĩa sai, nó có thể dẫn mọi người đi sai hướng.
+
+29
+00:02:04.566 --> 00:02:09.266
+Now, Dr. Juran goes on to say, that it's those product features
+Bây giờ, Tiến sĩ Juran tiếp tục nói rằng đó là những tính năng sản phẩm
+
+30
+00:02:09.266 --> 00:02:14.899
+which meet the needs of a customer and provide product satisfaction.
+đáp ứng nhu cầu của khách hàng và mang lại sự hài lòng về sản phẩm.
+
+31
+00:02:14.900 --> 00:02:19.500
+Well obviously, we know it goes beyond products, to service, to transactions,
+Rõ ràng, chúng ta biết nó vượt ra ngoài sản phẩm, đến dịch vụ, đến các giao dịch,
+
+32
+00:02:19.500 --> 00:02:22.633
+to everything else. I think that's implicit there.
+đến mọi thứ khác. Tôi nghĩ điều đó là ngụ ý ở đó.
+
+33
+00:02:22.633 --> 00:02:28.599
+But the product features, which meet the needs of a customer, goes beyond product features,
+Nhưng các tính năng sản phẩm, đáp ứng nhu cầu của khách hàng, vượt xa các tính năng sản phẩm,
+
+34
+00:02:28.600 --> 00:02:33.500
+it delves into every aspect of the relationship with the customer.
+nó đi sâu vào mọi khía cạnh của mối quan hệ với khách hàng.
+
+35
+00:02:33.500 --> 00:02:40.033
+Everyone, quality exists at different levels of conception.
+Mọi người, chất lượng tồn tại ở các cấp độ nhận thức khác nhau.
+
+36
+00:02:40.033 --> 00:02:43.666
+Not just at the hard statistical level,
+Không chỉ ở cấp độ thống kê cứng nhắc,
+
+37
+00:02:43.666 --> 00:02:48.832
+of is it above the upper spec or below the lower spec and so on.
+liệu nó có trên giới hạn trên hay dưới giới hạn dưới hay không, v.v.
+
+38
+00:02:48.833 --> 00:02:55.833
+Is it in the acceptable band of variation? It takes on a feeling, a life of its own.
+Nó có nằm trong dải biến thiên chấp nhận được không? Nó mang một cảm giác, một cuộc sống riêng của nó.
+
+39
+00:02:55.833 --> 00:03:02.033
+It's psychological, emotional, as well as physical.
+Nó mang tính tâm lý, cảm xúc cũng như thể chất.
+
+40
+00:03:02.033 --> 00:03:09.033
+And Dr. Shewhart, the great gentleman that started the revolution back in the late 20s.
+Và Tiến sĩ Shewhart, quý ông vĩ đại đã khởi xướng cuộc cách mạng vào cuối những năm 20.
+
+41
+00:03:09.033 --> 00:03:15.333
+Inventor of the control chart says, that quality is the measurable characteristics of a product
+Cha đẻ của biểu đồ kiểm soát nói rằng chất lượng là những đặc điểm có thể đo lường được của một sản phẩm
+
+42
+00:03:15.333 --> 00:03:20.666
+that gives satisfaction at a price the user will pay.
+mang lại sự hài lòng với một mức giá mà người dùng sẽ trả.
+
+43
+00:03:20.666 --> 00:03:25.966
+You know, that's a pretty sound definition yet to this day.
+Bạn biết đấy, đó là một định nghĩa khá hợp lý cho đến tận ngày nay.
+
+44
+00:03:25.966 --> 00:03:29.966
+And Ishikawa goes on to talk about it. Dr. Ishikawa.
+Và Ishikawa tiếp tục nói về nó. Tiến sĩ Ishikawa.
+
+45
+00:03:29.966 --> 00:03:36.966
+He says, that satisfying the changing requirements of consumer's expectations.
+Ông nói rằng việc đáp ứng các yêu cầu thay đổi về kỳ vọng của người tiêu dùng.
+
+46
+00:03:36.966 --> 00:03:40.132
+In addition to performance requirements.
+Ngoài các yêu cầu về hiệu suất.
+
+47
+00:03:40.133 --> 00:03:43.133
+So all of these have good elements so far.
+Vậy tất cả những điều này đều có những yếu tố tốt cho đến nay.
+
+48
+00:03:43.133 --> 00:03:50.099
+Dr. Deming states quality must be defined in terms of customer satisfaction. So true.
+Tiến sĩ Deming tuyên bố chất lượng phải được định nghĩa bằng sự hài lòng của khách hàng. Rất đúng.
+
+49
+00:03:50.100 --> 00:03:57.100
+It requires the transformation of the style of American management. Very true.
+Nó đòi hỏi sự chuyển đổi phong cách quản lý của Mỹ. Rất đúng.
+
+50
+00:03:57.100 --> 00:04:03.100
+American management has underwent several significant emotional events involving quality.
+Quản lý Mỹ đã trải qua một số sự kiện cảm xúc quan trọng liên quan đến chất lượng.
+
+51
+00:04:03.100 --> 00:04:08.366
+We’ve seen this many times. Now, they all have a customer focus here.
+Chúng ta đã thấy điều này nhiều lần. Bây giờ, tất cả họ đều tập trung vào khách hàng ở đây.
+
+52
+00:04:08.366 --> 00:04:14.332
+And I think that's excellent, but we've evolved beyond a customer focus.
+Và tôi nghĩ điều đó thật tuyệt vời, nhưng chúng ta đã phát triển vượt xa sự tập trung vào khách hàng.
+
+53
+00:04:14.333 --> 00:04:21.333
+None of them mention the provider. And as we talked about in my stated definition of quality,
+Không ai trong số họ đề cập đến nhà cung cấp. Và như chúng ta đã nói trong định nghĩa chất lượng đã nêu của tôi,
+
+54
+00:04:21.333 --> 00:04:28.333
+that it's a state in which the customer and the provider realize value entitlement.
+đó là một trạng thái mà khách hàng và nhà cung cấp nhận ra quyền lợi về giá trị.
+
+55
+00:04:28.333 --> 00:04:34.133
+They realize full value entitlement in every aspect of the business relationship.
+Họ nhận ra đầy đủ quyền lợi về giá trị trong mọi khía cạnh của mối quan hệ kinh doanh.
+
+56
+00:04:34.133 --> 00:04:37.966
+Then they have a quality business experience.
+Sau đó, họ có trải nghiệm kinh doanh chất lượng.
+
+57
+00:04:37.966 --> 00:04:44.732
+Which embodies the product, the actual actions, and emotions and everything else
+Điều này bao gồm sản phẩm, các hành động thực tế, cảm xúc và mọi thứ khác
+
+58
+00:04:44.733 --> 00:04:48.299
+associated with that business relationship.
+liên quan đến mối quan hệ kinh doanh đó.
+
+59
+00:04:48.300 --> 00:04:53.300
+When we take on that meaning of value, being value centric.
+Khi chúng ta chấp nhận ý nghĩa giá trị đó, trở thành trung tâm của giá trị.
+
+60
+00:04:53.300 --> 00:04:57.300
+The utilitarian aspects,
+Các khía cạnh hữu dụng,
+
+61
+00:04:57.300 --> 00:05:03.533
+availability, and economic worth. Those things that we have discussed.
+tính khả dụng và giá trị kinh tế. Đó là những điều chúng ta đã thảo luận.
+
+62
+00:05:03.533 --> 00:05:07.066
+Our entitlement, our rightful level expectation,
+Quyền lợi của chúng ta, mức độ kỳ vọng chính đáng của chúng ta,
+
+63
+00:05:07.066 --> 00:05:11.066
+to form, fit and function, volume, timing, location,
+về hình thức, sự phù hợp và chức năng, số lượng, thời gian, địa điểm,
+
+64
+00:05:11.066 --> 00:05:15.332
+emotional and economic worth, in every aspect of the business relationship.
+giá trị cảm xúc và kinh tế, trong mọi khía cạnh của mối quan hệ kinh doanh.
+
+65
+00:05:15.333 --> 00:05:22.599
+The customer and the provider. If the provider does not enjoy the same
+Khách hàng và nhà cung cấp. Nếu nhà cung cấp không được hưởng cùng một
+
+66
+00:05:22.600 --> 00:05:27.800
+entitlement of value, then it's not a quality experience.
+quyền lợi về giá trị, thì đó không phải là một trải nghiệm chất lượng.
+
+67
+00:05:27.800 --> 00:05:32.733
+So, we have to take quality today, because the world is too competitive
+Vì vậy, chúng ta phải xem xét chất lượng ngày nay, bởi vì thế giới quá cạnh tranh
+
+68
+00:05:32.733 --> 00:05:37.433
+to narrow it down to just the idea of conformance to requirements,
+để thu hẹp nó chỉ còn là ý tưởng về sự tuân thủ các yêu cầu,
+
+69
+00:05:37.433 --> 00:05:41.033
+and product features, and hard measurable characteristics.
+và các tính năng sản phẩm, và các đặc điểm đo lường cứng.
+
+70
+00:05:41.033 --> 00:05:46.433
+It has to embody virtually everything that we do
+Nó phải thể hiện hầu như mọi thứ chúng ta làm
+
+71
+00:05:46.433 --> 00:05:53.399
+to such an extent that it's best in class. That's the degree of excellence that we achieve.
+đến mức nó là tốt nhất trong lớp. Đó là mức độ xuất sắc mà chúng ta đạt được.
+
+72
+00:05:53.400 --> 00:05:58.566
+Best in class state in which the customer and provider realize value entitlement
+Trạng thái tốt nhất trong lớp, trong đó khách hàng và nhà cung cấp nhận ra quyền lợi về giá trị
+
+73
+00:05:58.566 --> 00:06:01.566
+in every aspect of that business relationship.
+trong mọi khía cạnh của mối quan hệ kinh doanh đó.
+
+74
+00:06:01.566 --> 00:06:07.266
+And with that, there is some additional thoughts about quality and hearing from the gurus
+Và với điều đó, có một số suy nghĩ bổ sung về chất lượng và lắng nghe từ các гуру
+
+75
+00:06:07.266 --> 00:06:14.332
+of our history. And seeing how we build on that, continually evolving
+của lịch sử chúng ta. Và thấy cách chúng ta xây dựng dựa trên điều đó, không ngừng phát triển
+
+76
+00:06:14.333 --> 00:06:17.333
+toward that state of excellence.
+hướng tới trạng thái xuất sắc đó.
+
+77
+00:06:17.333 --> 00:06:22.333
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

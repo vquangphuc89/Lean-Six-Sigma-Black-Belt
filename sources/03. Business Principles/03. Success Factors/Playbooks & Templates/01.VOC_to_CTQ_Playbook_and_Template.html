@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOC to CTQ Cascading Playbook &amp; Template | Bản Kế Hoạch 1 Trang Chuyển Hóa VOC sang CTQ</title>
+<style>
+
+  :root{
+    --wood-deep:#022c22;
+    --wood-dark:#064e3b;
+    --wood-forest:#1b4332;
+    --water-ocean:#082f49;
+    --emerald:#059669;
+    --emerald-vibrant:#10b981;
+    --emerald-mint:#6ee7b7;
+    --vi-green:#047857;
+    --vi-green-2:#065f46;
+    --red:#b91c1c;
+    --green:#16a34a;
+    --gold-bg:#fefce8;
+    --gold-border:#d97706;
+    --wood-bark:#78350f;
+    --bg-paper:#f0f7f4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background:var(--bg-paper);
+    color:#0f241d;
+    line-height:1.68;
+  }
+  .container{max-width:1160px;margin:0 auto;padding:0 24px 80px;}
+  a{color:var(--emerald);text-decoration:none;}
+  
+  .hero{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color:#fff;
+    padding:48px 24px 38px;
+    margin-bottom:36px;
+    box-shadow:0 10px 32px rgba(2,44,34,0.35);
+    border-bottom:4px solid var(--emerald);
+  }
+  .hero-inner{max-width:1160px;margin:0 auto;}
+  .hero-badge{
+    display:inline-block;
+    background:rgba(16,185,129,0.18);
+    border:1px solid rgba(110,231,183,0.45);
+    color:var(--emerald-mint);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  .hero-title{font-size:2.2rem;font-weight:800;margin:0 0 6px;color:#ffffff;}
+  .hero-title-vi{font-size:1.25rem;font-style:italic;color:var(--emerald-mint);margin:0 0 14px;font-weight:600;}
+  .hero-desc{font-size:1rem;color:#d1fae5;max-width:860px;margin:0;}
+  .hero-desc-vi{font-size:0.95rem;font-style:italic;color:#a7f3d0;max-width:860px;margin-top:4px;}
+
+  .card-section{
+    background:#ffffff;
+    border-radius:12px;
+    padding:32px 36px;
+    margin-bottom:32px;
+    box-shadow:0 4px 20px rgba(6,78,59,0.07);
+    border-top:5px solid var(--emerald);
+    border-bottom:1px solid #d1fae5;
+  }
+  .card-title{font-size:1.5rem;color:var(--wood-dark);margin:0 0 4px;font-weight:800;}
+  .card-title-vi{font-size:1.1rem;color:var(--vi-green);font-style:italic;margin:0 0 20px;font-weight:600;}
+
+  .checklist{display:flex; flex-direction:column; gap:12px; margin:20px 0;}
+  .checklist-item{
+    display:flex; align-items:flex-start; gap:12px;
+    background:#f4fbf7; border:1px solid #d1fae5; padding:14px 18px; border-radius:8px;
+  }
+  .checklist-item input[type="checkbox"]{
+    width:20px; height:20px; accent-color:var(--emerald); cursor:pointer; margin-top:3px;
+  }
+  .checklist-text{font-size:0.95rem; color:#0f241d;}
+  .checklist-text .vi{display:block; font-style:italic; color:var(--vi-green-2); margin-top:2px;}
+
+  .template-box{
+    background:#022c22;
+    color:#ecfdf5;
+    border-radius:10px;
+    padding:24px;
+    font-family:'Consolas', monospace;
+    font-size:0.92rem;
+    line-height:1.6;
+    overflow-x:auto;
+    border:1px solid var(--emerald);
+    position:relative;
+    margin:20px 0;
+  }
+  .copy-btn{
+    position:absolute; top:12px; right:12px;
+    background:var(--emerald); color:#fff; border:none; padding:6px 14px;
+    border-radius:6px; font-weight:700; cursor:pointer; font-size:0.8rem;
+    transition:background 0.2s;
+  }
+  .copy-btn:hover{background:var(--emerald-vibrant);}
+
+  table.data-table{border-collapse:collapse;width:100%;font-size:0.92rem;min-width:680px;}
+  table.data-table th{
+    background:linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color:#fff;padding:10px 12px;text-align:left;vertical-align:top;
+  }
+  table.data-table th .th-vi{display:block;color:#a7f3d0;font-style:italic;font-weight:500;font-size:0.78rem;margin-top:2px;}
+  table.data-table td{padding:10px 12px;border-bottom:1px solid #d1fae5;vertical-align:top;background:#fff;}
+  table.data-table td .td-vi{display:block;color:var(--vi-green-2);font-style:italic;font-size:0.85rem;margin-top:2px;}
+  table.data-table tr:nth-child(even) td{background:#f7fcf9;}
+
+  .mbb-tip{
+    background:var(--gold-bg); border:1px solid #fef08a; border-left:5px solid var(--gold-border);
+    border-radius:8px; padding:20px 24px; margin:24px 0;
+  }
+  .mbb-tip-title{color:var(--wood-bark); font-weight:800; font-size:1.05rem; margin-bottom:4px;}
+  .mbb-tip-title .vi{color:#92400e; font-style:italic; font-size:0.92rem; font-weight:600;}
+  .mbb-tip p{margin:0; color:#78350f; font-size:0.92rem;}
+  .mbb-tip p.vi{color:#92400e; font-style:italic; margin-top:4px;}
+
+  .form-input{
+    width:100%; padding:8px 12px; border:1px solid #a7f3d0; border-radius:6px;
+    background:#f4fbf7; font-family:inherit; font-size:0.9rem; color:#06282d; margin-top:4px;
+  }
+  .form-input:focus{outline:none; border-color:var(--emerald); background:#fff;}
+
+
+  /* ---------- PURE NATIVE HTML/CSS MATHEMATICAL FORMULAS (NO MATHJAX NEEDED) ---------- */
+  .math-card{
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title{
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation{
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac{
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num{
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den{
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-var{
+    font-style: italic;
+    color: #ffffff;
+  }
+  .math-card .desc{
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong{
+    color: #ffffff;
+  }
+  .math-card .desc em{
+    color: var(--emerald-mint);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+</style>
+
+
+
+
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">1-Page Actionable Playbook #1 &bull; Bản Kế Hoạch 1 Trang #1</span>
+    <h1 class="hero-title">VOC to CTQ Cascading Playbook &amp; Template</h1>
+    <div class="hero-title-vi">Quy Trình &amp; Biểu Mẫu 1 Trang: Chuyển Hóa Tiếng Nói Khách Hàng (VOC &rarr; CTQ)</div>
+    <p class="hero-desc">Translate vague, subjective customer verbatim into continuous, measurable Critical-to-Quality engineering metrics (<i>Y = f(X)</i>).</p>
+    <p class="hero-desc-vi">Chuyển đổi các phàn nàn và kỳ vọng mơ hồ của khách hàng thành các thông số kỹ thuật lượng hóa chính xác kèm dung sai kiểm soát.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="card-section">
+    <h2 class="card-title">1. Three Self-Audit Diagnostic Questions</h2>
+    <div class="card-title-vi">Ba Câu Hỏi Tự Vấn Đánh Giá Trước Khi Bắt Đầu Dự Án</div>
+    <div class="checklist">
+      <div class="checklist-item">
+        <input type="checkbox" id="q1">
+        <label for="q1" class="checklist-text">
+          Are you optimizing an internal engineering tolerance that the customer remains completely indifferent to?
+          <span class="vi">Dự án của bạn có đang tối ưu hóa một chỉ số nội bộ mà khách hàng thực tế hoàn toàn không bận tâm không?</span>
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="q2">
+        <label for="q2" class="checklist-text">
+          Have you gathered at least 15-20 unedited verbatim customer statements (or recorded calls) before drafting the project scope?
+          <span class="vi">Bạn đã thu thập ít nhất 15-20 câu phát biểu nguyên văn từ khách hàng (hoặc nghe ghi âm cuộc gọi) trước khi viết đề cương chưa?</span>
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="q3">
+        <label for="q3" class="checklist-text">
+          Is your CTQ measured as continuous numerical data with verified Upper/Lower Specification Limits (USL/LSL)?
+          <span class="vi">Chỉ số CTQ của bạn có được đo bằng dữ liệu số liên tục kèm Giới hạn Dung sai Trên/Dưới (USL/LSL) cụ thể không?</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section class="card-section">
+    <h2 class="card-title">2. Four-Step VOC-to-CTQ Execution Process</h2>
+    <div class="card-title-vi">Quy Trình 4 Bước Thực Thi Bẻ Khóa Yêu Cầu Khách Hàng</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin:16px 0;">
+      <div style="background:#f4fbf7; border:1px solid #d1fae5; border-left:4px solid var(--emerald); padding:16px; border-radius:8px;">
+        <strong style="color:var(--wood-dark);">Step 1: Capture Verbatim</strong>
+        <p style="margin:4px 0 0; font-size:0.88rem; color:#065f46; font-style:italic;">Ghi nhận nguyên văn lời nói của khách hàng, tuyệt đối không diễn giải theo ý chủ quan của kỹ sư.</p>
+      </div>
+      <div style="background:#f4fbf7; border:1px solid #d1fae5; border-left:4px solid var(--emerald); padding:16px; border-radius:8px;">
+        <strong style="color:var(--wood-dark);">Step 2: Kano Classification</strong>
+        <p style="margin:4px 0 0; font-size:0.88rem; color:#065f46; font-style:italic;">Phân loại: Bắt buộc (Must-be), Tỷ lệ thuận (One-Dimensional), hay Đột phá gây thích thú (Attractive).</p>
+      </div>
+      <div style="background:#f4fbf7; border:1px solid #d1fae5; border-left:4px solid var(--emerald); padding:16px; border-radius:8px;">
+        <strong style="color:var(--wood-dark);">Step 3: CTQ Tree Cascading</strong>
+        <p style="margin:4px 0 0; font-size:0.88rem; color:#065f46; font-style:italic;">Bẻ nhỏ: VOC Thô &rarr; Nhu cầu Cốt lõi (Issue) &rarr; Thước đo Kỹ thuật (<i>Y</i>).</p>
+      </div>
+      <div style="background:#f4fbf7; border:1px solid #d1fae5; border-left:4px solid var(--emerald); padding:16px; border-radius:8px;">
+        <strong style="color:var(--wood-dark);">Step 4: Establish Specs</strong>
+        <p style="margin:4px 0 0; font-size:0.88rem; color:#065f46; font-style:italic;">Thiết lập Giới hạn Dung sai Trên (USL), Dưới (LSL) và Target hoạt động thực tế.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card-section">
+    <h2 class="card-title">3. Interactive Fillable CTQ Flowdown Matrix</h2>
+    <div class="card-title-vi">Bảng Ma Trận Phân Nhánh CTQ Trực Quan (Điền Thử Số Liệu Của Bạn)</div>
+    
+    <div style="overflow-x:auto; margin-top:16px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Customer Verbatim (VOC)<span class="th-vi">Phát biểu Khách hàng</span></th>
+            <th>Kano Category<span class="th-vi">Nhóm Kano</span></th>
+            <th>Core Need<span class="th-vi">Nhu cầu Cốt lõi</span></th>
+            <th>CTQ Metric (<i>Y</i>)<span class="th-vi">Thước đo CTQ</span></th>
+            <th>LSL &bull; Target &bull; USL<span class="th-vi">Dung sai Quy định</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input class="form-input" value='"Transactions feel sluggish during peak hours."' placeholder="Nhập câu nói KH..."></td>
+            <td>
+              <select class="form-input">
+                <option selected>Must-be (Bắt buộc)</option>
+                <option>One-Dimensional (Tỷ lệ)</option>
+                <option>Attractive (Hấp dẫn)</option>
+              </select>
+            </td>
+            <td><input class="form-input" value="Processing Latency" placeholder="Nhu cầu bản chất..."></td>
+            <td><input class="form-input" value="Checkout Time (Seconds)" placeholder="Thước đo Y..."></td>
+            <td><input class="form-input" value="LSL: N/A | Target: 1.5s | USL: 2.5s" placeholder="Dung sai..."></td>
+          </tr>
+          <tr>
+            <td><input class="form-input" value='"I want billing disputes resolved on first call."' placeholder="Nhập câu nói KH..."></td>
+            <td>
+              <select class="form-input">
+                <option>Must-be (Bắt buộc)</option>
+                <option selected>One-Dimensional (Tỷ lệ)</option>
+                <option>Attractive (Hấp dẫn)</option>
+              </select>
+            </td>
+            <td><input class="form-input" value="First-Contact Resolution" placeholder="Nhu cầu bản chất..."></td>
+            <td><input class="form-input" value="FCR Rate (%)" placeholder="Thước đo Y..."></td>
+            <td><input class="form-input" value="LSL: 95.0% | Target: 99.0% | USL: N/A" placeholder="Dung sai..."></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mbb-tip">
+      <div class="mbb-tip-title">⭐ Master Black Belt Golden Rule &bull; <span class="vi">Quy Tắc Vàng Của MBB</span></div>
+      <p>Never accept a subjective score (e.g. "Customer Satisfaction 1 to 5") as your primary CTQ. Turn it into a controllable internal leading metric: Lead time, Dimension variance, or First-pass yield.</p>
+      <p class="vi">Tuyệt đối không lấy điểm số khảo sát cảm tính (như "Độ hài lòng 1 đến 5") làm chỉ số CTQ chính. Hãy biến nó thành thước đo biến thiên dẫn dắt bên trong: Thời gian chờ, Độ lệch kích thước, hoặc Tỷ lệ đạt ngay lần đầu.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:#065f46; font-size:0.85rem; padding:20px 0;">&copy; Six Sigma Master Black Belt Playbook Series &bull; Phong Thủy Đại Lâm Mộc Standard</p>
+</footer>
+
+
+<script>
+function copyCode(btn, elementId) {
+  var text = document.getElementById(elementId).innerText;
+  navigator.clipboard.writeText(text).then(function() {
+    btn.innerText = "✓ Đã sao chép!";
+    setTimeout(function() { btn.innerText = "Sao chép Template"; }, 2500);
+  });
+}
+</script>
+
+</body>
+</html>

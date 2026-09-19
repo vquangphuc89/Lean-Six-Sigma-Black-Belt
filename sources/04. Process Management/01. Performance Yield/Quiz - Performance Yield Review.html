@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Đánh Giá Tổng Hợp: 04.01 Performance Yield Review | MBB Masterclass Exam</title>
+<style>
+  :root {
+    --navy-dark: #022c22;
+    --forest-deep: #064e3b;
+    --emerald: #047857;
+    --emerald-mint: #10b981;
+    --emerald-light: #6ee7b7;
+    --gold: #d97706;
+    --gold-light: #f59e0b;
+    --wood-dark: #78350f;
+    --wood-warm: #92400e;
+    --true-green: #059669;
+    --false-red: #dc2626;
+    --bg: #f0fdf4;
+    --card-bg: #ffffff;
+    --border: #d1fae5;
+    --text-main: #064e3b;
+    --text-muted: #374151;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Inter', sans-serif;
+    color: var(--text-main);
+    padding: 2rem 1rem 8rem;
+    line-height: 1.6;
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; }
+
+  /* HERO HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--forest-deep) 60%, var(--wood-dark) 100%);
+    border-radius: 1.5rem;
+    color: #fff;
+    padding: 3rem 2.25rem;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(6, 78, 59, 0.45);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 90% 10%, rgba(16, 185, 129, 0.35), transparent 60%);
+    pointer-events: none;
+  }
+  .hero .eyebrow {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    color: #f0fdf4;
+  }
+  .hero .sub-en {
+    font-size: 1.15rem;
+    color: #a7f3d0;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+  }
+  .hero .desc {
+    font-size: 0.98rem;
+    color: #ecfdf5;
+    max-width: 860px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* STATS DASHBOARD */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  .stat-tile {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+  .stat-tile:hover { transform: translateY(-2px); }
+  .stat-tile .num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--forest-deep);
+  }
+  .stat-tile .num.green { color: var(--true-green); }
+  .stat-tile .num.red { color: var(--false-red); }
+  .stat-tile .num.gold { color: var(--gold); }
+  .stat-tile .lbl {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--wood-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.35rem;
+  }
+
+  /* FILTER TABS */
+  .filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+  .tab-btn {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    color: var(--forest-deep);
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .tab-btn:hover {
+    border-color: var(--emerald-mint);
+    background: #ecfdf5;
+  }
+  .tab-btn.active {
+    background: var(--forest-deep);
+    color: #fff;
+    border-color: var(--forest-deep);
+    box-shadow: 0 4px 12px rgba(6, 78, 59, 0.25);
+  }
+
+  /* QUESTION CARD */
+  .quiz-card, .q-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px -5px rgba(6, 78, 59, 0.06);
+    position: relative;
+    border-top: 4px solid var(--emerald);
+  }
+  .q-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .q-badge {
+    background: #ecfdf5;
+    color: var(--emerald);
+    border: 1px solid #a7f3d0;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .q-meta {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--wood-dark);
+  }
+  .q-text {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #064e3b;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .opts { display: flex; flex-direction: column; gap: 0.75rem; }
+  .opt-btn {
+    background: #fcfdfd;
+    border: 1.5px solid #e2e8f0;
+    color: #1f2937;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    text-align: left;
+    font-size: 0.96rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .opt-btn:hover:not(:disabled) {
+    background: #f0fdf4;
+    border-color: var(--emerald-mint);
+    transform: translateX(4px);
+  }
+  .opt-btn.correct {
+    background: #ecfdf5 !important;
+    border-color: var(--true-green) !important;
+    color: #065f46 !important;
+    font-weight: 700;
+  }
+  .opt-btn.wrong {
+    background: #fef2f2 !important;
+    border-color: var(--false-red) !important;
+    color: #991b1b !important;
+  }
+  .opt-btn:disabled { cursor: default; }
+
+  /* FEEDBACK BOX */
+  .fb-box {
+    display: none;
+    margin-top: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    animation: fadeIn 0.3s ease;
+  }
+  .fb-box.show { display: block; }
+  .fb-box.correct {
+    background: #ecfdf5;
+    border: 1.5px solid #86efac;
+    color: #065f46;
+  }
+  .fb-box.wrong {
+    background: #fef2f2;
+    border: 1.5px solid #fca5a5;
+    color: #991b1b;
+  }
+  .fb-title { font-weight: 800; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.5rem; }
+  .fb-vi { display: block; margin-top: 0.5rem; font-style: italic; color: #047857; }
+  .fb-box.wrong .fb-vi { color: #b91c1c; }
+
+  /* RESULT CARD */
+  .result-card {
+    display: none;
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--forest-deep) 100%);
+    border-radius: 1.5rem;
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(6, 78, 59, 0.5);
+    border: 2px solid var(--emerald-mint);
+  }
+  .result-card.show { display: block; animation: fadeIn 0.5s ease; }
+  .result-score { font-size: 3.5rem; font-weight: 900; color: #fef08a; margin-bottom: 0.5rem; }
+  .result-belt { font-size: 1.6rem; font-weight: 800; color: var(--emerald-mint); margin-bottom: 1.5rem; }
+  .result-desc { font-size: 1.05rem; color: #ecfdf5; max-width: 700px; margin: 0 auto 2rem; }
+  .reset-btn {
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    padding: 0.85rem 2rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+    transition: transform 0.2s ease;
+  }
+  .reset-btn:hover { transform: scale(1.05); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media(max-width: 768px) {
+    body { padding: 1rem 0.5rem 6rem; }
+    .hero { padding: 2rem 1.25rem; }
+    .hero h1 { font-size: 1.6rem; }
+    .quiz-card, .q-card { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <!-- HERO HEADER -->
+  <header class="hero">
+    <span class="eyebrow">Executive Masterclass Exam • Module 04.01</span>
+    <h1>Đánh Giá Tổng Hợp: Performance Yield Architecture</h1>
+    <div class="sub-en">Process Yield, Poisson Defect Modeling, Throughput Yield &amp; Monte Carlo Simulation</div>
+    <p class="desc">
+      Đấu trường 30 câu hỏi tình huống thực chiến đa tầng (Recall, Analytical &amp; Executive Decisions) bao quát toàn bộ 17 bài học từ 08 đến 24. Thiết kế theo chuẩn mực Master Black Belt quốc tế.
+    </p>
+  </header>
+
+  <!-- STATS DASHBOARD -->
+  <div class="stats-grid">
+    <div class="stat-tile">
+      <div class="num" id="stat-total">30</div>
+      <div class="lbl">Tổng Số Câu</div>
+    </div>
+    <div class="stat-tile">
+      <div class="num" id="stat-answered">0</div>
+      <div class="lbl">Đã Hoàn Thành</div>
+    </div>
+    <div class="stat-tile">
+      <div class="num green" id="stat-correct">0</div>
+      <div class="lbl">Chính Xác</div>
+    </div>
+    <div class="stat-tile">
+      <div class="num red" id="stat-wrong">0</div>
+      <div class="lbl">Cần Cải Thiện</div>
+    </div>
+    <div class="stat-tile">
+      <div class="num gold" id="stat-pct">0%</div>
+      <div class="lbl">Điểm Số Hiện Tại</div>
+    </div>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="filter-tabs">
+    <button class="tab-btn active" onclick="filterQuestions('all', this)">Tất Cả (30 Câu)</button>
+    <button class="tab-btn" onclick="filterQuestions('topic1', this)">1. Bản Chất &amp; Góc Nhìn (Bài 08-10)</button>
+    <button class="tab-btn" onclick="filterQuestions('topic2', this)">2. Poisson &amp; Kiểm Định (Bài 11, 18, 19)</button>
+    <button class="tab-btn" onclick="filterQuestions('topic3', this)">3. Năng Lực &amp; TPY (Bài 12, 13, 14)</button>
+    <button class="tab-btn" onclick="filterQuestions('topic4', this)">4. Tính Toán &amp; 4 Loại Yield (Bài 15, 16, 17)</button>
+    <button class="tab-btn" onclick="filterQuestions('topic5', this)">5. Mô Phỏng 10 Bước &amp; Điều Hành (Bài 20-24)</button>
+  </div>
+
+  <!-- QUESTIONS CONTAINER -->
+  <div id="questions-list"></div>
+
+  <!-- RESULT CARD -->
+  <div id="result-box" class="result-card">
+    <div class="result-score" id="res-score">0%</div>
+    <div class="result-belt" id="res-belt">Đang Đánh Giá...</div>
+    <p class="result-desc" id="res-desc"></p>
+    <button class="reset-btn" onclick="resetExam()">Làm Lại Toàn Bộ Bài Thi</button>
+  </div>
+</div>
+
+<script>
+const questionsData = [
+  // --- TOPIC 1: BẢN CHẤT & GÓC NHÌN (BÀI 08-10) ---
+  {
+    id: 1, fn: 'checkQuiz(1)', topic: 'topic1', badge: 'Bài 08 • Tầng 1: Khái niệm',
+    q: 'Sự khác biệt căn bản nhất giữa "Defect" (Khuyết tật) và "Defective" (Đơn vị hỏng) là gì?',
+    options: [
+      { text: 'A. Defect là từng khuyết tật sai lệch cụ thể; Defective là toàn bộ đơn vị sản phẩm chứa ít nhất một Defect.', correct: true },
+      { text: 'B. Defect và Defective là hai từ đồng nghĩa hoàn toàn trong tính toán DPMO.', correct: false },
+      { text: 'C. Defect chỉ dùng cho sản xuất cơ khí, Defective chỉ dùng cho ngành dịch vụ.', correct: false },
+      { text: 'D. Defect là sản phẩm hỏng phải vứt bỏ, Defective là sản phẩm sửa được.', correct: false }
+    ],
+    en: 'Defect is a specific non-conformance to a CTQ requirement. A Defective is the entire unit containing one or more defects.',
+    vi: 'Chính xác! Một sản phẩm (Defective) có thể chứa nhiều khuyết tật (Defects) khác nhau.'
+  },
+  {
+    id: 2, fn: 'checkQuiz(2)', topic: 'topic1', badge: 'Bài 08 • Tầng 2: Tính toán DPU & DPO',
+    q: 'Một xưởng sản xuất kiểm tra 1,000 bo mạch, phát hiện 150 lỗi hàn, 30 lỗi gắn ngược linh kiện và 20 lỗi xước mạch (Tổng 200 lỗi). Mỗi bo mạch có 50 cơ hội lỗi (TOP = 50). Chỉ số DPU và DPMO là bao nhiêu?',
+    options: [
+      { text: 'A. DPU = 0.20 và DPMO = 4,000 DPMO', correct: true },
+      { text: 'B. DPU = 0.20 và DPMO = 200,000 DPMO', correct: false },
+      { text: 'C. DPU = 5.00 và DPMO = 4,000 DPMO', correct: false },
+      { text: 'D. DPU = 0.04 và DPMO = 40,000 DPMO', correct: false }
+    ],
+    en: 'DPU = 200 / 1,000 = 0.20. DPO = 200 / (1,000 x 50) = 0.004. DPMO = 0.004 x 1,000,000 = 4,000 DPMO.',
+    vi: 'Chính xác! DPU = 0.20 lỗi/bo mạch và DPMO = 4,000 (tương đương mức chất lượng khoảng 4.15 Sigma).'
+  },
+  {
+    id: 3, fn: 'checkQuiz(3)', topic: 'topic1', badge: 'Bài 09 • Tầng 1: 1.5-Sigma Shift',
+    q: 'Tại sao chuẩn Six Sigma toàn cầu luôn trừ đi 1.5-Sigma (1.5σ Shift) khi chuyển đổi từ mức năng lực ngắn hạn sang dài hạn?',
+    options: [
+      { text: 'A. Vì trong dài hạn, các yếu tố môi trường, mòn dao, thay ca và biến thiên nguyên liệu làm tâm quy trình dao động trung bình khoảng 1.5 độ lệch chuẩn.', correct: true },
+      { text: 'B. Vì đây là con số cố định do phần mềm máy tính tự động cài đặt.', correct: false },
+      { text: 'C. Vì năng lực của công nhân luôn bị suy giảm 50% sau 1 năm.', correct: false },
+      { text: 'D. Vì dung sai khách hàng tự động thu hẹp 1.5 lần trong dài hạn.', correct: false }
+    ],
+    en: 'Empirical studies by Motorola showed process means shift dynamically by approximately 1.5 sigma over extended periods of time.',
+    vi: 'Chính xác! Phát hiện nền tảng của Bill Smith giải thích tại sao 6-Sigma ngắn hạn tương đương 3.4 DPMO dài hạn.'
+  },
+  {
+    id: 4, fn: 'checkQuiz(4)', topic: 'topic1', badge: 'Bài 09 • Tầng 2: Mức Sigma Dài Hạn',
+    q: 'Một dây chuyền sản xuất đo được mức ngắn hạn Z_ST = 5.0 Sigma. Sau 1 năm vận hành có tính độ dịch 1.5-Sigma, mức Sigma dài hạn (Z_LT) và tỷ lệ lỗi ước tính là bao nhiêu?',
+    options: [
+      { text: 'A. Z_LT = 3.5 Sigma (tương đương khoảng 233 DPMO)', correct: true },
+      { text: 'B. Z_LT = 5.0 Sigma (tương đương 0.28 DPMO)', correct: false },
+      { text: 'C. Z_LT = 6.5 Sigma (tương đương 0.001 DPMO)', correct: false },
+      { text: 'D. Z_LT = 2.0 Sigma (tương đương 22,750 DPMO)', correct: false }
+    ],
+    en: 'Z_LT = Z_ST - 1.5 = 5.0 - 1.5 = 3.5 Sigma. At 3.5 Sigma long-term, unilateral defect rate is approx 233 DPMO.',
+    vi: 'Chính xác! Z_LT = 3.5 Sigma với 233 DPMO.'
+  },
+  {
+    id: 5, fn: 'checkQuiz(5)', topic: 'topic1', badge: 'Bài 10 • Tầng 2: Nghịch lý 3 Đơn vị của Mikel Harry',
+    q: 'Xét 3 đơn vị sản phẩm, mỗi đơn vị có 3 cơ hội lỗi (tổng 9 cơ hội). Nếu phát sinh đúng 3 khuyết tật phân bố đều (mỗi đơn vị dính 1 lỗi). Hiệu suất First Time Yield và Opportunity Yield lần lượt là bao nhiêu?',
+    options: [
+      { text: 'A. First Time Yield = 0% và Opportunity Yield = 66.7%', correct: true },
+      { text: 'B. First Time Yield = 100% và Opportunity Yield = 33.3%', correct: false },
+      { text: 'C. First Time Yield = 33.3% và Opportunity Yield = 100%', correct: false },
+      { text: 'D. First Time Yield = 66.7% và Opportunity Yield = 66.7%', correct: false }
+    ],
+    en: 'Unit Level: 0/3 units clean => 0% FTY. Opportunity Level: (9-3)/9 = 6/9 = 66.7% Opportunity Yield.',
+    vi: 'Chính xác! Bài toán kinh điển chứng minh sự khác biệt sâu sắc giữa 3 góc nhìn đo lường hiệu suất.'
+  },
+  {
+    id: 6, fn: 'checkQuiz(6)', topic: 'topic1', badge: 'Bài 10 • Tầng 3: Quyết định Điều hành',
+    q: 'Tại sao báo cáo Final Yield 100% sau khi sửa chữa (Rework) lại là một cạm bẫy nguy hiểm đối với Ban Giám đốc?',
+    options: [
+      { text: 'A. Vì nó che giấu toàn bộ chi phí nhân công và vật tư trong Nhà máy ẩn, đồng thời đẩy các sản phẩm bị tổn thương do sửa chữa ra thị trường.', correct: true },
+      { text: 'B. Vì khách hàng không bao giờ chấp nhận sản phẩm có hiệu suất 100%.', correct: false },
+      { text: 'C. Vì báo cáo 100% khiến công ty phải nộp thêm thuế thu nhập.', correct: false },
+      { text: 'D. Vì không có công thức toán nào cho phép hiệu suất đạt 100%.', correct: false }
+    ],
+    en: '100% Final Yield hides the massive COPQ of the Hidden Factory and delivers repaired units with higher early-life failure rates.',
+    vi: 'Chính xác! Master Black Belt luôn nhìn xuyên qua con số Final Yield để đo lường First Pass Yield.'
+  },
+
+  // --- TOPIC 2: POISSON & KIỂM ĐỊNH (BÀI 11, 18, 19) ---
+  {
+    id: 7, fn: 'checkQuiz(7)', topic: 'topic2', badge: 'Bài 11 • Tầng 1: Bản chất Poisson',
+    q: 'Tại sao Throughput Yield (TPY) của một công đoạn lại được tính chính xác bằng công thức hàm mũ e^(-DPU)?',
+    options: [
+      { text: 'A. Vì các khuyết tật phân bố ngẫu nhiên rời rạc theo phân phối Poisson; xác suất không có khuyết tật P(0) = (e^-DPU x DPU^0)/0! = e^-DPU.', correct: true },
+      { text: 'B. Vì hàm số mũ e^-DPU là một quy ước gần đúng không có chứng minh toán học.', correct: false },
+      { text: 'C. Vì e là số Euler đại diện cho số lượng công nhân trong xưởng.', correct: false },
+      { text: 'D. Vì công thức này chỉ áp dụng khi DPU lớn hơn 5.0.', correct: false }
+    ],
+    en: 'Under the Poisson model, the probability of zero defects P(0) simplifies directly to e^(-DPU), defining Throughput Yield.',
+    vi: 'Chính xác! Nền tảng toán học phân phối Poisson xác lập công thức Y = e^(-DPU).'
+  },
+  {
+    id: 8, fn: 'checkQuiz(8)', topic: 'topic2', badge: 'Bài 11 • Tầng 2: Tính TPY từ DPU',
+    q: 'Một công đoạn dán nhãn tự động ghi nhận DPU = 0.05 lỗi/sản phẩm. Throughput Yield (TPY) của công đoạn này là bao nhiêu?',
+    options: [
+      { text: 'A. Y_TPY = 95.12% (e^-0.05 = 0.9512)', correct: true },
+      { text: 'B. Y_TPY = 95.00% (1 - 0.05 = 0.9500)', correct: false },
+      { text: 'C. Y_TPY = 90.48% (e^-0.10 = 0.9048)', correct: false },
+      { text: 'D. Y_TPY = 99.50%', correct: false }
+    ],
+    en: 'Y_TPY = e^(-0.05) = 0.951229 ~ 95.12%.',
+    vi: 'Chính xác! Throughput Yield = 95.12%.'
+  },
+  {
+    id: 9, fn: 'checkQuiz(9)', topic: 'topic2', badge: 'Bài 18 • Tầng 2: Mô hình 10 Cơ hội',
+    q: 'Một đơn vị sản phẩm có 10 ô cơ hội lỗi với p = 0.10 (DPU = 1.0). Xác suất để sản phẩm dính đúng 1 khuyết tật P(1) và đúng 2 khuyết tật P(2) lần lượt là bao nhiêu?',
+    options: [
+      { text: 'A. P(1) = 36.79% và P(2) = 18.39%', correct: true },
+      { text: 'B. P(1) = 50.00% và P(2) = 25.00%', correct: false },
+      { text: 'C. P(1) = 36.79% và P(2) = 36.79%', correct: false },
+      { text: 'D. P(1) = 10.00% và P(2) = 5.00%', correct: false }
+    ],
+    en: 'P(1) = (e^-1 x 1^1)/1! = 36.79%. P(2) = (e^-1 x 1^2)/2! = 18.39%.',
+    vi: 'Chính xác! P(1) = 36.79% và P(2) = 18.39%.'
+  },
+  {
+    id: 10, fn: 'checkQuiz(10)', topic: 'topic2', badge: 'Bài 18 • Tầng 3: Hiện tượng Cụm Lỗi',
+    q: 'Khi thấy một sản phẩm ngẫu nhiên dính tới 3 lỗi cùng lúc trên dây chuyền ổn định có DPU = 1.0, hành động đúng đắn của Black Belt là gì?',
+    options: [
+      { text: 'A. Hiểu rằng P(3) = 6.13% là biến thiên ngẫu nhiên bình thường của Poisson; chỉ can thiệp khi biểu đồ SPC báo tín hiệu đặc biệt.', correct: true },
+      { text: 'B. Lập tức bấm nút dừng khẩn cấp toàn bộ nhà máy để đại tu máy móc.', correct: false },
+      { text: 'C. Phạt trừ lương công nhân đứng máy vì làm ẩu.', correct: false },
+      { text: 'D. Tăng gấp đôi tốc độ băng chuyền để bù đắp sản lượng.', correct: false }
+    ],
+    en: 'In a Poisson process with DPU=1.0, P(3)=6.13% is normal common-cause variation. Avoid tampering without SPC special-cause signals.',
+    vi: 'Chính xác! Tránh cạm bẫy can nhiễu quá mức (Tampering) phá vỡ sự ổn định của hệ thống.'
+  },
+  {
+    id: 11, fn: 'checkQuiz(11)', topic: 'topic2', badge: 'Bài 19 • Tầng 2: Mẫu 500 Đơn vị của Mikel Harry',
+    q: 'Trong thực nghiệm mô phỏng 500 đơn vị với DPU = 1.0, số lượng sản phẩm lý thuyết kỳ vọng hoàn toàn không có khuyết tật E(0) là bao nhiêu?',
+    options: [
+      { text: 'A. Đúng 184 sản phẩm (500 x e^-1.0 = 183.94)', correct: true },
+      { text: 'B. Đúng 250 sản phẩm', correct: false },
+      { text: 'C. Đúng 500 sản phẩm', correct: false },
+      { text: 'D. Đúng 50 sản phẩm', correct: false }
+    ],
+    en: 'E(0) = N x e^(-DPU) = 500 x 0.367879 = 183.94 ~ 184 units.',
+    vi: 'Chính xác! Đúng 184 đơn vị đạt chuẩn không tì vết.'
+  },
+  {
+    id: 12, fn: 'checkQuiz(12)', topic: 'topic2', badge: 'Bài 19 • Tầng 1: Đúc kết Thực nghiệm',
+    q: 'Kết quả khớp nối hoàn hảo giữa đường cong màu đỏ lý thuyết và đường màu xanh mô phỏng thực tế 500 đơn vị chứng minh chân lý nào?',
+    options: [
+      { text: 'A. "Yield stems from the Poisson function" — Hiệu suất quy trình bắt nguồn trực tiếp từ hàm phân phối xác suất Poisson.', correct: true },
+      { text: 'B. Hiệu suất sản xuất hoàn toàn là do may rủi không thể tính toán được.', correct: false },
+      { text: 'C. Phân phối Poisson chỉ đúng trên lý thuyết sách vở.', correct: false },
+      { text: 'D. Mô phỏng Monte Carlo luôn cho kết quả sai lệch so với thực tế.', correct: false }
+    ],
+    en: 'The perfect overlay proves that process yield is directly governed by the Poisson distribution law.',
+    vi: 'Chính xác! "Yield stems from the Poisson function" — Chân lý toán học bất hủ của Six Sigma.'
+  },
+
+  // --- TOPIC 3: NĂNG LỰC & TPY (BÀI 12, 13, 14) ---
+  {
+    id: 13, fn: 'checkQuiz(13)', topic: 'topic3', badge: 'Bài 12 • Tầng 2: Năng lực Hiệu dụng',
+    q: 'Một xưởng đúc có công suất thiết kế 2,000 phôi/ngày, OEE đạt 85%, và Rolled Throughput Yield đạt 80%. Năng lực sản xuất hiệu dụng thực tế (Effective Capacity) là bao nhiêu sản phẩm hoàn hảo/ngày?',
+    options: [
+      { text: 'A. 1,360 sản phẩm hoàn hảo/ngày (2,000 x 0.85 x 0.80)', correct: true },
+      { text: 'B. 1,600 sản phẩm hoàn hảo/ngày', correct: false },
+      { text: 'C. 1,700 sản phẩm hoàn hảo/ngày', correct: false },
+      { text: 'D. 2,000 sản phẩm hoàn hảo/ngày', correct: false }
+    ],
+    en: 'Capacity_Effective = 2,000 x 0.85 x 0.80 = 1,360 units/day.',
+    vi: 'Chính xác! Năng lực hiệu dụng thực tế chỉ đạt 1,360 sản phẩm hoàn hảo/ngày.'
+  },
+  {
+    id: 14, fn: 'checkQuiz(14)', topic: 'topic3', badge: 'Bài 12 • Tầng 3: CapEx Avoidance',
+    q: 'Khái niệm "CapEx Avoidance" (Tiết kiệm vốn đầu tư tài sản cố định) trong Six Sigma giải phóng công suất thông qua cơ chế nào?',
+    options: [
+      { text: 'A. Tăng First Pass Yield để triệt tiêu thời gian máy chạy vô ích cho các sản phẩm sửa hàng, giải phóng công suất ẩn trên thiết bị sẵn có thay vì mua máy mới.', correct: true },
+      { text: 'B. Trì hoãn việc bảo dưỡng định kỳ để máy chạy liên tục.', correct: false },
+      { text: 'C. Thuê toàn bộ máy móc cũ từ các xưởng phá sản.', correct: false },
+      { text: 'D. Cắt giảm lương của kỹ sư vận hành máy.', correct: false }
+    ],
+    en: 'CapEx Avoidance unlocks hidden capacity by eliminating rework loops on existing equipment, saving millions in unnecessary machinery purchases.',
+    vi: 'Chính xác! Mở khóa năng lực nội tại mà không tốn một đồng vốn đầu tư mới.'
+  },
+  {
+    id: 15, fn: 'checkQuiz(15)', topic: 'topic3', badge: 'Bài 13 • Tầng 1: Mô hình Phễu Rót Bi',
+    q: 'Trong mô hình phễu rót bi của Dr. Mikel Harry, các viên bi màu ĐỎ rơi xuống khay hứng đại diện cho thành tố nào?',
+    options: [
+      { text: 'A. Các khuyết tật ngẫu nhiên (Defects) phát sinh trong quá trình sản xuất.', correct: true },
+      { text: 'B. Các sản phẩm hoàn hảo đạt tiêu chuẩn giao hàng.', correct: false },
+      { text: 'C. Số lượng tiền thưởng cho công nhân.', correct: false },
+      { text: 'D. Các đợt kiểm tra của khách hàng.', correct: false }
+    ],
+    en: 'Red marbles represent random defects falling across the units in the tray.',
+    vi: 'Chính xác! Bi xanh = Sản phẩm đạt chuẩn; Bi đỏ = Khuyết tật ngẫu nhiên.'
+  },
+  {
+    id: 16, fn: 'checkQuiz(16)', topic: 'topic3', badge: 'Bài 13 • Tầng 2: Đảo Công thức Tính DPU',
+    q: 'Một phân xưởng đo được Throughput Yield là 92.0%. Mật độ khuyết tật DPU nội tại của phân xưởng này là bao nhiêu?',
+    options: [
+      { text: 'A. DPU = 0.0834 lỗi/đơn vị (-ln(0.92) = 0.08338)', correct: true },
+      { text: 'B. DPU = 0.0800 lỗi/đơn vị', correct: false },
+      { text: 'C. DPU = 0.9200 lỗi/đơn vị', correct: false },
+      { text: 'D. DPU = 0.0417 lỗi/đơn vị', correct: false }
+    ],
+    en: 'DPU = -ln(Y_TPY) = -ln(0.92) = 0.08338 DPU.',
+    vi: 'Chính xác! DPU = -ln(0.92) = 0.0834 lỗi/đơn vị.'
+  },
+  {
+    id: 17, fn: 'checkQuiz(17)', topic: 'topic3', badge: 'Bài 14 • Tầng 2: Mở rộng DPU = DPO x TOP',
+    q: 'Một cụm thiết bị gồm 250 linh kiện (TOP = 250). Mỗi linh kiện có tỷ lệ lỗi DPO = 0.0020 (2,000 DPMO). Throughput Yield (TPY) của cụm thiết bị này là bao nhiêu?',
+    options: [
+      { text: 'A. Y_TPY = 60.65% (DPU = 250 x 0.002 = 0.50 => e^-0.50 = 0.6065)', correct: true },
+      { text: 'B. Y_TPY = 99.50%', correct: false },
+      { text: 'C. Y_TPY = 50.00%', correct: false },
+      { text: 'D. Y_TPY = 81.87%', correct: false }
+    ],
+    en: 'DPU = 250 x 0.002 = 0.50. Y_TPY = e^(-0.50) = 0.6065 = 60.65%.',
+    vi: 'Chính xác! DPU = 0.50 và Throughput Yield = 60.65%.'
+  },
+  {
+    id: 18, fn: 'checkQuiz(18)', topic: 'topic3', badge: 'Bài 14 • Tầng 3: Bẫy Độ Phức Tạp (Complexity Trap)',
+    q: 'Hiện tượng "Bẫy độ phức tạp" (Complexity Trap) giải thích lý do tại sao:',
+    options: [
+      { text: 'A. Một sản phẩm gồm hàng nghìn chi tiết sẽ có Rolled Yield suy thoái rất nhanh theo hàm mũ ngay cả khi từng chi tiết đơn lẻ có chất lượng rất cao (99.9%).', correct: true },
+      { text: 'B. Sản phẩm phức tạp luôn có giá thành sản xuất rẻ hơn.', correct: false },
+      { text: 'C. Máy móc hiện đại không thể gia công được sản phẩm nhiều chi tiết.', correct: false },
+      { text: 'D. Khách hàng không thích các sản phẩm có nhiều tính năng.', correct: false }
+    ],
+    en: 'The Complexity Trap explains how exponential defect accumulation rapidly degrades total yield in complex assemblies unless ultra-high component sigma is achieved.',
+    vi: 'Chính xác! Lý do cốt lõi buộc các tập đoàn công nghệ cao phải hướng tới chuẩn 6-Sigma.'
+  },
+
+  // --- TOPIC 4: TÍNH TOÁN & 4 LOẠI YIELD (BÀI 15, 16, 17) ---
+  {
+    id: 19, fn: 'checkQuiz(19)', topic: 'topic4', badge: 'Bài 15 • Tầng 2: Unilateral vs Bilateral',
+    q: 'Một đặc tính có mức năng lực ngắn hạn Z_ST = 4.0 Sigma (biết Phi(4.0) = 0.99996833). Tỷ lệ lỗi DPO trong trường hợp dung sai 2 phía đối xứng (Bilateral) là bao nhiêu?',
+    options: [
+      { text: 'A. 63.34 DPMO (2 x (1 - 0.99996833) = 0.00006334)', correct: true },
+      { text: 'B. 31.67 DPMO', correct: false },
+      { text: 'C. 3.40 DPMO', correct: false },
+      { text: 'D. 126.68 DPMO', correct: false }
+    ],
+    en: 'DPO_Bilateral = 2 x [1 - Phi(4.0)] = 2 x 0.00003167 = 0.00006334 = 63.34 DPMO.',
+    vi: 'Chính xác! 63.34 DPMO cho trường hợp dung sai 2 phía ở mức 4-Sigma ngắn hạn.'
+  },
+  {
+    id: 20, fn: 'checkQuiz(20)', topic: 'topic4', badge: 'Bài 15 • Tầng 2: Quy đổi Equivalent Z-Bench',
+    q: 'Một cụm chi tiết phức tạp đạt Throughput Yield là Y_TPY = 99.865% (biết Phi^-1(0.99865) = 3.00). Mức năng lực chuẩn hóa ngắn hạn Z_Bench(ST) có tính độ dịch 1.5-Sigma là bao nhiêu?',
+    options: [
+      { text: 'A. Z_Bench(ST) = 4.50 Sigma (3.00 + 1.5 = 4.50)', correct: true },
+      { text: 'B. Z_Bench(ST) = 3.00 Sigma', correct: false },
+      { text: 'C. Z_Bench(ST) = 6.00 Sigma', correct: false },
+      { text: 'D. Z_Bench(ST) = 1.50 Sigma', correct: false }
+    ],
+    en: 'Z_Bench(ST) = Phi^-1(0.99865) + 1.5 = 3.00 + 1.50 = 4.50 Sigma.',
+    vi: 'Chính xác! Z_Bench(ST) = 4.50 Sigma.'
+  },
+  {
+    id: 21, fn: 'checkQuiz(21)', topic: 'topic4', badge: 'Bài 16 • Tầng 2: Tính RTY Qua 8 Bước',
+    q: 'Một dây chuyền sản xuất smartphone gồm 8 công đoạn liên hoàn. Mỗi công đoạn có Throughput Yield đạt 95.0% (0.95). Rolled Throughput Yield (RTY) của toàn bộ dây chuyền là bao nhiêu?',
+    options: [
+      { text: 'A. RTY = 66.34% ((0.95)^8 = 0.66342)', correct: true },
+      { text: 'B. RTY = 95.00%', correct: false },
+      { text: 'C. RTY = 76.00%', correct: false },
+      { text: 'D. RTY = 40.00%', correct: false }
+    ],
+    en: 'RTY = (0.95)^8 = 0.66342 = 66.34%.',
+    vi: 'Chính xác! RTY = 66.34% (tích số xác suất của 8 công đoạn).'
+  },
+  {
+    id: 22, fn: 'checkQuiz(22)', topic: 'topic4', badge: 'Bài 16 • Tầng 3: Nhận diện Kẻ Hủy Diệt Hiệu Suất',
+    q: 'Khi phân tích một dây chuyền 5 bước có các giá trị TPY lần lượt là: Y_1 = 99%, Y_2 = 98%, Y_3 = 82%, Y_4 = 99%, Y_5 = 99%. Đâu là "Kẻ hủy diệt hiệu suất" (Yield Killer) cần ưu tiên giải quyết?',
+    options: [
+      { text: 'A. Công đoạn 3 (Y_3 = 82%, gây tổn thất 18% sản phẩm ngay tại trạm).', correct: true },
+      { text: 'B. Công đoạn 1 (Y_1 = 99%)', correct: false },
+      { text: 'C. Công đoạn 2 (Y_2 = 98%)', correct: false },
+      { text: 'D. Công đoạn 5 (Y_5 = 99%)', correct: false }
+    ],
+    en: 'Step 3 is the clear Yield Killer with only 82% TPY, contributing the lion's share of defect loss across the whole line.',
+    vi: 'Chính xác! Bước 3 là tâm điểm cần tập trung 80% nguồn lực Black Belt.'
+  },
+  {
+    id: 23, fn: 'checkQuiz(23)', topic: 'topic4', badge: 'Bài 17 • Tầng 2: Tính Normalized Yield (Y_norm)',
+    q: 'Một cụm lắp ráp gồm 4 đặc tính CTQ (n = 4) đạt Rolled Throughput Yield là Y_RTY = 0.960596. Hiệu suất chuẩn hóa trên mỗi đặc tính (Normalized Yield) là bao nhiêu?',
+    options: [
+      { text: 'A. Y_norm = 99.00% ((0.960596)^(1/4) = 0.9900)', correct: true },
+      { text: 'B. Y_norm = 24.01%', correct: false },
+      { text: 'C. Y_norm = 96.06%', correct: false },
+      { text: 'D. Y_norm = 99.90%', correct: false }
+    ],
+    en: 'Y_norm = (0.960596)^(1/4) = 0.9900 = 99.00%.',
+    vi: 'Chính xác! Y_norm = 99.00%.'
+  },
+  {
+    id: 24, fn: 'checkQuiz(24)', topic: 'topic4', badge: 'Bài 17 • Tầng 3: Đối Sánh Nhà Cung Cấp',
+    q: 'Tại sao việc so sánh các nhà cung ứng bằng chỉ số Normalized Yield (Y_norm) lại công bằng hơn so với so sánh bằng Rolled Yield (RTY) thô?',
+    options: [
+      { text: 'A. Vì Y_norm triệt tiêu ảnh hưởng của số lượng linh kiện (n), đánh giá chính xác năng lực công nghệ trên từng chi tiết đơn lẻ.', correct: true },
+      { text: 'B. Vì Y_norm luôn làm cho nhà cung ứng thân thiết có điểm cao hơn.', correct: false },
+      { text: 'C. Vì Y_norm không phụ thuộc vào dữ liệu kiểm tra chất lượng.', correct: false },
+      { text: 'D. Vì Y_norm là chỉ số duy nhất được bộ tài chính công nhận.', correct: false }
+    ],
+    en: 'Normalized Yield removes the bias of assembly complexity (n), providing a fair benchmark of intrinsic process capability.',
+    vi: 'Chính xác! Chuẩn hóa công bằng không phụ thuộc vào độ phức tạp của sản phẩm.'
+  },
+
+  // --- TOPIC 5: MÔ PHỎNG 10 BƯỚC & ĐIỀU HÀNH (BÀI 20-24) ---
+  {
+    id: 25, fn: 'checkQuiz(25)', topic: 'topic5', badge: 'Bài 20 • Tầng 2: Cầu Nối Normal sang Poisson',
+    q: 'Một biến liên tục có mu = 100, sigma = 10, USL = 116.4 và LSL = 83.6 (Z = +/- 1.64, p = 0.10). Nếu sản phẩm có 10 đặc tính độc lập (TOP = 10), Throughput Yield (TPY) là bao nhiêu?',
+    options: [
+      { text: 'A. Y_TPY = 36.79% (DPU = 10 x 0.10 = 1.0 => e^-1.0 = 0.3679)', correct: true },
+      { text: 'B. Y_TPY = 90.00%', correct: false },
+      { text: 'C. Y_TPY = 50.00%', correct: false },
+      { text: 'D. Y_TPY = 10.00%', correct: false }
+    ],
+    en: 'DPU = 10 x 0.10 = 1.0. Y_TPY = e^(-1.0) = 0.3679 = 36.79%.',
+    vi: 'Chính xác! Minh chứng toán học chuyển đổi liền mạch từ phân phối chuẩn sang Poisson.'
+  },
+  {
+    id: 26, fn: 'checkQuiz(26)', topic: 'topic5', badge: 'Bài 21 • Tầng 2: Ma trận 10 Bước',
+    q: 'Trong quy trình 10 bước độc lập, nếu tổng DPU của cả 10 bước cộng lại là Tổng DPU = 0.20 lỗi/sản phẩm. Rolled Throughput Yield (RTY) lý thuyết của toàn bộ quy trình là bao nhiêu?',
+    options: [
+      { text: 'A. RTY = 81.87% (e^-0.20 = 0.81873)', correct: true },
+      { text: 'B. RTY = 80.00%', correct: false },
+      { text: 'C. RTY = 98.00%', correct: false },
+      { text: 'D. RTY = 67.03%', correct: false }
+    ],
+    en: 'RTY = e^(-Sum DPU) = e^(-0.20) = 0.8187 = 81.87%.',
+    vi: 'Chính xác! RTY = 81.87%.'
+  },
+  {
+    id: 27, fn: 'checkQuiz(27)', topic: 'topic5', badge: 'Bài 22 • Tầng 3: Phân Tích Độ Nhạy',
+    q: 'Khi phân tích độ nhạy S_i = d(RTY)/d(Y_i), công đoạn nào sẽ có hệ số độ nhạy lớn nhất và tạo ra đòn bẩy cải tiến mạnh nhất?',
+    options: [
+      { text: 'A. Công đoạn có số lượng cơ hội lỗi TOP lớn nhất và có DPU ban đầu cao nhất.', correct: true },
+      { text: 'B. Công đoạn nằm ở cuối cùng của nhà máy.', correct: false },
+      { text: 'C. Công đoạn có ít nhân công nhất.', correct: false },
+      { text: 'D. Công đoạn sử dụng máy móc đắt tiền nhất.', correct: false }
+    ],
+    en: 'Operations with large opportunity counts (TOP) and high baseline DPU exhibit the highest sensitivity coefficients, yielding the greatest improvement leverage.',
+    vi: 'Chính xác! Tập trung vào các công đoạn có TOP và DPU lớn nhất mang lại ROI cao nhất.'
+  },
+  {
+    id: 28, fn: 'checkQuiz(28)', topic: 'topic5', badge: 'Bài 23 • Tầng 2: Cân Bằng Dòng Chảy 8904 Đơn Vị',
+    q: 'Khi đưa vào 8,904 đơn vị đầu vào, có 8,891 đơn vị đạt chuẩn ngay lần đầu (First Time) và 13 đơn vị phải vào vòng lặp Rework sửa chữa. Tỷ lệ First Time Yield (FTY) và Final Yield lần lượt là bao nhiêu?',
+    options: [
+      { text: 'A. FTY = 99.854% và Final Yield = 100.0% (sau khi 13 đơn vị sửa xong)', correct: true },
+      { text: 'B. FTY = 100.0% và Final Yield = 99.854%', correct: false },
+      { text: 'C. FTY = 98.54% và Final Yield = 98.54%', correct: false },
+      { text: 'D. FTY = 88.91% và Final Yield = 89.04%', correct: false }
+    ],
+    en: 'FTY = 8,891 / 8,904 = 99.854%. Final Shipped Yield = (8,891 + 13) / 8,904 = 100.0%.',
+    vi: 'Chính xác! FTY = 99.854% và Final Yield = 100.0%.'
+  },
+  {
+    id: 29, fn: 'checkQuiz(29)', topic: 'topic5', badge: 'Bài 23 • Tầng 1: Tổn Thất Lũy Kế',
+    q: 'Tại sao phế phẩm (Scrap) phát sinh ở Step 10 lại gây tổn thất tài chính nặng nề nhất cho nhà máy?',
+    options: [
+      { text: 'A. Vì sản phẩm ở Step 10 đã hấp thụ 100% chi phí nguyên vật liệu và toàn bộ chi phí nhân công, khấu hao máy móc của cả 9 bước trước đó.', correct: true },
+      { text: 'B. Vì máy ở Step 10 chạy chậm nhất.', correct: false },
+      { text: 'C. Vì công nhân ở Step 10 có lương cao nhất.', correct: false },
+      { text: 'D. Vì khách hàng đang đứng chờ nhận hàng ở Step 10.', correct: false }
+    ],
+    en: 'Units scrapped at the final step have accumulated the full compounding costs of raw materials and prior processing labor/machinery.',
+    vi: 'Chính xác! Tổn thất toàn bộ giá trị gia tăng lũy kế qua 10 công đoạn.'
+  },
+  {
+    id: 30, fn: 'checkQuiz(30)', topic: 'topic5', badge: 'Bài 24 • Tầng 3: Tối Thượng Master Black Belt',
+    q: 'Đỉnh cao của năng lực quản trị hiệu suất Six Sigma (Master Black Belt) được thể hiện trọn vẹn nhất qua định hướng nào?',
+    options: [
+      { text: 'A. Thiết kế hệ thống chống sai lỗi Poka-Yoke và kiểm soát biến thiên chủ động để đạt First Time Right toàn chuỗi, triệt tiêu hoàn toàn Nhà máy ẩn và tối đa hóa lợi nhuận bền vững.', correct: true },
+      { text: 'B. Xây dựng khu vực sửa hàng hiện đại và tuyển dụng thêm nhiều nhân viên sửa chữa tay nghề cao.', correct: false },
+      { text: 'C. Duy trì báo cáo Final Yield 100% bằng mọi giá bất chấp chi phí nội bộ.', correct: false },
+      { text: 'D. Chỉ tập trung thi lấy chứng chỉ lý thuyết mà không quan tâm đến kết quả kinh doanh.', correct: false }
+    ],
+    en: 'The ultimate MBB mastery is designing mistake-proofed, low-variation systems achieving First Time Right across the value stream, eliminating the Hidden Factory and maximizing economic value.',
+    vi: 'Chính xác! Tầm nhìn chiến lược và năng lực chuyển đổi tối thượng của Master Black Belt.'
+  }
+];
+
+let userAnswers = {};
+let currentFilter = 'all';
+
+function renderQuestions() {
+  const container = document.getElementById('questions-list');
+  container.innerHTML = '';
+
+  const filtered = currentFilter === 'all' 
+    ? questionsData 
+    : questionsData.filter(q => q.topic === currentFilter);
+
+  filtered.forEach((q, idx) => {
+    const isAnswered = userAnswers[q.id] !== undefined;
+    const userAnswer = userAnswers[q.id];
+
+    let cardHtml = `
+      <div class="quiz-card q-card" id="card-${q.id}">
+        <div class="q-head">
+          <span class="q-badge">${q.badge}</span>
+          <span class="q-meta">Câu ${q.id} / ${questionsData.length}</span>
+        </div>
+        <div class="q-text">${q.q}</div>
+        <div class="opts">
+    `;
+
+    q.options.forEach((opt, optIdx) => {
+      let optClass = 'opt-btn';
+      if (isAnswered) {
+        if (opt.correct) optClass += ' correct';
+        else if (userAnswer === optIdx) optClass += ' wrong';
+      }
+
+      cardHtml += `
+        <button class="${optClass}" onclick="selectAnswer(${q.id}, ${optIdx})" ${isAnswered ? 'disabled' : ''}>
+          ${opt.text}
+        </button>
+      `;
+    });
+
+    cardHtml += `</div>`;
+
+    if (isAnswered) {
+      const isCorrect = q.options[userAnswer].correct;
+      cardHtml += `
+        <div class="fb-box show ${isCorrect ? 'correct' : 'wrong'}">
+          <div class="fb-title">
+            ${isCorrect ? '✅ Chính Xác (Master Black Belt Analysis)' : '❌ Chưa Chính Xác (Common Trap Analysis)'}
+          </div>
+          <div>${q.en}</div>
+          <span class="fb-vi">${q.vi}</span>
+        </div>
+      `;
+    }
+
+    cardHtml += `</div>`;
+    container.innerHTML += cardHtml;
+  });
+
+  updateStats();
+}
+
+function selectAnswer(qId, optIdx) {
+  userAnswers[qId] = optIdx;
+  renderQuestions();
+}
+
+function filterQuestions(topic, btn) {
+  currentFilter = topic;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderQuestions();
+}
+
+function updateStats() {
+  const total = questionsData.length;
+  const answered = Object.keys(userAnswers).length;
+  let correct = 0;
+  let wrong = 0;
+
+  Object.entries(userAnswers).forEach(([qId, optIdx]) => {
+    const q = questionsData.find(item => item.id === parseInt(qId));
+    if (q && q.options[optIdx].correct) correct++;
+    else wrong++;
+  });
+
+  const pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+
+  document.getElementById('stat-total').innerText = total;
+  document.getElementById('stat-answered').innerText = answered;
+  document.getElementById('stat-correct').innerText = correct;
+  document.getElementById('stat-wrong').innerText = wrong;
+  document.getElementById('stat-pct').innerText = pct + '%';
+
+  // Check if finished
+  const resBox = document.getElementById('result-box');
+  if (answered === total) {
+    const totalScorePct = Math.round((correct / total) * 100);
+    document.getElementById('res-score').innerText = totalScorePct + '%';
+    
+    let belt = '';
+    let desc = '';
+    if (totalScorePct >= 95) {
+      belt = '🏆 Master Black Belt — Tinh Anh Xuất Chúng';
+      desc = 'Chúc mừng bạn! Bạn đã hoàn toàn làm chủ toàn bộ nền tảng toán học phân phối Poisson, Throughput Yield, Rolled Yield và kỹ năng mô phỏng Monte Carlo ở cấp độ Master Black Belt cao cấp nhất!';
+    } else if (totalScorePct >= 85) {
+      belt = '🎖️ Six Sigma Black Belt — Chuyên Gia Cao Cấp';
+      desc = 'Rất xuất sắc! Bạn nắm vững hầu hết các thuật toán chuyển đổi và nguyên lý tối ưu hóa hiệu suất quy trình thực chiến.';
+    } else if (totalScorePct >= 70) {
+      belt = '🥋 Six Sigma Green Belt — Năng Lực Vững Vàng';
+      desc = 'Kết quả tốt! Bạn đã hiểu rõ bản chất của Throughput Yield và các góc nhìn đo lường. Hãy ôn tập lại các bài tính toán Monte Carlo để nâng cao năng lực.';
+    } else {
+      belt = '📚 Yellow Belt — Cần Ôn Tập Thêm';
+      desc = 'Hãy xem lại các bài học từ 08 đến 24 và luyện tập lại bài thi để nắm chắc các công thức Poisson và Throughput Yield.';
+    }
+
+    document.getElementById('res-belt').innerText = belt;
+    document.getElementById('res-desc').innerText = desc;
+    resBox.classList.add('show');
+  } else {
+    resBox.classList.remove('show');
+  }
+}
+
+function resetExam() {
+  userAnswers = {};
+  renderQuestions();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Initial render
+renderQuestions();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Six Sigma & Bản Chất Cơ Bản Của Kinh Doanh (Phần A) | MBB Masterclass</title>
+<style>
+
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.7;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  /* HERO HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.25; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; font-style: italic; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+
+  /* PILLAR SECTION CARDS */
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  /* NATIVE PURE HTML/CSS MATH CARD */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-var { font-style: italic; color: #ffffff; }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* DATA TABLES */
+  table.data-table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin: 18px 0; }
+  table.data-table th {
+    background: linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color: #fff; padding: 12px 14px; text-align: left; vertical-align: top;
+  }
+  table.data-table th .th-vi { display: block; color: #a7f3d0; font-style: italic; font-weight: 500; font-size: 0.8rem; margin-top: 2px; }
+  table.data-table td { padding: 12px 14px; border-bottom: 1px solid #d1fae5; vertical-align: top; background: #fff; }
+  table.data-table td .td-sub { display: block; color: var(--vi-green-2); font-style: italic; font-size: 0.85rem; margin-top: 2px; }
+  table.data-table tr:nth-child(even) td { background: #f7fcf9; }
+
+  /* CASE STUDIES & COMPARISON */
+  .case-card {
+    background: #fdfefe;
+    border: 1px solid #cbf3e3;
+    border-left: 5px solid var(--emerald);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  .case-badge {
+    display: inline-block;
+    background: var(--emerald-vibrant);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .case-title { font-size: 1.15rem; font-weight: 800; color: var(--wood-dark); margin: 0 0 8px; }
+
+  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; margin: 22px 0; }
+  @media(max-width:768px){ .vs-grid { grid-template-columns: 1fr; } }
+  .vs-col { border-radius: 10px; padding: 20px; }
+  .vs-col.bad { background: #fef2f2; border: 2px solid #ef4444; }
+  .vs-col.good { background: #ecfdf5; border: 2px solid var(--emerald-vibrant); }
+  .vs-badge {
+    display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;
+    padding: 4px 10px; border-radius: 14px; color: #fff; margin-bottom: 10px; text-transform: uppercase;
+  }
+  .vs-badge.bad { background: var(--red); }
+  .vs-badge.good { background: var(--green); }
+  .vs-divider { display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--wood-dark); font-size: 1.3rem; }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { margin-bottom: 8px; font-size: 0.9rem; }
+
+  /* MBB PRO-TIP BOX */
+  .mbb-box {
+    background: var(--gold-bg); border: 1px solid #fef08a; border-left: 5px solid var(--gold-border);
+    border-radius: 8px; padding: 20px 24px; margin: 22px 0;
+  }
+  .mbb-box .title { color: var(--wood-bark); font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; }
+  .mbb-box p { margin: 0; color: #78350f; font-size: 0.95rem; }
+
+  /* INTERACTIVE ARENA */
+  .interactive-arena {
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color: #fff; border-radius: 14px; padding: 36px 40px; margin: 40px 0;
+    box-shadow: 0 8px 28px rgba(2,44,34,0.3); border: 2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2 { color: #fff; margin-top: 0; font-size: 1.6rem; font-weight: 800; }
+  .interactive-arena .arena-desc { color: var(--emerald-mint); font-style: italic; font-size: 0.98rem; margin-bottom: 24px; }
+  
+  .quiz-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 10px; padding: 22px 24px; margin-bottom: 22px;
+  }
+  .quiz-tag { display: inline-block; background: var(--emerald); color: #fff; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  .quiz-tag.tier-1 { background: #0284c7; }
+  .quiz-tag.tier-2 { background: #d97706; }
+  .quiz-tag.tier-3 { background: #7c3aed; }
+  .quiz-q { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.45; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(2,44,34,0.7); border: 1px solid rgba(52,211,153,0.4); color: #ecfdf5;
+    padding: 12px 16px; border-radius: 8px; font-size: 0.92rem; text-align: left; cursor: pointer;
+    transition: all 0.2s ease; font-family: inherit; line-height: 1.4;
+  }
+  .quiz-btn:hover { background: rgba(16,185,129,0.25); border-color: var(--emerald-mint); }
+  .quiz-btn.correct { background: #065f46 !important; border-color: #34d399 !important; color: #fff !important; }
+  .quiz-btn.wrong { background: #7f1d1d !important; border-color: #f87171 !important; color: #fff !important; }
+  .quiz-fb { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 8px; font-size: 0.92rem; line-height: 1.5; }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.success { background: rgba(16,185,129,0.2); border: 1px solid #34d399; color: #d1fae5; }
+  .quiz-fb.error { background: rgba(239,68,68,0.2); border: 1px solid #f87171; color: #fecaca; }
+
+  /* FLASHCARDS */
+  .flashcards-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 16px; margin-top: 16px; }
+  .flashcard {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(110,231,183,0.3); border-radius: 10px;
+    padding: 20px; cursor: pointer; min-height: 150px; display: flex; flex-direction: column;
+    justify-content: center; text-align: center; transition: transform 0.2s ease; user-select: none;
+  }
+  .flashcard:hover { transform: translateY(-3px); border-color: var(--emerald-mint); }
+  .flashcard .front { font-size: 1.05rem; font-weight: 800; color: var(--emerald-mint); }
+  .flashcard .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 6px; opacity: 0.85; }
+  .flashcard .back { display: none; font-size: 0.9rem; color: #fff; line-height: 1.45; }
+  .flashcard.flipped .front, .flashcard.flipped .hint { display: none; }
+  .flashcard.flipped .back { display: block; }
+
+  /* ACTION CHECKLIST & TEMPLATE */
+  .action-item { display: flex; align-items: flex-start; gap: 12px; background: #f4fbf7; border: 1px solid #d1fae5; padding: 14px 18px; border-radius: 8px; margin-bottom: 12px; }
+  .action-item input { width: 19px; height: 19px; accent-color: var(--emerald); cursor: pointer; margin-top: 3px; flex-shrink: 0; }
+  .action-text { font-size: 0.95rem; color: #0f241d; line-height: 1.5; }
+  .action-text strong { color: var(--wood-dark); }
+  
+  .template-box {
+    background: #ffffff; border: 1.5px dashed var(--emerald); border-radius: 10px;
+    padding: 22px 26px; margin-top: 20px;
+  }
+  .template-box h4 { margin: 0 0 12px; color: var(--wood-dark); font-size: 1.1rem; }
+  .template-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .template-field { display: flex; flex-direction: column; gap: 4px; }
+  .template-field label { font-size: 0.82rem; font-weight: 700; color: var(--vi-green-2); text-transform: uppercase; }
+  .template-field input, .template-field select {
+    padding: 8px 12px; border: 1px solid #a7f3d0; border-radius: 6px; font-family: inherit; font-size: 0.9rem; background: #f0fdf4;
+  }
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">03. Business Principles &bull; 06. Underpinning Economics &bull; Lesson 07</span>
+    <h1 class="hero-title">Six Sigma & Bản Chất Cơ Bản Của Kinh Doanh (Phần A)</h1>
+    <div class="hero-title-en">Six Sigma and the Basic Nature of Business &minus; Part A: The Economic Profit Model & 5 Strategic Levers</div>
+    <p class="hero-desc">
+      Tổng hợp và lượng hóa bản chất kinh tế của doanh nghiệp trên thang đo tài chính: Mối quan hệ giữa Chi phí Cố định (Fixed Cost), Phân phối Biến phí (Variable Cost), Giá bán (Sales Price) và Lợi nhuận. Cách tính toán chỉ số thống kê Z-score để xác định xác suất thua lỗ và 5 đòn bẩy chiến lược của Six Sigma.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 / Pillar 1</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành 60 Giây</h2>
+    <div class="section-subheading">Executive Summary &minus; The Fundamental Economic Equation</div>
+    
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Bản Chất Của Lợi Nhuận Kinh Doanh:</strong> Lợi nhuận là phần chênh lệch thặng dư giữa Giá bán (<i>Sales Price</i>) và Tổng chi phí [Chi phí Cố định (<i>FC</i>) + Chi phí Biến đổi (<i>VC</i>)].</li>
+        <li><strong>Sự Bất Định Do Biến Phí Tạo Ra:</strong> Chi phí cố định là một khối cố định, nhưng chi phí biến đổi luôn dao động và tạo thành một <em>phân phối xác suất</em> (Distribution of Total Cost). Do đó, tổng chi phí thực tế là một biến ngẫu nhiên.</li>
+        <li><strong>Xác Suất Vượt Giá Bán & Rủi Ro Thua Lỗ (Probability of Loss):</strong> Phần diện tích "đuôi" (Tail area) của phân phối chi phí vượt qua đường Giá bán chính là xác suất doanh nghiệp bị lỗ trên từng đơn vị sản phẩm/giao dịch.</li>
+        <li><strong>5 Đòn Bẩy Kinh Tế Cơ Bản Của Doanh Nghiệp:</strong> Để thu hẹp diện tích đuôi thua lỗ, doanh nghiệp chỉ có 5 lựa chọn: (1) Giảm chi phí biến đổi trung bình, (2) Giảm phương sai của chi phí biến đổi, (3) Giảm chi phí cố định tuyệt đối, (4) Tăng giá bán, hoặc (5) Kết hợp các giải pháp trên.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 / Pillar 2</span>
+    <h2 class="section-heading">Mô Hình Phân Phối Chi Phí & Công Thức Xác Suất Thua Lỗ</h2>
+    <div class="section-subheading">Economic Cost Distribution & Z-Score Loss Probability Equation</div>
+
+    <p>
+      Hãy cùng phân tích mô hình tài chính 30.000 feet do TS. Mikel Harry phác thảo trên thang đo đô la:
+    </p>
+
+    <!-- Visual Scale Diagram -->
+    <div style="background:#022c22; color:#fff; border-radius:10px; padding:24px; margin:20px 0; border:1.5px solid var(--emerald);">
+      <div style="text-align:center; font-weight:800; color:var(--emerald-mint); margin-bottom:18px; text-transform:uppercase; letter-spacing:1px;">
+        Thang Đo Kinh Tế Six Sigma: Định Phí, Biến Phí & Ngưỡng Rủi Ro Giá Bán
+      </div>
+
+      <div style="background:rgba(0,0,0,0.35); border:1px solid var(--emerald); border-radius:8px; padding:20px; position:relative;">
+        <!-- Scale Bar -->
+        <div style="display:flex; height:48px; border-radius:6px; overflow:hidden; margin-bottom:14px; font-weight:bold; font-size:0.9rem; text-align:center; line-height:48px;">
+          <div style="background:#b91c1c; color:#fff; width:35%;">
+            ĐỊNH PHÍ (Fixed Cost &minus; FC)
+          </div>
+          <div style="background:linear-gradient(90deg, #d97706, #f59e0b); color:#fff; width:45%;">
+            BIẾN PHÍ TRUNG BÌNH (&mu;<sub>VC</sub>)
+          </div>
+          <div style="background:#16a34a; color:#fff; width:20%;">
+            LỢI NHUẬN (Profit)
+          </div>
+        </div>
+
+        <!-- Marker for Sales Price -->
+        <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#a7f3d0; border-top:1px dashed #34d399; padding-top:8px;">
+          <span>0 $</span>
+          <span style="margin-left:25%;">Tổng Định Phí</span>
+          <span style="margin-left:35%;">Chi Phí Trung Bình (&mu;<sub>total</sub>)</span>
+          <strong style="color:#6ee7b7; font-size:1rem;">GIÁ BÁN (Sales Price) &rarr;</strong>
+        </div>
+
+        <!-- Tail distribution warning -->
+        <div style="margin-top:16px; background:rgba(239,68,68,0.2); border:1px solid #f87171; border-radius:6px; padding:12px; font-size:0.88rem; color:#fca5a5;">
+          ⚠️ <strong>Rủi Ro Kinh Tế (Economic Risk):</strong> Vì chi phí chất lượng kém (COPQ) làm tăng độ biến thiên (&sigma;<sub>total</sub>), đường phân phối chi phí loe rộng sang phải. Phần diện tích vượt qua vạch GIÁ BÁN chính là xác suất công ty bị lỗ tiền trên mỗi đơn hàng!
+        </div>
+      </div>
+    </div>
+
+    <!-- Math Card 1: Economic Z-Score Equation -->
+    <div class="math-card">
+      <div class="title">1. Phương Trình Thống Kê Z-Score Đến Giá Bán (Economic Distance Z-Score)</div>
+      <div class="math-equation">
+        <span class="math-var">Z<sub>sales_price</sub></span> = 
+        <div class="math-frac">
+          <div class="math-num"><span class="math-var">Price<sub>sales</sub></span> &minus; (<span class="math-var">Cost<sub>fixed</sub></span> + <span class="math-var">&mu;<sub>variable</sub></span>)</div>
+          <div class="math-den"><span class="math-var">&sigma;<sub>variable</sub></span></div>
+        </div>
+      </div>
+      <div class="desc">
+        <strong>Ý nghĩa toán học & tài chính:</strong><br>
+        &bull; <strong>Z<sub>sales_price</sub>:</strong> Khoảng cách đo bằng số độ lệch chuẩn từ Chi phí Trung bình đến Giá bán. Giá trị <i>Z</i> càng lớn, xác suất thua lỗ càng tiệm cận 0.<br>
+        &bull; <strong>Price<sub>sales</sub>:</strong> Mức giá bán được thị trường chấp nhận.<br>
+        &bull; <strong>Cost<sub>fixed</sub> + &mu;<sub>variable</sub>:</strong> Tổng chi phí kỳ vọng trên mỗi đơn vị sản phẩm/giao dịch.<br>
+        &bull; <strong>&sigma;<sub>variable</sub>:</strong> Độ lệch chuẩn (độ biến động bất định) của chi phí biến đổi. Khi COPQ tăng cao, &sigma;<sub>variable</sub> phình to, kéo giá trị <i>Z</i> tụt dốc và làm bùng nổ xác suất lỗ!
+      </div>
+    </div>
+
+    <!-- Math Card 2: Probability of Loss -->
+    <div class="math-card">
+      <div class="title">2. Xác Suất Thua Lỗ Kinh Tế (Probability of Economic Loss)</div>
+      <div class="math-equation">
+        <span class="math-var">P(Loss)</span> = 
+        <span class="math-var">P(Cost<sub>total</sub> &gt; Price<sub>sales</sub>)</span> = 
+        1 &minus; &Phi;(<span class="math-var">Z<sub>sales_price</sub></span>)
+      </div>
+      <div class="desc">
+        <strong>Trong đó:</strong><br>
+        &bull; <strong>&Phi;(Z):</strong> Hàm phân phối tích lũy chuẩn chuẩn hóa (Cumulative Standard Normal Distribution).<br>
+        &bull; <em>Ví dụ:</em> Nếu <i>Z</i> = 1.5, <i>P(Loss)</i> &approx; 6.68%. Nhưng nếu cải tiến Six Sigma nâng <i>Z</i> = 3.0, <i>P(Loss)</i> giảm xuống chỉ còn 0.135%; và khi đạt <i>Z</i> = 6.0, <i>P(Loss)</i> &approx; 0.0000001% (miễn nhiễm với rủi ro thua lỗ).
+      </div>
+    </div>
+
+    <!-- MBB Box: 5 Levers Table -->
+    <div class="mbb-box">
+      <div class="title">💡 5 Đòn Bẩy Chiến Lược Để Giảm Thiểu Rủi Ro Thua Lỗ (P(Loss) &darr;)</div>
+      <p style="color:#78350f; line-height:1.6;">
+        1. <strong>Giảm Chi Phí Biến Đổi Trung Bình (&mu;<sub>VC</sub> &darr;):</strong> Cắt giảm phế phẩm, rút ngắn thời gian xử lý DAF &rarr; Kéo đỉnh phân phối chi phí dịch sang trái.<br>
+        2. <strong>Giảm Phương Sai Biến Phí (&sigma;<sub>VC</sub><sup>2</sup> &darr;):</strong> Ổn định quy trình, kiểm soát chặt biến số <i>X</i> &rarr; Ép hẹp dải phân phối, triệt tiêu phần đuôi vượt giá bán.<br>
+        3. <strong>Giảm Định Phí Tuyệt Đối (FC &darr;):</strong> Tinh gọn bộ máy quản lý gián tiếp, giảm diện tích kho bãi &rarr; Đẩy toàn bộ thanh chi phí sang trái.<br>
+        4. <strong>Tăng Giá Bán (SP &uarr;):</strong> Nâng cao giá trị thương hiệu và tính năng sản phẩm &rarr; Đẩy vạch trần doanh thu ra xa.<br>
+        5. <strong>Kết Hợp Toàn Diện (Six Sigma Aim):</strong> Đồng thời vừa giảm &mu;<sub>VC</sub> vừa nén chặt &sigma;<sub>VC</sub> để tối đa hóa biên lợi nhuận ròng.
+      </p>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 / Pillar 3</span>
+    <h2 class="section-heading">Tình Huống Thực Chiến & Đối Chiếu Quản Trị</h2>
+    <div class="section-subheading">Real-World Case Studies & Statistical Financial Analysis</div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Sản Xuất / Precision Injection Molding</span>
+      <h3 class="case-title">Case Study 1: Tối Ưu Hóa Phân Phối Chi Phí Trong Đúc Ép Vỏ Thiết Bị Y Tế</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Một nhà máy sản xuất đầu nối kim tiêm y tế với giá bán cố định <i>SP</i> = 1.20 USD/cái. Định phí <i>FC</i> = 0.40 USD. Chi phí biến đổi trung bình &mu;<sub>VC</sub> = 0.65 USD nhưng độ biến động rất lớn do tỷ lệ phế phẩm thất thường (&sigma;<sub>VC</sub> = 0.10 USD).<br>
+        <strong>Đánh giá rủi ro tài chính:</strong><br>
+        <i>Z</i> = (1.20 &minus; [0.40 + 0.65]) / 0.10 = 0.15 / 0.10 = 1.50 &rarr; <i>P(Loss)</i> = 6.68%.<br>
+        Cứ 100 sản phẩm xuất xưởng thì có gần 7 sản phẩm có chi phí thực tế vượt giá bán (bị lỗ ròng).<br>
+        <strong>Cải tiến DMAIC:</strong> Áp dụng kiểm soát khuôn đúc đa điểm giúp giảm &mu;<sub>VC</sub> về 0.55 USD và ép chặt &sigma;<sub>VC</sub> xuống 0.03 USD.<br>
+        <strong>Kết quả mới:</strong> <i>Z</i> = (1.20 &minus; 0.95) / 0.03 = 8.33 &rarr; <i>P(Loss)</i> &approx; 0%. Lợi nhuận trung bình tăng từ 0.15 USD lên 0.25 USD/sp (tăng 66.7%).
+      </p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Dịch Vụ / Telecommunications Customer Acquisition</span>
+      <h3 class="case-title">Case Study 2: Kiểm Soát Phân Phối Chi Phí Thu Hút Thuê Bao Viễn Thông (CAC)</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Một nhà mạng viễn thông có doanh thu trọn đời bình quân của một thuê bao (LTV) là <i>SP</i> = 180 USD. Chi phí cố định hạ tầng <i>FC</i> = 60 USD. Chi phí biến đổi thu hút khách hàng (CAC) có trung bình &mu;<sub>VC</sub> = 90 USD nhưng độ lệch chuẩn lên tới &sigma;<sub>VC</sub> = 25 USD do tỷ lệ chuyển đổi của các chiến dịch quảng cáo không ổn định.<br>
+        <strong>Tính toán Z-score:</strong> <i>Z</i> = (180 &minus; [60 + 90]) / 25 = 1.20 &rarr; <i>P(Loss)</i> = 11.51% thuê bao mới bị âm vốn lưu động.<br>
+        <strong>Giải pháp Black Belt:</strong> Chuẩn hóa kịch bản telesales và ứng dụng Lead Scoring bằng học máy giúp giảm &mu;<sub>VC</sub> xuống 70 USD và &sigma;<sub>VC</sub> còn 8 USD.<br>
+        <strong>Kết quả:</strong> <i>Z</i> = (180 &minus; 130) / 8 = 6.25 &rarr; Rủi ro lỗ triệt tiêu hoàn toàn, lợi nhuận ròng từ mỗi thuê bao mới tăng gấp đôi từ 30 USD lên 50 USD.
+      </p>
+    </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px; font-size:1.25rem;">Bảng So Sánh Quyết Định Kinh Doanh: Dựa Trên Trung Bình vs Dựa Trên Phân Phối Thống Kê</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Yếu Tố Phân Tích<span class="th-vi">Decision Element</span></th>
+          <th>Tư Duy Kế Toán Truyền Thống<span class="th-vi">Traditional Accounting (Deterministic)</span></th>
+          <th>Tư Duy Kinh Tế Six Sigma<span class="th-vi">Six Sigma Economics (Probabilistic)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Cách nhìn nhận chi phí biến đổi</strong></td>
+          <td>Coi chi phí biến đổi là một hằng số cố định duy nhất (Single scalar number).<span class="td-sub">Chỉ nhìn vào giá thành định mức trung bình</span></td>
+          <td>Coi chi phí biến đổi là một phân phối thống kê có tâm &mu; và độ phân tán &sigma;.<span class="td-sub">Recognizes real-world variability</span></td>
+        </tr>
+        <tr>
+          <td><strong>Đánh giá rủi ro thua lỗ</strong></td>
+          <td>Chỉ cần Giá bán &gt; Tổng chi phí trung bình thì kết luận "100% có lãi".<span class="td-sub">Ảo giác an toàn giả tạo</span></td>
+          <td>Tính toán chỉ số <i>Z</i> và diện tích đuôi để biết chính xác xác suất bị lỗ <i>P(Loss)</i>.<span class="td-sub">Quantitative tail risk evaluation</span></td>
+        </tr>
+        <tr>
+          <td><strong>Chiến lược tối ưu hóa</strong></td>
+          <td>Chỉ tập trung ép giá nhà cung cấp để giảm chi phí trung bình &mu;.<span class="td-sub">Bỏ qua sự biến động phương sai</span></td>
+          <td>Đồng thời vừa giảm tâm &mu; vừa nén chặt phương sai &sigma;<sup>2</sup> bằng Six Sigma.<span class="td-sub">Simultaneous Mean & Variance Reduction</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num" style="background:#059669; color:#fff;">Trụ Cột 4 / Pillar 4</span>
+    <h2>Đấu Trường Tương Tác & Bài Tập Tình Huống</h2>
+    <div class="arena-desc">Interactive Arena &minus; Scenario-Based Quizzes & 3D Flashcards</div>
+
+    <!-- QUIZ 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Hiểu Nguyên Lý Cơ Bản</span>
+      <div class="quiz-q">1. Trong mô hình kinh tế nền tảng của Six Sigma do TS. Mikel Harry trình bày, tại sao tổng chi phí lại được biểu diễn dưới dạng một đường cong phân phối xác suất thay vì một con số cố định?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-7-q1', 'Correct! Variable costs vary from unit to unit due to defect rates, rework time, scrap, and operational perturbations &minus; creating a distribution around the average.', 'Chính xác! Chi phí biến đổi dao động trên từng đơn vị sản phẩm do tỷ lệ phế phẩm, thời gian làm lại và các xáo trộn vận hành &minus; tạo ra một phân phối bất định xung quanh giá trị trung bình.')">A. Vì chi phí biến đổi liên tục thay đổi trên từng đơn vị sản phẩm do tỷ lệ lỗi, làm lại và biến động thời gian xử lý &minus; tạo nên sự bất định và phân phối chi phí.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q1', 'Incorrect. Fixed costs are fixed on the scale; variable cost fluctuations create the curve.', 'Sai. Định phí mang tính ổn định, chính sự biến động của biến phí mới tạo nên đường cong phân phối.')">B. Vì chi phí cố định (định phí) thay đổi liên tục theo từng giờ trong ngày.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q1', 'Incorrect. Currency fluctuations are macroeconomic, but Dr. Harry focuses on internal operational cost variation.', 'Sai. Biến động tỷ giá là yếu tố vĩ mô, TS. Harry tập trung vào sự dao động nội tại của quy trình sản xuất.')">C. Vì tỷ giá ngoại tệ biến động trên thị trường quốc tế.</button>
+      </div>
+      <div id="fb-7-q1" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Thuật Ngữ Thống Kê Kinh Tế</span>
+      <div class="quiz-q">2. Diện tích phần "đuôi" (Tail Area) của phân phối tổng chi phí nằm vượt quá vạch Giá Bán (Sales Price) biểu thị điều gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q2', 'Incorrect. Tail area beyond sales price represents loss, not super-profit.', 'Sai. Phần diện tích vượt quá giá bán là vùng thua lỗ, không phải siêu lợi nhuận.')">A. Phần lợi nhuận thặng dư vượt mức kế hoạch của doanh nghiệp.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-7-q2', 'Correct! Tail area beyond sales price represents the probability that total cost exceeds revenue &minus; i.e., the probability of economic loss.', 'Chính xác! Phần diện tích đuôi vượt quá giá bán biểu thị xác suất tổng chi phí vượt quá doanh thu &minus; tức là Xác Suất Thua Lỗ Kinh Tế (Probability of Economic Loss)!')">B. Xác suất mà chi phí thực tế sản xuất ra một sản phẩm sẽ vượt quá giá bán &minus; tức là Xác Suất Thua Lỗ.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q2', 'Incorrect. Tax liability is calculated on profit, not on cost tail areas.', 'Sai. Thuế thu nhập doanh nghiệp chỉ tính trên phần lợi nhuận dương.')">C. Khoản thuế thu nhập doanh nghiệp phải nộp cho nhà nước.</button>
+      </div>
+      <div id="fb-7-q2" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Tính Toán Chỉ Số Z-Score Tài Chính</span>
+      <div class="quiz-q">3. Một công ty bán sản phẩm với giá <i>SP</i> = 500 USD. Chi phí cố định <i>FC</i> = 150 USD/sp. Chi phí biến đổi trung bình &mu;<sub>VC</sub> = 250 USD/sp với độ lệch chuẩn &sigma;<sub>VC</sub> = 50 USD. Chỉ số thống kê khoảng cách <i>Z</i>-score từ tổng chi phí trung bình đến Giá bán là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q3', 'Incorrect. Total mean cost = 150 + 250 = 400 USD. Z = (500 - 400) / 50 = 100 / 50 = 2.0.', 'Sai. Tổng chi phí TB = 150 + 250 = 400 USD. Z = (500 - 400) / 50 = 100 / 50 = 2.0.')">A. <i>Z</i> = 1.0</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-7-q3', 'Correct! Total mean cost = 150 + 250 = 400 USD. Z = (500 - 400) / 50 = 100 / 50 = 2.0 (corresponding to ~2.28% probability of loss).', 'Chính xác! Tổng chi phí TB = 150 + 250 = 400 USD. Khoảng cách = 500 &minus; 400 = 100 USD. <i>Z</i> = 100 / 50 = 2.0 (tương ứng xác suất lỗ &approx; 2.28%)!')">B. <i>Z</i> = 2.0</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q3', 'Incorrect. Did you forget to add fixed cost?', 'Sai. Bạn đã quên cộng chi phí cố định vào chi phí biến đổi.')">C. <i>Z</i> = 3.0</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q3', 'Incorrect. Check the denominator (sigma = 50).', 'Sai. Hãy kiểm tra lại mẫu số độ lệch chuẩn.')">D. <i>Z</i> = 0.5</button>
+      </div>
+      <div id="fb-7-q3" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Đánh Giá 5 Đòn Bẩy Kinh Tế</span>
+      <div class="quiz-q">4. Trong 5 đòn bẩy kinh tế cơ bản, hành động nào sau đây giúp làm tăng chỉ số <i>Z</i>-score đến giá bán mà KHÔNG cần phải tăng giá bán sản phẩm trên thị trường?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-7-q4', 'Correct! Reducing average variable cost, reducing variable cost variance, or decreasing fixed cost all increase the Z distance without touching market price.', 'Chính xác! Giảm chi phí biến đổi trung bình (&mu;<sub>VC</sub> &darr;), giảm phương sai biến phí (&sigma;<sub>VC</sub> &darr;), hoặc cắt giảm định phí (FC &darr;) đều làm tăng Z-score mà không cần tăng giá bán!')">A. Giảm chi phí biến đổi trung bình, nén chặt phương sai biến phí, hoặc cắt giảm chi phí cố định tuyệt đối.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q4', 'Incorrect. Increasing overhead raises fixed cost, moving mean cost closer to sales price and lowering Z.', 'Sai. Tăng chi phí quản lý sẽ làm tăng định phí và kéo lùi chỉ số Z.')">B. Tăng chi phí quản lý gián tiếp và mở rộng nhà xưởng.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q4', 'Incorrect. Expanding tolerance increases defect variance, driving sigma up and Z down.', 'Sai. Nới lỏng dung sai làm tăng phương sai lỗi và đẩy rủi ro thua lỗ tăng cao.')">C. Nới lỏng dung sai kỹ thuật để công nhân làm việc dễ hơn.</button>
+      </div>
+      <div id="fb-7-q4" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Ra Quyết Định Trong Thị Trường Cạnh Tranh Gay Gắt</span>
+      <div class="quiz-q">5. Trong một ngành hàng tiêu dùng có tính cạnh tranh khốc liệt, doanh nghiệp KHÔNG THỂ tăng giá bán (<i>SP</i>) vì sẽ mất khách vào tay đối thủ, đồng thời chi phí cố định (<i>FC</i>) đã tối ưu hóa hết mức. Chiến lược Six Sigma nào là con đường duy nhất để gia tăng tỷ suất lợi nhuận và xóa bỏ nguy cơ thua lỗ?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q5', 'Incorrect. Cutting raw material quality increases defect variance and destroys brand equity.', 'Sai. Mua nguyên liệu rẻ tiền sẽ làm bùng nổ phế phẩm và phá hủy uy tín thương hiệu.')">A. Mua nguyên vật liệu giá rẻ kém chất lượng để ép giảm chi phí đầu vào.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-7-q5', 'Correct! When Price and Fixed Costs are locked by market forces, Six Sigma focuses relentlessly on reducing the mean and variance of variable costs through defect elimination and DAF cycle reduction.', 'Chính xác! Khi Giá bán và Định phí bị thị trường khóa chặt, Six Sigma là vũ khí tối thượng: Tập trung triệt tiêu tỷ lệ lỗi DAF để vừa kéo giảm chi phí biến đổi trung bình (&mu;<sub>VC</sub>) vừa nén chặt độ biến động (&sigma;<sub>VC</sub>), giải phóng dòng tiền lợi nhuận thuần!')">B. Tập trung triển khai các dự án DMAIC để triệt tiêu phế phẩm và làm lại: Vừa kéo giảm chi phí biến đổi trung bình (&mu;<sub>VC</sub> &darr;) vừa nén chặt phương sai (&sigma;<sub>VC</sub> &darr;), đẩy chỉ số <i>Z</i> &ge; 6.0 để tối đa hóa lợi nhuận an toàn.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q5', 'Incorrect. Firing sales staff shrinks revenue without fixing internal operational instability.', 'Sai. Cắt giảm đội ngũ bán hàng sẽ làm sụt giảm doanh số mà không giải quyết được căn nguyên chi phí.')">C. Cắt giảm 50% đội ngũ bán hàng để giảm quỹ lương.</button>
+      </div>
+      <div id="fb-7-q5" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Quản Trị Rủi Ro Danh Mục Sản Phẩm</span>
+      <div class="quiz-q">6. Khi phân tích danh mục 10 dòng sản phẩm, Black Belt phát hiện Dòng sản phẩm K có tỷ suất lợi nhuận trên giấy tờ là 15%, nhưng chỉ số <i>Z<sub>sales_price</sub></i> = 0.8 do độ biến động phế phẩm quá cao (&sigma;<sub>VC</sub> = 1.25 lần mức kỳ vọng). Quyết định điều hành nào sau đây là chuẩn xác nhất?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-7-q6', 'Correct! Z = 0.8 means P(Loss) = ~21.19% of all production units. Despite positive average margin on paper, more than 1 in 5 units loses money due to uncontrolled variance &minus; requiring immediate Black Belt intervention.', 'Chính xác! <i>Z</i> = 0.8 đồng nghĩa với việc có tới 21.19% số lượng sản phẩm sản xuất ra thực tế bị lỗ tiền. Con số lãi 15% trên giấy tờ chỉ là ảo ảnh do trung bình bị che giấu; cần lập tức kích hoạt dự án Black Belt để nén phương sai!')">A. Lập tức kích hoạt dự án Black Belt khẩn cấp để giảm phương sai &sigma;<sub>VC</sub>; vì với <i>Z</i> = 0.8, có hơn 21% số đơn vị sản phẩm bán ra thực chất đang bị lỗ vốn do biến động chất lượng!</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q6', 'Incorrect. Expanding a product with Z=0.8 scales up the volume of losing units.', 'Sai. Tăng sản lượng của một sản phẩm có Z=0.8 chỉ làm nhân rộng quy mô thua lỗ.')">B. Tăng gấp đôi sản lượng dòng sản phẩm K vì tỷ suất lợi nhuận 15% là rất hấp dẫn.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q6', 'Incorrect. Product design may be sound; the issue is manufacturing process variation.', 'Sai. Khai tử sản phẩm khi chưa tối ưu hóa quy trình là quyết định vội vàng và lãng phí thị trường.')">C. Khai tử ngay dòng sản phẩm K mà không cần phân tích thêm.</button>
+      </div>
+      <div id="fb-7-q6" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Tác Động Của Chi Phí Chất Lượng Lên Độ Biến Thiên</span>
+      <div class="quiz-q">7. Theo luận giải của TS. Mikel Harry, khi Chi phí Chất lượng Kém (COPQ) tăng cao, nó tác động như thế nào lên phân phối tổng chi phí của doanh nghiệp?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-7-q7', 'Correct! COPQ causes the distribution of total cost to get larger (larger standard deviation), which drives the Z-value down and increases the probability of exceeding sales price (loss).', 'Chính xác! COPQ làm phân phối tổng chi phí nở rộng ra (độ lệch chuẩn tăng lên), làm giá trị Z sụt giảm và trực tiếp làm tăng xác suất chi phí vượt quá giá bán (thua lỗ)!')">A. Làm phân phối tổng chi phí nở rộng ra (độ lệch chuẩn &sigma; tăng lên), kéo giá trị <i>Z</i> sụt giảm và trực tiếp làm tăng xác suất chi phí vượt quá giá bán (thua lỗ).</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q7', 'Incorrect. COPQ increases uncertainty and cost spread.', 'Sai. COPQ làm tăng sự bất định chứ không làm phân phối thu hẹp lại.')">B. Làm phân phối chi phí co hẹp lại và đưa doanh nghiệp vào vùng an toàn tuyệt đối.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-7-q7', 'Incorrect. Process variability directly dictates cost variance.', 'Sai. Biến động chất lượng quy trình quyết định trực tiếp đến biến động chi phí.')">C. Không có bất kỳ tác động nào vì chi phí chất lượng được hạch toán độc lập.</button>
+      </div>
+      <div id="fb-7-q7" class="quiz-fb"></div>
+    </div>
+
+    <!-- 3D FLASHCARDS -->
+    <h3 style="color:#fff; margin-top:36px; font-size:1.3rem;">Thẻ Lật 3D Ôn Tập Nhanh (Executive Flashcards)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Profit Equation</div>
+        <div class="hint">Nhấp để xem phương trình lợi nhuận &bull; Click to flip</div>
+        <div class="back"><strong>Phương Trình Lợi Nhuận Cơ Bản</strong><br>Lợi Nhuận = Giá Bán &minus; (Định Phí + Biến Phí)</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Economic Z-Score</div>
+        <div class="hint">Nhấp để xem công thức khoảng cách Z &bull; Click to flip</div>
+        <div class="back"><strong>Chỉ Số Z Đến Giá Bán</strong><br><i>Z</i> = [Giá Bán &minus; (FC + &mu;<sub>VC</sub>)] / &sigma;<sub>VC</sub><br>Đo lường khoảng cách an toàn tài chính khỏi vùng thua lỗ.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Probability of Loss</div>
+        <div class="hint">Nhấp để xem xác suất lỗ P(Loss) &bull; Click to flip</div>
+        <div class="back"><strong>Xác Suất Thua Lỗ Kinh Tế</strong><br>Diện tích phần đuôi của phân phối chi phí vượt qua vạch Giá bán: <i>P(Loss) = 1 &minus; &Phi;(Z)</i>.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">The 5 Economic Levers</div>
+        <div class="hint">Nhấp để xem 5 đòn bẩy chiến lược &bull; Click to flip</div>
+        <div class="back"><strong>5 Đòn Bẩy Chiến Lược</strong><br>1. Giảm &mu;<sub>VC</sub> | 2. Giảm &sigma;<sub>VC</sub><sup>2</sup><br>3. Giảm FC | 4. Tăng SP<br>5. Kết hợp tối ưu hóa Six Sigma.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: ACTION CHECKLIST & TEMPLATE -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 / Pillar 5</span>
+    <h2 class="section-heading">1-Page Action Checklist & Bảng Tính Chỉ Số Z-Score Tài Chính</h2>
+    <div class="section-subheading">Action Checklist & Economic Z-Score Risk Calculator</div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk7-1">
+      <div class="action-text">
+        <label for="chk7-1"><strong>Hành Động 1: Thu Thập Dữ Liệu Phân Phối Chi Phí Biến Đổi</strong><br>
+        Lấy mẫu chi phí biến đổi thực tế của ít nhất 50 lô sản xuất hoặc giao dịch gần nhất để tính toán giá trị trung bình (&mu;<sub>VC</sub>) và độ lệch chuẩn (&sigma;<sub>VC</sub>).</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk7-2">
+      <div class="action-text">
+        <label for="chk7-2"><strong>Hành Động 2: Tính Toán Chỉ Số Z-Score Tài Chính Cho Từng Dòng Sản Phẩm</strong><br>
+        Áp dụng công thức <i>Z<sub>sales_price</sub></i> để xác định các dòng sản phẩm có <i>Z</i> &lt; 3.0 đang tiềm ẩn nguy cơ thua lỗ cao.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk7-3">
+      <div class="action-text">
+        <label for="chk7-3"><strong>Hành Động 3: Thiết Lập Dự Án Nén Phương Sai Chi Phí Biến Đổi</strong><br>
+        Chỉ định Black Belt tập trung vào việc giảm độ lệch chuẩn &sigma;<sub>VC</sub> để kéo toàn bộ phân phối chi phí về vùng sinh lời an toàn.</label>
+      </div>
+    </div>
+
+    <!-- Calculator Template -->
+    <div class="template-box">
+      <h4>📊 Bảng Tính Khoảng Cách An Toàn Tài Chính Z-Score (Economic Z-Score Calculator)</h4>
+      <div class="template-grid">
+        <div class="template-field">
+          <label>Giá Bán Sản Phẩm (Sales Price - $)</label>
+          <input type="number" placeholder="VD: 100.0">
+        </div>
+        <div class="template-field">
+          <label>Định Phí Trên 1 Đơn Vị (FC - $)</label>
+          <input type="number" placeholder="VD: 30.0">
+        </div>
+        <div class="template-field">
+          <label>Biến Phí Trung Bình (&mu;<sub>VC</sub> - $)</label>
+          <input type="number" placeholder="VD: 50.0">
+        </div>
+        <div class="template-field">
+          <label>Độ Lệch Chuẩn Biến Phí (&sigma;<sub>VC</sub> - $)</label>
+          <input type="number" placeholder="VD: 5.0">
+        </div>
+        <div class="template-field">
+          <label>Chỉ Số Z-Score Đến Giá Bán</label>
+          <input type="text" placeholder="Tự động: Z = 4.00">
+        </div>
+        <div class="template-field">
+          <label>Xác Suất Thua Lỗ Dự Báo (P(Loss))</label>
+          <input type="text" placeholder="Tự động: 0.003% (Rất an toàn)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hạch Toán Chi Phí Chất Lượng Kém (COPQ) | MBB Masterclass</title>
+<style>
+
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.7;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  /* HERO HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.25; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; font-style: italic; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+
+  /* PILLAR SECTION CARDS */
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  /* NATIVE PURE HTML/CSS MATH CARD */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-var { font-style: italic; color: #ffffff; }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* DATA TABLES */
+  table.data-table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin: 18px 0; }
+  table.data-table th {
+    background: linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color: #fff; padding: 12px 14px; text-align: left; vertical-align: top;
+  }
+  table.data-table th .th-vi { display: block; color: #a7f3d0; font-style: italic; font-weight: 500; font-size: 0.8rem; margin-top: 2px; }
+  table.data-table td { padding: 12px 14px; border-bottom: 1px solid #d1fae5; vertical-align: top; background: #fff; }
+  table.data-table td .td-sub { display: block; color: var(--vi-green-2); font-style: italic; font-size: 0.85rem; margin-top: 2px; }
+  table.data-table tr:nth-child(even) td { background: #f7fcf9; }
+
+  /* CASE STUDIES & COMPARISON */
+  .case-card {
+    background: #fdfefe;
+    border: 1px solid #cbf3e3;
+    border-left: 5px solid var(--emerald);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  .case-badge {
+    display: inline-block;
+    background: var(--emerald-vibrant);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .case-title { font-size: 1.15rem; font-weight: 800; color: var(--wood-dark); margin: 0 0 8px; }
+
+  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; margin: 22px 0; }
+  @media(max-width:768px){ .vs-grid { grid-template-columns: 1fr; } }
+  .vs-col { border-radius: 10px; padding: 20px; }
+  .vs-col.bad { background: #fef2f2; border: 2px solid #ef4444; }
+  .vs-col.good { background: #ecfdf5; border: 2px solid var(--emerald-vibrant); }
+  .vs-badge {
+    display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;
+    padding: 4px 10px; border-radius: 14px; color: #fff; margin-bottom: 10px; text-transform: uppercase;
+  }
+  .vs-badge.bad { background: var(--red); }
+  .vs-badge.good { background: var(--green); }
+  .vs-divider { display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--wood-dark); font-size: 1.3rem; }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { margin-bottom: 8px; font-size: 0.9rem; }
+
+  /* MBB PRO-TIP BOX */
+  .mbb-box {
+    background: var(--gold-bg); border: 1px solid #fef08a; border-left: 5px solid var(--gold-border);
+    border-radius: 8px; padding: 20px 24px; margin: 22px 0;
+  }
+  .mbb-box .title { color: var(--wood-bark); font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; }
+  .mbb-box p { margin: 0; color: #78350f; font-size: 0.95rem; }
+
+  /* INTERACTIVE ARENA */
+  .interactive-arena {
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color: #fff; border-radius: 14px; padding: 36px 40px; margin: 40px 0;
+    box-shadow: 0 8px 28px rgba(2,44,34,0.3); border: 2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2 { color: #fff; margin-top: 0; font-size: 1.6rem; font-weight: 800; }
+  .interactive-arena .arena-desc { color: var(--emerald-mint); font-style: italic; font-size: 0.98rem; margin-bottom: 24px; }
+  
+  .quiz-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 10px; padding: 22px 24px; margin-bottom: 22px;
+  }
+  .quiz-tag { display: inline-block; background: var(--emerald); color: #fff; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  .quiz-tag.tier-1 { background: #0284c7; }
+  .quiz-tag.tier-2 { background: #d97706; }
+  .quiz-tag.tier-3 { background: #7c3aed; }
+  .quiz-q { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.45; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(2,44,34,0.7); border: 1px solid rgba(52,211,153,0.4); color: #ecfdf5;
+    padding: 12px 16px; border-radius: 8px; font-size: 0.92rem; text-align: left; cursor: pointer;
+    transition: all 0.2s ease; font-family: inherit; line-height: 1.4;
+  }
+  .quiz-btn:hover { background: rgba(16,185,129,0.25); border-color: var(--emerald-mint); }
+  .quiz-btn.correct { background: #065f46 !important; border-color: #34d399 !important; color: #fff !important; }
+  .quiz-btn.wrong { background: #7f1d1d !important; border-color: #f87171 !important; color: #fff !important; }
+  .quiz-fb { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 8px; font-size: 0.92rem; line-height: 1.5; }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.success { background: rgba(16,185,129,0.2); border: 1px solid #34d399; color: #d1fae5; }
+  .quiz-fb.error { background: rgba(239,68,68,0.2); border: 1px solid #f87171; color: #fecaca; }
+
+  /* FLASHCARDS */
+  .flashcards-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 16px; margin-top: 16px; }
+  .flashcard {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(110,231,183,0.3); border-radius: 10px;
+    padding: 20px; cursor: pointer; min-height: 150px; display: flex; flex-direction: column;
+    justify-content: center; text-align: center; transition: transform 0.2s ease; user-select: none;
+  }
+  .flashcard:hover { transform: translateY(-3px); border-color: var(--emerald-mint); }
+  .flashcard .front { font-size: 1.05rem; font-weight: 800; color: var(--emerald-mint); }
+  .flashcard .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 6px; opacity: 0.85; }
+  .flashcard .back { display: none; font-size: 0.9rem; color: #fff; line-height: 1.45; }
+  .flashcard.flipped .front, .flashcard.flipped .hint { display: none; }
+  .flashcard.flipped .back { display: block; }
+
+  /* ACTION CHECKLIST & TEMPLATE */
+  .action-item { display: flex; align-items: flex-start; gap: 12px; background: #f4fbf7; border: 1px solid #d1fae5; padding: 14px 18px; border-radius: 8px; margin-bottom: 12px; }
+  .action-item input { width: 19px; height: 19px; accent-color: var(--emerald); cursor: pointer; margin-top: 3px; flex-shrink: 0; }
+  .action-text { font-size: 0.95rem; color: #0f241d; line-height: 1.5; }
+  .action-text strong { color: var(--wood-dark); }
+  
+  .template-box {
+    background: #ffffff; border: 1.5px dashed var(--emerald); border-radius: 10px;
+    padding: 22px 26px; margin-top: 20px;
+  }
+  .template-box h4 { margin: 0 0 12px; color: var(--wood-dark); font-size: 1.1rem; }
+  .template-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .template-field { display: flex; flex-direction: column; gap: 4px; }
+  .template-field label { font-size: 0.82rem; font-weight: 700; color: var(--vi-green-2); text-transform: uppercase; }
+  .template-field input, .template-field select {
+    padding: 8px 12px; border: 1px solid #a7f3d0; border-radius: 6px; font-family: inherit; font-size: 0.9rem; background: #f0fdf4;
+  }
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">03. Business Principles &bull; 06. Underpinning Economics &bull; Lesson 05</span>
+    <h1 class="hero-title">Hạch Toán Chi Phí Chất Lượng Kém (COPQ)</h1>
+    <div class="hero-title-en">Accounting for the Cost-of-Poor-Quality (COPQ) &minus; The 4-Quadrant Matrix & The 1% Accounting Illusion</div>
+    <p class="hero-desc">
+      Phân loại toàn diện chi phí chất lượng kém theo ma trận 4 ô (Internal/External &times; Appraisal/Prevention). Phá tan ảo tưởng 1% trên sổ sách kế toán truyền thống và loại bỏ tư duy ngụy biện "Chi phí kinh doanh thông thường" (Cost of Doing Business).
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 / Pillar 1</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành 60 Giây</h2>
+    <div class="section-subheading">Executive Summary &minus; The 4-Quadrant COPQ Architecture</div>
+    
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Cấu Trúc Ma Trận 4 Ô Của COPQ:</strong> Chi phí chất lượng kém được chia thành 4 nhóm chiến lược: (1) <em>Internal Appraisal</em> (Thẩm định nội bộ), (2) <em>Internal Prevention</em> (Phòng ngừa nội bộ), (3) <em>External Appraisal</em> (Thẩm định bên ngoài), và (4) <em>External Prevention</em> (Phòng ngừa bên ngoài).</li>
+        <li><strong>Bản Chất Của Chi Phí Phòng Ngừa Thượng Nguồn (External Prevention):</strong> Điển hình là đào tạo Six Sigma cho đội ngũ bán hàng (Sales force) để thu thập chính xác yêu cầu khách hàng (VOC &rarr; CTQ), giúp loại bỏ các vòng lặp sửa đổi bản vẽ thiết kế kỹ thuật ngay tại điểm bán.</li>
+        <li><strong>Ảo Tưởng Kế Toán 1% (The 1% Accounting Illusion):</strong> Nhiều tổ chức tính toán và tự mãn: <em>"COPQ của chúng tôi chỉ chiếm 1% doanh thu, đó chỉ là chi phí kinh doanh thông thường (CDB &minus; Cost of Doing Business)"</em>. TS. Mikel Harry thẳng thắn gọi nhận định này là hoàn toàn sai lầm ("What garbage!") vì kế toán đã gộp toàn bộ 25% &minus; 40% chi phí lãng phí thực tế vào chi phí nhân công và chi phí chung.</li>
+        <li><strong>Hệ Thống Phân Loại Chi Phí Nhỏ Lẻ (Cost Buckets):</strong> Hàng trăm khoản chi nhỏ (phân loại phế liệu, xe tải chở rác thải công nghiệp, bù giá cho khách hàng nhận hàng lỗi...) cần được bóc tách khỏi chi phí vận hành chung để lượng hóa chính xác lợi nhuận tiềm năng.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 / Pillar 2</span>
+    <h2 class="section-heading">Ma Trận Phân Loại 4 Ô & Tảng Băng Chi Phí Ẩn COPQ</h2>
+    <div class="section-subheading">4-Quadrant COPQ Matrix & The Hidden Iceberg Ratio</div>
+
+    <p>
+      Dưới đây là cấu trúc ma trận 4 ô chuẩn mực phân loại các hoạt động thẩm định và phòng ngừa theo phạm vi nội bộ và bên ngoài:
+    </p>
+
+    <!-- 4-Quadrant Matrix Table -->
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Phạm Vi / Thể Loại<span class="th-vi">Scope & Domain</span></th>
+          <th>THẨM ĐỊNH (APPRAISAL)<span class="th-vi">Kiểm tra, Đánh giá, Lọc lỗi</span></th>
+          <th>PHÒNG NGỪA (PREVENTION)<span class="th-vi">Hoạch định, Kiểm soát tại nguồn</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong style="color:var(--wood-dark); font-size:1.05rem;">NỘI BỘ<br>(INTERNAL)</strong></td>
+          <td>
+            <strong>Internal Appraisal:</strong><br>
+            &bull; Kiểm tra, thanh tra trực tiếp trong dây chuyền (<i>Test/Inspect</i>).<br>
+            &bull; Nhân công phân loại phế phẩm trên bến bãi (<i>Sorting scrap</i>).<br>
+            &bull; Thuê container chở phế liệu đi tiêu hủy (<i>Disposal logistics</i>).<br>
+            &bull; Hiệu chuẩn thiết bị đo lường nội bộ.
+          </td>
+          <td>
+            <strong>Internal Prevention:</strong><br>
+            &bull; Hoạch định chất lượng nâng cao (<i>Quality Planning</i>).<br>
+            &bull; Đào tạo Six Sigma, Lean, Green Belt/Black Belt cho công nhân.<br>
+            &bull; Ứng dụng kiểm soát quy trình bằng thống kê (<i>SPC</i>).<br>
+            &bull; Thiết kế cơ chế chống lỗi tự động (<i>Poka-Yoke</i>).
+          </td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--wood-dark); font-size:1.05rem;">BÊN NGOÀI<br>(EXTERNAL)</strong></td>
+          <td>
+            <strong>External Appraisal:</strong><br>
+            &bull; Kiểm tra tiếp nhận hàng tại kho của khách hàng.<br>
+            &bull; Đánh giá năng lực nhà cung cấp tại xưởng vệ tinh.<br>
+            &bull; Khảo sát sự hài lòng và đo lường khiếu nại sau bán hàng.<br>
+            &bull; Kiểm toán chứng nhận chất lượng độc lập của bên thứ ba.
+          </td>
+          <td>
+            <strong>External Prevention:</strong><br>
+            &bull; Đào tạo đội ngũ bán hàng (<i>Sales force</i>) kỹ năng nắm bắt VOC.<br>
+            &bull; Đồng thiết kế với nhà cung ứng (<i>Supplier Co-design</i>).<br>
+            &bull; Triển khai QFD (House of Quality) ngay tại điểm bán (<i>Point-of-Sale</i>).<br>
+            &bull; Loại bỏ các vòng lặp sửa đổi thiết kế kỹ thuật từ đầu nguồn.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Math Card 1: True COPQ Equation -->
+    <div class="math-card">
+      <div class="title">1. Phương Trình Bóc Tách Chi Phí COPQ Thực Tế (True COPQ Iceberg Equation)</div>
+      <div class="math-equation">
+        <span class="math-var">COPQ<sub>true</sub></span> = 
+        <span class="math-var">COPQ<sub>visible_ledger</sub></span> + 
+        <span class="math-var">COPQ<sub>hidden_labor</sub></span> + 
+        <span class="math-var">COPQ<sub>wip_capacity</sub></span> + 
+        <span class="math-var">COPQ<sub>customer_concession</sub></span>
+      </div>
+      <div class="desc">
+        <strong>Giải mã các thành phần chi phí ẩn:</strong><br>
+        &bull; <strong>COPQ<sub>visible_ledger</sub>:</strong> Chi phí phế phẩm và bảo hành ghi nhận trên sổ sách (~1% &minus; 3% doanh thu &minus; Phần nổi của tảng băng).<br>
+        &bull; <strong>COPQ<sub>hidden_labor</sub>:</strong> Lương trả cho nhân viên kỹ thuật, quản lý, admin tham gia vào việc phân tích lỗi và sửa chữa nhưng bị gộp vào chi phí nhân công trực tiếp.<br>
+        &bull; <strong>COPQ<sub>wip_capacity</sub>:</strong> Chi phí mất năng lực sản xuất máy móc, chi phí thuê diện tích kho chứa hàng lỗi và vốn lưu động bị đóng băng.<br>
+        &bull; <strong>COPQ<sub>customer_concession</sub>:</strong> Các khoản chiết khấu, giảm giá bán để khách hàng chấp nhận nhận lô hàng bị lỗi nhẹ ("Slice the price to take our junk").
+      </div>
+    </div>
+
+    <!-- MBB Box -->
+    <div class="mbb-box">
+      <div class="title">💡 Master Black Belt Warning: Cảnh Giác Với Thuật Ngữ Ngụy Biện "CDB" (Cost of Doing Business)</div>
+      <p>
+        TS. Mikel Harry cảnh báo: Khi ban lãnh đạo nhìn vào sổ sách thấy chi phí lỗi chỉ có 1%, họ thường tự an ủi: <em>"Đó chỉ là CDB (Cost of Doing Business &minus; Chi phí kinh doanh thông thường)"</em>. Sự thật là doanh nghiệp đang chịu đựng mức lãng phí từ 25% &minus; 40% doanh thu nhưng bị che giấu hoàn hảo trong các tài khoản chi phí nhân công và chi phí quản lý chung. Đừng để sự thiếu sót của phần mềm kế toán ru ngủ năng lực cạnh tranh của bạn!
+      </p>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 / Pillar 3</span>
+    <h2 class="section-heading">Tình Huống Thực Chiến & Đối Chiếu Quản Trị</h2>
+    <div class="section-subheading">Real-World Case Studies & Accounting Unmasking</div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Sản Xuất / Heavy Machinery Manufacturing</span>
+      <h3 class="case-title">Case Study 1: Bóc Tách Chi Phí Giảm Giá Đền Bù Hàng Lỗi Tại Công Ty Máy Xây Dựng</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Một nhà sản xuất máy xúc bánh xích có doanh thu 150 triệu USD/năm. Báo cáo tài chính ghi nhận chi phí bảo hành chỉ là 1.2% (1.8 triệu USD). Giám đốc tài chính khẳng định chất lượng xuất sắc.<br>
+        <strong>Kiểm toán MBB:</strong> Khi bóc tách chi tiết, MBB phát hiện phòng kinh doanh thường xuyên áp dụng chính sách "Chiết khấu đặc biệt 8%" và "Tặng gói bảo dưỡng 3 năm miễn phí" để khách hàng đồng ý nhận các xe bị trầy xước sơn và rò rỉ dầu thủy lực nhẹ.<br>
+        <strong>Sự thật COPQ:</strong> Tổng chi phí bồi thường kinh tế ngầm này lên đến 14.5 triệu USD/năm (~9.7% doanh thu). Sau dự án Six Sigma chuẩn hóa khâu lắp ráp và sơn, khoản chiết khấu bồi thường được xóa bỏ, lợi nhuận ròng tăng thêm 12.8 triệu USD.
+      </p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Dịch Vụ / Commercial Banking Operations</span>
+      <h3 class="case-title">Case Study 2: Đào Tạo Đội Ngũ Bán Hàng Ngăn Ngừa Lỗi Từ Điểm Bán (External Prevention)</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Một ngân hàng bán lẻ phát hành 50.000 thẻ tín dụng mỗi tháng. 18% hồ sơ mở thẻ bị từ chối hoặc yêu cầu bổ sung thông tin do nhân viên bán hàng (Sales Direct) điền sai mã chi nhánh, thiếu chữ ký hoặc không thu thập đủ chứng minh thu nhập.<br>
+        <strong>Hệ quả:</strong> Ngân hàng tốn 42 nhân viên hậu kiểm chỉ để gọi điện cho khách hàng sửa thông tin và gửi lại phát chuyển nhanh (vòng lặp DAF), tiêu tốn 1.1 triệu USD/năm.<br>
+        <strong>Giải pháp External Prevention:</strong> Đào tạo đội ngũ Sales phương pháp thu thập yêu cầu đúng chuẩn ngay tại chỗ và trang bị ứng dụng eKYC khóa dữ liệu. Tỷ lệ hồ sơ lỗi giảm 92%, giải tán 35 nhân sự hậu kiểm chuyển sang bộ phận chăm sóc khách hàng VIP.
+      </p>
+    </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px; font-size:1.25rem;">Bảng So Sánh: Báo Cáo Kế Toán Truyền Thống vs Bảng Tính Thực Tế COPQ</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Khoản Mục Chi Phí<span class="th-vi">Cost Category</span></th>
+          <th>Kế Toán Truyền Thống Thấy Gì?<span class="th-vi">Traditional Ledger View (~1% Sales)</span></th>
+          <th>Thực Tế Vận Hành Six Sigma Bóc Tách Gì?<span class="th-vi">Six Sigma True COPQ View (20% &minus; 35% Sales)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Nhân công sửa lỗi & làm lại</strong></td>
+          <td>Gộp vào "Chi phí nhân công trực tiếp" (Direct Labor).<span class="td-sub">Bị coi là chi phí sản xuất bình thường</span></td>
+          <td>Bóc tách riêng: 100% thời gian thợ dành để sửa hàng là chi phí lãng phí COPQ.<span class="td-sub">Internal Failure / Rework Labor</span></td>
+        </tr>
+        <tr>
+          <td><strong>Giảm giá đền bù hàng lỗi</strong></td>
+          <td>Ghi vào "Chiết khấu thương mại" (Sales Discount).<span class="td-sub">Bị coi là chi phí bán hàng để thúc đẩy doanh số</span></td>
+          <td>Bóc tách riêng: Khoản tiền mất đi do sản phẩm không đạt chuẩn CTQ ban đầu.<span class="td-sub">External Failure / Price Concession</span></td>
+        </tr>
+        <tr>
+          <td><strong>Vận chuyển & xử lý phế thải</strong></td>
+          <td>Gộp vào "Chi phí tiện ích / Môi trường" (Utilities).<span class="td-sub">Bị coi là chi phí cố định không thể tránh</span></td>
+          <td>Bóc tách riêng: Hậu quả trực tiếp của việc tạo ra sản phẩm hỏng.<span class="td-sub">Scrap Disposal & Environmental Penalty</span></td>
+        </tr>
+        <tr>
+          <td><strong>Đào tạo Sales lấy đúng VOC</strong></td>
+          <td>Ghi vào "Chi phí đào tạo hành chính" chung.<span class="td-sub">Thường bị cắt giảm đầu tiên khi khó khăn</span></td>
+          <td>Khoản đầu tư chiến lược External Prevention mang lại ROI cao nhất.<span class="td-sub">High-Yield Upstream Prevention Investment</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num" style="background:#059669; color:#fff;">Trụ Cột 4 / Pillar 4</span>
+    <h2>Đấu Trường Tương Tác & Bài Tập Tình Huống</h2>
+    <div class="arena-desc">Interactive Arena &minus; Scenario-Based Quizzes & 3D Flashcards</div>
+
+    <!-- QUIZ 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Phân Loại Ma Trận 4 Ô</span>
+      <div class="quiz-q">1. Việc đào tạo phương pháp Six Sigma cho đội ngũ bán hàng (Sales force) để thu thập chính xác yêu cầu kỹ thuật của khách hàng thuộc nhóm chi phí nào trong ma trận COPQ?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q1', 'Incorrect. Internal Appraisal involves internal testing and inspection.', 'Sai. Internal Appraisal là việc kiểm tra, thanh tra nội bộ trong xưởng.')">A. Internal Appraisal (Thẩm định nội bộ)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q1', 'Incorrect. External Appraisal is inspecting products at the customer site.', 'Sai. External Appraisal là việc kiểm tra chất lượng tại địa điểm khách hàng.')">B. External Appraisal (Thẩm định bên ngoài)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-5-q1', 'Correct! Training sales to capture VOC correctly prevents design iteration cycles and upstream defect injection &minus; representing External Prevention.', 'Chính xác! Đào tạo đội ngũ bán hàng lấy đúng VOC giúp ngăn ngừa các vòng lặp sửa đổi bản vẽ thiết kế ngay từ đầu nguồn &minus; thuộc nhóm Phòng ngừa Bên ngoài (External Prevention)!')">C. External Prevention (Phòng ngừa bên ngoài)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q1', 'Incorrect. Internal Failure is scrap and rework within the factory.', 'Sai. Internal Failure là chi phí phế phẩm và làm lại trong nhà máy.')">D. Internal Failure (Sai hỏng nội bộ)</button>
+      </div>
+      <div id="fb-5-q1" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Hiểu Thuật Ngữ</span>
+      <div class="quiz-q">2. Khi TS. Mikel Harry nói về phản ứng "That is just Cost of Doing Business (CDB) &minus; Oh what garbage!", ông muốn nhấn mạnh điều gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-5-q2', 'Correct! Calling COPQ the natural cost of doing business is a dangerous excuse resulting from accounting blindness that masks 20% to 40% waste.', 'Chính xác! Gọi chi phí lỗi là chi phí kinh doanh thông thường là một sự ngụy biện nguy hiểm bắt nguồn từ sự mù mờ của hệ thống kế toán, che giấu từ 20% đến 40% doanh thu bị thất thoát.')">A. Việc coi chi phí lỗi là điều hiển nhiên của kinh doanh là sự tự lừa dối nguy hiểm do kế toán không bóc tách được 20% &minus; 40% doanh thu bị thất thoát.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q2', 'Incorrect. CDB is a real accounting term, but its misapplication to mask COPQ is what Dr. Harry criticizes.', 'Sai. CDB là thuật ngữ phổ biến trong kinh doanh nhưng việc lạm dụng nó để biện hộ cho chất lượng kém là sai lầm.')">B. CDB là thuật ngữ không tồn tại trong từ điển kinh tế.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q2', 'Incorrect. He condemns the dismissal of quality costs as unavoidable.', 'Sai. Ông phê phán gay gắt việc chấp nhận chi phí lỗi như một điều tất yếu.')">C. Doanh nghiệp nên tăng thêm chi phí CDB để nhân viên làm việc thoải mái hơn.</button>
+      </div>
+      <div id="fb-5-q2" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Phân Loại Khoản Mục Chi Phí</span>
+      <div class="quiz-q">3. Hãy xác định khoản mục nào sau đây thuộc nhóm "External Failure Cost" (Chi phí sai hỏng bên ngoài)?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q3', 'Incorrect. In-line calibration is internal appraisal.', 'Sai. Hiệu chuẩn máy đo trong xưởng là Internal Appraisal.')">A. Chi phí hiệu chuẩn máy đo tọa độ CMM trong phòng thí nghiệm nhà máy.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-5-q3', 'Correct! Price concessions/discounts given to convince a customer to accept off-spec/defective products represent pure External Failure Cost.', 'Chính xác! Giảm giá chiết khấu để khách hàng chấp nhận lấy lô sản phẩm lỗi/kém chất lượng chính là Chi phí sai hỏng bên ngoài (External Failure Cost)!')">B. Khoản tiền giảm giá 10% cho khách hàng để họ chấp nhận nhận lô hàng có lỗi ngoại quan nhẹ.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q3', 'Incorrect. SPC training is internal prevention.', 'Sai. Tổ chức khóa học SPC là Internal Prevention.')">C. Chi phí tổ chức khóa học phân tích hệ thống đo lường Gage R&R cho kỹ sư.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q3', 'Incorrect. Scrap on the shop floor is internal failure.', 'Sai. Vứt bỏ phôi hỏng trong xưởng là Internal Failure.')">D. Chi phí vứt bỏ 50 phôi kim loại bị tiện hỏng tại công đoạn 2.</button>
+      </div>
+      <div id="fb-5-q3" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Bóc Tách Tảng Băng COPQ</span>
+      <div class="quiz-q">4. Một công ty may mặc có doanh thu 60 triệu USD. Báo cáo tài chính ghi nhận chi phí bảo hành và hủy hàng lỗi là 600.000 USD (1% doanh thu). Khi Black Belt kiểm toán toàn diện: phát hiện chi phí thợ may sửa hàng lỗi là 4.2 triệu USD, chi phí kiểm tra 100% thành phẩm là 1.8 triệu USD, và tiền phạt chậm giao hàng do sửa áo là 2.4 triệu USD. Tỷ lệ COPQ thực tế chiếm bao nhiêu % doanh thu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q4', 'Incorrect. Total COPQ = 0.6 + 4.2 + 1.8 + 2.4 = 9.0M USD. Percentage = (9.0 / 60) * 100% = 15.0%.', 'Sai. Tổng COPQ = 0,6 + 4,2 + 1,8 + 2,4 = 9,0 triệu USD. Tỷ lệ = (9,0 / 60) * 100% = 15,0%.')">A. 1.0%</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-5-q4', 'Correct! Total True COPQ = 0.6M (ledger) + 4.2M (rework) + 1.8M (inspection) + 2.4M (penalties) = 9.0M USD. % of Revenue = (9.0 / 60.0) * 100% = 15.0% (15X higher than the visible ledger)!', 'Chính xác! Tổng COPQ thực tế = 0,6M + 4,2M + 1,8M + 2,4M = 9,0 Triệu USD. Tỷ lệ thực tế = (9,0 / 60,0) * 100% = 15,0% (cao gấp 15 lần con số 1% trên sổ sách)!')">B. 15.0%</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q4', 'Incorrect. Check your sum of all COPQ components.', 'Sai. Bạn đã cộng thiếu một số thành phần chi phí ẩn.')">C. 10.5%</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q4', 'Incorrect. 9.0M / 60M is 15%.', 'Sai. 9,0 chia cho 60 là 15,0%.')">D. 22.5%</button>
+      </div>
+      <div id="fb-5-q4" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Thiết Kế Hệ Thống Hạch Toán Quản Trị</span>
+      <div class="quiz-q">5. Với tư cách Master Black Belt, bạn nên đề xuất hành động nào cho Kế toán trưởng (Chief Accountant) để xóa bỏ "điểm mù kế toán" về chi phí chất lượng kém?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q5', 'Incorrect. Merging accounts worsens the blindness.', 'Sai. Gộp các tài khoản lại càng làm trầm trọng thêm điểm mù kế toán.')">A. Đề xuất gộp toàn bộ chi phí kiểm tra và sửa chữa vào một tài khoản chung để đơn giản hóa sổ sách.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-5-q5', 'Correct! Establish dedicated Activity-Based Costing (ABC) sub-accounts for rework hours, scrap disposal, double-verification, and price concession buckets.', 'Chính xác! Thiết lập hệ thống mã tài khoản chi tiết theo phương pháp Activity-Based Costing (ABC) để tách riêng giờ làm sửa hàng, chi phí hủy phế phẩm, chi phí kiểm tra lại và các khoản chiết khấu đền bù hàng lỗi.')">B. Thiết lập hệ thống mã chi phí quản trị riêng biệt (Activity-Based Costing Sub-accounts) để hạch toán độc lập giờ công sửa chữa, chi phí lưu kho WIP hàng lỗi, chi phí kiểm tra lại và các khoản chiết khấu bồi thường chất lượng.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q5', 'Incorrect. Financial ledgers remain necessary, but management accounting must track COPQ.', 'Sai. Sổ sách tài chính vẫn phải tuân thủ chuẩn mực kế toán nhưng cần bổ sung báo cáo quản trị COPQ.')">C. Yêu cầu hủy bỏ phần mềm kế toán hiện tại và thay thế bằng bảng tính Excel thủ công.</button>
+      </div>
+      <div id="fb-5-q5" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Đàm Phán Hợp Đồng Khách Hàng</span>
+      <div class="quiz-q">6. Khi đàm phán hợp đồng cung ứng B2B, khách hàng yêu cầu công ty bạn phải chịu phạt 5% nếu giao chậm nhưng chấp nhận nhận hàng có tỷ lệ lỗi ngoại quan 3% với giá giảm 7%. Chiến lược MBB nào bảo vệ lợi nhuận dài hạn tốt nhất?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-5-q6', 'Correct! Never institutionalize price cuts for defects. Commit to 6 Sigma quality without discounts, eliminating rework delay penalties and protecting profit margins.', 'Chính xác! Tuyệt đối không hợp thức hóa việc bán hàng lỗi giá rẻ. Đầu tư vào năng lực Six Sigma để giao hàng hoàn hảo 100%, xóa bỏ nguy cơ phạt trễ hạn và bảo toàn nguyên vẹn giá bán tối đa.')">A. Từ chối điều khoản giảm giá đền bù hàng lỗi; đầu tư dự án Six Sigma để đạt chất lượng hoàn hảo, giao hàng đúng hạn 100% với giá bán đầy đủ, triệt tiêu nguy cơ bị phạt chậm tiến độ do sửa hàng.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q6', 'Incorrect. Agreeing to sell defective goods at a discount destroys brand reputation and traps the business in high COPQ.', 'Sai. Chấp nhận bán hàng lỗi giá giảm sẽ làm xói mòn uy tín thương hiệu và giam giữ doanh nghiệp trong bẫy COPQ cao.')">B. Đồng ý ngay vì giảm giá 7% vẫn có lãi và đẩy được hàng lỗi đi cho khách hàng.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-5-q6', 'Incorrect. Increasing scrap without root cause fixes causes catastrophic financial losses.', 'Sai. Tăng tỷ lệ phế phẩm ném đi mà không sửa gốc rễ quy trình sẽ gây thâm hụt tài chính nặng nề.')">C. Chấp nhận ném bỏ toàn bộ 3% sản phẩm lỗi vào sọt rác và tăng giá bán sản phẩm tốt lên 15% để bù lỗ.</button>
+      </div>
+      <div id="fb-5-q6" class="quiz-fb"></div>
+    </div>
+
+    <!-- 3D FLASHCARDS -->
+    <h3 style="color:#fff; margin-top:36px; font-size:1.3rem;">Thẻ Lật 3D Ôn Tập Nhanh (Executive Flashcards)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">The 1% Ledger Illusion</div>
+        <div class="hint">Nhấp để xem ảo tưởng kế toán &bull; Click to flip</div>
+        <div class="back"><strong>Ảo Tưởng 1% Sổ Sách</strong><br>Kế toán chỉ thấy 1% phế phẩm nhìn thấy. 20% &minus; 40% chi phí ẩn thực tế bị chôn vùi trong chi phí nhân công và quản lý chung.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">External Prevention</div>
+        <div class="hint">Nhấp để xem phòng ngừa bên ngoài &bull; Click to flip</div>
+        <div class="back"><strong>Phòng Ngừa Bên Ngoài</strong><br>Đào tạo Sales lấy đúng VOC, hợp tác thiết kế với nhà cung ứng để triệt tiêu lỗi thiết kế và lỗi thông tin ngay từ điểm bán (<i>Point-of-Sale</i>).</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Price Concession Trap</div>
+        <div class="hint">Nhấp để xem bẫy giảm giá hàng lỗi &bull; Click to flip</div>
+        <div class="back"><strong>Bẫy Bồi Thường Giá Bán</strong><br>Giảm giá/chiết khấu để khách chấp nhận hàng lỗi là một dạng Chi phí Sai hỏng Bên ngoài (External Failure Cost) làm xói mòn trực tiếp biên lợi nhuận.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Activity-Based COPQ</div>
+        <div class="hint">Nhấp để xem giải pháp kế toán MBB &bull; Click to flip</div>
+        <div class="back"><strong>Hạch Toán COPQ Theo Hoạt Động</strong><br>Tách riêng các mã chi phí: giờ công sửa hàng, phân loại phế liệu, tồn kho WIP và kiểm tra lại để soi sáng nhà máy ngầm.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: ACTION CHECKLIST & TEMPLATE -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 / Pillar 5</span>
+    <h2 class="section-heading">1-Page Action Checklist & Ma Trận Phân Bổ Tài Khoản COPQ</h2>
+    <div class="section-subheading">Action Checklist & Activity-Based COPQ Ledger Setup</div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk5-1">
+      <div class="action-text">
+        <label for="chk5-1"><strong>Hành Động 1: Thiết Lập Bảng Phân Bổ Chi Phí 4 Ô (4-Quadrant Allocation)</strong><br>
+        Làm việc với phòng Kế toán Tài chính để phân loại toàn bộ chi phí kiểm tra, phòng ngừa, sửa chữa và bồi thường vào 4 nhóm chuẩn mực.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk5-2">
+      <div class="action-text">
+        <label for="chk5-2"><strong>Hành Động 2: Bóc Tách Giờ Công Sửa Chữa Khỏi Chi Phí Nhân Công Trực Tiếp</strong><br>
+        Yêu cầu công nhân và kỹ thuật viên ghi nhận riêng số giờ dành cho việc làm lại (Rework Hours) trên phiếu công tác hàng ngày.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk5-3">
+      <div class="action-text">
+        <label for="chk5-3"><strong>Hành Động 3: Rà Soát Các Khoản Chiết Khấu Bồi Thường Chất Lượng</strong><br>
+        Tổng hợp tất cả các khoản giảm giá, quà tặng bù đắp sự cố cho khách hàng trong 12 tháng qua để đưa vào báo cáo External Failure Cost.</label>
+      </div>
+    </div>
+
+    <!-- Ledger Template -->
+    <div class="template-box">
+      <h4>📋 Bảng Thiết Lập Tài Khoản Kế Toán Quản Trị COPQ (COPQ Ledger Setup)</h4>
+      <div class="template-grid">
+        <div class="template-field">
+          <label>Mã Tài Khoản Quản Trị</label>
+          <input type="text" placeholder="VD: COPQ-INT-REW-01">
+        </div>
+        <div class="template-field">
+          <label>Phân Loại Nhóm Ma Trận</label>
+          <select>
+            <option>1. Internal Appraisal (Thẩm định nội bộ)</option>
+            <option>2. Internal Prevention (Phòng ngừa nội bộ)</option>
+            <option>3. External Appraisal (Thẩm định ngoài)</option>
+            <option>4. External Prevention (Phòng ngừa ngoài)</option>
+            <option selected>5. Internal Failure (Sai hỏng nội bộ)</option>
+            <option>6. External Failure (Sai hỏng ngoài)</option>
+          </select>
+        </div>
+        <div class="template-field">
+          <label>Mô Tả Hoạt Động Cụ Thể</label>
+          <input type="text" placeholder="VD: Giờ công thợ hàn dặm bo mạch SMT">
+        </div>
+        <div class="template-field">
+          <label>Đơn Vị Đo Lường Chi Phí</label>
+          <input type="text" placeholder="VD: Số giờ &times; 18.5 $/giờ">
+        </div>
+        <div class="template-field">
+          <label>Ngân Sách Ước Tính Hiện Tại ($/tháng)</label>
+          <input type="number" placeholder="VD: 24500">
+        </div>
+        <div class="template-field">
+          <label>Mục Tiêu Cắt Giảm Sau Six Sigma (%)</label>
+          <input type="number" placeholder="VD: 85">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

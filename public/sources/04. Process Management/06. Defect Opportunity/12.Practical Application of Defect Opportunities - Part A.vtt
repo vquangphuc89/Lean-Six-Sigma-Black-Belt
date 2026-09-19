@@ -1,0 +1,281 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Practical Application of Defect Opportunities
+
+2
+00:00:05.000 --> 00:00:08.266
+Welcome to this session on defect opportunities.
+
+3
+00:00:08.266 --> 00:00:13.232
+We’re going to study that by looking at the ranch here, the Golden Spur Ranch.
+
+4
+00:00:13.233 --> 00:00:17.433
+And look at a performance audit and management system
+
+5
+00:00:17.433 --> 00:00:23.033
+that has been based on defects per million opportunities.
+
+6
+00:00:23.033 --> 00:00:30.033
+Now, you'll recall that we looked at a simple layout. In this case, we’re looking at buildings,
+
+7
+00:00:30.033 --> 00:00:35.599
+rooms specifically, all the rooms that are used here
+
+8
+00:00:35.600 --> 00:00:38.600
+at the ranch, in various buildings.
+
+9
+00:00:38.600 --> 00:00:42.233
+And we have things like air conditioners, appliances,
+
+10
+00:00:42.233 --> 00:00:45.599
+fixtures, lighting, and so on. Roof, walls.
+
+11
+00:00:45.600 --> 00:00:50.766
+Those are the column variables, here where the cursor’s at and these are the rooms.
+
+12
+00:00:50.766 --> 00:00:56.666
+And we have some notation: clean, adjust, fix, repair, and stock.
+
+13
+00:00:56.666 --> 00:00:59.666
+So, these are the opportunities.
+
+14
+00:00:59.666 --> 00:01:04.732
+Now basically, little X’s goes in these boxes to show applicability.
+
+15
+00:01:04.733 --> 00:01:10.799
+Then during audit, for those where there are X’s they’re looked at and rated.
+
+16
+00:01:10.800 --> 00:01:16.100
+Clean, adjust, fix, replace, stock and so on.
+
+17
+00:01:16.100 --> 00:01:21.300
+That's done for vehicles, tools, animals, feed, tack,
+
+18
+00:01:21.300 --> 00:01:27.266
+fences, grounds, a lot of stuff. Pools.
+
+19
+00:01:27.266 --> 00:01:34.232
+Now, that basically boils down to being able to create several different kinds of metrics:
+
+20
+00:01:34.233 --> 00:01:38.233
+quality, safety, productivity, attendance, and savings.
+
+21
+00:01:38.233 --> 00:01:42.633
+Now with quality, we simply count discrepancies.
+
+22
+00:01:42.633 --> 00:01:46.033
+See, this is what we count for the metric.
+
+23
+00:01:46.033 --> 00:01:51.599
+Quality is discrepancies. Safety is incidents.
+
+24
+00:01:51.600 --> 00:01:55.033
+Productivity is carryovers. Now, what do we mean by that?
+
+25
+00:01:55.033 --> 00:01:59.299
+Those are things that didn't get fixed that were supposed to have gotten fixed.
+
+26
+00:01:59.300 --> 00:02:03.300
+They’re carryovers. And that's a productivity issue.
+
+27
+00:02:03.300 --> 00:02:09.033
+Attendance we use lost hours, hours missed.
+
+28
+00:02:09.033 --> 00:02:13.699
+And of course savings, the count is actions.
+
+29
+00:02:13.700 --> 00:02:18.900
+Now, for the base, the base is opportunity.
+
+30
+00:02:18.900 --> 00:02:22.900
+That's all those little cells in the matrix, we just looked at.
+
+31
+00:02:22.900 --> 00:02:26.433
+Every one of those is an opportunity.
+
+32
+00:02:26.433 --> 00:02:31.599
+Safety is actual hours. Hours is the opportunity base.
+
+33
+00:02:31.600 --> 00:02:37.666
+Productivity is discrepancies. How many discrepancies were carried over and not fixed.
+
+34
+00:02:37.666 --> 00:02:41.666
+Attendance is expected hours. That's the base.
+
+35
+00:02:41.666 --> 00:02:45.899
+And savings of course is opportunities. Savings opportunities.
+
+36
+00:02:45.900 --> 00:02:50.800
+Now, from that we weight them. In this case. Quality has a 25%.
+
+37
+00:02:50.800 --> 00:02:54.500
+Safety and productivity are the big hitters.
+
+38
+00:02:54.500 --> 00:02:57.466
+And attendance and savings is less weighted.
+
+39
+00:02:57.466 --> 00:03:03.199
+In turn, that helps us to form a bonus pool for the employees at the ranch.
+
+40
+00:03:03.200 --> 00:03:06.466
+Now the calculations are pretty simple.
+
+41
+00:03:06.466 --> 00:03:11.566
+Step 1 is A over B. So, we take the count over the base.
+
+42
+00:03:11.566 --> 00:03:17.699
+That's equal to C. We multiply C by a million. From there we see a table.
+
+43
+00:03:17.700 --> 00:03:23.633
+Now, if we take a look at the various categories.
+
+44
+00:03:23.633 --> 00:03:27.633
+In this case, buildings had 88 rows and 21 columns,
+
+45
+00:03:27.633 --> 00:03:33.366
+thereby forming 1,848 opportunities.
+
+46
+00:03:33.366 --> 00:03:36.732
+If I do that for each of the categories,
+
+47
+00:03:36.733 --> 00:03:42.333
+we discover a total of 6,288 opportunities
+
+48
+00:03:42.333 --> 00:03:49.166
+for something to go astray with respect to value here at the ranch.
+
+49
+00:03:49.166 --> 00:03:52.732
+Now, by keeping track of that.
+
+50
+00:03:52.733 --> 00:03:58.366
+For example, in March 1, 2003 goal was Five Sigma.
+
+51
+00:03:58.366 --> 00:04:05.166
+The baseline in March of 2001 was running about, in the audits,
+
+52
+00:04:05.166 --> 00:04:12.366
+about 101, or discrepancies per audit, or about 3.6 Sigma.
+
+53
+00:04:12.366 --> 00:04:16.632
+So, the goal for one year is to get that up to four,
+
+54
+00:04:16.633 --> 00:04:22.599
+and the goal, ultimately, in March 2003 was to get that to Five Sigma.
+
+55
+00:04:22.600 --> 00:04:28.200
+So, we wanted to make about a half a Sigma improvement in the course of one year.
+
+56
+00:04:28.200 --> 00:04:31.900
+And if you notice, we benchmark around here,
+
+57
+00:04:31.900 --> 00:04:35.900
+we do the ranch work about as good as airlines handle bags.
+
+58
+00:04:35.900 --> 00:04:41.666
+The key is we recognize that, and we're setting goals to become world-class
+
+59
+00:04:41.666 --> 00:04:45.666
+in how we operate and run the ranch.
+
+60
+00:04:45.666 --> 00:04:51.832
+Now again, there's another simple chart lined out, showing those things.
+
+61
+00:04:51.833 --> 00:04:58.766
+And we have the weekly reports, and our PPM conversion charts
+
+62
+00:04:58.766 --> 00:05:01.732
+showing the rates of improvement.
+
+63
+00:05:01.733 --> 00:05:06.466
+We started with the baseline of 3.65 Sigma, that we just saw.
+
+64
+00:05:06.466 --> 00:05:10.399
+We set a weekly rate of improvement of 1.8%,
+
+65
+00:05:10.400 --> 00:05:15.233
+in order to get us to the goal of Four Sigma at the end of 12 months.
+
+66
+00:05:15.233 --> 00:05:22.266
+So basically, I need to improve by about 2% weekly. That's our goal here at the ranch.
+
+67
+00:05:22.266 --> 00:05:29.266
+And that gives us our quality, productivity, safety, attendance charts.
+
+68
+00:05:29.266 --> 00:05:36.299
+In this case we’re looking at this part of the six up chart, showing four of the six key metrics.
+
+69
+00:05:36.300 --> 00:05:42.566
+And that is how we apply the idea of defect opportunities.
+
+70
+00:05:42.566 --> 00:05:47.566
+Thank you for choosing SSMI.

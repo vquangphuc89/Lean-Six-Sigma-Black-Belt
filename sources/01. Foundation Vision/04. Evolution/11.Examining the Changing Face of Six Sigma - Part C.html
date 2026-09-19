@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 11: Diện Mạo Đổi Thay Của Six Sigma (Phần C: Ma Trận Tiến Hóa Toàn Diện) — Six Sigma Masterclass</title>
+<style>
+  :root{
+    --wood-deep:#022c22;
+    --wood-dark:#064e3b;
+    --wood-forest:#1b4332;
+    --water-ocean:#082f49;
+    --emerald:#059669;
+    --emerald-vibrant:#10b981;
+    --emerald-mint:#6ee7b7;
+    --vi-green:#047857;
+    --vi-green-2:#065f46;
+    --red:#b91c1c;
+    --green:#16a34a;
+    --gold-bg:#fefce8;
+    --gold-border:#d97706;
+    --wood-bark:#78350f;
+    --bg-paper:#f0f7f4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background:var(--bg-paper);
+    color:#0f241d;
+    line-height:1.68;
+  }
+  .container{max-width:1160px;margin:0 auto;padding:0 24px 80px;}
+  a{color:var(--emerald);text-decoration:none;}
+  
+  .hero{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color:#fff;
+    padding:48px 24px 38px;
+    margin-bottom:36px;
+    box-shadow:0 10px 32px rgba(2,44,34,0.35);
+    border-bottom:4px solid var(--emerald);
+  }
+  .hero-inner{max-width:1160px;margin:0 auto;}
+  .hero-badge{
+    display:inline-block;
+    background:rgba(16,185,129,0.18);
+    border:1px solid rgba(110,231,183,0.45);
+    color:var(--emerald-mint);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  .hero-title{font-size:2.2rem;font-weight:800;margin:0 0 6px;color:#ffffff;line-height:1.2;}
+  .hero-title-en{font-size:1.15rem;color:var(--emerald-mint);margin:0 0 16px;font-weight:500;}
+  .hero-desc{font-size:1.02rem;color:#d1fae5;max-width:880px;margin:0;}
+
+  .section-card{
+    background:#ffffff;
+    border-radius:14px;
+    padding:34px 38px;
+    margin-bottom:34px;
+    box-shadow:0 4px 20px rgba(6,78,59,0.07);
+    border-top:5px solid var(--emerald);
+    border-bottom:1px solid #d1fae5;
+  }
+  .section-num{
+    display:inline-block;
+    background:var(--wood-dark);
+    color:#ecfdf5;
+    font-size:11.5px;
+    font-weight:700;
+    padding:3px 10px;
+    border-radius:4px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .section-heading{font-size:1.55rem;color:var(--wood-dark);margin:0 0 4px;font-weight:800;}
+  .section-subheading{font-size:1.05rem;color:var(--vi-green);font-style:italic;margin:0 0 20px;font-weight:600;}
+
+  .exec-summary{
+    background:#f4fbf7;
+    border:1px solid #d1fae5;
+    border-left:6px solid var(--emerald);
+    border-radius:10px;
+    padding:22px 26px;
+    margin:18px 0;
+  }
+  .exec-summary ul{margin:8px 0 0; padding-left:20px;}
+  .exec-summary li{margin-bottom:10px; font-size:1rem; color:#0f241d;}
+  .exec-summary strong{color:var(--wood-dark);}
+
+  /* Pure Native Math Styling */
+  .math-card{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color:#ecfdf5;
+    border-radius:10px;
+    padding:22px 26px;
+    margin:20px 0;
+    border:1.5px solid var(--emerald);
+    box-shadow:0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title{
+    font-size:0.88rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--emerald-mint);
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .math-equation{
+    display:inline-flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    font-family:'Cambria Math', Georgia, serif;
+    font-size:1.3rem;
+    font-weight:700;
+    color:#ffffff;
+    margin:10px 0 16px;
+    line-height:1.4;
+  }
+  .math-frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    padding:0 8px;
+  }
+  .math-num{
+    border-bottom:2px solid var(--emerald-mint);
+    padding-bottom:4px;
+    color:#ffffff;
+    font-size:1.15rem;
+  }
+  .math-den{
+    padding-top:4px;
+    color:var(--emerald-mint);
+    font-size:1.15rem;
+  }
+  .math-var{font-style:italic; color:#ffffff;}
+  .math-card .desc{
+    font-size:0.92rem;
+    color:#d1fae5;
+    margin-top:10px;
+    line-height:1.6;
+    border-top:1px dashed rgba(110,231,183,0.3);
+    padding-top:10px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong{color:#ffffff;}
+  .math-card .desc em{color:var(--emerald-mint); font-style:normal; font-weight:600;}
+
+  /* Tables */
+  table.data-table{border-collapse:collapse;width:100%;font-size:0.92rem;min-width:680px;margin:18px 0;}
+  table.data-table th{
+    background:linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color:#fff;padding:10px 12px;text-align:left;vertical-align:top;
+  }
+  table.data-table th .th-vi{display:block;color:#a7f3d0;font-style:italic;font-weight:500;font-size:0.78rem;margin-top:2px;}
+  table.data-table td{padding:10px 12px;border-bottom:1px solid #d1fae5;vertical-align:top;background:#fff;}
+  table.data-table td .td-sub{display:block;color:var(--vi-green-2);font-style:italic;font-size:0.85rem;margin-top:2px;}
+  table.data-table tr:nth-child(even) td{background:#f7fcf9;}
+
+  /* Comparison Grid */
+  .vs-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin:22px 0;}
+  @media(max-width:768px){.vs-grid{grid-template-columns:1fr;}}
+  .vs-col{border-radius:10px;padding:20px;}
+  .vs-col.bad{background:#fef2f2;border:2px solid #ef4444;}
+  .vs-col.good{background:#ecfdf5;border:2px solid var(--emerald-vibrant);}
+  .vs-badge{
+    display:inline-block;font-size:0.75rem;font-weight:800;letter-spacing:0.5px;
+    padding:4px 10px;border-radius:14px;color:#fff;margin-bottom:10px;text-transform:uppercase;
+  }
+  .vs-badge.bad{background:var(--red);}
+  .vs-badge.good{background:var(--green);}
+  .vs-divider{display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--wood-dark);font-size:1.3rem;}
+  .vs-col ul{margin:0;padding-left:18px;}
+  .vs-col li{margin-bottom:8px;font-size:0.9rem;}
+
+  /* MBB Box */
+  .mbb-box{
+    background:var(--gold-bg);border:1px solid #fef08a;border-left:5px solid var(--gold-border);
+    border-radius:8px;padding:20px 24px;margin:22px 0;
+  }
+  .mbb-box .title{color:var(--wood-bark);font-weight:800;font-size:1.05rem;margin-bottom:4px;}
+  .mbb-box p{margin:0;color:#78350f;font-size:0.95rem;}
+
+  /* Interactive Arena */
+  .interactive-arena{
+    background:linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color:#fff;border-radius:14px;padding:36px 40px;margin:40px 0;
+    box-shadow:0 8px 28px rgba(2,44,34,0.3);border:2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2{color:#fff;margin-top:0;font-size:1.6rem;font-weight:800;}
+  .interactive-arena .arena-desc{color:var(--emerald-mint);font-style:italic;font-size:0.98rem;margin-bottom:24px;}
+  
+  .quiz-card{
+    background:rgba(255,255,255,0.06);border:1px solid rgba(110,231,183,0.3);
+    border-radius:10px;padding:22px 24px;margin-bottom:22px;
+  }
+  .quiz-tag{display:inline-block;background:var(--emerald);color:#fff;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;margin-bottom:6px;}
+  .quiz-q{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.45;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-btn{
+    background:rgba(2,44,34,0.7);border:1px solid rgba(52,211,153,0.4);color:#ecfdf5;
+    padding:12px 16px;border-radius:8px;font-size:0.92rem;text-align:left;cursor:pointer;
+    transition:all 0.2s ease;font-family:inherit;line-height:1.4;
+  }
+  .quiz-btn:hover{background:rgba(16,185,129,0.25);border-color:var(--emerald-mint);}
+  .quiz-btn.correct{background:#065f46 !important;border-color:#34d399 !important;color:#fff !important;}
+  .quiz-btn.wrong{background:#7f1d1d !important;border-color:#f87171 !important;color:#fff !important;}
+  .quiz-fb{display:none;margin-top:12px;padding:14px 16px;border-radius:8px;font-size:0.9rem;line-height:1.45;}
+  .quiz-fb.show{display:block;}
+  .quiz-fb.success{background:rgba(16,185,129,0.2);border:1px solid #34d399;color:#d1fae5;}
+  .quiz-fb.error{background:rgba(239,68,68,0.2);border:1px solid #f87171;color:#fecaca;}
+
+  /* Flashcards */
+  .flashcards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px;}
+  .flashcard{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(110,231,183,0.3);border-radius:10px;
+    padding:18px;cursor:pointer;min-height:140px;display:flex;flex-direction:column;
+    justify-content:center;text-align:center;transition:transform 0.2s ease;user-select:none;
+  }
+  .flashcard:hover{transform:translateY(-3px);border-color:var(--emerald-mint);}
+  .flashcard .front{font-size:1.05rem;font-weight:800;color:var(--emerald-mint);}
+  .flashcard .hint{font-size:0.75rem;color:#a7f3d0;margin-top:6px;opacity:0.8;}
+  .flashcard .back{display:none;font-size:0.88rem;color:#fff;line-height:1.4;}
+  .flashcard.flipped .front, .flashcard.flipped .hint{display:none;}
+  .flashcard.flipped .back{display:block;}
+
+  /* Action Checklist */
+  .action-item{display:flex;align-items:flex-start;gap:12px;background:#f4fbf7;border:1px solid #d1fae5;padding:12px 16px;border-radius:8px;margin-bottom:10px;}
+  .action-item input{width:18px;height:18px;accent-color:var(--emerald);cursor:pointer;margin-top:2px;}
+  .action-text{font-size:0.92rem;color:#0f241d;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">Foundation Vision #35 &bull; Diện Mạo Six Sigma Số 3</span>
+    <h1 class="hero-title">Ma Trận Tiến Hóa Toàn Diện Của Six Sigma</h1>
+    <div class="hero-title-en">Examining the Changing Face of Six Sigma (Part C): Master Multi-Dimensional Comparison Matrix</div>
+    <p class="hero-desc">Bản tổng kết toàn diện đa chiều về sự biến đổi của Six Sigma qua các thời kỳ: Đối chiếu 10 khía cạnh quản trị sống còn (Mục tiêu, Lãnh đạo, Thước đo, Cơ cấu Đai, Văn hóa, Dữ liệu, Công nghệ, Phạm vi ứng dụng, Tác động tài chính, và Mô hình giá trị).</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Phần 1 &bull; Executive Summary</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành Trong 60 Giây</h2>
+    <div class="section-subheading">Bức tranh toàn cảnh về sự tiến hóa của Six Sigma từ công cụ đơn lẻ thành hệ điều hành doanh nghiệp</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Sự Thay Đổi Toàn Diện:</strong> Six Sigma không phải là một công thức cố định bất biến; nó là một hệ sinh thái quản trị liên tục thích ứng và nâng cấp theo các bước chuyển biến của nền kinh tế toàn cầu.</li>
+        <li><strong>Mười Trục Chuyển Dịch Lớn:</strong> Từ Kỹ thuật &rarr; Tài chính &rarr; Giá trị Khách hàng &rarr; Phổ cập hóa &rarr; Hệ sinh thái thông minh số hóa.</li>
+        <li><strong>Giá Trị Bất Biến Cốt Lõi:</strong> Dù diện mạo có thay đổi qua các thế hệ, nguyên lý cốt lõi bất di bất dịch của Six Sigma vẫn là: <em>Quản trị thực chứng bằng dữ liệu thật, tư duy xác định luận <i>Y = f(X)</i> và tinh thần không ngừng vươn tới sự hoàn hảo</em>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & MASTER EVOLUTION MATRIX -->
+  <section class="section-card">
+    <span class="section-num">Phần 2 &bull; Core Frameworks &amp; Master Matrix</span>
+    <h2 class="section-heading">Đại Ma Trận Đối Chiếu 10 Trục Tiến Hóa Six Sigma</h2>
+    <div class="section-subheading">Tổng kết sự khác biệt sâu sắc giữa các thời kỳ phát triển</div>
+
+    <div style="margin:24px 0;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Trục Quản Trị (Axis)<span class="th-vi">10 Tiêu chí cốt tử</span></th>
+            <th>Giai Đoạn Sơ Khai (Gen I)<span class="th-vi">Kỹ thuật sản xuất</span></th>
+            <th>Giai Đoạn Trưởng Thành (Gen II&ndash;III)<span class="th-vi">Tài chính &amp; Khách hàng</span></th>
+            <th>Giai Đoạn Đương Đại (Gen IV&ndash;V)<span class="th-vi">Phổ cập &amp; Hệ sinh thái AI</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Trọng Tâm</strong></td>
+            <td>Khuyết tật sản phẩm vật lý.</td>
+            <td>Lợi nhuận ròng P&amp;L &amp; Thiết kế mới.</td>
+            <td>Trực quan hóa cho 95% &amp; Hệ sinh thái số.</td>
+          </tr>
+          <tr>
+            <td><strong>2. Lãnh Đạo</strong></td>
+            <td>Phòng Quản lý Chất lượng (QA).</td>
+            <td>CEO &amp; Giám đốc Tài chính (CFO).</td>
+            <td>Toàn thể C-Suite &amp; Văn phòng Chuyển đổi Số.</td>
+          </tr>
+          <tr>
+            <td><strong>3. Thước Đo</strong></td>
+            <td>DPMO, Cp, Cpk, Z-score.</td>
+            <td>Hard Savings, EBITDA, Net Cash.</td>
+            <td>Tốc độ giải quyết vấn đề, ESG, AI Agility.</td>
+          </tr>
+          <tr>
+            <td><strong>4. Nhân Lực</strong></td>
+            <td>Kỹ sư thống kê chuyên biệt.</td>
+            <td>Cán bộ nguồn lãnh đạo tương lai.</td>
+            <td>Toàn bộ 100% nhân viên (Citizen Problem Solvers).</td>
+          </tr>
+          <tr>
+            <td><strong>5. Phương Pháp</strong></td>
+            <td>MAIC, Biểu đồ kiểm soát SPC.</td>
+            <td>DMAIC, DFSS (DMADV/ICOV), Lean.</td>
+            <td>The Great Discovery, AI DMAIC, Digital Twins.</td>
+          </tr>
+          <tr>
+            <td><strong>6. Phạm Vi</strong></td>
+            <td>Dây chuyền xưởng sản xuất.</td>
+            <td>Doanh nghiệp &amp; Dịch vụ tài chính.</td>
+            <td>Toàn bộ hệ sinh thái khách hàng và chuỗi cung ứng.</td>
+          </tr>
+          <tr>
+            <td><strong>7. Dữ Liệu</strong></td>
+            <td>Thu thập thủ công ghi chép tay.</td>
+            <td>Nhập phần mềm Minitab định kỳ.</td>
+            <td>Dữ liệu lớn Big Data &amp; Cảm biến IoT tự động.</td>
+          </tr>
+          <tr>
+            <td><strong>8. Động Lực Văn Hóa</strong></td>
+            <td>Tuân thủ quy trình kiểm tra.</td>
+            <td>Gắn thưởng phạt thăng tiến.</td>
+            <td>Tự chủ, an toàn tâm lý và sáng tạo liên tục.</td>
+          </tr>
+          <tr>
+            <td><strong>9. Thời Gian Dự Án</strong></td>
+            <td>6 &ndash; 12 tháng/dự án.</td>
+            <td>3 &ndash; 6 tháng/dự án.</td>
+            <td>Sprint 2 &ndash; 4 tuần (Rapid Agile DMAIC).</td>
+          </tr>
+          <tr>
+            <td><strong>10. Sứ Mệnh</strong></td>
+            <td>Đạt chuẩn 3.4 DPMO.</td>
+            <td>Tạo giá trị cho cổ đông.</td>
+            <td>Kiến tạo tương lai bền vững (Terraforming).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASE STUDIES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Phần 3 &bull; Case Studies &amp; VS Comparison</span>
+    <h2 class="section-heading">Bài Học Thực Chiến: Tốc Độ Triển Khai Trong Kỷ Nguyên Mới (Agile DMAIC)</h2>
+    <div class="section-subheading">Tại sao thời gian thực hiện dự án Six Sigma ngày nay phải rút ngắn theo tuần?</div>
+
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Dự Án Kiểu Cũ Kéo Dài 1 Năm</span>
+        <ul>
+          <li>Mất 4 tháng chỉ để thu thập dữ liệu bằng tay vào sổ ghi chép.</li>
+          <li>Khi tìm ra giải pháp thì sản phẩm và thị trường đã thay đổi hoàn toàn.</li>
+          <li>Dự án bị hủy bỏ vì lỗi thời và tốn kém.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Dự Án Tinh Gọn Nhanh (Agile DMAIC Sprint)</span>
+        <ul>
+          <li>Thu thập dữ liệu tự động theo thời gian thực qua hệ thống IT/IoT.</li>
+          <li>Chạy các chu kỳ Sprint 2&ndash;4 tuần để thử nghiệm và hoàn thiện giải pháp nhanh.</li>
+          <li>Tạo ra giá trị ngay lập tức và liên tục thích ứng với thị trường.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA (8 SCENARIO QUIZZES) -->
+  <section class="interactive-arena">
+    <h2>⚡ Đấu Trường Trắc Nghiệm Tình Huống Đa Tầng (8 Câu Thực Chiến)</h2>
+    <div class="arena-desc">Đánh giá khả năng tổng hợp và bao quát toàn diện các chiều kích tiến hóa của Six Sigma</div>
+
+    <!-- Question 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 1 &bull; Tầng 1: Sự Tiến Hóa Về Thời Gian Chu Kỳ Thực Thi Dự Án</span>
+      <div class="quiz-q">Thời gian thực hiện một dự án Six Sigma đã tiến hóa từ giai đoạn đầu (Gen I/II) đến giai đoạn đương đại (Agile Six Sigma) như thế nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev11-1', 'Correct! Project cycle times compressed from 6-12 months (traditional long-cycle DMAIC) to rapid 2-4 week Agile DMAIC Sprints powered by real-time digital data streams.', 'Chính xác! Rút ngắn mạnh mẽ từ 6&ndash;12 tháng (dự án DMAIC dài hạn truyền thống) xuống còn các chu kỳ Sprint 2&ndash;4 tuần (Agile DMAIC) nhờ sự hỗ trợ của dữ liệu số hóa tự động.')">A. Rút ngắn từ 6&ndash;12 tháng truyền thống xuống còn các chu kỳ Sprint tinh gọn 2&ndash;4 tuần.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev11-1', 'Incorrect. Modern Agile Six Sigma compresses project lead times drastically.', 'Sai. Tốc độ thực thi ngày nay nhanh hơn gấp nhiều lần nhờ công nghệ số.')">B. Kéo dài hơn, lên tới 5 năm cho một dự án.')</button>
+      </div>
+      <div id="fb-ev11-1" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 2 &bull; Tầng 2: Sự Dịch Chuyển Về Cách Thức Thu Thập Dữ Liệu</span>
+      <div class="quiz-q">Cách thức thu thập dữ liệu trong giai đoạn Define/Measure đã thay đổi như thế nào giữa Gen I và Gen V?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev11-2', 'Correct! Evolution: From manual paper tally sheets (Gen I) to computerized batch entry (Gen II/III) to automated real-time IoT sensors and streaming Big Data pipelines (Gen V).', 'Chính xác! Từ ghi chép thủ công trên phiếu kiểm tra bằng giấy (Gen I) &rarr; Nhập liệu định kỳ vào phần mềm máy tính (Gen II/III) &rarr; Dòng chảy dữ liệu lớn tự động từ cảm biến IoT và hệ thống ERP thời gian thực (Gen V).')">A. Từ ghi chép thủ công trên giấy &rarr; Nhập liệu phần mềm định kỳ &rarr; Thu thập tự động thời gian thực qua IoT và Big Data.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev11-2', 'Incorrect. Data collection shifted from manual sampling to automated continuous streaming.', 'Sai. Phương thức thu thập dữ liệu ngày càng tự động hóa và tức thì.')">B. Cả 5 thế hệ đều chỉ dùng giấy viết tay.')</button>
+      </div>
+      <div id="fb-ev11-2" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 3 &bull; Tầng 1: Giá Trị Bất Biến Của Six Sigma Qua Mọi Thời Kỳ</span>
+      <div class="quiz-q">Yếu tố nào sau đây là giá trị cốt lõi KHÔNG BAO GIỜ THAY ĐỔI của Six Sigma dù trải qua bất kỳ thế hệ tiến hóa nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev11-3', 'Correct! The immutable core: Deterministic reasoning Y=f(X), evidence-based decision making with factual data, and relentless commitment to eliminating process variation.', 'Chính xác! Tư duy xác định luận <i>Y = f(X)</i>, quản trị thực chứng dựa trên dữ liệu khách quan và cam kết không khoan nhượng trong việc loại bỏ biến thiên để đạt tới sự hoàn hảo.')">A. Tư duy xác định luận <i>Y = f(X)</i>, quản trị dựa trên dữ liệu thực và triệt tiêu biến thiên quy trình.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev11-3', 'Incorrect. Data-driven determinism is the permanent soul of Six Sigma.', 'Sai. Dữ liệu thực và tư duy hàm truyền Y=f(X) là linh hồn vĩnh cửu của Six Sigma.')">B. Việc bắt buộc phải mặc áo đồng phục giống nhau.')</button>
+      </div>
+      <div id="fb-ev11-3" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 4 &bull; Tầng 3: Ứng Dụng Agile DMAIC Cho Quy Trình Khách Hàng</span>
+      <div class="quiz-q">Một sàn thương mại điện tử gặp sự cố tỷ lệ hủy đơn hàng tăng đột biến trong đợt Sale ngày 11/11. Phương pháp luận xử lý tối ưu nhất theo ma trận tiến hóa là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev11-4', 'Correct! Deploy an Agile DMAIC war-room sprint: Stream real-time server and transaction logs, run rapid root-cause analytics, and deploy code hotfixes within hours to recover revenue immediately.', 'Chính xác! Triển khai nhóm phản ứng nhanh Agile DMAIC: Phân tích ngay dữ liệu log giao dịch máy chủ thời gian thực, xác định nguyên nhân nghẽn cổng thanh toán và cập nhật bản vá phần mềm trong vòng vài giờ để cứu vãn doanh thu.')">A. Thành lập nhóm Agile DMAIC xử lý theo dữ liệu log thời gian thực, vá lỗi hệ thống trong vài giờ để cứu doanh thu.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev11-4', 'Incorrect. Long bureaucratic projects fail in fast-paced e-commerce crises.', 'Sai. Viết kế hoạch 6 tháng sẽ khiến sàn TMĐT phá sản trước khi giải quyết xong lỗi.')">B. Lập kế hoạch nghiên cứu 6 tháng và hẹn khách hàng năm sau trả lời.')</button>
+      </div>
+      <div id="fb-ev11-4" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 5 &bull; Tầng 2: Mở Rộng Sang Trách Nhiệm Xã Hội &amp; ESG</span>
+      <div class="quiz-q">Trong giai đoạn đương đại (Gen V), các dự án Six Sigma mở rộng thước đo thành công sang các tiêu chí nào ngoài lợi nhuận ròng?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev11-5', 'Correct! Contemporary Gen V projects encompass ESG (Environmental, Social, and Governance) metrics: Carbon footprint reduction, energy efficiency, waste-to-landfill elimination, and ethical governance.', 'Chính xác! Các tiêu chuẩn Môi trường &ndash; Xã hội &ndash; Quản trị (ESG): Cắt giảm dấu chân Carbon, tối ưu hóa năng lượng tái tạo, giảm thiểu rác thải chôn lấp và tính minh bạch đạo đức quản trị.')">A. Tiêu chuẩn ESG: Cắt giảm phát thải Carbon, sử dụng năng lượng tái tạo và quản trị minh bạch bền vững.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev11-5', 'Incorrect. Modern enterprise excellence tightly integrates ESG and sustainability.', 'Sai. Doanh nghiệp hiện đại bắt buộc phải tích hợp tiêu chuẩn ESG.')">B. Chỉ quan tâm đến tiền phạt vi phạm môi trường.')</button>
+      </div>
+      <div id="fb-ev11-5" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 6 &bull; Tầng 1: Sự Dân Chủ Hóa Năng Lực Giải Quyết Vấn Đề</span>
+      <div class="quiz-q">Khái niệm 'Citizen Problem Solvers' (Người Giải Quyết Vấn Đề Đại Chúng) trong diện mạo mới của Six Sigma phản ánh điều gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev11-6', 'Correct! "Citizen Problem Solvers" signifies that problem solving is no longer the private domain of a few elite Black Belts; every employee is empowered with intuitive visual tools to solve daily friction.', 'Chính xác! Năng lực giải quyết vấn đề không còn là "đặc quyền độc tôn" của một nhóm nhỏ Black Belt tinh hoa; mọi nhân viên bình thường đều được trang bị công cụ trực quan để tự mình giải quyết các ma sát quy trình hàng ngày.')">A. Mọi nhân viên trong tổ chức đều được trao quyền và trang bị công cụ trực quan để tự giải quyết vấn đề hàng ngày.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev11-6', 'Incorrect. Citizen problem solving democratizes improvement across the entire workforce.', 'Sai. Đây là xu hướng dân chủ hóa năng lực cải tiến toàn diện.')">B. Thuê người dân ngoài đường vào làm dự án hộ.')</button>
+      </div>
+      <div id="fb-ev11-6" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 7 &bull; Tầng 3: Lựa Chọn Công Cụ Đúng Cho Từng Tình Huống</span>
+      <div class="quiz-q">Một doanh nghiệp nên kết hợp các thế hệ Six Sigma như thế nào để đạt hiệu quả tối ưu nhất trong quản trị vận hành?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev11-7', 'Correct! Holistic integration: Use Gen I SPC for real-time manufacturing process control, Gen II DMAIC for financial bottom-line bottlenecks, Gen III DFSS for new product launches, and Gen IV/V tools for enterprise-wide digital agility.', 'Chính xác! Tích hợp linh hoạt: Dùng Gen I (SPC) kiểm soát ổn định xưởng, Gen II (DMAIC) tháo gỡ điểm nghẽn tài chính, Gen III (DFSS) thiết kế sản phẩm mới, và Gen IV/V phổ cập hóa và ứng dụng công nghệ số AI.')">A. Dùng Gen I ổn định xưởng, Gen II cắt giảm chi phí ròng, Gen III thiết kế mới và Gen IV/V phổ cập hóa &amp; số hóa AI.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev11-7', 'Incorrect. A mature enterprise uses the right generational tool for the right business challenge.', 'Sai. Phối hợp linh hoạt các thế hệ là bí quyết của tổ chức xuất sắc.')">B. Chỉ sử dụng duy nhất một công cụ cho mọi loại vấn đề.')</button>
+      </div>
+      <div id="fb-ev11-7" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 8 &bull; Tầng 2: Sự Tiến Hóa Của Vai Trò Master Black Belt</span>
+      <div class="quiz-q">Trong diện mạo mới của Six Sigma, vai trò của một Master Black Belt đã chuyển từ "Chuyên gia Thống kê Kỹ thuật" sang hình mẫu nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev11-8', 'Correct! MBBs transformed from narrow mathematical consultants into Executive Business Transformation Leaders: Guiding strategic agility, organizational change culture, and enterprise value architectures.', 'Chính xác! Chuyển thành Nhà Lãnh Đạo Chuyển Đổi Doanh Nghiệp Chiến Lược (Business Transformation Leader): Dẫn dắt sự đổi mới văn hóa, kết nối chiến lược kinh doanh với công nghệ số và kiến tạo giá trị doanh nghiệp.')">A. Nhà Lãnh Đạo Chuyển Đổi Doanh Nghiệp Chiến Lược (Business Transformation Leader).')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev11-8', 'Incorrect. MBBs are strategic enterprise transformational leaders.', 'Sai. MBB hiện đại đóng vai trò thủ lĩnh chuyển đổi chiến lược.')">B. Người chấm điểm thi trắc nghiệm.')</button>
+      </div>
+      <div id="fb-ev11-8" class="quiz-fb"></div>
+    </div>
+
+    <h3 style="color:#fff; margin-top:34px; font-size:1.25rem;">🎴 Flashcards Ôn Tập Nhanh (Click để lật thẻ 3D)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Agile DMAIC Sprints<span class="vi">Sprint DMAIC Tinh Gọn</span></div>
+        <div class="hint">Bấm để lật xem định nghĩa</div>
+        <div class="back">Rút ngắn chu kỳ dự án từ nhiều tháng xuống các vòng lặp 2&ndash;4 tuần dựa trên dữ liệu số hóa thời gian thực.<span class="vi">Tốc độ Six Sigma thế hệ mới.</span></div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Citizen Problem Solvers<span class="vi">Giải Quyết Vấn Đề Toàn Dân</span></div>
+        <div class="hint">Bấm để lật xem định nghĩa</div>
+        <div class="back">Dân chủ hóa năng lực cải tiến: 100% nhân viên đều có khả năng tự giải quyết ma sát quy trình bằng công cụ trực quan.<span class="vi">Sức mạnh văn hóa toàn diện.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: 1-PAGE ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">Phần 5 &bull; Action Checklist</span>
+    <h2 class="section-heading">Kế Hoạch Nâng Cấp Hệ Sinh Thái Six Sigma (Sáng Thứ Hai Làm Gì?)</h2>
+    <div class="section-subheading">Ba bước áp dụng ma trận tiến hóa vào việc nâng tầm hệ thống vận hành</div>
+
+    <div style="margin:18px 0;">
+      <div class="action-item">
+        <input type="checkbox" id="actev11-1">
+        <label for="actev11-1" class="action-text">
+          <strong>Bước 1: Rút ngắn thời gian các cuộc họp Tollgate</strong>: Áp dụng phương pháp Agile Kanban để theo dõi tiến độ dự án theo tuần thay vì theo tháng.
+        </label>
+      </div>
+      <div class="action-item">
+        <input type="checkbox" id="actev11-2">
+        <label for="actev11-2" class="action-text">
+          <strong>Bước 2: Tích hợp các chỉ số ESG và Môi trường</strong> vào mục tiêu của các dự án tối ưu hóa năng lượng và nguyên vật liệu.
+        </label>
+      </div>
+      <div class="action-item">
+        <input type="checkbox" id="actev11-3">
+        <label for="actev11-3" class="action-text">
+          <strong>Bước 3: Tổ chức chương trình "Citizen Improver"</strong> trao giải cho những nhân viên tuyến đầu có sáng kiến cải tiến quy trình xuất sắc nhất tháng.
+        </label>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:#065f46; font-size:0.85rem; padding:20px 0;">&copy; Six Sigma Master Black Belt Executive Training Series &bull; Phong Thủy Đại Lâm Mộc Standard</p>
+</footer>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:4px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:4px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Conversion of Probabilities to the Sigma Scale
+
+2
+00:00:05.000 --> 00:00:10.933
+Welcome to this session on establishing baselines. We oftentimes get the question,
+
+3
+00:00:10.933 --> 00:00:14.566
+how do we convert from a probability to a Sigma?
+
+4
+00:00:14.566 --> 00:00:17.532
+Where do the PPM's come from, and all that?
+
+5
+00:00:17.533 --> 00:00:20.899
+Well, we can make these calculations in Excel.
+
+6
+00:00:20.900 --> 00:00:27.566
+For example, if I want to convert from a Sigma to a probability, I can put in the Sigma
+
+7
+00:00:27.566 --> 00:00:33.166
+and the probability I get back is a one tailed probability.
+
+8
+00:00:33.166 --> 00:00:37.832
+In other words, it means it's equivalent to a unilateral specification.
+
+9
+00:00:37.833 --> 00:00:43.233
+So, if I had a unilateral specification with a
+
+10
+00:00:43.233 --> 00:00:46.333
+short-term capability of Three Sigma,
+
+11
+00:00:46.333 --> 00:00:52.666
+That's the 66,807 ppm defective.
+
+12
+00:00:52.666 --> 00:00:59.266
+Notice, that I took into account the shift. I subtracted 1.5 from 3.
+
+13
+00:00:59.266 --> 00:01:05.732
+Sigma is always short-term, and defects per million opportunities.
+
+14
+00:01:05.733 --> 00:01:11.666
+DPMO here, is always long-term.
+
+15
+00:01:11.666 --> 00:01:18.632
+So, I account for that in my equation by simply subtracting 1.5.
+
+16
+00:01:18.633 --> 00:01:22.333
+And that's how I create that baseline if you will.
+
+17
+00:01:22.333 --> 00:01:27.333
+I can also convert defect to Sigma.
+
+18
+00:01:27.333 --> 00:01:31.133
+I go out measure the opportunities I got,
+
+19
+00:01:31.133 --> 00:01:34.733
+count the defects get my defects per million opportunities.
+
+20
+00:01:34.733 --> 00:01:39.899
+Come into handy-dandy Excel, make this calculation, and I can convert
+
+21
+00:01:39.900 --> 00:01:44.633
+probability back into to Sigma. DPMO back into Sigma.
+
+22
+00:01:44.633 --> 00:01:48.066
+Fairly simple and straight forward process.
+
+23
+00:01:48.066 --> 00:01:53.066
+Thank you for choosing SSMI.

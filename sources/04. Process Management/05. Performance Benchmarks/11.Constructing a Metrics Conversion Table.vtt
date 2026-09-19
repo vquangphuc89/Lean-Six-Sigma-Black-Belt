@@ -1,0 +1,265 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Constructing a Metrics Conversion Table
+
+2
+00:00:05.000 --> 00:00:08.433
+Welcome this session on performance benchmarking.
+
+3
+00:00:08.433 --> 00:00:14.266
+What we have in front of us is a simple little data table for a number of CTQ’s.
+
+4
+00:00:14.266 --> 00:00:20.832
+In this case, scroll over to it, we have four CTQ’s.
+
+5
+00:00:20.833 --> 00:00:27.799
+CTQ 1 is measured in yield; whereas CTQ 2, defects per unit;
+
+6
+00:00:27.800 --> 00:00:33.200
+three is Z short-term, that's Sigma capability;
+
+7
+00:00:33.200 --> 00:00:36.400
+and Cp, a process capability ratio.
+
+8
+00:00:36.400 --> 00:00:42.466
+The nature of those metrics is yield as a long-term, as is DPU, they’re both long-term metrics.
+
+9
+00:00:42.466 --> 00:00:46.466
+That's because that they are discrete databased.
+
+10
+00:00:46.466 --> 00:00:49.999
+They take a long time to collect that kind of data.
+
+11
+00:00:50.000 --> 00:00:54.400
+To get a reasonably accurate estimate of their inherent capability.
+
+12
+00:00:54.400 --> 00:00:59.733
+Where as short-term Z.st and Cp are continuous measures, as we'll see,
+
+13
+00:00:59.733 --> 00:01:02.733
+and therefore there short-term.
+
+14
+00:01:02.733 --> 00:01:08.299
+Again, as we look at this example of performance benchmarking,
+
+15
+00:01:08.300 --> 00:01:12.300
+don't feel that you have a need to understand all the calculations right now.
+
+16
+00:01:12.300 --> 00:01:19.066
+What's important is the concept. What we’re doing is CTQ 1 is apples, DPU is oranges,
+
+17
+00:01:19.066 --> 00:01:24.032
+pears, and peaches. So, what we want to do is get them all the pineapple. Heh.
+
+18
+00:01:24.033 --> 00:01:30.999
+So, what we’re going to do is do that. We find that the yield of CTQ1 is 99%.
+
+19
+00:01:31.000 --> 00:01:36.533
+The DPU is 1, Z is 3 Sigma, and Cp is 1.45.
+
+20
+00:01:36.533 --> 00:01:39.599
+This Op is the number of opportunities.
+
+21
+00:01:39.600 --> 00:01:45.700
+So there are 4 opportunities that came together to get the yield of 99%.
+
+22
+00:01:45.700 --> 00:01:51.200
+In other words, CTQ 1 appeared four times in the design.
+
+23
+00:01:51.200 --> 00:01:58.133
+CTQ 2 appeared three times, CTQ 3 twice, and CTQ 4 appears six times.
+
+24
+00:01:58.133 --> 00:02:02.033
+Now, what we have to do to get Z.bench, is where we’re headed,
+
+25
+00:02:02.033 --> 00:02:04.999
+is to get a common base of computation.
+
+26
+00:02:05.000 --> 00:02:09.000
+In this case, we’re going to convert all of our metrics
+
+27
+00:02:09.000 --> 00:02:13.933
+from long-term and short-term into Y.norm,
+
+28
+00:02:13.933 --> 00:02:19.366
+and then we’re going to convert them to Sigma's.
+
+29
+00:02:19.366 --> 00:02:22.999
+The yield or Y.norm into Sigma.
+
+30
+00:02:23.000 --> 00:02:26.066
+Now, we do that with a simple equation here.
+
+31
+00:02:26.066 --> 00:02:29.399
+I'm not going to dwell on it because we'll be talking about it later.
+
+32
+00:02:29.400 --> 00:02:35.800
+Basically, what I do is take yield. In this case yield is already in yield, D2.
+
+33
+00:02:35.800 --> 00:02:40.933
+Raise it to 1 over 4, the opportunity count.
+
+34
+00:02:40.933 --> 00:02:46.099
+99 7 4. 99.74 percent yield
+
+35
+00:02:46.100 --> 00:02:51.366
+of four things will roll through to a final yield of 99%.
+
+36
+00:02:51.366 --> 00:02:57.366
+Of course, a DPU of one, three opportunities each,
+
+37
+00:02:57.366 --> 00:03:01.366
+then the opportunity yield is 66.67%.
+
+38
+00:03:01.366 --> 00:03:05.766
+Z short-term of 3, 2 such opportunities,
+
+39
+00:03:05.766 --> 00:03:10.432
+the yield is 99.93% per opportunity.
+
+40
+00:03:10.433 --> 00:03:16.533
+And, if I have six things, each with a Cp of 1.45,
+
+41
+00:03:16.533 --> 00:03:23.566
+then the yield per opportunity is 99.998%.
+
+42
+00:03:23.566 --> 00:03:27.566
+Then I convert those to Sigma.
+
+43
+00:03:27.566 --> 00:03:34.432
+And I get this one by adding 1.5, because remember, this was long-term.
+
+44
+00:03:34.433 --> 00:03:39.333
+Again, I add 1.5 because it's long-term.
+
+45
+00:03:39.333 --> 00:03:43.166
+Here I add nothing. See, there's nothing on the end.
+
+46
+00:03:43.166 --> 00:03:46.266
+Because the originating data was short-term by nature.
+
+47
+00:03:46.266 --> 00:03:51.099
+Same thing here. I add nothing on the end.
+
+48
+00:03:51.100 --> 00:03:57.966
+So what I've done, is I have converted everything to a common metric, yield.
+
+49
+00:03:57.966 --> 00:04:06.166
+And then normalized it, per opportunity. And then converted the normalized yield to a Sigma.
+
+50
+00:04:06.166 --> 00:04:09.532
+Correcting for whether it's short-term or long-term,
+
+51
+00:04:09.533 --> 00:04:15.966
+putting everything on a short-term basis. So, all four of these are short-term.
+
+52
+00:04:15.966 --> 00:04:20.999
+Then I convert the Sigma back into yield.
+
+53
+00:04:21.000 --> 00:04:25.800
+Find the product of the four yields.
+
+54
+00:04:25.800 --> 00:04:33.533
+Raise to one over 4, because there are four of those right there.
+
+55
+00:04:33.533 --> 00:04:37.733
+Then convert back into Sigma.
+
+56
+00:04:37.733 --> 00:04:42.899
+So, I'm going from Sigma to yield, to normalized yield, back to Sigma.
+
+57
+00:04:42.900 --> 00:04:46.900
+That is Z.benchmark. I’ll recolor that.
+
+58
+00:04:46.900 --> 00:04:52.800
+That is Z.benchmark, right there.
+
+59
+00:04:52.800 --> 00:04:56.266
+Put that in black, 2.46 Sigma.
+
+60
+00:04:56.266 --> 00:05:02.966
+So, what that’s saying is, very simple. Zooming out.
+
+61
+00:05:02.966 --> 00:05:09.732
+Given this data, as highlighted.
+
+62
+00:05:09.733 --> 00:05:16.733
+Four things ranging from 1.93 Sigma to 4.7 Sigma.
+
+63
+00:05:16.733 --> 00:05:23.699
+The typical Sigma per opportunity or what we call Z.bench is 2.46 Sigma.
+
+64
+00:05:23.700 --> 00:05:30.266
+Now, we can easily confirm that, and we will later.
+
+65
+00:05:30.266 --> 00:05:36.766
+But right now recognize that's how we go out and do benchmarking among dissimilar things.
+
+66
+00:05:36.766 --> 00:05:41.766
+Thank you for choosing SSMI.

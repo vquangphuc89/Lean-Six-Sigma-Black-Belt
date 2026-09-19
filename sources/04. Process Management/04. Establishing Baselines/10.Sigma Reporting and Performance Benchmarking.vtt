@@ -1,0 +1,217 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.966
+Sigma Reporting and Performance Benchmarking
+
+2
+00:00:04.966 --> 00:00:09.366
+Welcome back to our session on quality baseline.
+
+3
+00:00:09.366 --> 00:00:12.232
+as we come down the backstretch on this topic here.
+
+4
+00:00:12.233 --> 00:00:18.366
+Let's imagine that we have out in front of us some business.
+
+5
+00:00:18.366 --> 00:00:25.199
+And in that business, we have a number of key processes that we've identified.
+
+6
+00:00:25.200 --> 00:00:30.100
+We’ll call that process one
+
+7
+00:00:30.100 --> 00:00:37.366
+through process N. Where N is some big number. So, from 1 to 2, to 3, to 4, to 5 to N.
+
+8
+00:00:37.366 --> 00:00:42.432
+Where N might be a thousand or N might be, you know, 500, or whatever.
+
+9
+00:00:42.433 --> 00:00:47.799
+But that's the critical processes that drives that business.
+
+10
+00:00:47.800 --> 00:00:54.800
+These are the processes that create this business. That defines this business.
+
+11
+00:00:54.800 --> 00:01:01.800
+I think we can understand that. Now, each process provides output.
+
+12
+00:01:01.800 --> 00:01:08.266
+Has some output. I’ll just call output.
+
+13
+00:01:08.266 --> 00:01:14.666
+And of course every output, in turn, has some number of things
+
+14
+00:01:14.666 --> 00:01:20.366
+that can go wrong with it. Defect type A, type B,
+
+15
+00:01:20.366 --> 00:01:26.899
+type C, type D. Same thing here type A. Maybe which is a different kinda A. Type B,
+
+16
+00:01:26.900 --> 00:01:31.966
+different kind. C and D. Has a host of things that can go wrong with it.
+
+17
+00:01:31.966 --> 00:01:36.066
+Now, what we can do is take this first process for example.
+
+18
+00:01:36.066 --> 00:01:39.332
+And let's imagine it's a commercial process.
+
+19
+00:01:39.333 --> 00:01:45.366
+Let's say for example it’s the hiring process of a corporation
+
+20
+00:01:45.366 --> 00:01:51.332
+or could be a legal process of some type. Maybe filing for a patent.
+
+21
+00:01:51.333 --> 00:01:58.333
+It could be a drilling process if it was industrial. Or maybe a wave soldering process.
+
+22
+00:01:58.333 --> 00:02:02.833
+And it has output with different things that can go wrong.
+
+23
+00:02:02.833 --> 00:02:09.166
+Well what we do, is we go out and we count, for some number of output.
+
+24
+00:02:09.166 --> 00:02:12.799
+We count the things that can go wrong.
+
+25
+00:02:12.800 --> 00:02:18.033
+And from that, we determined the yield of the process.
+
+26
+00:02:18.033 --> 00:02:22.833
+On the flipside of that is the defects per million opportunities.
+
+27
+00:02:22.833 --> 00:02:29.066
+Now, once I know the defects per million opportunities of that process.
+
+28
+00:02:29.066 --> 00:02:33.999
+Let's say for example that it was around 65,000
+
+29
+00:02:34.000 --> 00:02:37.566
+defects per million opportunities.
+
+30
+00:02:37.566 --> 00:02:40.732
+That's roughly in this region right here.
+
+31
+00:02:40.733 --> 00:02:45.599
+So, what I’m going to do, is I’m going to put a little dot right there to represent that process.
+
+32
+00:02:45.600 --> 00:02:52.566
+Then I go do it again for another process. And this time maybe I find 30,000 defects.
+
+33
+00:02:52.566 --> 00:02:56.866
+And I do that again for another process.
+
+34
+00:02:56.866 --> 00:03:02.232
+And maybe I find 50,000 defects per million opportunities.
+
+35
+00:03:02.233 --> 00:03:07.533
+I make a dot. And I start doing that for all
+
+36
+00:03:07.533 --> 00:03:10.799
+of my critical processes in that business.
+
+37
+00:03:10.800 --> 00:03:15.133
+Be they commercial or industrial. And I find them
+
+38
+00:03:15.133 --> 00:03:18.999
+and they all start coming in right about this region.
+
+39
+00:03:19.000 --> 00:03:24.733
+So, what I do. Very simply.
+
+40
+00:03:24.733 --> 00:03:28.733
+These are all my baselines, now. That's a keyword there. That's all my baselines.
+
+41
+00:03:28.733 --> 00:03:33.266
+That's the baseline of that process. Maybe the patent filing process.
+
+42
+00:03:33.266 --> 00:03:37.799
+That’s the baseline of the customer documentation process for their needs.
+
+43
+00:03:37.800 --> 00:03:42.400
+Any number of processes. But the key is this. Look here.
+
+44
+00:03:42.400 --> 00:03:46.300
+You see them all centered around there? They’re all coming in around
+
+45
+00:03:46.300 --> 00:03:51.500
+3 or 4 Sigma, with the average at about 3.5 Sigma.
+
+46
+00:03:51.500 --> 00:03:54.533
+That's how we go about benchmarking.
+
+47
+00:03:54.533 --> 00:03:59.933
+So, I establish my baseline for all these different processes.
+
+48
+00:03:59.933 --> 00:04:04.399
+Then I just kinda look at them on a chart like this, where they all cluster.
+
+49
+00:04:04.400 --> 00:04:11.233
+And I get the baseline of the baseline. Which is around somewhere in here, about 3.5 Sigma.
+
+50
+00:04:11.233 --> 00:04:17.966
+So, now I can say I got about a 3 1/2 Sigma business.
+
+51
+00:04:17.966 --> 00:04:21.466
+Now, if I compare that business to say my competitor,
+
+52
+00:04:21.466 --> 00:04:24.466
+I get some data on them, I’m now benchmarking.
+
+53
+00:04:24.466 --> 00:04:24.499
+And that's what we will talk about next, the power benchmarking
+
+54
+00:04:24.500 --> 00:04:29.500
+Thank you for choosing SSMI.

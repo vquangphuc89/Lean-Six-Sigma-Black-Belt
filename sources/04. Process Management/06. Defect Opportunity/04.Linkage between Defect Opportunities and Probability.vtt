@@ -1,0 +1,237 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Linkage between Defect Opportunities and Probability
+
+2
+00:00:05.000 --> 00:00:08.366
+Welcome to this session on defect opportunities.
+
+3
+00:00:08.366 --> 00:00:11.832
+Recall that we had indicated there were three fundamental rules.
+
+4
+00:00:11.833 --> 00:00:18.433
+First, we have to have a characteristic. In this case, what we’re going to say,
+
+5
+00:00:18.433 --> 00:00:24.433
+is that we have a CTQ, a critical to quality characteristic.
+
+6
+00:00:24.433 --> 00:00:30.733
+Where that's an outcome. Y is a function of X. So, a CTQ is a variable.
+
+7
+00:00:30.733 --> 00:00:36.133
+It is a characteristic. You have to have that, to have a defect opportunity.
+
+8
+00:00:36.133 --> 00:00:39.566
+If you don't have a characteristic, you can't have a defect.
+
+9
+00:00:39.566 --> 00:00:42.999
+Second, you gotta have a scale of measure.
+
+10
+00:00:43.000 --> 00:00:48.066
+If you can't quantify the CTQ, how can you have a defect?
+
+11
+00:00:48.066 --> 00:00:54.132
+So, you gotta have a characteristic and you have to have a scale of measure.
+
+12
+00:00:54.133 --> 00:00:57.933
+Third, you have to have a standard,
+
+13
+00:00:57.933 --> 00:01:01.933
+a specification limit, a performance expectation.
+
+14
+00:01:01.933 --> 00:01:06.433
+In this case, we’re showing an upper spec. So, we have a characteristic,
+
+15
+00:01:06.433 --> 00:01:11.866
+a performance scale of measure, and a performance expectation or standard.
+
+16
+00:01:11.866 --> 00:01:17.066
+At this point we have a defect opportunity.
+
+17
+00:01:17.066 --> 00:01:22.432
+But right now, it's only passive, it’s potential.
+
+18
+00:01:22.433 --> 00:01:27.466
+It's not realizable yet, because there is no density.
+
+19
+00:01:27.466 --> 00:01:30.466
+There's no history. There's no performance.
+
+20
+00:01:30.466 --> 00:01:36.899
+It's just a scale of measure and a standard, an expectation attached.
+
+21
+00:01:36.900 --> 00:01:43.066
+Now, once we go out and run some parts, and operate the process,
+
+22
+00:01:43.066 --> 00:01:46.232
+and create some observations.
+
+23
+00:01:46.233 --> 00:01:50.999
+Now, we have opportunity, as we're producing parts.
+
+24
+00:01:51.000 --> 00:01:55.733
+Because any given part, can be above the upper spec or below the lower spec.
+
+25
+00:01:55.733 --> 00:02:01.333
+Remember, a defect opportunity is a set of circumstances favorable to an end.
+
+26
+00:02:01.333 --> 00:02:04.799
+Where the end is a defect opportunity. So, we have to have
+
+27
+00:02:04.800 --> 00:02:11.066
+a critical to quality characteristic, CTQ, a scale, and a standard.
+
+28
+00:02:11.066 --> 00:02:16.899
+Now, we can in fact have an active opportunity.
+
+29
+00:02:16.900 --> 00:02:21.333
+Once we start measuring the parts produced for that characteristic,
+
+30
+00:02:21.333 --> 00:02:24.333
+in accordance to that standard.
+
+31
+00:02:24.333 --> 00:02:28.666
+Those in the green is yield. Those in the red are defects.
+
+32
+00:02:28.666 --> 00:02:35.799
+Thus, when I know the distribution, in relationship to the standard,
+
+33
+00:02:35.800 --> 00:02:41.500
+I can now see the probability of a defect.
+
+34
+00:02:41.500 --> 00:02:48.466
+Once I have probability, I now have a true defect opportunity.
+
+35
+00:02:48.466 --> 00:02:52.132
+If the probability of a defect is zero,
+
+36
+00:02:52.133 --> 00:02:56.399
+then there is no opportunity for a defect.
+
+37
+00:02:56.400 --> 00:03:01.100
+Only if that probability is greater than zero, is there an opportunity.
+
+38
+00:03:01.100 --> 00:03:07.300
+Now, once we start making those parts, that CTQ, then we now have a probability.
+
+39
+00:03:07.300 --> 00:03:13.900
+So those are the things that's required to form an active defect opportunity.
+
+40
+00:03:13.900 --> 00:03:19.933
+A critical to quality characteristic. A scale of measure.
+
+41
+00:03:19.933 --> 00:03:23.566
+A performance expectation.
+
+42
+00:03:23.566 --> 00:03:28.899
+A process distribution, density as we call it.
+
+43
+00:03:28.900 --> 00:03:35.933
+Those marry together to form a defect probability.
+
+44
+00:03:35.933 --> 00:03:43.066
+Once I have probability, I now have the opportunity for a defect.
+
+45
+00:03:43.066 --> 00:03:49.199
+Now, interestingly enough, many have a hard time understanding this concept.
+
+46
+00:03:49.200 --> 00:03:53.666
+It's easy to try to make a simple thing complex.
+
+47
+00:03:53.666 --> 00:03:59.432
+So, when we talk about defect opportunities, in essence, what we’re saying is this,
+
+48
+00:03:59.433 --> 00:04:06.099
+listen carefully. A defect opportunity is anything that's important to us,
+
+49
+00:04:06.100 --> 00:04:12.666
+that we measure. So, a CTQ is critical, it’s a characteristic, it’s a quality characteristic.
+
+50
+00:04:12.666 --> 00:04:18.366
+It’s critical, therefore it's important we measure it and we report it.
+
+51
+00:04:18.366 --> 00:04:24.066
+Therefore, it's a accountable defect opportunity.
+
+52
+00:04:24.066 --> 00:04:30.566
+We need to account for it, as we operate our process, and accounting means reporting.
+
+53
+00:04:30.566 --> 00:04:35.232
+Thus, reportable defect opportunities
+
+54
+00:04:35.233 --> 00:04:41.299
+are those features, product, service, features,
+
+55
+00:04:41.300 --> 00:04:44.833
+that we feel are very important  to either us or the customer.
+
+56
+00:04:44.833 --> 00:04:48.299
+For any number of reasons, that we need to measure them
+
+57
+00:04:48.300 --> 00:04:52.300
+in relationship to the standards, to report their relative quality.
+
+58
+00:04:52.300 --> 00:04:55.533
+That's a defect opportunity.
+
+59
+00:04:55.533 --> 00:05:00.533
+Thank you for choosing SSMI.

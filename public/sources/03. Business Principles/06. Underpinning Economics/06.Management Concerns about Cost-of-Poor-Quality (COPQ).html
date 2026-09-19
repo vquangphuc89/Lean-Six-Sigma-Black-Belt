@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mối Bận Tâm Của Ban Lãnh Đạo Về COPQ | MBB Masterclass</title>
+<style>
+
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.7;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  /* HERO HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.25; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; font-style: italic; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+
+  /* PILLAR SECTION CARDS */
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  /* NATIVE PURE HTML/CSS MATH CARD */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-var { font-style: italic; color: #ffffff; }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* DATA TABLES */
+  table.data-table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin: 18px 0; }
+  table.data-table th {
+    background: linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color: #fff; padding: 12px 14px; text-align: left; vertical-align: top;
+  }
+  table.data-table th .th-vi { display: block; color: #a7f3d0; font-style: italic; font-weight: 500; font-size: 0.8rem; margin-top: 2px; }
+  table.data-table td { padding: 12px 14px; border-bottom: 1px solid #d1fae5; vertical-align: top; background: #fff; }
+  table.data-table td .td-sub { display: block; color: var(--vi-green-2); font-style: italic; font-size: 0.85rem; margin-top: 2px; }
+  table.data-table tr:nth-child(even) td { background: #f7fcf9; }
+
+  /* CASE STUDIES & COMPARISON */
+  .case-card {
+    background: #fdfefe;
+    border: 1px solid #cbf3e3;
+    border-left: 5px solid var(--emerald);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  .case-badge {
+    display: inline-block;
+    background: var(--emerald-vibrant);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .case-title { font-size: 1.15rem; font-weight: 800; color: var(--wood-dark); margin: 0 0 8px; }
+
+  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; margin: 22px 0; }
+  @media(max-width:768px){ .vs-grid { grid-template-columns: 1fr; } }
+  .vs-col { border-radius: 10px; padding: 20px; }
+  .vs-col.bad { background: #fef2f2; border: 2px solid #ef4444; }
+  .vs-col.good { background: #ecfdf5; border: 2px solid var(--emerald-vibrant); }
+  .vs-badge {
+    display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;
+    padding: 4px 10px; border-radius: 14px; color: #fff; margin-bottom: 10px; text-transform: uppercase;
+  }
+  .vs-badge.bad { background: var(--red); }
+  .vs-badge.good { background: var(--green); }
+  .vs-divider { display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--wood-dark); font-size: 1.3rem; }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { margin-bottom: 8px; font-size: 0.9rem; }
+
+  /* MBB PRO-TIP BOX */
+  .mbb-box {
+    background: var(--gold-bg); border: 1px solid #fef08a; border-left: 5px solid var(--gold-border);
+    border-radius: 8px; padding: 20px 24px; margin: 22px 0;
+  }
+  .mbb-box .title { color: var(--wood-bark); font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; }
+  .mbb-box p { margin: 0; color: #78350f; font-size: 0.95rem; }
+
+  /* INTERACTIVE ARENA */
+  .interactive-arena {
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color: #fff; border-radius: 14px; padding: 36px 40px; margin: 40px 0;
+    box-shadow: 0 8px 28px rgba(2,44,34,0.3); border: 2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2 { color: #fff; margin-top: 0; font-size: 1.6rem; font-weight: 800; }
+  .interactive-arena .arena-desc { color: var(--emerald-mint); font-style: italic; font-size: 0.98rem; margin-bottom: 24px; }
+  
+  .quiz-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 10px; padding: 22px 24px; margin-bottom: 22px;
+  }
+  .quiz-tag { display: inline-block; background: var(--emerald); color: #fff; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  .quiz-tag.tier-1 { background: #0284c7; }
+  .quiz-tag.tier-2 { background: #d97706; }
+  .quiz-tag.tier-3 { background: #7c3aed; }
+  .quiz-q { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.45; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(2,44,34,0.7); border: 1px solid rgba(52,211,153,0.4); color: #ecfdf5;
+    padding: 12px 16px; border-radius: 8px; font-size: 0.92rem; text-align: left; cursor: pointer;
+    transition: all 0.2s ease; font-family: inherit; line-height: 1.4;
+  }
+  .quiz-btn:hover { background: rgba(16,185,129,0.25); border-color: var(--emerald-mint); }
+  .quiz-btn.correct { background: #065f46 !important; border-color: #34d399 !important; color: #fff !important; }
+  .quiz-btn.wrong { background: #7f1d1d !important; border-color: #f87171 !important; color: #fff !important; }
+  .quiz-fb { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 8px; font-size: 0.92rem; line-height: 1.5; }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.success { background: rgba(16,185,129,0.2); border: 1px solid #34d399; color: #d1fae5; }
+  .quiz-fb.error { background: rgba(239,68,68,0.2); border: 1px solid #f87171; color: #fecaca; }
+
+  /* FLASHCARDS */
+  .flashcards-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 16px; margin-top: 16px; }
+  .flashcard {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(110,231,183,0.3); border-radius: 10px;
+    padding: 20px; cursor: pointer; min-height: 150px; display: flex; flex-direction: column;
+    justify-content: center; text-align: center; transition: transform 0.2s ease; user-select: none;
+  }
+  .flashcard:hover { transform: translateY(-3px); border-color: var(--emerald-mint); }
+  .flashcard .front { font-size: 1.05rem; font-weight: 800; color: var(--emerald-mint); }
+  .flashcard .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 6px; opacity: 0.85; }
+  .flashcard .back { display: none; font-size: 0.9rem; color: #fff; line-height: 1.45; }
+  .flashcard.flipped .front, .flashcard.flipped .hint { display: none; }
+  .flashcard.flipped .back { display: block; }
+
+  /* ACTION CHECKLIST & TEMPLATE */
+  .action-item { display: flex; align-items: flex-start; gap: 12px; background: #f4fbf7; border: 1px solid #d1fae5; padding: 14px 18px; border-radius: 8px; margin-bottom: 12px; }
+  .action-item input { width: 19px; height: 19px; accent-color: var(--emerald); cursor: pointer; margin-top: 3px; flex-shrink: 0; }
+  .action-text { font-size: 0.95rem; color: #0f241d; line-height: 1.5; }
+  .action-text strong { color: var(--wood-dark); }
+  
+  .template-box {
+    background: #ffffff; border: 1.5px dashed var(--emerald); border-radius: 10px;
+    padding: 22px 26px; margin-top: 20px;
+  }
+  .template-box h4 { margin: 0 0 12px; color: var(--wood-dark); font-size: 1.1rem; }
+  .template-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .template-field { display: flex; flex-direction: column; gap: 4px; }
+  .template-field label { font-size: 0.82rem; font-weight: 700; color: var(--vi-green-2); text-transform: uppercase; }
+  .template-field input, .template-field select {
+    padding: 8px 12px; border: 1px solid #a7f3d0; border-radius: 6px; font-family: inherit; font-size: 0.9rem; background: #f0fdf4;
+  }
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">03. Business Principles &bull; 06. Underpinning Economics &bull; Lesson 06</span>
+    <h1 class="hero-title">Những Mối Bận Tâm Của Lãnh Đạo Về Chi Phí Chất Lượng Kém</h1>
+    <div class="hero-title-en">Management Concerns about Cost-of-Poor-Quality (COPQ) &minus; Spiral Cost Traps & Executive Governance</div>
+    <p class="hero-desc">
+      Nhận diện hiện tượng chi phí chất lượng xoáy ốc mất kiểm soát (25% &minus; 40% doanh thu). Chấm dứt thói quen quản trị "tung đồng xu may rủi" bằng hệ thống đo lường lượng hóa Six Sigma, biến chất lượng thành trung tâm tạo lợi nhuận cho doanh nghiệp.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 / Pillar 1</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành 60 Giây</h2>
+    <div class="section-subheading">Executive Summary &minus; Stopping the Spiral Cost Trap</div>
+    
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Hiện Tượng Chi Phí Xoáy Ốc Mất Kiểm Soát:</strong> Tại nhiều tổ chức, chi phí kiểm tra, kiểm nghiệm, phế phẩm và làm lại liên tục tăng vọt theo hình xoắn ốc, nuốt chửng từ <strong>25% đến 35% &minus; 40% tổng doanh thu</strong> bán hàng mà ban lãnh đạo không hề hay biết.</li>
+        <li><strong>Hậu Quả Của Quản Trị "Tung Đồng Xu" (Heads or Tails Management):</strong> Khi không đo lường chính xác các nhóm COPQ, ban điều hành phải ra quyết định dựa trên phỏng đoán và may rủi. Khi gặp sự cố chất lượng, phản ứng bản năng thường là tăng thêm nhân viên kiểm tra, khiến chi phí càng đội lên nhanh hơn.</li>
+        <li><strong>Đo Lường Là Cách Duy Nhất Để Kiểm Soát (Measure to Win):</strong> <em>"We can only come to that by measuring it"</em> &minus; Đo lường lượng hóa các phân loại COPQ là chìa khóa duy nhất giúp tổ chức giành thế chủ động và luôn là người chiến thắng trong mọi chu kỳ kinh doanh.</li>
+        <li><strong>Chuyển Hóa Chất Lượng Thành Trung Tâm Lợi Nhuận:</strong> Kiểm soát chặt chẽ COPQ không phải là cắt giảm chi phí mù quáng mà là tái cấu trúc nguồn vốn: giảm chi phí sai hỏng và thẩm định để tái đầu tư vào R&D và phòng ngừa chủ động.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 / Pillar 2</span>
+    <h2 class="section-heading">Mô Hình Vòng Xoáy Chi Phí & Chỉ Số Đo Lường Rủi Ro COPQ</h2>
+    <div class="section-subheading">The COPQ Spiral Trap Model & Risk Exposure Index</div>
+
+    <p>
+      Khi một tổ chức không có hệ thống đo lường Six Sigma, họ thường rơi vào "Vòng xoáy tử thần của chi phí chất lượng" (COPQ Death Spiral):
+    </p>
+
+    <!-- Visual Spiral Loop -->
+    <div style="background:#022c22; color:#fff; border-radius:10px; padding:24px; margin:20px 0; border:1.5px solid var(--emerald);">
+      <div style="text-align:center; font-weight:800; color:var(--emerald-mint); margin-bottom:18px; text-transform:uppercase; letter-spacing:1px;">
+        Vòng Xoáy Chi Phí Mất Kiểm Soát (The COPQ Death Spiral Trap)
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:12px; max-width:800px; margin:0 auto;">
+        <div style="background:rgba(239,68,68,0.2); border-left:5px solid #f87171; padding:12px 18px; border-radius:6px;">
+          <strong style="color:#fca5a5;">Bước 1: Khách hàng khiếu nại chất lượng &rarr;</strong> Ban lãnh đạo lo sợ mất uy tín và thị phần.
+        </div>
+        <div style="background:rgba(239,68,68,0.3); border-left:5px solid #f87171; padding:12px 18px; border-radius:6px;">
+          <strong style="color:#fca5a5;">Bước 2: Phản ứng sai lầm &rarr;</strong> Tuyển thêm nhân viên QC, mua thêm máy kiểm nghiệm, tăng tầng nấc phê duyệt hồ sơ.
+        </div>
+        <div style="background:rgba(239,68,68,0.4); border-left:5px solid #f87171; padding:12px 18px; border-radius:6px;">
+          <strong style="color:#fca5a5;">Bước 3: Chi phí thẩm định (Appraisal) tăng vọt &rarr;</strong> Thời gian sản xuất/xử lý bị kéo dài, tồn kho WIP tăng cao.
+        </div>
+        <div style="background:rgba(239,68,68,0.5); border-left:5px solid #f87171; padding:12px 18px; border-radius:6px;">
+          <strong style="color:#fca5a5;">Bước 4: Biên lợi nhuận sụp đổ (COPQ chạm 35% &minus; 40%) &rarr;</strong> Cắt giảm ngân sách đào tạo và cải tiến quy trình để bù lỗ.
+        </div>
+        <div style="background:rgba(239,68,68,0.6); border-left:5px solid #f87171; padding:12px 18px; border-radius:6px;">
+          <strong style="color:#fca5a5;">Bước 5: Lỗi quy trình càng trầm trọng &rarr;</strong> Vòng xoáy lặp lại ở cấp độ tồi tệ hơn!
+        </div>
+      </div>
+      <div style="text-align:center; font-size:0.88rem; color:#6ee7b7; margin-top:16px; font-weight:bold;">
+        ⚡ Lối thoát duy nhất: Cắt đứt vòng xoáy bằng cách đo lường lượng hóa COPQ và triệt tiêu nguyên nhân gốc rễ (<i>X</i>).
+      </div>
+    </div>
+
+    <!-- Math Card 1: COPQ Velocity -->
+    <div class="math-card">
+      <div class="title">1. Chỉ Số Tốc Độ Rò Rỉ Chi Phí Chất Lượng (COPQ Leakage Velocity)</div>
+      <div class="math-equation">
+        <span class="math-var">Velocity<sub>COPQ</sub></span> = 
+        <div class="math-frac">
+          <div class="math-num">&Delta; <span class="math-var">COPQ<sub>total</sub></span></div>
+          <div class="math-den">&Delta; <span class="math-var">t</span></div>
+        </div> = 
+        <div class="math-frac">
+          <div class="math-num"><span class="math-var">Loss<sub>scrap</sub></span> + <span class="math-var">Cost<sub>rework_labor</sub></span> + <span class="math-var">Cost<sub>warranty_claims</sub></span></div>
+          <div class="math-den"><span class="math-var">Days<sub>operating</sub></span></div>
+        </div>
+      </div>
+      <div class="desc">
+        <strong>Ý nghĩa quản trị điều hành:</strong><br>
+        &bull; <strong>Velocity<sub>COPQ</sub>:</strong> Số tiền bị bốc hơi mỗi ngày do chất lượng kém ($/ngày hoặc VNĐ/ngày).<br>
+        &bull; Giúp CEO và Ban Giám đốc nhìn thấy "đồng hồ đếm tiền thất thoát" theo thời gian thực thay vì đợi đến cuối quý khi báo cáo tài chính hoàn tất.
+      </div>
+    </div>
+
+    <!-- Math Card 2: Executive Quality ROI -->
+    <div class="math-card">
+      <div class="title">2. Tỷ Số Đòn Bẩy Tài Chính Của Quản Trị Chất Lượng (Quality Leverage Ratio)</div>
+      <div class="math-equation">
+        <span class="math-var">QLR</span> = 
+        <div class="math-frac">
+          <div class="math-num">&Delta; <span class="math-var">Profit<sub>net</sub></span></div>
+          <div class="math-den">&Delta; <span class="math-var">Cost<sub>prevention_investment</sub></span></div>
+        </div> = 
+        <div class="math-frac">
+          <div class="math-num"><span class="math-var">COPQ<sub>saved</sub></span> &minus; <span class="math-var">Investment</span></div>
+          <div class="math-den"><span class="math-var">Investment</span></div>
+        </div>
+      </div>
+      <div class="desc">
+        <strong>Trong đó:</strong><br>
+        &bull; <strong>QLR:</strong> Mỗi 1 đồng vốn đầu tư vào hệ thống đo lường và phòng ngừa Six Sigma sẽ giải phóng bao nhiêu đồng lợi nhuận thuần từ "nhà máy ngầm".<br>
+        &bull; Trong các dự án Six Sigma chuẩn mực, hệ số <i>QLR</i> thường dao động từ <strong>5&times; đến 25&times;</strong> ngay trong năm đầu tiên.
+      </div>
+    </div>
+
+    <!-- MBB Box -->
+    <div class="mbb-box">
+      <div class="title">💡 Master Black Belt Truth: Không Thể Quản Trị Những Gì Bạn Không Đo Lường</div>
+      <p>
+        Lord Kelvin từng tuyên bố: <em>"If you cannot measure it, you cannot improve it"</em>. Trong quản trị điều hành hiện đại, MBB bổ sung: <strong>"If you cannot measure COPQ in dollars, management will ignore it until it destroys the company"</strong>. Biến đổi các thuật ngữ kỹ thuật (DPMO, Cpk, RPN) thành số tiền thiệt hại tài chính cụ thể trên bàn làm việc của CEO là kỹ năng sinh tồn tối quan trọng của một Black Belt xuất sắc.
+      </p>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 / Pillar 3</span>
+    <h2 class="section-heading">Tình Huống Thực Chiến & Đối Chiếu Quản Trị</h2>
+    <div class="section-subheading">Real-World Case Studies & Executive Governance</div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Hàng Không & Quốc Phòng / Aerospace Components</span>
+      <h3 class="case-title">Case Study 1: Chặn Đứng Vòng Xoáy Chi Phí Kiểm Tra Cánh Quạt Tua-bin Khí</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Nhà máy sản xuất cánh quạt tua-bin phản lực gặp sự cố nứt vi mô bề mặt. Ban quản lý hoảng sợ trước nguy cơ an toàn bay nên lập tức bổ sung 3 quy trình kiểm tra siêu âm và chụp X-quang 100% sản phẩm. Chi phí thẩm định tăng vọt 45%, thời gian chu kỳ sản xuất tăng từ 12 ngày lên 38 ngày, COPQ leo thang lên 34% doanh thu.<br>
+        <strong>Đột phá Six Sigma:</strong> Tổng Giám Đốc chỉ định Black Belt đo lường chính xác các biến số lò đúc chân không (<i>X<sub>1</sub></i>: Tốc độ nguội, <i>X<sub>2</sub></i>: Độ chân không). Kiểm soát chặt <i>X<sub>1</sub>, X<sub>2</sub></i> triệt tiêu hoàn toàn vết nứt từ phôi đúc ban đầu.<br>
+        <strong>Kết quả:</strong> Bãi bỏ 2 trạm chụp X-quang phụ, giảm thời gian sản xuất về 14 ngày, cắt giảm 8.5 triệu USD COPQ hàng năm.
+      </p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Thương Mại Điện Tử / E-Commerce Logistics</span>
+      <h3 class="case-title">Case Study 2: Khống Chế Tỷ Lệ Đổi Trả Hàng (Return Rate) Của Sàn Bán Lẻ Trực Tuyến</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Một sàn thương mại điện tử thời trang có doanh thu 250 triệu USD/năm. Tỷ lệ trả hàng do giao sai kích cỡ (size) hoặc sai màu lên tới 24%, tiêu tốn 32 triệu USD/năm chi phí vận chuyển ngược, kho bãi và hàng tồn thanh lý giảm giá.<br>
+        <strong>Phản ứng ban đầu của Quản lý:</strong> Bố trí 50 nhân viên đứng quét mã vạch kiểm tra gói hàng trước khi giao (chi phí tăng thêm 1.5 triệu USD nhưng lỗi vẫn lọt lưới 18%).<br>
+        <strong>Giải pháp Đo Lường MBB:</strong> Phân tích dữ liệu tìm ra nguyên nhân do bảng size của các nhà cung cấp không đồng nhất và công cụ gợi ý size trên app hoạt động sai lệch. Tái cấu trúc thuật toán AI gợi ý size và chuẩn hóa bảng đo kích thước.<br>
+        <strong>Hiệu quả:</strong> Tỷ lệ trả hàng giảm từ 24% xuống 6%, tiết kiệm ròng 23.5 triệu USD chi phí logistics hàng năm.
+      </p>
+    </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px; font-size:1.25rem;">Bảng So Sánh Quyết Sách Lãnh Đạo: Phản Xạ Cảm Tính vs Quản Trị Dựa Trên Dữ Liệu</h3>
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Quản Trị "Tung Đồng Xu" (Reactive Guesswork)</span>
+        <ul>
+          <li>Khi có sự cố chất lượng: Tăng cường kiểm tra, siết chặt kỷ luật và quy trách nhiệm cá nhân.</li>
+          <li>Không theo dõi COPQ bằng số tiền cụ thể; chỉ nhìn báo cáo phế phẩm thấy được cuối tháng.</li>
+          <li>Cắt giảm ngân sách đào tạo và cải tiến quy trình mỗi khi biên lợi nhuận sụt giảm.</li>
+          <li>Rơi vào vòng xoáy chi phí tăng cao mà chất lượng vẫn phập phù, khách hàng rời bỏ.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Quản Trị Six Sigma MBB (Data-Driven Governance)</span>
+        <ul>
+          <li>Khi có sự cố: Truy tìm biến số nguyên nhân gốc rễ (<i>X</i>) và khóa chặt biến động bằng Poka-Yoke.</li>
+          <li>Đo lường chi phí rò rỉ COPQ theo thời gian thực ($/ngày) và đưa vào báo cáo giao ban điều hành.</li>
+          <li>Bảo vệ và ưu tiên ngân sách phòng ngừa chủ động (Prevention) vì đây là đòn bẩy tài chính cao nhất.</li>
+          <li>Cắt đứt vòng xoáy chi phí, giải phóng hàng triệu USD tiền mặt bổ sung vào lợi nhuận ròng.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num" style="background:#059669; color:#fff;">Trụ Cột 4 / Pillar 4</span>
+    <h2>Đấu Trường Tương Tác & Bài Tập Tình Huống</h2>
+    <div class="arena-desc">Interactive Arena &minus; Scenario-Based Quizzes & 3D Flashcards</div>
+
+    <!-- QUIZ 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Hiểu Mối Bận Tâm Cốt Lõi</span>
+      <div class="quiz-q">1. Mối bận tâm lớn nhất của Ban Giám đốc khi chi phí chất lượng kém (COPQ) vượt khỏi tầm kiểm soát là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-6-q1', 'Correct! Uncontrolled COPQ can silently consume 25% to 40% of sales, eroding profitability and destroying market competitiveness without visible ledger traces.', 'Chính xác! COPQ mất kiểm soát có thể âm thầm nuốt chửng từ 25% đến 40% tổng doanh số bán hàng, làm bốc hơi toàn bộ lợi nhuận và phá hủy năng lực cạnh tranh của doanh nghiệp!')">A. COPQ tăng vọt lên tới 25% &minus; 40% doanh thu mà không bị phát hiện trên sổ sách, làm xói mòn toàn bộ biên lợi nhuận và đe dọa sự tồn vong của công ty.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q1', 'Incorrect. Regulatory paperwork is secondary to catastrophic financial bleed.', 'Sai. Thủ tục hành chính chỉ là thứ yếu so với sự thất thoát tài chính tàn khốc.')">B. Các cơ quan kiểm toán nhà nước sẽ phạt tiền vì không nộp báo cáo COPQ đúng hạn.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q1', 'Incorrect. Six Sigma aims to reduce inspection personnel and redeploy them to value-adding roles.', 'Sai. Six Sigma hướng tới tinh gọn nhân sự kiểm tra chứ không phải tuyển thêm.')">C. Công ty không tuyển đủ số lượng thanh tra viên kiểm tra chất lượng (QC).</button>
+      </div>
+      <div id="fb-6-q1" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Thuật Ngữ "Heads or Tails"</span>
+      <div class="quiz-q">2. Ẩn dụ "Turn up heads or tails for you" (Tung đồng xu sấp hay ngửa) của TS. Mikel Harry ám chỉ điều gì trong thực tế quản trị?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q2', 'Incorrect. It refers to the lack of measurement leading to blind luck governance.', 'Sai. Ẩn dụ này ám chỉ sự thiếu đo lường dẫn đến việc quản trị phụ thuộc vào may rủi.')">A. Việc công ty tung đồng xu để quyết định chọn sản phẩm nào để sản xuất.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-6-q2', 'Correct! Without measuring COPQ categories, leadership operates on blind luck and guesswork &minus; hoping for the best instead of governing through quantitative control.', 'Chính xác! Nếu không đo lường các nhóm chi phí chất lượng kém, ban lãnh đạo đang điều hành công ty dựa trên sự may rủi và phỏng đoán &minus; trông chờ vào may mắn thay vì kiểm soát lượng hóa.')">B. Nếu không đo lường chính xác COPQ, việc công ty có lãi hay lỗ chỉ hoàn toàn là sự may rủi và phỏng đoán mù quáng.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q2', 'Incorrect. It is about managerial measurement discipline.', 'Sai. Đây là bài học về kỷ luật đo lường của ban điều hành.')">C. Trò chơi giải trí của nhân viên trong giờ nghỉ giải lao.</button>
+      </div>
+      <div id="fb-6-q2" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Tính Toán Tốc Độ Rò Rỉ Vốn</span>
+      <div class="quiz-q">3. Một nhà máy sản xuất bao bì có doanh thu 120 triệu USD/năm (300 ngày làm việc/năm). Do vận hành ở mức 3.2 Sigma, COPQ chiếm 28% doanh thu. Tốc độ rò rỉ chi phí chất lượng kém (COPQ Velocity) của nhà máy này mỗi ngày làm việc là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q3', 'Incorrect. 120M * 28% = 33.6M USD/year. Daily = 33.6M / 300 = 112,000 USD/day.', 'Sai. 120 triệu * 28% = 33,6 triệu USD/năm. Mỗi ngày = 33,6 triệu / 300 = 112.000 USD/ngày.')">A. 28.000 USD / ngày</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-6-q3', 'Correct! Annual COPQ = 120M * 28% = 33.6M USD. Daily COPQ Velocity = 33,600,000 / 300 days = 112,000 USD every single operating day!', 'Chính xác! COPQ hàng năm = 120M * 28% = 33,6 Triệu USD. Tốc độ rò rỉ hàng ngày = 33.600.000 / 300 ngày = 112.000 USD mỗi ngày làm việc!')">B. 112.000 USD / ngày</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q3', 'Incorrect. Did you divide by 300 days?', 'Sai. Bạn đã chia sai số ngày làm việc.')">C. 336.000 USD / ngày</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q3', 'Incorrect. Check your math again.', 'Sai. Hãy tính toán lại theo công thức COPQ Velocity.')">D. 56.000 USD / ngày</button>
+      </div>
+      <div id="fb-6-q3" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Nhận Diện Vòng Xoáy Chi Phí</span>
+      <div class="quiz-q">4. Khi một bệnh viện tư nhân nhận thấy tỷ lệ khiếu nại về kết quả xét nghiệm tăng 15%, Giám đốc bệnh viện quyết định: "Yêu cầu 100% kết quả xét nghiệm máu phải qua 2 bác sĩ chuyên khoa ký duyệt lại trước khi trả bệnh nhân". Hệ quả kinh tế nào sau đây sẽ xảy ra?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-6-q4', 'Correct! Adding duplicate sign-offs is classic inspection creep. It drives up appraisal costs and causes patient backlog without fixing the root cause (analyzer calibration / sample handling).', 'Chính xác! Bổ sung khâu ký duyệt kép là triệu chứng mở rộng kiểm tra (Inspection Creep). Nó làm tăng chi phí thẩm định, gây tắc nghẽn thời gian chờ của bệnh nhân mà không sửa nguyên nhân gốc rễ (hiệu chuẩn máy xét nghiệm/bảo quản mẫu).')">A. Chi phí thẩm định (Appraisal) tăng vọt, thời gian chờ của bệnh nhân kéo dài gấp đôi, trong khi nguyên nhân gốc rễ (hiệu chuẩn máy xét nghiệm) vẫn không được giải quyết.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q4', 'Incorrect. Dual sign-offs increase labor cost and create operational bottlenecks.', 'Sai. Ký duyệt kép làm tăng chi phí bác sĩ và gây ách tắc quy trình.')">B. Chi phí chất lượng sẽ giảm ngay lập tức và bệnh nhân sẽ hài lòng 100%.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q4', 'Incorrect. It accelerates the COPQ death spiral.', 'Sai. Hành động này đẩy bệnh viện vào sâu hơn trong vòng xoáy chi phí.')">C. Năng suất của bệnh viện sẽ tăng gấp đôi.</button>
+      </div>
+      <div id="fb-6-q4" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Báo Cáo Trước Ban Kiểm Soát</span>
+      <div class="quiz-q">5. Trong báo cáo thường niên gửi Ban Kiểm soát và Cổ đông, cách trình bày chỉ số chất lượng nào sau đây thể hiện đẳng cấp quản trị Six Sigma chuẩn mực của Master Black Belt?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q5', 'Incorrect. Quality percentage alone hides financial cost dynamics.', 'Sai. Chỉ báo cáo tỷ lệ phần trăm chung chung sẽ che giấu bản chất tài chính.')">A. Chỉ ghi: "Tỷ lệ chất lượng đạt 99% theo tiêu chuẩn nội bộ".</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-6-q5', 'Correct! Presenting Process Sigma, DPMO, and Dollar COPQ by category proves data-driven transparency and demonstrates financial return on Six Sigma deployment.', 'Chính xác! Trình bày rõ ràng: Năng lực Sigma quy trình, chỉ số DPMO, số tiền COPQ chi tiết theo từng nhóm (Appraisal, Prevention, Failure) và giá trị dòng tiền thuần đã tiết kiệm được trong năm.')">B. Trình bày chi tiết: Mức Sigma quy trình (<i>C<sub>pk</sub></i>), chỉ số DPMO, tổng số tiền COPQ đã bóc tách (quy ra % Doanh thu) và số tiền hàng triệu USD dòng tiền thuần đã giải phóng được qua các dự án DMAIC.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q5', 'Incorrect. ISO certificates do not reflect dynamic cost reduction.', 'Sai. Giấy chứng nhận ISO không phản ánh được hiệu quả cắt giảm chi phí.')">C. Chỉ chụp ảnh giấy chứng nhận ISO 9001 và đính kèm vào phụ lục báo cáo.</button>
+      </div>
+      <div id="fb-6-q5" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Ra Quyết Định Cắt Giảm Chi Phí Khẩn Cấp</span>
+      <div class="quiz-q">6. Khi nền kinh tế suy thoái và doanh thu sụt giảm 20%, Ban Giám đốc yêu cầu mọi phòng ban phải cắt giảm 15% ngân sách. Là Master Black Belt, bạn sẽ bảo vệ ngân sách của hoạt động nào để giúp công ty sống sót và phục hồi nhanh nhất?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q6', 'Incorrect. Inspection gates should be trimmed and eliminated through root cause fixes, not protected.', 'Sai. Trạm kiểm tra lọc lỗi là nơi cần cắt giảm đầu tiên thông qua cải tiến quy trình.')">A. Bảo vệ 100% ngân sách thuê nhân viên kiểm tra chất lượng (QC) và mua thêm thiết bị test lọc lỗi.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-6-q6', 'Correct! Protect Prevention budgets (Green/Black Belt problem-solving projects, Poka-Yoke implementation) because cutting prevention causes failure costs to explode, accelerating bankruptcy during recessions.', 'Chính xác! Bảo vệ ngân sách Phòng ngừa Chủ động (Prevention) và các dự án giải quyết sự cố DMAIC &minus; vì cắt giảm phòng ngừa sẽ làm chi phí lỗi và phế phẩm bùng nổ, đẩy công ty nhanh chóng đến bờ vực phá sản trong thời kỳ suy thoái.')">B. Kiên quyết bảo vệ ngân sách dành cho Đào tạo Black Belt, dự án cải tiến phòng ngừa tại nguồn (<i>Y = f(X)</i>) và thiết kế Poka-Yoke; đồng thời cắt giảm ngân sách bằng cách bãi bỏ các trạm kiểm tra thừa thãi.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-6-q6', 'Incorrect. Cutting all continuous improvement initiatives guarantees prolonged stagnation.', 'Sai. Cắt bỏ toàn bộ dự án cải tiến đồng nghĩa với việc chấp nhận để nhà máy ngầm tiếp tục rút ruột doanh nghiệp.')">C. Tự nguyện giải tán toàn bộ bộ phận Six Sigma để tiết kiệm chi phí cho công ty.</button>
+      </div>
+      <div id="fb-6-q6" class="quiz-fb"></div>
+    </div>
+
+    <!-- 3D FLASHCARDS -->
+    <h3 style="color:#fff; margin-top:36px; font-size:1.3rem;">Thẻ Lật 3D Ôn Tập Nhanh (Executive Flashcards)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">COPQ Spiral Trap</div>
+        <div class="hint">Nhấp để xem vòng xoáy chi phí &bull; Click to flip</div>
+        <div class="back"><strong>Vòng Xoáy Chi Phí Tử Thần</strong><br>Lỗi tăng &rarr; Tuyển thêm QC kiểm tra &rarr; Chi phí thẩm định tăng vọt &rarr; Lợi nhuận giảm &rarr; Cắt giảm phòng ngừa &rarr; Lỗi càng bùng nổ!</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Measure to Win</div>
+        <div class="hint">Nhấp để xem nguyên tắc đo lường &bull; Click to flip</div>
+        <div class="back"><strong>Đo Lường Để Chiến Thắng</strong><br>"We can only come to that by measuring it" &minus; Đo lường lượng hóa COPQ thành tiền mặt là cách duy nhất để kiểm soát số phận tài chính doanh nghiệp.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">COPQ Velocity</div>
+        <div class="hint">Nhấp để xem tốc độ rò rỉ vốn &bull; Click to flip</div>
+        <div class="back"><strong>Tốc Độ Rò Rỉ Vốn COPQ</strong><br>Số tiền bị bốc hơi mỗi ngày do lỗi ($/ngày). Chỉ số đếm tiền trực quan giúp CEO hành động khẩn cấp.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Quality Leverage Ratio (QLR)</div>
+        <div class="hint">Nhấp để xem đòn bẩy tài chính &bull; Click to flip</div>
+        <div class="back"><strong>Đòn Bẩy Lợi Nhuận Chất Lượng</strong><br>Tỷ số ROI: 1 USD đầu tư vào phòng ngừa Six Sigma thường giải phóng từ 5 đến 25 USD lợi nhuận thuần từ nhà máy ngầm.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: ACTION CHECKLIST & TEMPLATE -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 / Pillar 5</span>
+    <h2 class="section-heading">1-Page Action Checklist & Bảng Điều Khiển Đo Lường Lãnh Đạo</h2>
+    <div class="section-subheading">Action Checklist & Executive COPQ Dashboard</div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk6-1">
+      <div class="action-text">
+        <label for="chk6-1"><strong>Hành Động 1: Thiết Lập Chỉ Số COPQ Velocity Trong Báo Cáo Hàng Ngày</strong><br>
+        Tính toán số tiền thất thoát mỗi ngày do phế phẩm và làm lại để hiển thị nổi bật trên màn hình giao ban sáng của Ban Giám đốc.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk6-2">
+      <div class="action-text">
+        <label for="chk6-2"><strong>Hành Động 2: Kiểm Soát "Hội Chứng Phình To Trạm Kiểm Tra" (Inspection Creep)</strong><br>
+        Ra quy định nghiêm cấm các phòng ban tự ý tuyển thêm nhân viên kiểm tra hoặc lập thêm trạm test lọc lỗi mà không có sự phê duyệt của Master Black Belt.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk6-3">
+      <div class="action-text">
+        <label for="chk6-3"><strong>Hành Động 3: Xây Dựng Kế Hoạch Chuyển Hóa Chi Phí Lỗi Thành Quỹ Cải Tiến</strong><br>
+        Trích 10% số tiền tiết kiệm được từ các dự án Six Sigma để tái đầu tư vào quỹ đào tạo Black Belt và khen thưởng các sáng kiến phòng ngừa tại nguồn.</label>
+      </div>
+    </div>
+
+    <!-- Executive Dashboard Template -->
+    <div class="template-box">
+      <h4>📊 Bảng Điều Khiển Quản Trị COPQ Dành Cho Ban Điều Hành (Executive Dashboard)</h4>
+      <div class="template-grid">
+        <div class="template-field">
+          <label>Doanh Thu Tháng Này ($)</label>
+          <input type="number" placeholder="VD: 10000000">
+        </div>
+        <div class="template-field">
+          <label>Chi Phí COPQ Bóc Tách Được ($)</label>
+          <input type="number" placeholder="VD: 1850000">
+        </div>
+        <div class="template-field">
+          <label>Tỷ Lệ COPQ / Doanh Thu (%)</label>
+          <input type="text" placeholder="Tự động: 18.5%">
+        </div>
+        <div class="template-field">
+          <label>Tốc Độ Thất Thoát COPQ ($/ngày)</label>
+          <input type="text" placeholder="Tự động: ~74,000 $/ngày">
+        </div>
+        <div class="template-field">
+          <label>Số Dự Án DMAIC Đang Triển Khai</label>
+          <input type="number" placeholder="VD: 6 dự án">
+        </div>
+        <div class="template-field">
+          <label>Giá Trị Tiết Kiệm Dự Kiến Quý Này ($)</label>
+          <input type="number" placeholder="VD: 450000">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

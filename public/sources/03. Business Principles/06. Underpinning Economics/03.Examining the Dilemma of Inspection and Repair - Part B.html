@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tình Thế Tiến Thoái Lưỡng Nan: Kiểm Tra & Sửa Chữa (Phần B) | MBB Masterclass</title>
+<style>
+
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.7;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  /* HERO HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.25; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; font-style: italic; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+
+  /* PILLAR SECTION CARDS */
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  /* NATIVE PURE HTML/CSS MATH CARD */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-var { font-style: italic; color: #ffffff; }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* DATA TABLES */
+  table.data-table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin: 18px 0; }
+  table.data-table th {
+    background: linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color: #fff; padding: 12px 14px; text-align: left; vertical-align: top;
+  }
+  table.data-table th .th-vi { display: block; color: #a7f3d0; font-style: italic; font-weight: 500; font-size: 0.8rem; margin-top: 2px; }
+  table.data-table td { padding: 12px 14px; border-bottom: 1px solid #d1fae5; vertical-align: top; background: #fff; }
+  table.data-table td .td-sub { display: block; color: var(--vi-green-2); font-style: italic; font-size: 0.85rem; margin-top: 2px; }
+  table.data-table tr:nth-child(even) td { background: #f7fcf9; }
+
+  /* CASE STUDIES & COMPARISON */
+  .case-card {
+    background: #fdfefe;
+    border: 1px solid #cbf3e3;
+    border-left: 5px solid var(--emerald);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  .case-badge {
+    display: inline-block;
+    background: var(--emerald-vibrant);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .case-title { font-size: 1.15rem; font-weight: 800; color: var(--wood-dark); margin: 0 0 8px; }
+
+  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; margin: 22px 0; }
+  @media(max-width:768px){ .vs-grid { grid-template-columns: 1fr; } }
+  .vs-col { border-radius: 10px; padding: 20px; }
+  .vs-col.bad { background: #fef2f2; border: 2px solid #ef4444; }
+  .vs-col.good { background: #ecfdf5; border: 2px solid var(--emerald-vibrant); }
+  .vs-badge {
+    display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;
+    padding: 4px 10px; border-radius: 14px; color: #fff; margin-bottom: 10px; text-transform: uppercase;
+  }
+  .vs-badge.bad { background: var(--red); }
+  .vs-badge.good { background: var(--green); }
+  .vs-divider { display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--wood-dark); font-size: 1.3rem; }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { margin-bottom: 8px; font-size: 0.9rem; }
+
+  /* MBB PRO-TIP BOX */
+  .mbb-box {
+    background: var(--gold-bg); border: 1px solid #fef08a; border-left: 5px solid var(--gold-border);
+    border-radius: 8px; padding: 20px 24px; margin: 22px 0;
+  }
+  .mbb-box .title { color: var(--wood-bark); font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; }
+  .mbb-box p { margin: 0; color: #78350f; font-size: 0.95rem; }
+
+  /* INTERACTIVE ARENA */
+  .interactive-arena {
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color: #fff; border-radius: 14px; padding: 36px 40px; margin: 40px 0;
+    box-shadow: 0 8px 28px rgba(2,44,34,0.3); border: 2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2 { color: #fff; margin-top: 0; font-size: 1.6rem; font-weight: 800; }
+  .interactive-arena .arena-desc { color: var(--emerald-mint); font-style: italic; font-size: 0.98rem; margin-bottom: 24px; }
+  
+  .quiz-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 10px; padding: 22px 24px; margin-bottom: 22px;
+  }
+  .quiz-tag { display: inline-block; background: var(--emerald); color: #fff; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  .quiz-tag.tier-1 { background: #0284c7; }
+  .quiz-tag.tier-2 { background: #d97706; }
+  .quiz-tag.tier-3 { background: #7c3aed; }
+  .quiz-q { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.45; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(2,44,34,0.7); border: 1px solid rgba(52,211,153,0.4); color: #ecfdf5;
+    padding: 12px 16px; border-radius: 8px; font-size: 0.92rem; text-align: left; cursor: pointer;
+    transition: all 0.2s ease; font-family: inherit; line-height: 1.4;
+  }
+  .quiz-btn:hover { background: rgba(16,185,129,0.25); border-color: var(--emerald-mint); }
+  .quiz-btn.correct { background: #065f46 !important; border-color: #34d399 !important; color: #fff !important; }
+  .quiz-btn.wrong { background: #7f1d1d !important; border-color: #f87171 !important; color: #fff !important; }
+  .quiz-fb { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 8px; font-size: 0.92rem; line-height: 1.5; }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.success { background: rgba(16,185,129,0.2); border: 1px solid #34d399; color: #d1fae5; }
+  .quiz-fb.error { background: rgba(239,68,68,0.2); border: 1px solid #f87171; color: #fecaca; }
+
+  /* FLASHCARDS */
+  .flashcards-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 16px; margin-top: 16px; }
+  .flashcard {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(110,231,183,0.3); border-radius: 10px;
+    padding: 20px; cursor: pointer; min-height: 150px; display: flex; flex-direction: column;
+    justify-content: center; text-align: center; transition: transform 0.2s ease; user-select: none;
+  }
+  .flashcard:hover { transform: translateY(-3px); border-color: var(--emerald-mint); }
+  .flashcard .front { font-size: 1.05rem; font-weight: 800; color: var(--emerald-mint); }
+  .flashcard .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 6px; opacity: 0.85; }
+  .flashcard .back { display: none; font-size: 0.9rem; color: #fff; line-height: 1.45; }
+  .flashcard.flipped .front, .flashcard.flipped .hint { display: none; }
+  .flashcard.flipped .back { display: block; }
+
+  /* ACTION CHECKLIST & TEMPLATE */
+  .action-item { display: flex; align-items: flex-start; gap: 12px; background: #f4fbf7; border: 1px solid #d1fae5; padding: 14px 18px; border-radius: 8px; margin-bottom: 12px; }
+  .action-item input { width: 19px; height: 19px; accent-color: var(--emerald); cursor: pointer; margin-top: 3px; flex-shrink: 0; }
+  .action-text { font-size: 0.95rem; color: #0f241d; line-height: 1.5; }
+  .action-text strong { color: var(--wood-dark); }
+  
+  .template-box {
+    background: #ffffff; border: 1.5px dashed var(--emerald); border-radius: 10px;
+    padding: 22px 26px; margin-top: 20px;
+  }
+  .template-box h4 { margin: 0 0 12px; color: var(--wood-dark); font-size: 1.1rem; }
+  .template-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .template-field { display: flex; flex-direction: column; gap: 4px; }
+  .template-field label { font-size: 0.82rem; font-weight: 700; color: var(--vi-green-2); text-transform: uppercase; }
+  .template-field input, .template-field select {
+    padding: 8px 12px; border: 1px solid #a7f3d0; border-radius: 6px; font-family: inherit; font-size: 0.9rem; background: #f0fdf4;
+  }
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">03. Business Principles &bull; 06. Underpinning Economics &bull; Lesson 03</span>
+    <h1 class="hero-title">Tình Thế Tiến Thoái Lưỡng Nan Của Kiểm Tra & Sửa Chữa (Phần B)</h1>
+    <div class="hero-title-en">Examining the Dilemma of Inspection and Repair &minus; Part B: Sigma Level, DPMO & The 19% Competitive Advantage</div>
+    <p class="hero-desc">
+      Khám phá ma trận định lượng thần thánh của Six Sigma: Mối tương quan trực tiếp giữa Mức Sigma, Tỷ lệ lỗi DPMO và Phần trăm Doanh số bị bào mòn bởi COPQ. Tại sao chi phí chất lượng kém là chi phí định kỳ hàng năm và cách tạo ra lợi thế cạnh tranh 19% biên lợi nhuận.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 / Pillar 1</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành 60 Giây</h2>
+    <div class="section-subheading">Executive Summary &minus; The Sigma-COPQ Quantum Leap</div>
+    
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Chênh Lệch Lũy Thừa Về Tỷ Lệ Lỗi:</strong> Từ 2&sigma; (308.537 DPMO) lên 6&sigma; (3.4 DPMO) là sự khác biệt <strong>100.000 lần</strong> về độ chuẩn xác. Từ 4&sigma; (mục tiêu sản xuất phổ biến) lên 6&sigma; là sự cải tiến <strong>2.000 lần</strong>.</li>
+        <li><strong>Tổn Thất Doanh Thu Theo Từng Mức Năng Lực:</strong> Doanh nghiệp ở mức 3&sigma; mất từ <strong>25% &minus; 40% doanh số</strong> vào vòng lặp DAF. Ở mức 4&sigma;, tổn thất là <strong>15% &minus; 25% doanh số</strong>. Ở mức 6&sigma;, tổn thất giảm xuống <strong>dưới 1%</strong>.</li>
+        <li><strong>Lợi Thế Cạnh Tranh 19% Biên Lợi Nhuận:</strong> Một doanh nghiệp vận hành ở 4&sigma; mất trung bình 20% doanh thu cho COPQ; doanh nghiệp đạt 6&sigma; mất dưới 1%. Chênh lệch 19% này trực tiếp biến thành dòng tiền lợi nhuận thuần và lợi thế giá bán áp đảo đối thủ.</li>
+        <li><strong>Chi Phí Định Kỳ Hàng Năm (Recurring Cost):</strong> COPQ không phải chi phí một lần mà là khoản thuế vô hình bị trừ đều đặn hàng năm. Trì hoãn 5 năm nâng cấp chất lượng đồng nghĩa với việc doanh nghiệp đã "vứt đi" 100% doanh thu của một năm tài chính!</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 / Pillar 2</span>
+    <h2 class="section-heading">Bảng Ma Trận Định Lượng Sigma & Công Thức Tích Lũy Tổn Thất</h2>
+    <div class="section-subheading">Sigma Level &minus; DPMO &minus; COPQ Matrix & Recurring Cost Dynamics</div>
+
+    <p>
+      Dưới đây là bảng dữ liệu thực nghiệm chuẩn mực do TS. Mikel Harry đúc kết từ hàng trăm tập đoàn sản xuất và dịch vụ đa quốc gia (bao gồm Motorola, General Electric, AlliedSignal):
+    </p>
+
+    <!-- Standard Sigma-COPQ Table -->
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Mức Năng Lực Sigma<span class="th-vi">Process Capability (&sigma;)</span></th>
+          <th>Tỷ Lệ Lỗi DPMO<span class="th-vi">Defects Per Million Opportunities</span></th>
+          <th>Chi Phí Chất Lượng Kém (COPQ)<span class="th-vi">% of Annual Gross Sales</span></th>
+          <th>Thực Trạng Vận Hành & Khả Năng Cạnh Tranh<span class="th-vi">Operational State & Competitiveness</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong style="color:#b91c1c; font-size:1.1rem;">2&sigma;</strong></td>
+          <td><strong>308.537</strong><br><span class="td-sub">&approx; 30.85% sản phẩm lỗi</span></td>
+          <td><strong style="color:#b91c1c;">Không xác định (Khủng hoảng)</strong><span class="td-sub">&gt; 50% doanh thu bị xói mòn</span></td>
+          <td>Đặc trưng của quy trình thủ công con người, dịch vụ thiếu chuẩn hóa hoặc dây chuyền hoàn toàn thiếu kiểm soát. Nguy cơ phá sản cận kề.</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#ea580c; font-size:1.1rem;">3&sigma;</strong></td>
+          <td><strong>66.807</strong><br><span class="td-sub">&approx; 6.68% sản phẩm lỗi</span></td>
+          <td><strong style="color:#ea580c;">25% &minus; 40% Doanh Số</strong><span class="td-sub">Mất 1/3 giá trị doanh nghiệp</span></td>
+          <td>Mức trung bình yếu của các nhà máy truyền thống. Tiêu tốn từ 25 đến 40 xu của mỗi đô la doanh thu chỉ để kiểm tra và sửa lỗi.</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#d97706; font-size:1.1rem;">4&sigma;</strong></td>
+          <td><strong>6.210</strong><br><span class="td-sub">&approx; 0.62% sản phẩm lỗi</span></td>
+          <td><strong style="color:#d97706;">15% &minus; 25% Doanh Số</strong><span class="td-sub">Mức trung bình ngành hiện nay</span></td>
+          <td>Chuẩn mực phổ biến của các công ty sản xuất hiện nay. Trung bình 20% doanh thu bị giam giữ trong "nhà máy ngầm".</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#16a34a; font-size:1.1rem;">5&sigma;</strong></td>
+          <td><strong>233</strong><br><span class="td-sub">&approx; 0.023% sản phẩm lỗi</span></td>
+          <td><strong style="color:#16a34a;">5% &minus; 15% Doanh Số</strong><span class="td-sub">Tiên tiến, vượt trội</span></td>
+          <td>Đẳng cấp dẫn đầu thị trường. Quy trình vận hành mượt mà, trạm sửa chữa thu hẹp tối đa, bắt đầu chiếm lĩnh thị phần áp đảo.</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#059669; font-size:1.15rem;">6&sigma;</strong></td>
+          <td><strong style="color:#059669;">3.4</strong><br><span class="td-sub">Gần như hoàn hảo tuyệt đối</span></td>
+          <td><strong style="color:#059669;">&lt; 1% Doanh Số</strong><span class="td-sub">Đẳng cấp thế giới (World-class)</span></td>
+          <td>Lợi thế chi phí tuyệt đối. Loại bỏ hoàn toàn trạm kiểm tra sửa chữa trung gian. Khách hàng trung thành tuyệt đối.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Math Card 1: 5-Year Cumulative COPQ Bleed -->
+    <div class="math-card">
+      <div class="title">1. Phương Trình Lũy Kế Tổn Thất COPQ Theo Thời Gian (Cumulative Lost Sales Equation)</div>
+      <div class="math-equation">
+        <span class="math-var">Loss<sub>cumulative</sub>(N)</span> = 
+        &sum;<sub>t=1</sub><sup>N</sup> <span class="math-var">Sales<sub>t</sub></span> &times; 
+        <span class="math-var">COPQ%<sub>(&sigma;)</sub></span>
+      </div>
+      <div class="desc">
+        <strong>Ý nghĩa chiến lược cho Ban Điều Hành:</strong><br>
+        &bull; <strong>Loss<sub>cumulative</sub>(N):</strong> Tổng số tiền bị bốc hơi trong <i>N</i> năm do trì hoãn cải tiến chất lượng.<br>
+        &bull; <strong>Sales<sub>t</sub>:</strong> Doanh thu thuần của năm thứ <i>t</i>.<br>
+        &bull; <strong>COPQ%<sub>(&sigma;)</sub>:</strong> Tỷ lệ chi phí chất lượng kém tương ứng với mức Sigma hiện tại.<br>
+        &bull; <em>Ví dụ thực tiễn:</em> Một công ty có doanh thu ổn định 100 triệu USD/năm hoạt động ở mức 4&sigma; (COPQ = 20%). Nếu trì hoãn 5 năm (<i>N</i> = 5), tổng tổn thất tích lũy là:<br>
+        <strong>5 &times; 100 triệu &times; 20% = 100 triệu USD = 100% Doanh thu của một năm!</strong>
+      </div>
+    </div>
+
+    <!-- Math Card 2: Competitive Margin Gap -->
+    <div class="math-card">
+      <div class="title">2. Phương Trình Lợi Thế Biên Cạnh Tranh (Competitive Margin Advantage Gap)</div>
+      <div class="math-equation">
+        <span class="math-var">&Delta;Margin<sub>SixSigma</sub></span> = 
+        <span class="math-var">COPQ%<sub>(4&sigma;)</sub></span> &minus; 
+        <span class="math-var">COPQ%<sub>(6&sigma;)</sub></span> &approx; 
+        20% &minus; 1% = 19%
+      </div>
+      <div class="desc">
+        <strong>Trong đó:</strong><br>
+        &bull; <strong>&Delta;Margin<sub>SixSigma</sub>:</strong> Khoảng cách lợi thế biên lợi nhuận giữa một doanh nghiệp 6&sigma; và đối thủ cạnh tranh ở mức trung bình ngành (4&sigma;).<br>
+        &bull; Khoản chênh lệch 19% này có thể dùng để: (1) Tái đầu tư R&D đột phá, (2) Thưởng nhân tài gấp đôi đối thủ, hoặc (3) Hạ giá bán sản phẩm 10% mà vẫn giữ biên lợi nhuận cao hơn đối thủ 9%.
+      </div>
+    </div>
+
+    <!-- MBB Box -->
+    <div class="mbb-box">
+      <div class="title">💡 Master Black Belt Insight: Phá Vỡ Lời Bào Chữa "Chúng Tôi Không Đủ Tiền Làm Six Sigma"</div>
+      <p>
+        Khi TS. Mikel Harry gặp các CEO, câu than phiền phổ biến nhất là: <em>"Chi phí thuê chuyên gia, đào tạo Black Belt và triển khai Six Sigma quá đắt đỏ, chúng tôi không đủ ngân sách!"</em>. Câu trả lời chuẩn mực của MBB luôn là: <strong>"Doanh nghiệp của bạn đang sẵn sàng trả 20% doanh thu mỗi năm cho nhà máy ngầm và hàng hỏng, nhưng lại tiếc 1% &minus; 2% ngân sách một lần để giải phóng 19% dòng tiền đó vĩnh viễn?"</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 / Pillar 3</span>
+    <h2 class="section-heading">Tình Huống Thực Chiến & Đối Chiếu Quản Trị</h2>
+    <div class="section-subheading">Real-World Case Studies & Financial Transformation</div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Sản Xuất / High-Tech Electronics</span>
+      <h3 class="case-title">Case Study 1: Hành Trình Từ 4 Sigma Lên 6 Sigma Của Motorola Paging Division</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Thập niên 1980, bộ phận máy nhắn tin (Pager) của Motorola đối mặt với sự cạnh tranh khốc liệt từ Nhật Bản. Dây chuyền hoạt động ở mức xấp xỉ 4 Sigma (~6.000 DPMO), chi phí chất lượng kém chiếm 22% doanh thu, làm biên lợi nhuận bị ép xuống mức nguy hiểm.<br>
+        <strong>Đột phá Six Sigma:</strong> TS. Mikel Harry và Bob Galvin khởi xướng chương trình Six Sigma toàn diện. Nhóm Black Belt phân tích dung sai thiết kế, loại bỏ 2.000 lần số lỗi mối nối và linh kiện.<br>
+        <strong>Hiệu quả tài chính:</strong> Năng lực tăng vọt lên mức 5.8 Sigma, COPQ giảm từ 22% xuống còn 1.8% doanh thu, giúp Motorola tiết kiệm hơn 16 tỷ USD chi phí sản xuất trong hơn một thập kỷ và đoạt giải thưởng chất lượng quốc gia Malcolm Baldrige đầu tiên năm 1988.
+      </p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Dịch Vụ / SaaS & Customer Onboarding</span>
+      <h3 class="case-title">Case Study 2: Chuyển Hóa Chi Phí Lỗi Trong Quy Trình Khởi Tạo Khách Hàng Doanh Nghiệp</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Một công ty cung cấp phần mềm quản trị đám mây B2B có doanh thu 80 triệu USD/năm. Tỷ lệ lỗi trong quá trình cấu hình tài khoản (Onboarding) là 7.2% (~3.1 Sigma), khiến khách hàng phải gọi khiếu nại trung bình 4 lần trong tháng đầu tiên.<br>
+        <strong>Chi phí chìm COPQ:</strong> Công ty phải duy trì 35 nhân sự hỗ trợ khẩn cấp (L1/L2 Support), chi phí bồi thường hợp đồng và hoàn tiền giảm giá chiếm 28% doanh thu năm (~22.4 triệu USD).<br>
+        <strong>Cải tiến:</strong> Tự động hóa bộ kiểm tra tương thích dữ liệu (Data Pre-flight Checker) đưa năng lực lên 5.2 Sigma. Đội ngũ L1 support giảm 75%, COPQ hạ xuống 4.5 triệu USD, giải phóng ngay 17.9 triệu USD tiền mặt bổ sung vào lợi nhuận ròng.
+      </p>
+    </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px; font-size:1.25rem;">Bảng So Sánh Quyết Định Đầu Tư: Trì Hoãn vs Hành Động Six Sigma</h3>
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Trì Hoãn Cải Tiến (Cost of Inaction)</span>
+        <ul>
+          <li>Mất 15% &minus; 25% doanh thu đều đặn mỗi năm cho việc kiểm tra, làm lại và bồi thường.</li>
+          <li>Khách hàng dần mất niềm tin và chuyển sang đối thủ cạnh tranh chất lượng cao hơn.</li>
+          <li>Vốn lưu động bị chôn trong hàng tồn kho và trạm sửa chữa; nhân viên kiệt sức vì chạy theo xử lý sự cố.</li>
+          <li>Sau 5 năm, mất đứt số tiền tương đương 100% doanh thu cả một năm hoạt động.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Đầu Tư Triển Khai Six Sigma (Action ROI)</span>
+        <ul>
+          <li>Đầu tư 1% &minus; 2% ngân sách cho đào tạo và dự án DMAIC trong năm đầu tiên.</li>
+          <li>Giảm lỗi từ 2.000 đến 100.000 lần, giải phóng ngay 15% &minus; 19% doanh số bổ sung vào lợi nhuận thuần.</li>
+          <li>Dòng tiền lưu thông nhanh, khách hàng trung thành, thương hiệu trở thành chuẩn mực ngành.</li>
+          <li>Tạo ra lợi thế cạnh tranh bền vững mà các đối thủ vận hành ở mức 4 Sigma không thể đuổi kịp.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num" style="background:#059669; color:#fff;">Trụ Cột 4 / Pillar 4</span>
+    <h2>Đấu Trường Tương Tác & Bài Tập Tình Huống</h2>
+    <div class="arena-desc">Interactive Arena &minus; Scenario-Based Quizzes & 3D Flashcards</div>
+
+    <!-- QUIZ 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Kiểm Tra Trí Nhớ & Số Liệu</span>
+      <div class="quiz-q">1. Chênh lệch về tỷ lệ lỗi (DPMO) giữa mức năng lực Two Sigma (2&sigma;) và Six Sigma (6&sigma;) là bao nhiêu lần?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q1', 'Incorrect. 3x is linear, but Sigma levels scale exponentially with the normal distribution.', 'Sai. 3 lần là tư duy tuyến tính, trong khi mức Sigma tăng theo quy luật hàm phân phối chuẩn lũy thừa.')">A. 3 lần (Three times)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q1', 'Incorrect. 2,000x is the difference between 4 Sigma and 6 Sigma.', 'Sai. 2.000 lần là khoảng cách giữa 4 Sigma và 6 Sigma.')">B. 2.000 lần (Two thousand times)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-3-q1', 'Correct! 308,537 / 3.4 is approximately 90,746, which Dr. Harry generalizes as a staggering 100,000X difference in defect rate.', 'Chính xác! 308.537 / 3.4 &approx; 90.746, TS. Mikel Harry khái quát là sự khác biệt 100.000 lần (100,000X difference) giữa 2 Sigma và 6 Sigma!')">C. 100.000 lần (One hundred thousand times)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q1', 'Incorrect. 10x is the difference between 3 Sigma and 4 Sigma.', 'Sai. 10 lần là chênh lệch giữa 3 Sigma và 4 Sigma.')">D. 10 lần (Ten times)</button>
+      </div>
+      <div id="fb-3-q1" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Tương Quan COPQ</span>
+      <div class="quiz-q">2. Theo dữ liệu thực nghiệm Six Sigma, một doanh nghiệp hoạt động ở mức Four Sigma (4&sigma;) thường mất khoảng bao nhiêu phần trăm doanh số hàng năm cho Chi phí Chất lượng Kém (COPQ)?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q2', 'Incorrect. Less than 1% is achieved only at Six Sigma.', 'Sai. Dưới 1% chỉ đạt được khi doanh nghiệp chạm mức Six Sigma.')">A. Dưới 1% doanh số</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q2', 'Incorrect. 5% to 15% is the COPQ benchmark for Five Sigma.', 'Sai. 5% đến 15% là mức COPQ của Five Sigma.')">B. 5% &minus; 15% doanh số</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-3-q2', 'Correct! 4 Sigma companies bleed 15% to 25% of gross sales on COPQ (average around 20%).', 'Chính xác! Các công ty ở mức 4 Sigma tổn thất từ 15% đến 25% doanh số (trung bình khoảng 20%) cho chi phí chất lượng kém.')">C. 15% &minus; 25% doanh số</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q2', 'Incorrect. 25% to 40% is the benchmark for Three Sigma.', 'Sai. 25% đến 40% là mức tổn thất của Three Sigma.')">D. 25% &minus; 40% doanh số</button>
+      </div>
+      <div id="fb-3-q2" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Tính Toán Lợi Thế Cạnh Tranh</span>
+      <div class="quiz-q">3. Công ty Alpha và Công ty Beta đều đạt doanh thu 200 triệu USD/năm trong cùng một ngành. Alpha vận hành ở mức 4 Sigma (COPQ trung bình 20%), trong khi Beta đã đạt đẳng cấp 6 Sigma (COPQ = 1%). Mỗi năm, Beta sở hữu thêm bao nhiêu tiền mặt từ lợi thế chênh lệch COPQ so với Alpha?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q3', 'Incorrect. 200M * 19% = 38M USD.', 'Sai. 200 triệu * 19% chênh lệch = 38 triệu USD.')">A. 19 triệu USD</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-3-q3', 'Correct! Margin gap = 20% - 1% = 19%. Dollar advantage = 200M * 19% = 38 Million USD in pure extra cash flow every single year!', 'Chính xác! Chênh lệch biên = 20% - 1% = 19%. Lợi thế tiền mặt = 200 triệu * 19% = 38 Triệu USD bổ sung trực tiếp vào dòng tiền hàng năm!')">B. 38 triệu USD</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q3', 'Incorrect. 40M would be 20%, but Beta still has 1% COPQ.', 'Sai. 40 triệu là toàn bộ 20% của Alpha mà chưa trừ đi 1% của Beta.')">C. 40 triệu USD</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q3', 'Incorrect. Check your multiplication.', 'Sai. Hãy tính toán lại theo công thức Margin Advantage.')">D. 2 triệu USD</button>
+      </div>
+      <div id="fb-3-q3" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Phân Tích Chi Phí Trì Hoãn</span>
+      <div class="quiz-q">4. Một tập đoàn dệt may đạt doanh thu 50 triệu USD/năm đang ở mức 3 Sigma (COPQ trung bình 30% doanh thu). Ban giám đốc do dự và quyết định hoãn dự án Six Sigma trong 4 năm tới. Tổng số tiền doanh nghiệp này sẽ bị tổn thất tích lũy trong 4 năm trì hoãn là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q4', 'Incorrect. 50M * 30% = 15M for 1 year. For 4 years: 15M * 4 = 60M USD.', 'Sai. 50 triệu * 30% = 15 triệu/năm. Trong 4 năm: 15 triệu * 4 = 60 triệu USD.')">A. 15 triệu USD</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-3-q4', 'Correct! Annual COPQ = 50M * 30% = 15M USD. Over 4 years = 15M * 4 = 60 Million USD (more than 100% of the entire company annual gross sales)!', 'Chính xác! COPQ hàng năm = 50M * 30% = 15M USD. Trong 4 năm = 15M * 4 = 60 Triệu USD &minus; vượt quá 100% toàn bộ doanh thu một năm của cả công ty!')">B. 60 triệu USD</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q4', 'Incorrect. 30M is for 2 years only.', 'Sai. 30 triệu mới chỉ là tổn thất trong 2 năm.')">C. 30 triệu USD</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q4', 'Incorrect. Check the cumulative formula.', 'Sai. Hãy tính theo công thức Cumulative COPQ.')">D. 120 triệu USD</button>
+      </div>
+      <div id="fb-3-q4" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Tranh Luận Tại Hội Đồng Quản Trị</span>
+      <div class="quiz-q">5. Giám đốc Tài chính (CFO) phát biểu trong cuộc họp HĐQT: "Ngân sách triển khai Six Sigma dự kiến là 500.000 USD trong 12 tháng. Tôi đề nghị hủy bỏ để bảo toàn chỉ tiêu lợi nhuận năm nay". Nếu là Master Black Belt, bạn sẽ phản biện thế nào bằng tư duy kinh tế Six Sigma?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q5', 'Incorrect. Apologetic cost reduction lowers project scope and fails to tackle root causes.', 'Sai. Đề xuất giảm ngân sách chỉ làm thu hẹp phạm vi và không giải quyết triệt để bài toán kinh tế.')">A. Đồng ý cắt giảm ngân sách xuống 100.000 USD và chỉ đào tạo vài khóa lý thuyết ngắn hạn để tiết kiệm tiền cho CFO.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-3-q5', 'Correct! Present the recurring COPQ leakage. 500k USD is a one-time capital investment, whereas our current 4 Sigma COPQ is a recurring annual leakage of millions of dollars. Delaying 1 year wastes multiple times the project cost.', 'Chính xác! Trình bày rõ ràng: 500.000 USD là khoản đầu tư 1 lần, trong khi nhà máy ngầm đang âm thầm rút ruột hàng triệu USD định kỳ HÀNG NĂM. Không làm Six Sigma mới chính là quyết định gây thâm hụt lợi nhuận tàn khốc nhất!')">B. Trình bày số liệu: 500.000 USD là chi phí đầu tư một lần, trong khi công ty đang mất 10 triệu USD COPQ định kỳ mỗi năm. Khoản đầu tư này sẽ hoàn vốn trong chưa đầy 6 tháng và mang lại dòng tiền ròng thặng dư cho tất cả các năm tiếp theo.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q5', 'Incorrect. Quality certificates do not convince a CFO focused on bottom-line figures.', 'Sai. Giấy chứng nhận chất lượng không đủ sức thuyết phục giám đốc tài chính vốn chỉ quan tâm đến các con số dòng tiền.')">C. Tranh luận rằng Six Sigma là để lấy chứng chỉ quảng bá thương hiệu chứ không liên quan gì đến tài chính của CFO.</button>
+      </div>
+      <div id="fb-3-q5" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Chiến Lược Cạnh Tranh Thị Trường</span>
+      <div class="quiz-q">6. Khi một công ty đạt mức Six Sigma và tiết kiệm được 19% chi phí so với đối thủ đang ở mức 4 Sigma, hành động chiến lược nào giúp doanh nghiệp tối đa hóa vị thế độc tôn trên thị trường?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-3-q6', 'Correct! Leveraging the 19% margin advantage to offer superior quality at aggressive pricing forces 4-Sigma competitors into catastrophic margin compression.', 'Chính xác! Tận dụng lợi thế 19% biên chi phí để vừa duy trì giá bán cạnh tranh vừa đầu tư nâng cấp chất lượng vượt trội sẽ dồn các đối thủ 4 Sigma vào tình thế kiệt quệ tài chính.')">A. Chủ động giảm giá bán 5% &minus; 8% để giành thị phần, đồng thời dùng phần lợi nhuận dôi dư còn lại để tăng gấp đôi ngân sách R&D sáng tạo sản phẩm mới.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q6', 'Incorrect. Raising prices arbitrarily when you achieve cost leadership invites commoditization.', 'Sai. Tăng giá bán vô tội vạ sẽ làm mất cơ hội mở rộng thị phần thống lĩnh.')">B. Tăng giá bán sản phẩm lên gấp đôi vì chất lượng đã đạt mức Six Sigma hoàn hảo.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q6', 'Incorrect. Cutting production reduces market capture benefits of Six Sigma scale.', 'Sai. Thu hẹp quy mô sản xuất đi ngược lại nguyên lý mở rộng quy mô kinh tế của Six Sigma.')">C. Giữ nguyên mọi thứ và giảm sản lượng sản xuất để duy trì chất lượng nội bộ.</button>
+      </div>
+      <div id="fb-3-q6" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Định Vị Năng Lực Con Người Trong Dịch Vụ</span>
+      <div class="quiz-q">7. TS. Mikel Harry chỉ ra rằng các hoạt động có yếu tố con người hoặc ngành dịch vụ thiếu tự động hóa thường vận hành ở mức nào và giải pháp cốt lõi là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-3-q7', 'Correct! Human-dependent processes typically run at ~2 Sigma (~30% error potential). The solution is not blaming people, but designing robust error-proofing (Poka-Yoke) and standardized digital workflows.', 'Chính xác! Thao tác dựa vào con người thường chỉ đạt ~2 Sigma (~30% xác suất lỗi). Giải pháp không phải là trách phạt nhân viên mà là chuẩn hóa quy trình, thiết kế Poka-Yoke và số hóa hỗ trợ.')">A. Vận hành ở mức 2 Sigma; giải pháp cốt lõi là thiết kế quy trình chống sai lỗi (Poka-Yoke), chuẩn hóa checklist và hỗ trợ tự động hóa thông minh thay vì trông cậy vào sự tập trung của con người.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q7', 'Incorrect. Humans without systemic tools cannot naturally sustain 6 Sigma precision.', 'Sai. Con người nếu không có công cụ hỗ trợ hệ thống thì không thể tự động đạt mức 6 Sigma.')">B. Vận hành tự nhiên ở mức 6 Sigma nhờ sự linh hoạt và sáng tạo của con người.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-3-q7', 'Incorrect. Punitive measures increase fear and hide defects instead of eliminating them.', 'Sai. Phạt tiền nhân viên chỉ làm giấu lỗi và gia tăng sự thiếu trung thực, phá hủy văn hóa chất lượng.')">C. Vận hành ở mức 1 Sigma; giải pháp là áp dụng chế tài phạt tiền thật nặng đối với mỗi nhân viên làm sai.</button>
+      </div>
+      <div id="fb-3-q7" class="quiz-fb"></div>
+    </div>
+
+    <!-- 3D FLASHCARDS -->
+    <h3 style="color:#fff; margin-top:36px; font-size:1.3rem;">Thẻ Lật 3D Ôn Tập Nhanh (Executive Flashcards)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">4&sigma; vs 6&sigma; Defect Gap</div>
+        <div class="hint">Nhấp để xem tỷ lệ chênh lệch &bull; Click to flip</div>
+        <div class="back"><strong>Chênh Lệch 2.000 Lần!</strong><br>4&sigma; = 6.210 DPMO.<br>6&sigma; = 3.4 DPMO.<br>Nâng từ 4 lên 6 Sigma giúp triệt tiêu 2.000 lần số khuyết tật.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">The 19% Margin Gap</div>
+        <div class="hint">Nhấp để xem lợi thế biên lợi nhuận &bull; Click to flip</div>
+        <div class="back"><strong>Khoảng Cách 19% Biên Lợi Nhuận</strong><br>Công ty 4&sigma; mất 20% doanh thu cho COPQ. Công ty 6&sigma; mất &lt;1%. Chênh lệch 19% bổ sung thẳng vào dòng tiền ròng.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Recurring Cost Nature</div>
+        <div class="hint">Nhấp để xem bản chất chi phí lặp lại &bull; Click to flip</div>
+        <div class="back"><strong>Chi Phí Định Kỳ Hàng Năm</strong><br>COPQ không phải khoản mất một lần mà bị trừ đều đặn mỗi năm. Hoãn 5 năm cải tiến = Vứt bỏ 100% doanh thu một năm!</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Human 2&sigma; Reality</div>
+        <div class="hint">Nhấp để xem thực trạng năng lực con người &bull; Click to flip</div>
+        <div class="back"><strong>Thực Trạng 2 Sigma Con Người</strong><br>Thao tác thủ công thường chỉ đạt mức 2&sigma; (~308.537 DPMO). Cần Poka-Yoke và chuẩn hóa để nâng tầm quy trình dịch vụ.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: ACTION CHECKLIST & TEMPLATE -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 / Pillar 5</span>
+    <h2 class="section-heading">1-Page Action Checklist & Bảng Tính Lợi Thế Tài Chính</h2>
+    <div class="section-subheading">Action Checklist & Financial Opportunity Calculator</div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk3-1">
+      <div class="action-text">
+        <label for="chk3-1"><strong>Hành Động 1: Xác Định Mức Sigma Hiện Tại Của Doanh Nghiệp</strong><br>
+        Tính toán tổng cơ hội lỗi (Total Opportunities) và số khuyết tật thực tế để quy đổi ra chỉ số DPMO và Mức Sigma tương ứng cho từng dòng sản phẩm/dịch vụ.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk3-2">
+      <div class="action-text">
+        <label for="chk3-2"><strong>Hành Động 2: Lập Báo Cáo Thiệt Hại COPQ Định Kỳ Cho Hội Đồng Quản Trị</strong><br>
+        Nhân tỷ lệ % COPQ tương ứng với mức Sigma hiện tại vào doanh thu hàng năm để chỉ ra số tiền triệu USD đang bị thất thoát trong năm tài chính.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk3-3">
+      <div class="action-text">
+        <label for="chk3-3"><strong>Hành Động 3: Xây Dựng Dự Án Chuyển Dịch 1 Mức Sigma (4&sigma; &rarr; 5&sigma;)</strong><br>
+        Tập trung nguồn lực Black Belt vào mục tiêu nâng 1 mức Sigma để cắt giảm 10% chi phí doanh thu ngay trong chu kỳ 6 &minus; 12 tháng đầu tiên.</label>
+      </div>
+    </div>
+
+    <!-- ROI Calculator Template -->
+    <div class="template-box">
+      <h4>📊 Bảng Tính Cơ Hội Giải Phóng Dòng Tiền Six Sigma (Financial ROI Template)</h4>
+      <div class="template-grid">
+        <div class="template-field">
+          <label>Doanh Thu Hàng Năm ($ hoặc VNĐ)</label>
+          <input type="number" placeholder="VD: 100000000">
+        </div>
+        <div class="template-field">
+          <label>Mức Sigma Ước Tính Hiện Tại</label>
+          <select>
+            <option>2 Sigma (COPQ ~50%)</option>
+            <option selected>3 Sigma (COPQ ~30%)</option>
+            <option>4 Sigma (COPQ ~20%)</option>
+            <option>5 Sigma (COPQ ~10%)</option>
+          </select>
+        </div>
+        <div class="template-field">
+          <label>Mức Sigma Mục Tiêu</label>
+          <select>
+            <option>4 Sigma (COPQ ~20%)</option>
+            <option selected>5 Sigma (COPQ ~10%)</option>
+            <option>6 Sigma (COPQ &lt;1%)</option>
+          </select>
+        </div>
+        <div class="template-field">
+          <label>Dòng Tiền Thuần Tiết Kiệm Dự Kiến ($/năm)</label>
+          <input type="text" placeholder="Tự động tính: ~10,000,000 $">
+        </div>
+        <div class="template-field">
+          <label>Ngân Sách Đầu Tư Six Sigma Dự Kiến ($)</label>
+          <input type="number" placeholder="VD: 350000">
+        </div>
+        <div class="template-field">
+          <label>Hệ Số Hoàn Vốn Đầu Tư (ROI)</label>
+          <input type="text" placeholder="Tự động: ~28.5X">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

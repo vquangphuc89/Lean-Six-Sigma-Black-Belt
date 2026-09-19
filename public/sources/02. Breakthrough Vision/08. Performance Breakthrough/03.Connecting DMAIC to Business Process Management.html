@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kết Nối DMAIC Với Quản Trị Quy Trình Doanh Nghiệp — Six Sigma Masterclass</title>
+<style>
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.68;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  .pro-tip {
+    background: var(--gold-bg);
+    border: 1px solid #fde68a;
+    border-left: 6px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 22px 0;
+  }
+  .pro-tip-title { font-size: 0.95rem; font-weight: 800; color: var(--wood-bark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pro-tip-desc { font-size: 0.96rem; color: #713f12; margin: 0; }
+
+  /* Native Math Cards */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-var { font-style: italic; color: #ffffff; }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* VS Grid */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: stretch;
+    margin: 22px 0;
+  }
+  .vs-col {
+    padding: 22px 24px;
+    border-radius: 12px;
+  }
+  .vs-col.bad {
+    background: #fef2f2;
+    border: 1.5px solid #fecaca;
+    border-left: 5px solid var(--red);
+  }
+  .vs-col.good {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-left: 5px solid var(--green);
+  }
+  .vs-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .vs-badge.bad { background: #fee2e2; color: var(--red); }
+  .vs-badge.good { background: #dcfce7; color: var(--green); }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { font-size: 0.93rem; margin-bottom: 8px; color: #1e293b; }
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: var(--wood-dark);
+    font-size: 1.1rem;
+    padding: 0 6px;
+  }
+
+  /* Case Study Cards */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 22px 0;
+  }
+  .case-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .case-card.mfg { border-top: 4px solid #0284c7; }
+  .case-card.svc { border-top: 4px solid #7c3aed; }
+  .case-tag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .case-tag.mfg { color: #0284c7; }
+  .case-tag.svc { color: #7c3aed; }
+  .case-title { font-size: 1.12rem; font-weight: 700; color: var(--wood-dark); margin: 0 0 8px; }
+  .case-body { font-size: 0.92rem; color: #334155; line-height: 1.6; }
+  .case-metric {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: #0f172a;
+  }
+
+  /* Interactive Arena */
+  .interactive-arena {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    border-radius: 16px;
+    padding: 38px 40px;
+    margin: 40px 0;
+    color: #ffffff;
+    box-shadow: 0 12px 36px rgba(2,44,34,0.4);
+    border: 2px solid var(--emerald);
+  }
+  .interactive-arena h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px;
+  }
+  .arena-desc {
+    color: var(--emerald-mint);
+    font-size: 1.02rem;
+    margin-bottom: 28px;
+  }
+
+  .quiz-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+  .quiz-tag {
+    display: inline-block;
+    background: rgba(16,185,129,0.25);
+    border: 1px solid var(--emerald-mint);
+    color: var(--emerald-mint);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .quiz-q {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ecfdf5;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.96rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .quiz-btn:hover {
+    background: rgba(16,185,129,0.2);
+    border-color: var(--emerald-mint);
+    transform: translateX(4px);
+  }
+  .quiz-btn.correct {
+    background: var(--green) !important;
+    border-color: #86efac !important;
+    color: #ffffff !important;
+    font-weight: 700;
+  }
+  .quiz-btn.wrong {
+    background: var(--red) !important;
+    border-color: #fca5a5 !important;
+    color: #ffffff !important;
+  }
+  .quiz-fb {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+  .quiz-fb.show { display: block; animation: fadeIn 0.3s ease; }
+  .quiz-fb.success {
+    background: rgba(22,163,74,0.25);
+    border: 1px solid #86efac;
+    color: #dcfce7;
+  }
+  .quiz-fb.error {
+    background: rgba(185,28,28,0.25);
+    border: 1px solid #fca5a5;
+    color: #fee2e2;
+  }
+
+  /* 3D Flashcards */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .flashcard {
+    perspective: 1000px;
+    min-height: 190px;
+    cursor: pointer;
+  }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 12px;
+  }
+  .flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+  }
+  .flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 22px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flashcard-front {
+    background: linear-gradient(145deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
+    border: 1.5px solid var(--emerald-mint);
+    color: #ffffff;
+  }
+  .flashcard-front .term { font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
+  .flashcard-front .term-vi { font-size: 0.9rem; color: var(--emerald-mint); font-style: italic; }
+  .flashcard-front .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
+  
+  .flashcard-back {
+    background: linear-gradient(145deg, #064e3b, #047857);
+    border: 1.5px solid #86efac;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    text-align: left;
+  }
+  .flashcard-back strong { color: #fef08a; }
+  .flashcard-back .vi { display: block; margin-top: 8px; color: #d1fae5; font-size: 0.86rem; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 6px; }
+
+  /* Action Checklist */
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #e2e8f0;
+  }
+  .action-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--emerald);
+    cursor: pointer;
+    margin-top: 3px;
+  }
+  .action-text {
+    font-size: 0.96rem;
+    color: #1e293b;
+    line-height: 1.55;
+  }
+  .action-text strong { color: var(--wood-dark); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media(max-width: 768px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-divider { display: none; }
+    .case-grid { grid-template-columns: 1fr; }
+    .section-card { padding: 22px 18px; }
+    .interactive-arena { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">Six Sigma Master Black Belt Series • Module 02.08</span>
+    <h1 class="hero-title">Kết Nối DMAIC Với Quản Trị Quy Trình Doanh Nghiệp</h1>
+    <div class="hero-title-en">Connecting DMAIC to Business Process Management</div>
+    <p class="hero-desc">Hợp nhất DMAIC với Quản trị Quy trình Doanh nghiệp (BPM): Từ chiến lược cấp cao đến dòng chảy giá trị hàng ngày và vai trò của Chủ sở hữu Quy trình (Process Owner).</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PHẦN 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Phần 1 • Executive Summary</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành (Executive Summary)</h2>
+    <div class="section-subheading">Nắm trọn tinh hoa bài học trong 60 giây</div>
+    <div class="exec-summary"><ul><li>DMAIC không phải là một hòn đảo biệt lập; nó là động cơ cải tiến cốt lõi nằm bên trong hệ thống Quản trị Quy trình Doanh nghiệp (BPM - Business Process Management).</li><li>BPM thiết lập kiến trúc quy trình, định nghĩa quyền sở hữu (Process Ownership) và giám sát các chỉ số hiệu suất thường nhật (Dashboard / KPI).</li><li>Khi một chỉ số BPM rơi vào tình trạng suy giảm năng lực hoặc xuất hiện khoảng cách lớn so với chiến lược, dự án DMAIC được kích hoạt như một can thiệp phẫu thuật chính xác.</li><li>Sau khi DMAIC hoàn tất giai đoạn Control, quy trình được cải tiến sẽ được tích hợp trở lại vào chu trình vận hành chuẩn của BPM.</li></ul></div>
+    <div class="pro-tip">
+      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Insight)</div>
+      <p class="pro-tip-desc">Nếu doanh nghiệp của bạn không có hệ thống BPM để theo dõi quy trình hàng ngày, các dự án DMAIC sẽ trở thành những phong trào ngắn hạn và kết quả sẽ trôi dạt mất đi sau 6 tháng!</p>
+    </div>
+  </section>
+
+  <!-- PHẦN 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Phần 2 • Core Frameworks &amp; Real Math</span>
+    <h2 class="section-heading">Nguyên Lý &amp; Công Thức Lượng Hóa</h2>
+    <div class="section-subheading">Lộ trình đột phá 8 bước và các công thức định lượng chuyển hóa quy trình</div>
+    <p>Mối quan hệ cộng sinh giữa BPM (Quản trị thường nhật) và DMAIC (Đột phá dự án) được mô hình hóa qua chu trình khép kín:</p>
+    
+    <div class="math-card">
+      <div class="title">1. Chu Trình Tích Hợp BPM &ndash; DMAIC / Symbiotic BPM-DMAIC Loop</div>
+      <div class="math-equation"><i>BPM Architecture</i> (Monitor / Maintain) &rarr; <i>Trigger Signal</i> (&Delta;<i>Gap</i>) &rarr; <i>DMAIC Project</i> (Breakthrough) &rarr; <i>Standardized Handover</i> (SOP) &rarr; <i>BPM Control</i></div>
+      <div class="desc"><strong>Hai chế độ vận hành:</strong><br>&bull; <strong>BPM (Steady-State):</strong> Giám sát Voice of Process hàng ngày bằng SPC và Dashboard.<br>&bull; <strong>DMAIC (Breakthrough Engine):</strong> Được kích hoạt khi BPM phát hiện Special Cause hoặc khoảng cách năng lực chiến lược.</div>
+    </div>
+    <div class="math-card">
+      <div class="title">2. Ma Trận Trách Nhiệm Process Owner vs Belt / RACI Matrix Model</div>
+      <div class="math-equation"><i>Role Mapping</i>: <i>Process Owner</i> = <i>Accountable</i> (A) &nbsp;|&nbsp; <i>Black Belt</i> = <i>Responsible</i> (R) &nbsp;|&nbsp; <i>Champion</i> = <i>Sponsor</i> (S)</div>
+      <div class="desc"><strong>Phân vai rõ ràng:</strong><br>&bull; <strong>Process Owner:</strong> Chịu trách nhiệm cuối cùng về kết quả kinh doanh dài hạn của quy trình.<br>&bull; <strong>Black Belt:</strong> Chịu trách nhiệm dẫn dắt phương pháp luận phân tích và thực thi dự án.</div>
+    </div>
+    <div class="math-card">
+      <div class="title">3. Hệ Số Bền Vững Quy Trình / Process Sustainability Index (PSI)</div>
+      <div class="math-equation"><i>PSI</i> = <div class="math-frac"><div class="math-num"><i>C<sub>pk</sub></i> (12 Months Post-Handover)</div><div class="math-den"><i>C<sub>pk</sub></i> (At Project Close)</div></div> &ge; 0.95</div>
+      <div class="desc"><strong>Tiêu chuẩn MBB:</strong><br>&bull; Năng lực quy trình sau 1 năm bàn giao cho BPM phải duy trì ít nhất 95% mức năng lực khi đóng dự án.</div>
+    </div>
+    <div class="pro-tip">
+      <div class="pro-tip-title">MBB Interpretation • Diễn giải điều hành</div>
+      <p class="pro-tip-desc">BPM là nhịp tim của doanh nghiệp; DMAIC là liều thuốc đặc trị khi nhịp tim bất thường. Tách rời hai yếu tố này sẽ dẫn đến sự lãng phí tài nguyên và thất bại trong việc duy trì thành quả.</p>
+    </div>
+  </section>
+
+  <!-- PHẦN 3: CASE STUDIES -->
+  <section class="section-card">
+    <span class="section-num">Phần 3 • Real-World Case Studies &amp; VS Comparison</span>
+    <h2 class="section-heading">Tình Huống Thực Chiến &amp; Bảng Đối Chiếu</h2>
+    <div class="section-subheading">Một lăng kính cho sản xuất, một lăng kính cho dịch vụ</div>
+    <div class="case-grid">
+      <div class="case-card mfg">
+        <span class="case-tag mfg">Sản xuất • Thiết bị gia dụng toàn cầu</span>
+        <h3 class="case-title">Hệ thống BPM kích hoạt dự án DMAIC tự động</h3>
+        <p class="case-body">Tập đoàn sản xuất máy giặt thiết lập hệ thống BPM giám sát chỉ số rò rỉ nước trên 12 nhà máy toàn cầu. Khi dashboard BPM của nhà máy tại Ba Lan báo động đỏ (Cpk tụt từ 1.62 xuống 1.05 trong 2 tuần liên tiếp), hệ thống tự động khởi tạo Project Charter và giao cho Black Belt phụ trách. Nhóm DMAIC phát hiện lỗi do thay đổi nhà cung cấp gioăng cao su.</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Xử lý triệt để trong 3 tuần, Cpk phục hồi lên 1.74, ngăn chặn nguy cơ thu hồi 45,000 sản phẩm trên thị trường Châu Âu.</div>
+      </div>
+      <div class="case-card svc">
+        <span class="case-tag svc">Dịch vụ • Viễn thông đa quốc gia</span>
+        <h3 class="case-title">Tích hợp BPM và DMAIC trong quản lý khiếu nại cước</h3>
+        <p class="case-body">Quy trình đối soát cước di động phát sinh hàng ngàn khiếu nại mỗi tháng. Process Owner phối hợp cùng MBB: BPM theo dõi chỉ số First Contact Resolution (FCR); DMAIC tái cấu trúc thuật toán tính cước data roaming. Sau khi đạt chuẩn FCR &gt; 92%, giải pháp được cập nhật vào cổng thông tin BPM cho 1,200 điện thoại viên.</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Số lượng khiếu nại cước giảm 78%, chi phí đền bù giảm 3.5 triệu USD/năm, PSI sau 12 tháng đạt 98.2%.</div>
+      </div></div>
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Bad / Trap • Tư duy sai lầm</span>
+        <ul><li>Xem cải tiến là công việc ngẫu nhiên, không có phương pháp luận và cấu trúc lặp lại.</li><li>Tập trung chỉnh sửa triệu chứng bề mặt thay vì truy nguyên quan hệ hàm số Y = f(X).</li><li>Cô lập dự án DMAIC khỏi hệ thống Quản trị Quy trình Doanh nghiệp (BPM) và tiếng nói khách hàng.</li><li>Bỏ qua việc phân tầng dữ liệu (Stratification) dẫn đến thiên kiến quy kết sai nguyên nhân.</li></ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Good / MBB • Chuẩn Six Sigma</span>
+        <ul><li>Tiếp cận đột phá hiệu suất như một sự dịch chuyển lượng tử (Quantum Shift) nén chặt phương sai &sigma;.</li><li>Vận hành DMAIC như một thuật toán lặp có cấu trúc gắn kết chặt chẽ với Business Process Management.</li><li>Phân tầng dữ liệu đa chiều để bóc tách tín hiệu thật khỏi nhiễu nền.</li><li>Thiết lập cơ chế chuyển giao trách nhiệm rõ ràng giữa Đội ngũ Dự án Belt và Chủ sở hữu Quy trình (Process Owner).</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num">Phần 4 • Interactive Arena</span>
+    <h2>Đấu Trường Trắc Nghiệm Tình Huống (Scenario-Based Practice)</h2>
+    <p class="arena-desc">Chọn một đáp án để nhận phản hồi tức thì bằng tiếng Anh chuyên ngành và tiếng Việt ứng dụng.</p>
+    
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 1 • Tầng 1 • Recall & Concept</span>
+      <div class="quiz-q">Mối quan hệ giữa Quản trị Quy trình Doanh nghiệp (BPM) và Phương pháp luận DMAIC là gì?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3-1', &quot;BPM manages the ongoing process infrastructure; DMAIC is the project engine for breakthrough intervention.&quot;, &quot;BPM quản trị vận hành liên tục; DMAIC là động cơ giải quyết vấn đề đột phá khi quy trình gặp sự cố.&quot;)">A. BPM là hệ thống quản trị thường nhật; DMAIC là công cụ đột phá được kích hoạt khi BPM phát hiện khoảng cách hiệu suất</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-1', &quot;BPM manages the ongoing process infrastructure; DMAIC is the project engine for breakthrough intervention.&quot;, &quot;BPM quản trị vận hành liên tục; DMAIC là động cơ giải quyết vấn đề đột phá khi quy trình gặp sự cố.&quot;)">B. BPM và DMAIC là hai phương pháp cạnh tranh và triệt tiêu nhau</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-1', &quot;BPM manages the ongoing process infrastructure; DMAIC is the project engine for breakthrough intervention.&quot;, &quot;BPM quản trị vận hành liên tục; DMAIC là động cơ giải quyết vấn đề đột phá khi quy trình gặp sự cố.&quot;)">C. BPM chỉ dành cho cấp giám đốc, DMAIC chỉ dành cho công nhân</button></div>
+      <div id="fb-q3-1" class="quiz-fb"></div>
+    </div>
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 2 • Tầng 1 • Recall & Concept</span>
+      <div class="quiz-q">Ai là người chịu trách nhiệm cuối cùng (Accountable) về kết quả duy trì quy trình sau khi dự án DMAIC kết thúc?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3-2', &quot;The Process Owner is permanently accountable for process performance post-handover.&quot;, &quot;Chủ sở hữu quy trình (Process Owner) chịu trách nhiệm vĩnh viễn về kết quả vận hành của quy trình.&quot;)">A. Chủ sở hữu quy trình (Process Owner)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-2', &quot;The Process Owner is permanently accountable for process performance post-handover.&quot;, &quot;Chủ sở hữu quy trình (Process Owner) chịu trách nhiệm vĩnh viễn về kết quả vận hành của quy trình.&quot;)">B. Black Belt dẫn dắt dự án</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-2', &quot;The Process Owner is permanently accountable for process performance post-handover.&quot;, &quot;Chủ sở hữu quy trình (Process Owner) chịu trách nhiệm vĩnh viễn về kết quả vận hành của quy trình.&quot;)">C. Nhân viên tư vấn bên ngoài</button></div>
+      <div id="fb-q3-2" class="quiz-fb"></div>
+    </div>
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 3 • Tầng 2 • Analytical & Math</span>
+      <div class="quiz-q">Một dự án DMAIC đạt Cpk = 1.80 khi đóng dự án. Sau 12 tháng bàn giao cho BPM, dữ liệu đo lại cho thấy Cpk = 1.71. Chỉ số Bền vững Quy trình (PSI) là bao nhiêu?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3-3', &quot;PSI = 1.71 / 1.80 = 0.95 (95% retention &amp;rarr; Meets MBB sustainability threshold).&quot;, &quot;Chỉ số bền vững đạt đúng 95%, chứng minh giải pháp đã được tích hợp thành công vào văn hóa vận hành BPM.&quot;)">A. PSI = 1.71 / 1.80 = 0.95 (Đạt chuẩn &amp;ge; 0.95)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-3', &quot;PSI = 1.71 / 1.80 = 0.95 (95% retention &amp;rarr; Meets MBB sustainability threshold).&quot;, &quot;Chỉ số bền vững đạt đúng 95%, chứng minh giải pháp đã được tích hợp thành công vào văn hóa vận hành BPM.&quot;)">B. PSI = 0.80</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-3', &quot;PSI = 1.71 / 1.80 = 0.95 (95% retention &amp;rarr; Meets MBB sustainability threshold).&quot;, &quot;Chỉ số bền vững đạt đúng 95%, chứng minh giải pháp đã được tích hợp thành công vào văn hóa vận hành BPM.&quot;)">C. PSI = 1.10</button></div>
+      <div id="fb-q3-3" class="quiz-fb"></div>
+    </div>
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 4 • Tầng 2 • Analytical & Math</span>
+      <div class="quiz-q">Hệ thống BPM giám sát 50 quy trình. Mỗi quy trình có chi phí lỗi trung bình $80,000/năm. Nếu triển khai 5 dự án DMAIC trọng điểm giúp giảm 70% lỗi trên 5 quy trình này, số tiền tiết kiệm hàng năm là bao nhiêu?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3-4', &quot;Annual savings = 5 × $80,000 × 0.70 = $280,000/year.&quot;, &quot;Năm dự án DMAIC giải phóng 280,000 USD lãng phí cho hệ thống BPM.&quot;)">A. $280,000/năm (5 × $80,000 × 70%)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-4', &quot;Annual savings = 5 × $80,000 × 0.70 = $280,000/year.&quot;, &quot;Năm dự án DMAIC giải phóng 280,000 USD lãng phí cho hệ thống BPM.&quot;)">B. $400,000/năm</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-4', &quot;Annual savings = 5 × $80,000 × 0.70 = $280,000/year.&quot;, &quot;Năm dự án DMAIC giải phóng 280,000 USD lãng phí cho hệ thống BPM.&quot;)">C. $80,000/năm</button></div>
+      <div id="fb-q3-4" class="quiz-fb"></div>
+    </div>
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 5 • Tầng 3 • Executive Decision</span>
+      <div class="quiz-q">Black Belt phàn nàn rằng Process Owner không hợp tác và không chịu tiếp nhận bàn giao Kế hoạch kiểm soát Control Plan. MBB nên can thiệp thế nào?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3-5', &quot;Engage the Champion to enforce Process Owner accountability chartered from day one.&quot;, &quot;Process Owner phải đồng hành từ ngày đầu. Nếu thiếu gắn kết, Champion phải can thiệp để chuẩn hóa trách nhiệm.&quot;)">A. Báo cáo Champion/Sponsor để tái khẳng định vai trò của Process Owner ngay từ khâu Define trong Project Charter, gắn kết quả dự án vào KPI của Process Owner</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-5', &quot;Engage the Champion to enforce Process Owner accountability chartered from day one.&quot;, &quot;Process Owner phải đồng hành từ ngày đầu. Nếu thiếu gắn kết, Champion phải can thiệp để chuẩn hóa trách nhiệm.&quot;)">B. Cho Black Belt tự quản lý quy trình đó luôn</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-5', &quot;Engage the Champion to enforce Process Owner accountability chartered from day one.&quot;, &quot;Process Owner phải đồng hành từ ngày đầu. Nếu thiếu gắn kết, Champion phải can thiệp để chuẩn hóa trách nhiệm.&quot;)">C. Hủy bỏ dự án</button></div>
+      <div id="fb-q3-5" class="quiz-fb"></div>
+    </div>
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 6 • Tầng 3 • Executive Decision</span>
+      <div class="quiz-q">Doanh nghiệp có nên thành lập một phòng ban Six Sigma độc lập tách rời khỏi các khối vận hành BPM không?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3-6', &quot;Embed Six Sigma talent directly within business operations to maintain tight BPM alignment.&quot;, &quot;Đội ngũ Belt phải gắn liền với thực địa vận hành để đảm bảo tính thực chiến và khả năng duy trì bền vững.&quot;)">A. Không nên; Six Sigma Belt phải được nhúng sâu vào các khối nghiệp vụ và làm việc trực tiếp với Process Owner để tránh tình trạng &#x27;tháp ngà&#x27;</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-6', &quot;Embed Six Sigma talent directly within business operations to maintain tight BPM alignment.&quot;, &quot;Đội ngũ Belt phải gắn liền với thực địa vận hành để đảm bảo tính thực chiến và khả năng duy trì bền vững.&quot;)">B. Nên tách biệt hoàn toàn để giữ tính độc lập</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3-6', &quot;Embed Six Sigma talent directly within business operations to maintain tight BPM alignment.&quot;, &quot;Đội ngũ Belt phải gắn liền với thực địa vận hành để đảm bảo tính thực chiến và khả năng duy trì bền vững.&quot;)">C. Chỉ thuê ngoài khi cần</button></div>
+      <div id="fb-q3-6" class="quiz-fb"></div>
+    </div>
+    <h3 style="color:#fff; margin-top:38px; font-size:1.25rem;">🎴 Flashcards Ôn Tập Nhanh (Click để lật thẻ 3D)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">BPM Infrastructure</div>
+            <div class="term-vi">Hạ tầng BPM</div>
+            <div class="hint">Click to reveal • Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Business Process Management framework</strong>
+            <span class="vi">Hệ thống kiến trúc quy trình và đo lường thường nhật của doanh nghiệp.</span>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Process Owner</div>
+            <div class="term-vi">Chủ sở hữu quy trình</div>
+            <div class="hint">Click to reveal • Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Permanently accountable for process performance</strong>
+            <span class="vi">Người chịu trách nhiệm tối cao về kết quả của quy trình.</span>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Symbiotic Loop</div>
+            <div class="term-vi">Chu trình cộng sinh</div>
+            <div class="hint">Click to reveal • Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>BPM monitor &amp;rarr; DMAIC fix &amp;rarr; BPM maintain</strong>
+            <span class="vi">Mối quan hệ khép kín giữa quản trị vận hành và đột phá hiệu suất.</span>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Sustainability Index (PSI)</div>
+            <div class="term-vi">Chỉ số bền vững quy trình</div>
+            <div class="hint">Click to reveal • Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Ratio of Cpk after 12 months vs close</strong>
+            <span class="vi">Thước đo mức độ duy trì thành quả sau khi dự án kết thúc.</span>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">RACI Alignment</div>
+            <div class="term-vi">Ma trận phân vai RACI</div>
+            <div class="hint">Click to reveal • Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Clear division between Belt and Process Owner</strong>
+            <span class="vi">Bảng phân định trách nhiệm rõ ràng trong chu trình cải tiến.</span>
+          </div>
+        </div>
+      </div></div>
+  </section>
+
+  <!-- PHẦN 5: ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">Phần 5 • 1-Page Action Checklist &amp; Template</span>
+    <h2 class="section-heading">Checklist Hành Động Tại Công Ty</h2>
+    <div class="section-subheading">Thực thi đột phá hiệu suất theo chuẩn mực Master Black Belt</div>
+    <label class="action-item"><input type="checkbox"><span class="action-text"><strong>Đồng bộ hóa Project Charter với Process Owner:</strong> Bắt buộc Process Owner ký duyệt phạm vi và mục tiêu ngay trong giai đoạn Define.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Tích hợp các chỉ số CTQ vào BPM Dashboard:</strong> Đưa các thông số kiểm soát X* và Y vào bảng theo dõi hàng ngày của nhà máy/chi nhánh.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Đánh giá định kỳ chỉ số PSI sau 6 và 12 tháng:</strong> Tổ chức kiểm toán hậu dự án để bảo đảm không xảy ra hiện tượng trôi dạt phương sai.</span></label>
+    <h3 style="color:var(--wood-dark); margin-top:28px;">Template Đột Phá Hiệu Suất (Breakthrough Execution Template)</h3>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; margin-top:12px; font-size:0.92rem; background:#ffffff;">
+        <thead><tr style="background:#064e3b; color:#fff;">
+          <th style="padding:10px; text-align:left; border-radius:6px 0 0 0;">Hạng mục thực thi</th>
+          <th style="padding:10px; text-align:left;">Thông số / Dữ liệu cần xác lập</th>
+          <th style="padding:10px; text-align:left; border-radius:0 6px 0 0;">Tiêu chuẩn kiểm chứng (Deliverable)</th>
+        </tr></thead>
+        <tbody><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Quy trình nghiệp vụ (BPM)</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Tên quy trình và phạm vi</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Quy trình thẩm định và phê duyệt hạn mức tín dụng</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Chủ sở hữu (Process Owner)</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Họ tên / Chức danh</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Giám đốc Khối Phê duyệt Tín dụng</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Black Belt dẫn dắt</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Họ tên / Đai</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Trưởng nhóm Master Black Belt Khối Rủi ro</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Chỉ số kích hoạt DMAIC</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Khoảng cách hiệu suất BPM</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Lead time thẩm định = 72h (Mục tiêu BPM: &amp;le; 8h)</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Cơ chế bàn giao (Control)</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Tích hợp SOP vào BPM</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Hệ thống tự động chấm điểm credit scoring + SLA 4h</td></tr></tbody>
+      </table>
+    </div>
+    <p style="margin-top:18px; color:var(--vi-green-2);"><strong>Định nghĩa hoàn tất:</strong> Thiết lập đường cơ sở Baseline định lượng, cô lập các biến Vital CTP, tối ưu hóa qua DOE, định dung sai dựa trên Cpk và tích hợp SOP chuẩn hóa vào hệ thống quản trị thường nhật.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
+    &copy; Six Sigma Master Black Belt Executive Curriculum • Performance Breakthrough Architecture
+  </p>
+</footer>
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Analytical Cookbook for Sigma-Based Benchmarking
+
+2
+00:00:05.000 --> 00:00:08.700
+Welcome to this session on benchmarking.
+
+3
+00:00:08.700 --> 00:00:14.433
+What we got in front of us here, is a little instrument off of a machine somewhere.
+
+4
+00:00:14.433 --> 00:00:18.933
+It looks like it's measuring temperature on a machine.
+
+5
+00:00:18.933 --> 00:00:22.699
+Well, it’s really kind of interesting because our business is kinda the same way.
+
+6
+00:00:22.700 --> 00:00:27.233
+Wouldn't it be nice if we had a gauge we can plug into our business
+
+7
+00:00:27.233 --> 00:00:30.999
+to say how good we're doing? Like, right about here,
+
+8
+00:00:31.000 --> 00:00:35.700
+it says you're doing average.
+
+9
+00:00:35.700 --> 00:00:42.166
+Or maybe if the needle was over here, it would say that your
+
+10
+00:00:42.166 --> 00:00:48.366
+world-class. So, what we’d like to have is a little measuring device,
+
+11
+00:00:48.366 --> 00:00:53.799
+that can tell us when we’re getting better and when we’re getting worse over time.
+
+12
+00:00:53.800 --> 00:00:57.000
+Well, the Sigma scale is an easy way to do that.
+
+13
+00:00:57.000 --> 00:01:01.500
+So, imagine on this scale that this was one sigma, two sigma, three sigma,
+
+14
+00:01:01.500 --> 00:01:06.433
+four sigma, five sigma, six sigma, and seven sigma, and so on as the
+
+15
+00:01:06.433 --> 00:01:12.733
+counter goes around here. Wouldn’t that be cool. Well, we can do that. A simple way is this.
+
+16
+00:01:12.733 --> 00:01:17.066
+Simply convert it directly to Sigma using a conversion table.
+
+17
+00:01:17.066 --> 00:01:21.899
+It's that simple that I can go from observed error rate
+
+18
+00:01:21.900 --> 00:01:26.466
+to Sigma capability, and that's my benchmark.
+
+19
+00:01:26.466 --> 00:01:31.466
+Thank you for choosing SSMI.

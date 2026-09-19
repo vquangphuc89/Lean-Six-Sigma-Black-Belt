@@ -1,0 +1,269 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Methods of Counting Defect Opportunities
+
+2
+00:00:05.000 --> 00:00:09.000
+Hello, Mike Harry back with you again. Where we’re exploring defect opportunities.
+
+3
+00:00:09.000 --> 00:00:13.166
+And we’re going to take a look at a few more examples here. Let's move forward here.
+
+4
+00:00:13.166 --> 00:00:18.832
+What we’re looking at here, is a simulation in a bank.
+
+5
+00:00:18.833 --> 00:00:22.833
+Of people coming and going to the different tellers.
+
+6
+00:00:22.833 --> 00:00:26.799
+And so, let's take an idea here.
+
+7
+00:00:26.800 --> 00:00:31.633
+And that idea is this, every person is an opportunity.
+
+8
+00:00:31.633 --> 00:00:36.499
+So when we ask ourselves the following question,
+
+9
+00:00:36.500 --> 00:00:41.733
+when this person, the customer, approaches this teller,
+
+10
+00:00:41.733 --> 00:00:47.499
+what must go right? We see, the inverse of that is what could go wrong?
+
+11
+00:00:47.500 --> 00:00:51.500
+And let's say that we identify twenty-five things.
+
+12
+00:00:51.500 --> 00:00:56.600
+And through the use of customer satisfaction surveys,
+
+13
+00:00:56.600 --> 00:01:02.633
+or direct observation through cameras, and interviews, etc.,
+
+14
+00:01:02.633 --> 00:01:06.933
+we can establish the number of things that went wrong, i.e. defects.
+
+15
+00:01:06.933 --> 00:01:13.533
+And of course the opportunity count would be the number of individuals that actually come in
+
+16
+00:01:13.533 --> 00:01:19.366
+and arrive at a tellers desk. That's one example.
+
+17
+00:01:19.366 --> 00:01:23.666
+Let’s take a look at another.
+
+18
+00:01:23.666 --> 00:01:31.032
+In this case produce testing. What they've done is there testing lettuce.
+
+19
+00:01:31.033 --> 00:01:34.699
+And you can see them there doing that.
+
+20
+00:01:34.700 --> 00:01:39.700
+There's the gentleman with the bag of lettuce here, that draws a sample.
+
+21
+00:01:39.700 --> 00:01:46.333
+To look for bacteriological growth, in that sample.
+
+22
+00:01:46.333 --> 00:01:52.099
+There's the little sample right there, of which he's observing.
+
+23
+00:01:52.100 --> 00:01:57.966
+And there might be, let's say, several different strains of bacteria they’re looking for.
+
+24
+00:01:57.966 --> 00:02:04.399
+So, every one of those strains is an opportunity, per sample.
+
+25
+00:02:04.400 --> 00:02:09.800
+Just like a solder joint, that little piece right there is equivalent to a solder joint.
+
+26
+00:02:09.800 --> 00:02:14.300
+Has defect opportunities.
+
+27
+00:02:14.300 --> 00:02:21.333
+And of course, a classic one, machining.
+
+28
+00:02:21.333 --> 00:02:24.599
+To where we're looking at
+
+29
+00:02:24.600 --> 00:02:30.033
+a tool coming in here to drill a hole.
+
+30
+00:02:30.033 --> 00:02:34.033
+Well, the hole has to be round.
+
+31
+00:02:34.033 --> 00:02:39.133
+See, concentricity. That's an opportunity. That's a CTQ.
+
+32
+00:02:39.133 --> 00:02:43.133
+So, in general we can draw this conclusion,
+
+33
+00:02:43.133 --> 00:02:49.099
+any CTQ, anything that is critical to quality.
+
+34
+00:02:49.100 --> 00:02:52.366
+See, the solder joint is critical to value,
+
+35
+00:02:52.366 --> 00:02:55.866
+but one of the six categories is critical to quality.
+
+36
+00:02:55.866 --> 00:03:00.499
+Each defect category is a critical to quality characteristic.
+
+37
+00:03:00.500 --> 00:03:04.900
+And some of those defect categories are continuous by nature
+
+38
+00:03:04.900 --> 00:03:07.900
+and others are discrete, pass-fail.
+
+39
+00:03:07.900 --> 00:03:11.566
+But at the bottom line, at the end of the day, we rate them all as pass-fail,
+
+40
+00:03:11.566 --> 00:03:14.832
+for purposes of defect counting.
+
+41
+00:03:14.833 --> 00:03:19.733
+Well in this case, concentricity here, is a continuous measure.
+
+42
+00:03:19.733 --> 00:03:24.033
+And by measuring it, getting the
+
+43
+00:03:24.033 --> 00:03:27.599
+specific measured value, and comparing it to the standard.
+
+44
+00:03:27.600 --> 00:03:34.600
+If it's within the spec limits, it passes. If it don't, it fails. So again, zero-one.
+
+45
+00:03:34.600 --> 00:03:41.566
+And there we see yet more machining going on, a different type of machining operation.
+
+46
+00:03:41.566 --> 00:03:47.399
+So, all of those have CTQ’s.
+
+47
+00:03:47.400 --> 00:03:50.666
+Like what is going on right here.
+
+48
+00:03:50.666 --> 00:03:54.666
+There's supposed to be a radius, maybe, on the edge of the material.
+
+49
+00:03:54.666 --> 00:03:58.666
+And he’s putting that radius on there.
+
+50
+00:03:58.666 --> 00:04:02.666
+That's a critical to quality characteristic.
+
+51
+00:04:02.666 --> 00:04:08.699
+The same thing back here with this machine. Here, we’ll let it run.
+
+52
+00:04:08.700 --> 00:04:15.366
+As it’s operating away, maybe it's milling a slot through here.
+
+53
+00:04:15.366 --> 00:04:20.999
+And the slot should be of a certain width and certain depth. Well, there’s two different CTQ’s,
+
+54
+00:04:21.000 --> 00:04:26.733
+two critical to quality characteristics, two defect opportunities.
+
+55
+00:04:26.733 --> 00:04:32.733
+So, with that thought, once again, we can see how it can be applied
+
+56
+00:04:32.733 --> 00:04:36.366
+in the industrial world as well as the commercial world.
+
+57
+00:04:36.366 --> 00:04:39.432
+And remember, it's very, very simple.
+
+58
+00:04:39.433 --> 00:04:46.399
+All we have to do. Define the product.
+
+59
+00:04:46.400 --> 00:04:51.900
+Create a hierarchical tree of what comprises that product.
+
+60
+00:04:51.900 --> 00:04:57.233
+Down at the bottom of the tree is a product element, like a solder joint.
+
+61
+00:04:57.233 --> 00:05:03.066
+That element has k number of defect categories.
+
+62
+00:05:03.066 --> 00:05:07.966
+Every defect category constitutes an opportunity.
+
+63
+00:05:07.966 --> 00:05:14.966
+And from there, we can compute the Sigma, or the yield, or any other number of metrics.
+
+64
+00:05:14.966 --> 00:05:20.766
+But at the end of the day we’re looking, where Six Sigma is concerned, at defects
+
+65
+00:05:20.766 --> 00:05:24.766
+per opportunity, defects per million opportunities.
+
+66
+00:05:24.766 --> 00:05:30.899
+And with that, that concludes our discussion on defect opportunities.
+
+67
+00:05:30.900 --> 00:05:35.900
+Thank you for choosing SSMI.

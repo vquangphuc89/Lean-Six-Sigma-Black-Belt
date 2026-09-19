@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 05: Sự Tiến Hóa Của Six Sigma (Tổng Quan 5 Thế Hệ) — Six Sigma Masterclass</title>
+<style>
+  :root{
+    --wood-deep:#022c22;
+    --wood-dark:#064e3b;
+    --wood-forest:#1b4332;
+    --water-ocean:#082f49;
+    --emerald:#059669;
+    --emerald-vibrant:#10b981;
+    --emerald-mint:#6ee7b7;
+    --vi-green:#047857;
+    --vi-green-2:#065f46;
+    --red:#b91c1c;
+    --green:#16a34a;
+    --gold-bg:#fefce8;
+    --gold-border:#d97706;
+    --wood-bark:#78350f;
+    --bg-paper:#f0f7f4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background:var(--bg-paper);
+    color:#0f241d;
+    line-height:1.68;
+  }
+  .container{max-width:1160px;margin:0 auto;padding:0 24px 80px;}
+  a{color:var(--emerald);text-decoration:none;}
+  
+  .hero{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color:#fff;
+    padding:48px 24px 38px;
+    margin-bottom:36px;
+    box-shadow:0 10px 32px rgba(2,44,34,0.35);
+    border-bottom:4px solid var(--emerald);
+  }
+  .hero-inner{max-width:1160px;margin:0 auto;}
+  .hero-badge{
+    display:inline-block;
+    background:rgba(16,185,129,0.18);
+    border:1px solid rgba(110,231,183,0.45);
+    color:var(--emerald-mint);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  .hero-title{font-size:2.2rem;font-weight:800;margin:0 0 6px;color:#ffffff;line-height:1.2;}
+  .hero-title-en{font-size:1.15rem;color:var(--emerald-mint);margin:0 0 16px;font-weight:500;}
+  .hero-desc{font-size:1.02rem;color:#d1fae5;max-width:880px;margin:0;}
+
+  .section-card{
+    background:#ffffff;
+    border-radius:14px;
+    padding:34px 38px;
+    margin-bottom:34px;
+    box-shadow:0 4px 20px rgba(6,78,59,0.07);
+    border-top:5px solid var(--emerald);
+    border-bottom:1px solid #d1fae5;
+  }
+  .section-num{
+    display:inline-block;
+    background:var(--wood-dark);
+    color:#ecfdf5;
+    font-size:11.5px;
+    font-weight:700;
+    padding:3px 10px;
+    border-radius:4px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .section-heading{font-size:1.55rem;color:var(--wood-dark);margin:0 0 4px;font-weight:800;}
+  .section-subheading{font-size:1.05rem;color:var(--vi-green);font-style:italic;margin:0 0 20px;font-weight:600;}
+
+  .exec-summary{
+    background:#f4fbf7;
+    border:1px solid #d1fae5;
+    border-left:6px solid var(--emerald);
+    border-radius:10px;
+    padding:22px 26px;
+    margin:18px 0;
+  }
+  .exec-summary ul{margin:8px 0 0; padding-left:20px;}
+  .exec-summary li{margin-bottom:10px; font-size:1rem; color:#0f241d;}
+  .exec-summary strong{color:var(--wood-dark);}
+
+  /* Pure Native Math Styling */
+  .math-card{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color:#ecfdf5;
+    border-radius:10px;
+    padding:22px 26px;
+    margin:20px 0;
+    border:1.5px solid var(--emerald);
+    box-shadow:0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title{
+    font-size:0.88rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--emerald-mint);
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .math-equation{
+    display:inline-flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    font-family:'Cambria Math', Georgia, serif;
+    font-size:1.3rem;
+    font-weight:700;
+    color:#ffffff;
+    margin:10px 0 16px;
+    line-height:1.4;
+  }
+  .math-frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    padding:0 8px;
+  }
+  .math-num{
+    border-bottom:2px solid var(--emerald-mint);
+    padding-bottom:4px;
+    color:#ffffff;
+    font-size:1.15rem;
+  }
+  .math-den{
+    padding-top:4px;
+    color:var(--emerald-mint);
+    font-size:1.15rem;
+  }
+  .math-var{font-style:italic; color:#ffffff;}
+  .math-card .desc{
+    font-size:0.92rem;
+    color:#d1fae5;
+    margin-top:10px;
+    line-height:1.6;
+    border-top:1px dashed rgba(110,231,183,0.3);
+    padding-top:10px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong{color:#ffffff;}
+  .math-card .desc em{color:var(--emerald-mint); font-style:normal; font-weight:600;}
+
+  /* Tables */
+  table.data-table{border-collapse:collapse;width:100%;font-size:0.92rem;min-width:680px;margin:18px 0;}
+  table.data-table th{
+    background:linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color:#fff;padding:10px 12px;text-align:left;vertical-align:top;
+  }
+  table.data-table th .th-vi{display:block;color:#a7f3d0;font-style:italic;font-weight:500;font-size:0.78rem;margin-top:2px;}
+  table.data-table td{padding:10px 12px;border-bottom:1px solid #d1fae5;vertical-align:top;background:#fff;}
+  table.data-table td .td-sub{display:block;color:var(--vi-green-2);font-style:italic;font-size:0.85rem;margin-top:2px;}
+  table.data-table tr:nth-child(even) td{background:#f7fcf9;}
+
+  /* Comparison Grid */
+  .vs-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin:22px 0;}
+  @media(max-width:768px){.vs-grid{grid-template-columns:1fr;}}
+  .vs-col{border-radius:10px;padding:20px;}
+  .vs-col.bad{background:#fef2f2;border:2px solid #ef4444;}
+  .vs-col.good{background:#ecfdf5;border:2px solid var(--emerald-vibrant);}
+  .vs-badge{
+    display:inline-block;font-size:0.75rem;font-weight:800;letter-spacing:0.5px;
+    padding:4px 10px;border-radius:14px;color:#fff;margin-bottom:10px;text-transform:uppercase;
+  }
+  .vs-badge.bad{background:var(--red);}
+  .vs-badge.good{background:var(--green);}
+  .vs-divider{display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--wood-dark);font-size:1.3rem;}
+  .vs-col ul{margin:0;padding-left:18px;}
+  .vs-col li{margin-bottom:8px;font-size:0.9rem;}
+
+  /* MBB Box */
+  .mbb-box{
+    background:var(--gold-bg);border:1px solid #fef08a;border-left:5px solid var(--gold-border);
+    border-radius:8px;padding:20px 24px;margin:22px 0;
+  }
+  .mbb-box .title{color:var(--wood-bark);font-weight:800;font-size:1.05rem;margin-bottom:4px;}
+  .mbb-box p{margin:0;color:#78350f;font-size:0.95rem;}
+
+  /* Interactive Arena */
+  .interactive-arena{
+    background:linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color:#fff;border-radius:14px;padding:36px 40px;margin:40px 0;
+    box-shadow:0 8px 28px rgba(2,44,34,0.3);border:2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2{color:#fff;margin-top:0;font-size:1.6rem;font-weight:800;}
+  .interactive-arena .arena-desc{color:var(--emerald-mint);font-style:italic;font-size:0.98rem;margin-bottom:24px;}
+  
+  .quiz-card{
+    background:rgba(255,255,255,0.06);border:1px solid rgba(110,231,183,0.3);
+    border-radius:10px;padding:22px 24px;margin-bottom:22px;
+  }
+  .quiz-tag{display:inline-block;background:var(--emerald);color:#fff;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;margin-bottom:6px;}
+  .quiz-q{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.45;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-btn{
+    background:rgba(2,44,34,0.7);border:1px solid rgba(52,211,153,0.4);color:#ecfdf5;
+    padding:12px 16px;border-radius:8px;font-size:0.92rem;text-align:left;cursor:pointer;
+    transition:all 0.2s ease;font-family:inherit;line-height:1.4;
+  }
+  .quiz-btn:hover{background:rgba(16,185,129,0.25);border-color:var(--emerald-mint);}
+  .quiz-btn.correct{background:#065f46 !important;border-color:#34d399 !important;color:#fff !important;}
+  .quiz-btn.wrong{background:#7f1d1d !important;border-color:#f87171 !important;color:#fff !important;}
+  .quiz-fb{display:none;margin-top:12px;padding:14px 16px;border-radius:8px;font-size:0.9rem;line-height:1.45;}
+  .quiz-fb.show{display:block;}
+  .quiz-fb.success{background:rgba(16,185,129,0.2);border:1px solid #34d399;color:#d1fae5;}
+  .quiz-fb.error{background:rgba(239,68,68,0.2);border:1px solid #f87171;color:#fecaca;}
+
+  /* Flashcards */
+  .flashcards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px;}
+  .flashcard{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(110,231,183,0.3);border-radius:10px;
+    padding:18px;cursor:pointer;min-height:140px;display:flex;flex-direction:column;
+    justify-content:center;text-align:center;transition:transform 0.2s ease;user-select:none;
+  }
+  .flashcard:hover{transform:translateY(-3px);border-color:var(--emerald-mint);}
+  .flashcard .front{font-size:1.05rem;font-weight:800;color:var(--emerald-mint);}
+  .flashcard .hint{font-size:0.75rem;color:#a7f3d0;margin-top:6px;opacity:0.8;}
+  .flashcard .back{display:none;font-size:0.88rem;color:#fff;line-height:1.4;}
+  .flashcard.flipped .front, .flashcard.flipped .hint{display:none;}
+  .flashcard.flipped .back{display:block;}
+
+  /* Action Checklist */
+  .action-item{display:flex;align-items:flex-start;gap:12px;background:#f4fbf7;border:1px solid #d1fae5;padding:12px 16px;border-radius:8px;margin-bottom:10px;}
+  .action-item input{width:18px;height:18px;accent-color:var(--emerald);cursor:pointer;margin-top:2px;}
+  .action-text{font-size:0.92rem;color:#0f241d;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">Foundation Vision #29 &bull; Tiến Hóa Six Sigma Số 1</span>
+    <h1 class="hero-title">Sự Tiến Hóa Của Six Sigma: Tổng Quan 5 Thế Hệ (Gen I &rarr; Gen V)</h1>
+    <div class="hero-title-en">The Evolution of Six Sigma: From Shopfloor Defect Reduction to Business Terraforming</div>
+    <p class="hero-desc">Hành trình biến đổi vĩ đại của Six Sigma qua 5 thế hệ lịch sử: Từ giảm lỗi kỹ thuật tại Motorola (Gen I), Tạo dòng tiền Bottom-line tại GE (Gen II), Tạo giá trị Top-line qua DFSS (Gen III), Phổ cập hóa không thống kê phức tạp (Gen IV), đến Tái cấu trúc hệ sinh thái số Business Terraforming (Gen V).</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Phần 1 &bull; Executive Summary</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành Trong 60 Giây</h2>
+    <div class="section-subheading">Bản đồ toàn cảnh 4 thập kỷ tiến hóa của phương pháp luận quản trị xuất sắc nhất thế giới</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Thế Hệ I (1986 &ndash; 1992, Motorola): Giảm Thiểu Lỗi Kỹ Thuật (Defect Reduction Focus):</strong> Trọng tâm vào quy trình sản xuất vật lý, năng lực máy móc và mục tiêu đạt 3.4 DPMO.</li>
+        <li><strong>Thế Hệ II (1993 &ndash; 2000, GE &amp; AlliedSignal): Tối Ưu Chi Phí Đáy (Bottom-Line Cost &amp; Hard Savings):</strong> Gắn Six Sigma vào lợi nhuận ròng P&amp;L, thăng tiến lãnh đạo và kiểm toán tài chính của CFO.</li>
+        <li><strong>Thế Hệ III (2001 &ndash; 2010, Amazon &amp; DuPont): Tăng Trưởng Doanh Thu Đỉnh (Top-Line Value &amp; DFSS):</strong> Thiết kế sản phẩm hoàn hảo ngay từ đầu (Design for Six Sigma), tích hợp Lean thành Lean Six Sigma.</li>
+        <li><strong>Thế Hệ IV (2010 &ndash; 2018, SSMI &amp; Dr. Mikel Harry): Phổ Cập Hóa Tư Duy (The Great Discovery / No-Stats):</strong> Đơn giản hóa các công cụ toán học để 95% nhân sự phi thống kê trong tổ chức đều có thể làm chủ Six Sigma.</li>
+        <li><strong>Thế Hệ V (2018 &ndash; Hiện Tại): Tái Cấu Trúc Hệ Sinh Thái (Business Terraforming &amp; AI):</strong> Ứng dụng trí tuệ nhân tạo, Big Data, tự động hóa chuỗi giá trị số và phát triển bền vững ESG.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & 5 GENERATIONS MASTER TABLE -->
+  <section class="section-card">
+    <span class="section-num">Phần 2 &bull; Core Frameworks &amp; Master Table</span>
+    <h2 class="section-heading">Bảng So Sánh Toàn Diện 5 Thế Hệ Six Sigma</h2>
+    <div class="section-subheading">Sự chuyển dịch từ công cụ kỹ thuật sản xuất sang chiến lược kiến tạo tương lai</div>
+
+    <div style="margin:24px 0;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Thế Hệ (Gen)<span class="th-vi">Giai đoạn &amp; Đại diện</span></th>
+            <th>Trọng Tâm Chiến Lược (Primary Focus)<span class="th-vi">Mục tiêu tối thượng</span></th>
+            <th>Thước Đo Thành Công Cốt Tử (Key Metric)<span class="th-vi">Primary KPI</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Gen I (1986&ndash;1992)</strong><br><span class="td-sub">Motorola &bull; Bill Smith</span></td>
+            <td>Giảm lỗi sản xuất, ổn định dây chuyền, giảm chi phí phế phẩm.</td>
+            <td><strong>DPMO &bull; Cp / Cpk &bull; Sigma Level</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Gen II (1993&ndash;2000)</strong><br><span class="td-sub">GE &bull; Jack Welch &bull; AlliedSignal</span></td>
+            <td>Cắt giảm chi phí vận hành (COPQ), tăng dòng tiền Lợi nhuận ròng.</td>
+            <td><strong>Hard Savings (USD) &bull; ROI &bull; P&amp;L Margin</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Gen III (2001&ndash;2010)</strong><br><span class="td-sub">Amazon &bull; Apple &bull; DuPont</span></td>
+            <td>Tạo giá trị cho khách hàng, Thiết kế sản phẩm mới (DFSS), tích hợp Lean.</td>
+            <td><strong>Customer Lifetime Value &bull; Top-line Revenue &bull; Market Share</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Gen IV (2010&ndash;2018)</strong><br><span class="td-sub">SSMI &bull; Dr. Mikel Harry</span></td>
+            <td>Phổ cập hóa tư duy Six Sigma cho 95% nhân sự phi thống kê (The Great Discovery).</td>
+            <td><strong>Problem-Solving Velocity &bull; Employee Empowerment</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Gen V (2018&ndash;Hiện tại)</strong><br><span class="td-sub">Tesla &bull; SSMI Terraforming</span></td>
+            <td>Tái cấu trúc mô hình kinh doanh bằng AI, Digital Twins, Hệ sinh thái xanh ESG.</td>
+            <td><strong>Ecosystem Agility &bull; Net Zero &bull; Digital Capability</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASE STUDIES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Phần 3 &bull; Case Studies &amp; VS Comparison</span>
+    <h2 class="section-heading">Bài Học Thực Chiến: Bẫy Mắc Kẹt Ở Thế Hệ I</h2>
+    <div class="section-subheading">Tại sao nhiều công ty thất bại khi triển khai Six Sigma theo kiểu thập niên 1980?</div>
+
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Tư Duy Mắc Kẹt Ở Gen I (Lạc Hậu)</span>
+        <ul>
+          <li>Nhồi nhét các công thức toán cao cấp phức tạp làm nản lòng 95% nhân viên.</li>
+          <li>Chỉ báo cáo các chỉ số kỹ thuật (DPMO, Z-score) mà không liên kết với dòng tiền tài chính.</li>
+          <li>Ban Giám đốc cắt ngân sách vì không nhìn thấy lợi ích kinh doanh thực tế.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Six Sigma Thế Hệ Mới (Gen IV &amp; V)</span>
+        <ul>
+          <li>Trực quan hóa và đơn giản hóa công cụ để mọi cấp bậc nhân sự đều ứng dụng được.</li>
+          <li>Mọi dự án đều gắn chặt với dòng tiền P&amp;L và trải nghiệm khách hàng số.</li>
+          <li>Trở thành động cơ chuyển đổi số và phát triển bền vững toàn tập đoàn.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA (8 SCENARIO QUIZZES) -->
+  <section class="interactive-arena">
+    <h2>⚡ Đấu Trường Trắc Nghiệm Tình Huống Đa Tầng (8 Câu Thực Chiến)</h2>
+    <div class="arena-desc">Đánh giá khả năng hiểu sâu về sự tiến hóa của 5 thế hệ Six Sigma</div>
+
+    <!-- Question 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 1 &bull; Tầng 1: Trọng Tâm Cốt Tử Của Six Sigma Thế Hệ II</span>
+      <div class="quiz-q">Điểm đột phá mang tính cách mạng nhất của Six Sigma Thế Hệ II (dưới thời Jack Welch tại GE) so với Thế Hệ I (Motorola) là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev5-1', 'Correct! Gen II shifted focus from pure shopfloor defect reduction to bottom-line financial impact (Hard Savings verified by CFOs) and executive compensation/promotion linkage.', 'Chính xác! Thế hệ II chuyển dịch trọng tâm từ việc giảm lỗi kỹ thuật ở xưởng sang đo lường tác động tài chính vào lợi nhuận ròng (Hard Savings được CFO thẩm định) và gắn liền với tiền thưởng/thăng tiến lãnh đạo.')">A. Gắn chặt Six Sigma với tác động tài chính lợi nhuận ròng (Bottom-Line Hard Savings) được CFO ký duyệt.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev5-1', 'Incorrect. Motorola created Gen I technical defect focus; GE introduced bottom-line financial integration.', 'Sai. Motorola tập trung vào kỹ thuật giảm lỗi; GE mới là nơi tài chính hóa Six Sigma.')">B. Quay lại tập trung vào kiểm tra sản phẩm sau khi sản xuất xong.')</button>
+      </div>
+      <div id="fb-ev5-1" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 2 &bull; Tầng 1: Sự Chuyển Dịch Sang Thế Hệ III (Top-Line Growth)</span>
+      <div class="quiz-q">Six Sigma Thế Hệ III mở rộng phạm vi ra ngoài việc cắt giảm chi phí (Bottom-Line) để hướng tới mục tiêu nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev5-12', 'Correct! Gen III focuses on Top-Line revenue growth: Designing breakthrough new products using DFSS, enhancing customer value, expanding market share, and commercialization.', 'Chính xác! Thế hệ III tập trung vào Tăng trưởng Doanh thu Đỉnh (Top-Line Growth): Thiết kế sản phẩm/dịch vụ mới đột phá bằng DFSS, tối đa hóa giá trị vòng đời khách hàng và mở rộng thị phần thương mại.')">A. Tăng trưởng Doanh thu Đỉnh (Top-Line Revenue) thông qua Thiết Kế Chuẩn Six Sigma (DFSS) và giá trị khách hàng.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev5-12', 'Incorrect. Gen III moves beyond pure cost cutting to revenue creation.', 'Sai. Cắt giảm chi phí là trọng tâm của Thế hệ II.')">B. Cắt giảm tối đa ngân sách nghiên cứu và phát triển sản phẩm mới.')</button>
+      </div>
+      <div id="fb-ev5-12" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 3 &bull; Tầng 3: Bản Chất Six Sigma Thế Hệ IV Của Dr. Mikel Harry</span>
+      <div class="quiz-q">Sáng kiến 'The Great Discovery' khai sinh ra Six Sigma Thế Hệ IV của Dr. Mikel Harry nhằm giải quyết vấn đề nghẽn tắc nào của phong trào Six Sigma toàn cầu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev5-3', 'Correct! Gen IV (The Great Discovery) democratizes Six Sigma: Removing the barrier of complex advanced statistics so that the 95% non-statisticians across an enterprise can easily apply Six Sigma thinking visually and intuitively.', 'Chính xác! Phổ cập hóa Six Sigma: Dỡ bỏ rào cản của toán học thống kê phức tạp, giúp 95% nhân lực phi thống kê trong toàn bộ tổ chức có thể ứng dụng tư duy Six Sigma một cách trực quan, nhanh chóng và hiệu quả.')">A. Xóa bỏ rào cản toán học thống kê phức tạp, giúp 95% nhân sự phi thống kê có thể làm chủ tư duy Six Sigma.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev5-3', 'Incorrect. Gen IV democratizes Six Sigma for the 95% non-statisticians.', 'Sai. Thế hệ IV nhằm đơn giản hóa để phổ cập, không phải để làm nó khó hơn.')">B. Bắt buộc mọi nhân viên phải lấy bằng Tiến sĩ Toán học.')</button>
+      </div>
+      <div id="fb-ev5-3" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 4 &bull; Tầng 1: Khái Niệm Business Terraforming Của Thế Hệ V</span>
+      <div class="quiz-q">Khái niệm 'Business Terraforming' (Cải tạo Địa hình Doanh nghiệp) trong Six Sigma Thế Hệ V mang ý nghĩa gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev5-4', 'Correct! Gen V Business Terraforming reshapes entire business operating environments and industry ecosystems using AI, IoT, Digital Twins, and agile value network restructuring for sustainable growth.', 'Chính xác! Tái cấu trúc và kiến tạo lại toàn bộ môi trường vận hành kinh doanh và hệ sinh thái ngành dựa trên AI, IoT, Bản sao số Digital Twins và mạng lưới giá trị linh hoạt hướng tới phát triển bền vững.')">A. Tái cấu trúc toàn diện hệ sinh thái kinh doanh dựa trên AI, công nghệ số và chuyển đổi mô hình kinh doanh bền vững.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev5-4', 'Incorrect. Terraforming is a systemic ecosystem metaphor in modern Lean Six Sigma.', 'Sai. Đây không phải là thuật ngữ xây dựng công trình địa chất.')">B. Đi san lấp mặt bằng để xây thêm nhà xưởng.')</button>
+      </div>
+      <div id="fb-ev5-4" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 5 &bull; Tầng 2: Sự Tiến Hóa Của Các Chỉ Số Đo Lường Qua 5 Thế Hệ</span>
+      <div class="quiz-q">Hành trình tiến hóa của các thước đo hiệu năng chính (Primary Metrics) từ Thế Hệ I đến Thế Hệ V diễn ra như thế nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev5-5', 'Correct! Metric Evolution: DPMO/Cpk (Gen I) -> Hard Savings/ROI (Gen II) -> Customer Lifetime Value/DFSS (Gen III) -> Problem-Solving Velocity (Gen IV) -> Ecosystem Agility & ESG (Gen V).', 'Chính xác! DPMO/Cpk (Gen I) &rarr; Tiền tiết kiệm Hard Savings (Gen II) &rarr; Giá trị khách hàng &amp; Doanh thu mới (Gen III) &rarr; Tốc độ giải quyết vấn đề (Gen IV) &rarr; Độ linh hoạt hệ sinh thái số &amp; ESG (Gen V).')">A. DPMO &rarr; Tiền tiết kiệm Hard Savings &rarr; Doanh thu mới &rarr; Tốc độ giải quyết vấn đề &rarr; Hệ sinh thái số &amp; ESG.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev5-5', 'Incorrect. Metrics have continuously broadened from narrow engineering parameters to holistic enterprise value.', 'Sai. Thước đo ngày càng mở rộng và bao quát hơn.')">B. Cả 5 thế hệ đều chỉ dùng đúng một thước đo duy nhất là DPMO.')</button>
+      </div>
+      <div id="fb-ev5-5" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 6 &bull; Tầng 3: Chọn Đúng Thế Hệ Áp Dụng Cho Doanh Nghiệp Dịch Vụ</span>
+      <div class="quiz-q">Một ngân hàng thương mại muốn số hóa toàn bộ quy trình mở thẻ tín dụng bằng ứng dụng di động AI trong 3 phút. Nhóm dự án nên áp dụng tư duy Six Sigma thuộc thế hệ nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev5-6', 'Correct! Digital automated service design requires Gen III (DFSS ICOV/DMADV) and Gen V (AI & Digital ecosystems), rather than outdated Gen I factory tools.', 'Chính xác! Cần áp dụng tư duy Thế Hệ III (Thiết Kế Chuẩn Six Sigma DFSS/ICOV) kết hợp Thế Hệ V (Số hóa và Trí tuệ nhân tạo AI) để kiến tạo trải nghiệm số không lỗi ngay từ đầu.')">A. Thế Hệ III (Thiết Kế Mới DFSS) kết hợp Thế Hệ V (Chuyển đổi số &amp; AI) để tạo dòng chảy tức thì không tì vết.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev5-6', 'Incorrect. Applying rigid Gen I manufacturing tools to digital app design causes massive delays and project failure.', 'Sai. Dùng công cụ nhà máy cơ khí Gen I cho ứng dụng ngân hàng số là lạc hậu.')">B. Áp dụng Thế Hệ I để đo độ lệch chuẩn của việc viết tay.')</button>
+      </div>
+      <div id="fb-ev5-6" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 7 &bull; Tầng 1: Vai Trò Của Viện SSMI Trong Sự Tiến Hóa Của Six Sigma</span>
+      <div class="quiz-q">Viện Six Sigma Management Institute (SSMI) do Dr. Mikel Harry sáng lập đóng vai trò tiên phong trong việc thúc đẩy thế hệ Six Sigma nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev5-7', 'Correct! SSMI pioneered Generation IV (The Great Discovery / No-Stats Six Sigma) and Generation V (Business Terraforming & Digital LSS).', 'Chính xác! Viện SSMI là cơ quan tiên phong khai sinh ra Thế Hệ IV (The Great Discovery / Phổ cập hóa Six Sigma) và dẫn dắt Thế Hệ V (Business Terraforming &amp; Digital Lean Six Sigma).')">A. Tiên phong khai sinh ra Thế Hệ IV (The Great Discovery) và dẫn dắt Thế Hệ V (Business Terraforming).')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev5-7', 'Incorrect. SSMI is the global pioneer of Gen IV and Gen V evolution.', 'Sai. SSMI luôn đi đầu trong các cuộc cách mạng thế hệ Six Sigma mới.')">B. SSMI chỉ giảng dạy các lý thuyết cổ điển của thế kỷ 19.')</button>
+      </div>
+      <div id="fb-ev5-7" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 8 &bull; Tầng 2: Sự Hội Tụ Giữa Lean Và Six Sigma</span>
+      <div class="quiz-q">Hiện tượng sáp nhập giữa Lean và Six Sigma thành một thể thống nhất 'Lean Six Sigma' (LSS) diễn ra mạnh mẽ nhất trong giai đoạn thế hệ nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-ev5-8', 'Correct! The formal convergence of Lean (Speed/Flow) and Six Sigma (Precision/Quality) matured during Generation III (early 2000s).', 'Chính xác! Diễn ra mạnh mẽ trong giai đoạn Thế Hệ III (đầu những năm 2000), tạo nên sự kết hợp hoàn hảo giữa Tốc độ tinh gọn của Lean và Độ chính xác thống kê của Six Sigma.')">A. Thế Hệ III (Đầu những năm 2000)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-ev5-8', 'Incorrect. Gen I was isolated Motorola Six Sigma before the Lean merger.', 'Sai. Thế hệ I hai phương pháp này vẫn hoạt động hoàn toàn độc lập.')">B. Thế Hệ I (Năm 1986)</button>
+      </div>
+      <div id="fb-ev5-8" class="quiz-fb"></div>
+    </div>
+
+    <h3 style="color:#fff; margin-top:34px; font-size:1.25rem;">🎴 Flashcards Ôn Tập Nhanh (Click để lật thẻ 3D)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">5 Generations of Six Sigma<span class="vi">5 Thế Hệ Six Sigma</span></div>
+        <div class="hint">Bấm để lật xem định nghĩa</div>
+        <div class="back">Gen I: Defect Focus &bull; Gen II: Bottom-line Cost &bull; Gen III: Top-line DFSS &bull; Gen IV: Great Discovery (No-Stats) &bull; Gen V: Business Terraforming &amp; AI.<span class="vi">Bản đồ tiến hóa lịch sử.</span></div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">The Great Discovery (Gen IV)<span class="vi">Thế Hệ IV Phổ Cập Hóa</span></div>
+        <div class="hint">Bấm để lật xem định nghĩa</div>
+        <div class="back">Dr. Mikel Harry dỡ bỏ rào cản toán học phức tạp để 95% nhân lực phi thống kê đều ứng dụng được Six Sigma trực quan.<span class="vi">Dân chủ hóa Six Sigma toàn cầu.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: 1-PAGE ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">Phần 5 &bull; Action Checklist</span>
+    <h2 class="section-heading">Kế Hoạch Định Vị Thế Hệ Six Sigma Của Doanh Nghiệp (Sáng Thứ Hai Làm Gì?)</h2>
+    <div class="section-subheading">Ba bước đánh giá và nâng cấp năng lực Six Sigma tại đơn vị của bạn</div>
+
+    <div style="margin:18px 0;">
+      <div class="action-item">
+        <input type="checkbox" id="actev5-1">
+        <label for="actev5-1" class="action-text">
+          <strong>Bước 1: Tự đánh giá mức độ trưởng thành Six Sigma</strong>: Doanh nghiệp của bạn đang ở Thế hệ mấy (Gen I: Chỉ đo lỗi xưởng &rarr; Gen II: Đo tiền Hard Savings &rarr; Gen III: Thiết kế mới &rarr; Gen V: Chuyển đổi số AI)?
+        </label>
+      </div>
+      <div class="action-item">
+        <input type="checkbox" id="actev5-2">
+        <label for="actev5-2" class="action-text">
+          <strong>Bước 2: Triển khai phương pháp trực quan hóa Thế Hệ IV</strong>: Đơn giản hóa các biểu mẫu và công cụ để nhân viên các phòng ban phi kỹ thuật (HR, Kế toán, Sales) cùng tham gia giải quyết vấn đề.
+        </label>
+      </div>
+      <div class="action-item">
+        <input type="checkbox" id="actev5-3">
+        <label for="actev5-3" class="action-text">
+          <strong>Bước 3: Lập kế hoạch tích hợp công nghệ số 4.0 / AI</strong> vào các dự án cải tiến để tự động hóa việc thu thập và phân tích dữ liệu thời gian thực.
+        </label>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:#065f46; font-size:0.85rem; padding:20px 0;">&copy; Six Sigma Master Black Belt Executive Training Series &bull; Phong Thủy Đại Lâm Mộc Standard</p>
+</footer>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:4px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:4px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

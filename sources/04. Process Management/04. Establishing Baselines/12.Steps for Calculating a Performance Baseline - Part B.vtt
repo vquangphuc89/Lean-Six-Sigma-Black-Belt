@@ -1,0 +1,125 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Steps for Calculating a Performance Baseline
+
+2
+00:00:05.000 --> 00:00:08.000
+Hello, Mike Harry back again where we’re looking at baselining
+
+3
+00:00:08.000 --> 00:00:11.100
+and determining our opportunity error rate.
+
+4
+00:00:11.100 --> 00:00:17.500
+Now, let's say that per unit we have four opportunities. Again, what is an opportunity?
+
+5
+00:00:17.500 --> 00:00:20.500
+An opportunity is just that.
+
+6
+00:00:20.500 --> 00:00:26.333
+It is the chance of a defect, it's an opportunity for a defect.
+
+7
+00:00:26.333 --> 00:00:31.433
+And if there are four such opportunities per unit.
+
+8
+00:00:31.433 --> 00:00:36.833
+Again, let's go back and see what we mean by that. Back to the idea of banking.
+
+9
+00:00:36.833 --> 00:00:43.099
+Recall in this banking example, people are coming and going. And they come up here.
+
+10
+00:00:43.100 --> 00:00:49.666
+If the person calls up the wrong account. The person could fail to greet them.
+
+11
+00:00:49.666 --> 00:00:55.966
+This particular teller right here could fail to smile.
+
+12
+00:00:55.966 --> 00:01:01.532
+Fail to offer a particular service while the customer is there.
+
+13
+00:01:01.533 --> 00:01:08.566
+An opportunity could be anything. Now, if all of those errors, in this example,
+
+14
+00:01:08.566 --> 00:01:14.332
+50 such errors are made out of a thousand units and that's our unit error rate.
+
+15
+00:01:14.333 --> 00:01:19.933
+Given that there’s 4 opportunities, or what we might call defect categories,
+
+16
+00:01:19.933 --> 00:01:25.999
+then I simply take .05 divided by 4 and that's .0125
+
+17
+00:01:26.000 --> 00:01:31.800
+opportunities, defects per opportunity, errors per opportunity,
+
+18
+00:01:31.800 --> 00:01:35.800
+consequences per opportunity if you will.
+
+19
+00:01:35.800 --> 00:01:41.766
+Now, step number three is really simple. We take that opportunity error rate
+
+20
+00:01:41.766 --> 00:01:48.732
+multiply it by a million, and get 12,500 defects per million opportunities.
+
+21
+00:01:48.733 --> 00:01:53.566
+That's the baseline that's kind of the benchmark, if you will.
+
+22
+00:01:53.566 --> 00:01:58.266
+12,500 defects per million opportunities.
+
+23
+00:01:58.266 --> 00:02:04.532
+Now, if I know the defects per million opportunities, I can directly compare now.
+
+24
+00:02:04.533 --> 00:02:10.933
+The defects per million opportunities of this teller.
+
+25
+00:02:10.933 --> 00:02:17.966
+Of this jumper.
+
+26
+00:02:17.966 --> 00:02:23.799
+The defects per million delivery opportunities.
+
+27
+00:02:23.800 --> 00:02:30.833
+And the defects per million opportunities for deploying an airbag.
+
+28
+00:02:30.833 --> 00:02:34.333
+Because it's on a level playing field.
+
+29
+00:02:34.333 --> 00:02:39.166
+The defect rate has been reduced per million opportunities,
+
+30
+00:02:39.166 --> 00:02:42.766
+so that everything's on a level playing field, at this point.
+
+31
+00:02:42.766 --> 00:02:47.766
+Thank you for choosing SSMI.

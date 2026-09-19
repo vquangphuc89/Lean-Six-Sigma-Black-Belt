@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FMEA Risk Mitigation Playbook &amp; Template | Bản Kế Hoạch 1 Trang Quản Trị Rủi Ro FMEA</title>
+<style>
+
+  :root{
+    --wood-deep:#022c22;
+    --wood-dark:#064e3b;
+    --wood-forest:#1b4332;
+    --water-ocean:#082f49;
+    --emerald:#059669;
+    --emerald-vibrant:#10b981;
+    --emerald-mint:#6ee7b7;
+    --vi-green:#047857;
+    --vi-green-2:#065f46;
+    --red:#b91c1c;
+    --green:#16a34a;
+    --gold-bg:#fefce8;
+    --gold-border:#d97706;
+    --wood-bark:#78350f;
+    --bg-paper:#f0f7f4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background:var(--bg-paper);
+    color:#0f241d;
+    line-height:1.68;
+  }
+  .container{max-width:1160px;margin:0 auto;padding:0 24px 80px;}
+  a{color:var(--emerald);text-decoration:none;}
+  
+  .hero{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color:#fff;
+    padding:48px 24px 38px;
+    margin-bottom:36px;
+    box-shadow:0 10px 32px rgba(2,44,34,0.35);
+    border-bottom:4px solid var(--emerald);
+  }
+  .hero-inner{max-width:1160px;margin:0 auto;}
+  .hero-badge{
+    display:inline-block;
+    background:rgba(16,185,129,0.18);
+    border:1px solid rgba(110,231,183,0.45);
+    color:var(--emerald-mint);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  .hero-title{font-size:2.2rem;font-weight:800;margin:0 0 6px;color:#ffffff;}
+  .hero-title-vi{font-size:1.25rem;font-style:italic;color:var(--emerald-mint);margin:0 0 14px;font-weight:600;}
+  .hero-desc{font-size:1rem;color:#d1fae5;max-width:860px;margin:0;}
+  .hero-desc-vi{font-size:0.95rem;font-style:italic;color:#a7f3d0;max-width:860px;margin-top:4px;}
+
+  .card-section{
+    background:#ffffff;
+    border-radius:12px;
+    padding:32px 36px;
+    margin-bottom:32px;
+    box-shadow:0 4px 20px rgba(6,78,59,0.07);
+    border-top:5px solid var(--emerald);
+    border-bottom:1px solid #d1fae5;
+  }
+  .card-title{font-size:1.5rem;color:var(--wood-dark);margin:0 0 4px;font-weight:800;}
+  .card-title-vi{font-size:1.1rem;color:var(--vi-green);font-style:italic;margin:0 0 20px;font-weight:600;}
+
+  .checklist{display:flex; flex-direction:column; gap:12px; margin:20px 0;}
+  .checklist-item{
+    display:flex; align-items:flex-start; gap:12px;
+    background:#f4fbf7; border:1px solid #d1fae5; padding:14px 18px; border-radius:8px;
+  }
+  .checklist-item input[type="checkbox"]{
+    width:20px; height:20px; accent-color:var(--emerald); cursor:pointer; margin-top:3px;
+  }
+  .checklist-text{font-size:0.95rem; color:#0f241d;}
+  .checklist-text .vi{display:block; font-style:italic; color:var(--vi-green-2); margin-top:2px;}
+
+  .template-box{
+    background:#022c22;
+    color:#ecfdf5;
+    border-radius:10px;
+    padding:24px;
+    font-family:'Consolas', monospace;
+    font-size:0.92rem;
+    line-height:1.6;
+    overflow-x:auto;
+    border:1px solid var(--emerald);
+    position:relative;
+    margin:20px 0;
+  }
+  .copy-btn{
+    position:absolute; top:12px; right:12px;
+    background:var(--emerald); color:#fff; border:none; padding:6px 14px;
+    border-radius:6px; font-weight:700; cursor:pointer; font-size:0.8rem;
+    transition:background 0.2s;
+  }
+  .copy-btn:hover{background:var(--emerald-vibrant);}
+
+  table.data-table{border-collapse:collapse;width:100%;font-size:0.92rem;min-width:680px;}
+  table.data-table th{
+    background:linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color:#fff;padding:10px 12px;text-align:left;vertical-align:top;
+  }
+  table.data-table th .th-vi{display:block;color:#a7f3d0;font-style:italic;font-weight:500;font-size:0.78rem;margin-top:2px;}
+  table.data-table td{padding:10px 12px;border-bottom:1px solid #d1fae5;vertical-align:top;background:#fff;}
+  table.data-table td .td-vi{display:block;color:var(--vi-green-2);font-style:italic;font-size:0.85rem;margin-top:2px;}
+  table.data-table tr:nth-child(even) td{background:#f7fcf9;}
+
+  .mbb-tip{
+    background:var(--gold-bg); border:1px solid #fef08a; border-left:5px solid var(--gold-border);
+    border-radius:8px; padding:20px 24px; margin:24px 0;
+  }
+  .mbb-tip-title{color:var(--wood-bark); font-weight:800; font-size:1.05rem; margin-bottom:4px;}
+  .mbb-tip-title .vi{color:#92400e; font-style:italic; font-size:0.92rem; font-weight:600;}
+  .mbb-tip p{margin:0; color:#78350f; font-size:0.92rem;}
+  .mbb-tip p.vi{color:#92400e; font-style:italic; margin-top:4px;}
+
+  .form-input{
+    width:100%; padding:8px 12px; border:1px solid #a7f3d0; border-radius:6px;
+    background:#f4fbf7; font-family:inherit; font-size:0.9rem; color:#06282d; margin-top:4px;
+  }
+  .form-input:focus{outline:none; border-color:var(--emerald); background:#fff;}
+
+
+  /* ---------- PURE NATIVE HTML/CSS MATHEMATICAL FORMULAS (NO MATHJAX NEEDED) ---------- */
+  .math-card{
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title{
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation{
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac{
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num{
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den{
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-var{
+    font-style: italic;
+    color: #ffffff;
+  }
+  .math-card .desc{
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong{
+    color: #ffffff;
+  }
+  .math-card .desc em{
+    color: var(--emerald-mint);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+</style>
+
+
+
+
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">1-Page Actionable Playbook #3 &bull; Bản Kế Hoạch 1 Trang #3</span>
+    <h1 class="hero-title">FMEA Risk Mitigation Playbook &amp; Template</h1>
+    <div class="hero-title-vi">Quy Trình &amp; Biểu Mẫu 1 Trang: Ma Trận Đánh Giá &amp; Kiểm Soát Rủi Ro FMEA</div>
+    <p class="hero-desc">Systematically uncover and eradicate potential failure modes before they reach the paying customer (<i>RPN = S &times; O &times; D</i>).</p>
+    <p class="hero-desc-vi">Chủ động phát hiện và triệt tiêu các phương thức hư hỏng tiềm ẩn trong quy trình trước khi biến thành sự cố cho khách hàng.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="card-section">
+    <h2 class="card-title">1. The Risk Priority Number (RPN) Formula</h2>
+    <div class="card-title-vi">Công Thức Tính Chỉ Số Ưu Tiên Rủi Ro RPN</div>
+    
+    <div style="background:linear-gradient(135deg, #022c22 0%, #064e3b 100%); color:#ecfdf5; padding:18px 24px; border-radius:8px; border:1px solid var(--emerald); margin:16px 0;">
+      <div style="font-size:1.2rem; font-weight:700; color:var(--emerald-mint);">
+        RPN = Severity (S) &times; Occurrence (O) &times; Detection (D)
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-top:10px; font-size:0.85rem;">
+        <div><strong>Severity (S: 1-10):</strong> Mức độ nghiêm trọng đối với khách hàng.</div>
+        <div><strong>Occurrence (O: 1-10):</strong> Tần suất xuất hiện nguyên nhân gốc rễ.</div>
+        <div><strong>Detection (D: 1-10):</strong> Khả năng phát hiện lỗi trước khi xuất kho.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card-section">
+    <h2 class="card-title">2. Interactive FMEA Matrix Template</h2>
+    <div class="card-title-vi">Biểu Mẫu Bảng FMEA Trực Quan Điền Số Liệu</div>
+    
+    <div style="overflow-x:auto; margin-top:16px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Process Step<span class="th-vi">Bước Quy trình</span></th>
+            <th>Potential Failure Mode<span class="th-vi">Phương thức Hỏng</span></th>
+            <th>Potential Effect<span class="th-vi">Hậu quả Khách hàng</span></th>
+            <th>S<span class="th-vi">1-10</span></th>
+            <th>Root Cause<span class="th-vi">Nguyên nhân</span></th>
+            <th>O<span class="th-vi">1-10</span></th>
+            <th>Current Controls<span class="th-vi">Kiểm soát Hiện tại</span></th>
+            <th>D<span class="th-vi">1-10</span></th>
+            <th>RPN<span class="th-vi">S&times;O&times;D</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input class="form-input" value="1. Nhập thông tin đơn"></td>
+            <td><input class="form-input" value="Khách nhập sai địa chỉ nhận"></td>
+            <td><input class="form-input" value="Giao hàng thất bại, hoàn hàng"></td>
+            <td><input class="form-input" value="7" style="width:45px; text-align:center;"></td>
+            <td><input class="form-input" value="Thiếu gợi ý địa chỉ tự động"></td>
+            <td><input class="form-input" value="8" style="width:45px; text-align:center;"></td>
+            <td><input class="form-input" value="Kiểm tra thủ công bằng mắt"></td>
+            <td><input class="form-input" value="7" style="width:45px; text-align:center;"></td>
+            <td style="font-weight:800; color:var(--red); font-size:1.05rem;">392</td>
+          </tr>
+          <tr>
+            <td><input class="form-input" value="2. Ép nhiệt bao bì"></td>
+            <td><input class="form-input" value="Nhiệt độ hàn không đủ chuẩn"></td>
+            <td><input class="form-input" value="Mở mối hàn, sản phẩm hỏng"></td>
+            <td><input class="form-input" value="9" style="width:45px; text-align:center;"></td>
+            <td><input class="form-input" value="Cảm biến nhiệt bị bám bụi"></td>
+            <td><input class="form-input" value="6" style="width:45px; text-align:center;"></td>
+            <td><input class="form-input" value="Kiểm tra xác suất 10 mẫu"></td>
+            <td><input class="form-input" value="6" style="width:45px; text-align:center;"></td>
+            <td style="font-weight:800; color:var(--red); font-size:1.05rem;">324</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mbb-tip">
+      <div class="mbb-tip-title">💡 Action Threshold Rule &bull; <span class="vi">Ngưỡng Can Thiệp Bắt Buộc</span></div>
+      <p>Any item with <strong>RPN &gt; 150</strong> or <strong>Severity &ge; 9</strong> must have an immediate Countermeasure Action Plan with assigned owner and completion deadline within 30 days.</p>
+      <p class="vi">Bất kỳ hạng mục nào có <strong>RPN &gt; 150</strong> hoặc <strong>Severity &ge; 9</strong> bắt buộc phải có Biện pháp Khắc phục ngay lập tức với người chịu trách nhiệm và hạn chót hoàn thành trong vòng 30 ngày.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:#065f46; font-size:0.85rem; padding:20px 0;">&copy; Six Sigma Master Black Belt Playbook Series &bull; Phong Thủy Đại Lâm Mộc Standard</p>
+</footer>
+
+
+<script>
+function copyCode(btn, elementId) {
+  var text = document.getElementById(elementId).innerText;
+  navigator.clipboard.writeText(text).then(function() {
+    btn.innerText = "✓ Đã sao chép!";
+    setTimeout(function() { btn.innerText = "Sao chép Template"; }, 2500);
+  });
+}
+</script>
+
+</body>
+</html>

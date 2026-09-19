@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Breakthrough Vision Review Quiz | Bài Kiểm Tra Ôn Tập Breakthrough Vision</title>
+<style>
+  :root{
+    --navy-dark:#1a252f;
+    --navy:#2c3e50;
+    --blue:#2980b9;
+    --gold:#f5b042;
+    --vi-green:#0e7a5e;
+    --true-green:#27ae60;
+    --false-red:#c0392b;
+    --bg:#eef2f7;
+    --card-bg:#ffffff;
+    --border:#dbe4ec;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    font-family: system-ui, 'Segoe UI', 'Inter', 'Noto Sans', sans-serif;
+    color:#1a2c3e;
+    padding:2rem 1rem 7rem;
+    line-height:1.6;
+  }
+  .wrap{max-width:1080px;margin:0 auto;}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(120deg, var(--navy-dark) 0%, var(--navy) 55%, var(--blue) 130%);
+    border-radius:1.75rem;
+    color:#fff;
+    padding:3rem 2.25rem;
+    text-align:center;
+    box-shadow:0 25px 45px -18px rgba(15,30,45,0.45);
+    margin-bottom:1.75rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 85% -10%, rgba(41,128,185,0.55), transparent 55%);
+    pointer-events:none;
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy-dark);
+    font-weight:800;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    padding:0.35rem 1.1rem;
+    border-radius:40px;
+    margin-bottom:1.1rem;
+  }
+  .hero h1{
+    font-size:2.15rem;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin-bottom:0.55rem;
+    position:relative;
+  }
+  .hero h2.vi{
+    font-size:1.15rem;
+    font-weight:600;
+    font-style:italic;
+    color:#a9e6cf;
+    margin-bottom:1rem;
+    position:relative;
+  }
+  .hero p.desc{
+    max-width:720px;
+    margin:0 auto;
+    opacity:0.92;
+    font-size:0.98rem;
+    position:relative;
+  }
+  .hero p.desc .vi-line{
+    display:block;
+    font-style:italic;
+    color:#bfe9d8;
+    margin-top:0.4rem;
+    font-size:0.93rem;
+  }
+
+  /* META STATS */
+  .stats-strip{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    gap:0.9rem;
+    margin-bottom:2rem;
+  }
+  .stat-tile{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:1rem;
+    padding:1rem 0.75rem;
+    text-align:center;
+    box-shadow:0 6px 16px -10px rgba(15,30,45,0.25);
+  }
+  .stat-tile .num{
+    font-size:1.55rem;
+    font-weight:800;
+    color:var(--navy-dark);
+  }
+  .stat-tile .lbl{
+    font-size:0.78rem;
+    font-weight:700;
+    color:var(--blue);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    margin-top:0.15rem;
+  }
+  .stat-tile .lbl .vi{
+    display:block;
+    color:var(--vi-green);
+    font-style:italic;
+    font-weight:600;
+    text-transform:none;
+    letter-spacing:0;
+    font-size:0.76rem;
+  }
+
+  /* LEGEND */
+  .legend{
+    display:flex;
+    gap:0.75rem;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:2.25rem;
+    font-size:0.85rem;
+  }
+  .legend span{
+    display:inline-flex;
+    align-items:center;
+    gap:0.4rem;
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    padding:0.4rem 0.9rem;
+    border-radius:40px;
+    color:var(--navy);
+    font-weight:600;
+  }
+  .legend .dot{width:0.6rem;height:0.6rem;border-radius:50%;display:inline-block;}
+  .legend .dot.g{background:var(--true-green);}
+  .legend .dot.r{background:var(--false-red);}
+
+  /* CARDS */
+  .card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:1.25rem;
+    padding:1.6rem 1.75rem;
+    margin-bottom:1.25rem;
+    box-shadow:0 10px 28px -18px rgba(15,30,45,0.35);
+  }
+  .q-top{
+    display:flex;
+    align-items:flex-start;
+    gap:1rem;
+    margin-bottom:0.9rem;
+  }
+  .q-num{
+    flex:0 0 auto;
+    width:2.6rem;
+    height:2.6rem;
+    border-radius:50%;
+    background:var(--navy-dark);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:1rem;
+    box-shadow:0 4px 10px rgba(0,0,0,0.18);
+  }
+  .q-text{flex:1 1 auto;}
+  .q-text .en{
+    font-weight:700;
+    font-size:1.06rem;
+    color:var(--navy-dark);
+  }
+  .q-text .vi{
+    font-style:italic;
+    color:var(--vi-green);
+    font-weight:600;
+    margin-top:0.3rem;
+    font-size:0.97rem;
+  }
+  .badge-row{
+    margin:0.9rem 0 1.1rem;
+  }
+  .badge{
+    display:inline-block;
+    font-weight:800;
+    font-size:0.82rem;
+    letter-spacing:0.04em;
+    padding:0.4rem 1.15rem;
+    border-radius:40px;
+    color:#fff;
+  }
+  .badge.true{background:var(--true-green);box-shadow:0 6px 14px -6px rgba(39,174,96,0.55);}
+  .badge.false{background:var(--false-red);box-shadow:0 6px 14px -6px rgba(192,57,43,0.55);}
+
+  .explain{
+    background:#f6f9fc;
+    border-left:4px solid var(--blue);
+    border-radius:0.6rem;
+    padding:0.95rem 1.1rem;
+  }
+  .explain.is-false{border-left-color:var(--false-red);}
+  .explain.is-true{border-left-color:var(--true-green);}
+  .explain p{
+    font-size:0.93rem;
+    margin-bottom:0.65rem;
+    color:#2c3e50;
+  }
+  .explain p:last-child{margin-bottom:0;}
+  .explain p.vi{
+    font-style:italic;
+    color:var(--vi-green);
+  }
+  .concept-tag{
+    display:inline-block;
+    margin-top:0.7rem;
+    font-size:0.72rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--navy);
+    background:#e4edf6;
+    padding:0.25rem 0.7rem;
+    border-radius:6px;
+  }
+
+  /* ANSWER SELECTION (pre-submit) */
+  .answer-select{
+    display:flex;
+    gap:0.75rem;
+    margin-bottom:1rem;
+    flex-wrap:wrap;
+  }
+  .ans-btn{
+    flex:1 1 160px;
+    padding:0.7rem 1rem;
+    border-radius:0.85rem;
+    border:2px solid var(--border);
+    background:#fff;
+    font-weight:800;
+    font-size:0.88rem;
+    letter-spacing:0.02em;
+    cursor:pointer;
+    color:var(--navy);
+    transition:all .15s ease;
+  }
+  .ans-btn:hover:not(:disabled){border-color:var(--blue);transform:translateY(-1px);}
+  .ans-btn.selected.ans-true{border-color:var(--true-green);background:#e8f8ef;color:var(--true-green);}
+  .ans-btn.selected.ans-false{border-color:var(--false-red);background:#fdecea;color:var(--false-red);}
+  .ans-btn:disabled{cursor:not-allowed;}
+  .ans-btn.correct-pick{border-color:var(--true-green);background:#e8f8ef;color:var(--true-green);opacity:1;}
+  .ans-btn.wrong-pick{border-color:var(--false-red);background:#fdecea;color:var(--false-red);text-decoration:line-through;opacity:0.85;}
+
+  /* RESULTS (hidden until submit) */
+  .badge-row, .explain{display:none;}
+  .card.revealed .badge-row, .card.revealed .explain{display:block;}
+  .card{border-width:1px;transition:border-color .2s ease, box-shadow .2s ease;}
+  .card.correct-answer{border-color:var(--true-green);box-shadow:0 0 0 2px rgba(39,174,96,0.22);}
+  .card.wrong-answer{border-color:var(--false-red);box-shadow:0 0 0 2px rgba(192,57,43,0.22);}
+  .card.needs-answer{border-color:var(--false-red);box-shadow:0 0 0 2px rgba(192,57,43,0.3);}
+
+  .result-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:0.4rem;
+    font-weight:800;
+    font-size:0.82rem;
+    padding:0.35rem 0.9rem;
+    border-radius:40px;
+    margin-bottom:0.9rem;
+  }
+  .result-tag.ok{background:#e8f8ef;color:var(--true-green);}
+  .result-tag.bad{background:#fdecea;color:var(--false-red);}
+
+  /* SCORE SUMMARY (hidden until submit) */
+  .score-summary{
+    display:none;
+    background:linear-gradient(120deg, var(--navy-dark) 0%, var(--blue) 130%);
+    color:#fff;
+    border-radius:1.25rem;
+    padding:1.85rem;
+    text-align:center;
+    margin-bottom:2rem;
+    box-shadow:0 20px 40px -18px rgba(15,30,45,0.5);
+  }
+  .score-summary .big{font-size:2.4rem;font-weight:800;}
+  .score-summary .sub{margin-top:0.5rem;font-size:0.97rem;opacity:0.95;}
+  .score-summary .sub .vi{display:block;font-style:italic;color:#bfe9d8;margin-top:0.25rem;}
+
+  /* STICKY ACTION BAR */
+  .action-bar{
+    position:fixed;
+    left:50%;
+    bottom:1.1rem;
+    transform:translateX(-50%);
+    width:min(600px, calc(100% - 2rem));
+    z-index:100;
+    background:var(--navy-dark);
+    color:#fff;
+    border-radius:1rem;
+    padding:0.85rem 1.25rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    flex-wrap:wrap;
+    box-shadow:0 15px 35px -10px rgba(0,0,0,0.5);
+  }
+  .action-bar .progress-info{font-weight:700;font-size:0.92rem;}
+  .action-bar .progress-info .vi{display:block;font-style:italic;font-weight:500;color:#a9e6cf;font-size:0.76rem;margin-top:0.1rem;}
+  .action-bar .warn{display:none;color:#ffd399;font-size:0.78rem;font-weight:700;flex-basis:100%;text-align:center;}
+  .action-bar .warn .vi{display:block;font-style:italic;font-weight:500;}
+  .action-bar .btn-group{display:flex;gap:0.6rem;}
+  .submit-btn, .reset-btn{
+    border:none;
+    padding:0.7rem 1.4rem;
+    border-radius:40px;
+    font-weight:800;
+    font-size:0.86rem;
+    cursor:pointer;
+    letter-spacing:0.02em;
+  }
+  .submit-btn{background:var(--gold);color:var(--navy-dark);}
+  .submit-btn:hover{filter:brightness(1.06);}
+  .reset-btn{background:transparent;border:2px solid #fff;color:#fff;display:none;}
+  .reset-btn:hover{background:#fff;color:var(--navy-dark);}
+
+  footer{
+    text-align:center;
+    margin-top:2.5rem;
+    font-size:0.85rem;
+    color:#5a6b7d;
+  }
+  footer .vi{display:block;font-style:italic;color:var(--vi-green);margin-top:0.25rem;}
+
+  @media (max-width:600px){
+    .hero{padding:2.25rem 1.25rem;}
+    .hero h1{font-size:1.6rem;}
+    .card{padding:1.25rem 1.1rem;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="eyebrow">Breakthrough Vision &middot; Module Review</span>
+    <h1>True / False Review Quiz</h1>
+    <h2 class="vi">Bài Kiểm Tra Ôn Tập Đúng / Sai</h2>
+    <p class="desc">
+      22 statements testing your grasp of the core Breakthrough Vision concepts — quality &amp; entitlement, the Utility/Worth/Access and Capability/Capacity/Cost value equations, performance metrics &amp; cascading goals, cost-of-poor-quality (COPQ), customer focus, and breakthrough rate-of-change. Every answer below is verified directly against the course lecture transcripts.
+      <span class="vi-line">22 câu phát biểu kiểm tra sự nắm vững các khái niệm cốt lõi của Breakthrough Vision — chất lượng &amp; sự xứng đáng (entitlement), phương trình giá trị Utility/Worth/Access và Capability/Capacity/Cost, chỉ số hiệu suất &amp; phân tầng mục tiêu, chi phí chất lượng kém (COPQ), tập trung khách hàng, và tốc độ thay đổi đột phá. Mọi đáp án dưới đây đều được xác minh trực tiếp từ băng ghi hình bài giảng.</span>
+    </p>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat-tile"><div class="num">22</div><div class="lbl">Questions<span class="vi">Câu hỏi</span></div></div>
+    <div class="stat-tile"><div class="num">T/F</div><div class="lbl">Format<span class="vi">Định dạng</span></div></div>
+    <div class="stat-tile"><div class="num">3</div><div class="lbl">Core Modules<span class="vi">Học phần cốt lõi</span></div></div>
+    <div class="stat-tile"><div class="num">100%</div><div class="lbl">Transcript-Verified<span class="vi">Xác minh từ băng ghi hình</span></div></div>
+  </div>
+
+  <div class="legend">
+    <span><span class="dot g"></span> TRUE / ĐÚNG</span>
+    <span><span class="dot r"></span> FALSE / SAI</span>
+  </div>
+
+  <div class="score-summary" id="score-summary"></div>
+
+  <!-- Q1 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">1</div>
+      <div class="q-text">
+        <div class="en">Lean Six Sigma is concerned with the quality of the business.</div>
+        <div class="vi">Lean Six Sigma quan tâm đến chất lượng của doanh nghiệp (chất lượng của toàn bộ hoạt động kinh doanh).</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>The lecture draws an explicit distinction between being "in the business of quality" (having a dedicated quality department, following inspection standards, treating quality as one function among many) versus being concerned with "the quality of the business" itself — quality as a property of the entire enterprise: its strategy, economics, processes, and culture. Six Sigma, as taught in the Definition of Quality module, explicitly aligns with the second framing. This is why Six Sigma metrics tie process capability directly to profit, cost, and shareholder value rather than treating quality as a departmental checkbox.</p>
+      <p class="vi">Bài giảng phân biệt rõ giữa việc "làm ngành nghề chất lượng" (có phòng ban chất lượng riêng, tuân theo tiêu chuẩn kiểm tra) và việc quan tâm đến "chất lượng của doanh nghiệp" — tức chất lượng là thuộc tính của toàn bộ tổ chức: chiến lược, kinh tế, quy trình và văn hóa. Six Sigma gắn liền với cách tiếp cận thứ hai. Đây là lý do các chỉ số Six Sigma luôn gắn trực tiếp năng lực quy trình với lợi nhuận và giá trị cổ đông, thay vì coi chất lượng chỉ là một mục kiểm tra của phòng ban.</p>
+      <span class="concept-tag">Concept: "Business of Quality" vs. "Quality of the Business"</span>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">2</div>
+      <div class="q-text">
+        <div class="en">The entitlement level of something is a rightful level of expectation.</div>
+        <div class="vi">Mức độ xứng đáng (entitlement) của một điều gì đó chính là mức kỳ vọng chính đáng mà nó đáng được hưởng.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>This is taken almost verbatim from the course's Definition of Quality lecture, which explicitly defines "entitlement" as "a rightful level of expectation" — the performance level a product, service, or process legitimately deserves given its design and intended use, not merely what happens to occur today. This concept underpins the entire framework: gaps between the entitled (rightful) level of performance and the actual observed level are exactly what Black Belts are trained to close through DMAIC.</p>
+      <p class="vi">Câu này gần như trích nguyên văn từ bài giảng Định nghĩa Chất lượng, trong đó "entitlement" được định nghĩa rõ là "một mức kỳ vọng chính đáng" — mức hiệu suất mà một sản phẩm, dịch vụ hay quy trình đáng được đạt tới xét theo thiết kế và mục đích sử dụng, chứ không chỉ là những gì đang xảy ra hiện tại. Khoảng cách giữa mức "xứng đáng" và mức hiệu suất thực tế chính là điều mà Black Belt được đào tạo để thu hẹp thông qua DMAIC.</p>
+      <span class="concept-tag">Concept: Entitlement = Rightful Level of Expectation</span>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">3</div>
+      <div class="q-text">
+        <div class="en">Quality is a realized state of value entitlement (for the customer and provider).</div>
+        <div class="vi">Chất lượng là một trạng thái đã được hiện thực hóa của sự xứng đáng về giá trị (dành cho cả khách hàng và nhà cung cấp).</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>This is the course's signature definition of quality, and it deliberately goes beyond classic quality gurus such as Crosby, Juran, Deming, and Ishikawa, whose definitions focus almost exclusively on the customer. The lecturer critiques this gap directly: if the provider does not also realize entitled value (profit, sustainability, capability), the exchange isn't truly a "quality" experience — it's one-sided. Quality here requires BOTH parties to realize the value they are rightfully owed.</p>
+      <p class="vi">Đây là định nghĩa đặc trưng của khóa học về chất lượng, cố tình vượt ra ngoài định nghĩa của các bậc thầy chất lượng kinh điển như Crosby, Juran, Deming và Ishikawa — những người gần như chỉ tập trung vào khách hàng. Giảng viên phê phán rõ khoảng trống này: nếu nhà cung cấp không đồng thời nhận được giá trị xứng đáng, đó không thực sự là một trải nghiệm "chất lượng" — mà là một chiều. Chất lượng đòi hỏi CẢ HAI bên đều nhận được giá trị chính đáng của mình.</p>
+      <span class="concept-tag">Concept: Dual-Sided Definition of Quality</span>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">4</div>
+      <div class="q-text">
+        <div class="en">UTILITY is a quality dimension that considers: 1) Form, 2) Fit, and 3) Compliance.</div>
+        <div class="vi">UTILITY (Tính hữu dụng) là một khía cạnh chất lượng xem xét: 1) Hình dạng (Form), 2) Sự vừa vặn (Fit), và 3) Sự tuân thủ (Compliance).</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge false">FALSE / SAI</span></div>
+    <div class="explain is-false">
+      <p>Multiple lectures ("Definition of Quality and the Six Sigma Meaning" and "Primary Elements of Product and Service Value") consistently define Utility using the classic triad Form, Fit, and <strong>FUNCTION</strong> — not "Compliance." Form is the physical/aesthetic characteristics; Fit is how well it integrates with its intended system or use-context; Function is whether it actually performs the job it was designed to do. "Compliance" is never used as the third element — it's a distractor swapping in a regulatory-sounding word for the correct, purpose-oriented "Function."</p>
+      <p class="vi">Nhiều bài giảng đều nhất quán định nghĩa Utility theo bộ ba kinh điển là Hình dạng (Form), Sự vừa vặn (Fit), và <strong>CHỨC NĂNG (Function)</strong> — chứ không phải "Sự tuân thủ (Compliance)". Form là đặc điểm vật lý/thẩm mỹ, Fit là mức độ tương thích với hệ thống hoặc bối cảnh sử dụng, còn Function là việc nó có thực sự thực hiện đúng nhiệm vụ được thiết kế hay không. "Compliance" không bao giờ được dùng làm yếu tố thứ ba — đây là chi tiết gây nhiễu.</p>
+      <span class="concept-tag">Concept: Utility = Form / Fit / Function</span>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">5</div>
+      <div class="q-text">
+        <div class="en">Access is a quality dimension that considers: 1) Volume, 2) Timing, and 3) Location.</div>
+        <div class="vi">Access (Khả năng tiếp cận) là một khía cạnh chất lượng xem xét: 1) Số lượng (Volume), 2) Thời điểm (Timing), và 3) Vị trí (Location).</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>Multiple lectures confirm Access is defined by exactly these three sub-elements: Volume (is the right quantity available/delivered?), Timing (is it delivered on schedule, when needed?), and Location (is it delivered to the right place?). Access is the third of the three customer-side value dimensions, alongside Utility (Form/Fit/Function) and Worth (economic/emotional/intellectual) — even perfect Utility and fair Worth fail to deliver value if the customer can't access the right quantity, at the right time, in the right place.</p>
+      <p class="vi">Nhiều bài giảng xác nhận Access được định nghĩa chính xác bởi ba yếu tố này: Số lượng (đủ số lượng cần thiết hay không), Thời điểm (giao đúng lúc cần hay không), và Vị trí (giao đúng nơi cần hay không). Access là khía cạnh thứ ba trong ba khía cạnh giá trị phía khách hàng, cùng với Utility và Worth — ngay cả sản phẩm có Utility hoàn hảo cũng không tạo giá trị nếu khách hàng không thể tiếp cận đúng số lượng, đúng lúc, đúng nơi.</p>
+      <span class="concept-tag">Concept: Access = Volume / Timing / Location</span>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">6</div>
+      <div class="q-text">
+        <div class="en">WORTH is a quality dimension that is constrained to the field of economics.</div>
+        <div class="vi">WORTH (Giá trị xứng đáng) là một khía cạnh chất lượng chỉ giới hạn trong phạm vi kinh tế học.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge false">FALSE / SAI</span></div>
+    <div class="explain is-false">
+      <p>The lectures explicitly define Worth as having THREE sub-dimensions: economic worth, emotional worth, and intellectual worth — not economics alone. Economic worth relates to price/monetary value, but emotional worth captures how an offering makes the customer feel (status, pride, trust), and intellectual worth captures the perceived knowledge or expertise embedded in it. Constraining Worth to economics alone would ignore two-thirds of the framework and miss why customers often pay a premium for brands or expertise with no purely economic justification.</p>
+      <p class="vi">Các bài giảng định nghĩa rõ Worth có BA khía cạnh phụ: giá trị kinh tế, giá trị cảm xúc, và giá trị trí tuệ — không chỉ giới hạn trong kinh tế học. Giá trị kinh tế liên quan đến giá cả, giá trị cảm xúc phản ánh cảm nhận của khách hàng (địa vị, niềm tự hào, niềm tin), còn giá trị trí tuệ phản ánh kiến thức/chuyên môn được cảm nhận. Giới hạn Worth chỉ trong kinh tế học sẽ bỏ sót hai phần ba khung lý thuyết này.</p>
+      <span class="concept-tag">Concept: Worth = Economic / Emotional / Intellectual</span>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">7</div>
+      <div class="q-text">
+        <div class="en">Within Lean Six Sigma, performance metrics are only used to measure process quality.</div>
+        <div class="vi">Trong Lean Six Sigma, các chỉ số hiệu suất chỉ được dùng để đo lường chất lượng quy trình.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge false">FALSE / SAI</span></div>
+    <div class="explain is-false">
+      <p>The "Hierarchy of Business and Process Metrics" lecture describes THREE distinct levels of metrics: at the business level, financial metrics such as profit and revenue; at the operations level, efficacy metrics such as yield, DPMO, and cycle time; and only at the process level do we find capability metrics (Cp, Cpk) that measure process quality specifically. Reducing "performance metrics" to process quality alone ignores the two higher tiers of the metrics hierarchy.</p>
+      <p class="vi">Bài giảng "Hệ thống Phân cấp Chỉ số Kinh doanh và Quy trình" mô tả rõ BA cấp độ chỉ số khác nhau: ở cấp doanh nghiệp là các chỉ số tài chính (lợi nhuận, doanh thu); ở cấp vận hành là các chỉ số hiệu quả (năng suất, DPMO, thời gian chu kỳ); và chỉ ở cấp quy trình mới có các chỉ số năng lực (Cp, Cpk). Thu hẹp "chỉ số hiệu suất" chỉ còn chất lượng quy trình đã bỏ qua hai tầng cao hơn.</p>
+      <span class="concept-tag">Concept: Business / Operations / Process Metric Hierarchy</span>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">8</div>
+      <div class="q-text">
+        <div class="en">Performance metrics often reflect the true values of an organization.</div>
+        <div class="vi">Các chỉ số hiệu suất thường phản ánh những giá trị thực sự mà một tổ chức coi trọng.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>The course repeats a memorable maxim across multiple lectures: "We tend to measure what we value, and if it's not measurable, it's probably not valuable" and "we don't measure what we don't value." An organization's chosen metrics — not its mission statement — are the truest signal of its actual priorities; what gets tracked, reported, and rewarded is what leadership genuinely values, regardless of public messaging.</p>
+      <p class="vi">Khóa học lặp lại một câu châm ngôn dễ nhớ qua nhiều bài giảng: "Chúng ta có xu hướng đo lường những gì mình coi trọng, và nếu thứ gì đó không thể đo lường được thì có lẽ nó không thực sự có giá trị" và "chúng ta không đo lường những gì mình không coi trọng." Các chỉ số mà một tổ chức lựa chọn đo lường — chứ không phải tuyên bố sứ mệnh — mới là tín hiệu trung thực nhất về ưu tiên thực sự.</p>
+      <span class="concept-tag">Concept: "We Measure What We Value"</span>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">9</div>
+      <div class="q-text">
+        <div class="en">The forgetting curve and relearning curve are related to the concept of improvement curves.</div>
+        <div class="vi">Đường cong quên (forgetting curve) và đường cong học lại (relearning curve) có liên quan đến khái niệm đường cong cải tiến (improvement curves).</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>In "Creating and Applying Improvement Curves," the instructor explicitly discusses what happens when production stops for a period — a "forgetting curve" occurs during the gap, and when production resumes, a "relearning curve" appears with a steeper slope than the original curve, since workers must re-acquire lost proficiency faster than they gained it the first time. This ties directly to the broader concept of improvement/learning curves.</p>
+      <p class="vi">Trong bài giảng "Xây dựng và Áp dụng Đường cong Cải tiến," giảng viên trình bày rõ điều gì xảy ra khi sản xuất bị gián đoạn — một "đường cong quên" xuất hiện trong giai đoạn gián đoạn, và khi sản xuất được nối lại, một "đường cong học lại" xuất hiện với độ dốc lớn hơn đường cong ban đầu, vì người lao động phải khôi phục năng lực đã mất nhanh hơn lần đầu học được nó.</p>
+      <span class="concept-tag">Concept: Improvement / Learning Curves</span>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">10</div>
+      <div class="q-text">
+        <div class="en">The various levels of an organization should not be linked by cascading the performance goals.</div>
+        <div class="vi">Các cấp độ khác nhau trong tổ chức không nên được liên kết với nhau thông qua việc phân tầng (cascading) các mục tiêu hiệu suất.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge false">FALSE / SAI</span></div>
+    <div class="explain is-false">
+      <p>The course teaches the exact opposite: metrics and goals must "be correlated up and down the vertical tree" of the organization, and understanding "the hierarchy of cascading goals and objectives" is described as essential to Six Sigma deployment. Business-level financial goals must flow down into operations-level goals and further into process-level capability goals, with results flowing back up. Without this cascade, teams optimize local metrics disconnected from strategy.</p>
+      <p class="vi">Khóa học dạy điều ngược lại: các chỉ số và mục tiêu phải "được liên kết tương quan lên xuống theo cây phân cấp dọc," và việc hiểu "hệ thống phân cấp mục tiêu được phân tầng (cascading)" được mô tả là yếu tố thiết yếu trong triển khai Six Sigma. Mục tiêu tài chính cấp doanh nghiệp phải chuyển xuống cấp vận hành rồi cấp quy trình, và dữ liệu phải báo cáo ngược lên.</p>
+      <span class="concept-tag">Concept: Cascading Goal Hierarchy</span>
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">11</div>
+      <div class="q-text">
+        <div class="en">Lower level organizational goals should be correlated to higher level goals.</div>
+        <div class="vi">Các mục tiêu ở cấp thấp hơn trong tổ chức nên được tương quan (liên kết chặt chẽ) với các mục tiêu ở cấp cao hơn.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>This is the direct, correct complement to item 10. The "Hierarchy of Business and Process Metrics" and "Hierarchy of Business Goals" lectures describe exactly this correlation: a business-level goal (e.g., a target return) is decomposed into operational metrics (DPMO, cycle time, yield), which are further decomposed into process-level capability metrics (Cp) — the course explicitly discusses "the ability to flow requirements down or to flow requirements up" between these levels.</p>
+      <p class="vi">Đây là mệnh đề bổ sung chính xác cho câu 10. Các bài giảng về hệ thống phân cấp chỉ số và mục tiêu mô tả chính xác sự tương quan này: một mục tiêu cấp doanh nghiệp được phân rã thành các chỉ số vận hành, rồi tiếp tục phân rã thành chỉ số năng lực cấp quy trình. Khóa học nói rõ về "khả năng chuyển yêu cầu xuống dưới hoặc chuyển yêu cầu lên trên" giữa các cấp này.</p>
+      <span class="concept-tag">Concept: Goal Correlation Up/Down the Hierarchy</span>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">12</div>
+      <div class="q-text">
+        <div class="en">Quality goals are most commonly established at the business level of an organization.</div>
+        <div class="vi">Các mục tiêu chất lượng thường được thiết lập phổ biến nhất ở cấp doanh nghiệp (business level) trong tổ chức.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge false">FALSE / SAI</span></div>
+    <div class="explain is-false">
+      <p>The "Understanding the Hierarchy of Business Goals" lecture explains business-level goals "tend to be related to the fundamental economics of the business" — revenue, capacity, profit — essentially financial, not quality, targets. Quality/capability goals (Cp, Cpk, Sigma level) are established at the process level, while efficacy goals (yield, cycle time, DPMO) sit at the operations level in between.</p>
+      <p class="vi">Bài giảng "Hiểu về Hệ thống Phân cấp Mục tiêu Kinh doanh" giải thích các mục tiêu cấp doanh nghiệp "có xu hướng liên quan đến kinh tế nền tảng của doanh nghiệp" — doanh thu, năng lực sản xuất, lợi nhuận — về bản chất là mục tiêu tài chính, không phải mục tiêu chất lượng. Mục tiêu chất lượng/năng lực (Cp, Cpk, mức Sigma) được thiết lập ở cấp quy trình.</p>
+      <span class="concept-tag">Concept: Business-Level Goals = Financial, Not Quality</span>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">13</div>
+      <div class="q-text">
+        <div class="en">The cost-of-poor-quality (COPQ) is generally difficult for most organizations to accurately estimate.</div>
+        <div class="vi">Chi phí chất lượng kém (COPQ) nhìn chung khó được hầu hết các tổ chức ước tính một cách chính xác.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>The "Accounting for the Cost-of-Poor-Quality" lecture states that standard accounting systems "can only keep track of a few of these" cost categories, and organizations studying their COPQ often find it appears to be only about 1% of sales — a significant underestimate — "because they can't pull out from the accounting system and segregate it from other cost." This is the classic "hidden factory" phenomenon.</p>
+      <p class="vi">Bài giảng "Hạch toán Chi phí Chất lượng Kém" nói rõ hệ thống kế toán tiêu chuẩn "chỉ có thể theo dõi được một vài trong số các" hạng mục chi phí này, và các tổ chức khi nghiên cứu COPQ thường thấy con số chỉ khoảng 1% doanh thu — một sự đánh giá thấp đáng kể — "vì họ không thể tách nó ra khỏi hệ thống kế toán." Đây chính là hiện tượng "nhà máy ẩn" kinh điển.</p>
+      <span class="concept-tag">Concept: The Hidden Factory / COPQ Underestimation</span>
+    </div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">14</div>
+      <div class="q-text">
+        <div class="en">Prevention costs should not be included in the cost-of-poor-quality (COPQ) metric.</div>
+        <div class="vi">Chi phí phòng ngừa (prevention costs) không nên được đưa vào chỉ số chi phí chất lượng kém (COPQ).</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge false">FALSE / SAI</span></div>
+    <div class="explain is-false">
+      <p>As taught in this course, the "Accounting for the Cost-of-Poor-Quality" lecture explicitly breaks COPQ into four categories — internal appraisal, internal prevention, external appraisal, and external prevention — summarizing all four together as "the cost of poor quality categories," with planning, training, and process-control cited as prevention-cost examples. (Note: this differs from some traditional models where prevention/appraisal form a separate "cost of good quality" — but per this course's own terminology, prevention is explicitly included in COPQ.)</p>
+      <p class="vi">Theo cách khóa học này giảng dạy, bài giảng "Hạch toán Chi phí Chất lượng Kém" chia COPQ thành bốn hạng mục — thẩm định nội bộ, phòng ngừa nội bộ, thẩm định bên ngoài, phòng ngừa bên ngoài — và tổng kết cả bốn là "các hạng mục chi phí chất lượng kém," với lập kế hoạch, đào tạo, kiểm soát quy trình là ví dụ chi phí phòng ngừa. (Điều này khác một số mô hình truyền thống, nhưng đúng theo thuật ngữ khóa học này.)</p>
+      <span class="concept-tag">Concept: COPQ = 4 Categories Incl. Prevention (this course)</span>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">15</div>
+      <div class="q-text">
+        <div class="en">A Three Sigma organization typically has a cost of poor quality of 25-40%.</div>
+        <div class="vi">Một tổ chức đạt mức Ba Sigma (Three Sigma) thường có chi phí chất lượng kém (COPQ) ở mức 25-40% (doanh thu).</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>The "Examining the Dilemma of Inspection and Repair" lecture presents the classic sigma-level-to-COPQ benchmark table: at Three Sigma, "you're looking at 25 to 40% of sales... lost because of these non-value-added" activities — reinforced in "Management Concerns about COPQ" with figures "as high as 25 to 35, 40% of sales." The taught progression is roughly: Three Sigma 25-40%, Four Sigma 15-25%, Five Sigma 5-15%, Six Sigma under 1% of sales.</p>
+      <p class="vi">Bài giảng "Xem xét Nghịch lý của Kiểm tra và Sửa chữa" trình bày bảng chuẩn kinh điển: ở mức Ba Sigma, "bạn đang nhìn vào con số 25 đến 40% doanh thu... bị mất đi." Điều này được củng cố trong bài "Những Lo ngại của Quản lý về COPQ" với con số "cao đến 25, 35, thậm chí 40% doanh thu." Tiến trình được dạy đại khái: Ba Sigma 25-40%, Bốn Sigma 15-25%, Năm Sigma 5-15%, Sáu Sigma dưới 1%.</p>
+      <span class="concept-tag">Concept: COPQ-by-Sigma-Level Benchmark Table</span>
+    </div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">16</div>
+      <div class="q-text">
+        <div class="en">Maintaining a strong customer focus is essential to a global Lean Six Sigma deployment.</div>
+        <div class="vi">Duy trì sự tập trung mạnh mẽ vào khách hàng là điều thiết yếu đối với việc triển khai Lean Six Sigma trên quy mô toàn tổ chức.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>"Maintaining a Customer Focus to Ensure Improvement" is presented as one of the twelve fundamental success factors for deploying Six Sigma. The lecture ties customer focus directly to the "driving need" behind any Six Sigma effort — without understanding customer gaps in quality, price, and delivery, an initiative has no legitimate purpose. "Customer Focus as a Supreme Corporate Value" reinforces that only genuine customer focus reveals what is truly critical to satisfaction and value.</p>
+      <p class="vi">"Duy trì Tập trung vào Khách hàng để Đảm bảo Cải tiến" được trình bày là một trong mười hai yếu tố thành công nền tảng để triển khai Six Sigma. Bài giảng gắn kết trực tiếp sự tập trung khách hàng với "nhu cầu thúc đẩy" đằng sau nỗ lực Six Sigma — nếu không hiểu khoảng cách của khách hàng, sáng kiến sẽ không có mục đích chính đáng.</p>
+      <span class="concept-tag">Concept: 12 Fundamental Success Factors</span>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">17</div>
+      <div class="q-text">
+        <div class="en">Breakthrough (stretch) goals are essential to the successful implementation of Lean Six Sigma.</div>
+        <div class="vi">Các mục tiêu đột phá (breakthrough/stretch goals) là điều thiết yếu để triển khai thành công Lean Six Sigma.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>A dedicated lecture, "Building the Momentum toward Breakthrough," argues explicitly for breakthrough goals: a modest target (e.g., 5%/year) causes teams to merely tweak existing processes, while an aggressive target — the course cites 78% per year compounded — forces people to "reinvent the way in which the work gets done." Stretch goals are a deliberate mechanism to force process redesign, listed among the twelve fundamental success factors.</p>
+      <p class="vi">Bài giảng riêng "Xây dựng Đà cho Sự Đột phá" lập luận rõ ràng vì sao mục tiêu đột phá quan trọng: mục tiêu khiêm tốn (5%/năm) khiến các nhóm chỉ điều chỉnh nhỏ, còn mục tiêu tham vọng — khóa học nêu 78%/năm lũy kế — buộc con người phải "tái tạo lại cách thức công việc được thực hiện." Mục tiêu đột phá là cơ chế có chủ đích buộc tái thiết kế quy trình.</p>
+      <span class="concept-tag">Concept: Breakthrough Goals Force Reinvention</span>
+    </div>
+  </div>
+
+  <!-- Q18 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">18</div>
+      <div class="q-text">
+        <div class="en">A Lean Six Sigma rate of change is defined as an annualized improvement rate of 50%.</div>
+        <div class="vi">Tốc độ thay đổi (rate of change) trong Lean Six Sigma được định nghĩa là tỷ lệ cải thiện hàng năm ở mức 50%.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge false">FALSE / SAI</span></div>
+    <div class="explain is-false">
+      <p>The course explicitly and repeatedly defines "a Six Sigma rate of improvement" as approximately <strong>78% per year</strong> (an 11.76% monthly compounded rate) — not 50%. This precise figure appears in "Definition of a Six Sigma Rate-of-Improvement," "Building the Momentum toward Breakthrough," and again in "Questing for the Realization of Operational Freedom." A 50% figure appears elsewhere only as an illustrative, more modest decade-long benchmark — not the formal definition.</p>
+      <p class="vi">Khóa học định nghĩa rõ ràng và lặp lại nhiều lần rằng "tỷ lệ cải thiện Six Sigma" là khoảng <strong>78% mỗi năm</strong> (tương đương 11.76% mỗi tháng lũy kế) — chứ không phải 50%. Con số này xuất hiện trong nhiều bài giảng khác nhau. Con số 50% có xuất hiện ở nơi khác nhưng chỉ như một chuẩn minh họa khiêm tốn hơn, không phải định nghĩa chính thức.</p>
+      <span class="concept-tag">Concept: 78%/Year Compounded Rate of Improvement</span>
+    </div>
+  </div>
+
+  <!-- Q19 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">19</div>
+      <div class="q-text">
+        <div class="en">The provider's perspective of value is Capability, Capacity, and Cost.</div>
+        <div class="vi">Góc nhìn của nhà cung cấp về giá trị là Năng lực (Capability), Công suất (Capacity), và Chi phí (Cost).</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge true">TRUE / ĐÚNG</span></div>
+    <div class="explain is-true">
+      <p>"Recognizing the Value Proposition of Six Sigma" explicitly presents the provider-side value equation as Value = (Capability × Capacity) / Cost — the mirror-image counterpart to the customer-side Utility/Worth/Access framework. Capability is the ability to meet requirements (process capability, Cpk), Capacity is sustainable volume/throughput, and Cost is required resource expenditure. Together they define whether a provider can profitably deliver the value customers are entitled to.</p>
+      <p class="vi">Bài giảng "Nhận diện Đề xuất Giá trị của Six Sigma" trình bày rõ phương trình giá trị phía nhà cung cấp là Giá trị = (Năng lực × Công suất) / Chi phí — khung tương ứng đối xứng với khung phía khách hàng (Utility/Worth/Access). Capability là khả năng đáp ứng yêu cầu, Capacity là thông lượng bền vững, Cost là nguồn lực cần chi ra.</p>
+      <span class="concept-tag">Concept: Value = (Capability × Capacity) / Cost</span>
+    </div>
+  </div>
+
+  <!-- Q20 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">20</div>
+      <div class="q-text">
+        <div class="en">From a provider's perspective value is increased by increasing Capability and Cost while decreasing Cost.</div>
+        <div class="vi">Từ góc nhìn nhà cung cấp, giá trị được gia tăng bằng cách tăng Năng lực (Capability) và Chi phí (Cost) trong khi giảm Chi phí (Cost).</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge false">FALSE / SAI</span></div>
+    <div class="explain is-false">
+      <p>This statement is self-contradictory as written (Cost simultaneously increased and decreased). Per Value = (Capability × Capacity) / Cost, the lecture states explicitly: maximizing the numerator for constant cost increases value, and reducing the denominator (cost) while holding the numerator constant also increases value. Cost must go <strong>DOWN</strong>, never up, to increase value from the provider's side.</p>
+      <p class="vi">Câu này tự mâu thuẫn ngay trong cách diễn đạt (Chi phí vừa tăng vừa giảm cùng lúc). Theo phương trình Giá trị = (Năng lực × Công suất) / Chi phí, bài giảng nói rõ: tối đa hóa tử số với chi phí không đổi làm tăng giá trị, và giảm mẫu số (chi phí) trong khi giữ tử số không đổi cũng làm tăng giá trị. Chi phí phải <strong>GIẢM</strong>, không bao giờ tăng.</p>
+      <span class="concept-tag">Concept: Value ↑ via Capability/Capacity ↑ AND Cost ↓</span>
+    </div>
+  </div>
+
+  <!-- Q21 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">21</div>
+      <div class="q-text">
+        <div class="en">Test and Inspection work is considered value added.</div>
+        <div class="vi">Công việc Kiểm tra và Thanh tra (Test and Inspection) được xem là hoạt động tạo giá trị gia tăng (value added).</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge false">FALSE / SAI</span></div>
+    <div class="explain is-false">
+      <p>"Examining the Dilemma of Inspection and Repair" directly addresses why we inspect: "because we don't trust what happened" in the prior step. The instructor concludes that if we trusted the upstream process, "we wouldn't need to do this step... we could eliminate it," classifying test and inspection as a <strong>Non-Value-Added (NVA)</strong> activity — a classic Lean principle that activities compensating for process distrust are waste, not value.</p>
+      <p class="vi">Bài giảng "Xem xét Nghịch lý của Kiểm tra và Sửa chữa" giải thích trực tiếp vì sao chúng ta kiểm tra: "vì chúng ta không tin tưởng điều đã xảy ra" ở bước trước đó. Giảng viên kết luận nếu tin tưởng quy trình phía trước, "chúng ta sẽ không cần bước này," xếp loại kiểm tra/thanh tra là hoạt động <strong>Không Tạo Giá trị Gia tăng (NVA)</strong>.</p>
+      <span class="concept-tag">Concept: Test &amp; Inspection = Non-Value-Added</span>
+    </div>
+  </div>
+
+  <!-- Q22 -->
+  <div class="card">
+    <div class="q-top">
+      <div class="q-num">22</div>
+      <div class="q-text">
+        <div class="en">There is a point where it is no longer economically feasible to decrease defects.</div>
+        <div class="vi">Có một điểm mà tại đó việc tiếp tục giảm lỗi không còn khả thi về mặt kinh tế nữa.</div>
+      </div>
+    </div>
+    <div class="answer-select">
+      <button type="button" class="ans-btn ans-true" onclick="selectAnswer(this,'true')">TRUE / ĐÚNG</button>
+      <button type="button" class="ans-btn ans-false" onclick="selectAnswer(this,'false')">FALSE / SAI</button>
+    </div>
+    <div class="badge-row"><span class="badge false">FALSE / SAI</span></div>
+    <div class="explain is-false">
+      <p>"Historical Belief about Product Quality and Costs" explicitly labels the idea of a fixed economic "crossover point" or "saddle of optimality" as a <strong>false, historical belief</strong> ("they falsely believe there is a crossover point... don't improve quality too much or it might put you out of business"). Motorola's real findings showed that under a prevention-based improvement approach, that supposed optimal point keeps shifting outward as capability improves — there is no fixed ceiling.</p>
+      <p class="vi">Bài giảng "Niềm tin Lịch sử về Chất lượng Sản phẩm và Chi phí" nêu rõ ý tưởng về một "điểm giao cắt" kinh tế cố định là một niềm tin lịch sử <strong>SAI LẦM</strong> ("họ tin sai rằng có một điểm giao cắt... đừng cải tiến chất lượng quá nhiều"). Phát hiện thực tế của Motorola cho thấy điểm tối ưu giả định đó liên tục dịch chuyển ra xa hơn khi năng lực cải thiện — không có trần cố định nào.</p>
+      <span class="concept-tag">Concept: The Debunked "Economic Ceiling" Myth</span>
+    </div>
+  </div>
+
+  <footer>
+    Source: Lecture transcripts from the Mindpro Black Belt "Breakthrough Vision" curriculum (Definition of Quality, Value Proposition, Metrics Reporting, BOPI Goals, Underpinning Economics, and Success Factors modules).
+    <span class="vi">Nguồn: Băng ghi hình bài giảng thuộc chương trình "Breakthrough Vision" của khóa Mindpro Black Belt (các học phần Định nghĩa Chất lượng, Đề xuất Giá trị, Báo cáo Chỉ số, Mục tiêu BOPI, Kinh tế Nền tảng, và Yếu tố Thành công).</span>
+  </footer>
+
+</div>
+
+<div class="action-bar" id="action-bar">
+  <div class="progress-info" id="progress-info">
+    <span id="progress-count">0</span>/22 answered
+    <span class="vi">đã trả lời</span>
+  </div>
+  <span class="warn" id="warn-msg">
+    Please answer all questions before submitting.
+    <span class="vi">Vui lòng trả lời tất cả câu hỏi trước khi nộp bài.</span>
+  </span>
+  <div class="btn-group">
+    <button type="button" class="submit-btn" id="submit-btn" onclick="submitQuiz()">Nộp bài / Submit Quiz</button>
+    <button type="button" class="reset-btn" id="reset-btn" onclick="resetQuiz()">Làm lại / Try Again</button>
+  </div>
+</div>
+
+<script>
+  function updateProgress(){
+    var answered = document.querySelectorAll('.card[data-selected]').length;
+    document.getElementById('progress-count').textContent = answered;
+  }
+
+  function selectAnswer(btn, val){
+    var card = btn.closest('.card');
+    if(card.classList.contains('revealed')) return;
+    card.setAttribute('data-selected', val);
+    card.classList.remove('needs-answer');
+    var btns = card.querySelectorAll('.ans-btn');
+    for(var i=0;i<btns.length;i++){ btns[i].classList.remove('selected'); }
+    btn.classList.add('selected');
+    updateProgress();
+  }
+
+  function submitQuiz(){
+    var cards = document.querySelectorAll('.card');
+    var unanswered = [];
+    cards.forEach(function(card){
+      if(!card.getAttribute('data-selected')){ unanswered.push(card); card.classList.add('needs-answer'); }
+    });
+
+    var warn = document.getElementById('warn-msg');
+    if(unanswered.length > 0){
+      warn.style.display = 'block';
+      unanswered[0].scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    warn.style.display = 'none';
+
+    var correct = 0;
+    var total = cards.length;
+    cards.forEach(function(card){
+      var badge = card.querySelector('.badge');
+      var correctVal = badge.classList.contains('true') ? 'true' : 'false';
+      var selected = card.getAttribute('data-selected');
+      var isCorrect = (selected === correctVal);
+      if(isCorrect) correct++;
+
+      card.classList.add('revealed');
+      card.classList.add(isCorrect ? 'correct-answer' : 'wrong-answer');
+
+      var correctBtn = card.querySelector('.ans-btn.ans-' + correctVal);
+      if(correctBtn) correctBtn.classList.add('correct-pick');
+      if(!isCorrect){
+        var wrongBtn = card.querySelector('.ans-btn.ans-' + selected);
+        if(wrongBtn) wrongBtn.classList.add('wrong-pick');
+      }
+      var btns = card.querySelectorAll('.ans-btn');
+      for(var i=0;i<btns.length;i++){ btns[i].disabled = true; }
+
+      var tag = document.createElement('div');
+      tag.className = 'result-tag ' + (isCorrect ? 'ok' : 'bad');
+      tag.innerHTML = isCorrect
+        ? '&#10003; Correct &nbsp;/&nbsp; Đúng'
+        : '&#10007; Incorrect &nbsp;/&nbsp; Sai';
+      var badgeRow = card.querySelector('.badge-row');
+      badgeRow.parentNode.insertBefore(tag, badgeRow);
+    });
+
+    var pct = Math.round((correct/total)*100);
+    var msgEn, msgVi;
+    if(pct >= 90){ msgEn = 'Outstanding mastery of the material!'; msgVi = 'Xuất sắc, bạn đã nắm vững kiến thức!'; }
+    else if(pct >= 70){ msgEn = 'Solid understanding — review the misses below.'; msgVi = 'Nắm khá tốt — hãy xem lại các câu sai bên dưới.'; }
+    else { msgEn = 'Worth another pass through the lessons before retrying.'; msgVi = 'Nên ôn lại bài giảng thêm một lượt trước khi làm lại.'; }
+
+    var summary = document.getElementById('score-summary');
+    summary.innerHTML =
+      '<div class="big">' + correct + ' / ' + total + ' (' + pct + '%)</div>' +
+      '<div class="sub">' + msgEn + '<span class="vi">' + msgVi + '</span></div>';
+    summary.style.display = 'block';
+
+    document.getElementById('progress-info').innerHTML =
+      'Score: <span id="progress-count">' + correct + '/' + total + '</span>' +
+      '<span class="vi">Điểm số</span>';
+    document.getElementById('submit-btn').style.display = 'none';
+    document.getElementById('reset-btn').style.display = 'inline-block';
+
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function resetQuiz(){
+    document.querySelectorAll('.card').forEach(function(card){
+      card.removeAttribute('data-selected');
+      card.classList.remove('revealed','correct-answer','wrong-answer','needs-answer');
+      var tag = card.querySelector('.result-tag');
+      if(tag) tag.remove();
+      var btns = card.querySelectorAll('.ans-btn');
+      for(var i=0;i<btns.length;i++){
+        btns[i].classList.remove('selected','correct-pick','wrong-pick');
+        btns[i].disabled = false;
+      }
+    });
+    document.getElementById('score-summary').style.display = 'none';
+    document.getElementById('warn-msg').style.display = 'none';
+    document.getElementById('progress-info').innerHTML =
+      '<span id="progress-count">0</span>/22 answered<span class="vi">đã trả lời</span>';
+    document.getElementById('submit-btn').style.display = 'inline-block';
+    document.getElementById('reset-btn').style.display = 'none';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+</script>
+
+</body>
+</html>

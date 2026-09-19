@@ -1,0 +1,229 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Construction of a Sigma-Based Benchmarking Chart
+
+2
+00:00:05.000 --> 00:00:09.100
+Welcome back to this session on benchmarking. Recall,
+
+3
+00:00:09.100 --> 00:00:14.866
+we took a look at the error rate in a unit of product and the total number of units produced.
+
+4
+00:00:14.866 --> 00:00:18.566
+And was able to ascertain the unit error rate.
+
+5
+00:00:18.566 --> 00:00:24.632
+We took that number. Divided it by the number of opportunities per unit.
+
+6
+00:00:24.633 --> 00:00:31.233
+In this case it was four. This was the number of critical to quality characteristics
+
+7
+00:00:31.233 --> 00:00:35.866
+that was present in that unit of product or service.
+
+8
+00:00:35.866 --> 00:00:39.632
+Things that must be right about that unit or service.
+
+9
+00:00:39.633 --> 00:00:45.266
+And what we found is there were 50 of those things that weren’t right.
+
+10
+00:00:45.266 --> 00:00:52.432
+So, that gives us an opportunity error rate of .0125.
+
+11
+00:00:52.433 --> 00:00:59.099
+A thousand units at four opportunities per unit is 4,000 defect opportunities produced.
+
+12
+00:00:59.100 --> 00:01:04.133
+50 divided by 4,000 is .0125.
+
+13
+00:01:04.133 --> 00:01:10.099
+With that 0125, we get our DPMO, with the DPMO, we get our Sigma capability.
+
+14
+00:01:10.100 --> 00:01:17.066
+Now, a simpler way to do that is to have a little graph here. Now, it’s pretty cool.
+
+15
+00:01:17.066 --> 00:01:20.532
+What this is. You can make these in Excel
+
+16
+00:01:20.533 --> 00:01:25.466
+or anywhere and we’ll be zooming in here to look specifically at these graphs.
+
+17
+00:01:25.466 --> 00:01:29.266
+So, I will have a logarithmic scale moving
+
+18
+00:01:29.266 --> 00:01:33.466
+on the vertical axis here. If we zoom in here real close.
+
+19
+00:01:33.466 --> 00:01:39.999
+Let's look at what we mean by a log scale. We’re going to go real tight here.
+
+20
+00:01:40.000 --> 00:01:45.733
+So, we can make this big. I mean really big.
+
+21
+00:01:45.733 --> 00:01:50.099
+Okay. Notice here is one and here's ten.
+
+22
+00:01:50.100 --> 00:01:53.600
+See these lines, how to get closer, and closer, and closer, together.
+
+23
+00:01:53.600 --> 00:02:00.566
+Well, this is 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.
+
+24
+00:02:00.566 --> 00:02:07.166
+Then it progresses by another 10. This now goes 10, 20, 30, 40, 60, 80, 100.
+
+25
+00:02:07.166 --> 00:02:11.366
+This now goes 100, 200, 300, 400 to a 1,000.
+
+26
+00:02:11.366 --> 00:02:16.832
+1,000, 2,000, 3,000 to 10,000. That's a logarithmic scale.
+
+27
+00:02:16.833 --> 00:02:23.833
+And what we’re going to do is simply take our calculation.
+
+28
+00:02:23.833 --> 00:02:30.799
+Recall from here, 12,500 DPMO. Locate it here
+
+29
+00:02:30.800 --> 00:02:36.800
+on this graph, project over
+
+30
+00:02:36.800 --> 00:02:43.433
+to the intersect, to this transfer line, and project down
+
+31
+00:02:43.433 --> 00:02:48.366
+to the Sigma scale.
+
+32
+00:02:48.366 --> 00:02:53.999
+And what we see is the intersect is 3.74 Sigma.
+
+33
+00:02:54.000 --> 00:03:00.133
+The same thing that we got from converting 12,500 defects per million opportunities
+
+34
+00:03:00.133 --> 00:03:06.066
+through a conversion table to a Sigma value. We’re just doing it graphically.
+
+35
+00:03:06.066 --> 00:03:13.066
+Converting 12,500
+
+36
+00:03:13.066 --> 00:03:16.332
+to the Sigma scale.
+
+37
+00:03:16.333 --> 00:03:21.166
+And one of the things that we’re going to do, is do that for all of our key processes.
+
+38
+00:03:21.166 --> 00:03:25.366
+We’re going to find where the defect rates are
+
+39
+00:03:25.366 --> 00:03:28.499
+for our key processes, project down and get the Sigmas.
+
+40
+00:03:28.500 --> 00:03:34.300
+And then look at the range in which they fall. That's how we go about benchmarking.
+
+41
+00:03:34.300 --> 00:03:38.133
+Now, as we move forward with that thinking.
+
+42
+00:03:38.133 --> 00:03:42.133
+What I want to do is show you a few simple benchmarks.
+
+43
+00:03:42.133 --> 00:03:49.099
+Let's take a look at this. Again, we have the same kind of chart.
+
+44
+00:03:49.100 --> 00:03:54.633
+Defects per million opportunities. We have Sigma scale of measure.
+
+45
+00:03:54.633 --> 00:04:00.766
+And, I want you look at some of these actual real-life benchmarks.
+
+46
+00:04:00.766 --> 00:04:07.732
+Here’s airline baggage handling, running about Four Sigma, as you can see.
+
+47
+00:04:07.733 --> 00:04:14.033
+Or about 6,800 defects per million opportunities.
+
+48
+00:04:14.033 --> 00:04:18.099
+Number of U.S. incarcerations. That's a scary thought.
+
+49
+00:04:18.100 --> 00:04:24.066
+And here's the airline flight fatality rate at about 6.2 Sigma. Somewhere in there.
+
+50
+00:04:24.066 --> 00:04:30.699
+Well notice this. This level of quality at Six Sigma.
+
+51
+00:04:30.700 --> 00:04:36.966
+Coming over here at Six Sigma and the airline baggage handling at about Four Sigma.
+
+52
+00:04:36.966 --> 00:04:43.266
+That's a 1,826 time difference.
+
+53
+00:04:43.266 --> 00:04:46.232
+Now, what’s that really telling me?
+
+54
+00:04:46.233 --> 00:04:52.399
+That says the next time you go get on an airplane, you are about 1,826 times
+
+55
+00:04:52.400 --> 00:04:56.066
+more likely to reach your destination than your bags.
+
+56
+00:04:56.066 --> 00:05:00.066
+That's the difference between Four Sigma and Six Sigma.
+
+57
+00:05:00.066 --> 00:05:05.066
+Thank you for choosing SSMI.

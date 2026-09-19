@@ -1,0 +1,189 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Steps for Calculating a Performance Baseline
+
+2
+00:00:05.000 --> 00:00:08.433
+Hello, Mike Harry back with you again, where we’re looking at baselining.
+
+3
+00:00:08.433 --> 00:00:13.333
+Recall that we took our unit error rate divided by the opportunities.
+
+4
+00:00:13.333 --> 00:00:16.933
+Recognizing that an opportunity here, could be the number of defect categories,
+
+5
+00:00:16.933 --> 00:00:19.833
+could be the number of things that could go wrong, or it could be the number
+
+6
+00:00:19.833 --> 00:00:22.899
+of things that has to go right. And we messed up,
+
+7
+00:00:22.900 --> 00:00:27.633
+say .05 per unit, four things had to go right per unit.
+
+8
+00:00:27.633 --> 00:00:31.633
+Then that's our opportunity error rate.
+
+9
+00:00:31.633 --> 00:00:35.633
+Of course multiplying that by a million gives us our DPMO.
+
+10
+00:00:35.633 --> 00:00:41.499
+Now, taking to the fourth step, we take the DPMO,
+
+11
+00:00:41.500 --> 00:00:45.500
+and we simply enter into a table of Sigma values.
+
+12
+00:00:45.500 --> 00:00:51.566
+We look up the DPMO and we see the corresponding Sigma is 3.74.
+
+13
+00:00:51.566 --> 00:00:56.399
+In other words, a 3.74 Sigma capability
+
+14
+00:00:56.400 --> 00:01:01.633
+is equivalent to 12,500 defects per million opportunities.
+
+15
+00:01:01.633 --> 00:01:04.633
+So, it's a way to express it.
+
+16
+00:01:04.633 --> 00:01:11.566
+The 3.74 is our baseline capability per opportunity.
+
+17
+00:01:11.566 --> 00:01:18.432
+And it's really pretty much that simple. So, when we look at these different applications,
+
+18
+00:01:18.433 --> 00:01:23.733
+I could say this teller right here is 3.74 Sigma,
+
+19
+00:01:23.733 --> 00:01:30.699
+but yet another teller, perhaps right here might be 4.2 Sigma.
+
+20
+00:01:30.700 --> 00:01:34.700
+Or a teller in the background here could be Five Sigma.
+
+21
+00:01:34.700 --> 00:01:37.700
+So, that would beg the question,
+
+22
+00:01:37.700 --> 00:01:42.400
+why is this person's baseline significantly higher than this person's?
+
+23
+00:01:42.400 --> 00:01:45.766
+Well, we would investigate, find out the causes,
+
+24
+00:01:45.766 --> 00:01:49.766
+and then perhaps standardize on the superior process.
+
+25
+00:01:49.766 --> 00:01:54.166
+In short, you can't tell where you're going
+
+26
+00:01:54.166 --> 00:01:59.299
+and how far you've come, without the post in the ground.
+
+27
+00:01:59.300 --> 00:02:05.833
+That's where you've been. What you did. So, you got a baseline from which that benchmark
+
+28
+00:02:05.833 --> 00:02:09.133
+becomes your guiding light
+
+29
+00:02:09.133 --> 00:02:13.133
+of how much, and how far you've come, in your improvement effort.
+
+30
+00:02:13.133 --> 00:02:17.133
+So, that's the simplest case here of baselining.
+
+31
+00:02:17.133 --> 00:02:23.399
+In this instance, we baseline with discrete data, pass-fail data, good-bad.
+
+32
+00:02:23.400 --> 00:02:29.300
+We can also do the same thing, with a few different steps, for continuous data.
+
+33
+00:02:29.300 --> 00:02:34.800
+Based upon means and standard deviations, and the histograms and so on.
+
+34
+00:02:34.800 --> 00:02:38.433
+For whether it's in normal data, nonnormal data.
+
+35
+00:02:38.433 --> 00:02:42.966
+So, we can literally benchmark virtually anything.
+
+36
+00:02:42.966 --> 00:02:49.399
+We can lay down a baseline for all of the core operations within a business.
+
+37
+00:02:49.400 --> 00:02:53.933
+Baseline them, determine how much improvement has to occur
+
+38
+00:02:53.933 --> 00:02:59.233
+and then periodically measure our rate of improvement against the baseline.
+
+39
+00:02:59.233 --> 00:03:04.899
+Let me say that again. This allows us to set forth a rate of improvement.
+
+40
+00:03:04.900 --> 00:03:10.366
+So, if my baseline is 12,500 defects per million opportunities,
+
+41
+00:03:10.366 --> 00:03:13.399
+corresponding to 3.74 Sigma.
+
+42
+00:03:13.400 --> 00:03:18.100
+And I want to improve, say that the DPMO rate,
+
+43
+00:03:18.100 --> 00:03:23.066
+at 30% per year over the next five years.
+
+44
+00:03:23.066 --> 00:03:27.766
+I can then see the Sigma capability of where I'm going. Where I want to be.
+
+45
+00:03:27.766 --> 00:03:33.132
+In order to close that gap, that's where we go in, identify projects.
+
+46
+00:03:33.133 --> 00:03:39.633
+Black belt, green belt projects. Execute those projects to derive that rate of improvement.
+
+47
+00:03:39.633 --> 00:03:45.699
+So, with that thought in mind, that concludes our discussion on establishing baselines.

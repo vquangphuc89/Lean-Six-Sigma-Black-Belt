@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Đánh Giá Tổng Hợp: 03. Business Principles Review | MBB Masterclass Exam</title>
+<style>
+  :root {
+    --navy-dark: #022c22;
+    --forest-deep: #064e3b;
+    --emerald: #047857;
+    --emerald-mint: #10b981;
+    --gold: #d97706;
+    --gold-light: #f59e0b;
+    --wood-dark: #78350f;
+    --wood-warm: #92400e;
+    --true-green: #059669;
+    --false-red: #dc2626;
+    --bg: #f0fdf4;
+    --card-bg: #ffffff;
+    --border: #d1fae5;
+    --text-main: #064e3b;
+    --text-muted: #374151;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Inter', sans-serif;
+    color: var(--text-main);
+    padding: 2rem 1rem 8rem;
+    line-height: 1.6;
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; }
+
+  /* HERO HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--forest-deep) 60%, var(--wood-dark) 100%);
+    border-radius: 1.5rem;
+    color: #fff;
+    padding: 3rem 2.25rem;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(6, 78, 59, 0.45);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 90% 10%, rgba(16, 185, 129, 0.35), transparent 60%);
+    pointer-events: none;
+  }
+  .hero .eyebrow {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    color: #f0fdf4;
+  }
+  .hero .sub-en {
+    font-size: 1.15rem;
+    color: #a7f3d0;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+  }
+  .hero .desc {
+    font-size: 0.98rem;
+    color: #ecfdf5;
+    max-width: 860px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* STATS DASHBOARD */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  .stat-tile {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+  .stat-tile:hover { transform: translateY(-2px); }
+  .stat-tile .num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--forest-deep);
+  }
+  .stat-tile .num.green { color: var(--true-green); }
+  .stat-tile .num.red { color: var(--false-red); }
+  .stat-tile .num.gold { color: var(--gold); }
+  .stat-tile .lbl {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--wood-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 0.2rem;
+  }
+  .stat-tile .lbl .vi {
+    display: block;
+    color: #059669;
+    font-style: italic;
+    font-weight: 500;
+    text-transform: none;
+    font-size: 0.76rem;
+  }
+
+  /* TOOLBAR & CONTROLS */
+  .toolbar {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  }
+  .filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .filter-btn {
+    background: #ecfdf5;
+    color: var(--forest-deep);
+    border: 1px solid #a7f3d0;
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--forest-deep);
+    color: #fff;
+    border-color: var(--forest-deep);
+  }
+  .action-group {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .action-btn {
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .action-btn:hover { background: var(--wood-warm); }
+  .action-btn.secondary {
+    background: #e2e8f0;
+    color: #1e293b;
+  }
+  .action-btn.secondary:hover { background: #cbd5e1; }
+
+  /* QUESTION CARD */
+  .quiz-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 1.25rem;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(6, 78, 59, 0.08);
+    transition: all 0.25s ease;
+  }
+  .quiz-card:hover {
+    border-color: var(--emerald-mint);
+    box-shadow: 0 15px 35px -10px rgba(6, 78, 59, 0.15);
+  }
+  .q-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 1.2rem;
+  }
+  .q-num {
+    flex: 0 0 auto;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--forest-deep), var(--navy-dark));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(6, 78, 59, 0.3);
+  }
+  .q-text { flex: 1 1 auto; }
+  .q-category-tag {
+    display: inline-block;
+    background: #ecfdf5;
+    color: #047857;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.4rem;
+  }
+  .q-text .en {
+    font-weight: 700;
+    font-size: 1.12rem;
+    color: var(--navy-dark);
+    line-height: 1.45;
+  }
+  .q-text .vi {
+    font-style: italic;
+    color: #047857;
+    font-weight: 500;
+    margin-top: 0.4rem;
+    font-size: 1.02rem;
+    line-height: 1.5;
+  }
+
+  /* INTERACTIVE CONTROLS */
+  .interactive-controls {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .prompt-lbl {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+  }
+  .choice-btns {
+    display: flex;
+    gap: 0.75rem;
+  }
+  .btn-choice {
+    padding: 0.55rem 1.4rem;
+    border-radius: 0.5rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .btn-true {
+    background: #ecfdf5;
+    color: var(--true-green);
+    border-color: #a7f3d0;
+  }
+  .btn-true:hover, .btn-true.selected {
+    background: var(--true-green);
+    color: #fff;
+    border-color: var(--true-green);
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+  }
+  .btn-false {
+    background: #fef2f2;
+    color: var(--false-red);
+    border-color: #fecaca;
+  }
+  .btn-false:hover, .btn-false.selected {
+    background: var(--false-red);
+    color: #fff;
+    border-color: var(--false-red);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+  }
+
+  .user-feedback {
+    display: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .user-feedback.correct {
+    display: block;
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #86efac;
+  }
+  .user-feedback.incorrect {
+    display: block;
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+  }
+
+  /* BADGE & EXPLANATION */
+  .badge-row {
+    margin: 1rem 0 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .ans-meta-lbl {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+  }
+  .badge {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    padding: 0.4rem 1.25rem;
+    border-radius: 999px;
+    color: #fff;
+  }
+  .badge.true {
+    background: var(--true-green);
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+  }
+  .badge.false {
+    background: var(--false-red);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+  }
+
+  .explain {
+    background: #f0fdf4;
+    border-left: 4px solid var(--emerald);
+    border-radius: 0.6rem;
+    padding: 1.1rem 1.35rem;
+    font-size: 0.95rem;
+    color: #064e3b;
+    line-height: 1.6;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+  }
+  .explain.is-false {
+    background: #fef2f2;
+    border-left-color: var(--false-red);
+    color: #7f1d1d;
+  }
+  .explain.is-true {
+    background: #f0fdf4;
+    border-left-color: var(--true-green);
+    color: #064e3b;
+  }
+  .explain strong { font-weight: 700; }
+
+  /* HIDDEN IN TEST MODE */
+  .test-mode .answer-reveal {
+    display: none;
+  }
+
+  /* DOMAIN BREAKDOWN TABLE */
+  .domain-matrix {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.06);
+  }
+  .domain-matrix h3 {
+    color: var(--forest-deep);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .domain-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .domain-table th, .domain-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .domain-table th {
+    background: #ecfdf5;
+    color: var(--forest-deep);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+  }
+  .domain-table tr:hover td {
+    background: #f0fdf4;
+  }
+
+  /* FOOTER */
+  .quiz-footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+
+  @media (max-width: 768px) {
+    body { padding: 1rem 0.5rem 6rem; }
+    .hero { padding: 2rem 1.25rem; }
+    .hero h1 { font-size: 1.65rem; }
+    .card { padding: 1.25rem 1.25rem; }
+    .q-top { flex-direction: column; gap: 0.75rem; }
+    .interactive-controls { flex-direction: column; align-items: stretch; }
+    .choice-btns { justify-content: space-between; }
+    .btn-choice { flex: 1; justify-content: center; }
+  }
+</style>
+</head>
+<body class="study-mode">
+
+<div class="wrap">
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <span class="eyebrow">Master Black Belt Examination &bull; Module 03</span>
+    <h1 class="hero-title">Đánh Giá Tổng Hợp Nguyên Lý Kinh Doanh</h1>
+    <div class="hero-title-en">03. Business Principles Comprehensive Assessment &minus; 24 Master Questions</div>
+    <p class="desc">
+      Bài kiểm tra đánh giá chuẩn mực kiến thức Master Black Belt bao quát 6 phân hệ của <em>03. Business Principles</em>: Định nghĩa chất lượng, Tuyên bố giá trị, Mô hình Kano, Phương trình <i>Y = f(X)</i>, CTP/CTQ đòn bẩy, Tri thức đo lường và Kiểm soát phương sai tài chính.
+    </p>
+  </header>
+
+  <!-- STATS TILES -->
+  <section class="stats-grid">
+    <div class="stat-tile">
+      <div class="num" id="stat-total">24</div>
+      <div class="lbl">Tổng Số Câu<span class="vi">Total Questions</span></div>
+    </div>
+    <div class="stat-tile">
+      <div class="num green" id="stat-true">12</div>
+      <div class="lbl">Khẳng Định ĐÚNG<span class="vi">True Statements (50%)</span></div>
+    </div>
+    <div class="stat-tile">
+      <div class="num red" id="stat-false">12</div>
+      <div class="lbl">Khẳng Định SAI<span class="vi">False Statements (50%)</span></div>
+    </div>
+    <div class="stat-tile">
+      <div class="num gold" id="stat-score">0 / 24</div>
+      <div class="lbl">Điểm Tương Tác<span class="vi">Current Score</span></div>
+    </div>
+  </section>
+
+  <!-- TOOLBAR & FILTERS -->
+  <section class="toolbar">
+    <div class="filter-group">
+      <span style="font-size:0.85rem; font-weight:800; color:var(--forest-deep); margin-right:0.25rem;">LỌC / FILTER:</span>
+      <button class="filter-btn active" onclick="filterCards('all', this)">Tất cả (24)</button>
+      <button class="filter-btn" onclick="filterCards('true', this)">Chỉ câu Đúng (12)</button>
+      <button class="filter-btn" onclick="filterCards('false', this)">Chỉ câu Sai (12)</button>
+    </div>
+    <div class="action-group">
+      <button class="action-btn" id="btn-toggle-mode" onclick="toggleMode()">Chuyển Sang: Chế Độ Kiểm Tra (Test Mode)</button>
+      <button class="action-btn secondary" onclick="resetQuiz()">Làm Lại (Reset)</button>
+    </div>
+  </section>
+
+  <!-- QUESTIONS LIST -->
+  <main id="questions-container">
+
+    <!-- QUESTION 1 -->
+    <article class="quiz-card" id="card-1" data-id="1" data-answer="true" data-category="01. Quality Definition & Benchmarks">
+      <div class="q-top">
+        <div class="q-num">01</div>
+        <div class="q-text">
+          <div class="q-category-tag">01. Quality Definition & Benchmarks</div>
+          <div class="en">Lean Six Sigma long term performance translates to 3.4 defects-per-million opportunities for defect.</div>
+          <div class="vi">Hiệu suất dài hạn của Lean Six Sigma tương đương với 3.4 khuyết tật trên mỗi một triệu cơ hội xuất hiện lỗi (DPMO).</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(1, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(1, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-1"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-1">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-1">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Trong lý thuyết Six Sigma chuẩn mực của Motorola và TS. Mikel Harry, hiệu suất dài hạn (Long-term capability) của một quy trình 6-Sigma được định nghĩa chính xác là <strong>3.4 DPMO</strong> (Defects Per Million Opportunities).<br>
+        &bull; <em>Cơ chế toán học:</em> Con số này bao gồm giả định thực nghiệm về độ dịch chuyển tâm tự nhiên trong dài hạn là <strong>1.5&sigma; shift</strong> so với hiệu suất lý tưởng ngắn hạn (<i>Z</i><sub>short</sub> = 6.0 &rarr; <i>Z</i><sub>long</sub> = 4.5). Diện tích phần đuôi ngoài 4.5&sigma; trên phân phối chuẩn tương ứng với đúng 3.3976 ppm &approx; <strong>3.4 DPMO</strong>.<br>
+        &bull; <em>Quy tắc vàng:</em> "Six Sigma = 3.4 defects per million opportunities" là tuyên ngôn định lượng kinh điển nhất của toàn bộ hệ thống quản trị chất lượng hiện đại.
+      </div>
+    </article>
+
+    <!-- QUESTION 2 -->
+    <article class="quiz-card" id="card-2" data-id="2" data-answer="true" data-category="01. Quality Definition & Benchmarks">
+      <div class="q-top">
+        <div class="q-num">02</div>
+        <div class="q-text">
+          <div class="q-category-tag">01. Quality Definition & Benchmarks</div>
+          <div class="en">The rate of improvement between Four Sigma Performance Short Term and Six Sigma Performance Short Term is approximately 2000X (1800X).</div>
+          <div class="vi">Tốc độ cải tiến giữa Hiệu suất 4 Sigma ngắn hạn và Hiệu suất 6 Sigma ngắn hạn là khoảng 2000 lần (chính xác xấp xỉ 1800 lần).</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(2, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(2, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-2"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-2">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-2">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Hãy đối chiếu tỷ lệ lỗi thực tế ở hai mức năng lực ngắn hạn:<br>
+        &nbsp;&nbsp;&minus; <strong>Four Sigma (4&sigma;):</strong> Tỷ lệ lỗi là <strong>6.210 DPMO</strong> (~0.621% sản phẩm hỏng).<br>
+        &nbsp;&nbsp;&minus; <strong>Six Sigma (6&sigma;):</strong> Tỷ lệ lỗi là <strong>3.4 DPMO</strong> (~0.00034% sản phẩm hỏng).<br>
+        &bull; <em>Phép tính tỷ lệ cải tiến:</em> 6.210 / 3.4 = 1.826,47 lần &approx; <strong>1800X &rarr; 2000X</strong>.<br>
+        &bull; <em>Ý nghĩa kinh tế:</em> Bước nhảy từ 4&sigma; lên 6&sigma; không phải là tăng 50% theo cảm tính số học thông thường, mà là sự triệt tiêu lỗi gần <strong>2.000 lần</strong> nhờ hàm phân phối chuẩn tích lũy lũy thừa, giải phóng 19% biên lợi nhuận bị giam giữ trong nhà máy ngầm.
+      </div>
+    </article>
+
+    <!-- QUESTION 3 -->
+    <article class="quiz-card" id="card-3" data-id="3" data-answer="false" data-category="02. Value Proposition & Business Nature">
+      <div class="q-top">
+        <div class="q-num">03</div>
+        <div class="q-text">
+          <div class="q-category-tag">02. Value Proposition & Business Nature</div>
+          <div class="en">The idea of business is constituted by the exchange of money.</div>
+          <div class="vi">Ý niệm cốt lõi của kinh doanh được cấu thành bởi sự trao đổi tiền tệ.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(3, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(3, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-3"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-3">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-3">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; <strong>Bản chất cốt lõi của kinh doanh là Sự Trao Đổi Giá Trị (The Exchange of Value)</strong> &minus; bao gồm sản phẩm, dịch vụ, tri thức, thời gian hoặc giải pháp nhằm thỏa mãn nỗi đau/nhu cầu của khách hàng.<br>
+        &bull; Tiền tệ (Money) chỉ đơn thuần là <em>phương tiện thanh toán trung gian</em> và là <em>thước đo lượng hóa giá trị</em>, không phải là bản chất cấu thành nên ý niệm kinh doanh.<br>
+        &bull; Trong tư duy Six Sigma, doanh nghiệp chỉ tồn tại và phát triển bền vững khi tạo ra giá trị gia tăng (Value-Added) thực sự cho khách hàng.
+      </div>
+    </article>
+
+    <!-- QUESTION 4 -->
+    <article class="quiz-card" id="card-4" data-id="4" data-answer="true" data-category="03. Kano Model & Customer Needs">
+      <div class="q-top">
+        <div class="q-num">04</div>
+        <div class="q-text">
+          <div class="q-category-tag">03. Kano Model & Customer Needs</div>
+          <div class="en">Kano analysis is associated with capturing business needs.</div>
+          <div class="vi">Phân tích Kano liên quan đến việc nắm bắt các nhu cầu kinh doanh.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(4, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(4, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-4"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-4">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-4">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; <strong>Mô hình Kano (Kano Analysis)</strong> do GS. Noriaki Kano phát triển là công cụ chiến lược trong Six Sigma dùng để thấu hiểu, phân loại và chuyển đổi tiếng nói khách hàng (VOC) thành các yêu cầu kinh doanh và đặc tính chất lượng trọng yếu (CTQ).<br>
+        &bull; Mô hình phân nhóm nhu cầu thành 3 nhóm then chốt: (1) <em>Must-be / Threshold</em> (Ngưỡng cơ bản), (2) <em>Performance / One-Dimensional</em> (Tỷ lệ thuận theo hiệu suất), và (3) <em>Delighters / Attractive</em> (Gây phấn khích, vượt mong đợi).<br>
+        &bull; Phân tích Kano giúp doanh nghiệp xác định chính xác cần đầu tư nguồn lực vào đâu để tối đa hóa sự hài lòng của thị trường.
+      </div>
+    </article>
+
+    <!-- QUESTION 5 -->
+    <article class="quiz-card" id="card-5" data-id="5" data-answer="true" data-category="03. Kano Model & Customer Needs">
+      <div class="q-top">
+        <div class="q-num">05</div>
+        <div class="q-text">
+          <div class="q-category-tag">03. Kano Model & Customer Needs</div>
+          <div class="en">Threshold attributes are those that the customer expects to be present in the product or service.</div>
+          <div class="vi">Các thuộc tính ngưỡng (Threshold attributes) là những điều mà khách hàng mặc định mong đợi phải có trong sản phẩm hoặc dịch vụ.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(5, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(5, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-5"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-5">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-5">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Trong mô hình Kano, <strong>Threshold attributes</strong> (còn gọi là <em>Must-be</em> hoặc <em>Basic Needs</em>) là các thuộc tính tiêu chuẩn cơ bản mà khách hàng mặc định coi là đương nhiên phải có.<br>
+        &bull; <em>Đặc tính tâm lý khách hàng:</em><br>
+        &nbsp;&nbsp;&minus; Nếu <strong>THIẾU</strong>: Khách hàng sẽ cực kỳ bức xúc, thất vọng và từ bỏ sản phẩm ngay lập tức.<br>
+        &nbsp;&nbsp;&minus; Nếu <strong>CÓ ĐỦ</strong>: Khách hàng chỉ coi là bình thường, không cảm thấy được thưởng thêm hay hài lòng vượt bậc.<br>
+        &bull; <em>Ví dụ:</em> Khách sạn phải có nước nóng và ga giường sạch; xe hơi phải có phanh an toàn; ứng dụng ngân hàng phải đảm bảo bảo mật số dư.
+      </div>
+    </article>
+
+    <!-- QUESTION 6 -->
+    <article class="quiz-card" id="card-6" data-id="6" data-answer="true" data-category="04. Y = f(X) & Root Cause Leverage">
+      <div class="q-top">
+        <div class="q-num">06</div>
+        <div class="q-text">
+          <div class="q-category-tag">04. Y = f(X) & Root Cause Leverage</div>
+          <div class="en">An organization should focus most of its resources on the elimination of the underlying problems which cause performance symptoms.</div>
+          <div class="vi">Một tổ chức nên tập trung phần lớn nguồn lực vào việc loại bỏ các vấn đề cốt lõi (nguyên nhân gốc rễ) gây ra các triệu chứng về hiệu suất.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(6, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(6, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-6"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-6">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-6">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Đây là <strong>nguyên lý quản trị nền tảng</strong> phân biệt giữa tổ chức chữa cháy cảm tính và tổ chức Six Sigma đẳng cấp thế giới.<br>
+        &bull; <em>Triệu chứng (Symptoms &minus; Y):</em> Trễ đơn hàng, phế phẩm tăng, khách hàng khiếu nại. Nếu chỉ chữa triệu chứng (tăng thêm người kiểm tra, tăng ca), lãng phí sẽ phình to.<br>
+        &bull; <em>Nguyên nhân cốt lõi (Root Causes &minus; X):</em> Sự dao động nhiệt độ lò, thiếu chuẩn hóa thao tác, sai lệch dung sai thiết kế.<br>
+        &bull; Tập trung nguồn lực triệt tiêu biến số nguyên nhân gốc rễ <i>X</i> sẽ dập tắt vĩnh viễn các triệu chứng <i>Y</i>, tiết kiệm hàng triệu USD chi phí vận hành.
+      </div>
+    </article>
+
+    <!-- QUESTION 7 -->
+    <article class="quiz-card" id="card-7" data-id="7" data-answer="false" data-category="05. Questions, Knowledge & Measurement">
+      <div class="q-top">
+        <div class="q-num">07</div>
+        <div class="q-text">
+          <div class="q-category-tag">05. Questions, Knowledge & Measurement</div>
+          <div class="en">Questions, Knowledge, and Measurement are all important but independent.</div>
+          <div class="vi">Câu hỏi, Tri thức và Đo lường đều quan trọng nhưng hoàn toàn độc lập với nhau.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(7, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(7, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-7"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-7">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-7">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Câu hỏi (Questions), Tri thức (Knowledge) và Đo lường (Measurement) <strong>KHÔNG HỀ ĐỘC LẬP</strong> mà liên kết chặt chẽ thành một <em>vòng xoắn ốc học hỏi tương hỗ</em> (Epistemological Loop):<br>
+        &nbsp;&nbsp;1. <strong>Questions (Câu hỏi đúng):</strong> Định hướng cho việc xác định biến số nào cần thu thập dữ liệu.<br>
+        &nbsp;&nbsp;2. <strong>Measurement (Đo lường tin cậy):</strong> Cung cấp dữ liệu định lượng chính xác để kiểm chứng giả thuyết.<br>
+        &nbsp;&nbsp;3. <strong>Knowledge (Tri thức quy trình):</strong> Được hình thành từ dữ liệu đo lường, từ đó đặt ra những câu hỏi sâu hơn để tiếp tục đột phá.<br>
+        &bull; Tách rời 3 yếu tố này sẽ dẫn đến việc "đo lường vô bổ không mục đích" hoặc "đưa ra quyết định mù quáng thiếu dữ liệu".
+      </div>
+    </article>
+
+    <!-- QUESTION 8 -->
+    <article class="quiz-card" id="card-8" data-id="8" data-answer="false" data-category="04. Y = f(X) & Root Cause Leverage">
+      <div class="q-top">
+        <div class="q-num">08</div>
+        <div class="q-text">
+          <div class="q-category-tag">04. Y = f(X) & Root Cause Leverage</div>
+          <div class="en">Considering the relation Y = f(X), Y is representative of the input.</div>
+          <div class="vi">Xét mối quan hệ Y = f(X), Y là đại diện cho đầu vào.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(8, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(8, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-8"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-8">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-8">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Trong phương trình bản lề của Six Sigma <i>Y = f(X)</i>:<br>
+        &nbsp;&nbsp;&minus; <strong>Y là ĐẦU RA (Output / Effect / Result / CTQ)</strong> &minus; Biến phụ thuộc (Dependent variable).<br>
+        &nbsp;&nbsp;&minus; <strong>X là ĐẦU VÀO (Input / Cause / Process Parameter)</strong> &minus; Biến độc lập (Independent variable).<br>
+        &bull; Vì vậy, nói "<i>Y</i> đại diện cho đầu vào" là sai hoàn toàn về mặt toán học và triết lý Six Sigma.
+      </div>
+    </article>
+
+    <!-- QUESTION 9 -->
+    <article class="quiz-card" id="card-9" data-id="9" data-answer="false" data-category="04. Y = f(X) & Root Cause Leverage">
+      <div class="q-top">
+        <div class="q-num">09</div>
+        <div class="q-text">
+          <div class="q-category-tag">04. Y = f(X) & Root Cause Leverage</div>
+          <div class="en">Considering the relation Y = f(X), X is representative of the effect.</div>
+          <div class="vi">Xét mối quan hệ Y = f(X), X là đại diện cho kết quả (hiệu ứng).</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(9, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(9, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-9"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-9">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-9">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Trong mối quan hệ <i>Y = f(X)</i>:<br>
+        &nbsp;&nbsp;&minus; <strong>X đại diện cho NGUYÊN NHÂN (Cause)</strong> hoặc biến số đầu vào.<br>
+        &nbsp;&nbsp;&minus; <strong>Y mới là KẾT QUẢ / HIỆU ỨNG (Effect)</strong> được sinh ra từ các biến <i>X</i>.<br>
+        &bull; <em>Quy luật quản trị:</em> Muốn kiểm soát kết quả <i>Y</i>, ta không thể tác động trực tiếp lên <i>Y</i> ở cuối đường ống mà bắt buộc phải kiểm soát các biến số nguyên nhân <i>X</i> ở đầu nguồn.
+      </div>
+    </article>
+
+    <!-- QUESTION 10 -->
+    <article class="quiz-card" id="card-10" data-id="10" data-answer="false" data-category="04. Y = f(X) & Root Cause Leverage">
+      <div class="q-top">
+        <div class="q-num">10</div>
+        <div class="q-text">
+          <div class="q-category-tag">04. Y = f(X) & Root Cause Leverage</div>
+          <div class="en">Considering the relation Y = f(X), f is representative of the input.</div>
+          <div class="vi">Xét mối quan hệ Y = f(X), f đại diện cho đầu vào.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(10, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(10, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-10"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-10">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-10">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Trong biểu thức <i>Y = f(X)</i>:<br>
+        &nbsp;&nbsp;&minus; <strong>f đại diện cho HÀM CHUYỂN ĐỔI / QUY TRÌNH (Transformation Function / System Process)</strong> &minus; tức là cơ chế vận hành, quy luật vật lý/hóa học hoặc sự tương tác liên kết các biến đầu vào <i>X</i> để tạo ra kết quả <i>Y</i>.<br>
+        &nbsp;&nbsp;&minus; <strong>Đầu vào là X</strong>, hoàn toàn không phải là <i>f</i>.
+      </div>
+    </article>
+
+    <!-- QUESTION 11 -->
+    <article class="quiz-card" id="card-11" data-id="11" data-answer="true" data-category="04. Y = f(X) & Root Cause Leverage">
+      <div class="q-top">
+        <div class="q-num">11</div>
+        <div class="q-text">
+          <div class="q-category-tag">04. Y = f(X) & Root Cause Leverage</div>
+          <div class="en">Isolating process leverage necessarily means one must discover the Vital Few.</div>
+          <div class="vi">Việc xác định điểm đòn bẩy của quy trình đồng nghĩa với việc phải tìm ra số ít yếu tố quan trọng (Vital Few).</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(11, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(11, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-11"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-11">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-11">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; <strong>Nguyên lý Pareto (Quy luật 80/20):</strong> Trong một quy trình phức tạp có hàng trăm biến số (<i>X<sub>1</sub>, X<sub>2</sub>, ..., X<sub>100</sub></i>), chỉ có từ <strong>3 đến 5 biến số cốt lõi (The Vital Few)</strong> chi phối đến 80% &minus; 90% sự biến thiên của chất lượng đầu ra <i>Y</i>.<br>
+        &bull; Hàng chục biến số còn lại thuộc nhóm không đáng kể (The Trivial Many).<br>
+        &bull; Tìm ra "Điểm đòn bẩy" (Process Leverage) chính là nghệ thuật sử dụng công cụ thống kê Six Sigma (DOE, Regression, ANOVA) để bóc tách chính xác nhóm <em>Vital Few</em> nhằm tạo ra sự đột phá lớn nhất với chi phí thấp nhất.
+      </div>
+    </article>
+
+    <!-- QUESTION 12 -->
+    <article class="quiz-card" id="card-12" data-id="12" data-answer="true" data-category="04. Y = f(X) & Root Cause Leverage">
+      <div class="q-top">
+        <div class="q-num">12</div>
+        <div class="q-text">
+          <div class="q-category-tag">04. Y = f(X) & Root Cause Leverage</div>
+          <div class="en">A critical-to-process variable (CTP; X) can leverage a critical-to-quality characteristic (CTQ; Y).</div>
+          <div class="vi">Một biến quan trọng đối với quy trình (CTP; X) có thể tạo đòn bẩy tác động đến một đặc tính quan trọng đối với chất lượng (CTQ; Y).</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(12, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(12, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-12"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-12">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-12">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; <strong>CTP (Critical-to-Process &minus; X):</strong> Là thông số vận hành then chốt trong quy trình (ví dụ: tốc độ quay trục chính, áp lực phun keo, nồng độ pH dung dịch).<br>
+        &bull; <strong>CTQ (Critical-to-Quality &minus; Y):</strong> Là đặc tính kỹ thuật hoặc trải nghiệm then chốt của khách hàng (ví dụ: độ nhám bề mặt, độ bền kéo, thời gian xử lý đơn hàng).<br>
+        &bull; Thiết lập mối quan hệ hàm số <i>Y</i><sub>CTQ</sub> = <i>f(X</i><sub>CTP</sub>) cho phép Black Belt điều chỉnh chính xác <i>X</i> để kiểm soát hoàn hảo <i>Y</i>.
+      </div>
+    </article>
+
+    <!-- QUESTION 13 -->
+    <article class="quiz-card" id="card-13" data-id="13" data-answer="false" data-category="04. Y = f(X) & Root Cause Leverage">
+      <div class="q-top">
+        <div class="q-num">13</div>
+        <div class="q-text">
+          <div class="q-category-tag">04. Y = f(X) & Root Cause Leverage</div>
+          <div class="en">All process variables offer significant improvement leverage.</div>
+          <div class="vi">Tất cả các biến trong quy trình đều mang lại đòn bẩy cải tiến đáng kể.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(13, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(13, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-13"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-13">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-13">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Đây là một trong những ngộ nhận tai hại nhất trong quản lý: Giả định rằng mọi biến số đều quan trọng như nhau.<br>
+        &bull; Thực tế thực nghiệm chứng minh rằng <strong>phần lớn các biến số là Trivial Many</strong> (biến số nhiễu hoặc có tác động mờ nhạt).<br>
+        &bull; Nếu cố gắng kiểm soát chặt chẽ 100% mọi biến số, tổ chức sẽ lãng phí ngân sách đo kiểm khổng lồ mà không cải thiện được chất lượng. Six Sigma tập trung sàng lọc (Screening) để chỉ tối ưu hóa những biến có hệ số đòn bẩy thực sự.
+      </div>
+    </article>
+
+    <!-- QUESTION 14 -->
+    <article class="quiz-card" id="card-14" data-id="14" data-answer="true" data-category="03. Kano Model & Customer Needs">
+      <div class="q-top">
+        <div class="q-num">14</div>
+        <div class="q-text">
+          <div class="q-category-tag">03. Kano Model & Customer Needs</div>
+          <div class="en">The customer's voice is best heard during the define phase of breakthrough.</div>
+          <div class="vi">Tiếng nói của khách hàng (VOC) được lắng nghe tốt nhất trong giai đoạn Define (Xác định) của quá trình đột phá.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(14, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(14, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-14"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-14">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-14">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Trong chu trình 5 bước DMAIC, giai đoạn <strong>Define (Xác định)</strong> là thời điểm then chốt nhất để thu thập Tiếng nói Khách hàng (Voice of Customer &minus; VOC).<br>
+        &bull; Tại đây, VOC được phân tích qua ma trận chuyển đổi (VOC-to-CTQ Matrix) để định hình phạm vi dự án, tuyên ngôn bài toán (Problem Statement) và chỉ tiêu định lượng trong Project Charter.<br>
+        &bull; Lắng nghe sai hoặc bỏ qua VOC ở giai đoạn Define sẽ khiến toàn bộ các giai đoạn phân tích và thử nghiệm sau đó đi chệch hướng hoàn toàn.
+      </div>
+    </article>
+
+    <!-- QUESTION 15 -->
+    <article class="quiz-card" id="card-15" data-id="15" data-answer="false" data-category="05. Questions, Knowledge & Measurement">
+      <div class="q-top">
+        <div class="q-num">15</div>
+        <div class="q-text">
+          <div class="q-category-tag">05. Questions, Knowledge & Measurement</div>
+          <div class="en">Design-of-Experiments (DOE) is most often applied during the control phase of breakthrough.</div>
+          <div class="vi">Thiết kế thí nghiệm (DOE) thường được áp dụng trong giai đoạn Kiểm soát (Control) của quá trình đột phá.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(15, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(15, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-15"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-15">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-15">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; <strong>DOE (Design of Experiments)</strong> là công cụ thống kê đa biến nâng cao được áp dụng chủ yếu trong <strong>giai đoạn IMPROVE (Cải tiến)</strong> &minus; nhằm thử nghiệm có hệ thống các tổ hợp thông số <i>X</i> để tối ưu hóa đầu ra <i>Y</i>.<br>
+        &bull; <em>Giai đoạn Control (Kiểm soát)</em> sử dụng các công cụ giám sát và duy trì như: Kế hoạch kiểm soát (Control Plan), Biểu đồ kiểm soát quá trình bằng thống kê (SPC), Tiêu chuẩn thao tác chuẩn (SOP), và Cơ chế chống sai lỗi Poka-Yoke.
+      </div>
+    </article>
+
+    <!-- QUESTION 16 -->
+    <article class="quiz-card" id="card-16" data-id="16" data-answer="false" data-category="05. Questions, Knowledge & Measurement">
+      <div class="q-top">
+        <div class="q-num">16</div>
+        <div class="q-text">
+          <div class="q-category-tag">05. Questions, Knowledge & Measurement</div>
+          <div class="en">Tool Selection should be based upon which tool is best for the job, regardless of the phase of Six Sigma, i.e. DMAIC.</div>
+          <div class="vi">Việc lựa chọn công cụ nên dựa trên công cụ nào là tốt nhất cho công việc, bất kể đang ở giai đoạn nào trong Six Sigma (ví dụ DMAIC).</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(16, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(16, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-16"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-16">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-16">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Trong Six Sigma, cấu trúc DMAIC là một <strong>lộ trình logic khoa học chặt chẽ</strong>. Mỗi giai đoạn có mục tiêu nhận thức riêng biệt:<br>
+        &nbsp;&nbsp;&minus; <em>Define:</em> Project Charter, SIPOC, VOC-to-CTQ.<br>
+        &nbsp;&nbsp;&minus; <em>Measure:</em> Gage R&R, Process Mapping, Cpk / Sigma level.<br>
+        &nbsp;&nbsp;&minus; <em>Analyze:</em> Fishbone, FMEA, Hypothesis Testing, Multi-Vari.<br>
+        &nbsp;&nbsp;&minus; <em>Improve:</em> DOE, Poka-Yoke, Pilot testing.<br>
+        &nbsp;&nbsp;&minus; <em>Control:</em> SPC, Control Plan, Standard Work.<br>
+        &bull; Việc chọn công cụ không thể tùy tiện "bất kể giai đoạn", mà phải phù hợp với câu hỏi nghiên cứu và mục tiêu của từng chặng đường.
+      </div>
+    </article>
+
+    <!-- QUESTION 17 -->
+    <article class="quiz-card" id="card-17" data-id="17" data-answer="false" data-category="05. Questions, Knowledge & Measurement">
+      <div class="q-top">
+        <div class="q-num">17</div>
+        <div class="q-text">
+          <div class="q-category-tag">05. Questions, Knowledge & Measurement</div>
+          <div class="en">The Recognize phase of breakthrough is primarily focused on the CTQs.</div>
+          <div class="vi">Giai đoạn Recognize (Nhận diện) trong quy trình đột phá chủ yếu tập trung vào các đặc tính quan trọng đối với chất lượng – CTQs.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(17, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(17, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-17"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-17">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-17">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; <strong>Recognize Phase</strong> là giai đoạn định vị chiến lược cấp cao của doanh nghiệp (trước khi khởi động dự án DMAIC cụ thể), tập trung vào:<br>
+        &nbsp;&nbsp;&minus; Định hướng chiến lược của Hội đồng quản trị.<br>
+        &nbsp;&nbsp;&minus; Các mục tiêu kinh doanh tổng thể BOPI (Business, Operational, Process, Improvement Goals).<br>
+        &nbsp;&nbsp;&minus; Nhận diện các lỗ hổng tài chính và cơ hội đột phá doanh thu lớn.<br>
+        &bull; Việc bóc tách và đo lường chi tiết từng biến số <strong>CTQ cụ thể</strong> là nhiệm vụ trọng tâm của giai đoạn <strong>Define</strong> trong chu trình DMAIC.
+      </div>
+    </article>
+
+    <!-- QUESTION 18 -->
+    <article class="quiz-card" id="card-18" data-id="18" data-answer="true" data-category="05. Questions, Knowledge & Measurement">
+      <div class="q-top">
+        <div class="q-num">18</div>
+        <div class="q-text">
+          <div class="q-category-tag">05. Questions, Knowledge & Measurement</div>
+          <div class="en">The Optimization stage of breakthrough is primarily focused on improving and controlling the CTQs.</div>
+          <div class="vi">Giai đoạn Tối ưu hóa (Optimization) trong quy trình đột phá chủ yếu tập trung vào việc cải tiến và kiểm soát các CTQs.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(18, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(18, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-18"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-18">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-18">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Trong mô hình Breakthrough Strategy của TS. Mikel Harry, <strong>Optimization Stage</strong> là giai đoạn cốt lõi tập trung vào việc:<br>
+        &nbsp;&nbsp;&minus; Tối ưu hóa các biến số đầu vào <i>X</i> (thông qua DOE và mô hình hồi quy) để đưa các đặc tính chất lượng then chốt (CTQs &minus; <i>Y</i>) đạt mức chuẩn xác tối đa.<br>
+        &nbsp;&nbsp;&minus; Thiết lập cơ chế kiểm soát chặt chẽ nhằm duy trì sự ổn định của các CTQs này trong dài hạn.
+      </div>
+    </article>
+
+    <!-- QUESTION 19 -->
+    <article class="quiz-card" id="card-19" data-id="19" data-answer="true" data-category="05. Questions, Knowledge & Measurement">
+      <div class="q-top">
+        <div class="q-num">19</div>
+        <div class="q-text">
+          <div class="q-category-tag">05. Questions, Knowledge & Measurement</div>
+          <div class="en">The Validation stage of breakthrough is concerned with reducing measurement error.</div>
+          <div class="vi">Giai đoạn Xác minh (Validation) trong quá trình đột phá liên quan đến việc giảm sai số đo lường.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(19, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(19, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-19"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-19">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-19">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; <strong>Validation Stage</strong> trong chiến lược Six Sigma tập trung vào việc kiểm chứng độ tin cậy của dữ liệu và hệ thống đo lường.<br>
+        &bull; <em>Mục tiêu sống còn:</em> Giảm thiểu sai số đo lường (Measurement System Error) thông qua các nghiên cứu <strong>Gage R&R (Repeatability & Reproducibility)</strong>, độ tuyến tính và độ chuẩn xác của thiết bị.<br>
+        &bull; Nếu hệ thống đo lường có sai số lớn hơn 30%, mọi phân tích thống kê phía sau đều trở nên vô giá trị.
+      </div>
+    </article>
+
+    <!-- QUESTION 20 -->
+    <article class="quiz-card" id="card-20" data-id="20" data-answer="false" data-category="06. Data-Driven Decisions & Variance Control">
+      <div class="q-top">
+        <div class="q-num">20</div>
+        <div class="q-text">
+          <div class="q-category-tag">06. Data-Driven Decisions & Variance Control</div>
+          <div class="en">In Six Sigma, decisions are based upon experience and intuition.</div>
+          <div class="vi">Trong Six Sigma, các quyết định được đưa ra dựa trên kinh nghiệm và trực giác.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(20, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(20, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-20"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-20">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-20">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Tôn chỉ bất biến của Six Sigma là <strong>Quản trị dựa trên Dữ liệu và Phân tích Thống kê Định lượng (Data-Driven Decision Making)</strong>.<br>
+        &bull; <em>Châm ngôn kinh điển:</em> "In God we trust, all others must bring data" (Chúng ta tin vào Chúa, còn tất cả những người khác bắt buộc phải đưa ra số liệu).<br>
+        &bull; Trực giác và kinh nghiệm có thể đóng vai trò gợi ý giả thuyết ban đầu, nhưng tuyệt đối không được dùng làm căn cứ ra quyết định điều hành nếu chưa qua kiểm định thống kê.
+      </div>
+    </article>
+
+    <!-- QUESTION 21 -->
+    <article class="quiz-card" id="card-21" data-id="21" data-answer="true" data-category="06. Data-Driven Decisions & Variance Control">
+      <div class="q-top">
+        <div class="q-num">21</div>
+        <div class="q-text">
+          <div class="q-category-tag">06. Data-Driven Decisions & Variance Control</div>
+          <div class="en">With Six Sigma, Improvement must consider the average for critical factors and the spread (variation) around the average to be effective.</div>
+          <div class="vi">Trong Six Sigma, cải tiến phải xem xét cả giá trị trung bình của các yếu tố quan trọng và độ biến thiên (độ phân tán) xung quanh trung bình để đạt hiệu quả.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(21, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(21, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-21"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-21">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-21">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Đây là <strong>nguyên lý thống kê nền tảng</strong> của toàn bộ phong trào Six Sigma:<br>
+        &nbsp;&nbsp;&minus; <strong>Giá trị trung bình (&mu; &minus; Mean):</strong> Thể hiện quy trình có đang nhắm trúng mục tiêu (Target centering) hay không.<br>
+        &nbsp;&nbsp;&minus; <strong>Độ biến thiên (&sigma; &minus; Standard Deviation / Spread):</strong> Thể hiện sự nhất quán và độ phân tán của sản phẩm.<br>
+        &bull; Nếu chỉ cải tiến giá trị trung bình mà độ lệch chuẩn &sigma; vẫn rộng, phần đuôi phân phối sẽ tiếp tục tràn qua giới hạn dung sai (USL/LSL) và gây tổn thất COPQ khổng lồ. Cải tiến Six Sigma bắt buộc phải đồng thời vừa dịch tâm (&mu;) vừa nén phương sai (&sigma;).
+      </div>
+    </article>
+
+    <!-- QUESTION 22 -->
+    <article class="quiz-card" id="card-22" data-id="22" data-answer="false" data-category="02. Value Proposition & Business Nature">
+      <div class="q-top">
+        <div class="q-num">22</div>
+        <div class="q-text">
+          <div class="q-category-tag">02. Value Proposition & Business Nature</div>
+          <div class="en">The customer has a need, and the provider has a do. Six Sigma focuses primarily on increasing the Do, i.e. increasing company profits.</div>
+          <div class="vi">Khách hàng có một nhu cầu (Need), và nhà cung cấp có một hành động thực thi (Do). Six Sigma chủ yếu tập trung vào việc tăng “Do”, tức là tăng lợi nhuận cho công ty.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(22, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(22, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-22"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-22">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-22">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Six Sigma <strong>KHÔNG</strong> tập trung đơn phương vào việc gia tăng hành động của nhà cung cấp ("Do") để tối đa hóa lợi nhuận nội bộ một cách vị kỷ.<br>
+        &bull; Trọng tâm của Six Sigma là <strong>căn chỉnh và tối ưu hóa hành động (Do) để đáp ứng trọn vẹn và vượt trội nhu cầu của khách hàng (Needs)</strong> với chi phí lãng phí thấp nhất.<br>
+        &bull; Lợi nhuận công ty là <em>hệ quả tự nhiên</em> của việc giải quyết xuất sắc nhu cầu khách hàng và triệt tiêu lãng phí, không phải là mục tiêu tách rời thực tế.
+      </div>
+    </article>
+
+    <!-- QUESTION 23 -->
+    <article class="quiz-card" id="card-23" data-id="23" data-answer="true" data-category="02. Value Proposition & Business Nature">
+      <div class="q-top">
+        <div class="q-num">23</div>
+        <div class="q-text">
+          <div class="q-category-tag">02. Value Proposition & Business Nature</div>
+          <div class="en">Six Sigma views resolving both the Customer Needs and Providers Do as the means of increasing business.</div>
+          <div class="vi">Six Sigma xem việc giải quyết hài hòa cả Nhu cầu của Khách hàng (Customer Needs) và Hành động của Nhà cung cấp (Provider's Do) là phương tiện để phát triển kinh doanh.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(23, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(23, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-23"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-23">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge true">ĐÚNG (TRUE) ✅</span>
+      </div>
+
+      <div class="explain is-true answer-reveal" id="explain-23">
+        <strong>Đáp án đúng: TRUE (ĐÚNG) ✅</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Triết lý kinh doanh tổng thể của Six Sigma là <strong>tối ưu hóa quan hệ cộng sinh hai chiều</strong>:<br>
+        &nbsp;&nbsp;&minus; <em>Customer Needs (Nhu cầu khách hàng):</em> Nắm bắt đúng CTQs, nâng cao chất lượng và độ tin cậy của sản phẩm/dịch vụ.<br>
+        &nbsp;&nbsp;&minus; <em>Provider's Do (Hành động nhà cung cấp):</em> Chuẩn hóa quy trình, kiểm soát biến số CTPs, loại bỏ triệt để phế phẩm và vòng lặp DAF.<br>
+        &bull; Khi cả hai yếu tố được giải quyết đồng bộ, khách hàng nhận được giá trị cao nhất và doanh nghiệp đạt biên lợi nhuận thặng dư bền vững nhất.
+      </div>
+    </article>
+
+    <!-- QUESTION 24 -->
+    <article class="quiz-card" id="card-24" data-id="24" data-answer="false" data-category="02. Value Proposition & Business Nature">
+      <div class="q-top">
+        <div class="q-num">24</div>
+        <div class="q-text">
+          <div class="q-category-tag">02. Value Proposition & Business Nature</div>
+          <div class="en">In Six Sigma, our focus is only on the customer as defined by the person or company that buys our product or service.</div>
+          <div class="vi">Trong Six Sigma, chúng ta chỉ tập trung vào khách hàng được xác định là người hoặc công ty mua sản phẩm hoặc dịch vụ của chúng ta.</div>
+        </div>
+      </div>
+
+      <div class="interactive-controls">
+        <span class="prompt-lbl">Chọn câu trả lời của bạn / Select your answer:</span>
+        <div class="choice-btns">
+          <button type="button" class="btn-choice btn-true" onclick="answerQuestion(24, true)">
+            <span class="icon">✅</span> TRUE (Đúng)
+          </button>
+          <button type="button" class="btn-choice btn-false" onclick="answerQuestion(24, false)">
+            <span class="icon">❌</span> FALSE (Sai)
+          </button>
+        </div>
+      </div>
+
+      <div class="user-feedback" id="feedback-24"></div>
+
+      <div class="badge-row answer-reveal" id="reveal-24">
+        <span class="ans-meta-lbl">Đáp án chính thức:</span>
+        <span class="badge false">SAI (FALSE) ❌</span>
+      </div>
+
+      <div class="explain is-false answer-reveal" id="explain-24">
+        <strong>Đáp án đúng: FALSE (SAI) ❌</strong><br>
+        <strong>Phân tích Master Black Belt:</strong><br>
+        &bull; Khái niệm "Khách hàng" trong Six Sigma bao hàm cả 2 nhóm:<br>
+        &nbsp;&nbsp;1. <strong>External Customers (Khách hàng bên ngoài):</strong> Người hoặc tổ chức chi tiền mua sản phẩm/dịch vụ cuối cùng.<br>
+        &nbsp;&nbsp;2. <strong>Internal Customers (Khách hàng nội bộ):</strong> Các công đoạn, phân xưởng hoặc đồng nghiệp kế tiếp trong chuỗi giá trị (<i>Op<sub>i</sub> &rarr; Op<sub>i+1</sub></i>) tiếp nhận đầu ra của công đoạn trước.<br>
+        &bull; Tôn chỉ Six Sigma: <em>"Công đoạn sau là khách hàng của công đoạn trước"</em> &minus; Tuyệt đối không chuyển giao sản phẩm lỗi cho khách hàng nội bộ.
+      </div>
+    </article>
+  </main>
+
+  <!-- DOMAIN BREAKDOWN MATRIX -->
+  <section class="domain-matrix">
+    <h3>📊 Bảng Phân Bổ Kiến Thức Theo 6 Chủ Đề Cốt Lõi (Knowledge Domain Matrix)</h3>
+    <table class="domain-table">
+      <thead>
+        <tr>
+          <th>Chủ Đề / Phân Hệ<span style="display:block; font-size:0.72rem; color:#059669; font-weight:normal;">Sub-module Domain</span></th>
+          <th>Danh Sách Câu Hỏi<span style="display:block; font-size:0.72rem; color:#059669; font-weight:normal;">Question Numbers</span></th>
+          <th>Trọng Tâm Kiến Thức Master Black Belt<span style="display:block; font-size:0.72rem; color:#059669; font-weight:normal;">MBB Core Competency</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>01. Quality Definition & Benchmarks</strong></td>
+          <td>Câu 01, 02</td>
+          <td>Chuẩn mực 3.4 DPMO, giả định dịch tâm 1.5&sigma;, bước nhảy cải tiến 2000X giữa 4&sigma; và 6&sigma;.</td>
+        </tr>
+        <tr>
+          <td><strong>02. Value Proposition & Business Nature</strong></td>
+          <td>Câu 03, 22, 23, 24</td>
+          <td>Kinh doanh là trao đổi giá trị; Cân bằng Nhu cầu (Needs) và Thực thi (Do); Khách hàng nội bộ và bên ngoài.</td>
+        </tr>
+        <tr>
+          <td><strong>03. Kano Model & Customer Needs</strong></td>
+          <td>Câu 04, 05, 14</td>
+          <td>Phân tích Kano (Threshold, Performance, Delighters); Thu thập VOC tại giai đoạn Define.</td>
+        </tr>
+        <tr>
+          <td><strong>04. Y = f(X) & Root Cause Leverage</strong></td>
+          <td>Câu 06, 08, 09, 10, 11, 12, 13</td>
+          <td>Phương trình cốt lõi Y=f(X); Đòn bẩy Vital Few vs Trivial Many; Mối quan hệ giữa CTP (X) và CTQ (Y).</td>
+        </tr>
+        <tr>
+          <td><strong>05. Questions, Knowledge & Measurement</strong></td>
+          <td>Câu 07, 15, 16, 17, 18, 19</td>
+          <td>Vòng xoắn ốc Tri thức - Đo lường; Vai trò của DOE ở Improve; Tiêu chí chọn công cụ theo DMAIC; Validation và Gage R&R.</td>
+        </tr>
+        <tr>
+          <td><strong>06. Data-Driven Decisions & Variance Control</strong></td>
+          <td>Câu 20, 21</td>
+          <td>Quyết định dựa trên dữ liệu định lượng; Nguyên lý đồng thời tối ưu trung bình (&mu;) và nén phương sai (&sigma;).</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="quiz-footer">
+    Lean Six Sigma Black Belt &bull; 03. Business Principles &bull; MindPro &amp; Mikel Harry Knowledge Base
+  </footer>
+
+</div>
+
+<script>
+  let userAnswers = {};
+  let isTestMode = false;
+  const correctAnswers = {
+    1: true, 2: true, 3: false, 4: true, 5: true, 6: true,
+    7: false, 8: false, 9: false, 10: false, 11: true, 12: true,
+    13: false, 14: true, 15: false, 16: false, 17: false, 18: true,
+    19: true, 20: false, 21: true, 22: false, 23: true, 24: false
+  };
+
+  function answerQuestion(qId, choice) {
+    userAnswers[qId] = choice;
+    const card = document.getElementById('card-' + qId);
+    const btnTrue = card.querySelector('.btn-true');
+    const btnFalse = card.querySelector('.btn-false');
+    const feedback = document.getElementById('feedback-' + qId);
+
+    // Update button visual state
+    btnTrue.classList.toggle('selected', choice === true);
+    btnFalse.classList.toggle('selected', choice === false);
+
+    // Evaluate answer
+    const isCorrect = (choice === correctAnswers[qId]);
+    if (isCorrect) {
+      feedback.className = 'user-feedback correct';
+      feedback.innerHTML = '🎉 Chính xác! Bạn đã chọn đúng đáp án (' + (choice ? 'TRUE' : 'FALSE') + ').';
+    } else {
+      feedback.className = 'user-feedback incorrect';
+      feedback.innerHTML = '⚠️ Chưa chính xác. Lựa chọn của bạn (' + (choice ? 'TRUE' : 'FALSE') + ') chưa khớp với chuẩn mực Six Sigma.';
+    }
+    feedback.style.display = 'block';
+
+    // If in test mode, reveal explanation for answered card
+    if (isTestMode) {
+      document.getElementById('reveal-' + qId).style.display = 'flex';
+      document.getElementById('explain-' + qId).style.display = 'block';
+    }
+
+    updateScore();
+  }
+
+  function updateScore() {
+    let correctCount = 0;
+    for (let id in userAnswers) {
+      if (userAnswers[id] === correctAnswers[id]) {
+        correctCount++;
+      }
+    }
+    const totalAnswered = Object.keys(userAnswers).length;
+    document.getElementById('stat-score').innerText = correctCount + ' / ' + totalAnswered;
+  }
+
+  function toggleMode() {
+    isTestMode = !isTestMode;
+    const body = document.body;
+    const toggleBtn = document.getElementById('btn-toggle-mode');
+    
+    if (isTestMode) {
+      body.classList.remove('study-mode');
+      body.classList.add('test-mode');
+      toggleBtn.innerText = 'Chuyển Sang: Chế Độ Học Tập (Study Mode)';
+      // Hide reveals that have not been answered yet
+      for (let i = 1; i <= 24; i++) {
+        if (!(i in userAnswers)) {
+          document.getElementById('reveal-' + i).style.display = 'none';
+          document.getElementById('explain-' + i).style.display = 'none';
+        }
+      }
+    } else {
+      body.classList.remove('test-mode');
+      body.classList.add('study-mode');
+      toggleBtn.innerText = 'Chuyển Sang: Chế Độ Kiểm Tra (Test Mode)';
+      // Show all reveals in study mode
+      for (let i = 1; i <= 24; i++) {
+        document.getElementById('reveal-' + i).style.display = 'flex';
+        document.getElementById('explain-' + i).style.display = 'block';
+      }
+    }
+  }
+
+  function filterCards(filter, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const cards = document.querySelectorAll('.quiz-card');
+    cards.forEach(card => {
+      const ans = card.getAttribute('data-answer');
+      if (filter === 'all') {
+        card.style.display = 'block';
+      } else if (filter === 'true') {
+        card.style.display = (ans === 'true') ? 'block' : 'none';
+      } else if (filter === 'false') {
+        card.style.display = (ans === 'false') ? 'block' : 'none';
+      }
+    });
+  }
+
+  function resetQuiz() {
+    userAnswers = {};
+    document.querySelectorAll('.btn-choice').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('.user-feedback').forEach(fb => {
+      fb.style.display = 'none';
+      fb.innerHTML = '';
+    });
+    document.getElementById('stat-score').innerText = '0 / 0';
+    if (isTestMode) {
+      for (let i = 1; i <= 24; i++) {
+        document.getElementById('reveal-' + i).style.display = 'none';
+        document.getElementById('explain-' + i).style.display = 'none';
+      }
+    }
+  }
+</script>
+</body>
+</html>

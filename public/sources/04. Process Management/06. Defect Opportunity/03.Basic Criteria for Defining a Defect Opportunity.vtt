@@ -1,0 +1,141 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Basic Criteria for Defining a Defect Opportunity
+
+2
+00:00:05.000 --> 00:00:09.000
+Welcome to this session on defect opportunities.
+
+3
+00:00:09.000 --> 00:00:14.100
+What I'd like to do is briefly spend a little bit of time, and look at the criteria
+
+4
+00:00:14.100 --> 00:00:17.300
+for defining a defect opportunity.
+
+5
+00:00:17.300 --> 00:00:23.033
+There's only three. They’re pretty simple. We’re going to cover them one at a time.
+
+6
+00:00:23.033 --> 00:00:29.433
+Criteria one. The Y variable must exist.
+
+7
+00:00:29.433 --> 00:00:36.399
+The Y variable must exist. A dependent variable must exist. That's pretty simple.
+
+8
+00:00:36.400 --> 00:00:43.366
+If you don't have a variable, it's not possible to realize a defect.
+
+9
+00:00:43.366 --> 00:00:48.099
+If there is no critical to quality characteristic, there can be no defect.
+
+10
+00:00:48.100 --> 00:00:51.466
+If a defect cannot be realized, a defect cannot exist.
+
+11
+00:00:51.466 --> 00:00:56.366
+If the defect cannot exist, then the circumstances are not favorable.
+
+12
+00:00:56.366 --> 00:01:01.899
+Think of this, an opportunity is a set of circumstances favorable to an end.
+
+13
+00:01:01.900 --> 00:01:05.266
+In this case, favorable to a defect.
+
+14
+00:01:05.266 --> 00:01:10.266
+Well, one of the circumstances is, the variable has to exist
+
+15
+00:01:10.266 --> 00:01:14.266
+in order to be favorable to creating a defect.
+
+16
+00:01:14.266 --> 00:01:19.199
+Therefore, if the circumstances are not favorable, there is no opportunity.
+
+17
+00:01:19.200 --> 00:01:23.200
+Criteria 2, the Y variable must be a scaled quantity.
+
+18
+00:01:23.200 --> 00:01:28.600
+If it is not a scaled quantity, right there, if it is not,
+
+19
+00:01:28.600 --> 00:01:33.466
+then a performance standard cannot be assigned. That simple.
+
+20
+00:01:33.466 --> 00:01:37.466
+If you can't measure it, you can't put a standard to it.
+
+21
+00:01:37.466 --> 00:01:41.466
+If there's no standard, you can't realize a defect.
+
+22
+00:01:41.466 --> 00:01:47.199
+And then again, if a defect cannot be realized, a defect cannot exist.
+
+23
+00:01:47.200 --> 00:01:52.200
+And if a defect cannot exist, well self-evident.
+
+24
+00:01:52.200 --> 00:01:58.766
+Finally, the third criteria. The Y variable must maintain a performance standard.
+
+25
+00:01:58.766 --> 00:02:01.766
+We just talked about that.
+
+26
+00:02:01.766 --> 00:02:05.699
+So, three criteria. It's pretty simple.
+
+27
+00:02:05.700 --> 00:02:10.800
+Describes a defect opportunity. Let's put these in bright red,
+
+28
+00:02:10.800 --> 00:02:16.200
+so we can really kinda see them here, real good.
+
+29
+00:02:16.200 --> 00:02:21.333
+These are three important criteria for defining a defect opportunity.
+
+30
+00:02:21.333 --> 00:02:24.333
+One, the Y variable must exist.
+
+31
+00:02:24.333 --> 00:02:30.633
+Two, not only must it exist, it must be scaler. It must have scale to it.
+
+32
+00:02:30.633 --> 00:02:34.466
+And three, on that performance scale, there has to be a standard.
+
+33
+00:02:34.466 --> 00:02:38.032
+So, you gotta have a variable. You gotta have a scale. You gotta have a standard.
+
+34
+00:02:38.033 --> 00:02:42.799
+If those three things are present, you got a defect opportunity.
+
+35
+00:02:42.800 --> 00:02:47.800
+Thank you for choosing SSMI.

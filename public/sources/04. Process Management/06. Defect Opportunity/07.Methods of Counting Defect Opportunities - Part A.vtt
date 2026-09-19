@@ -1,0 +1,369 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.966
+Methods of Counting Defect Opportunities
+
+2
+00:00:04.966 --> 00:00:07.966
+Hello, Mike Harry back with you again.
+
+3
+00:00:07.966 --> 00:00:12.432
+Where we’re continuing our discussion of defect opportunities.
+
+4
+00:00:12.433 --> 00:00:17.833
+In other words, what must be right or what could go wrong.
+
+5
+00:00:17.833 --> 00:00:23.233
+Well, you know, those are both from the same coin.
+
+6
+00:00:23.233 --> 00:00:26.233
+Heads or tails. Right or wrong.
+
+7
+00:00:26.233 --> 00:00:30.766
+Either way we look at it, it leads to the same inescapable conclusion.
+
+8
+00:00:30.766 --> 00:00:37.232
+Now, to bring about our discussion here, of defect opportunities.
+
+9
+00:00:37.233 --> 00:00:41.233
+I want to focus on an industrial and commercial example.
+
+10
+00:00:41.233 --> 00:00:46.433
+Specifically, we’ll start here, with the solder joint right there.
+
+11
+00:00:46.433 --> 00:00:53.433
+We’re going to be soldering and we’re concerned about soldering opportunities.
+
+12
+00:00:53.433 --> 00:00:56.566
+Defect opportunities where soldering is concerned.
+
+13
+00:00:56.566 --> 00:01:02.099
+Now, to progress this discussion, let's go over and blow it up.
+
+14
+00:01:02.100 --> 00:01:06.600
+There again, you can kind of see there’s our solder joint.
+
+15
+00:01:06.600 --> 00:01:10.600
+And we say to ourselves, well, what could go wrong?
+
+16
+00:01:10.600 --> 00:01:16.600
+Well, in this case. We have several things that could go wrong. Six, to be specific.
+
+17
+00:01:16.600 --> 00:01:21.400
+It could be missing solder, a joint could miss solder and not having any at all.
+
+18
+00:01:21.400 --> 00:01:26.766
+It could be insufficient, have pinholes, have voids.
+
+19
+00:01:26.766 --> 00:01:30.766
+Not be properly wetted to the circuit board.
+
+20
+00:01:30.766 --> 00:01:34.266
+And the pull strength could be bad. There’s six of them let’s say.
+
+21
+00:01:34.266 --> 00:01:39.199
+Now, there may be more, may be less, depending upon which
+
+22
+00:01:39.200 --> 00:01:43.200
+level of inspection that you are applying.
+
+23
+00:01:43.200 --> 00:01:51.966
+For example, there is what we call weapon’s specification for
+
+24
+00:01:51.966 --> 00:01:51.999
+government business and there's commercial.
+
+25
+00:01:52.000 --> 00:01:57.000
+And of course, the government specifications are more stringent than the commercial.
+
+26
+00:01:57.000 --> 00:02:00.700
+Therefore, there are more defect categories.
+
+27
+00:02:00.700 --> 00:02:07.033
+Now, the thing we want to really focus on here for a moment, is the idea here.
+
+28
+00:02:07.033 --> 00:02:13.866
+That a defect opportunity, at the opportunistic level,
+
+29
+00:02:13.866 --> 00:02:20.799
+what we have is that it’s either good or bad. It either passes or fails.
+
+30
+00:02:20.800 --> 00:02:26.400
+For example, where the solder joint is concerned, and we’re looking at missing solder.
+
+31
+00:02:26.400 --> 00:02:30.666
+Either the solder is there or it's not. Either it’s sufficient or it's not.
+
+32
+00:02:30.666 --> 00:02:37.666
+There are pinholes or there's not. It either meets the pull strength criteria or it doesn't.
+
+33
+00:02:37.666 --> 00:02:43.299
+Now the same thing would hold true with our commercial example.
+
+34
+00:02:43.300 --> 00:02:50.300
+Let's take a transaction. Well with any given transaction, we can say, what must go right?
+
+35
+00:02:50.300 --> 00:02:55.366
+In other words, what could go wrong? And focus on the defect opportunities
+
+36
+00:02:55.366 --> 00:02:58.366
+from a transactional prospective.
+
+37
+00:02:58.366 --> 00:03:03.366
+Well, there would be multiple things that could go wrong with a transaction.
+
+38
+00:03:03.366 --> 00:03:10.366
+And again, at the opportunity level, it would either be good or it will be bad.
+
+39
+00:03:10.366 --> 00:03:16.099
+Per opportunity, any given opportunity is either good or it's bad.
+
+40
+00:03:16.100 --> 00:03:21.100
+Now, let's set up a simple example here.
+
+41
+00:03:21.100 --> 00:03:27.500
+Let's suppose, for the sake of argument, that we have 100 solder joints per circuit board.
+
+42
+00:03:27.500 --> 00:03:32.766
+And there are six different types of defect categories
+
+43
+00:03:32.766 --> 00:03:35.899
+associated with each solder joint.
+
+44
+00:03:35.900 --> 00:03:41.900
+That's a total of 600 defect opportunities per circuit board.
+
+45
+00:03:41.900 --> 00:03:48.900
+Now, suppose 50 circuit boards are produced. We make 50 of them.
+
+46
+00:03:48.900 --> 00:03:54.500
+Times 600 defect opportunities per board, means
+
+47
+00:03:54.500 --> 00:03:57.533
+that out of the 50 circuit boards produced,
+
+48
+00:03:57.533 --> 00:04:02.433
+we will create a total of 3000 defect opportunities.
+
+49
+00:04:02.433 --> 00:04:06.433
+Well that's pretty simple and straightforward and easy to understand.
+
+50
+00:04:06.433 --> 00:04:13.266
+Now, let's suppose that we observe 200 defects across the 50 circuit boards.
+
+51
+00:04:13.266 --> 00:04:16.832
+In other words, there's 200 solder joints that are defective
+
+52
+00:04:16.833 --> 00:04:20.833
+across the 50 circuit boards that we make.
+
+53
+00:04:20.833 --> 00:04:27.866
+So, in this case. Here we’ll bring it up, so we can see it here.
+
+54
+00:04:27.866 --> 00:04:33.032
+200 defects across the 50 boards.
+
+55
+00:04:33.033 --> 00:04:39.433
+So, the defects per circuit board is computed as 200 over 50, or 4.
+
+56
+00:04:39.433 --> 00:04:44.166
+That says, we would be averaging, and the keyword there is averaging,
+
+57
+00:04:44.166 --> 00:04:48.166
+four defects per circuit board.
+
+58
+00:04:48.166 --> 00:04:53.366
+Now,
+
+59
+00:04:53.366 --> 00:05:00.166
+hence, the defects per solder joint,
+
+60
+00:05:00.166 --> 00:05:04.266
+would be four per 100.
+
+61
+00:05:04.266 --> 00:05:09.532
+Why? There's 100 solder joints per board.
+
+62
+00:05:09.533 --> 00:05:16.566
+Now, we continue, we can now say.
+
+63
+00:05:16.566 --> 00:05:23.099
+Scrolling on down here.
+
+64
+00:05:23.100 --> 00:05:28.833
+We'll enlarge our screen.
+
+65
+00:05:28.833 --> 00:05:33.133
+There we go.
+
+66
+00:05:33.133 --> 00:05:39.533
+So, the defects per solder joint opportunity would be
+
+67
+00:05:39.533 --> 00:05:44.999
+.04 divided by 6. Remember, there were
+
+68
+00:05:45.000 --> 00:05:49.000
+.04 defects per solder joint.
+
+69
+00:05:49.000 --> 00:05:53.633
+Since there are six unique defect categories, independent
+
+70
+00:05:53.633 --> 00:05:58.133
+defect categories, per solder joint.
+
+71
+00:05:58.133 --> 00:06:02.133
+Then we would see .04 over 6 or .0067.
+
+72
+00:06:02.133 --> 00:06:06.133
+Now we can say, because of that,
+
+73
+00:06:06.133 --> 00:06:11.066
+the probability of producing a solder joint with zero defects
+
+74
+00:06:11.066 --> 00:06:15.199
+is e to the minus DPU or 99.33%.
+
+75
+00:06:15.200 --> 00:06:20.533
+That's to say, the probability of zero defects
+
+76
+00:06:20.533 --> 00:06:24.533
+in a solder joint is 99.33%.
+
+77
+00:06:24.533 --> 00:06:28.533
+In other words, were 99.33% certain,
+
+78
+00:06:28.533 --> 00:06:34.199
+that given the current process capability, we can make a solder joint defect free.
+
+79
+00:06:34.200 --> 00:06:38.200
+It will pass all six defect categories.
+
+80
+00:06:38.200 --> 00:06:43.300
+Now owing to that, we can compute the Sigma.
+
+81
+00:06:43.300 --> 00:06:50.466
+So, the Sigma per solder joint is 3.98.
+
+82
+00:06:50.466 --> 00:06:57.399
+So, about Four Sigma. So, in this case, we can say that if we produce
+
+83
+00:06:57.400 --> 00:07:04.000
+this circuit board, make 50 of them, observe 200 defects.
+
+84
+00:07:04.000 --> 00:07:10.266
+Then per defect opportunity, we’re running a capability
+
+85
+00:07:10.266 --> 00:07:16.932
+of 3.98 Sigma or Four Sigma, about average.
+
+86
+00:07:16.933 --> 00:07:23.966
+Now, the same exact thing would hold true for the transactional example.
+
+87
+00:07:23.966 --> 00:07:30.399
+We would have our defect categories and look at the total number of transactions.
+
+88
+00:07:30.400 --> 00:07:35.933
+So, if we have six defect categories per transaction.
+
+89
+00:07:35.933 --> 00:07:39.266
+And there are 100 such transactions made,
+
+90
+00:07:39.266 --> 00:07:44.032
+we would make a total of 600 defect opportunities.
+
+91
+00:07:44.033 --> 00:07:51.066
+Doesn’t mean they're going to be defective, it just means it's an opportunity for defect.
+
+92
+00:07:51.066 --> 00:07:56.066
+Thank you for choosing SSMI.

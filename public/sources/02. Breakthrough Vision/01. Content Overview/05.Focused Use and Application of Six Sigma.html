@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 05: Sử Dụng Và Ứng Dụng Tập Trung Của Six Sigma — Six Sigma Masterclass</title>
+<style>
+  :root{
+    --wood-deep:#022c22;
+    --wood-dark:#064e3b;
+    --wood-forest:#1b4332;
+    --water-ocean:#082f49;
+    --emerald:#059669;
+    --emerald-vibrant:#10b981;
+    --emerald-mint:#6ee7b7;
+    --vi-green:#047857;
+    --vi-green-2:#065f46;
+    --red:#b91c1c;
+    --green:#16a34a;
+    --gold-bg:#fefce8;
+    --gold-border:#d97706;
+    --wood-bark:#78350f;
+    --bg-paper:#f0f7f4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background:var(--bg-paper);
+    color:#0f241d;
+    line-height:1.68;
+  }
+  .container{max-width:1160px;margin:0 auto;padding:0 24px 80px;}
+  a{color:var(--emerald);text-decoration:none;}
+  
+  .hero{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color:#fff;
+    padding:48px 24px 38px;
+    margin-bottom:36px;
+    box-shadow:0 10px 32px rgba(2,44,34,0.35);
+    border-bottom:4px solid var(--emerald);
+  }
+  .hero-inner{max-width:1160px;margin:0 auto;}
+  .hero-badge{
+    display:inline-block;
+    background:rgba(16,185,129,0.18);
+    border:1px solid rgba(110,231,183,0.45);
+    color:var(--emerald-mint);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  .hero-title{font-size:2.2rem;font-weight:800;margin:0 0 6px;color:#ffffff;line-height:1.2;}
+  .hero-title-en{font-size:1.15rem;color:var(--emerald-mint);margin:0 0 16px;font-weight:500;}
+  .hero-desc{font-size:1.02rem;color:#d1fae5;max-width:880px;margin:0;}
+
+  .section-card{
+    background:#ffffff;
+    border-radius:14px;
+    padding:34px 38px;
+    margin-bottom:34px;
+    box-shadow:0 4px 20px rgba(6,78,59,0.07);
+    border-top:5px solid var(--emerald);
+    border-bottom:1px solid #d1fae5;
+  }
+  .section-num{
+    display:inline-block;
+    background:var(--wood-dark);
+    color:#ecfdf5;
+    font-size:11.5px;
+    font-weight:700;
+    padding:3px 10px;
+    border-radius:4px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .section-heading{font-size:1.55rem;color:var(--wood-dark);margin:0 0 4px;font-weight:800;}
+  .section-subheading{font-size:1.05rem;color:var(--vi-green);font-style:italic;margin:0 0 20px;font-weight:600;}
+
+  .exec-summary{
+    background:#f4fbf7;
+    border:1px solid #d1fae5;
+    border-left:6px solid var(--emerald);
+    border-radius:10px;
+    padding:22px 26px;
+    margin:18px 0;
+  }
+  .exec-summary ul{margin:8px 0 0; padding-left:20px;}
+  .exec-summary li{margin-bottom:10px; font-size:1rem; color:#0f241d;}
+  .exec-summary strong{color:var(--wood-dark);}
+
+  /* Pure Native Math Styling */
+  .math-card{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color:#ecfdf5;
+    border-radius:10px;
+    padding:22px 26px;
+    margin:20px 0;
+    border:1.5px solid var(--emerald);
+    box-shadow:0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title{
+    font-size:0.88rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--emerald-mint);
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .math-equation{
+    display:inline-flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    font-family:'Cambria Math', Georgia, serif;
+    font-size:1.3rem;
+    font-weight:700;
+    color:#ffffff;
+    margin:10px 0 16px;
+    line-height:1.4;
+  }
+  .math-frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    padding:0 8px;
+  }
+  .math-num{
+    border-bottom:2px solid var(--emerald-mint);
+    padding-bottom:4px;
+    color:#ffffff;
+    font-size:1.15rem;
+  }
+  .math-den{
+    padding-top:4px;
+    color:var(--emerald-mint);
+    font-size:1.15rem;
+  }
+  .math-var{font-style:italic; color:#ffffff;}
+  .math-card .desc{
+    font-size:0.92rem;
+    color:#d1fae5;
+    margin-top:10px;
+    line-height:1.6;
+    border-top:1px dashed rgba(110,231,183,0.3);
+    padding-top:10px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong{color:#ffffff;}
+  .math-card .desc em{color:var(--emerald-mint); font-style:normal; font-weight:600;}
+
+  /* Tables */
+  table.data-table{border-collapse:collapse;width:100%;font-size:0.92rem;min-width:680px;margin:18px 0;}
+  table.data-table th{
+    background:linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color:#fff;padding:10px 12px;text-align:left;vertical-align:top;
+  }
+  table.data-table th .th-vi{display:block;color:#a7f3d0;font-style:italic;font-weight:500;font-size:0.78rem;margin-top:2px;}
+  table.data-table td{padding:10px 12px;border-bottom:1px solid #d1fae5;vertical-align:top;background:#fff;}
+  table.data-table td .td-sub{display:block;color:var(--vi-green-2);font-style:italic;font-size:0.85rem;margin-top:2px;}
+  table.data-table tr:nth-child(even) td{background:#f7fcf9;}
+
+  /* Comparison Grid */
+  .vs-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin:22px 0;}
+  @media(max-width:768px){.vs-grid{grid-template-columns:1fr;}}
+  .vs-col{border-radius:10px;padding:20px;}
+  .vs-col.bad{background:#fef2f2;border:2px solid #ef4444;}
+  .vs-col.good{background:#ecfdf5;border:2px solid var(--emerald-vibrant);}
+  .vs-badge{
+    display:inline-block;font-size:0.75rem;font-weight:800;letter-spacing:0.5px;
+    padding:4px 10px;border-radius:14px;color:#fff;margin-bottom:10px;text-transform:uppercase;
+  }
+  .vs-badge.bad{background:var(--red);}
+  .vs-badge.good{background:var(--green);}
+  .vs-divider{display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--wood-dark);font-size:1.3rem;}
+  .vs-col ul{margin:0;padding-left:18px;}
+  .vs-col li{margin-bottom:8px;font-size:0.9rem;}
+
+  /* MBB Box */
+  .mbb-box{
+    background:var(--gold-bg);border:1px solid #fef08a;border-left:5px solid var(--gold-border);
+    border-radius:8px;padding:20px 24px;margin:22px 0;
+  }
+  .mbb-box .title{color:var(--wood-bark);font-weight:800;font-size:1.05rem;margin-bottom:4px;}
+  .mbb-box p{margin:0;color:#78350f;font-size:0.95rem;}
+
+  /* Interactive Arena */
+  .interactive-arena{
+    background:linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color:#fff;border-radius:14px;padding:36px 40px;margin:40px 0;
+    box-shadow:0 8px 28px rgba(2,44,34,0.3);border:2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2{color:#fff;margin-top:0;font-size:1.6rem;font-weight:800;}
+  .interactive-arena .arena-desc{color:var(--emerald-mint);font-style:italic;font-size:0.98rem;margin-bottom:24px;}
+  
+  .quiz-card{
+    background:rgba(255,255,255,0.06);border:1px solid rgba(110,231,183,0.3);
+    border-radius:10px;padding:22px 24px;margin-bottom:22px;
+  }
+  .quiz-tag{display:inline-block;background:var(--emerald);color:#fff;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;margin-bottom:6px;}
+  .quiz-q{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.45;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-btn{
+    background:rgba(2,44,34,0.7);border:1px solid rgba(52,211,153,0.4);color:#ecfdf5;
+    padding:12px 16px;border-radius:8px;font-size:0.92rem;text-align:left;cursor:pointer;
+    transition:all 0.2s ease;font-family:inherit;line-height:1.4;
+  }
+  .quiz-btn:hover{background:rgba(16,185,129,0.25);border-color:var(--emerald-mint);}
+  .quiz-btn.correct{background:#065f46 !important;border-color:#34d399 !important;color:#fff !important;}
+  .quiz-btn.wrong{background:#7f1d1d !important;border-color:#f87171 !important;color:#fff !important;}
+  .quiz-fb{display:none;margin-top:12px;padding:14px 16px;border-radius:8px;font-size:0.9rem;line-height:1.45;}
+  .quiz-fb.show{display:block;}
+  .quiz-fb.success{background:rgba(16,185,129,0.2);border:1px solid #34d399;color:#d1fae5;}
+  .quiz-fb.error{background:rgba(239,68,68,0.2);border:1px solid #f87171;color:#fecaca;}
+
+  /* Flashcards */
+  .flashcards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px;}
+  .flashcard{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(110,231,183,0.3);border-radius:10px;
+    padding:18px;cursor:pointer;min-height:140px;display:flex;flex-direction:column;
+    justify-content:center;text-align:center;transition:transform 0.2s ease;user-select:none;
+  }
+  .flashcard:hover{transform:translateY(-3px);border-color:var(--emerald-mint);}
+  .flashcard .front{font-size:1.05rem;font-weight:800;color:var(--emerald-mint);}
+  .flashcard .hint{font-size:0.75rem;color:#a7f3d0;margin-top:6px;opacity:0.8;}
+  .flashcard .back{display:none;font-size:0.88rem;color:#fff;line-height:1.4;}
+  .flashcard.flipped .front, .flashcard.flipped .hint{display:none;}
+  .flashcard.flipped .back{display:block;}
+
+  /* Action Checklist */
+  .action-item{display:flex;align-items:flex-start;gap:12px;background:#f4fbf7;border:1px solid #d1fae5;padding:12px 16px;border-radius:8px;margin-bottom:10px;}
+  .action-item input{width:18px;height:18px;accent-color:var(--emerald);cursor:pointer;margin-top:2px;}
+  .action-text{font-size:0.92rem;color:#0f241d;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">Breakthrough Vision #05 &bull; Ứng Dụng Tập Trung</span>
+    <h1 class="hero-title">Sử Dụng &amp; Ứng Dụng Tập Trung Của Six Sigma (Focused Application)</h1>
+    <div class="hero-title-en">Focused Use and Application of Six Sigma: Strategic Targeting &amp; Project Selection Boundaries</div>
+    <p class="hero-desc">Chiến lược định vị và phân bổ nguồn lực Six Sigma chính xác: Nguyên lý 80/20 Pareto trong lựa chọn dự án triệu đô, Nhận diện khu vực COPQ khổng lồ, và Ma trận phân định ranh giới &mdash; Khi nào BẮT BUỘC dùng Six Sigma và khi nào TUYỆT ĐỐI KHÔNG NÊN dùng.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Phần 1 &bull; Executive Summary</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành Trong 60 Giây</h2>
+    <div class="section-subheading">Tập trung nguồn lực tinh hoa vào đúng 20% điểm nghẽn để tạo ra 80% giá trị tài chính</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Quy Tắc "Bắn Tỉa Chiến Lược":</strong> Six Sigma là vũ khí hạng nặng đắt tiền (sử dụng chuyên gia Black Belt chuyên trách); không được rải mành mành khắp nơi. Phải tập trung vào đúng các điểm nghẽn chiến lược mang lại giá trị tài chính &gt; $100,000 USD.</li>
+        <li><strong>Ba Tiêu Chí BẮT BUỘC Phải Dùng Six Sigma:</strong>
+          1. Nguyên nhân gốc rễ chưa rõ ràng (Root cause is unknown).
+          2. Bài toán phức tạp liên quan đến nhiều biến số biến thiên (Multi-variable variation).
+          3. Tác động tài chính hoặc rủi ro khách hàng cực kỳ lớn (High financial stakes / COPQ).</li>
+        <li><strong>Khi Nào KHÔNG DÙNG Six Sigma:</strong> Các sự cố hiển nhiên đã biết rõ nguyên nhân (Áp dụng "Just Do It" hoặc Kaizen nhanh), các quy trình đơn giản ít dữ liệu, hoặc các vấn đề chỉ xảy ra một lần không lặp lại.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & PROJECT SELECTION MATRIX -->
+  <section class="section-card">
+    <span class="section-num">Phần 2 &bull; Core Frameworks &amp; Decision Matrix</span>
+    <h2 class="section-heading">Ma Trận Ra Quyết Định Lựa Chọn Công Cụ</h2>
+    <div class="section-subheading">Phân loại bài toán để chọn đúng vũ khí: Just Do It vs Kaizen vs DMAIC vs DFSS</div>
+
+    <div style="margin:24px 0;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Đặc Điểm Vấn Đề (Problem Profile)<span class="th-vi">Bản chất bài toán</span></th>
+            <th>Vũ Khí Quản Trị Phù Hợp (Right Tool)<span class="th-vi">Phương pháp tối ưu</span></th>
+            <th>Thời Gian Thực Thi (Typical Duration)<span class="th-vi">Tiến độ chuẩn</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Đã biết rõ nguyên nhân &amp; Đã có giải pháp sẵn</strong> (Ví dụ: bóng đèn cháy, thiếu biển chỉ dẫn).</td>
+            <td><strong>Just Do It (Làm Ngay) &bull; Quick Win</strong> (Không cần lập dự án).</td>
+            <td>1 &ndash; 3 ngày</td>
+          </tr>
+          <tr>
+            <td><strong>Lãng phí dòng chảy, bừa bộn, thời gian chờ đợi</strong> (Quy trình tuyến tính, ít biến số toán học).</td>
+            <td><strong>Lean Kaizen Event &bull; 5S &bull; Value Stream Mapping</strong>.</td>
+            <td>1 &ndash; 2 tuần</td>
+          </tr>
+          <tr>
+            <td><strong>Lỗi phức tạp lặp lại, biến thiên cao, CHƯA BIẾT NGUYÊN NHÂN</strong> (Tổn thất tài chính lớn &gt; $100k).</td>
+            <td><strong>Six Sigma DMAIC Project</strong> (Black Belt / Green Belt dẫn dắt).</td>
+            <td>2 &ndash; 4 tháng (hoặc Agile Sprints)</td>
+          </tr>
+          <tr>
+            <td><strong>Quy trình đã chạm trần Entitlement, sản phẩm mới hoàn toàn</strong> (Cần tạo ra quy trình mới chưa từng có).</td>
+            <td><strong>Design for Six Sigma (DFSS / DMADV / ICOV)</strong>.</td>
+            <td>4 &ndash; 9 tháng</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASE STUDIES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Phần 3 &bull; Case Studies &amp; VS Comparison</span>
+    <h2 class="section-heading">Bài Học Thực Chiến: Bẫy "Dùng Dao Mổ Trâu Để Giết Gà"</h2>
+    <div class="section-subheading">Hậu quả khi áp dụng sai phương pháp Six Sigma cho các vấn đề đơn giản</div>
+
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Áp Dụng Sai (Overkill Trap)</span>
+        <ul>
+          <li>Lập dự án DMAIC 4 tháng để giải quyết việc "nhân viên hay quên tắt điều hòa khi về".</li>
+          <li>Chạy phần mềm thống kê và viết báo cáo 50 trang cho một công việc Just Do It.</li>
+          <li>Lãng phí nguồn lực Black Belt đắt đỏ và bị các phòng ban chế giễu.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Ứng Dụng Tập Trung Đúng Đắn (Focused Precision)</span>
+        <ul>
+          <li>Lắp rơ-le hẹn giờ tự động (Poka-Yoke / Just Do It) tắt điều hòa trong 1 ngày.</li>
+          <li>Dồn toàn bộ năng lực Black Belt vào giải quyết bài toán nứt mối hàn ống dẫn dầu ($1.2M COPQ).</li>
+          <li>Tối đa hóa giá trị ROI và khẳng định uy tín vượt trội của Six Sigma.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA (8 SCENARIO QUIZZES) -->
+  <section class="interactive-arena">
+    <h2>⚡ Đấu Trường Trắc Nghiệm Tình Huống Đa Tầng (8 Câu Thực Chiến)</h2>
+    <div class="arena-desc">Đánh giá khả năng lựa chọn bài toán và định vị đúng ranh giới ứng dụng Six Sigma</div>
+
+    <!-- Question 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 1 &bull; Tầng 1: Điều Kiện Tiên Quyết Để Khởi Động Dự Án DMAIC</span>
+      <div class="quiz-q">Điều kiện cốt tử nào sau đây bắt buộc phải thỏa mãn trước khi phê duyệt một dự án Six Sigma DMAIC?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-bv5-1', 'Correct! A DMAIC project must only be launched when the root cause of the problem is UNKNOWN, the solution is not obvious, and the financial/customer impact is significant.', 'Chính xác! Dự án DMAIC chỉ được phê duyệt khi nguyên nhân gốc rễ CHƯA BIẾT, giải pháp chưa rõ ràng, bài toán có độ biến thiên phức tạp và tác động tài chính/khách hàng đáng kể.')">A. Nguyên nhân gốc rễ CHƯA BIẾT, giải pháp chưa rõ ràng và tác động tài chính/khách hàng đáng kể.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-bv5-1', 'Incorrect. If the solution is already known, it is a Just-Do-It task, not a DMAIC project.', 'Sai. Nếu đã biết rõ giải pháp thì chỉ cần thực thi ngay (Just Do It), không cần lập dự án DMAIC.')">B. Đã biết sẵn giải pháp và chỉ cần viết báo cáo hợp thức hóa.')</button>
+      </div>
+      <div id="fb-bv5-1" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 2 &bull; Tầng 3: Nhận Diện Tình Huống KHÔNG NÊN Dùng DMAIC</span>
+      <div class="quiz-q">Máy photocopy văn phòng bị kẹt giấy liên tục do nhân viên mua nhầm loại giấy mỏng kém chất lượng. Hành động quản trị đúng đắn là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-bv5-2', 'Correct! This is a "Just Do It" operational fix: Immediately switch back to approved paper specs and update purchasing standards. Launching a 4-month DMAIC project for this is wasteful absurdity.', 'Chính xác! Đây là sự vụ "Just Do It": Lập tức đổi lại loại giấy đạt chuẩn và cập nhật quy định mua hàng. Tuyệt đối không lập dự án DMAIC 4 tháng cho vấn đề hiển nhiên này.')">A. Thực hiện "Just Do It": Đổi ngay loại giấy đạt chuẩn và chuẩn hóa quy định mua hàng.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-bv5-2', 'Incorrect. Obvious fixes should be implemented immediately without bureaucratic DMAIC overhead.', 'Sai. Dùng DMAIC cho bài toán hiển nhiên là lãng phí nguồn lực.')">B. Giao cho một Black Belt làm dự án DMAIC trong 6 tháng.')</button>
+      </div>
+      <div id="fb-bv5-2" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 3 &bull; Tầng 2: Ứng Dụng Nguyên Lý Pareto 80/20 Trong Chọn Dự Án</span>
+      <div class="quiz-q">Nguyên lý Pareto 80/20 được Master Black Belt ứng dụng như thế nào trong việc quản lý danh mục dự án Six Sigma?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-bv5-3', 'Correct! Pareto 80/20 focuses elite Black Belt resources on the 20% vital bottleneck processes that generate 80% of corporate defects and financial COPQ losses.', 'Chính xác! Tập trung toàn bộ nguồn lực Black Belt tinh hoa vào đúng 20% các quy trình điểm nghẽn sống còn tạo ra 80% tổng chi phí tổn thất kém chất lượng (COPQ) của toàn công ty.')">A. Tập trung nguồn lực Black Belt vào đúng 20% điểm nghẽn tạo ra 80% tổng tổn thất tài chính COPQ.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-bv5-3', 'Incorrect. Pareto analysis separates the vital few from the trivial many to maximize ROI.', 'Sai. Nguyên lý Pareto giúp tập trung vào các điểm nghẽn tạo ra lợi nhuận lớn nhất.')">B. Chia đều nguồn lực cho 100% mọi phòng ban.')</button>
+      </div>
+      <div id="fb-bv5-3" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 4 &bull; Tầng 1: Ngưỡng Tài Chính Tối Thiểu Của Dự Án Black Belt</span>
+      <div class="quiz-q">Theo chuẩn mực quản trị của các tập đoàn Fortune 500 (GE, Honeywell), một dự án do Black Belt chuyên trách dẫn dắt thường phải đạt ngưỡng tiết kiệm tài chính tối thiểu khoảng bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-bv5-4', 'Correct! A full-time Black Belt project typically targets at least $100,000 to $250,000+ in validated bottom-line Hard Savings to justify dedicated specialized resource costs.', 'Chính xác! Tối thiểu từ $100,000 đến $250,000+ USD tiền tiết kiệm Hard Savings thực tế để bù đắp chi phí vận hành nhân sự chuyên trách.')">A. Tối thiểu từ $100,000 USD đến $250,000+ USD (Hard Savings)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-bv5-4', 'Incorrect. Low-value projects (<$10k) should be handled via Green Belts or Quick Wins.', 'Sai. Dự án dưới $10k nên giao cho Green Belt hoặc Quick Wins xử lý.')">B. Khoảng $500 USD</button>
+      </div>
+      <div id="fb-bv5-4" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 5 &bull; Tầng 3: Chọn Đúng Phương Pháp Khi Quy Trình Chưa Tồn Tại</span>
+      <div class="quiz-q">Một công ty xe hơi muốn phát triển dòng xe bán tải chạy hoàn toàn bằng điện (EV) &mdash; một sản phẩm mà công ty chưa từng có quy trình sản xuất trước đây. Phương pháp luận Six Sigma nào phải được áp dụng?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-bv5-5', 'Correct! When designing a brand-new product/process that does not exist, DMAIC cannot be used (as there is no baseline data to measure). The organization must deploy Design for Six Sigma (DFSS / DMADV / ICOV).', 'Chính xác! Khi thiết kế một sản phẩm/quy trình hoàn toàn mới chưa từng tồn tại, không thể dùng DMAIC (vì chưa có dữ liệu đo lường ban đầu). Bắt buộc phải áp dụng Thiết Kế Chuẩn Six Sigma (DFSS / DMADV / ICOV).')">A. Design for Six Sigma (DFSS / DMADV / ICOV) để thiết kế quy trình mới đạt chuẩn 6-Sigma ngay từ đầu.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-bv5-5', 'Incorrect. DMAIC fixes existing broken processes; DFSS designs new ones.', 'Sai. DMAIC chỉ dùng để sửa chữa quy trình cũ đã có dữ liệu.')">B. Dùng DMAIC truyền thống để đo đạc quá khứ.')</button>
+      </div>
+      <div id="fb-bv5-5" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 6 &bull; Tầng 2: Sự Kết Hợp Tinh Gọn Giữa Lean Và Six Sigma</span>
+      <div class="quiz-q">Khi nào nên áp dụng công cụ Lean trước và khi nào nên áp dụng Six Sigma DMAIC?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-bv5-6', 'Correct! Apply Lean first to eliminate obvious waste, organize workspace (5S), and establish standard baseline flow; then apply Six Sigma DMAIC to tackle complex statistical variation and stubborn defect causes.', 'Chính xác! Áp dụng Lean trước để loại bỏ các lãng phí hữu hình, sắp xếp hiện trường (5S) và thiết lập dòng chảy cơ bản; sau đó áp dụng Six Sigma DMAIC để giải quyết các biến thiên thống kê phức tạp và nguyên nhân lỗi tiềm ẩn.')">A. Áp dụng Lean trước để dọn sạch lãng phí dòng chảy, sau đó áp dụng Six Sigma để triệt tiêu biến thiên thống kê phức tạp.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-bv5-6', 'Incorrect. Lean creates baseline flow; Six Sigma eliminates deep variation.', 'Sai. Trình tự Lean trước - Six Sigma sau là chuẩn mực tối ưu.')">B. Áp dụng Six Sigma trước rồi mới dọn rác sau.')</button>
+      </div>
+      <div id="fb-bv5-6" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 7 &bull; Tầng 1: Đánh Giá Chi Phí Cơ Hội Của Black Belt</span>
+      <div class="quiz-q">Nếu giao cho một Black Belt làm một dự án có giá trị tiết kiệm $5,000/năm trong 6 tháng, doanh nghiệp đang chịu thiệt hại về chi phí cơ hội như thế nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-bv5-7', 'Correct! The opportunity cost loss is massive: Spending $50,000+ in salary and overhead to save $5,000, while leaving million-dollar strategic bottlenecks unaddressed.', 'Chính xác! Thiệt hại cơ hội khổng lồ: Tốn hơn $50,000 USD chi phí lương và vận hành chuyên gia để chỉ thu về $5,000, trong khi bỏ mặc các điểm nghẽn chiến lược trị giá hàng triệu USD không có ai xử lý.')">A. Lãng phí chi phí cơ hội lớn: Chi $50,000 lương chuyên gia để chỉ cứu được $5,000, bỏ mặc các bài toán triệu USD.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-bv5-7', 'Incorrect. Misallocating Black Belt capacity causes severe economic opportunity loss.', 'Sai. Đây là một quyết định phân bổ nguồn lực sai lầm nghiêm trọng.')">B. Công ty vẫn có lãi vì tiết kiệm được $5,000.')</button>
+      </div>
+      <div id="fb-bv5-7" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 8 &bull; Tầng 3: Vai Trò Của Portfolio Tollgate Trong Việc Loại Bỏ Dự Án Kém Hiệu Quả</span>
+      <div class="quiz-q">Hành động dũng cảm nhất của một Master Black Belt trong buổi duyệt danh mục dự án đầu năm là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-bv5-8', 'Correct! Courageously rejecting or killing low-impact, poorly scoped, or "pet projects" that lack clear financial ROI, keeping the team laser-focused on high-value strategic imperatives.', 'Chính xác! Dũng cảm bác bỏ hoặc hủy bỏ (Kill) các đề tài dự án nhỏ lẻ, thiếu tính liên kết chiến lược hoặc không có dòng tiền ROI rõ ràng, để giữ toàn bộ đội ngũ tập trung 100% vào các mục tiêu sống còn.')">A. Dũng cảm bác bỏ các đề tài dự án nhỏ lẻ, hình thức để dồn toàn lực cho các mục tiêu chiến lược sống còn.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-bv5-8', 'Incorrect. True leadership filters out trivial distractions to protect high-impact focus.', 'Sai. Phê duyệt bừa bãi sẽ làm loãng nguồn lực và thất bại.')">B. Phê duyệt 100% tất cả các ý kiến đề xuất để làm vừa lòng mọi người.')</button>
+      </div>
+      <div id="fb-bv5-8" class="quiz-fb"></div>
+    </div>
+
+    <h3 style="color:#fff; margin-top:34px; font-size:1.25rem;">🎴 Flashcards Ôn Tập Nhanh (Click để lật thẻ 3D)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">When to Use DMAIC<span class="vi">Khi Nào Dùng DMAIC</span></div>
+        <div class="hint">Bấm để lật xem định nghĩa</div>
+        <div class="back">1. Nguyên nhân gốc rễ CHƯA BIẾT. 2. Biến thiên phức tạp. 3. Giá trị tài chính lớn (&gt; $100k).<span class="vi">3 Tiêu chí bắt buộc.</span></div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Just Do It vs DMAIC<span class="vi">Làm Ngay vs DMAIC</span></div>
+        <div class="hint">Bấm để lật xem định nghĩa</div>
+        <div class="back">Đã biết rõ nguyên nhân và giải pháp &rarr; Thực thi ngay (Just Do It). Chưa biết nguyên nhân &rarr; Khởi động dự án Six Sigma DMAIC.<span class="vi">Tránh bẫy lãng phí nguồn lực.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: 1-PAGE ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">Phần 5 &bull; Action Checklist</span>
+    <h2 class="section-heading">Kế Hoạch Sàng Lọc Danh Mục Dự Án (Sáng Thứ Hai Làm Gì?)</h2>
+    <div class="section-subheading">Ba bước bảo đảm dự án Six Sigma được ứng dụng tập trung đúng điểm nghẽn</div>
+
+    <div style="margin:18px 0;">
+      <div class="action-item">
+        <input type="checkbox" id="actbv5-1">
+        <label for="actbv5-1" class="action-text">
+          <strong>Bước 1: Rà soát danh sách đề xuất dự án hiện tại</strong>: Loại bỏ ngay các đề tài đã biết sẵn nguyên nhân/giải pháp để chuyển sang thực hiện "Just Do It".
+        </label>
+      </div>
+      <div class="action-item">
+        <input type="checkbox" id="actbv5-2">
+        <label for="actbv5-2" class="action-text">
+          <strong>Bước 2: Áp dụng biểu đồ Pareto 80/20</strong> đối với toàn bộ chi phí phế phẩm và khiếu nại khách hàng năm qua để khoanh vùng 3 khu vực COPQ lớn nhất.
+        </label>
+      </div>
+      <div class="action-item">
+        <input type="checkbox" id="actbv5-3">
+        <label for="actbv5-3" class="action-text">
+          <strong>Bước 3: Thiết lập ngưỡng phê duyệt tài chính tối thiểu ($100k+)</strong> cho các đề tài Black Belt trước khi trình Ban Giám đốc ký duyệt.
+        </label>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:#065f46; font-size:0.85rem; padding:20px 0;">&copy; Six Sigma Master Black Belt Executive Training Series &bull; Phong Thủy Đại Lâm Mộc Standard</p>
+</footer>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:4px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:4px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

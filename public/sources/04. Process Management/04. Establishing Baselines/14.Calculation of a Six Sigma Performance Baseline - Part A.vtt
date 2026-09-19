@@ -1,0 +1,281 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Calculation of a Six Sigma Performance Baseline
+
+2
+00:00:05.000 --> 00:00:08.600
+Welcome to this session on establishing baselines.
+
+3
+00:00:08.600 --> 00:00:14.000
+What we’re looking at here, is that we have several CTQ’s.
+
+4
+00:00:14.000 --> 00:00:18.000
+CTQ 1, 2, 3, 4 and 5.
+
+5
+00:00:18.000 --> 00:00:25.000
+Now, with respect to each of these CTQ’s, there is a unit of product.
+
+6
+00:00:25.000 --> 00:00:31.300
+Each unit of product produced, where rows shows units.
+
+7
+00:00:31.300 --> 00:00:36.700
+So, we have unit 1, unit 2, 3, 4, 5, and so on.
+
+8
+00:00:36.700 --> 00:00:43.700
+Now, in this instance of unit 1, we can see that it has five CTQ’s.
+
+9
+00:00:43.700 --> 00:00:49.100
+Thus, every unit produced has the same number of CTQ’s
+
+10
+00:00:49.100 --> 00:00:52.066
+and the same identical CTQ’s.
+
+11
+00:00:52.066 --> 00:00:58.466
+Also, there is one opportunity for each type of CTQ.
+
+12
+00:00:58.466 --> 00:01:04.899
+What we’re seeing tabulated is the outcome of production.
+
+13
+00:01:04.900 --> 00:01:11.900
+In other words, we have five CTQ’s in unit 1, all five passed.
+
+14
+00:01:11.900 --> 00:01:17.700
+If we saw a one, say for example, in cell location C11.
+
+15
+00:01:17.700 --> 00:01:22.733
+If there was a one, that is to say that CTQ was defective.
+
+16
+00:01:22.733 --> 00:01:27.233
+But since we observe a zero, in this particular cell.
+
+17
+00:01:27.233 --> 00:01:34.199
+Right there, since we observed zero, then we know that it was a pass.
+
+18
+00:01:34.200 --> 00:01:38.900
+Now, how do we get that?
+
+19
+00:01:38.900 --> 00:01:43.733
+If we go directly up to the yellow, we see Sigma capability.
+
+20
+00:01:43.733 --> 00:01:49.033
+This is the short-term capability for each of the corresponding CTQ’s.
+
+21
+00:01:49.033 --> 00:01:55.266
+So for CTQ 1, we see that it has a short-term capability of Three Sigma.
+
+22
+00:01:55.266 --> 00:02:00.132
+That converts to a yield of 93.32%.
+
+23
+00:02:00.133 --> 00:02:06.266
+We define that by the equation normsdist of C6,
+
+24
+00:02:06.266 --> 00:02:09.532
+which is three Sigma minus 1.5.
+
+25
+00:02:09.533 --> 00:02:15.399
+We subtract the 1.5 to convert the short-term Sigma to a long-term yield,
+
+26
+00:02:15.400 --> 00:02:18.366
+which is 93.32%.
+
+27
+00:02:18.366 --> 00:02:24.499
+So, for each of the five CTQ’s, we start with an assumption of three Sigma capability.
+
+28
+00:02:24.500 --> 00:02:30.166
+Where each CTQ has a yield of 93.32%.
+
+29
+00:02:30.166 --> 00:02:36.666
+If we hit F9, we can initiate the simulation, as many times as we would like.
+
+30
+00:02:36.666 --> 00:02:43.332
+What we will be doing in the simulation is producing 1000 units of product.
+
+31
+00:02:43.333 --> 00:02:47.333
+Where each unit of product, has the five CTQ’s.
+
+32
+00:02:47.333 --> 00:02:54.366
+And we are looking at the inspection and test outcome for each of those CTQ’s.
+
+33
+00:02:54.366 --> 00:02:58.066
+If I see a zero in column I,
+
+34
+00:02:58.066 --> 00:03:03.766
+then I know at least one of the CTQ’s did not conform to standard.
+
+35
+00:03:03.766 --> 00:03:07.766
+Now, let's look at how we got the simulation.
+
+36
+00:03:07.766 --> 00:03:12.666
+We have, If a uniform random number between zero and one,
+
+37
+00:03:12.666 --> 00:03:18.099
+is less than the defect rate, one minus C7,
+
+38
+00:03:18.100 --> 00:03:24.166
+then print a 1, otherwise print zero.
+
+39
+00:03:24.166 --> 00:03:30.299
+Thus, if the random number is less than one minus the yield,
+
+40
+00:03:30.300 --> 00:03:33.866
+then I see a defective.
+
+41
+00:03:33.866 --> 00:03:38.699
+A defective CTQ. In this case, CTQ 1 is defective.
+
+42
+00:03:38.700 --> 00:03:44.933
+Now, in the result I say, if some of C11 to G11, which is from here to here.
+
+43
+00:03:44.933 --> 00:03:47.966
+C11 to G11.
+
+44
+00:03:47.966 --> 00:03:54.132
+If that sum is equal to zero, then a 1, that's to say it would be a yield.
+
+45
+00:03:54.133 --> 00:04:01.099
+So, I want to create a counter for yield conditions, for all 1000.
+
+46
+00:04:01.100 --> 00:04:05.366
+And you can see if hitting F9,
+
+47
+00:04:05.366 --> 00:04:09.366
+I can replicate the thousand over and over.
+
+48
+00:04:09.366 --> 00:04:15.899
+Now, we come up to cell location B3, and we see the output.
+
+49
+00:04:15.900 --> 00:04:18.666
+Hitting F9, changing it.
+
+50
+00:04:18.666 --> 00:04:24.299
+In this case, I have 695 ones.
+
+51
+00:04:24.300 --> 00:04:30.100
+In other words, I had 695 cases, units,
+
+52
+00:04:30.100 --> 00:04:35.766
+in which all CTQ’s passed, out of a thousand.
+
+53
+00:04:35.766 --> 00:04:40.532
+That would be a throughput yield of 69.5%,
+
+54
+00:04:40.533 --> 00:04:45.866
+which converts to 92.98% per CTQ.
+
+55
+00:04:45.866 --> 00:04:52.832
+We find that, by taking the throughput yield, raising it to one over the number of CTQ’s.
+
+56
+00:04:52.833 --> 00:04:58.666
+Converting the normalized yield to Sigma, using normsinv
+
+57
+00:04:58.666 --> 00:05:04.666
+of the normalized yield, and then adding back the 1.5 Sigma shift.
+
+58
+00:05:04.666 --> 00:05:07.832
+We see the overall Sigma,
+
+59
+00:05:07.833 --> 00:05:14.133
+or the kind of like an average Sigma capability per CTQ.
+
+60
+00:05:14.133 --> 00:05:18.133
+So, this is the aggregate that has been normalized.
+
+61
+00:05:18.133 --> 00:05:24.166
+Running our simulation over and over, we can see that it's Three Sigma.
+
+62
+00:05:24.166 --> 00:05:28.932
+Which we would expect, because all of the inputs was Three Sigma.
+
+63
+00:05:28.933 --> 00:05:34.899
+Again, looking at the Sigma capability.
+
+64
+00:05:34.900 --> 00:05:38.833
+Looking at that Sigma capability constantly changing,
+
+65
+00:05:38.833 --> 00:05:45.299
+2.99, 3.02, 2.94. As we see that Sigma capability change,
+
+66
+00:05:45.300 --> 00:05:50.633
+the average will come out, over many, many cycles,
+
+67
+00:05:50.633 --> 00:05:54.633
+to exactly Three Sigma. Which we would expect.
+
+68
+00:05:54.633 --> 00:05:58.966
+This is one of the ways that we can perform simulation,
+
+69
+00:05:58.966 --> 00:06:05.366
+in this case we have simulated the baseline of a particular process.
+
+70
+00:06:05.366 --> 00:06:10.366
+Thank you for choosing SSMI.

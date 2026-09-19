@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niềm Tin Lịch Sử Về Chất Lượng & Chi Phí | MBB Masterclass</title>
+<style>
+
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.7;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  /* HERO HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.25; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; font-style: italic; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+
+  /* PILLAR SECTION CARDS */
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  /* NATIVE PURE HTML/CSS MATH CARD */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-var { font-style: italic; color: #ffffff; }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* DATA TABLES */
+  table.data-table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin: 18px 0; }
+  table.data-table th {
+    background: linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color: #fff; padding: 12px 14px; text-align: left; vertical-align: top;
+  }
+  table.data-table th .th-vi { display: block; color: #a7f3d0; font-style: italic; font-weight: 500; font-size: 0.8rem; margin-top: 2px; }
+  table.data-table td { padding: 12px 14px; border-bottom: 1px solid #d1fae5; vertical-align: top; background: #fff; }
+  table.data-table td .td-sub { display: block; color: var(--vi-green-2); font-style: italic; font-size: 0.85rem; margin-top: 2px; }
+  table.data-table tr:nth-child(even) td { background: #f7fcf9; }
+
+  /* CASE STUDIES & COMPARISON */
+  .case-card {
+    background: #fdfefe;
+    border: 1px solid #cbf3e3;
+    border-left: 5px solid var(--emerald);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  .case-badge {
+    display: inline-block;
+    background: var(--emerald-vibrant);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .case-title { font-size: 1.15rem; font-weight: 800; color: var(--wood-dark); margin: 0 0 8px; }
+
+  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; margin: 22px 0; }
+  @media(max-width:768px){ .vs-grid { grid-template-columns: 1fr; } }
+  .vs-col { border-radius: 10px; padding: 20px; }
+  .vs-col.bad { background: #fef2f2; border: 2px solid #ef4444; }
+  .vs-col.good { background: #ecfdf5; border: 2px solid var(--emerald-vibrant); }
+  .vs-badge {
+    display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;
+    padding: 4px 10px; border-radius: 14px; color: #fff; margin-bottom: 10px; text-transform: uppercase;
+  }
+  .vs-badge.bad { background: var(--red); }
+  .vs-badge.good { background: var(--green); }
+  .vs-divider { display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--wood-dark); font-size: 1.3rem; }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { margin-bottom: 8px; font-size: 0.9rem; }
+
+  /* MBB PRO-TIP BOX */
+  .mbb-box {
+    background: var(--gold-bg); border: 1px solid #fef08a; border-left: 5px solid var(--gold-border);
+    border-radius: 8px; padding: 20px 24px; margin: 22px 0;
+  }
+  .mbb-box .title { color: var(--wood-bark); font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; }
+  .mbb-box p { margin: 0; color: #78350f; font-size: 0.95rem; }
+
+  /* INTERACTIVE ARENA */
+  .interactive-arena {
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color: #fff; border-radius: 14px; padding: 36px 40px; margin: 40px 0;
+    box-shadow: 0 8px 28px rgba(2,44,34,0.3); border: 2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2 { color: #fff; margin-top: 0; font-size: 1.6rem; font-weight: 800; }
+  .interactive-arena .arena-desc { color: var(--emerald-mint); font-style: italic; font-size: 0.98rem; margin-bottom: 24px; }
+  
+  .quiz-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 10px; padding: 22px 24px; margin-bottom: 22px;
+  }
+  .quiz-tag { display: inline-block; background: var(--emerald); color: #fff; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  .quiz-tag.tier-1 { background: #0284c7; }
+  .quiz-tag.tier-2 { background: #d97706; }
+  .quiz-tag.tier-3 { background: #7c3aed; }
+  .quiz-q { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.45; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(2,44,34,0.7); border: 1px solid rgba(52,211,153,0.4); color: #ecfdf5;
+    padding: 12px 16px; border-radius: 8px; font-size: 0.92rem; text-align: left; cursor: pointer;
+    transition: all 0.2s ease; font-family: inherit; line-height: 1.4;
+  }
+  .quiz-btn:hover { background: rgba(16,185,129,0.25); border-color: var(--emerald-mint); }
+  .quiz-btn.correct { background: #065f46 !important; border-color: #34d399 !important; color: #fff !important; }
+  .quiz-btn.wrong { background: #7f1d1d !important; border-color: #f87171 !important; color: #fff !important; }
+  .quiz-fb { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 8px; font-size: 0.92rem; line-height: 1.5; }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.success { background: rgba(16,185,129,0.2); border: 1px solid #34d399; color: #d1fae5; }
+  .quiz-fb.error { background: rgba(239,68,68,0.2); border: 1px solid #f87171; color: #fecaca; }
+
+  /* FLASHCARDS */
+  .flashcards-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 16px; margin-top: 16px; }
+  .flashcard {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(110,231,183,0.3); border-radius: 10px;
+    padding: 20px; cursor: pointer; min-height: 150px; display: flex; flex-direction: column;
+    justify-content: center; text-align: center; transition: transform 0.2s ease; user-select: none;
+  }
+  .flashcard:hover { transform: translateY(-3px); border-color: var(--emerald-mint); }
+  .flashcard .front { font-size: 1.05rem; font-weight: 800; color: var(--emerald-mint); }
+  .flashcard .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 6px; opacity: 0.85; }
+  .flashcard .back { display: none; font-size: 0.9rem; color: #fff; line-height: 1.45; }
+  .flashcard.flipped .front, .flashcard.flipped .hint { display: none; }
+  .flashcard.flipped .back { display: block; }
+
+  /* ACTION CHECKLIST & TEMPLATE */
+  .action-item { display: flex; align-items: flex-start; gap: 12px; background: #f4fbf7; border: 1px solid #d1fae5; padding: 14px 18px; border-radius: 8px; margin-bottom: 12px; }
+  .action-item input { width: 19px; height: 19px; accent-color: var(--emerald); cursor: pointer; margin-top: 3px; flex-shrink: 0; }
+  .action-text { font-size: 0.95rem; color: #0f241d; line-height: 1.5; }
+  .action-text strong { color: var(--wood-dark); }
+  
+  .template-box {
+    background: #ffffff; border: 1.5px dashed var(--emerald); border-radius: 10px;
+    padding: 22px 26px; margin-top: 20px;
+  }
+  .template-box h4 { margin: 0 0 12px; color: var(--wood-dark); font-size: 1.1rem; }
+  .template-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .template-field { display: flex; flex-direction: column; gap: 4px; }
+  .template-field label { font-size: 0.82rem; font-weight: 700; color: var(--vi-green-2); text-transform: uppercase; }
+  .template-field input, .template-field select {
+    padding: 8px 12px; border: 1px solid #a7f3d0; border-radius: 6px; font-family: inherit; font-size: 0.9rem; background: #f0fdf4;
+  }
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">03. Business Principles &bull; 06. Underpinning Economics &bull; Lesson 04</span>
+    <h1 class="hero-title">Niềm Tin Lịch Sử Về Chất Lượng & Chi Phí</h1>
+    <div class="hero-title-en">Historical Belief about Product Quality and Costs &minus; Debunking the "Saddle of Optimality" & The Prevention Model</div>
+    <p class="hero-desc">
+      Mổ xẻ ngụy biện lịch sử kinh điển về "Điểm tối ưu hóa chất lượng" (Saddle of Optimality tại 4 Sigma). Khám phá phát hiện chấn động của Motorola: Hệ thống kế toán truyền thống bị mù trước các chi phí ẩn và cách Mô hình Phòng ngừa (Model of Prevention) viết lại toàn bộ quy luật kinh tế học chất lượng.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 / Pillar 1</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành 60 Giây</h2>
+    <div class="section-subheading">Executive Summary &minus; Debunking the Classical Quality Trap</div>
+    
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Ngụy Biện Lịch Sử "Điểm Giao Thoa Tối Ưu" (Saddle of Optimality):</strong> Các nhà kinh tế học truyền thống tin rằng khi tăng chi phí kiểm soát (Cost of Control) để giảm tỷ lệ lỗi, tổng chi phí sẽ chạm đáy tại một "điểm tối ưu" (thường ở mức 4&sigma;) rồi sau đó tăng vọt &rarr; Dẫn đến niềm tin sai lầm: <em>"Cải tiến chất lượng quá cao sẽ làm công ty phá sản"</em>.</li>
+        <li><strong>Phát Hiện Đột Phá Tại Motorola:</strong> TS. Mikel Harry và các cộng sự nhận ra rằng mô hình cổ điển hoàn toàn sai lệch vì <strong>hệ thống kế toán bị mù trước các chi phí ẩn</strong> (chi phí thẩm định, chi phí cơ hội, chi phí gián đoạn vận hành).</li>
+        <li><strong>Sự Khác Biệt Giữa Mô Hình Lọc Lỗi vs Mô Hình Phòng Ngừa:</strong> Mô hình truyền thống dựa vào việc <em>phát hiện và sửa lỗi</em> (Detect & Fix &minus; làm chi phí kiểm soát tăng vọt). Mô hình Six Sigma dựa vào <em>phòng ngừa chủ động</em> (Model of Prevention) bằng cách nâng cao năng lực quy trình từ gốc (<i>a priori action</i>).</li>
+        <li><strong>Quy Luật Chi Phí Liên Tục Giảm Khi Chạm 5&sigma; &rarr; 6&sigma;:</strong> Dưới mô hình phòng ngừa, đường cong chi phí bị bẻ gãy và dịch chuyển liên tục sang phải. Càng tiến gần 6&sigma;, tổng chi phí vận hành càng giảm sâu mà không hề có điểm giới hạn đảo chiều.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 / Pillar 2</span>
+    <h2 class="section-heading">Mô Hình Đường Cong Chi Phí: Truyền Thống vs Phòng Ngừa Six Sigma</h2>
+    <div class="section-subheading">Cost Curves Dynamic Shift & Upstream Prevention Return Model</div>
+
+    <p>
+      Hãy cùng đối chiếu hai góc nhìn lịch sử về đường cong chi phí chất lượng qua sơ đồ phân tích nguyên lý dưới đây:
+    </p>
+
+    <!-- Visual Curve Shift Comparison -->
+    <div style="background:#022c22; color:#fff; border-radius:10px; padding:24px; margin:20px 0; border:1.5px solid var(--emerald);">
+      <div style="text-align:center; font-weight:800; color:var(--emerald-mint); margin-bottom:18px; text-transform:uppercase; letter-spacing:1px;">
+        Sự Chuyển Dịch Đường Cong Kinh Tế Chất Lượng: Cổ Điển (4&sigma;) vs Six Sigma (6&sigma;)
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <!-- Left: Traditional Trap -->
+        <div style="background:rgba(239,68,68,0.12); border:1.5px solid #f87171; border-radius:8px; padding:18px;">
+          <strong style="color:#fca5a5; font-size:1.05rem; display:block; margin-bottom:10px; text-align:center;">
+            1. Mô Hình Lỗi Thời (Saddle Trap tại 4&sigma;)
+          </strong>
+          <p style="font-size:0.88rem; color:#fee2e2; line-height:1.5;">
+            &bull; <strong>Đường đỏ (Failure Cost):</strong> Giảm khi lỗi giảm.<br>
+            &bull; <strong>Đường vàng (Cost of Control):</strong> Tăng vọt tiệm cận vô cùng khi cố bắt hết lỗi bằng thanh tra thủ công.<br>
+            &bull; <strong>Giao điểm 4&sigma;:</strong> Bị ngộ nhận là điểm tối ưu hóa kinh tế. Tổ chức dừng cải tiến vì sợ chi phí kiểm soát tăng cao.
+          </p>
+          <div style="text-align:center; background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; color:#fca5a5; font-weight:bold; font-size:0.85rem;">
+            ⚠️ Do hệ thống kế toán bị mù trước chi phí ẩn!
+          </div>
+        </div>
+
+        <!-- Right: Prevention Model -->
+        <div style="background:rgba(16,185,129,0.15); border:1.5px solid #34d399; border-radius:8px; padding:18px;">
+          <strong style="color:#6ee7b7; font-size:1.05rem; display:block; margin-bottom:10px; text-align:center;">
+            2. Mô Hình Phòng Ngừa Six Sigma (5&sigma; &rarr; 6&sigma;)
+          </strong>
+          <p style="font-size:0.88rem; color:#d1fae5; line-height:1.5;">
+            &bull; <strong>Hành động <i>a priori</i>:</strong> Tối ưu hóa thiết kế và kiểm soát biến số đầu vào (<i>Y = f(X)</i>).<br>
+            &bull; <strong>Chi phí kiểm soát:</strong> GIẢM MẠNH vì không cần trạm kiểm tra và sửa chữa.<br>
+            &bull; <strong>Đường cong dịch chuyển:</strong> Tổng chi phí liên tục giảm khi nâng từ 4&sigma; &rarr; 5&sigma; &rarr; 6&sigma;.
+          </p>
+          <div style="text-align:center; background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; color:#6ee7b7; font-weight:bold; font-size:0.85rem;">
+            ✅ Chi phí tổng tối thiểu tại 6&sigma; (&lt; 1% doanh thu)!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Math Card 1: Total Quality Cost in Prevention Model -->
+    <div class="math-card">
+      <div class="title">1. Hàm Tổng Chi Phí Chất Lượng Dưới Mô Hình Phòng Ngừa (Total Quality Cost Function)</div>
+      <div class="math-equation">
+        <span class="math-var">Cost<sub>total_quality</sub></span> = 
+        <span class="math-var">Cost<sub>prevention</sub></span> + 
+        <div class="math-frac">
+          <div class="math-num"><span class="math-var">Cost<sub>appraisal</sub></span> + <span class="math-var">Cost<sub>failure</sub></span></div>
+          <div class="math-den"><span class="math-var">C<sub>pk</sub><sup>&alpha;</sup></span></div>
+        </div>
+      </div>
+      <div class="desc">
+        <strong>Ý nghĩa toán học & kinh tế:</strong><br>
+        &bull; <strong>Cost<sub>prevention</sub>:</strong> Chi phí đầu tư cho hoạt động phòng ngừa ban đầu (Đào tạo Black Belt, DOE, Poka-Yoke). Đây là khoản đầu tư hữu hạn.<br>
+        &bull; <strong>C<sub>pk</sub><sup>&alpha;</sup>:</strong> Năng lực quy trình thực tế với hệ số khuếch đại &alpha; (&alpha; &ge; 2).<br>
+        &bull; Khi năng lực <i>C<sub>pk</sub></i> tăng từ 1.33 (4&sigma;) lên 2.0 (6&sigma;), mẫu số tăng vọt làm cho tổng chi phí thẩm định (<i>Cost<sub>appraisal</sub></i>) và chi phí lỗi (<i>Cost<sub>failure</sub></i>) <strong>triệt tiêu tiệm cận về 0</strong>.
+      </div>
+    </div>
+
+    <!-- MBB Box -->
+    <div class="mbb-box">
+      <div class="title">💡 Trả Lời Câu Hỏi Của TS. Mikel Harry: "Thế Còn Seven Sigma (7&sigma;) Thì Sao?"</div>
+      <p>
+        Trong bài giảng, TS. Mikel Harry chia sẻ: <em>"Nhiều người hỏi tôi: 'Liệu quy luật này có còn đúng ở Seven Sigma không?'. Tôi trả lời: 'Tôi đã đẩy tới Six Sigma và nó hoàn toàn đúng &minus; việc đó đã khiến tôi gần như kiệt sức. Nếu bạn còn đang lẹt đẹt ở Four Sigma, sao phải bận tâm về Seven Sigma? Cứ đạt tới Five và Six Sigma đi đã, bạn đã chạy vượt xa tất cả đối thủ trên toàn cầu rồi!'"</em>.
+      </p>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 / Pillar 3</span>
+    <h2 class="section-heading">Tình Huống Thực Chiến & Đối Chiếu Quản Trị</h2>
+    <div class="section-subheading">Real-World Case Studies & Paradigm Revolution</div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Sản Xuất / Semiconductor Fabrication</span>
+      <h3 class="case-title">Case Study 1: Cách Mạng Phòng Ngừa Khuyết Tật Wafer Tại Motorola Semiconductor</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Thập niên 1980, bộ phận bán dẫn của Motorola bị mắc kẹt tại điểm giao thoa 4&sigma;. Ban quản lý tin rằng nếu tiếp tục tăng độ sạch phòng lab và mua thêm máy soi kính hiển vi điện tử để quét wafer thì chi phí kiểm soát sẽ vượt quá giá bán chip.<br>
+        <strong>Đổi mới tư duy:</strong> Nhóm Black Belt chuyển từ "soi chip lỗi" sang "phòng ngừa sai lệch vi hạt". Họ phân tích dòng khí laminar và độ tinh khiết của hóa chất khắc axit (<i>X<sub>1</sub>, X<sub>2</sub></i>).<br>
+        <strong>Kết quả:</strong> Tỷ lệ khuyết tật trên tấm wafer giảm 99.8%, năng suất xuất xưởng (Die Yield) tăng từ 72% lên 98.6%. Chi phí kiểm tra quang học giảm 80%, chứng minh điểm tối ưu hóa cổ điển chỉ là ảo giác.
+      </p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-badge">Ngành Công Nghệ / Cloud Software Deployment</span>
+      <h3 class="case-title">Case Study 2: Phá Bỡ Bẫy Kiểm Thử Phần Mềm Hậu Kỳ Tại Công Ty Fintech</h3>
+      <p>
+        <strong>Bối cảnh:</strong> Một công ty cổng thanh toán trực tuyến tin vào ngụy biện: "Muốn hệ thống chạy 99.999% không lỗi thì chi phí thuê đội QA kiểm thử hồi quy (Regression Testing) sẽ làm cạn kiệt ngân sách R&D". Công ty chấp nhận dừng lại ở mức 4 Sigma và chấp nhận để sót 0.6% giao dịch lỗi.<br>
+        <strong>Chuyển dịch MBB:</strong> Đội ngũ Black Belt triển khai kiến trúc hạ tầng dạng mã nguồn (Infrastructure as Code &minus; IaC) và kiểm thử hợp đồng tự động (Consumer-Driven Contract Testing) ngay tại máy của lập trình viên.<br>
+        <strong>Hiệu quả:</strong> Tỷ lệ sự cố môi trường Production giảm từ 6.200 DPMO xuống dưới 12 DPMO (&gt; 5.6 Sigma). Tốc độ phát hành phiên bản mới tăng gấp 8 lần trong khi chi phí kiểm thử giảm 65%.
+      </p>
+    </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px; font-size:1.25rem;">Bảng Đối Chiếu: Hai Trường Phái Tư Duy Kinh Tế Chất Lượng</h3>
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Trường Phái Cổ Điển (Traditional Economics)</span>
+        <ul>
+          <li>Tin vào "Điểm tối ưu hóa" (Saddle of Optimality) tại mức 3 &minus; 4 Sigma.</li>
+          <li>Coi việc đạt chất lượng 6 Sigma là lãng phí tiền bạc và phi thực tế về mặt kinh tế.</li>
+          <li>Dựa vào thanh tra và sàng lọc ở cuối quy trình để kiểm soát chất lượng xuất xưởng.</li>
+          <li>Hệ thống kế toán chỉ ghi nhận chi phí phế phẩm nhìn thấy, bỏ qua 80% chi phí ẩn.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Trường Phái Six Sigma (Modern Prevention Economics)</span>
+        <ul>
+          <li>Bác bỏ điểm tối ưu giả tạo; chứng minh chi phí tổng liên tục giảm khi tiến tới 6 Sigma.</li>
+          <li>Xem 6 Sigma là chiến lược chi phí thấp nhất (Lowest Cost Strategy) thông qua phòng ngừa.</li>
+          <li>Chủ động can thiệp vào biến số nguyên nhân (<i>Y = f(X)</i>) ngay từ khâu thiết kế thượng nguồn.</li>
+          <li>Bóc tách toàn diện chi phí chất lượng kém (COPQ) để ra quyết định điều hành chuẩn xác.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num" style="background:#059669; color:#fff;">Trụ Cột 4 / Pillar 4</span>
+    <h2>Đấu Trường Tương Tác & Bài Tập Tình Huống</h2>
+    <div class="arena-desc">Interactive Arena &minus; Scenario-Based Quizzes & 3D Flashcards</div>
+
+    <!-- QUIZ 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Nhận Biết Khái Niệm</span>
+      <div class="quiz-q">1. "Saddle of Optimality" (Điểm giao thoa tối ưu) trong niềm tin lịch sử về chất lượng là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-4-q1', 'Correct! The saddle of optimality was the false belief that total cost reaches a minimum at around 4 Sigma, beyond which improving quality would cost more than the defect savings.', 'Chính xác! Đó là niềm tin sai lầm rằng tổng chi phí đạt đáy ở khoảng 4 Sigma, và nếu cải tiến chất lượng vượt mức này thì chi phí kiểm soát sẽ đắt hơn thiệt hại do lỗi gây ra.')">A. Điểm giao nhau giả định giữa đường chi phí lỗi và đường chi phí kiểm soát, khiến người ta tin sai rằng cải tiến quá 4 Sigma sẽ gây phá sản.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q1', 'Incorrect. Six Sigma proves that 6 Sigma has the lowest total cost under a prevention model.', 'Sai. Six Sigma chứng minh rằng mức 6 Sigma mới là điểm có tổng chi phí thấp nhất theo mô hình phòng ngừa.')">B. Điểm tối ưu hoàn hảo mà mọi công ty Six Sigma đều phải dừng lại ở mức 6 Sigma.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q1', 'Incorrect. It is a theoretical cost concept, not an equipment calibration setting.', 'Sai. Đây là một khái niệm kinh tế lý thuyết, không phải thông số hiệu chuẩn máy móc.')">C. Điểm hiệu chỉnh máy móc để đạt năng suất tối đa của dây chuyền.</button>
+      </div>
+      <div id="fb-4-q1" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-1">Tầng 1: Điểm Mù Kế Toán</span>
+      <div class="quiz-q">2. Lý do chính khiến các nhà kinh tế học cổ điển vẽ ra đồ thị có "Điểm tối ưu hóa tại 4 Sigma" là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q2', 'Incorrect. Math formulas were accurate, but the cost accounting inputs were blind to invisible COPQ buckets.', 'Sai. Các công thức toán không sai, mà dữ liệu đầu vào của hệ thống kế toán bị mù trước các chi phí ẩn.')">A. Do các công thức toán học thống kê thời kỳ đó chưa tính được phân phối chuẩn.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-4-q2', 'Correct! Traditional accounting systems cannot track most appraisal, prevention, and hidden factory costs &minus; lumping them into overhead and blinding management to true COPQ dynamics.', 'Chính xác! Hệ thống kế toán truyền thống không thể theo dõi hết các chi phí thẩm định, phòng ngừa và nhà máy ngầm mà gộp chung vào chi phí nhân công/quản lý, làm ban lãnh đạo bị mù trước bản chất chi phí.')">B. Do hệ thống kế toán truyền thống không thể theo dõi và bóc tách hết các loại chi phí ẩn của chất lượng kém (COPQ) mà gộp chung vào chi phí chung.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q2', 'Incorrect. Government regulations do not dictate quality cost curve shapes.', 'Sai. Quy định nhà nước không quyết định hình dạng đường cong chi phí chất lượng.')">C. Do quy định của các cơ quan thuế bắt buộc phải hạch toán như vậy.</button>
+      </div>
+      <div id="fb-4-q2" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: Phân Tích Mô Hình Phòng Ngừa</span>
+      <div class="quiz-q">3. Trong mô hình phòng ngừa Six Sigma (Model of Prevention), điều gì xảy ra với đường cong chi phí kiểm soát (Cost of Control) khi doanh nghiệp nâng năng lực từ 4 Sigma lên 6 Sigma?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q3', 'Incorrect. That only happens if you rely on inspection/filtering. Under prevention, control costs plummet.', 'Sai. Chi phí chỉ tăng vọt nếu bạn dùng thêm người để soi lỗi. Dưới mô hình phòng ngừa, chi phí kiểm soát sẽ giảm mạnh.')">A. Đường cong chi phí kiểm soát tăng vọt theo phương thẳng đứng vì phải mua thêm rất nhiều máy kiểm tra.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-4-q3', 'Correct! Because proactive prevention eliminates defect causes at the source ($Y=f(X)$), inspection, sorting, and rework stations are eliminated &minus; shifting the entire cost curve downward and to the right.', 'Chính xác! Nhờ phòng ngừa chủ động triệt tiêu nguyên nhân gây lỗi tại nguồn (Y=f(X)), các trạm kiểm tra, phân loại và sửa chữa bị xóa bỏ &minus; làm dịch chuyển toàn bộ đường cong chi phí xuống dưới và sang phải.')">B. Đường cong chi phí dịch chuyển xuống dưới và sang phải, giúp tổng chi phí vận hành giảm sâu mà không bị tăng vọt trở lại.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q3', 'Incorrect. Total cost drops dramatically to < 1% of sales.', 'Sai. Tổng chi phí không đổi là không chính xác, nó giảm từ 20% xuống dưới 1% doanh số.')">C. Đường cong chi phí giữ nguyên vị trí và tổng chi phí không thay đổi.</button>
+      </div>
+      <div id="fb-4-q3" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-2">Tầng 2: So Sánh Hiệu Quả Đầu Tư</span>
+      <div class="quiz-q">4. Một nhà máy gia công cơ khí đầu tư 50.000 USD vào dự án DOE để tìm bộ thông số cắt gọt tối ưu (<i>a priori action</i>). Dự án giúp nâng năng lực quy trình từ <i>C<sub>pk</sub></i> = 1.1 (3.3&sigma;) lên <i>C<sub>pk</sub></i> = 1.8 (5.4&sigma;), giúp bãi bỏ 3 trạm kiểm tra phôi (tiết kiệm 90.000 USD/năm) và giảm phế phẩm (tiết kiệm 140.000 USD/năm). Tỷ suất hoàn vốn ROI năm đầu tiên là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q4', 'Incorrect. Total annual savings = 90k + 140k = 230k USD. Net benefit = 230k - 50k = 180k. ROI = (180k / 50k) * 100% = 360%.', 'Sai. Tổng tiết kiệm = 90k + 140k = 230k USD. Lợi ích thuần = 230k - 50k = 180k. ROI = (180k / 50k) * 100% = 360%.')">A. 180%</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-4-q4', 'Correct! Total savings = 90,000 + 140,000 = 230,000 USD. Net profit = 230,000 - 50,000 = 180,000 USD. ROI = (180,000 / 50,000) * 100% = 360%!', 'Chính xác! Tổng tiết kiệm = 90.000 + 140.000 = 230.000 USD. Lợi nhuận thuần = 180.000 USD. ROI = (180.000 / 50.000) * 100% = 360% ngay trong năm đầu!')">B. 360%</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q4', 'Incorrect. Check your net benefit calculation.', 'Sai. Hãy tính lợi ích thuần chia cho chi phí đầu tư.')">C. 260%</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q4', 'Incorrect. Check your math again.', 'Sai. Hãy rà soát lại phép tính theo công thức ROI chuẩn.')">D. 460%</button>
+      </div>
+      <div id="fb-4-q4" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Phản Biện Chiến Lược Cấp Cao</span>
+      <div class="quiz-q">5. Một chuyên gia tư vấn quản trị truyền thống nói với Ban Giám đốc: "Công ty chúng ta chỉ nên duy trì chất lượng ở mức Four Sigma vì đây là điểm cân bằng tối ưu giữa chi phí và doanh thu. Nâng lên Six Sigma là lãng phí". Là Master Black Belt, luận cứ nào sau đây đanh thép nhất để bác bỏ ý kiến này?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-4-q5', 'Correct! The traditional saddle was derived under an obsolete detection paradigm. Under Six Sigma prevention, operating at 4 Sigma means throwing away ~20% of sales on hidden rework, whereas 6 Sigma drives COPQ to <1%.', 'Chính xác! Luận cứ MBB: Điểm tối ưu cổ điển được xây dựng dựa trên mô hình lọc lỗi thủ công lỗi thời. Dưới mô hình phòng ngừa Six Sigma, dừng ở 4 Sigma là chấp nhận mất 20% doanh thu mỗi năm cho nhà máy ngầm, trong khi 6 Sigma đưa chi phí này về dưới 1% với tổng chi phí thấp nhất toàn cầu!')">B. Điểm tối ưu 4 Sigma sinh ra do hệ thống kế toán cũ bị mù trước chi phí ẩn và dựa vào việc kiểm tra lọc lỗi. Khi áp dụng mô hình phòng ngừa Six Sigma, chi phí kiểm soát không hề tăng mà giảm mạnh, giúp công ty đạt mức chi phí vận hành thấp nhất toàn diện (&lt;1% doanh thu) tại 6 Sigma.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q5', 'Incorrect. Six Sigma is justified by hard financial return, not just prestige or marketing logos.', 'Sai. Six Sigma được chứng minh bằng lợi nhuận tài chính thực tế, không phải danh tiếng hay logo quảng cáo.')">A. Cãi rằng Six Sigma là xu thế thời thượng và các công ty lớn đều làm nên chúng ta phải làm theo.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q5', 'Incorrect. Accepting 4 Sigma concedes competitive advantage to rivals.', 'Sai. Đồng ý dừng lại ở 4 Sigma sẽ dâng toàn bộ 19% lợi thế biên lợi nhuận cho đối thủ.')">C. Đồng ý với chuyên gia tư vấn và giữ nguyên quy trình ở mức Four Sigma để tránh rủi ro chi phí.</button>
+      </div>
+      <div id="fb-4-q5" class="quiz-fb"></div>
+    </div>
+
+    <!-- QUIZ 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag tier-3">Tầng 3: Lộ Trình Tiến Lên Five & Six Sigma</span>
+      <div class="quiz-q">6. Khi một doanh nghiệp đang ở mức 3.5 Sigma, lời khuyên thực tế nhất của TS. Mikel Harry về lộ trình cải tiến năng lực là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-4-q6', 'Correct! Do not get paralyzed worrying about theoretical 7 Sigma &minus; focus relentlessly on advancing from 3.5 to 5 Sigma first. At 5 Sigma, you will already outrun all competitors!', 'Chính xác! Đừng mơ mộng viển vông về 7 Sigma; hãy tập trung toàn lực đưa quy trình từ 3.5 lên 5 Sigma trước. Khi chạm mốc 5 Sigma, bạn đã vượt qua hầu hết các đối thủ trên thị trường!')">A. Đừng lo lắng về Seven Sigma xa xôi; hãy tập trung kỷ luật đạt mức Five Sigma và Six Sigma trước. Khi đạt Five Sigma, bạn đã vượt lên trên phần lớn các đối thủ cạnh tranh.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q6', 'Incorrect. Striving for 7 Sigma from 3.5 Sigma without intermediate mastery leads to initiative failure.', 'Sai. Đặt mục tiêu 7 Sigma ngay lập tức khi nền tảng còn yếu sẽ làm kiệt quệ nguồn lực.')">B. Bỏ qua Four và Five Sigma, đặt mục tiêu nhảy vọt thẳng lên Seven Sigma trong vòng 3 tháng.</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-4-q6', 'Incorrect. Doing nothing guarantees continuous margin erosion.', 'Sai. Giữ nguyên hiện trạng đồng nghĩa với việc chấp nhận mất 25% &minus; 40% doanh thu mỗi năm.')">C. Chờ đợi công nghệ mới ra đời rồi mới bắt đầu triển khai Six Sigma.</button>
+      </div>
+      <div id="fb-4-q6" class="quiz-fb"></div>
+    </div>
+
+    <!-- 3D FLASHCARDS -->
+    <h3 style="color:#fff; margin-top:36px; font-size:1.3rem;">Thẻ Lật 3D Ôn Tập Nhanh (Executive Flashcards)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Saddle of Optimality</div>
+        <div class="hint">Nhấp để xem ngụy biện lịch sử &bull; Click to flip</div>
+        <div class="back"><strong>Điểm Giao Thoa Giả Tạo</strong><br>Niềm tin sai lầm rằng tổng chi phí đạt đáy ở 4&sigma;. Motorola đã chứng minh điều này sai do hệ thống kế toán bị mù trước chi phí ẩn.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Model of Prevention</div>
+        <div class="hint">Nhấp để xem mô hình phòng ngừa &bull; Click to flip</div>
+        <div class="back"><strong>Mô Hình Phòng Ngừa Six Sigma</strong><br>Hành động chủ động tại nguồn (<i>Y = f(X)</i>) &rarr; Triệt tiêu nhu cầu kiểm tra và sửa lỗi &rarr; Đường cong chi phí liên tục giảm khi tiến tới 6&sigma;.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Accounting Blindspot</div>
+        <div class="hint">Nhấp để xem điểm mù kế toán &bull; Click to flip</div>
+        <div class="back"><strong>Điểm Mù Kế Toán Truyền Thống</strong><br>Không thể bóc tách các chi phí thẩm định, làm lại, tồn kho WIP và DAF &minus; làm sai lệch nhận thức về chất lượng thực tế.</div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Focus on 5&sigma; First</div>
+        <div class="hint">Nhấp để xem nguyên tắc thực chiến &bull; Click to flip</div>
+        <div class="back"><strong>Tập Trung Đạt 5&sigma; Trước Tiên</strong><br>"Nếu bạn đang ở 3&sigma; &minus; 4&sigma;, đừng bận tâm về 7&sigma;. Cứ đạt tới 5&sigma; đã, bạn sẽ vượt qua mọi đối thủ cạnh tranh!" &minus; Dr. Mikel Harry.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: ACTION CHECKLIST & TEMPLATE -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 / Pillar 5</span>
+    <h2 class="section-heading">1-Page Action Checklist & Kế Hoạch Chuyển Dịch Sang Mô Hình Phòng Ngừa</h2>
+    <div class="section-subheading">Action Checklist & Prevention Shift Action Plan</div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk4-1">
+      <div class="action-text">
+        <label for="chk4-1"><strong>Hành Động 1: Rà Soát Các Dự Án Mua Sắm Thiết Bị Kiểm Tra Hậu Kỳ</strong><br>
+        Tạm dừng các đề xuất mua máy kiểm tra lọc lỗi đắt tiền; chuyển nguồn vốn đó sang phân tích nguyên nhân gốc rễ và thiết kế Poka-Yoke tại nguồn.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk4-2">
+      <div class="action-text">
+        <label for="chk4-2"><strong>Hành Động 2: Thiết Lập Dự Án DOE (Design of Experiments) Cho Biến Số Then Chốt</strong><br>
+        Chọn ra 1 công đoạn có tỷ lệ lỗi cao nhất và tiến hành thực nghiệm để xác định cửa sổ vận hành tối ưu (Operating Window) cho các biến số <i>X</i>.</label>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <input type="checkbox" id="chk4-3">
+      <div class="action-text">
+        <label for="chk4-3"><strong>Hành Động 3: Đào Tạo Chuyển Đổi Nhận Thức Ban Quản Lý</strong><br>
+        Tổ chức hội thảo Executive Briefing cho các Trưởng bộ phận để xóa bỏ tư duy "Điểm tối ưu hóa 4&sigma;" và thống nhất mục tiêu 5&sigma; &rarr; 6&sigma;.</label>
+      </div>
+    </div>
+
+    <!-- Prevention Transition Template -->
+    <div class="template-box">
+      <h4>📋 Kế Hoạch Chuyển Dịch Đầu Tư Sang Phòng Ngừa (Prevention Shift Matrix)</h4>
+      <div class="template-grid">
+        <div class="template-field">
+          <label>Hoạt Động Kiểm Tra Cần Bãi Bỏ</label>
+          <input type="text" placeholder="VD: Bàn soi bọt khí keo dán">
+        </div>
+        <div class="template-field">
+          <label>Chi Phí Kiểm Tra Đang Tiêu Tốn ($/năm)</label>
+          <input type="number" placeholder="VD: 72000">
+        </div>
+        <div class="template-field">
+          <label>Biến Số Nguyên Nhân Gốc Cần Kiểm Soát (X)</label>
+          <input type="text" placeholder="VD: Áp suất bơm keo và độ ẩm môi trường">
+        </div>
+        <div class="template-field">
+          <label>Giải Pháp Phòng Ngừa Đề Xuất</label>
+          <input type="text" placeholder="VD: Lắp van điều áp tự động & cảm biến độ ẩm">
+        </div>
+        <div class="template-field">
+          <label>Chi Phí Đầu Tư Phòng Ngừa Ban Đầu ($)</label>
+          <input type="number" placeholder="VD: 15000">
+        </div>
+        <div class="template-field">
+          <label>Tiết Kiệm Ròng Dự Kiến Hàng Năm ($)</label>
+          <input type="text" placeholder="Tự động: ~57,000 $/năm">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

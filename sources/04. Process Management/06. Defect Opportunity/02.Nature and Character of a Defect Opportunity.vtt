@@ -1,0 +1,301 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Nature and Character of a Defect Opportunity
+
+2
+00:00:05.000 --> 00:00:08.000
+Welcome to this segment on Six Sigma.
+
+3
+00:00:08.000 --> 00:00:11.266
+We’re going to look at a very interesting concept.
+
+4
+00:00:11.266 --> 00:00:14.799
+It's been a lot of controversy for a long time
+
+5
+00:00:14.800 --> 00:00:21.800
+and that's the idea of defect opportunities.
+
+6
+00:00:21.800 --> 00:00:28.466
+So, what is a defect opportunity? Well it’s really pretty simple.
+
+7
+00:00:28.466 --> 00:00:32.466
+I think a lot of people over the years have made a big deal out of it.
+
+8
+00:00:32.466 --> 00:00:35.732
+We even went through in the early 90's through Texas Instruments,
+
+9
+00:00:35.733 --> 00:00:38.833
+at their defense group, called the opportunity wars.
+
+10
+00:00:38.833 --> 00:00:42.833
+It got that bitter, over what constitutes a defect opportunity.
+
+11
+00:00:42.833 --> 00:00:49.699
+Well, after many years of frustrating debate. That was good debate. Healthy debate.
+
+12
+00:00:49.700 --> 00:00:56.166
+We finally come to realize that a defect opportunity is nothing more
+
+13
+00:00:56.166 --> 00:01:00.166
+than anything you measure
+
+14
+00:01:00.166 --> 00:01:04.166
+and report
+
+15
+00:01:04.166 --> 00:01:10.399
+on a regular basis. That's a defect opportunity. So, let me say this.
+
+16
+00:01:10.400 --> 00:01:16.633
+If I had a little product here, a little widget gizmo, could be a radio
+
+17
+00:01:16.633 --> 00:01:20.866
+or I could have a process, consider that the product.
+
+18
+00:01:20.866 --> 00:01:27.832
+Like a masseuse has a service process. A massage, you experience the process.
+
+19
+00:01:27.833 --> 00:01:33.833
+This is a piece of hardware. I could look at a legal defense from a legal point of view.
+
+20
+00:01:33.833 --> 00:01:38.433
+Anything. Whatever that may be.  It’s full of opportunities.
+
+21
+00:01:38.433 --> 00:01:43.199
+So, let's take something that's important to us that we value.
+
+22
+00:01:43.200 --> 00:01:49.766
+If we measure it and report it, then that's a defect opportunity. That simple.
+
+23
+00:01:49.766 --> 00:01:55.032
+Now, what we’re going to do is look at this in a little greater detail.
+
+24
+00:01:55.033 --> 00:01:58.933
+But fundamentally a defect opportunity, an opportunity,
+
+25
+00:01:58.933 --> 00:02:05.066
+is a set of conditions that is favorable to an end.
+
+26
+00:02:05.066 --> 00:02:12.066
+Think of that. It's a set of conditions,
+
+27
+00:02:12.066 --> 00:02:16.832
+that is favorable
+
+28
+00:02:16.833 --> 00:02:20.199
+to some end.
+
+29
+00:02:20.200 --> 00:02:27.233
+Now in this case, the end we’re talking about is a defect.
+
+30
+00:02:27.233 --> 00:02:33.266
+A defect. So, a set of conditions favorable to some end.
+
+31
+00:02:33.266 --> 00:02:37.099
+Or a defect. Well, let's take a look at it.
+
+32
+00:02:37.100 --> 00:02:43.466
+We’re going to break this down and understand this concept of a defect opportunity.
+
+33
+00:02:43.466 --> 00:02:49.899
+Condition is a standard. If I have an upper spec limit and a lower spec limit,
+
+34
+00:02:49.900 --> 00:02:56.866
+I have a standard. That's a condition. Think about it.
+
+35
+00:02:56.866 --> 00:03:02.466
+If I had activity and I had no standard to gauge my activity against.
+
+36
+00:03:02.466 --> 00:03:06.499
+There can never be a defect, if that's gone.
+
+37
+00:03:06.500 --> 00:03:13.566
+Then I also need now, a process capability.
+
+38
+00:03:13.566 --> 00:03:17.566
+If there is no process capability,
+
+39
+00:03:17.566 --> 00:03:21.032
+then all there is, is a potential opportunity, see.
+
+40
+00:03:21.033 --> 00:03:26.033
+That design specification is a potential opportunity.
+
+41
+00:03:26.033 --> 00:03:31.299
+If there is a distribution of capability but no design specification,
+
+42
+00:03:31.300 --> 00:03:37.066
+there's potential opportunity. But when that design.
+
+43
+00:03:37.066 --> 00:03:40.932
+When that process capability is interfaced
+
+44
+00:03:40.933 --> 00:03:46.199
+with the design opportunity, then we have a defect opportunity.
+
+45
+00:03:46.200 --> 00:03:53.200
+Now, let’s think about that for second. I’m going to blow this up again, even larger.
+
+46
+00:03:53.200 --> 00:04:00.200
+For our discussion here. Here again is that upper spec.
+
+47
+00:04:00.200 --> 00:04:05.400
+Here is that lower spec. And,
+
+48
+00:04:05.400 --> 00:04:10.766
+here is the process distribution.
+
+49
+00:04:10.766 --> 00:04:14.866
+Remember, it takes both to be present.
+
+50
+00:04:14.866 --> 00:04:21.866
+Upper. I’ll just draw that across there real nice, so we can see that.
+
+51
+00:04:21.866 --> 00:04:27.099
+Now, this region right here in the red.
+
+52
+00:04:27.100 --> 00:04:31.700
+This is the probability of a defect.
+
+53
+00:04:31.700 --> 00:04:38.366
+That's the probability of a defect. Everything in the green here,
+
+54
+00:04:38.366 --> 00:04:44.066
+is the probability of yield, or what's good.
+
+55
+00:04:44.066 --> 00:04:49.299
+This is what's good, that's in the green. Now,
+
+56
+00:04:49.300 --> 00:04:54.266
+if I don't have a process capability. There's no probability of defects.
+
+57
+00:04:54.266 --> 00:05:00.066
+If I don't have a standard, then there's nothing to declare these as red.
+
+58
+00:05:00.066 --> 00:05:04.166
+There’s no reference point, high watermark, to declare them as red.
+
+59
+00:05:04.166 --> 00:05:10.332
+So, everything would be green. Only when I interface my process
+
+60
+00:05:10.333 --> 00:05:16.099
+with my design, do I have probability of defect.
+
+61
+00:05:16.100 --> 00:05:21.433
+If there is no interface, guess what?
+
+62
+00:05:21.433 --> 00:05:25.199
+There is no probability.
+
+63
+00:05:25.200 --> 00:05:32.200
+So, you can't have a defect. If there's no probability for a defect.
+
+64
+00:05:32.200 --> 00:05:36.933
+Therefore, to have a defect opportunity,
+
+65
+00:05:36.933 --> 00:05:43.966
+then the probability of a defect must be greater than zero.
+
+66
+00:05:43.966 --> 00:05:50.599
+Now, think about that. If there's no distribution, no capability, there's no probability.
+
+67
+00:05:50.600 --> 00:05:57.600
+Probability of defect is zero. If there's a distribution but no standards,
+
+68
+00:05:57.600 --> 00:06:00.766
+probability is zero.
+
+69
+00:06:00.766 --> 00:06:06.866
+Only, when I marry the process
+
+70
+00:06:06.866 --> 00:06:14.432
+to the design. Does the idea of probability
+
+71
+00:06:14.433 --> 00:06:21.099
+come into being. Once it comes into being. If the probability is greater than zero,
+
+72
+00:06:21.100 --> 00:06:28.100
+then there is an opportunity for
+
+73
+00:06:28.100 --> 00:06:34.033
+defect, that simple. Thus, we have the idea
+
+74
+00:06:34.033 --> 00:06:39.599
+of probability of defect or defect opportunity.
+
+75
+00:06:39.600 --> 00:06:44.600
+Thank you for choosing SSMI.

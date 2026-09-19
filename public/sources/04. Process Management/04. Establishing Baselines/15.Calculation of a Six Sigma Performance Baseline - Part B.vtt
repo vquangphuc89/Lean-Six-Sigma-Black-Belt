@@ -1,0 +1,125 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Calculation of a Six Sigma Performance Baseline
+
+2
+00:00:05.000 --> 00:00:09.233
+Welcome back to this session on baselines. Recall from the last time
+
+3
+00:00:09.233 --> 00:00:15.566
+where we looked at five CTQ’s, CTQ 1, 2, 3, 4,  and 5.
+
+4
+00:00:15.566 --> 00:00:19.566
+Each having an inherent capability of Three Sigma.
+
+5
+00:00:19.566 --> 00:00:23.566
+Thereby providing a yield of 93.32%.
+
+6
+00:00:23.566 --> 00:00:27.332
+Within the matrix, you'll recall, we looked at the quality outcome
+
+7
+00:00:27.333 --> 00:00:30.599
+of inspection or test and the yield result.
+
+8
+00:00:30.600 --> 00:00:36.566
+One if it yielded, zero if it did not. Thus, we have a simple count of output.
+
+9
+00:00:36.566 --> 00:00:43.699
+In other words, how many yielded? In this case, 720 out of a thousand.
+
+10
+00:00:43.700 --> 00:00:49.500
+Thereby providing a throughput yield of 72%.  Simple output over input.
+
+11
+00:00:49.500 --> 00:00:56.500
+Normalized yield being 93.64%, which the 72% raised to the quantity 1/5.
+
+12
+00:00:56.500 --> 00:00:59.500
+Since there are five CTQ’s.
+
+13
+00:00:59.500 --> 00:01:03.433
+That converts to a Sigma capability of 3.03.
+
+14
+00:01:03.433 --> 00:01:07.966
+By simulating, hitting F9,
+
+15
+00:01:07.966 --> 00:01:12.132
+we’re able to create multiple cases of a thousand.
+
+16
+00:01:12.133 --> 00:01:15.266
+Recall, that's what we are producing in the simulation.
+
+17
+00:01:15.266 --> 00:01:20.132
+A thousand individual cases, of five CTQ’s each.
+
+18
+00:01:20.133 --> 00:01:26.066
+Where each case is a unit of product. Now, I can change the Sigma capability.
+
+19
+00:01:26.066 --> 00:01:32.132
+Let's suppose the first CTQ had Two Sigma, Three Sigma, Four Sigma.
+
+20
+00:01:32.133 --> 00:01:36.133
+A Five Sigma capability and another Two Sigma.
+
+21
+00:01:36.133 --> 00:01:41.499
+In this case we can see the output would be 435
+
+22
+00:01:41.500 --> 00:01:45.500
+good units produced out of the thousand.
+
+23
+00:01:45.500 --> 00:01:51.600
+Resulting in an average, or normalized as we would call it, Sigma,
+
+24
+00:01:51.600 --> 00:01:57.233
+that constitutes the typical Sigma capability per CTQ.
+
+25
+00:01:57.233 --> 00:02:02.433
+So, it's kind of like an average. We can see that it's 2.52.
+
+26
+00:02:02.433 --> 00:02:07.499
+Repeated simulations, by repeatedly pushing F9,
+
+27
+00:02:07.500 --> 00:02:12.833
+generates new random numbers, producing another simulation.
+
+28
+00:02:12.833 --> 00:02:19.166
+And you can see that it's changing. This is a simple means to perform simulation.
+
+29
+00:02:19.166 --> 00:02:24.832
+We could also simulate the Sigma. We could scale the Sigma.
+
+30
+00:02:24.833 --> 00:02:30.133
+And put in random Sigma's, and see how it results.
+
+31
+00:02:30.133 --> 00:02:35.133
+Thank you for choosing SSMI.

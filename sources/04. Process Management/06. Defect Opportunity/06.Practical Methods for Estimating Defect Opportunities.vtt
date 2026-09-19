@@ -1,0 +1,165 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Practical Methods for Estimating Defect Opportunities
+
+2
+00:00:05.000 --> 00:00:08.266
+Welcome to this session on defect opportunities.
+
+3
+00:00:08.266 --> 00:00:14.699
+What we have in front of us is a simple concept called defects per opportunity.
+
+4
+00:00:14.700 --> 00:00:18.700
+That's located out here in the far right-hand column.
+
+5
+00:00:18.700 --> 00:00:23.600
+That's our defects per opportunity. So, I’ll label that
+
+6
+00:00:23.600 --> 00:00:27.300
+defects per opportunity.
+
+7
+00:00:27.300 --> 00:00:33.200
+Now, along here in the numerator position, we have defects.
+
+8
+00:00:33.200 --> 00:00:38.766
+And in the denominator position, we have opportunities.
+
+9
+00:00:38.766 --> 00:00:41.799
+So, the numerator contains the defects
+
+10
+00:00:41.800 --> 00:00:47.000
+and the denominator contains the opportunities.
+
+11
+00:00:47.000 --> 00:00:54.000
+Now with that, what we’re looking at is each occurrence of a defect opportunity.
+
+12
+00:00:54.000 --> 00:00:58.100
+So this example, is for a certain CTQ,
+
+13
+00:00:58.100 --> 00:01:05.100
+CTQ dash eighteen, just for the sake of argument.
+
+14
+00:01:05.100 --> 00:01:10.500
+It’s just going to be known as CTQ 18.
+
+15
+00:01:10.500 --> 00:01:13.900
+Make our discussion easy.
+
+16
+00:01:13.900 --> 00:01:20.833
+Now given that, let's take a look at this block right here, that I’m now changing the color on.
+
+17
+00:01:20.833 --> 00:01:25.599
+To a fairly loud color there.
+
+18
+00:01:25.600 --> 00:01:32.566
+That one says, that opportunity was brought into existence.
+
+19
+00:01:32.566 --> 00:01:39.032
+That's what a one signifies, the opportunity was brought into existence.
+
+20
+00:01:39.033 --> 00:01:45.633
+Now if in fact, it had not been brought into existence, then a zero goes there.
+
+21
+00:01:45.633 --> 00:01:52.599
+Let's suppose the process cycle started, but was not completed, therefore a zero goes there.
+
+22
+00:01:52.600 --> 00:01:56.900
+So, what we’re talking about here, is the process cycle.
+
+23
+00:01:56.900 --> 00:01:59.900
+And I’m going to make that simple for us.
+
+24
+00:01:59.900 --> 00:02:05.300
+We’ll represent a cycle by the letter C.
+
+25
+00:02:05.300 --> 00:02:12.266
+And we’ll say that this is cycle 1, 2, 3,
+
+26
+00:02:12.266 --> 00:02:17.132
+4. Cycle 1, 2, 3, 4 of the process.
+
+27
+00:02:17.133 --> 00:02:23.566
+Where the outcome either completed the cycle or it did not. Zero did not complete the cycle.
+
+28
+00:02:23.566 --> 00:02:30.432
+Therefore, if I have a zero in the denominator for any given cycle.
+
+29
+00:02:30.433 --> 00:02:35.633
+It's impossible to have a one here. That would have to be zero.
+
+30
+00:02:35.633 --> 00:02:39.633
+Cause you see, if it didn't cycle, it didn't create a product.
+
+31
+00:02:39.633 --> 00:02:46.466
+If it didn't create a product, it could not have a defect. Therefore, a zero has to go there.
+
+32
+00:02:46.466 --> 00:02:52.432
+Simple way to think about it. Now, in this case,
+
+33
+00:02:52.433 --> 00:02:57.166
+let's suppose, notice I arrange the scenario.
+
+34
+00:02:57.166 --> 00:03:02.499
+Let's suppose that we cycled the process four times.
+
+35
+00:03:02.500 --> 00:03:09.500
+And of those four times, we had two successful cycles. Something was produced.
+
+36
+00:03:09.500 --> 00:03:13.833
+Of those two successful cycles,
+
+37
+00:03:13.833 --> 00:03:19.066
+cycle 2 and cycle 3, one had a defect.
+
+38
+00:03:19.066 --> 00:03:24.166
+Therefore, we produced
+
+39
+00:03:24.166 --> 00:03:30.966
+one defect out of two opportunities, or my defects per opportunity is .50.
+
+40
+00:03:30.966 --> 00:03:36.232
+That's an easy way to say that. Easy way to look at that.
+
+41
+00:03:36.233 --> 00:03:41.233
+Thank you for choosing SSMI.

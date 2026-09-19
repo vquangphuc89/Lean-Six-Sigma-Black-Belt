@@ -1,0 +1,149 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Steps for Calculating a Performance Baseline
+
+2
+00:00:05.000 --> 00:00:09.566
+Hello, Mike Harry. Welcome back where we’re again looking at establishing baselines.
+
+3
+00:00:09.566 --> 00:00:12.699
+We’re going to start with an example.
+
+4
+00:00:12.700 --> 00:00:18.833
+Now, let's consider a baseline. Step one. What does it take to do that?
+
+5
+00:00:18.833 --> 00:00:23.466
+The very first thing that we've gotta do is determine the error rate.
+
+6
+00:00:23.466 --> 00:00:27.766
+Now, what do we mean by an error? Well, let’s look at some examples.
+
+7
+00:00:27.766 --> 00:00:32.732
+I think we're pretty clear at that, but this will help. We’ll look at some commercial industrial.
+
+8
+00:00:32.733 --> 00:00:37.766
+Take banking, for example, or anywhere where people are waited on, a service.
+
+9
+00:00:37.766 --> 00:00:44.099
+We see these people come and go, coming up to the desks, there to be waited on.
+
+10
+00:00:44.100 --> 00:00:50.966
+Now, what can an error be? Well, an error could be that this individual right here,
+
+11
+00:00:50.966 --> 00:00:54.966
+when the customer come up, pulled up the wrong account.
+
+12
+00:00:54.966 --> 00:01:00.032
+Had to put it away and get the right account. That could be an error.
+
+13
+00:01:00.033 --> 00:01:05.933
+Now let's consider another one, simple airbag.
+
+14
+00:01:05.933 --> 00:01:11.599
+We see in airbag there deploying. Well, what might an error be?
+
+15
+00:01:11.600 --> 00:01:15.600
+Pretty simple, if it doesn't deploy.
+
+16
+00:01:15.600 --> 00:01:21.000
+Let's look again, at a facility.
+
+17
+00:01:21.000 --> 00:01:28.000
+As we look at an industrial facility here. We’re going to zoom into the back dock.
+
+18
+00:01:28.000 --> 00:01:34.200
+And what could an error be? An error could be a wrong delivery.
+
+19
+00:01:34.200 --> 00:01:41.200
+Pretty simple. The truck pulls up and unloads the wrong materials.
+
+20
+00:01:41.200 --> 00:01:47.533
+Now again, take something as simple as jumping.
+
+21
+00:01:47.533 --> 00:01:53.133
+A person makes a jump.
+
+22
+00:01:53.133 --> 00:01:59.933
+What can an error be? Well, pretty simple.
+
+23
+00:01:59.933 --> 00:02:05.399
+They stumble and fall. That could be an error.
+
+24
+00:02:05.400 --> 00:02:10.333
+Now what we’re going to do, is take and divide that error rate
+
+25
+00:02:10.333 --> 00:02:13.833
+by the number of units produced.
+
+26
+00:02:13.833 --> 00:02:17.833
+Thereby creating
+
+27
+00:02:17.833 --> 00:02:22.299
+a unit error rate. Now remember, a unit can be anything.
+
+28
+00:02:22.300 --> 00:02:26.200
+A unit could be a software program.
+
+29
+00:02:26.200 --> 00:02:31.433
+A unit could be in the case of jumping, an event.
+
+30
+00:02:31.433 --> 00:02:36.466
+A unit, in terms of delivery, could be the total order.
+
+31
+00:02:36.466 --> 00:02:40.466
+A unit can be anything that we want it to be.
+
+32
+00:02:40.466 --> 00:02:46.066
+Especially, when we're baselining. So, we’re looking at the error rate per unit,
+
+33
+00:02:46.066 --> 00:02:49.066
+or what we call the unit error rate.
+
+34
+00:02:49.066 --> 00:02:54.632
+Now step number two. Pretty straightforward.
+
+35
+00:02:54.633 --> 00:03:00.133
+We take the unit error rate and we divide by the number of opportunities
+
+36
+00:03:00.133 --> 00:03:03.533
+to get the opportunity error rate.
+
+37
+00:03:03.533 --> 00:03:08.533
+Thank you for choosing SSMI.

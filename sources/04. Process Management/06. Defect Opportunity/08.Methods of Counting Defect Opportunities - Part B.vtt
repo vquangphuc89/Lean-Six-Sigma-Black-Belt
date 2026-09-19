@@ -1,0 +1,221 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Methods of Counting Defect Opportunities
+
+2
+00:00:05.000 --> 00:00:10.566
+Hello, Mike Harry back with you again. Where we’re pursuing the topic of defect opportunities.
+
+3
+00:00:10.566 --> 00:00:14.532
+Recall the example where we worked through solder joints.
+
+4
+00:00:14.533 --> 00:00:20.466
+Let's look at some other examples, of defect categories in some different areas.
+
+5
+00:00:20.466 --> 00:00:27.099
+In this particular case, we see from the EPA, a defective vehicle notice.
+
+6
+00:00:27.100 --> 00:00:32.300
+And down here is a defect report of what could go wrong.
+
+7
+00:00:32.300 --> 00:00:37.633
+So, it says right here that an authorized officer
+
+8
+00:00:37.633 --> 00:00:41.633
+suspects or is satisfied that your vehicle
+
+9
+00:00:41.633 --> 00:00:45.633
+did not comply with the state legislation on environment.
+
+10
+00:00:45.633 --> 00:00:52.199
+So, you got to do the following repairs. In other words, these are the defect categories.
+
+11
+00:00:52.200 --> 00:00:59.200
+Those are the opportunities for something to be wrong with your car.
+
+12
+00:00:59.200 --> 00:01:06.000
+Here's a similar type thing, a report form
+
+13
+00:01:06.000 --> 00:01:12.400
+from a particular local government, looking at the
+
+14
+00:01:12.400 --> 00:01:18.300
+information coming in from citizens concerning the road condition.
+
+15
+00:01:18.300 --> 00:01:21.300
+I wish to report the following matter.
+
+16
+00:01:21.300 --> 00:01:27.566
+I saw an abandoned vehicle. There is debris on the road and so on.
+
+17
+00:01:27.566 --> 00:01:31.266
+There's lots of chances.
+
+18
+00:01:31.266 --> 00:01:37.966
+See, here's a type of a defect in software, error connecting to service manager.
+
+19
+00:01:37.966 --> 00:01:44.499
+And here's another one, what kind of message would you like to send?
+
+20
+00:01:44.500 --> 00:01:48.500
+This is software related. Oh, I had a bug, or had a problem.
+
+21
+00:01:48.500 --> 00:01:55.466
+Or praise. We see a bug or a problem, a bug is definitely a defect.
+
+22
+00:01:55.466 --> 00:02:02.499
+See, there's another one reporting a problem.
+
+23
+00:02:02.500 --> 00:02:09.166
+Here is a receipt discrepancy report,
+
+24
+00:02:09.166 --> 00:02:14.166
+complete with a disposition, asking you to explain the discrepancy.
+
+25
+00:02:14.166 --> 00:02:18.232
+Well, there are different types of discrepancies.
+
+26
+00:02:18.233 --> 00:02:24.333
+Many, many different ways to look at defects.
+
+27
+00:02:24.333 --> 00:02:31.333
+Here's one a reconciliation report.
+
+28
+00:02:31.333 --> 00:02:38.333
+The reconciled amount was, had a differential $122.68.
+
+29
+00:02:38.333 --> 00:02:44.466
+That's a defect. That's a type of defect. That's a defect opportunity.
+
+30
+00:02:44.466 --> 00:02:50.699
+Here's a punch list report from construction.
+
+31
+00:02:50.700 --> 00:02:57.000
+Punch list is something that's wrong, that has to be repaired, following construction.
+
+32
+00:02:57.000 --> 00:03:02.400
+Somebody goes around, either the owner and inspector, looks at the site,
+
+33
+00:03:02.400 --> 00:03:06.233
+and sees different things wrong and they fill out a punch list.
+
+34
+00:03:06.233 --> 00:03:13.199
+Check off the box, these are the things that are wrong.
+
+35
+00:03:13.200 --> 00:03:13.233
+Here's one that works very specifically,
+
+36
+00:03:13.233 --> 00:03:22.199
+looking for all kinds of information.
+
+37
+00:03:22.200 --> 00:03:26.200
+Even involving defect complexity.
+
+38
+00:03:26.200 --> 00:03:29.300
+A quality database here defects.
+
+39
+00:03:29.300 --> 00:03:35.400
+Now, sometimes our defects are distributed within an area.
+
+40
+00:03:35.400 --> 00:03:40.033
+Not within discrete things, but across an area.
+
+41
+00:03:40.033 --> 00:03:44.633
+And the area of opportunity would come into play there now.
+
+42
+00:03:44.633 --> 00:03:50.266
+The number of defects per square inch of material,
+
+43
+00:03:50.266 --> 00:03:55.699
+or per square yard, or per cubic meter.
+
+44
+00:03:55.700 --> 00:04:00.000
+Where the base of the opportunity is area,
+
+45
+00:04:00.000 --> 00:04:04.000
+not discrete accounts of things.
+
+46
+00:04:04.000 --> 00:04:07.100
+So, there's lots of ways to look at those.
+
+47
+00:04:07.100 --> 00:04:13.000
+And creates a discussion of our opportunities
+
+48
+00:04:13.000 --> 00:04:16.733
+for defect, or defect opportunities as we call them.
+
+49
+00:04:16.733 --> 00:04:20.199
+And again we're reminded, what must be right?
+
+50
+00:04:20.200 --> 00:04:24.200
+Well, whatever shouldn't be wrong.
+
+51
+00:04:24.200 --> 00:04:28.933
+And what could go wrong? Well, things that must've went right.
+
+52
+00:04:28.933 --> 00:04:33.666
+So again, you see we’re working on the same coin,
+
+53
+00:04:33.666 --> 00:04:37.299
+different sides, when we ask the two different questions.
+
+54
+00:04:37.300 --> 00:04:42.733
+But where Six Sigma is concerned, we focus on defect opportunities.
+
+55
+00:04:42.733 --> 00:04:47.733
+Thank you for choosing SSMI.

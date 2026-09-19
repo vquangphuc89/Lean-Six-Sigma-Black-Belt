@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 04: Góc Nhìn Cổ Điển Về Hiệu Suất Six Sigma (Phần B) — Six Sigma Masterclass</title>
+<style>
+  :root{
+    --wood-deep:#022c22;
+    --wood-dark:#064e3b;
+    --wood-forest:#1b4332;
+    --water-ocean:#082f49;
+    --emerald:#059669;
+    --emerald-vibrant:#10b981;
+    --emerald-mint:#6ee7b7;
+    --vi-green:#047857;
+    --vi-green-2:#065f46;
+    --red:#b91c1c;
+    --green:#16a34a;
+    --gold-bg:#fefce8;
+    --gold-border:#d97706;
+    --wood-bark:#78350f;
+    --bg-paper:#f0f7f4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background:var(--bg-paper);
+    color:#0f241d;
+    line-height:1.68;
+  }
+  .container{max-width:1160px;margin:0 auto;padding:0 24px 80px;}
+  a{color:var(--emerald);text-decoration:none;}
+  
+  .hero{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color:#fff;
+    padding:48px 24px 38px;
+    margin-bottom:36px;
+    box-shadow:0 10px 32px rgba(2,44,34,0.35);
+    border-bottom:4px solid var(--emerald);
+  }
+  .hero-inner{max-width:1160px;margin:0 auto;}
+  .hero-badge{
+    display:inline-block;
+    background:rgba(16,185,129,0.18);
+    border:1px solid rgba(110,231,183,0.45);
+    color:var(--emerald-mint);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  .hero-title{font-size:2.2rem;font-weight:800;margin:0 0 6px;color:#ffffff;line-height:1.2;}
+  .hero-title-en{font-size:1.15rem;color:var(--emerald-mint);margin:0 0 16px;font-weight:500;}
+  .hero-desc{font-size:1.02rem;color:#d1fae5;max-width:880px;margin:0;}
+
+  .section-card{
+    background:#ffffff;
+    border-radius:14px;
+    padding:34px 38px;
+    margin-bottom:34px;
+    box-shadow:0 4px 20px rgba(6,78,59,0.07);
+    border-top:5px solid var(--emerald);
+    border-bottom:1px solid #d1fae5;
+  }
+  .section-num{
+    display:inline-block;
+    background:var(--wood-dark);
+    color:#ecfdf5;
+    font-size:11.5px;
+    font-weight:700;
+    padding:3px 10px;
+    border-radius:4px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .section-heading{font-size:1.55rem;color:var(--wood-dark);margin:0 0 4px;font-weight:800;}
+  .section-subheading{font-size:1.05rem;color:var(--vi-green);font-style:italic;margin:0 0 20px;font-weight:600;}
+
+  .exec-summary{
+    background:#f4fbf7;
+    border:1px solid #d1fae5;
+    border-left:6px solid var(--emerald);
+    border-radius:10px;
+    padding:22px 26px;
+    margin:18px 0;
+  }
+  .exec-summary ul{margin:8px 0 0; padding-left:20px;}
+  .exec-summary li{margin-bottom:10px; font-size:1rem; color:#0f241d;}
+  .exec-summary strong{color:var(--wood-dark);}
+
+  /* Pure Native Math Styling */
+  .math-card{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color:#ecfdf5;
+    border-radius:10px;
+    padding:22px 26px;
+    margin:20px 0;
+    border:1.5px solid var(--emerald);
+    box-shadow:0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title{
+    font-size:0.88rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--emerald-mint);
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .math-equation{
+    display:inline-flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    font-family:'Cambria Math', Georgia, serif;
+    font-size:1.3rem;
+    font-weight:700;
+    color:#ffffff;
+    margin:10px 0 16px;
+    line-height:1.4;
+  }
+  .math-frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    padding:0 8px;
+  }
+  .math-num{
+    border-bottom:2px solid var(--emerald-mint);
+    padding-bottom:4px;
+    color:#ffffff;
+    font-size:1.15rem;
+  }
+  .math-den{
+    padding-top:4px;
+    color:var(--emerald-mint);
+    font-size:1.15rem;
+  }
+  .math-var{font-style:italic; color:#ffffff;}
+  .math-card .desc{
+    font-size:0.92rem;
+    color:#d1fae5;
+    margin-top:10px;
+    line-height:1.6;
+    border-top:1px dashed rgba(110,231,183,0.3);
+    padding-top:10px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong{color:#ffffff;}
+  .math-card .desc em{color:var(--emerald-mint); font-style:normal; font-weight:600;}
+
+  /* Tables */
+  table.data-table{border-collapse:collapse;width:100%;font-size:0.92rem;min-width:680px;margin:18px 0;}
+  table.data-table th{
+    background:linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color:#fff;padding:10px 12px;text-align:left;vertical-align:top;
+  }
+  table.data-table th .th-vi{display:block;color:#a7f3d0;font-style:italic;font-weight:500;font-size:0.78rem;margin-top:2px;}
+  table.data-table td{padding:10px 12px;border-bottom:1px solid #d1fae5;vertical-align:top;background:#fff;}
+  table.data-table td .td-sub{display:block;color:var(--vi-green-2);font-style:italic;font-size:0.85rem;margin-top:2px;}
+  table.data-table tr:nth-child(even) td{background:#f7fcf9;}
+
+  /* Comparison Grid */
+  .vs-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin:22px 0;}
+  @media(max-width:768px){.vs-grid{grid-template-columns:1fr;}}
+  .vs-col{border-radius:10px;padding:20px;}
+  .vs-col.bad{background:#fef2f2;border:2px solid #ef4444;}
+  .vs-col.good{background:#ecfdf5;border:2px solid var(--emerald-vibrant);}
+  .vs-badge{
+    display:inline-block;font-size:0.75rem;font-weight:800;letter-spacing:0.5px;
+    padding:4px 10px;border-radius:14px;color:#fff;margin-bottom:10px;text-transform:uppercase;
+  }
+  .vs-badge.bad{background:var(--red);}
+  .vs-badge.good{background:var(--green);}
+  .vs-divider{display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--wood-dark);font-size:1.3rem;}
+  .vs-col ul{margin:0;padding-left:18px;}
+  .vs-col li{margin-bottom:8px;font-size:0.9rem;}
+
+  /* MBB Box */
+  .mbb-box{
+    background:var(--gold-bg);border:1px solid #fef08a;border-left:5px solid var(--gold-border);
+    border-radius:8px;padding:20px 24px;margin:22px 0;
+  }
+  .mbb-box .title{color:var(--wood-bark);font-weight:800;font-size:1.05rem;margin-bottom:4px;}
+  .mbb-box p{margin:0;color:#78350f;font-size:0.95rem;}
+
+  /* Interactive Arena */
+  .interactive-arena{
+    background:linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color:#fff;border-radius:14px;padding:36px 40px;margin:40px 0;
+    box-shadow:0 8px 28px rgba(2,44,34,0.3);border:2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2{color:#fff;margin-top:0;font-size:1.6rem;font-weight:800;}
+  .interactive-arena .arena-desc{color:var(--emerald-mint);font-style:italic;font-size:0.98rem;margin-bottom:24px;}
+  
+  .quiz-card{
+    background:rgba(255,255,255,0.06);border:1px solid rgba(110,231,183,0.3);
+    border-radius:10px;padding:22px 24px;margin-bottom:22px;
+  }
+  .quiz-tag{display:inline-block;background:var(--emerald);color:#fff;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;margin-bottom:6px;}
+  .quiz-q{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.45;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-btn{
+    background:rgba(2,44,34,0.7);border:1px solid rgba(52,211,153,0.4);color:#ecfdf5;
+    padding:12px 16px;border-radius:8px;font-size:0.92rem;text-align:left;cursor:pointer;
+    transition:all 0.2s ease;font-family:inherit;line-height:1.4;
+  }
+  .quiz-btn:hover{background:rgba(16,185,129,0.25);border-color:var(--emerald-mint);}
+  .quiz-btn.correct{background:#065f46 !important;border-color:#34d399 !important;color:#fff !important;}
+  .quiz-btn.wrong{background:#7f1d1d !important;border-color:#f87171 !important;color:#fff !important;}
+  .quiz-fb{display:none;margin-top:12px;padding:14px 16px;border-radius:8px;font-size:0.9rem;line-height:1.45;}
+  .quiz-fb.show{display:block;}
+  .quiz-fb.success{background:rgba(16,185,129,0.2);border:1px solid #34d399;color:#d1fae5;}
+  .quiz-fb.error{background:rgba(239,68,68,0.2);border:1px solid #f87171;color:#fecaca;}
+
+  /* Flashcards */
+  .flashcards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px;}
+  .flashcard{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(110,231,183,0.3);border-radius:10px;
+    padding:18px;cursor:pointer;min-height:140px;display:flex;flex-direction:column;
+    justify-content:center;text-align:center;transition:transform 0.2s ease;user-select:none;
+  }
+  .flashcard:hover{transform:translateY(-3px);border-color:var(--emerald-mint);}
+  .flashcard .front{font-size:1.05rem;font-weight:800;color:var(--emerald-mint);}
+  .flashcard .hint{font-size:0.75rem;color:#a7f3d0;margin-top:6px;opacity:0.8;}
+  .flashcard .back{display:none;font-size:0.88rem;color:#fff;line-height:1.4;}
+  .flashcard.flipped .front, .flashcard.flipped .hint{display:none;}
+  .flashcard.flipped .back{display:block;}
+
+  /* Action Checklist */
+  .action-item{display:flex;align-items:flex-start;gap:12px;background:#f4fbf7;border:1px solid #d1fae5;padding:12px 16px;border-radius:8px;margin-bottom:10px;}
+  .action-item input{width:18px;height:18px;accent-color:var(--emerald);cursor:pointer;margin-top:2px;}
+  .action-text{font-size:0.92rem;color:#0f241d;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">Core Beliefs #04 &bull; Hiệu Suất Cổ Điển (Phần B)</span>
+    <h1 class="hero-title">Góc Nhìn Cổ Điển Về Hiệu Suất Six Sigma (Classic Perspective &mdash; Part B)</h1>
+    <div class="hero-title-en">Classic Perspective of Six Sigma Performance: Rolled Throughput Yield (RTY) &amp; The Hidden Factory</div>
+    <p class="hero-desc">Khám phá toán học tích lũy sai số cấp số nhân qua chuỗi quy trình nhiều công đoạn: <strong>Hiệu Suất Lăn Xả (Rolled Throughput Yield &mdash; RTY)</strong>, Khái niệm Nhà Máy Ẩn (Hidden Factory) &mdash; Nơi chôn vùi 20&ndash;30% chi phí vận hành cho các hoạt động sửa lỗi ngầm, và Chiến lược giải phóng dòng chảy bằng Six Sigma.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Phần 1 &bull; Executive Summary</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành Trong 60 Giây</h2>
+    <div class="section-subheading">Hiệu suất từng công đoạn cao không đồng nghĩa với hiệu suất toàn chuỗi cao</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Sự Ngụy Biện Của Tỷ Lệ Đạt Cuối Chuyền (Final Yield Illusion):</strong> Báo cáo sản xuất thường khoe tỷ lệ đạt cuối chuyền 95%. Nhưng thực chất con số đó đã được "tắm trắng" bằng cách sửa đi sửa lại hàng chục lần qua các "Nhà máy ẩn" (Hidden Factory) với chi phí làm lại khổng lồ.</li>
+        <li><strong>Toán Học Rolled Throughput Yield (RTY):</strong> Xác suất để một sản phẩm đi xuyên suốt từ công đoạn 1 đến công đoạn cuối cùng mà <em>hoàn toàn không bị lỗi, không phải làm lại và không bị loại bỏ</em> bằng tích số của tỷ lệ đạt từng công đoạn: <strong><i>RTY = &prod; Y<sub>i</sub> = Y<sub>1</sub> &times; Y<sub>2</sub> &times; ... &times; Y<sub>n</sub></i></strong>.</li>
+        <li><strong>Quy Luật Cấp Số Nhân:</strong> Một chuỗi quy trình gồm 20 công đoạn, mỗi công đoạn đạt 98% (có vẻ rất tốt), thì hiệu suất thực tế toàn chuỗi RTY chỉ còn <strong>(0.98)<sup>20</sup> = 66.7%</strong> (tức là cứ 3 sản phẩm đưa vào thì có 1 sản phẩm bị lỗi phải làm lại!).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & RTY MATHEMATICS -->
+  <section class="section-card">
+    <span class="section-num">Phần 2 &bull; Core Frameworks &amp; RTY Mechanics</span>
+    <h2 class="section-heading">Toán Học Hiệu Suất Lăn Xả (RTY) &amp; Mô Hình Nhà Máy Ẩn</h2>
+    <div class="section-subheading">Phương trình xác suất tích lũy và cấu trúc chi phí làm lại ngầm</div>
+
+    <div class="math-card">
+      <div class="title">Phương Trình Tính Hiệu Suất Lăn Xả Toàn Chuỗi (RTY)</div>
+      <div class="math-equation">
+        <span><i>RTY</i> = &prod;<sub><i>i</i>=1</sub><sup><i>n</i></sup> <i>Y</i><sub><i>i</i></sub> = <i>e</i><sup>&minus;<i>DPU</i><sub>total</sub></sup></span>
+      </div>
+      <div class="desc">
+        Trong đó: <strong><i>Y<sub>i</sub></i></strong> là First Time Yield (FTY &mdash; Tỷ lệ đạt ngay lần đầu) của công đoạn thứ <i>i</i>; <strong><i>DPU</i><sub>total</sub></strong> là Tổng số khuyết tật trên một đơn vị sản phẩm tích lũy qua toàn bộ chuỗi.
+        <br>
+        Chỉ khi mỗi công đoạn đơn lẻ đạt chuẩn <strong>6-Sigma (FTY &ge; 99.99966%)</strong>, một hệ thống phức tạp gồm 100 công đoạn mới có thể duy trì được <strong>RTY &gt; 99.96%</strong>, triệt tiêu hoàn toàn sự tồn tại của Nhà máy ẩn.
+      </div>
+    </div>
+
+    <div style="margin:24px 0;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Số Lượng Công Đoạn (Steps)<span class="th-vi">Quy mô chuỗi quy trình</span></th>
+            <th>RTY Khi FTY = 95% (Mức 3.1&sigma;)<span class="th-vi">Doanh nghiệp trung bình</span></th>
+            <th>RTY Khi FTY = 99% (Mức 3.8&sigma;)<span class="th-vi">Doanh nghiệp khá</span></th>
+            <th>RTY Khi FTY = 99.99966% (Mức 6&sigma;)<span class="th-vi">Đẳng cấp Thế giới</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Chuỗi 5 Công Đoạn</strong></td>
+            <td>77.38%</td>
+            <td>95.10%</td>
+            <td><strong>99.998%</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Chuỗi 10 Công Đoạn</strong></td>
+            <td>59.87%</td>
+            <td>90.44%</td>
+            <td><strong>99.997%</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Chuỗi 20 Công Đoạn</strong></td>
+            <td>35.85%</td>
+            <td>81.79%</td>
+            <td><strong>99.993%</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Chuỗi 50 Công Đoạn</strong></td>
+            <td>7.69%</td>
+            <td>60.50%</td>
+            <td><strong>99.983%</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Chuỗi 100 Công Đoạn</strong></td>
+            <td><strong>0.59% (Sụp đổ hoàn toàn)</strong></td>
+            <td>36.60%</td>
+            <td><strong>99.966% (Hoàn hảo tuyệt đối)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASE STUDIES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Phần 3 &bull; Case Studies &amp; VS Comparison</span>
+    <h2 class="section-heading">Bài Học Thực Chiến: Phát Hiện Nhà Máy Ẩn Trị Giá $30M Tại Nhà Máy Điện Tử</h2>
+    <div class="section-subheading">Minh chứng từ cuộc kiểm toán Six Sigma tại tập đoàn sản xuất bo mạch</div>
+
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Ảo Tưởng Final Yield Báo Cáo 98%</span>
+        <ul>
+          <li>Báo cáo xuất xưởng luôn khoe tỷ lệ đạt 98%. Ban Giám đốc nghĩ nhà máy vận hành rất tốt.</li>
+          <li>Thực tế: Có <strong>một khu vực rộng 500m<sup>2</sup> giấu ở góc xưởng với 40 công nhân chuyên ngồi hàn sửa lại các mối nối lỗi</strong>.</li>
+          <li>Chi phí nhân công, linh kiện hỏng và thời gian chậm trễ ngốn mất $30 triệu USD/năm mà sổ sách không ghi nhận rõ.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Áp Dụng Đo Lường RTY &amp; Đóng Cửa Hidden Factory</span>
+        <ul>
+          <li>Master Black Belt đo lường RTY thực tế: Con số thật chỉ là 42%!</li>
+          <li>Khởi động 3 dự án DMAIC tối ưu hóa thông số lò hàn reflow và áp lực dán chip (Cpk &ge; 1.8).</li>
+          <li>RTY tăng vọt lên 99.2%, giải thể hoàn toàn khu vực sửa lỗi ngầm, tiết kiệm trọn vẹn $30M/năm.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA (8 SCENARIO QUIZZES) -->
+  <section class="interactive-arena">
+    <h2>⚡ Đấu Trường Trắc Nghiệm Tình Huống Đa Tầng (8 Câu Thực Chiến)</h2>
+    <div class="arena-desc">Đánh giá khả năng tính toán Rolled Throughput Yield và xóa bỏ Nhà máy ẩn</div>
+
+    <!-- Question 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 1 &bull; Tầng 2: Tính Toán Hiệu Suất Lăn Xả (RTY) Của Quy Trình 3 Bước</span>
+      <div class="quiz-q">Một quy trình gồm 3 công đoạn liên tiếp có tỷ lệ đạt ngay lần đầu (FTY) lần lượt là: Công đoạn 1 = 90% (0.90), Công đoạn 2 = 95% (0.95), Công đoạn 3 = 80% (0.80). Hiệu suất Lăn xả RTY của toàn bộ quy trình là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb4-1', 'Correct! RTY = Y1 * Y2 * Y3 = 0.90 * 0.95 * 0.80 = 0.684 = 68.4%. Only 68.4% of units pass through all 3 stages without experiencing any defect or rework.', 'Chính xác! RTY = Y<sub>1</sub> &times; Y<sub>2</sub> &times; Y<sub>3</sub> = 0.90 &times; 0.95 &times; 0.80 = 0.684 = 68.4%. Chỉ có 68.4% sản phẩm đi qua trọn vẹn cả 3 công đoạn mà không hề bị lỗi hoặc phải làm lại.')">A. 68.4% (RTY = 0.90 &times; 0.95 &times; 0.80 = 68.4%)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb4-1', 'Incorrect. Multiply the yields of all stages sequentially.', 'Sai. Phải lấy tích của các tỷ lệ đạt từng công đoạn.')">B. 88.3% (đây là trung bình cộng sai lầm).</button>
+      </div>
+      <div id="fb-cb4-1" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 2 &bull; Tầng 1: Khái Niệm "Nhà Máy Ẩn" (The Hidden Factory)</span>
+      <div class="quiz-q">Khái niệm "Nhà máy ẩn" (Hidden Factory) do Armand Feigenbaum đưa ra trong Six Sigma mô tả điều gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb4-2', 'Correct! The Hidden Factory represents the hidden portion of plant capacity (typically 20-40%) dedicated exclusively to finding, troubleshooting, reworking, and repairing defects that should have been prevented.', 'Chính xác! Mô tả phần năng lực tiềm ẩn của nhà máy (thường chiếm từ 20&ndash;40% tổng chi phí vận hành) bị chôn vùi vào các hoạt động tìm lỗi, sửa chữa, làm lại và khắc phục phế phẩm ngầm.')">A. Phần năng lực nhà máy (20&ndash;40% chi phí) bị chôn vùi vào việc tìm lỗi, sửa chữa và làm lại phế phẩm ngầm.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb4-2', 'Incorrect. The Hidden Factory is the unrecorded capacity lost to rework, scrap sorting, and fire-fighting.', 'Sai. Nhà máy ẩn là nơi tiêu tốn chi phí làm lại ngầm.')">B. Một nhà xưởng bí mật dưới lòng đất.')</button>
+      </div>
+      <div id="fb-cb4-2" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 3 &bull; Tầng 1: Sự Khác Biệt Giữa First Time Yield (FTY) Và Final Yield (FY)</span>
+      <div class="quiz-q">Khác biệt căn bản nhất giữa Tỷ lệ Đạt Ngay Lần Đầu (First Time Yield &mdash; FTY) và Tỷ lệ Đạt Cuối Cùng (Final Yield &mdash; FY) là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb4-3', 'Correct! First Time Yield (FTY) counts only units that pass inspection with ZERO rework on the very first attempt; Final Yield (FY) includes units that were reworked and repaired multiple times before passing.', 'Chính xác! FTY chỉ tính những sản phẩm đạt chuẩn ngay lần đầu tiên mà KHÔNG QUA bất kỳ sự sửa chữa/làm lại nào; FY tính cả các sản phẩm đã bị lỗi nhưng được thợ sửa lại nhiều lần cho đến khi đạt.')">A. FTY chỉ tính sản phẩm đạt chuẩn ngay lần đầu không qua sửa chữa; FY tính cả sản phẩm đã sửa lại nhiều lần.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb4-3', 'Incorrect. FTY measures pure defect-free flow; Final Yield masks costly rework cycles.', 'Sai. FTY là thước đo chất lượng tại nguồn thực sự.')">B. FTY và Final Yield luôn luôn có giá trị bằng nhau.')</button>
+      </div>
+      <div id="fb-cb4-3" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 4 &bull; Tầng 3: Tác Động Của RTY Thấp Đến Thời Gian Giao Hàng (Lead Time)</span>
+      <div class="quiz-q">Khi một quy trình có RTY thấp (ví dụ RTY = 50%), tác động tiêu cực trực tiếp đối với chuỗi cung ứng và khách hàng là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb4-4', 'Correct! Low RTY causes massive WIP inventory buildup, unpredictable cycle times, capacity cannibalization from rework loops, and chronic on-time delivery failures (OTIF collapse).', 'Chính xác! Tồn kho bán thành phẩm WIP dồn ứ nghẽn mạch, thời gian chu kỳ Lead Time bị kéo dài bất định, năng lực sản xuất bị teo tóp do phải làm lại và tỷ lệ giao hàng đúng hẹn OTIF sụp đổ.')">A. Tồn kho WIP ứ đọng, thời gian Lead Time kéo dài bất định và tỷ lệ giao hàng đúng hẹn OTIF bị sụp đổ.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb4-4', 'Incorrect. Low RTY creates devastating rework loops that choke lead time and predictability.', 'Sai. RTY thấp làm tê liệt dòng chảy giao hàng.')">B. Thời gian giao hàng sẽ nhanh hơn vì công nhân làm việc khẩn trương hơn.')</button>
+      </div>
+      <div id="fb-cb4-4" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 5 &bull; Tầng 2: Mối Liên Hệ Giữa RTY Và Số Khuyết Tật Trên Một Đơn Vị (DPU)</span>
+      <div class="quiz-q">Nếu tổng số khuyết tật trung bình trên một sản phẩm qua toàn chuỗi là <i>DPU</i><sub>total</sub> = 0.05, theo phân bố Poisson, tỷ lệ RTY xấp xỉ bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb4-5', 'Correct! By Poisson distribution: RTY = e^(-DPU) = e^(-0.05) = 0.9512 = 95.12%. Poisson yield math provides a direct mathematical bridge between defect counts and throughput yield.', 'Chính xác! Theo phân bố Poisson: RTY = <i>e</i><sup>&minus;DPU</sup> = <i>e</i><sup>&minus;0.05</sup> &asymp; 0.9512 = 95.12%.')">A. 95.12% (RTY = <i>e</i><sup>&minus;0.05</sup> &asymp; 95.12%)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb4-5', 'Incorrect. Calculate e raised to negative DPU.', 'Sai. Dùng công thức hàm e mũ trừ DPU.')">B. 50.0%</button>
+      </div>
+      <div id="fb-cb4-5" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 6 &bull; Tầng 1: Tác Hại Vô Hình Của Sản Phẩm Được "Sửa Lại" (Reworked Products)</span>
+      <div class="quiz-q">Tại sao trong ngành hàng không vũ trụ và y tế, các sản phẩm bị lỗi đã qua sửa lại (Reworked) thường có tỷ lệ hỏng hóc sớm (Early Field Failure) cao hơn gấp 5 lần sản phẩm đạt chuẩn ngay lần đầu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb4-5', 'Correct! Latent thermal and mechanical stress: Reworking processes (e.g., desoldering, re-welding, re-machining) induce microscopic structural fatigue and micro-cracks that bypass visual inspection but fail rapidly under field stress.', 'Chính xác! Ứng suất nhiệt và cơ học tiềm ẩn: Quá trình làm lại (như rã hàn, hàn lại, mài gọt lại) tạo ra các vết nứt vi mô và suy yếu cấu trúc vật liệu mà mắt thường không thấy nhưng sẽ hỏng nhanh khi chịu tải thực tế.')">A. Quá trình làm lại tạo ra ứng suất nhiệt và vết nứt vi mô tiềm ẩn, khiến sản phẩm nhanh hỏng khi sử dụng.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb4-5', 'Incorrect. Rework damages microscopic structural integrity, causing premature field failure.', 'Sai. Sản phẩm sửa lại luôn có độ bền kém hơn nhiều.')">B. Vì sản phẩm sửa lại bị bám bụi nhiều hơn.')</button>
+      </div>
+      <div id="fb-cb4-5" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 7 &bull; Tầng 3: Hành Động Của Black Belt Khi Phát Hiện Hidden Factory</span>
+      <div class="quiz-q">Khi một Master Black Belt bước vào xưởng và nhìn thấy một khu vực "Gia công sửa hàng lỗi" đang hoạt động tấp nập, hành động chiến lược đúng đắn là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb4-7', 'Correct! Expose and eliminate the Hidden Factory: Map the exact defect types entering the rework area, calculate the true baseline RTY, and launch upstream DMAIC projects to fix root causes until the rework station can be permanently dismantled.', 'Chính xác! Phơi bày và xóa sổ Nhà máy ẩn: Lập sơ đồ các loại lỗi đổ về khu sửa hàng, tính toán chỉ số RTY thực sự và khởi động các dự án DMAIC tại công đoạn thượng nguồn để triệt tiêu nguyên nhân gốc rễ cho đến khi đóng cửa hoàn toàn trạm sửa lỗi.')">A. Phơi bày dữ liệu RTY thật và khởi động dự án DMAIC thượng nguồn để xóa sổ hoàn toàn trạm sửa lỗi ngầm.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb4-7', 'Incorrect. World-class Six Sigma eliminates the need for rework stations permanently.', 'Sai. Phải xóa sổ trạm sửa lỗi bằng cách kiểm soát chất lượng tại nguồn.')">B. Mua thêm bàn ghế và tuyển thêm thợ sửa lỗi.')</button>
+      </div>
+      <div id="fb-cb4-7" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 8 &bull; Tầng 1: Mối Liên Hệ Giữa RTY Và Lợi Nhuận Ròng (Bottom-Line EBITDA)</span>
+      <div class="quiz-q">Khi chỉ số RTY của toàn bộ nhà máy tăng từ 65% lên 98%, tác động tài chính trực tiếp đến dòng tiền doanh nghiệp là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb4-8', 'Correct! Massive direct margin expansion: Millions in scrap materials, overtime labor, and rework energy are reclaimed immediately as 100% pure pre-tax operating profit (EBITDA Hard Savings).', 'Chính xác! Bùng nổ biên lợi nhuận ròng trực tiếp: Hàng triệu USD chi phí nguyên vật liệu phế phẩm, tiền làm thêm giờ sửa hàng và năng lượng làm lại được thu hồi nguyên vẹn thành lợi nhuận trước thuế.')">A. Thu hồi hàng triệu USD lãng phí phế phẩm và làm thêm giờ trực tiếp thành dòng tiền lợi nhuận ròng EBITDA.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb4-8', 'Incorrect. Eliminating the hidden factory translates directly into pure bottom-line profit.', 'Sai. Cải thiện RTY tạo ra dòng tiền tiết kiệm khổng lồ.')">B. Chi phí sản xuất sẽ tăng lên gấp đôi.')</button>
+      </div>
+      <div id="fb-cb4-8" class="quiz-fb"></div>
+    </div>
+
+    <h3 style="color:#fff; margin-top:34px; font-size:1.25rem;">🎴 Flashcards Ôn Tập Nhanh (Click để lật thẻ 3D)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Rolled Throughput Yield<span class="vi">Hiệu Suất Lăn Xả (RTY)</span></div>
+        <div class="hint">Bấm để lật xem định nghĩa</div>
+        <div class="back">RTY = &prod; Y_i = Y1 &times; Y2 &times; ... &times; Yn. Tích số xác suất sản phẩm đi xuyên suốt chuỗi mà không bị lỗi hay làm lại.<span class="vi">Thước đo chất lượng toàn chuỗi.</span></div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">The Hidden Factory<span class="vi">Nhà Máy Ẩn</span></div>
+        <div class="hint">Bấm để lật xem định nghĩa</div>
+        <div class="back">Khu vực chôn vùi 20&ndash;40% chi phí vận hành cho việc sửa lỗi ngầm. Bị che giấu bởi báo cáo Final Yield ảo tưởng.<span class="vi">Lãng phí cần xóa sổ.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: 1-PAGE ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">Phần 5 &bull; Action Checklist</span>
+    <h2 class="section-heading">Kế Hoạch Tính RTY &amp; Khám Phá Nhà Máy Ẩn (Sáng Thứ Hai Làm Gì?)</h2>
+    <div class="section-subheading">Ba bước phơi bày hiệu suất thực sự của toàn bộ dây chuyền sản xuất</div>
+
+    <div style="margin:18px 0;">
+      <div class="action-item">
+        <input type="checkbox" id="actcb4-1">
+        <label for="actcb4-1" class="action-text">
+          <strong>Bước 1: Vẽ sơ đồ chuỗi quy trình</strong> và đo lường tỷ lệ First Time Yield (FTY) độc lập tại từng công đoạn riêng lẻ.
+        </label>
+      </div>
+      <div class="action-item">
+        <input type="checkbox" id="actcb4-2">
+        <label for="actcb4-2" class="action-text">
+          <strong>Bước 2: Tính toán chỉ số RTY toàn chuỗi</strong> bằng công thức nhân tích số để phơi bày sự chênh lệch so với báo cáo xuất xưởng.
+        </label>
+      </div>
+      <div class="action-item">
+        <input type="checkbox" id="actcb4-3">
+        <label for="actcb4-3" class="action-text">
+          <strong>Bước 3: Lập danh sách các hoạt động "Làm lại ngầm" (Hidden Factory)</strong> và quy đổi thành số tiền lãng phí hàng tháng để báo cáo Ban Giám đốc.
+        </label>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:#065f46; font-size:0.85rem; padding:20px 0;">&copy; Six Sigma Master Black Belt Executive Training Series &bull; Phong Thủy Đại Lâm Mộc Standard</p>
+</footer>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:4px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:4px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

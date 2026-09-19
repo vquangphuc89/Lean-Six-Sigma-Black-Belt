@@ -1,0 +1,285 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.233
+Development of Process Capability Baselines
+
+2
+00:00:05.233 --> 00:00:08.233
+Welcome back to this session on baselines.
+
+3
+00:00:08.233 --> 00:00:13.666
+Specifically in this segment, we're going to be looking at the idea of a quality baseline.
+
+4
+00:00:13.666 --> 00:00:17.666
+Now, to begin to understand how we're going to look at quality.
+
+5
+00:00:17.666 --> 00:00:21.199
+We can measure quality on any number of different dimensions,
+
+6
+00:00:21.200 --> 00:00:26.000
+but specifically the one we’re going to look at is the idea of sigmas.
+
+7
+00:00:26.000 --> 00:00:28.966
+How many sigmas is your process?
+
+8
+00:00:28.966 --> 00:00:32.899
+Okay, now what is a Sigma?
+
+9
+00:00:32.900 --> 00:00:38.900
+A sigma. in a statistical sense, is like a ruler.
+
+10
+00:00:38.900 --> 00:00:46.000
+Now, here comes the question, if I have variation,
+
+11
+00:00:46.000 --> 00:00:52.966
+how can I measure variation?
+
+12
+00:00:52.966 --> 00:00:58.099
+How can I quantify the extent of variation that's present?
+
+13
+00:00:58.100 --> 00:01:03.766
+Let's say for example, I go out and I produce a bunch of lines.
+
+14
+00:01:03.766 --> 00:01:11.332
+There's the lines I produce. I can now put a ruler on there and measure those lines.
+
+15
+00:01:11.333 --> 00:01:17.066
+Like, there's about a half-inch. There’s about three quarters of an inch.
+
+16
+00:01:17.066 --> 00:01:22.332
+There's about one inch. There's approximately two inches.
+
+17
+00:01:22.333 --> 00:01:27.733
+There is approximately 1.25 inches.
+
+18
+00:01:27.733 --> 00:01:32.966
+And there’s about 1.5 inches. Well, that's actually about 1.5 too.
+
+19
+00:01:32.966 --> 00:01:38.332
+Now as you can see, I have variations in those measurements.
+
+20
+00:01:38.333 --> 00:01:42.133
+So, how much variation is present?
+
+21
+00:01:42.133 --> 00:01:45.866
+Well, for variation we don't have things like an inch,
+
+22
+00:01:45.866 --> 00:01:49.866
+a pound, miles per hour.
+
+23
+00:01:49.866 --> 00:01:56.432
+We don't have that kind of standard. What we do have is a concept called
+
+24
+00:01:56.433 --> 00:02:02.099
+the standard deviation.
+
+25
+00:02:02.100 --> 00:02:05.633
+For any given set of data we compute the standard deviation.
+
+26
+00:02:05.633 --> 00:02:11.399
+Just like this, we can take that set of data and compute the standard deviation.
+
+27
+00:02:11.400 --> 00:02:16.000
+So for that set of data, it's a standard amount,
+
+28
+00:02:16.000 --> 00:02:21.466
+or the typical deviation that exists here. So that makes it like an inch or a pound.
+
+29
+00:02:21.466 --> 00:02:25.799
+But only for that set of data. So, it's like a standard.
+
+30
+00:02:25.800 --> 00:02:30.700
+Now, here's the way the sigmas works. We gotta switch concept here.
+
+31
+00:02:30.700 --> 00:02:34.966
+Let's imagine that we are measuring IQ.
+
+32
+00:02:34.966 --> 00:02:38.432
+Intelligence quotient, how smart somebody is.
+
+33
+00:02:38.433 --> 00:02:43.499
+So, I go out into the world and I give an exam to a lot of people to measure IQ.
+
+34
+00:02:43.500 --> 00:02:48.633
+So, here's a scale of IQ. And I find that the average is about 100.
+
+35
+00:02:48.633 --> 00:02:54.633
+Well, I can come over here and count the number of people with an IQ, say between
+
+36
+00:02:54.633 --> 00:03:01.033
+say between 102 and 98. So, that's 102 and that's 98.
+
+37
+00:03:01.033 --> 00:03:07.999
+And I can make a bar, that corresponds to the height of the number of people
+
+38
+00:03:08.000 --> 00:03:11.866
+that I was able to
+
+39
+00:03:11.866 --> 00:03:17.632
+find with an IQ between 102 and 98.
+
+40
+00:03:17.633 --> 00:03:23.699
+Then I can go over here and say, between 102 and 106.
+
+41
+00:03:23.700 --> 00:03:27.466
+And count the number of people.
+
+42
+00:03:27.466 --> 00:03:33.299
+Once again, that makes a height of a bar.
+
+43
+00:03:33.300 --> 00:03:39.566
+I could come on the other side of that, between, say, 98 and 94.
+
+44
+00:03:39.566 --> 00:03:44.399
+And count the number of people. See, that would fill in.
+
+45
+00:03:44.400 --> 00:03:50.766
+So if I kept doing that, for those intervals of size four
+
+46
+00:03:50.766 --> 00:03:57.666
+what I would wind up with is a graph.
+
+47
+00:03:57.666 --> 00:04:02.766
+That have fewer, and fewer, and fewer people
+
+48
+00:04:02.766 --> 00:04:07.999
+as you head over here toward Einstein's way. And the same thing would hold true,
+
+49
+00:04:08.000 --> 00:04:12.966
+as my kids would say, as you head over here in my direction.
+
+50
+00:04:12.966 --> 00:04:16.532
+Now of course there's no absolute zero point here. We’re just throwing that in.
+
+51
+00:04:16.533 --> 00:04:21.333
+Well my kids, would of course disagree with that.  But nonetheless we call this a histogram.
+
+52
+00:04:21.333 --> 00:04:27.333
+Now, if I take and identify
+
+53
+00:04:27.333 --> 00:04:33.499
+the midpoint of each interval here. And interconnect those
+
+54
+00:04:33.500 --> 00:04:36.833
+with a smooth curve,
+
+55
+00:04:36.833 --> 00:04:41.566
+we’re left with this bell-shaped thing, that looks like a bell.
+
+56
+00:04:41.566 --> 00:04:45.532
+Now, I'm going to redraw that, because that bell
+
+57
+00:04:45.533 --> 00:04:45.566
+is what we call the normal distribution.
+
+58
+00:04:45.566 --> 00:04:55.532
+Things like IQ, our hair thickness, the height of people, the weight of people.
+
+59
+00:04:55.533 --> 00:05:02.566
+Many things naturally distribute themselves, in this world, as a bell curve.
+
+60
+00:05:02.566 --> 00:05:07.799
+Or as the normal distribution, as many say.
+
+61
+00:05:07.800 --> 00:05:12.066
+Now what we’re going to do, is we're going to come back and visit this idea
+
+62
+00:05:12.066 --> 00:05:16.899
+of the normal distribution and how it plays in with the quality baseline.
+
+63
+00:05:16.900 --> 00:05:20.633
+For right now we're going to just absorb what we just took a look at,
+
+64
+00:05:20.633 --> 00:05:25.899
+by considering one last graph. And that's a characteristic out in the process.
+
+65
+00:05:25.900 --> 00:05:31.000
+And you can see that in this case, we have a range between 130 and 70.
+
+66
+00:05:31.000 --> 00:05:34.266
+Maybe that's the diameter of a shaft.
+
+67
+00:05:34.266 --> 00:05:37.066
+Or maybe that's the amount of seconds
+
+68
+00:05:37.066 --> 00:05:41.232
+to respond to a customer in a commercial application.
+
+69
+00:05:41.233 --> 00:05:44.999
+But here's some actual data and we can see how that
+
+70
+00:05:45.000 --> 00:05:48.800
+curve would fit to this histogram.
+
+71
+00:05:48.800 --> 00:05:53.800
+Thank you for choosing SSMI.

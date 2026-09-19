@@ -1,0 +1,245 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Accounting and Reporting of Defect Opportunities
+
+2
+00:00:05.000 --> 00:00:10.800
+Welcome back to this session on defect opportunities. What we would like to do,
+
+3
+00:00:10.800 --> 00:00:14.433
+is to advance this concept one stage further,
+
+4
+00:00:14.433 --> 00:00:20.366
+by considering the metric defects per opportunity,
+
+5
+00:00:20.366 --> 00:00:25.999
+as a simple ratio. Now, to understand that I'm going to create some slots.
+
+6
+00:00:26.000 --> 00:00:31.833
+Let's say, three simple slots. And those slots belong to the numerator.
+
+7
+00:00:31.833 --> 00:00:38.866
+So, I’m going to form a ratio here of some slots
+
+8
+00:00:38.866 --> 00:00:44.366
+in the numerator
+
+9
+00:00:44.366 --> 00:00:47.932
+and some slots in the denominator.
+
+10
+00:00:47.933 --> 00:00:52.399
+So, we got denominator slots, numerator slots.
+
+11
+00:00:52.400 --> 00:00:58.733
+And, every slot in the denominator is an event.
+
+12
+00:00:58.733 --> 00:01:04.833
+It's the occurrence of an interface between
+
+13
+00:01:04.833 --> 00:01:10.933
+the process capability and the design requirement.
+
+14
+00:01:10.933 --> 00:01:15.133
+The upper and lower specification. In other words, it's the marriage
+
+15
+00:01:15.133 --> 00:01:19.566
+between the process and the design.
+
+16
+00:01:19.566 --> 00:01:22.932
+If the marriage occurred,
+
+17
+00:01:22.933 --> 00:01:27.933
+then we would have a one in this box.
+
+18
+00:01:27.933 --> 00:01:30.933
+In other words, there is a production opportunity.
+
+19
+00:01:30.933 --> 00:01:37.233
+If the process cycles once, then it creates,
+
+20
+00:01:37.233 --> 00:01:41.866
+it creates an outcome. Now, that outcome
+
+21
+00:01:41.866 --> 00:01:45.932
+could be one of two possible conditions.
+
+22
+00:01:45.933 --> 00:01:51.799
+It could either be a zero, or it could be a one.
+
+23
+00:01:51.800 --> 00:01:57.500
+In other words, if it's a one, then it's a defect.
+
+24
+00:01:57.500 --> 00:02:02.600
+That interface was not good. It didn't pass.
+
+25
+00:02:02.600 --> 00:02:07.300
+It wasn't up to standard. It wasn't up to par. A defect was created.
+
+26
+00:02:07.300 --> 00:02:10.733
+If it's a zero, then it was yield.
+
+27
+00:02:10.733 --> 00:02:15.733
+So, if it's zero. It's a green. It's in the spec boundary.
+
+28
+00:02:15.733 --> 00:02:22.266
+If it's a one, it's out here in these tails. So, the first thing is, did we create it? Yes.
+
+29
+00:02:22.266 --> 00:02:29.232
+See, that's the first question, did we create it?
+
+30
+00:02:29.233 --> 00:02:34.866
+Yes equals one, no equals zero.
+
+31
+00:02:34.866 --> 00:02:40.632
+In this case, it’s a one so we did create it. Now we say,
+
+32
+00:02:40.633 --> 00:02:46.899
+if yes, was it good? That has two possible conditions 0, 1.
+
+33
+00:02:46.900 --> 00:02:50.466
+So, we can get a 0,1 here, 0,1 here.
+
+34
+00:02:50.466 --> 00:02:57.299
+Now, let's suppose on the first cycle of the process we did in fact create a CTQ,
+
+35
+00:02:57.300 --> 00:03:03.500
+a critical to quality characteristic. We did create it so there's a 1. And now let's suppose,
+
+36
+00:03:03.500 --> 00:03:10.533
+strictly for the sake of argument, that it was not defective. So, we put in a zero.
+
+37
+00:03:10.533 --> 00:03:14.733
+Now let's suppose that we go back on the second cycle of the process,
+
+38
+00:03:14.733 --> 00:03:17.633
+the process cycles again.
+
+39
+00:03:17.633 --> 00:03:24.333
+And let's suppose, that we created another CTQ, a replication of the first CTQ.
+
+40
+00:03:24.333 --> 00:03:31.299
+We’ve got production going on. So, we made the first CTQ. We’ve made that CTQ again.
+
+41
+00:03:31.300 --> 00:03:38.266
+But this time, aw-oh, we had a failure. So, we get a 1.
+
+42
+00:03:38.266 --> 00:03:43.466
+And now let's suppose, on the third cycle, we left the material out of the machine.
+
+43
+00:03:43.466 --> 00:03:50.432
+And so, it didn't create the CTQ. Therefore, since it’s a zero here, it has to be a zero there.
+
+44
+00:03:50.433 --> 00:03:55.733
+You can't create a defect if you never made the CTQ. That simple.
+
+45
+00:03:55.733 --> 00:04:02.599
+Now, let's take a look across the numerator here. We’re going to come over here.
+
+46
+00:04:02.600 --> 00:04:09.466
+How many defects were made? 0, 1, 0. 1.
+
+47
+00:04:09.466 --> 00:04:14.832
+How many opportunities were created? 2.
+
+48
+00:04:14.833 --> 00:04:17.999
+So, what's our defects per opportunity?
+
+49
+00:04:18.000 --> 00:04:25.000
+Defects per opportunity equals 1 over 2, which is equal to .50.
+
+50
+00:04:25.000 --> 00:04:28.333
+In this case, 50%
+
+51
+00:04:28.333 --> 00:04:33.766
+of the opportunities we’re creating were defective.
+
+52
+00:04:33.766 --> 00:04:38.666
+Now, what we do not want to do is this.
+
+53
+00:04:38.666 --> 00:04:43.932
+We do not want to say, well, the process cycled three times. One, two, three.
+
+54
+00:04:43.933 --> 00:04:47.833
+See, here’s the process cycles. Cycle one. Cycle two, Cycle three.
+
+55
+00:04:47.833 --> 00:04:50.799
+One, plus one, plus one, equals three.
+
+56
+00:04:50.800 --> 00:04:56.600
+So, the defects per opportunity is one over three. Not one over two. Wrong.
+
+57
+00:04:56.600 --> 00:05:02.666
+We’re not measuring defects per process cycle.
+
+58
+00:05:02.666 --> 00:05:09.532
+We are measuring defects per product opportunity, per CTQ.
+
+59
+00:05:09.533 --> 00:05:12.566
+So once again,
+
+60
+00:05:12.566 --> 00:05:19.566
+a defect opportunity is anything that we regularly measure and report.
+
+61
+00:05:19.566 --> 00:05:24.566
+Thank you for choosing SSMI.

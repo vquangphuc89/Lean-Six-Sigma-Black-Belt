@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 12: Những Ý Tưởng Lớn Về Thực Hành Six Sigma (Phần B) — Six Sigma Masterclass</title>
+<style>
+  :root{
+    --wood-deep:#022c22;
+    --wood-dark:#064e3b;
+    --wood-forest:#1b4332;
+    --water-ocean:#082f49;
+    --emerald:#059669;
+    --emerald-vibrant:#10b981;
+    --emerald-mint:#6ee7b7;
+    --vi-green:#047857;
+    --vi-green-2:#065f46;
+    --red:#b91c1c;
+    --green:#16a34a;
+    --gold-bg:#fefce8;
+    --gold-border:#d97706;
+    --wood-bark:#78350f;
+    --bg-paper:#f0f7f4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background:var(--bg-paper);
+    color:#0f241d;
+    line-height:1.68;
+  }
+  .container{max-width:1160px;margin:0 auto;padding:0 24px 80px;}
+  a{color:var(--emerald);text-decoration:none;}
+  
+  .hero{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color:#fff;
+    padding:48px 24px 38px;
+    margin-bottom:36px;
+    box-shadow:0 10px 32px rgba(2,44,34,0.35);
+    border-bottom:4px solid var(--emerald);
+  }
+  .hero-inner{max-width:1160px;margin:0 auto;}
+  .hero-badge{
+    display:inline-block;
+    background:rgba(16,185,129,0.18);
+    border:1px solid rgba(110,231,183,0.45);
+    color:var(--emerald-mint);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  .hero-title{font-size:2.2rem;font-weight:800;margin:0 0 6px;color:#ffffff;line-height:1.2;}
+  .hero-title-en{font-size:1.15rem;color:var(--emerald-mint);margin:0 0 16px;font-weight:500;}
+  .hero-desc{font-size:1.02rem;color:#d1fae5;max-width:880px;margin:0;}
+
+  .section-card{
+    background:#ffffff;
+    border-radius:14px;
+    padding:34px 38px;
+    margin-bottom:34px;
+    box-shadow:0 4px 20px rgba(6,78,59,0.07);
+    border-top:5px solid var(--emerald);
+    border-bottom:1px solid #d1fae5;
+  }
+  .section-num{
+    display:inline-block;
+    background:var(--wood-dark);
+    color:#ecfdf5;
+    font-size:11.5px;
+    font-weight:700;
+    padding:3px 10px;
+    border-radius:4px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .section-heading{font-size:1.55rem;color:var(--wood-dark);margin:0 0 4px;font-weight:800;}
+  .section-subheading{font-size:1.05rem;color:var(--vi-green);font-style:italic;margin:0 0 20px;font-weight:600;}
+
+  .exec-summary{
+    background:#f4fbf7;
+    border:1px solid #d1fae5;
+    border-left:6px solid var(--emerald);
+    border-radius:10px;
+    padding:22px 26px;
+    margin:18px 0;
+  }
+  .exec-summary ul{margin:8px 0 0; padding-left:20px;}
+  .exec-summary li{margin-bottom:10px; font-size:1rem; color:#0f241d;}
+  .exec-summary strong{color:var(--wood-dark);}
+
+  /* Pure Native Math Styling */
+  .math-card{
+    background:linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color:#ecfdf5;
+    border-radius:10px;
+    padding:22px 26px;
+    margin:20px 0;
+    border:1.5px solid var(--emerald);
+    box-shadow:0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title{
+    font-size:0.88rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--emerald-mint);
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .math-equation{
+    display:inline-flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    font-family:'Cambria Math', Georgia, serif;
+    font-size:1.3rem;
+    font-weight:700;
+    color:#ffffff;
+    margin:10px 0 16px;
+    line-height:1.4;
+  }
+  .math-frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    padding:0 8px;
+  }
+  .math-num{
+    border-bottom:2px solid var(--emerald-mint);
+    padding-bottom:4px;
+    color:#ffffff;
+    font-size:1.15rem;
+  }
+  .math-den{
+    padding-top:4px;
+    color:var(--emerald-mint);
+    font-size:1.15rem;
+  }
+  .math-var{font-style:italic; color:#ffffff;}
+  .math-card .desc{
+    font-size:0.92rem;
+    color:#d1fae5;
+    margin-top:10px;
+    line-height:1.6;
+    border-top:1px dashed rgba(110,231,183,0.3);
+    padding-top:10px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong{color:#ffffff;}
+  .math-card .desc em{color:var(--emerald-mint); font-style:normal; font-weight:600;}
+
+  /* Tables */
+  table.data-table{border-collapse:collapse;width:100%;font-size:0.92rem;min-width:680px;margin:18px 0;}
+  table.data-table th{
+    background:linear-gradient(135deg, var(--wood-dark) 0%, var(--vi-green) 100%);
+    color:#fff;padding:10px 12px;text-align:left;vertical-align:top;
+  }
+  table.data-table th .th-vi{display:block;color:#a7f3d0;font-style:italic;font-weight:500;font-size:0.78rem;margin-top:2px;}
+  table.data-table td{padding:10px 12px;border-bottom:1px solid #d1fae5;vertical-align:top;background:#fff;}
+  table.data-table td .td-sub{display:block;color:var(--vi-green-2);font-style:italic;font-size:0.85rem;margin-top:2px;}
+  table.data-table tr:nth-child(even) td{background:#f7fcf9;}
+
+  /* Comparison Grid */
+  .vs-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin:22px 0;}
+  @media(max-width:768px){.vs-grid{grid-template-columns:1fr;}}
+  .vs-col{border-radius:10px;padding:20px;}
+  .vs-col.bad{background:#fef2f2;border:2px solid #ef4444;}
+  .vs-col.good{background:#ecfdf5;border:2px solid var(--emerald-vibrant);}
+  .vs-badge{
+    display:inline-block;font-size:0.75rem;font-weight:800;letter-spacing:0.5px;
+    padding:4px 10px;border-radius:14px;color:#fff;margin-bottom:10px;text-transform:uppercase;
+  }
+  .vs-badge.bad{background:var(--red);}
+  .vs-badge.good{background:var(--green);}
+  .vs-divider{display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--wood-dark);font-size:1.3rem;}
+  .vs-col ul{margin:0;padding-left:18px;}
+  .vs-col li{margin-bottom:8px;font-size:0.9rem;}
+
+  /* MBB Box */
+  .mbb-box{
+    background:var(--gold-bg);border:1px solid #fef08a;border-left:5px solid var(--gold-border);
+    border-radius:8px;padding:20px 24px;margin:22px 0;
+  }
+  .mbb-box .title{color:var(--wood-bark);font-weight:800;font-size:1.05rem;margin-bottom:4px;}
+  .mbb-box p{margin:0;color:#78350f;font-size:0.95rem;}
+
+  /* Interactive Arena */
+  .interactive-arena{
+    background:linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    color:#fff;border-radius:14px;padding:36px 40px;margin:40px 0;
+    box-shadow:0 8px 28px rgba(2,44,34,0.3);border:2px solid var(--emerald-vibrant);
+  }
+  .interactive-arena h2{color:#fff;margin-top:0;font-size:1.6rem;font-weight:800;}
+  .interactive-arena .arena-desc{color:var(--emerald-mint);font-style:italic;font-size:0.98rem;margin-bottom:24px;}
+  
+  .quiz-card{
+    background:rgba(255,255,255,0.06);border:1px solid rgba(110,231,183,0.3);
+    border-radius:10px;padding:22px 24px;margin-bottom:22px;
+  }
+  .quiz-tag{display:inline-block;background:var(--emerald);color:#fff;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;margin-bottom:6px;}
+  .quiz-q{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.45;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-btn{
+    background:rgba(2,44,34,0.7);border:1px solid rgba(52,211,153,0.4);color:#ecfdf5;
+    padding:12px 16px;border-radius:8px;font-size:0.92rem;text-align:left;cursor:pointer;
+    transition:all 0.2s ease;font-family:inherit;line-height:1.4;
+  }
+  .quiz-btn:hover{background:rgba(16,185,129,0.25);border-color:var(--emerald-mint);}
+  .quiz-btn.correct{background:#065f46 !important;border-color:#34d399 !important;color:#fff !important;}
+  .quiz-btn.wrong{background:#7f1d1d !important;border-color:#f87171 !important;color:#fff !important;}
+  .quiz-fb{display:none;margin-top:12px;padding:14px 16px;border-radius:8px;font-size:0.9rem;line-height:1.45;}
+  .quiz-fb.show{display:block;}
+  .quiz-fb.success{background:rgba(16,185,129,0.2);border:1px solid #34d399;color:#d1fae5;}
+  .quiz-fb.error{background:rgba(239,68,68,0.2);border:1px solid #f87171;color:#fecaca;}
+
+  /* Flashcards */
+  .flashcards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px;}
+  .flashcard{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(110,231,183,0.3);border-radius:10px;
+    padding:18px;cursor:pointer;min-height:140px;display:flex;flex-direction:column;
+    justify-content:center;text-align:center;transition:transform 0.2s ease;user-select:none;
+  }
+  .flashcard:hover{transform:translateY(-3px);border-color:var(--emerald-mint);}
+  .flashcard .front{font-size:1.05rem;font-weight:800;color:var(--emerald-mint);}
+  .flashcard .hint{font-size:0.75rem;color:#a7f3d0;margin-top:6px;opacity:0.8;}
+  .flashcard .back{display:none;font-size:0.88rem;color:#fff;line-height:1.4;}
+  .flashcard.flipped .front, .flashcard.flipped .hint{display:none;}
+  .flashcard.flipped .back{display:block;}
+
+  /* Action Checklist */
+  .action-item{display:flex;align-items:flex-start;gap:12px;background:#f4fbf7;border:1px solid #d1fae5;padding:12px 16px;border-radius:8px;margin-bottom:10px;}
+  .action-item input{width:18px;height:18px;accent-color:var(--emerald);cursor:pointer;margin-top:2px;}
+  .action-text{font-size:0.92rem;color:#0f241d;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">Core Beliefs #12 &bull; Ý Tưởng Lớn (Phần B)</span>
+    <h1 class="hero-title">Những Ý Tưởng Lớn Về Thực Hành Six Sigma (Big Ideas &mdash; Part B)</h1>
+    <div class="hero-title-en">Big Ideas Related to the Practice of Six Sigma: Process Capability, Entitlement &amp; Variance Compression</div>
+    <p class="hero-desc">Đào sâu 2 Đại Ý Tưởng tiếp theo: <strong>Ý Tưởng 3 &mdash; Năng Lực Quy Trình &amp; Hiệu Suất Đặc Quyền (Process Capability &amp; Entitlement Performance)</strong>, và <strong>Ý Tưởng 4 &mdash; Nén Chặt Biến Thiên vs Chuẩn Hóa Tâm (Variation Compression vs. Centering)</strong> &mdash; Chiến lược giải phóng tiềm năng ẩn của tài sản hiện hữu.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PILLAR 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Phần 1 &bull; Executive Summary</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành Trong 60 Giây</h2>
+    <div class="section-subheading">Hiểu rõ năng lực đặc quyền tốt nhất mà máy móc hiện có thể đạt được trước khi đầu tư thêm tiền</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Ý Tưởng 3 &mdash; Hiệu Suất Đặc Quyền (Entitlement Performance):</strong> Mọi thiết bị/quy trình hiện hữu đều có một <em>mức hiệu năng tối đa lý tưởng (Entitlement) mà nó hoàn toàn có thể đạt được khi hoạt động trong điều kiện tốt nhất</em> mà không cần tốn thêm 1 xu vốn đầu tư mua máy mới.</li>
+        <li><strong>Khoảng Cách Đặc Quyền (Entitlement Gap):</strong> Khoảng cách giữa Hiệu suất thực tế hiện tại và Entitlement chính là "Mỏ vàng lãng phí" mà dự án DMAIC sẽ thu hồi.</li>
+        <li><strong>Ý Tưởng 4 &mdash; Nén Chặt Biến Thiên (Variation Compression) Khó Hơn Chuẩn Tâm:</strong>
+          &bull; <em>Chuẩn tâm (&mu; &rarr; Target):</em> Rất dễ làm, thường chỉ cần vặn chỉnh chiết áp hoặc bù trừ offset thông số.
+          &bull; <em>Nén phương sai (&sigma; &rarr; min):</em> Đòi hỏi kỷ luật cao độ và công cụ phân tích DoE để triệt tiêu các nguyên nhân gây phân tán ngầm.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: CORE FRAMEWORKS & ENTITLEMENT CAPABILITY -->
+  <section class="section-card">
+    <span class="section-num">Phần 2 &bull; Core Frameworks &amp; Real Capability Math</span>
+    <h2 class="section-heading">Toán Học Năng Lực Quy Trình &amp; Hiệu Suất Đặc Quyền</h2>
+    <div class="section-subheading">Phân biệt giữa Cp (tiềm năng ngắn hạn) và Cpk (năng lực thực tế có xét lệch tâm)</div>
+
+    <div class="math-card">
+      <div class="title">Phương Trình Năng Lực Quy Trình Cpk Và Khoảng Cách Lệch Tâm k</div>
+      <div class="math-equation">
+        <span><i>C</i><sub><i>pk</i></sub> = <i>C</i><sub><i>p</i></sub> &times; (1 &minus; <i>k</i>), &nbsp; với &nbsp; <i>k</i> = </span>
+        <span class="math-frac">
+          <span class="math-num">|<i>T</i> &minus; &mu;|</span>
+          <span class="math-den">(USL &minus; LSL) / 2</span>
+        </span>
+      </div>
+      <div class="desc">
+        Trong đó: <strong><i>C<sub>p</sub></i> = (USL &minus; LSL) / (6&sigma;)</strong> đại diện cho tiềm năng nén biến thiên (Entitlement); <strong><i>k</i></strong> là Hệ số lệch tâm (0 &le; <i>k</i> &le; 1).
+        <br>
+        Nếu quy trình lệch tâm hoàn toàn (<i>k</i> = 1) thì <i>C<sub>pk</sub></i> = 0 dù <i>C<sub>p</sub></i> có cao đến đâu. Do đó, Six Sigma áp dụng chiến lược 2 bước: <strong>Bước 1: Nén &sigma; để tăng Cp &rarr; Bước 2: Dịch chuyển &mu; về Target T để triệt tiêu k (k &rarr; 0)</strong>.
+      </div>
+    </div>
+
+    <div style="margin:24px 0;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Chỉ Số Năng Lực (Capability Metric)<span class="th-vi">Thước đo năng lực</span></th>
+            <th>Ý Nghĩa Vận Hành Thực Tế<span class="th-vi">Operational Meaning</span></th>
+            <th>Mục Tiêu Chuẩn Six Sigma<span class="th-vi">Six Sigma Target</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Chỉ Số Tiềm Năng <i>C<sub>p</sub></i></strong></td>
+            <td>Độ rộng của dải phân tán 6&sigma; so với khoảng cách dung sai (chưa xét vị trí trung bình &mu;).</td>
+            <td><strong><i>C<sub>p</sub></i> &ge; 2.0 (Dung sai rộng gấp đôi dải phân tán)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Chỉ Số Năng Lực Thực Tế <i>C<sub>pk</sub></i></strong></td>
+            <td>Khoảng cách từ trung bình &mu; đến giới hạn dung sai gần nhất, có tính đến sự lệch tâm.</td>
+            <td><strong><i>C<sub>pk</sub></i> &ge; 1.5 (Tương đương 3.4 DPMO sau độ dịch 1.5&sigma;)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Chỉ Số Hiệu Năng Dài Hạn <i>P<sub>pk</sub></i></strong></td>
+            <td>Hiệu năng thực tế đo qua nhiều tháng/năm có tính toàn bộ biến thiên dài hạn và mòn dao cụ.</td>
+            <td><strong><i>P<sub>pk</sub></i> &ge; 1.33 (Mức vận hành bền vững dài hạn)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: REAL-WORLD CASE STUDIES & COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Phần 3 &bull; Case Studies &amp; VS Comparison</span>
+    <h2 class="section-heading">Bài Học Thực Chiến: Mua Máy Mới $2M Thay Vì Khai Thác Entitlement</h2>
+    <div class="section-subheading">Minh chứng từ dự án cải tiến năng lực máy ép nhựa tại nhà máy ô tô</div>
+
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Tư Duy Đốt Vốn Mua Máy Mới</span>
+        <ul>
+          <li>Máy ép nhựa chỉ đạt Cpk = 0.75, phế phẩm 8%. Ban Giám đốc phê duyệt $2 triệu USD mua máy mới từ Đức.</li>
+          <li>Máy mới về nhưng vẫn gặp lỗi biến dạng nhiệt vì chu kỳ làm mát không ổn định.</li>
+          <li>Lãng phí $2M vốn đầu tư CapEx mà không giải quyết được vấn đề gốc rễ.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Khai Thác Hiệu Suất Đặc Quyền Entitlement</span>
+        <ul>
+          <li>Black Belt phân tích Entitlement: Trong các ca máy chạy tốt nhất, máy cũ từng đạt Cpk = 1.85!</li>
+          <li>Triển khai DoE tìm ra biến số X cốt tử: Lưu lượng nước làm mát khuôn bị cặn bám.</li>
+          <li>Tẩy cặn đường ống và lắp van điều lưu tự động (chi phí $5,000) &rarr; Cpk duy trì ổn định ở mức 1.8, tiết kiệm trọn vẹn $2M CapEx.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 4: INTERACTIVE ARENA (8 SCENARIO QUIZZES) -->
+  <section class="interactive-arena">
+    <h2>⚡ Đấu Trường Trắc Nghiệm Tình Huống Đa Tầng (8 Câu Thực Chiến)</h2>
+    <div class="arena-desc">Đánh giá khả năng tính toán Cp/Cpk, khai thác Entitlement và nén biến thiên</div>
+
+    <!-- Question 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 1 &bull; Tầng 1: Khái Niệm "Hiệu Suất Đặc Quyền" (Entitlement Performance)</span>
+      <div class="quiz-q">Khái niệm "Hiệu suất Đặc quyền" (Entitlement Performance) trong Six Sigma mô tả điều gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb12-1', 'Correct! Entitlement is the best demonstrated performance a current process or asset has historically achieved when operating under optimal conditions without requiring additional capital expenditure (CapEx).', 'Chính xác! Hiệu suất Đặc quyền là mức hiệu năng tốt nhất đã được chứng minh trong lịch sử mà quy trình/thiết bị hiện tại hoàn toàn có thể đạt được trong điều kiện tối ưu mà không cần tốn thêm vốn mua máy mới.')">A. Mức hiệu năng tốt nhất đã được chứng minh mà thiết bị hiện tại có thể đạt được không cần mua máy mới.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb12-1', 'Incorrect. Entitlement reflects the best historical demonstrated baseline capability of current assets.', 'Sai. Entitlement là tiềm năng tốt nhất của tài sản hiện có.')">B. Quyền lợi nghỉ phép của nhân viên Black Belt.')</button>
+      </div>
+      <div id="fb-cb12-1" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 2 &bull; Tầng 2: Tính Toán Chỉ Số Cp Khi Biết Dung Sai Và Độ Lệch Chuẩn</span>
+      <div class="quiz-q">Một quy trình có giới hạn dung sai USL = 110mm, LSL = 90mm và độ lệch chuẩn ngắn hạn &sigma; = 2.0mm. Chỉ số tiềm năng <i>C<sub>p</sub></i> của quy trình là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb12-2', 'Correct! Cp = (USL - LSL) / (6 * &sigma;) = (110 - 90) / (6 * 2.0) = 20 / 12 = 1.67. This indicates high inherent capability potential if perfectly centered.', 'Chính xác! <i>C<sub>p</sub></i> = (USL &minus; LSL) / (6 &times; &sigma;) = (110 &minus; 90) / (6 &times; 2.0) = 20 / 12 = 1.67. Cho thấy tiềm năng quy trình rất cao nếu được căn chuẩn tâm.')">A. 1.67 (<i>C<sub>p</sub></i> = (110 &minus; 90) / (6 &times; 2.0) = 1.67)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb12-2', 'Incorrect. Calculate tolerance range (20) divided by 6 times sigma (12).', 'Sai. Lấy khoảng dung sai chia cho 6 lần sigma.')">B. 1.00</button>
+      </div>
+      <div id="fb-cb12-2" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 3 &bull; Tầng 2: Tính Toán Cpk Khi Quy Trình Bị Lệch Tâm</span>
+      <div class="quiz-q">Với cùng quy trình trên (USL = 110, LSL = 90, &sigma; = 2.0), nhưng giá trị trung bình thực tế bị lệch sang &mu; = 104mm. Chỉ số <i>C<sub>pk</sub></i> thực tế là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb12-3', 'Correct! Cpk = min((USL - &mu;)/(3&sigma;), (&mu; - LSL)/(3&sigma;)) = min((110 - 104)/(6), (104 - 90)/(6)) = min(6/6, 14/6) = min(1.00, 2.33) = 1.00. Process off-centering degraded performance from Cp=1.67 down to Cpk=1.00.', 'Chính xác! <i>C<sub>pk</sub></i> = min((110 &minus; 104)/6, (104 &minus; 90)/6) = min(6/6, 14/6) = 1.00. Hiện tượng lệch tâm đã làm năng lực thực tế sụt giảm từ <i>C<sub>p</sub></i> = 1.67 xuống còn <i>C<sub>pk</sub></i> = 1.00.')">A. 1.00 (<i>C<sub>pk</sub></i> = min(Cpu, Cpl) = (110 &minus; 104) / 6 = 1.00)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb12-3', 'Incorrect. Cpk is constrained by the distance to the nearest specification limit.', 'Sai. Cpk bị khống chế bởi biên dung sai gần nhất.')">B. 1.67</button>
+      </div>
+      <div id="fb-cb12-3" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 4 &bull; Tầng 1: Tại Sao Nén Biến Thiên (&sigma;) Lại Khó Hơn Chuẩn Tâm (&mu;)?</span>
+      <div class="quiz-q">Tại sao trong thực tế kỹ thuật, việc "Nén phương sai biến thiên &sigma;" luôn khó khăn và phức tạp hơn việc "Dịch chuyển giá trị trung bình &mu; về tâm"?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb12-4', 'Correct! Centering &mu; requires simple offset adjustments (turning dials/offsets); Compressing &sigma; requires identifying and eliminating complex multi-variable interactions, material variances, and systemic noise via DoE.', 'Chính xác! Chuẩn tâm &mu; chỉ cần điều chỉnh offset đơn giản (vặn núm chiết áp hoặc bù trừ thông số); Nén phương sai &sigma; đòi hỏi phải tìm ra và triệt tiêu các tương tác đa biến phức tạp, biến thiên vật liệu và nhiễu hệ thống bằng DoE.')">A. Chuẩn tâm chỉ cần chỉnh bù trừ offset đơn giản; Nén phương sai đòi hỏi triệt tiêu tương tác đa biến và nhiễu.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb12-4', 'Incorrect. Variance compression demands multi-variable root cause elimination via DoE.', 'Sai. Nén biến thiên là bài toán phức tạp đòi hỏi thống kê chuyên sâu.')">B. Vì công thức tính phương sai khó hơn.')</button>
+      </div>
+      <div id="fb-cb12-4" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 5 &bull; Tầng 3: Nhận Diện "Mỏ Vàng" Khoảng Cách Đặc Quyền (Entitlement Gap)</span>
+      <div class="quiz-q">Một nhà máy hiện tại đạt OEE = 60%, nhưng dữ liệu lịch sử cho thấy trong 10 ca làm việc tốt nhất họ từng đạt OEE = 88%. Master Black Belt kết luận điều gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb12-5', 'Correct! Entitlement Gap = 88% - 60% = 28% available headroom. The factory has proved it can achieve 88% with existing machines. Deploy DMAIC to eliminate special causes and stabilize operating conditions to close this 28% gap without buying new equipment.', 'Chính xác! Khoảng cách Đặc quyền = 88% &minus; 60% = 28% dư địa có sẵn. Nhà máy đã chứng minh hoàn toàn có thể đạt 88% trên máy móc hiện tại. Áp dụng DMAIC để xóa bỏ các nguyên nhân gây gián đoạn và đóng khoảng cách 28% này mà không cần mua máy mới.')">A. Tồn tại khoảng cách Entitlement Gap 28% có thể thu hồi bằng DMAIC trên máy hiện hữu mà không cần CapEx.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb12-5', 'Incorrect. The entitlement gap represents massive recoverable capacity from current assets.', 'Sai. 28% chênh lệch chính là mỏ vàng lợi nhuận không tốn vốn.')">B. Cần làm đơn xin ngân sách mua thêm nhà xưởng mới.')</button>
+      </div>
+      <div id="fb-cb12-5" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 6 &bull; Tầng 1: Mối Quan Hệ Giữa Cp Và Cpk Khi Quy Trình Chuẩn Tâm Tuyệt Đối</span>
+      <div class="quiz-q">Khi một quy trình được căn chỉnh hoàn hảo sao cho giá trị trung bình &mu; trùng khít với tâm mục tiêu Target <i>T</i> (hệ số lệch tâm <i>k</i> = 0), mối quan hệ giữa <i>C<sub>p</sub></i> và <i>C<sub>pk</sub></i> là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb12-6', 'Correct! Perfect Centering Identity: When &mu; = Target T, k = 0, and Cpk = Cp. In all other off-centered cases, Cpk is strictly less than Cp (Cpk <= Cp).', 'Chính xác! Đẳng thức Chuẩn tâm Hoàn hảo: Khi &mu; = Target <i>T</i>, hệ số <i>k</i> = 0 và <i>C<sub>pk</sub> = C<sub>p</sub></i>. Trong mọi trường hợp bị lệch tâm, <i>C<sub>pk</sub></i> luôn luôn nhỏ hơn <i>C<sub>p</sub></i>.')">A. <i>C<sub>pk</sub> = C<sub>p</sub></i> (Năng lực thực tế đạt mức tối đa bằng đúng tiềm năng thiết kế).')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb12-6', 'Incorrect. Cpk equals Cp if and only if the process is perfectly centered on target.', 'Sai. Khi chuẩn tâm tuyệt đối thì Cpk bằng đúng Cp.')">B. <i>C<sub>pk</sub></i> luôn lớn hơn <i>C<sub>p</sub></i> gấp đôi.')</button>
+      </div>
+      <div id="fb-cb12-6" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 7 &bull; Tầng 2: Hệ Quả Khi Cpk &lt; 1.0</span>
+      <div class="quiz-q">Khi chỉ số năng lực của một quy trình rơi xuống mức <i>C<sub>pk</sub></i> = 0.80, điều này cảnh báo điều gì về mặt thống kê?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb12-7', 'Correct! Incapable Process: Dải phân tán của quy trình đã tràn ra ngoài giới hạn dung sai. Phế phẩm đang liên tục sinh ra với tỷ lệ khoảng 8,200 DPMO và bắt buộc phải kiểm tra 100% hoặc dừng chuyền để cải tiến DMAIC.', 'Chính xác! Quy trình không đủ năng lực: Dải phân tán đã tràn ra ngoài giới hạn dung sai. Phế phẩm đang liên tục sinh ra (khoảng 8,200 DPMO) và bắt buộc phải kiểm tra phân loại 100% hoặc dùng DMAIC cấp cứu.')">A. Quy trình không đủ năng lực, phế phẩm đang sinh ra liên tục (khoảng 8,200 DPMO) vượt ra ngoài dung sai.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb12-7', 'Incorrect. Cpk < 1.0 indicates an incapable process generating regular defects.', 'Sai. Cpk < 1.0 đồng nghĩa với việc phế phẩm sinh ra thường xuyên.')">B. Quy trình đang hoạt động ở mức 6-Sigma hoàn hảo.')</button>
+      </div>
+      <div id="fb-cb12-7" class="quiz-fb"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 8 &bull; Tầng 3: Chiến Lược Hai Bước Tối Ưu Hóa Năng Lực Six Sigma</span>
+      <div class="quiz-q">Trình tự 2 bước chuẩn mực để nâng cấp một quy trình từ <i>C<sub>pk</sub></i> = 0.8 lên <i>C<sub>pk</sub></i> &ge; 1.67 là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-cb12-8', 'Correct! 2-Step Capability Roadmap: Step 1: Compress process variance (&sigma; &rarr; min via DoE/SOP) to boost Cp >= 2.0. Step 2: Shift process mean &mu; to Target T (eliminate k offset) so that Cpk matches Cp.', 'Chính xác! Lộ trình 2 bước: Bước 1: Nén chặt phương sai biến thiên (&sigma; &rarr; min qua DoE/SOP) để nâng <i>C<sub>p</sub></i> &ge; 2.0 &rarr; Bước 2: Dịch chuyển giá trị trung bình &mu; về đúng tâm Target <i>T</i> để <i>C<sub>pk</sub> = C<sub>p</sub></i>.')">A. Bước 1: Nén phương sai &sigma; để nâng Cp &ge; 2.0 &rarr; Bước 2: Dịch chuyển trung bình &mu; về tâm Target để Cpk = Cp.')</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-cb12-8', 'Incorrect. First compress variation (boost Cp), then center the process on target (maximize Cpk).', 'Sai. Phải nén biến thiên trước rồi mới căn chuẩn tâm.')">B. Chỉ cần chỉnh tâm &mu; mà không cần quan tâm đến phương sai &sigma;.')</button>
+      </div>
+      <div id="fb-cb12-8" class="quiz-fb"></div>
+    </div>
+
+    <h3 style="color:#fff; margin-top:34px; font-size:1.25rem;">🎴 Flashcards Ôn Tập Nhanh (Click để lật thẻ 3D)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Entitlement Performance<span class="vi">Hiệu Suất Đặc Quyền</span></div>
+        <div class="hint">Bấm để lật xem định nghĩa</div>
+        <div class="back">Mức hiệu năng tốt nhất máy móc hiện tại từng đạt được trong lịch sử. Thu hồi khoảng cách Entitlement Gap bằng DMAIC mà không tốn CapEx.<span class="vi">Đại Ý Tưởng #3.</span></div>
+      </div>
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="front">Cp vs Cpk Dual Target<span class="vi">Mục Tiêu Kép Cp &amp; Cpk</span></div>
+        <div class="hint">Bấm để lật xem định nghĩa</div>
+        <div class="back">Cp = Nén biến thiên phương sai &sigma; &bull; Cpk = Căn chỉnh trung bình &mu; về đúng tâm mục tiêu Target T (k = 0).<span class="vi">Đại Ý Tưởng #4.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 5: 1-PAGE ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">Phần 5 &bull; Action Checklist</span>
+    <h2 class="section-heading">Kế Hoạch Khai Thác Entitlement &amp; Nén Biến Thiên (Sáng Thứ Hai Làm Gì?)</h2>
+    <div class="section-subheading">Ba bước đo lường Cp/Cpk và thu hồi năng lực tiềm ẩn của thiết bị</div>
+
+    <div style="margin:18px 0;">
+      <div class="action-item">
+        <input type="checkbox" id="actcb12-1">
+        <label for="actcb12-1" class="action-text">
+          <strong>Bước 1: Tính toán cặp chỉ số Cp và Cpk</strong> cho 5 máy sản xuất chủ lực để xác định máy nào đang bị phân tán lớn hoặc lệch tâm.
+        </label>
+      </div>
+      <div class="action-item">
+        <input type="checkbox" id="actcb12-2">
+        <label for="actcb12-2" class="action-text">
+          <strong>Bước 2: Rà soát nhật ký vận hành 6 tháng qua</strong> để tìm mức hiệu suất tốt nhất (Entitlement) của từng dây chuyền.
+        </label>
+      </div>
+      <div class="action-item">
+        <input type="checkbox" id="actcb12-3">
+        <label for="actcb12-3" class="action-text">
+          <strong>Bước 3: Thực hiện cân chỉnh offset đưa giá trị trung bình &mu; về đúng tâm Target</strong> trước khi xem xét bất kỳ đề xuất mua máy mới nào.
+        </label>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:#065f46; font-size:0.85rem; padding:20px 0;">&copy; Six Sigma Master Black Belt Executive Training Series &bull; Phong Thủy Đại Lâm Mộc Standard</p>
+</footer>
+
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:4px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:4px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

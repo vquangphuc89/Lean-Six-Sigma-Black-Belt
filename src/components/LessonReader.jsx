@@ -11,7 +11,9 @@ import {
   Sparkles,
   HelpCircle,
   ArrowDown,
-  RotateCcw
+  RotateCcw,
+  Clock,
+  AlertCircle
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -131,6 +133,26 @@ export default function LessonReader({
       // Quét ngay lập tức nếu đã có đáp án được chọn
       scanAndRecord();
 
+      // Nếu đã có điểm đạt chuẩn >= 80% được lưu trước đó, hiển thị trực quan các thẻ trắc nghiệm trong iframe
+      if (quizRecord && quizRecord.percentage >= 80) {
+        try {
+          const allCards = iframeDoc.querySelectorAll('.quiz-card');
+          allCards.forEach(card => {
+            const correctBtn = card.querySelector('.quiz-btn[onclick*="true"]');
+            if (correctBtn && !card.querySelector('.quiz-btn.correct')) {
+              correctBtn.classList.add('correct');
+              const fb = card.querySelector('.quiz-fb');
+              if (fb) {
+                fb.className = 'quiz-fb show success';
+                fb.innerHTML = '<strong>✅ Đã hoàn thành (&ge; 80%):</strong><br>Kết quả trắc nghiệm đã được ghi nhận vào Đấu Trường &amp; Cloud.';
+              }
+            }
+          });
+        } catch (e) {
+          // ignore
+        }
+      }
+
       if (iframeWin.__quizBridgeAttached) return;
 
       const originalCheckQuiz = iframeWin.checkQuiz;
@@ -238,27 +260,70 @@ export default function LessonReader({
 
         {/* Action Controls */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-          {/* Huy hiệu điểm Quiz Header */}
-          {quizRecord && (
+          {/* Huy hiệu điểm Quiz Header theo 3 trạng thái */}
+          {!quizRecord && (
+            <div 
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px',
+                background: 'rgba(245, 158, 11, 0.15)',
+                border: '1px solid rgba(245, 158, 11, 0.5)',
+                padding: '4px 10px',
+                borderRadius: '8px',
+                fontSize: '0.78rem',
+                fontWeight: '700',
+                color: '#fbbf24'
+              }}
+              title="Chưa nộp bài trắc nghiệm cho bài học này"
+            >
+              <Clock size={13} color="#fbbf24" />
+              <span>Chưa nộp bài</span>
+            </div>
+          )}
+
+          {quizRecord && quizRecord.percentage >= 80 && (
             <div 
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '5px',
-                background: quizRecord.percentage >= 80 ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
-                border: `1px solid ${quizRecord.percentage >= 80 ? 'var(--emerald-vibrant)' : 'var(--red)'}`,
-                padding: '5px 11px',
+                background: 'rgba(16, 185, 129, 0.15)',
+                border: '1px solid var(--emerald-vibrant)',
+                padding: '4px 10px',
                 borderRadius: '8px',
-                fontSize: '0.8rem',
-                fontWeight: '700',
-                color: quizRecord.percentage >= 80 ? 'var(--emerald-mint)' : '#fca5a5'
+                fontSize: '0.78rem',
+                fontWeight: '800',
+                color: 'var(--emerald-mint)'
               }}
-              title="Điểm số bài trắc nghiệm đã được ghi nhận tự động vào Đấu Trường Luyện Đề và Cloud!"
+              title="Đã hoàn thành đạt chuẩn SSMI (>= 80%)"
             >
-              <Sparkles size={14} color={quizRecord.percentage >= 80 ? 'var(--emerald-vibrant)' : '#f87171'} />
-              <span>Đề: {quizRecord.percentage}% ({quizRecord.score}/{quizRecord.total})</span>
+              <CheckCircle2 size={13} color="var(--emerald-vibrant)" />
+              <span>Hoàn thành ({quizRecord.percentage}%)</span>
             </div>
           )}
+
+          {quizRecord && quizRecord.percentage < 80 && (
+            <div 
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                background: 'rgba(239, 68, 68, 0.15)',
+                border: '1px solid #ef4444',
+                padding: '4px 10px',
+                borderRadius: '8px',
+                fontSize: '0.78rem',
+                fontWeight: '800',
+                color: '#fca5a5'
+              }}
+              title="Điểm dưới 80%, cần ôn luyện lại"
+            >
+              <AlertCircle size={13} color="#f87171" />
+              <span>Cần ôn lại ({quizRecord.percentage}%)</span>
+            </div>
+          )}
+
 
           {/* Nút Hoàn thành */}
           <button 
@@ -337,12 +402,14 @@ export default function LessonReader({
         </div>
       </div>
 
-      {/* Interactive Quiz Status & Fast-Action Banner */}
+      {/* Interactive Quiz Status & Fast-Action Banner - 3 Trạng Thái Chuẩn Hóa */}
       <div style={{
-        background: quizRecord 
-          ? 'linear-gradient(90deg, rgba(5, 150, 105, 0.2) 0%, rgba(2, 44, 34, 0.4) 100%)' 
-          : 'linear-gradient(90deg, rgba(245, 158, 11, 0.15) 0%, rgba(2, 44, 34, 0.3) 100%)',
-        borderBottom: '1px solid var(--border-color)',
+        background: !quizRecord
+          ? 'linear-gradient(90deg, rgba(245, 158, 11, 0.15) 0%, rgba(2, 44, 34, 0.3) 100%)'
+          : (quizRecord.percentage >= 80 
+              ? 'linear-gradient(90deg, rgba(16, 185, 129, 0.18) 0%, rgba(2, 44, 34, 0.4) 100%)'
+              : 'linear-gradient(90deg, rgba(239, 68, 68, 0.18) 0%, rgba(2, 44, 34, 0.4) 100%)'),
+        borderBottom: `1px solid ${!quizRecord ? 'rgba(245, 158, 11, 0.35)' : (quizRecord.percentage >= 80 ? 'rgba(16, 185, 129, 0.35)' : 'rgba(239, 68, 68, 0.35)')}`,
         padding: '9px 24px',
         display: 'flex',
         alignItems: 'center',
@@ -351,66 +418,161 @@ export default function LessonReader({
         gap: '12px',
         fontSize: '0.83rem'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Sparkles size={16} color={quizRecord ? "var(--emerald-vibrant)" : "#f59e0b"} />
-          <span>
-            {quizRecord ? (
-              <>
-                <strong style={{ color: 'var(--emerald-mint)' }}>🎯 Đã Nộp Bài: {quizRecord.score}/{quizRecord.total} câu ({quizRecord.percentage}%)</strong>
-                <span style={{ color: 'var(--text-secondary)', marginLeft: '6px' }}>&bull; Đã đồng bộ lên Đấu Trường Luyện Đề &amp; Cloud</span>
-              </>
-            ) : (
-              <>
-                <strong style={{ color: '#fbbf24' }}>⚡ Thử Thách Trắc Nghiệm:</strong>
-                <span style={{ color: 'var(--text-secondary)', marginLeft: '6px' }}>Bài học có {lesson.quizCount || 8} câu trắc nghiệm thực chiến chuẩn SSMI.</span>
-              </>
-            )}
-          </span>
-        </div>
+        {/* 1. Chưa nộp bài - Màu Cam */}
+        {!quizRecord && (
+          <>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Clock size={16} color="#fbbf24" />
+              <span>
+                <strong style={{ color: '#fbbf24' }}>⏳ Chưa nộp bài:</strong>
+                <span style={{ color: 'var(--text-secondary)', marginLeft: '6px' }}>
+                  Bài học có {lesson.quizCount || 8} câu hỏi trắc nghiệm tình huống. Làm bài trực tiếp bên dưới hoặc bấm Nộp nhanh 100%.
+                </span>
+              </span>
+            </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <button
-            onClick={scrollToQuiz}
-            style={{
-              background: 'transparent',
-              border: '1px solid var(--border-color)',
-              color: 'var(--emerald-mint)',
-              padding: '4px 10px',
-              borderRadius: '6px',
-              fontSize: '0.78rem',
-              fontWeight: '600',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px'
-            }}
-            title="Cuộn trang tới phần 8 câu hỏi trắc nghiệm"
-          >
-            <ArrowDown size={13} /> Cuộn Tới 8 Câu Hỏi
-          </button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <button
+                onClick={scrollToQuiz}
+                style={{
+                  background: 'transparent',
+                  border: '1px solid rgba(245, 158, 11, 0.4)',
+                  color: '#fbbf24',
+                  padding: '5px 12px',
+                  borderRadius: '6px',
+                  fontSize: '0.78rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px'
+                }}
+                title="Cuộn trang tới phần câu hỏi trắc nghiệm"
+              >
+                <ArrowDown size={13} /> Cuộn Tới Câu Hỏi
+              </button>
 
-          {/* Nút Ghi nhận nhanh 100% nếu học viên đã làm bài */}
-          <button
-            onClick={handleQuickRecordFullScore}
-            style={{
-              background: quizRecord ? 'transparent' : 'var(--emerald-vibrant)',
-              border: quizRecord ? '1px solid var(--emerald-vibrant)' : 'none',
-              color: quizRecord ? 'var(--emerald-mint)' : '#ffffff',
-              padding: '4px 12px',
-              borderRadius: '6px',
-              fontSize: '0.78rem',
-              fontWeight: '700',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '5px'
-            }}
-            title="Xác nhận bạn đã làm bài và lưu kết quả 100% (8/8 câu) vào Đấu Trường Luyện Đề & Cloud"
-          >
-            <CheckCircle2 size={13} />
-            {quizRecord ? 'Cập Nhật Lại 100% (8/8)' : '✅ Lưu Kết Quả 100% (Đã làm 8 câu)'}
-          </button>
-        </div>
+              <button
+                onClick={handleQuickRecordFullScore}
+                style={{
+                  background: '#f59e0b',
+                  border: 'none',
+                  color: '#1a1003',
+                  padding: '5px 14px',
+                  borderRadius: '6px',
+                  fontSize: '0.78rem',
+                  fontWeight: '800',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  boxShadow: '0 2px 6px rgba(245, 158, 11, 0.3)'
+                }}
+                title="Nộp nhanh kết quả 100% (8/8 câu) lên Đấu Trường Luyện Đề & Cloud"
+              >
+                <Sparkles size={13} /> ⚡ Nộp Nhanh 100%
+              </button>
+            </div>
+          </>
+        )}
+
+        {/* 2. Hoàn thành (>= 80%) - Màu Xanh Lá */}
+        {quizRecord && quizRecord.percentage >= 80 && (
+          <>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <CheckCircle2 size={16} color="var(--emerald-vibrant)" />
+              <span>
+                <strong style={{ color: 'var(--emerald-mint)' }}>
+                  ✅ Hoàn thành: {quizRecord.score}/{quizRecord.total} câu ({quizRecord.percentage}%)
+                </strong>
+                <span style={{ color: 'var(--text-secondary)', marginLeft: '6px' }}>
+                  &bull; Đạt chuẩn SSMI (&ge; 80%) &bull; Đã đồng bộ Cloud
+                </span>
+              </span>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <button
+                onClick={scrollToQuiz}
+                style={{
+                  background: 'transparent',
+                  border: '1px solid var(--emerald-vibrant)',
+                  color: 'var(--emerald-mint)',
+                  padding: '5px 12px',
+                  borderRadius: '6px',
+                  fontSize: '0.78rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px'
+                }}
+                title="Xem lại hoặc làm lại trắc nghiệm"
+              >
+                <RotateCcw size={13} /> Xem Lại / Làm Lại
+              </button>
+            </div>
+          </>
+        )}
+
+        {/* 3. Cần ôn lại (< 80%) - Màu Đỏ */}
+        {quizRecord && quizRecord.percentage < 80 && (
+          <>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <AlertCircle size={16} color="#f87171" />
+              <span>
+                <strong style={{ color: '#fca5a5' }}>
+                  ⚠️ Cần ôn lại: {quizRecord.score}/{quizRecord.total} câu ({quizRecord.percentage}%)
+                </strong>
+                <span style={{ color: 'var(--text-secondary)', marginLeft: '6px' }}>
+                  &bull; Dưới chuẩn 80%. Hãy làm lại câu hỏi để nâng cao kết quả.
+                </span>
+              </span>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <button
+                onClick={scrollToQuiz}
+                style={{
+                  background: 'transparent',
+                  border: '1px solid #ef4444',
+                  color: '#fca5a5',
+                  padding: '5px 12px',
+                  borderRadius: '6px',
+                  fontSize: '0.78rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px'
+                }}
+                title="Làm lại các câu hỏi trắc nghiệm"
+              >
+                <RotateCcw size={13} /> Làm Lại Đề Thi
+              </button>
+
+              <button
+                onClick={handleQuickRecordFullScore}
+                style={{
+                  background: 'rgba(16, 185, 129, 0.2)',
+                  border: '1px solid var(--emerald-vibrant)',
+                  color: 'var(--emerald-mint)',
+                  padding: '5px 14px',
+                  borderRadius: '6px',
+                  fontSize: '0.78rem',
+                  fontWeight: '700',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px'
+                }}
+                title="Xác nhận đạt 100%"
+              >
+                <CheckCircle2 size={13} /> Nâng Lên 100%
+              </button>
+            </div>
+          </>
+        )}
       </div>
 
       {/* Main Body: Iframe + Slide-in Notes Drawer */}

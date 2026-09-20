@@ -246,10 +246,15 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
 ```
 
 * **Cầu Nối Trắc Nghiệm Hai Chiều (Iframe Quiz Bridge):** Tự động bắt sự kiện khi học viên chọn đáp án trong tệp HTML bài học, tính toán tỷ lệ đúng/sai theo chuẩn SSMI và lập tức đồng bộ điểm số vào Đấu Trường Luyện Đề (Practice Arena) & Cloud Firestore.
-* **Hiển Thị Điểm Trắc Nghiệm Đa Tầng Trên Từng Bài Học:**
-  - **Sidebar:** Hiển thị huy hiệu điểm số `%` bên cạnh từng bài đã nộp (xanh nếu &ge;80%, đỏ nếu <80%), bổ sung tab lọc riêng "Đã thi".
-  - **Lesson Reader:** Thanh công cụ trắc nghiệm nổi bật hiển thị trạng thái đề thi, nút "Cuộn Tới 8 Câu Hỏi" và nút "✅ Lưu Kết Quả 100% (Đã làm 8 câu)" để học viên dễ dàng ghi nhận kết quả ngay tức thì.
-  - **Practice Arena:** Thẻ bài hiển thị điểm số chi tiết kèm các chỉ số KPI tổng thể (Đã nộp, Điểm trung bình, Đạt chuẩn SSMI).
+* **Quy Chuẩn 3 Trạng Thái Trắc Nghiệm Thống Nhất Toàn Hệ Thống:**
+  1. ⏳ **Chưa nộp bài (Màu Cam - `#f59e0b` / `#fbbf24`):** Bài học chưa nộp kết quả trắc nghiệm. Thẻ bài có viền cam nhạt, huy hiệu đồng hồ, nút hành động rõ ràng `[⚡ Nộp nhanh 100%]`.
+  2. ✅ **Hoàn thành (Màu Xanh Lá - `#10b981` / `var(--emerald-mint)`):** Đạt tỷ lệ đúng từ 80% trở lên (&ge; 80%). Thẻ bài có viền xanh lục bảo, huy hiệu tích xanh hoàn thành, đồng bộ trực tiếp lên KPI.
+  3. ⚠️ **Cần ôn lại (Màu Đỏ - `#ef4444` / `#fca5a5`):** Tỷ lệ đúng nhỏ hơn 80% (< 80%). Thẻ bài có viền đỏ cảnh báo, huy hiệu tam giác cảnh báo kèm nút `[Ôn luyện lại]` và `[Nâng 100%]`.
+* **Hiển Thị Đồng Bộ Trên Từng Giao Diện:**
+  - **Sidebar:** Hiển thị huy hiệu điểm số `%` bên cạnh từng bài đã nộp (xanh nếu &ge; 80%, đỏ nếu < 80%), bổ sung tab lọc riêng "Đã thi".
+  - **Lesson Reader:** Thanh trạng thái trắc nghiệm phân hóa 3 màu tương ứng (Cam khi chưa nộp, Xanh khi &ge; 80%, Đỏ khi < 80%), hỗ trợ tự động cuộn đến trắc nghiệm và tự động highlight đáp án khi bài học đã đạt chuẩn.
+  - **Practice Arena:** Thanh KPI 3 cột lọc nhanh theo 3 trạng thái chuẩn hóa, bộ lọc tìm kiếm tức thời và hỗ trợ nộp bài nhanh chỉ với 1 click.
+
 
 
 

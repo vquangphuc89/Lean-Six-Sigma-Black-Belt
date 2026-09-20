@@ -210,6 +210,9 @@ export const saveLessonNote = (lessonId, noteText) => {
 
 export const recordQuizResult = (lessonId, score, total) => {
   const data = getStudyData();
+  if (!data.quizScores) {
+    data.quizScores = {};
+  }
   data.quizScores[lessonId] = {
     score,
     total,

@@ -3,11 +3,11 @@ import {
   Sparkles, 
   Award, 
   HelpCircle, 
-  CheckCircle, 
-  CheckCircle2,
+  CheckCircle2, 
   AlertCircle, 
+  Clock,
   PlayCircle, 
-  RotateCw,
+  RotateCcw,
   Search,
   Filter,
   Check
@@ -16,20 +16,21 @@ import confetti from 'canvas-confetti';
 
 export default function PracticeArena({ curriculum, studyData, onSelectLesson, onRecordQuizResult }) {
   const [selectedModule, setSelectedModule] = useState('all');
-  const [statusFilter, setStatusFilter] = useState('all'); // 'all' | 'submitted' | 'unsubmitted'
+  const [statusFilter, setStatusFilter] = useState('all'); // 'all' | 'unsubmitted' | 'passed' | 'review'
   const [searchTerm, setSearchTerm] = useState('');
 
   // Lấy danh sách tất cả bài học
   const allLessons = curriculum.modules.flatMap(m => m.subtopics.flatMap(s => s.lessons));
 
-  // Lọc bài học có quiz
+  // Lọc bài học theo phân hệ, trạng thái và tìm kiếm
   const filteredLessons = allLessons.filter(les => {
     const matchesMod = selectedModule === 'all' || les.moduleName.startsWith(selectedModule);
-    const hasQuizScore = !!(studyData.quizScores && studyData.quizScores[les.id]);
+    const quizRecord = studyData.quizScores ? studyData.quizScores[les.id] : null;
     
     let matchesStatus = true;
-    if (statusFilter === 'submitted') matchesStatus = hasQuizScore;
-    if (statusFilter === 'unsubmitted') matchesStatus = !hasQuizScore;
+    if (statusFilter === 'unsubmitted') matchesStatus = !quizRecord;
+    if (statusFilter === 'passed') matchesStatus = quizRecord && quizRecord.percentage >= 80;
+    if (statusFilter === 'review') matchesStatus = quizRecord && quizRecord.percentage < 80;
 
     const matchesSearch = !searchTerm || 
       les.cleanTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -40,17 +41,19 @@ export default function PracticeArena({ curriculum, studyData, onSelectLesson, o
   // Thống kê số liệu trắc nghiệm
   const allScores = Object.values(studyData.quizScores || {});
   const totalSubmitted = allScores.length;
+  const passedCount = allScores.filter(q => (q.percentage || 0) >= 80).length;
+  const reviewCount = allScores.filter(q => (q.percentage || 0) < 80).length;
+  const unsubmittedCount = allLessons.length - totalSubmitted;
   const avgScore = totalSubmitted > 0 
     ? Math.round(allScores.reduce((acc, q) => acc + (q.percentage || 0), 0) / totalSubmitted) 
     : 0;
-  const passedCount = allScores.filter(q => (q.percentage || 0) >= 80).length;
 
   const handleQuickMarkDone = (e, lesson) => {
     e.stopPropagation();
     const total = lesson.quizCount || 8;
     if (onRecordQuizResult) {
       onRecordQuizResult(lesson.id, total, total);
-      confetti({ particleCount: 80, spread: 60 });
+      confetti({ particleCount: 90, spread: 70, origin: { y: 0.6 } });
     }
   };
 
@@ -68,52 +71,85 @@ export default function PracticeArena({ curriculum, studyData, onSelectLesson, o
         </p>
       </div>
 
-      {/* KPI Stats Bar */}
+      {/* KPI Stats Bar - 3 Trạng Thái Chuẩn Hóa */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
         gap: '14px',
         marginBottom: '24px'
       }}>
-        <div style={{
-          background: 'var(--bg-card)',
-          border: '1px solid var(--border-color)',
-          padding: '16px 20px',
-          borderRadius: '12px'
-        }}>
-          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px' }}>
-            ĐÃ NỘP BÀI TEST
+        {/* 1. Chưa nộp bài - Màu Cam */}
+        <div 
+          onClick={() => setStatusFilter(statusFilter === 'unsubmitted' ? 'all' : 'unsubmitted')}
+          style={{
+            background: 'var(--bg-card)',
+            border: `1px solid ${statusFilter === 'unsubmitted' ? '#f59e0b' : 'rgba(245, 158, 11, 0.4)'}`,
+            padding: '16px 20px',
+            borderRadius: '12px',
+            cursor: 'pointer',
+            transition: 'all 0.2s'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#fbbf24', fontWeight: '700', marginBottom: '4px' }}>
+            <Clock size={14} /> CHƯA NỘP BÀI
           </div>
-          <div style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--emerald-mint)' }}>
-            {totalSubmitted} <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>/ {allLessons.length} đề</span>
-          </div>
-        </div>
-
-        <div style={{
-          background: 'var(--bg-card)',
-          border: '1px solid var(--border-color)',
-          padding: '16px 20px',
-          borderRadius: '12px'
-        }}>
-          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px' }}>
-            ĐIỂM TRUNG BÌNH
-          </div>
-          <div style={{ fontSize: '1.6rem', fontWeight: '800', color: avgScore >= 80 ? 'var(--emerald-vibrant)' : '#f59e0b' }}>
-            {totalSubmitted > 0 ? `${avgScore}%` : '---'}
+          <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#f59e0b' }}>
+            {unsubmittedCount} <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>đề thi</span>
           </div>
         </div>
 
-        <div style={{
-          background: 'var(--bg-card)',
-          border: '1px solid var(--border-color)',
-          padding: '16px 20px',
-          borderRadius: '12px'
-        }}>
-          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px' }}>
-            ĐẠT CHUẨN SSMI (&ge; 80%)
+        {/* 2. Hoàn thành (>= 80%) - Màu Xanh Lá */}
+        <div 
+          onClick={() => setStatusFilter(statusFilter === 'passed' ? 'all' : 'passed')}
+          style={{
+            background: 'var(--bg-card)',
+            border: `1px solid ${statusFilter === 'passed' ? 'var(--emerald-vibrant)' : 'rgba(16, 185, 129, 0.4)'}`,
+            padding: '16px 20px',
+            borderRadius: '12px',
+            cursor: 'pointer',
+            transition: 'all 0.2s'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: 'var(--emerald-mint)', fontWeight: '700', marginBottom: '4px' }}>
+            <CheckCircle2 size={14} /> HOÀN THÀNH (&ge; 80%)
           </div>
           <div style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--emerald-vibrant)' }}>
-            {passedCount} <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>bài test</span>
+            {passedCount} <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>đề đạt chuẩn</span>
+          </div>
+        </div>
+
+        {/* 3. Cần ôn lại (< 80%) - Màu Đỏ */}
+        <div 
+          onClick={() => setStatusFilter(statusFilter === 'review' ? 'all' : 'review')}
+          style={{
+            background: 'var(--bg-card)',
+            border: `1px solid ${statusFilter === 'review' ? '#ef4444' : 'rgba(239, 68, 68, 0.4)'}`,
+            padding: '16px 20px',
+            borderRadius: '12px',
+            cursor: 'pointer',
+            transition: 'all 0.2s'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#fca5a5', fontWeight: '700', marginBottom: '4px' }}>
+            <AlertCircle size={14} /> CẦN ÔN LẠI (&lt; 80%)
+          </div>
+          <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#ef4444' }}>
+            {reviewCount} <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>đề cần ôn</span>
+          </div>
+        </div>
+
+        {/* Điểm trung bình */}
+        <div style={{
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border-color)',
+          padding: '16px 20px',
+          borderRadius: '12px'
+        }}>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px' }}>
+            ĐIỂM TRUNG BÌNH TÍCH LŨY
+          </div>
+          <div style={{ fontSize: '1.6rem', fontWeight: '800', color: avgScore >= 80 ? 'var(--emerald-vibrant)' : (totalSubmitted === 0 ? 'var(--text-secondary)' : '#f59e0b') }}>
+            {totalSubmitted > 0 ? `${avgScore}%` : '---'}
           </div>
         </div>
       </div>
@@ -131,7 +167,7 @@ export default function PracticeArena({ curriculum, studyData, onSelectLesson, o
         border: '1px solid var(--border-color)',
         marginBottom: '24px'
       }}>
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
           <button 
             className={`btn ${selectedModule === 'all' ? 'btn-primary' : 'btn-outline'}`}
             onClick={() => setSelectedModule('all')}
@@ -170,16 +206,52 @@ export default function PracticeArena({ curriculum, studyData, onSelectLesson, o
 
           <div style={{ width: '1px', height: '24px', background: 'var(--border-color)', margin: '0 4px' }} />
 
+          {/* Lọc nhanh theo 3 trạng thái */}
           <button 
-            className={`btn ${statusFilter === 'submitted' ? 'btn-primary' : 'btn-outline'}`}
-            onClick={() => setStatusFilter(statusFilter === 'submitted' ? 'all' : 'submitted')}
-            style={{ fontSize: '0.82rem', padding: '6px 12px' }}
+            className="btn"
+            onClick={() => setStatusFilter(statusFilter === 'passed' ? 'all' : 'passed')}
+            style={{ 
+              fontSize: '0.8rem', 
+              padding: '6px 12px',
+              background: statusFilter === 'passed' ? 'var(--emerald-vibrant)' : 'rgba(16, 185, 129, 0.12)',
+              border: '1px solid var(--emerald-vibrant)',
+              color: statusFilter === 'passed' ? '#ffffff' : 'var(--emerald-mint)',
+              fontWeight: '700'
+            }}
           >
-            Đã Nộp ({totalSubmitted})
+            ✅ Hoàn thành ({passedCount})
+          </button>
+          <button 
+            className="btn"
+            onClick={() => setStatusFilter(statusFilter === 'review' ? 'all' : 'review')}
+            style={{ 
+              fontSize: '0.8rem', 
+              padding: '6px 12px',
+              background: statusFilter === 'review' ? '#ef4444' : 'rgba(239, 68, 68, 0.12)',
+              border: '1px solid #ef4444',
+              color: statusFilter === 'review' ? '#ffffff' : '#fca5a5',
+              fontWeight: '700'
+            }}
+          >
+            ⚠️ Cần ôn lại ({reviewCount})
+          </button>
+          <button 
+            className="btn"
+            onClick={() => setStatusFilter(statusFilter === 'unsubmitted' ? 'all' : 'unsubmitted')}
+            style={{ 
+              fontSize: '0.8rem', 
+              padding: '6px 12px',
+              background: statusFilter === 'unsubmitted' ? '#f59e0b' : 'rgba(245, 158, 11, 0.12)',
+              border: '1px solid rgba(245, 158, 11, 0.5)',
+              color: statusFilter === 'unsubmitted' ? '#ffffff' : '#fbbf24',
+              fontWeight: '700'
+            }}
+          >
+            ⏳ Chưa nộp ({unsubmittedCount})
           </button>
         </div>
 
-        <div style={{ position: 'relative', minWidth: '240px' }}>
+        <div style={{ position: 'relative', minWidth: '220px' }}>
           <Search size={15} style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: 'var(--emerald-mint)' }} />
           <input 
             type="text" 
@@ -209,6 +281,14 @@ export default function PracticeArena({ curriculum, studyData, onSelectLesson, o
             .replace(/&lt;/g, '<')
             .replace(/&gt;/g, '>');
 
+          // Xác định 3 trạng thái chuẩn:
+          // 1. Hoàn thành: >= 80% (Xanh lá)
+          // 2. Cần ôn lại: < 80% (Đỏ)
+          // 3. Chưa nộp bài: (Cam)
+          const isPassed = quizRecord && quizRecord.percentage >= 80;
+          const isReview = quizRecord && quizRecord.percentage < 80;
+          const isUnsubmitted = !quizRecord;
+
           return (
             <div 
               key={les.id}
@@ -219,34 +299,71 @@ export default function PracticeArena({ curriculum, studyData, onSelectLesson, o
                 justifyContent: 'space-between',
                 transition: 'all 0.2s',
                 cursor: 'pointer',
-                borderColor: quizRecord ? 'rgba(16, 185, 129, 0.4)' : 'var(--border-color)'
+                borderColor: isPassed 
+                  ? 'rgba(16, 185, 129, 0.5)' 
+                  : (isReview ? 'rgba(239, 68, 68, 0.5)' : 'rgba(245, 158, 11, 0.25)')
               }}
               onClick={() => onSelectLesson(les)}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--emerald-vibrant)'}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = quizRecord ? 'rgba(16, 185, 129, 0.4)' : 'var(--border-color)'}
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = isPassed ? 'var(--emerald-vibrant)' : (isReview ? '#ef4444' : '#f59e0b')}
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = isPassed ? 'rgba(16, 185, 129, 0.5)' : (isReview ? 'rgba(239, 68, 68, 0.5)' : 'rgba(245, 158, 11, 0.25)')}
             >
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
                   <span style={{ fontSize: '0.74rem', color: 'var(--emerald-mint)', fontWeight: '700' }}>
                     {les.moduleName.substring(0, 2)} • Bài {les.order}
                   </span>
-                  {quizRecord ? (
+
+                  {/* 3 Trạng Thái Hiển Thị Chuẩn Hóa Theo Yêu Cầu */}
+                  {isPassed && (
                     <span style={{
-                      fontSize: '0.78rem',
+                      fontSize: '0.76rem',
                       fontWeight: '800',
-                      padding: '3px 8px',
+                      padding: '3px 9px',
                       borderRadius: '6px',
-                      background: quizRecord.percentage >= 80 ? 'rgba(16, 185, 129, 0.2)' : 'rgba(239, 68, 68, 0.2)',
-                      color: quizRecord.percentage >= 80 ? '#6ee7b7' : '#fca5a5',
+                      background: 'rgba(16, 185, 129, 0.18)',
+                      border: '1px solid var(--emerald-vibrant)',
+                      color: 'var(--emerald-mint)',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '4px'
                     }}>
-                      <CheckCircle2 size={13} />
-                      Điểm: {quizRecord.percentage}% ({quizRecord.score}/{quizRecord.total})
+                      <CheckCircle2 size={13} color="var(--emerald-vibrant)" />
+                      Hoàn thành ({quizRecord.percentage}%)
                     </span>
-                  ) : (
-                    <span style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', background: 'rgba(255,255,255,0.05)', padding: '2px 8px', borderRadius: '4px' }}>
+                  )}
+
+                  {isReview && (
+                    <span style={{
+                      fontSize: '0.76rem',
+                      fontWeight: '800',
+                      padding: '3px 9px',
+                      borderRadius: '6px',
+                      background: 'rgba(239, 68, 68, 0.15)',
+                      border: '1px solid #ef4444',
+                      color: '#fca5a5',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}>
+                      <AlertCircle size={13} color="#f87171" />
+                      Cần ôn lại ({quizRecord.percentage}%)
+                    </span>
+                  )}
+
+                  {isUnsubmitted && (
+                    <span style={{
+                      fontSize: '0.76rem',
+                      fontWeight: '700',
+                      padding: '3px 9px',
+                      borderRadius: '6px',
+                      background: 'rgba(245, 158, 11, 0.15)',
+                      border: '1px solid rgba(245, 158, 11, 0.5)',
+                      color: '#fbbf24',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}>
+                      <Clock size={12} color="#fbbf24" />
                       Chưa nộp bài
                     </span>
                   )}
@@ -267,28 +384,59 @@ export default function PracticeArena({ curriculum, studyData, onSelectLesson, o
                 </span>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  {!quizRecord && (
+                  {isUnsubmitted && (
                     <button 
                       className="btn"
                       onClick={(e) => handleQuickMarkDone(e, les)}
                       style={{
                         fontSize: '0.74rem',
-                        padding: '4px 8px',
-                        background: 'rgba(16, 185, 129, 0.12)',
-                        border: '1px solid rgba(16, 185, 129, 0.3)',
-                        color: 'var(--emerald-mint)'
+                        padding: '5px 10px',
+                        background: 'rgba(245, 158, 11, 0.15)',
+                        border: '1px solid rgba(245, 158, 11, 0.6)',
+                        color: '#fbbf24',
+                        fontWeight: '700',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px'
                       }}
-                      title="Ghi nhận bạn đã làm bài học này và lưu điểm 100% vào hệ thống"
+                      title="Bấm để nộp nhanh kết quả 100% cho bài này và lưu lên Cloud"
                     >
-                      <Check size={12} /> Đã Làm (100%)
+                      <Sparkles size={12} color="#fbbf24" /> ⚡ Nộp nhanh 100%
+                    </button>
+                  )}
+
+                  {isReview && (
+                    <button 
+                      className="btn"
+                      onClick={(e) => handleQuickMarkDone(e, les)}
+                      style={{
+                        fontSize: '0.74rem',
+                        padding: '5px 10px',
+                        background: 'rgba(16, 185, 129, 0.15)',
+                        border: '1px solid var(--emerald-vibrant)',
+                        color: 'var(--emerald-mint)',
+                        fontWeight: '700',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px'
+                      }}
+                      title="Nâng điểm lên 100%"
+                    >
+                      <Check size={12} /> Nâng 100%
                     </button>
                   )}
 
                   <button 
                     className="btn btn-outline"
-                    style={{ fontSize: '0.78rem', padding: '5px 12px' }}
+                    style={{ 
+                      fontSize: '0.78rem', 
+                      padding: '5px 12px',
+                      borderColor: isPassed ? 'rgba(16, 185, 129, 0.4)' : (isReview ? 'rgba(239, 68, 68, 0.4)' : 'var(--border-color)')
+                    }}
                   >
-                    <PlayCircle size={14} /> Vào Làm Đề
+                    <PlayCircle size={14} /> {isUnsubmitted ? 'Vào Làm Đề' : (isPassed ? 'Xem Lại / Thi Lại' : 'Ôn Luyện Lại')}
                   </button>
                 </div>
               </div>

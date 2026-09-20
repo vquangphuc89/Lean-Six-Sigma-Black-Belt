@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xác Định Cơ Hội Thay Đổi — Six Sigma Masterclass</title>
+<style>
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.68;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
+
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  .pro-tip {
+    background: var(--gold-bg);
+    border: 1px solid #fde68a;
+    border-left: 6px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 22px 0;
+  }
+  .pro-tip-title { font-size: 0.95rem; font-weight: 800; color: var(--wood-bark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pro-tip-desc { font-size: 0.96rem; color: #713f12; margin: 0; }
+
+  /* Native Math Cards */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+  }
+  .math-card .desc strong { color: #ffffff; }
+
+  /* Data Table */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.93rem;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  table.data-table th {
+    background: linear-gradient(135deg, var(--wood-dark), var(--vi-green));
+    color: #ffffff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  table.data-table th .th-vi { display: block; font-size: 0.8rem; font-weight: 400; color: #a7f3d0; font-style: italic; }
+  table.data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+    vertical-align: top;
+  }
+  table.data-table tr:hover { background: #f8fafc; }
+  .td-sub { display: block; font-size: 0.82rem; color: #64748b; margin-top: 2px; }
+
+  /* VS Grid */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: stretch;
+    margin: 22px 0;
+  }
+  .vs-col { padding: 22px 24px; border-radius: 12px; }
+  .vs-col.bad { background: #fef2f2; border: 1.5px solid #fecaca; border-left: 5px solid var(--red); }
+  .vs-col.good { background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 5px solid var(--green); }
+  .vs-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .vs-badge.bad { background: #fee2e2; color: var(--red); }
+  .vs-badge.good { background: #dcfce7; color: var(--green); }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { font-size: 0.93rem; margin-bottom: 8px; color: #1e293b; }
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: var(--wood-dark);
+    font-size: 1.1rem;
+    padding: 0 6px;
+  }
+
+  /* Case Study Cards */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 22px 0;
+  }
+  .case-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .case-card.mfg { border-top: 4px solid #0284c7; }
+  .case-card.svc { border-top: 4px solid #7c3aed; }
+  .case-tag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .case-tag.mfg { color: #0284c7; }
+  .case-tag.svc { color: #7c3aed; }
+  .case-title { font-size: 1.12rem; font-weight: 700; color: var(--wood-dark); margin: 0 0 8px; }
+  .case-body { font-size: 0.92rem; color: #334155; line-height: 1.6; }
+  .case-metric {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: #0f172a;
+  }
+
+  /* Interactive Arena */
+  .interactive-arena {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    border-radius: 16px;
+    padding: 38px 40px;
+    margin: 40px 0;
+    color: #ffffff;
+    box-shadow: 0 12px 36px rgba(2,44,34,0.4);
+    border: 2px solid var(--emerald);
+  }
+  .interactive-arena h2 { font-size: 1.7rem; font-weight: 800; color: #ffffff; margin: 0 0 6px; }
+  .arena-desc { color: var(--emerald-mint); font-size: 1.02rem; margin-bottom: 28px; }
+
+  .quiz-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+  .quiz-tag {
+    display: inline-block;
+    background: rgba(16,185,129,0.25);
+    border: 1px solid var(--emerald-mint);
+    color: var(--emerald-mint);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .quiz-q { font-size: 1.06rem; font-weight: 700; color: #ffffff; margin-bottom: 16px; line-height: 1.5; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ecfdf5;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .quiz-btn:hover {
+    background: rgba(16,185,129,0.2);
+    border-color: var(--emerald-mint);
+    transform: translateX(4px);
+  }
+  .quiz-btn.correct {
+    background: var(--green) !important;
+    border-color: #86efac !important;
+    color: #ffffff !important;
+    font-weight: 700;
+  }
+  .quiz-btn.wrong {
+    background: var(--red) !important;
+    border-color: #fca5a5 !important;
+    color: #ffffff !important;
+  }
+  .quiz-fb {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+  .quiz-fb.show { display: block; animation: fadeIn 0.3s ease; }
+  .quiz-fb.success { background: rgba(22,163,74,0.25); border: 1px solid #86efac; color: #dcfce7; }
+  .quiz-fb.error { background: rgba(185,28,28,0.25); border: 1px solid #fca5a5; color: #fee2e2; }
+
+  /* 3D Flashcards */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .flashcard { perspective: 1000px; min-height: 190px; cursor: pointer; }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 12px;
+  }
+  .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+  .flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 22px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flashcard-front {
+    background: linear-gradient(145deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
+    border: 1.5px solid var(--emerald-mint);
+    color: #ffffff;
+  }
+  .flashcard-front .term { font-size: 1.12rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
+  .flashcard-front .term-vi { font-size: 0.9rem; color: var(--emerald-mint); font-style: italic; }
+  .flashcard-front .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
+  
+  .flashcard-back {
+    background: linear-gradient(145deg, #064e3b, #047857);
+    border: 1.5px solid #86efac;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    text-align: left;
+  }
+  .flashcard-back strong { color: #fef08a; }
+  .flashcard-back .vi { display: block; margin-top: 8px; color: #d1fae5; font-size: 0.86rem; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 6px; }
+
+  /* Action Checklist */
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #e2e8f0;
+  }
+  .action-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--emerald);
+    cursor: pointer;
+    margin-top: 3px;
+  }
+  .action-text { font-size: 0.96rem; color: #1e293b; line-height: 1.55; }
+  .action-text strong { color: var(--wood-dark); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media(max-width: 768px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-divider { display: none; }
+    .case-grid { grid-template-columns: 1fr; }
+    .section-card { padding: 22px 18px; }
+    .interactive-arena { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">PHÂN HỆ 05: PROJECT APPLICATION • CHUYÊN ĐỀ 01: VALUE CREATION</span>
+    <h1 class="hero-title">Xác Định Cơ Hội Thay Đổi</h1>
+    <div class="hero-title-en">Define Value Opportunities (Defining Change Opportunities)</div>
+    <p class="hero-desc">Bóc tách bản chất khoa học của "Cơ hội": Một tập hợp các điều kiện thuận lợi cho một cứu cánh. Phân lập nhóm điều kiện trọng yếu (Vital Few) khỏi nhóm điều kiện tầm thường (Trivial Many) để mở đường thu hẹp khoảng cách giá trị.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- TRỤ CỘT 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 • Executive Summary</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành Trong 60 Giây</h2>
+    <div class="section-subheading">Nắm vững định nghĩa toán học và điều hành của Cơ hội thay đổi</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Định Nghĩa Cốt Lõi Về Cơ Hội (The True Anatomy of Opportunity):</strong> Cơ hội không phải là vận may ngẫu nhiên. Theo Dr. Mikel J. Harry: <em>"An opportunity is a set of conditions favorable to an end"</em> (Cơ hội là một tập hợp các điều kiện thuận lợi hướng tới một mục đích cụ thể).</li>
+        <li><strong>Hàm Số Cơ Hội Six Sigma:</strong> Trong ngôn ngữ thống kê, $Opportunity = f(Condition_1, Condition_2, \dots, Condition_N)$. Cơ hội chỉ thực sự xuất hiện khi các điều kiện cấu thành hội tụ đầy đủ.</li>
+        <li><strong>Quy Luật Phân Bổ Trọng Số (Vital Few vs. Trivial Many):</strong> Không phải mọi điều kiện đều có trọng số ngang nhau. Một số ít điều kiện quyết định 80% sự xuất hiện của cơ hội (Vital Few), trong khi phần lớn các điều kiện khác chỉ đóng vai trò thứ cấp (Trivial Many).</li>
+        <li><strong>Bản Chất Của Thay Đổi (The Mandate of Change):</strong> Thay đổi thực chất là việc tái cấu trúc các điều kiện hiện tại (Is Conditions) sang điều kiện mục tiêu (Ought Conditions) nhằm thu hẹp các khoảng trống Utility, Access và Worth, giải phóng dòng tiền cho doanh nghiệp.</li>
+      </ul>
+    </div>
+    <div class="pro-tip">
+      <div class="pro-tip-title">💡 Mikel J. Harry Master Insight</div>
+      <p class="pro-tip-desc">"Do not wait for opportunities to fall from the sky. An opportunity is a deterministic function of specific conditions. If you can define, weight, and create the vital few conditions, you will engineer opportunity at will."</p>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 2: CORE FRAMEWORKS & PURE MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 • Core Frameworks &amp; Pure Math</span>
+    <h2 class="section-heading">Hàm Số Cơ Hội &amp; Ma Trận Sàng Lọc Điều Kiện</h2>
+    <div class="section-subheading">Lượng hóa xác suất xuất hiện cơ hội dựa trên mô hình hàm truyền Six Sigma</div>
+
+    <div class="math-card">
+      <div class="title">1. Hàm Số Cơ Hội Tổng Quát (The Opportunity Transfer Function)</div>
+      <div class="math-equation">
+        <span>Opportunity (&Omega;)</span> = <i>f</i>(<i>C</i><sub>1</sub>, <i>C</i><sub>2</sub>, <i>C</i><sub>3</sub>, &hellip;, <i>C</i><sub>N</sub>) = &sum; <i>w<sub>i</sub></i> &middot; <i>C<sub>vital, i</sub></i> &plus; &sum; &epsilon;<i><sub>j</sub></i> &middot; <i>C<sub>trivial, j</sub></i>
+      </div>
+      <div class="desc">
+        Trong đó: <strong>C<sub>i</sub></strong> là trạng thái của điều kiện thứ <em>i</em>; <strong>w<sub>i</sub></strong> là trọng số tác động của điều kiện then chốt (&sum; w<sub>i</sub> &approx; 0.80); <strong>&epsilon;<sub>j</sub></strong> là nhiễu số từ nhóm điều kiện tầm thường.
+      </div>
+    </div>
+
+    <div class="math-card">
+      <div class="title">2. Vector Chuyển Dịch Điều Kiện Thay Đổi (Change Opportunity Vector)</div>
+      <div class="math-equation">
+        &Delta;<i>C<sub>i</sub></i> = <i>C<sub>ought, i</sub></i> &minus; <i>C<sub>is, i</sub></i> &nbsp;&rArr;&nbsp; 
+        &Delta;<i>Value</i> = &sum; <i>w<sub>i</sub></i> &middot; &Delta;<i>C<sub>i</sub></i> &ge; <i>Threshold</i> (&tau;)
+      </div>
+      <div class="desc">
+        Mục tiêu của giai đoạn Define trong chu trình RDMAICSI là định lượng chính xác sự dịch chuyển cần thiết (&Delta;C) của từng điều kiện trọng yếu để kích hoạt cơ hội tạo ra giá trị.
+      </div>
+    </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px;">Ma Trận Phân Tích &amp; Trọng Số Điều Kiện (Condition Weighting Matrix)</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Cấp Phân Loại<span class="th-vi">Condition Category</span></th>
+            <th>Đặc Điểm Thống Kê<span class="th-vi">Statistical Nature</span></th>
+            <th>Trọng Số Tác Động (w<sub>i</sub>)<span class="th-vi">Impact Weight</span></th>
+            <th>Chiến Lược Quản Trị Black Belt<span class="th-vi">Execution Strategy</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Vital Few Conditions</strong><br><span class="td-sub">Nhóm điều kiện sinh tử</span></td>
+            <td>Chiếm 10% &ndash; 20% tổng số biến số nhưng quyết định 80% thành bại của cơ hội thay đổi.</td>
+            <td><strong>w<sub>i</sub> &ge; 0.20</strong><br>(Ưu tiên tuyệt đối)</td>
+            <td>Tập trung 100% ngân sách và công cụ đo lường chuyên sâu để kiểm soát và dịch chuyển về Ought State.</td>
+          </tr>
+          <tr>
+            <td><strong>Contributing Conditions</strong><br><span class="td-sub">Nhóm điều kiện hỗ trợ</span></td>
+            <td>Các biến số thứ cấp giúp củng cố tính bền vững của môi trường nhưng không trực tiếp tạo đột phá.</td>
+            <td><strong>0.05 &le; w<sub>i</sub> &lt; 0.20</strong><br>(Mức trung bình)</td>
+            <td>Chuẩn hóa bằng bảng kiểm tra (Checklist) và quy trình SOP cơ bản tại hiện trường.</td>
+          </tr>
+          <tr>
+            <td><strong>Trivial Many Conditions</strong><br><span class="td-sub">Nhóm điều kiện tầm thường</span></td>
+            <td>Chiếm 70% &ndash; 80% tổng số biến số môi trường, gây nhiễu và làm phân tán nguồn lực.</td>
+            <td><strong>w<sub>i</sub> &lt; 0.05</strong><br>(Không đáng kể)</td>
+            <td>Chủ động loại bỏ khỏi phạm vi dự án (Out of Scope) để tránh sa lầy vào tê liệt phân tích (Analysis Paralysis).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 3: CASE STUDIES & VS GRID -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 • Case Studies &amp; VS Comparison</span>
+    <h2 class="section-heading">Tình Huống Điển Hình &amp; Lưới Đối Chiếu Quản Trị</h2>
+    <div class="section-subheading">Phân tích sự hội tụ của tập hợp điều kiện trong đời sống và sản xuất</div>
+
+    <div class="case-grid">
+      <div class="case-card mfg">
+        <span class="case-tag mfg">Sản Xuất • Cơ Hội Tăng Tốc Dây Chuyền SMT</span>
+        <h3 class="case-title">Định Nghĩa Điều Kiện Cho Cơ Hội Đổi Dòng Nhanh (SMED)</h3>
+        <p class="case-body">Nhà máy muốn chớp cơ hội nhận đơn hàng biến thể nhỏ số lượng lớn (High-mix Low-volume). Cơ hội này phụ thuộc vào 12 điều kiện. Qua sàng lọc, Black Belt xác định 2 điều kiện Vital Few: (1) Dao gạt kem hàn được căn chỉnh sẵn bên ngoài (C1 - External Setup), (2) Cuộn linh kiện nạp sẵn vào khay tự động (C2). 10 điều kiện còn lại (nhiệt độ phòng, loại găng tay...) chỉ là Trivial Many.</p>
+        <div class="case-metric"><strong>Kết quả P&amp;L:</strong> Chuyển dịch C1 và C2 từ Is (chỉnh tại máy) sang Ought (chuẩn bị trước) giúp giảm thời gian dừng máy từ 48 phút xuống 8.5 phút, mở ra năng lực nhận thêm 4.2 triệu USD đơn hàng mới.</div>
+      </div>
+
+      <div class="case-card svc">
+        <span class="case-tag svc">Ẩn Dụ Thực Tiễn • Cơ Hội Có Việc Làm Mới</span>
+        <h3 class="case-title">Tập Hợp Điều Kiện Favorable To An End Của Mikel Harry</h3>
+        <p class="case-body">Để có cơ hội trúng tuyển một công việc mơ ước, bạn cần một chuỗi điều kiện: (C1) Bản thân có nhu cầu tìm việc, (C2) Báo có đăng tin tuyển dụng, (C3) Bạn biết đọc hiểu, (C4) Bạn tiếp cận được tờ báo trước khi bị con chó cắn nát. Thiếu bất kỳ điều kiện tiên quyết nào trong nhóm Vital Few, cơ hội sẽ biến mất hoàn toàn.</p>
+        <div class="case-metric"><strong>Đúc kết Master:</strong> Cơ hội không tự nhiên sinh ra. Bạn phải xác định được tập hợp điều kiện và hành động để điều kiện đó diễn ra đúng thời điểm.</div>
+      </div>
+    </div>
+
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Tư Duy Hời Hợt / Thất Bại</span>
+        <ul>
+          <li>Xem cơ hội là may rủi hoặc thời cơ tự đến, bị động chờ đợi ngoại cảnh thay đổi.</li>
+          <li>Đánh đồng mọi điều kiện ngang nhau, phân bổ tài chính dàn trải vào các yếu tố thứ cấp.</li>
+          <li>Không lượng hóa sự chuyển dịch giữa Is và Ought, đặt mục tiêu cảm tính chung chung.</li>
+          <li>Bỏ qua mối liên hệ nhân quả giữa điều kiện đầu vào và giá trị đầu ra của khách hàng.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Kỷ Luật SSMI / Master Black Belt</span>
+        <ul>
+          <li>Định nghĩa cơ hội là một tập hợp các điều kiện có thể kiểm soát và tái lập được.</li>
+          <li>Áp dụng nghiêm ngặt nguyên lý Pareto: Cô lập nhóm Vital Few, kiên quyết bỏ qua Trivial Many.</li>
+          <li>Xác định chính xác giá trị cần chuyển dịch &Delta;C = Ought - Is cho từng điều kiện cốt lõi.</li>
+          <li>Gắn kết chặt chẽ từng điều kiện với việc thu hẹp các khoảng trống Utility, Access và Worth.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num">Trụ Cột 4 • Đấu Trường Tình Huống Thực Chiến</span>
+    <h2>Đấu Trường Trắc Nghiệm Tình Huống (Scenario-Based Arena)</h2>
+    <p class="arena-desc">Khảo sát 8 tình huống thực tế về xác định và sàng lọc cơ hội thay đổi. Lựa chọn phương án tối ưu và kiểm tra tư duy cùng Master Black Belt.</p>
+
+    <!-- Câu 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 1 &bull; Tầng 1: Định Nghĩa Cơ Hội (Core Concept)</span>
+      <div class="quiz-q">Định nghĩa chuẩn xác nhất của một "Cơ hội" (Opportunity) theo Dr. Mikel J. Harry trong phương pháp luận Six Sigma là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q1', 'Correct. Dr. Mikel Harry defines an opportunity as \'a set of conditions favorable to an end\'.', 'Chính xác! Cơ hội là một tập hợp các điều kiện thuận lợi hướng tới một cứu cánh/mục đích xác định.')">A. Một tập hợp các điều kiện thuận lợi hướng tới một mục đích cụ thể (A set of conditions favorable to an end)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Trap: Luck and timing are passive, unscientific concepts that contradict Six Sigma principles.', 'Sai lầm: Vận may và thời cơ ngẫu nhiên là quan niệm thụ động, trái ngược với bản chất khoa học kiểm soát biến số của Six Sigma.')">B. Thời điểm may mắn ngẫu nhiên khi thị trường không có đối thủ cạnh tranh</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Trap: Project Charter approval authorizes resources, but does not define what an opportunity is.', 'Sai lầm: Phê duyệt của Ban Giám đốc chỉ là sự cấp phép hành chính, không định nghĩa bản chất của cơ hội.')">C. Quyết định phê duyệt ngân sách dự án từ Hội đồng Quản trị</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Trap: Customer complaints reflect gaps/needs, not the opportunity set itself.', 'Sai lầm: Đơn khiếu nại phản ánh khoảng trống nhu cầu, không phải là tập hợp điều kiện tạo cơ hội.')">D. Số lượng đơn khiếu nại của khách hàng vượt quá giới hạn kiểm soát</button>
+      </div>
+      <div id="fb-q1" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 2 &bull; Tầng 1: Nguyên Lý Trọng Số (Vital Few Principle)</span>
+      <div class="quiz-q">Khi phân tích tập hợp các điều kiện $C_1, C_2, \dots, C_N$ tạo nên một cơ hội, nguyên tắc bất biến nào phải được Black Belt ghi nhớ?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Trap: Democratic weighting ignores Pareto distribution and dilutes improvement resources.', 'Sai lầm: Bình đẳng hóa mọi điều kiện là sai lầm chết người, khiến nguồn lực bị phân tán vô ích.')">A. Mọi điều kiện đều bình đẳng và có trọng số tác động ngang nhau</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q2', 'Correct. Conditions are not equally weighted; the Vital Few carry the dominant leverage over the outcome, while the Trivial Many must be filtered out.', 'Chính xác! Các điều kiện không có trọng số bằng nhau; nhóm Vital Few nắm giữ đòn bẩy quyết định, trong khi nhóm Trivial Many chỉ tạo ra ảnh hưởng thứ yếu.')">B. Các điều kiện mang trọng số khác nhau; một số ít điều kiện trọng yếu (Vital Few) quyết định phần lớn kết quả</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Trap: Qualitative assessment is often necessary when baseline data is developing.', 'Sai lầm: Nhiều điều kiện quan trọng về con người và văn hóa ban đầu có thể đánh giá qua thang đo định tính Likert 1-5.')">C. Chỉ những điều kiện đo được bằng máy móc tự động mới được tính là hợp lệ</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Trap: Waiting for 100% conditions paralyzed business momentum.', 'Sai lầm: Chờ đợi toàn bộ 100% điều kiện hoàn hảo sẽ đánh mất cửa sổ cơ hội thị trường.')">D. Phải kiểm soát đồng thời tất cả 100% các điều kiện trước khi thực hiện bất kỳ cải tiến nào</button>
+      </div>
+      <div id="fb-q2" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 3 &bull; Tầng 2: Sàng Lọc Trọng Số (Condition Weighting)</span>
+      <div class="quiz-q">Nhóm dự án liệt kê được 20 điều kiện ảnh hưởng đến cơ hội giảm 50% thời gian giao hàng. Qua phân tích ma trận nguyên nhân - hệ quả (C&amp;E Matrix), 3 điều kiện hàng đầu có tổng điểm số ảnh hưởng chiếm 78% tổng trọng số. Quyết định đúng đắn của Black Belt là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3', 'Correct. Focus exclusively on the top 3 Vital Few conditions (accounting for 78% impact). Place the remaining 17 trivial conditions out of immediate scope to ensure speed and ROI.', 'Chính xác! Tập trung toàn bộ nguồn lực và công cụ sâu vào 3 điều kiện Vital Few (chiếm 78% trọng số). Đưa 17 điều kiện còn lại ra ngoài phạm vi trực tiếp của dự án để tối ưu hóa ROI.')">A. Khóa phạm vi dự án vào 3 điều kiện Vital Few đó; loại 17 điều kiện Trivial Many ra khỏi phạm vi cải tiến trực tiếp</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Spreading resources across all 20 causes execution gridlock and delayed results.', 'Sai lầm: Chia đều ngân sách cho cả 20 điều kiện sẽ làm loãng nguồn lực và kéo dài thời gian dự án.')">B. Chia đều ngân sách thành 20 phần bằng nhau để giải quyết triệt để mọi điều kiện</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Brainstorming further without testing the top 3 delays business execution.', 'Sai lầm: Tiếp tục họp tìm kiếm thêm biến số trong khi đã xác định được nhóm 78% là biểu hiện của bệnh cầu toàn tê liệt.')">C. Hủy bỏ kết quả và yêu cầu nhóm tiếp tục brainstorm để tìm thêm ít nhất 30 điều kiện nữa</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Dismissing trivial conditions without documenting their baseline risk is careless.', 'Sai lầm: Xóa bỏ hoàn toàn hồ sơ mà không theo dõi sẽ làm mất dấu vết nếu các điều kiện thứ cấp biến thiên tiêu cực.')">D. Giao 17 điều kiện thứ cấp cho Giám đốc Nhà máy tự xử lý mà không cần tài liệu hóa</button>
+      </div>
+      <div id="fb-q3" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 4 &bull; Tầng 2: Lượng Hóa Vector Thay Đổi (Change Vector Math)</span>
+      <div class="quiz-q">Một nhà máy sản xuất bao bì có cơ hội tăng sản lượng thêm 200,000 thùng/tháng nếu giải quyết được khoảng trống chuyển đổi máy. Hiện trạng ($C_{is}$) mất 90 phút/lần đổi khuôn; điều kiện mong muốn ($C_{ought}$) là 20 phút. Nếu mỗi phút rút ngắn mang lại 1,200 USD dòng tiền/năm, giá trị tiềm năng của cơ hội thay đổi (&Delta;Value) là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Calculation based on wrong delta.', 'Sai lầm: Tính toán sai mức chuyển dịch thời gian.')">A. 24,000 USD / năm</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q4', 'Correct. Delta C = |20 - 90| = 70 minutes. Delta Value = 70 min * $1,200/min/year = $84,000/year.', 'Chính xác! Mức chuyển dịch điều kiện: &Delta;C = |20 - 90| = 70 phút. Giá trị kinh tế của cơ hội: 70 phút &times; 1,200 USD = 84,000 USD/năm.')">B. 84,000 USD / năm</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Multiplying baseline instead of delta.', 'Sai lầm: Nhân trực tiếp giá trị Is ban đầu thay vì nhân với mức chênh lệch cải tiến.')">C. 108,000 USD / năm</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Arithmetic calculation error.', 'Sai lầm: Lỗi số học trong phép tính.')">D. 140,000 USD / năm</button>
+      </div>
+      <div id="fb-q4" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 5 &bull; Tầng 2: Đánh Giá Tính Khả Thi Của Điều Kiện (Feasibility Assessment)</span>
+      <div class="quiz-q">Trong các điều kiện tạo ra cơ hội đột phá, nếu một điều kiện Vital Few có trọng số tác động rất cao ($w_1 = 0.50$) nhưng chi phí để dịch chuyển từ Is sang Ought vượt quá tổng lợi nhuận dự án mang lại trong 3 năm, Black Belt cần xử lý thế nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Blindly pursuing a technically optimal condition that destroys economic value violates P&L rigor.', 'Sai lầm: Theo đuổi một giải pháp kỹ thuật làm thâm hụt tài chính doanh nghiệp là vi phạm nguyên tắc kiểm toán P&L.')">A. Vẫn quyết tâm đầu tư bất kể chi phí để đạt được chuẩn mực kỹ thuật hoàn hảo</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q5', 'Correct. Re-evaluate alternative condition configurations or seek innovative low-cost interventions (Design for Six Sigma/lean thinking) that circumvent the expensive condition while still closing the value gap.', 'Chính xác! Tái cấu trúc tập hợp điều kiện: Tìm kiếm các giải pháp sáng tạo chi phí thấp (DFSS/Lean) hoặc dịch chuyển các điều kiện thay thế khác có đòn bẩy tương đương mà không làm phá sản bài toán tài chính.')">B. Tái cấu trúc tập hợp điều kiện: Tìm kiếm phương án đòn bẩy thay thế có chi phí hợp lý hoặc áp dụng tư duy DFSS để né tránh rào cản chi phí cao</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Abandoning the project prematurely without exploring creative condition sets is defeatist.', 'Sai lầm: Lập tức khai tử dự án khi chưa tìm kiếm các cấu hình điều kiện thay thế là thiếu năng lực giải quyết vấn đề.')">C. Tuyên bố dự án Six Sigma thất bại và dừng toàn bộ hoạt động cải tiến</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Falsifying financial projections is unethical and will be caught in audits.', 'Sai lầm: Làm sai lệch số liệu hoàn vốn để qua mắt ban giám đốc là hành vi gian lận đạo đức nghề nghiệp.')">D. Làm giả số liệu hoàn vốn để qua mắt CFO duyệt mua máy móc đắt tiền</button>
+      </div>
+      <div id="fb-q5" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 6 &bull; Tầng 3: Xử Lý Xung Đột Sở Hữu Điều Kiện (Cross-Functional Friction)</span>
+      <div class="quiz-q">Cơ hội giảm phế phẩm đúc nhôm phụ thuộc vào 2 điều kiện cốt lõi: C1 thuộc quyền kiểm soát của Xưởng Đúc (nhiệt độ rót kim loại), C2 thuộc quyền kiểm soát của Phòng Thu Mua (độ tinh khiết của phôi nhôm nguyên liệu). Phòng Thu Mua từ chối đổi nhà cung ứng phôi vì sợ vượt chỉ tiêu đơn giá mua rẻ. MBB giải quyết bài toán này như thế nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Trap: Siloed optimization causes overall corporate sub-optimization.', 'Sai lầm: Chấp nhận nhượng bộ cho phòng thu mua giữ KPI giá rẻ cục bộ sẽ khiến chi phí phế phẩm toàn công ty bùng nổ.')">A. Cho phép Thu Mua giữ nguyên nhà cung ứng rẻ và ép Xưởng Đúc tự xoay xở giải quyết</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q6', 'Correct. Elevate to Total Cost of Ownership (TCO) with the Champion and CFO. Demonstrate quantitatively that saving $10,000 in raw material purchase creates $120,000 in casting scrap, proving net value destruction.', 'Chính xác! Đưa bài toán lên cấp Champion và CFO dựa trên Tổng Chi Phí Sở Hữu (TCO): Chứng minh bằng số liệu rằng tiết kiệm 10,000 USD tiền mua nhôm bẩn đang tạo ra 120,000 USD tiền phế phẩm đúc, thuyết phục điều chỉnh lại KPI của Thu Mua theo chất lượng đầu ra.')">B. Trình bày trước Champion và CFO phân tích Tổng Chi Phí Sở Hữu (TCO), chứng minh khoản tiết kiệm mua phôi rẻ nhỏ hơn 12 lần so với thiệt hại phế phẩm đúc để tái lập điều kiện nguyên liệu</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Trap: Hostile escalations damage relationships; always lead with verified data and financial balance.', 'Sai lầm: Phát động chiến dịch công kích cá nhân Trưởng phòng Thu Mua sẽ làm đổ vỡ văn hóa hợp tác.')">C. Chỉ trích Trưởng phòng Thu Mua trước toàn thể công ty vì thiếu tinh thần trách nhiệm</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Trap: Dropping critical conditions guarantees project failure.', 'Sai lầm: Bỏ qua điều kiện chất lượng nguyên liệu thì dự án đúc chắc chắn thất bại.')">D. Loại bỏ hoàn toàn yếu tố nguyên liệu phôi ra khỏi mô hình phân tích Six Sigma</button>
+      </div>
+      <div id="fb-q6" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 7 &bull; Tầng 3: Bẫy Đếm Khống Điều Kiện (Condition Inflation Trap)</span>
+      <div class="quiz-q">Một Trưởng nhóm cải tiến muốn gây ấn tượng với Ban Giám đốc nên đã liệt kê danh mục tới 85 điều kiện chi tiết cho một dự án cải tiến đơn giản tại kho vận. Hậu quả quản trị nghiêm trọng nhất của việc "thổi phồng điều kiện" (Condition Inflation) là gì?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: While paper usage increases, the fatal managerial hazard is strategic dilution and loss of execution focus.', 'Sai lầm: Tốn giấy mực chỉ là chi phí nhỏ nhặt, tác hại lớn nhất nằm ở sự tê liệt khả năng hành động của tổ chức.')">A. Tổ chức tốn quá nhiều giấy in bảng biểu theo dõi</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q7', 'Correct. Condition inflation causes analysis paralysis, obscures the Vital Few leverage points, wastes engineering bandwidth on trivial trivia, and inevitably leads to project fatigue and abandonment.', 'Chính xác! Gây tê liệt phân tích (Analysis Paralysis), che mờ các điểm đòn bẩy sinh tử (Vital Few), lãng phí thời gian đo lường các yếu tố vô thưởng vô phạt và dẫn đến việc dự án bị quá hạn, mất uy tín.')">B. Gây tê liệt phân tích (Analysis Paralysis), làm lu mờ các đòn bẩy Vital Few, lãng phí thời gian vào các yếu tố vụn vặt và khiến dự án thất bại do kiệt sức</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Inflating conditions does not guarantee higher rewards.', 'Sai lầm: Thổi phồng điều kiện chỉ chứng minh sự thiếu khả năng chắt lọc của Black Belt.')">C. Ban Giám đốc chắc chắn sẽ tăng lương gấp đôi vì dự án có vẻ đồ sộ</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Software easily manages numbers, but human teams cannot execute 85 conflicting priorities.', 'Sai lầm: Khó khăn không nằm ở phần mềm Excel mà nằm ở năng lực thực thi của con người.')">D. Phần mềm máy tính bảng tính không đủ dung lượng lưu trữ số lượng hàng</button>
+      </div>
+      <div id="fb-q7" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 8 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 8 &bull; Tầng 3: Truyền Thông Mục Tiêu Thay Đổi (Change Communication)</span>
+      <div class="quiz-q">Khi công bố mục tiêu của một cơ hội thay đổi cho toàn thể cán bộ công nhân viên tại Gemba, thông điệp truyền thông nào sau đây thể hiện đúng tinh thần Master Black Belt?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8', 'Trap: Abstract statistical jargon alienates frontline operators and sparks resistance.', 'Sai lầm: Dùng thuật ngữ thống kê trừu tượng và đe dọa kỷ luật sẽ tạo ra tâm lý đối kháng tiêu cực.')">A. "Chúng ta bắt buộc phải tối ưu hóa ma trận tương quan đa biến và ai làm sai lệch p-value sẽ bị trừ thi đua"</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8', 'Correct. Frame the change around clear, concrete conditions that directly benefit customer value and ease frontline frustration: \'By shifting from Is to Ought on these 2 key steps, we eliminate 90% of re-work frustration and protect our company bonuses.\'', 'Chính xác! Dịch chuyển sang ngôn ngữ hành động cụ thể và lợi ích thiết thực: "Bằng cách thay đổi 2 điều kiện cốt lõi này, chúng ta sẽ xóa bỏ 90% nỗi vất vả sửa hàng phế phẩm mỗi ngày và bảo đảm khoản thưởng năng suất cho cả đội ngũ."')">B. "Bằng cách cùng nhau thay đổi 2 điều kiện làm việc cốt lõi này, chúng ta sẽ xóa bỏ 90% thời gian sửa hàng phế phẩm cực nhọc và bảo vệ khoản thưởng hoàn thành kế hoạch"</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8', 'Trap: Vague cheerleading provides zero directional guidance for operators.', 'Sai lầm: Khẩu hiệu chung chung không chỉ rõ điều kiện cụ thể nào cần phải thay đổi.')">C. "Mọi người hãy cố gắng làm việc chăm chỉ và cẩn thận hơn nữa vì công ty"</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8', 'Trap: Secrecy breeds suspicion and paralyzes frontline ownership.', 'Sai lầm: Giấu giếm thông tin khiến nhân viên nghi ngờ và từ chối hợp tác.')">D. "Đây là kế hoạch tuyệt mật của Ban Giám đốc, công nhân chỉ cần làm theo lệnh mà không cần hiểu"</button>
+      </div>
+      <div id="fb-q8" class="quiz-fb"></div>
+    </div>
+
+    <!-- 3D Flashcards -->
+    <h3 style="color:#fff; margin-top:42px; font-size:1.3rem;">🎴 Thẻ Ghi Nhớ Phản Xạ 3D (Click để lật thẻ)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Opportunity</div>
+            <div class="term-vi">Cơ Hội</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>A set of conditions favorable to an end</strong>
+            <span class="vi">Tập hợp các điều kiện hội tụ thuận lợi hướng tới một mục đích cụ thể theo định nghĩa của Mikel Harry.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Vital Few Conditions</div>
+            <div class="term-vi">Nhóm Điều Kiện Sinh Tử</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>The 20% conditions driving 80% outcome</strong>
+            <span class="vi">Số ít các điều kiện then chốt nắm giữ phần lớn đòn bẩy tạo nên cơ hội đột phá.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Trivial Many Conditions</div>
+            <div class="term-vi">Nhóm Điều Kiện Thứ Yếu</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Background noise conditions to filter out</strong>
+            <span class="vi">Số lượng lớn các biến số môi trường có tác động không đáng kể cần được lọc bỏ để tránh tê liệt phân tích.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Condition Set</div>
+            <div class="term-vi">Tập Hợp Điều Kiện</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Functional domain: Opportunity = f(C1..Cn)</strong>
+            <span class="vi">Mô hình toán học xem cơ hội là một hàm số chuyển đổi của các biến số điều kiện đầu vào.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Change Vector (&Delta;C)</div>
+            <div class="term-vi">Vector Chuyển Dịch Điều Kiện</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Delta from Is Condition to Ought Condition</strong>
+            <span class="vi">Mức độ thay đổi cần thiết của từng biến số để lấp đầy khoảng cách giá trị mục tiêu.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 5: ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 • Sáng Thứ Hai Làm Gì?</span>
+    <h2 class="section-heading">Checklist Hành Động Thực Chiến Tại Doanh Nghiệp</h2>
+    <div class="section-subheading">Kế hoạch 3 bước thiết lập và kiểm chứng cơ hội thay đổi</div>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 1: Lập danh mục đầy đủ các điều kiện hiện hữu (Condition Inventory):</strong> Tổ chức phiên họp đa chức năng (Sản xuất, Kỹ thuật, Chất lượng, Mua hàng) để liệt kê mọi điều kiện $C_1 \dots C_N$ đang chi phối khoảng trống giá trị đã nhận diện ở Bước 1.
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 2: Chấm điểm trọng số sàng lọc Vital Few (C&amp;E Matrix &amp; Pareto Filtering):</strong> Sử dụng Ma trận Nguyên nhân - Hệ quả để gán trọng số $w_i$ cho từng điều kiện; kiên quyết cô lập không quá 3-5 điều kiện sinh tử và đưa phần còn lại vào nhóm Trivial Many.
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 3: Xác lập mục tiêu dịch chuyển định lượng (&Delta;C Statement in Project Charter):</strong> Với mỗi điều kiện Vital Few, ghi rõ giá trị hiện trạng ($C_{is}$) và giá trị mục tiêu ($C_{ought}$); trình Champion ký phê duyệt phạm vi điều kiện trước khi chuyển sang bước Đo Lường.
+      </span>
+    </label>
+
+    <h3 style="color:var(--wood-dark); margin-top:30px;">Biểu Mẫu Sàng Lọc &amp; Định Nghĩa Điều Kiện Cơ Hội (Opportunity Condition Screening Form)</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Mã Điều Kiện<span class="th-vi">Condition ID</span></th>
+            <th>Mô Tả Biến Số Điều Kiện<span class="th-vi">Condition Parameter</span></th>
+            <th>Phân Loại Trọng Số<span class="th-vi">Pareto Classification</span></th>
+            <th>Trạng Thái Hiện Tại (Is)<span class="th-vi">Current State</span></th>
+            <th>Mục Tiêu Thay Đổi (Ought)<span class="th-vi">Target State</span></th>
+            <th>Chủ Trì Thực Thi<span class="th-vi">Process Owner</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>C-01</strong></td>
+            <td>Thời gian căn chỉnh dao dập bên ngoài máy</td>
+            <td><strong style="color:var(--vi-green);">Vital Few (w=0.45)</strong></td>
+            <td>0 phút (toàn bộ chỉnh lúc máy dừng)</td>
+            <td>45 phút (chuẩn bị sẵn trước ca)</td>
+            <td>Kỹ sư Cơ điện &amp; Trưởng ca</td>
+          </tr>
+          <tr>
+            <td><strong>C-02</strong></td>
+            <td>Độ phẳng của tấm đế khuôn gá</td>
+            <td><strong style="color:var(--vi-green);">Vital Few (w=0.35)</strong></td>
+            <td>Sai lệch &plusmn; 0.15 mm</td>
+            <td>Sai lệch &le; 0.02 mm</td>
+            <td>Xưởng Cơ khí Chế tạo</td>
+          </tr>
+          <tr>
+            <td><strong>C-03</strong></td>
+            <td>Màu sơn vỏ ngoài của máy dập</td>
+            <td><span style="color:#94a3b8;">Trivial Many (w=0.01)</span></td>
+            <td>Màu xám cũ trầy xước</td>
+            <td>Sơn lại màu xanh</td>
+            <td>Loại khỏi phạm vi dự án</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
+  </p>
+</footer>
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

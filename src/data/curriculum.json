@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-20T11:26:44.709Z",
-  "totalModules": 4,
-  "totalSubtopics": 24,
-  "totalLessons": 228,
+  "generatedAt": "2026-09-20T12:29:50.666Z",
+  "totalModules": 5,
+  "totalSubtopics": 25,
+  "totalLessons": 237,
   "modules": [
     {
       "id": "mod-01",
@@ -3648,6 +3648,158 @@
               "url": "/sources/04.%20Process%20Management/06.%20Defect%20Opportunity/13.Practical%20Application%20of%20Defect%20Opportunities%20-%20Part%20B.html",
               "moduleName": "04. Process Management",
               "subtopicName": "06. Defect Opportunity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod-05",
+      "name": "05. Project Application",
+      "cleanName": "Project Application",
+      "subtopicsCount": 1,
+      "lessonsCount": 9,
+      "subtopics": [
+        {
+          "id": "sub-05-01",
+          "name": "01. Value Creation",
+          "cleanName": "Value Creation",
+          "lessonsCount": 9,
+          "lessons": [
+            {
+              "id": "lss-229",
+              "order": 229,
+              "file": "01.Recognize Value Needs.html",
+              "cleanTitle": "Nhận Biết Nhu Cầu Giá Trị",
+              "titleEn": "Recognize Value Needs — The Genesis of Breakthrough Strategy (RDMAICSI)",
+              "description": "Khởi nguồn của chu trình kiến tạo giá trị đột phá: Quét môi trường vận hành, giải mã bản chất nhu cầu thông qua khoảng trống thực tại - kỳ vọng (Is vs. Ought Gap), và định hình cấu trúc giá trị 3 chiều (Utility, Access, Worth).",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 21,
+              "url": "/sources/05.%20Project%20Application/01.%20Value%20Creation/01.Recognize%20Value%20Needs.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "01. Value Creation"
+            },
+            {
+              "id": "lss-230",
+              "order": 230,
+              "file": "02.Define Value Opportunities.html",
+              "cleanTitle": "Xác Định Cơ Hội Thay Đổi",
+              "titleEn": "Define Value Opportunities (Defining Change Opportunities)",
+              "description": "Bóc tách bản chất khoa học của \"Cơ hội\": Một tập hợp các điều kiện thuận lợi cho một cứu cánh. Phân lập nhóm điều kiện trọng yếu (Vital Few) khỏi nhóm điều kiện tầm thường (Trivial Many) để mở đường thu hẹp khoảng cách giá trị.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 22,
+              "url": "/sources/05.%20Project%20Application/01.%20Value%20Creation/02.Define%20Value%20Opportunities.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "01. Value Creation"
+            },
+            {
+              "id": "lss-231",
+              "order": 231,
+              "file": "03.Measure Value Conditions.html",
+              "cleanTitle": "Đo Lường Điều Kiện Giá Trị",
+              "titleEn": "Measure Value Conditions (Measure Existing Conditions)",
+              "description": "Định lượng hóa các điều kiện tạo thành cơ hội: Thiết lập đường cơ sở (Baseline Is State), xác định mục tiêu kỳ vọng chính đáng (Entitlement Goal), và bóc tách cấu trúc khoảng trống cấp thấp thông qua hàm số Y = f(X).",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 21,
+              "url": "/sources/05.%20Project%20Application/01.%20Value%20Creation/03.Measure%20Value%20Conditions.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "01. Value Creation"
+            },
+            {
+              "id": "lss-232",
+              "order": 232,
+              "file": "04.Analyze Contributing Forces.html",
+              "cleanTitle": "Phân Tích Các Lực Đóng Góp",
+              "titleEn": "Analyze Contributing Forces — T-Bar Force Field &amp; Leverage Knobs",
+              "description": "Mô hình hóa động lực học của cơ hội: Sử dụng Biểu đồ T-Bar để phân tích Lực dẫn hướng (Driving Forces) và Lực cản trở (Restraining Forces). Định vị các \"Nút vặn đòn bẩy\" (Leverage Knobs) có lực tác động cực đại để chuyển dịch hệ thống về phía tích cực.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 22,
+              "url": "/sources/05.%20Project%20Application/01.%20Value%20Creation/04.Analyze%20Contributing%20Forces.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "01. Value Creation"
+            },
+            {
+              "id": "lss-233",
+              "order": 233,
+              "file": "05.Improve Action Settings.html",
+              "cleanTitle": "Cải Tiến Thiết Lập Hành Động",
+              "titleEn": "Improve Action Settings — Repositioning the Control Knobs (Thermostat Analogy)",
+              "description": "Bản chất cơ học của cải tiến đột phá: Thiết lập hành động không phải là lý thuyết trừu tượng, mà là thao tác vặn các nút điều khiển từ vị trí hiện trạng (Is Setting) sang vị trí tối ưu (Ought Setting), lan truyền tác động qua hàm số Y = f(X) để xóa sổ khoảng trống giá trị.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 22,
+              "url": "/sources/05.%20Project%20Application/01.%20Value%20Creation/05.Improve%20Action%20Settings.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "01. Value Creation"
+            },
+            {
+              "id": "lss-234",
+              "order": 234,
+              "file": "06.Control Input Variations.html",
+              "cleanTitle": "Kiểm Soát Biến Thiên Đầu Vào",
+              "titleEn": "Control Input Variations — Taming Variation Around Action Settings &amp; Murphy's Law",
+              "description": "Bảo toàn thành quả cải tiến: Tìm ra thiết lập tối ưu mới chỉ là 50% chặng đường. Bí quyết sống còn của Six Sigma là thắt chặt băng thông biến thiên xung quanh thiết lập đó, triệt tiêu Định luật Murphy và biến năng lực giải quyết vấn đề thành phản xạ có ý thức.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 22,
+              "url": "/sources/05.%20Project%20Application/01.%20Value%20Creation/06.Control%20Input%20Variations.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "01. Value Creation"
+            },
+            {
+              "id": "lss-235",
+              "order": 235,
+              "file": "07.Standardize Success Factors.html",
+              "cleanTitle": "Chuẩn Hóa Các Yếu Tố Thành Công",
+              "titleEn": "Standardize Success Factors — Institutionalizing Breakthrough &amp; Designing Destiny",
+              "description": "Bước khởi đầu của giai đoạn Attenuate Gaps: Nhận diện những hành động đã tạo nên thành công trong quá khứ, biến thành quả đơn lẻ thành quy chuẩn vận hành lặp lại được, khái quát hóa ra toàn bộ tổ chức và giải mã bản chất thực sự của sự may mắn.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 22,
+              "url": "/sources/05.%20Project%20Application/01.%20Value%20Creation/07.Standardize%20Success%20Factors.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "01. Value Creation"
+            },
+            {
+              "id": "lss-236",
+              "order": 236,
+              "file": "08.Integrate Lessons Learned.html",
+              "cleanTitle": "Tích Hợp Bài Học Kinh Nghiệm",
+              "titleEn": "Integrate Lessons Learned — Blending Knowledge into Corporate DNA &amp; Personal Fabric",
+              "description": "Bước chốt hạ chu trình kiến tạo giá trị RDMAICSI: Hòa trộn tri thức thực chiến (Street Smart) và lý thuyết hàn lâm (Book Smart), xác lập các nguyên tắc cấm kỵ (Universal Don'ts) và bắt buộc (Universal Do's), đưa bài học vào cấu trúc vận hành vĩnh cửu của tổ chức.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 23,
+              "url": "/sources/05.%20Project%20Application/01.%20Value%20Creation/08.Integrate%20Lessons%20Learned.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "01. Value Creation"
+            },
+            {
+              "id": "lss-237",
+              "order": 237,
+              "file": "09.Describing the Essence of Value Creation.html",
+              "cleanTitle": "Bản Chất Cốt Lõi Của Kiến Tạo Giá Trị",
+              "titleEn": "Describing the Essence of Value Creation — The Complete Industrial Synthesis (RDMAICSI)",
+              "description": "Bản tổng kết vĩ mô toàn diện 8 bước kiến tạo giá trị đột phá của Dr. Mikel J. Harry: Chuyển dịch bài toán Sản phẩm sang bài toán Quy trình, ánh xạ CTQ đầu ra sang Năng suất Yield (80% &rarr; 90%), điều khiển các biến số đào tạo nhân lực và thể chế hóa chính sách sinh lời vĩnh cửu.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 23,
+              "url": "/sources/05.%20Project%20Application/01.%20Value%20Creation/09.Describing%20the%20Essence%20of%20Value%20Creation.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "01. Value Creation"
             }
           ]
         }

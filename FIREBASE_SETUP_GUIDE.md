@@ -40,14 +40,25 @@ Hệ thống **Lean Six Sigma Black Belt Masterclass** đã được tích hợp
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Cho phép tất cả học viên đã đăng nhập (Google/Email) đọc & ghi dữ liệu học tập
-    match /{document=**} {
-      allow read, write: if request.auth != null;
+    // Mỗi học viên chỉ được đọc & ghi đúng dữ liệu học tập của chính mình
+    match /study_data/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    // Mỗi học viên chỉ được đọc & ghi đúng hồ sơ cá nhân của chính mình
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
     }
   }
 }
 ```
-6. **BẮT BUỘC:** Nhấn nút **Publish** màu xanh ở góc trên để quy tắc có hiệu lực ngay lập tức (Nếu không bấm Publish, Firebase sẽ chặn toàn bộ đồng bộ giữa các máy).
+6. **BẮT BUỘC:** Nhấn nút **Publish** màu xanh ở góc trên để quy tắc có hiệu lực ngay lập tức (Nếu không bấm Publish, Firebase sẽ chặn toàn bộ đồng bộ giữa các máy — đây chính là nguyên nhân phổ biến nhất khiến lỗi "Missing or insufficient permissions" xuất hiện dù đã đăng nhập thành công).
+
+> Rule này cũng đã được lưu sẵn trong file [`firestore.rules`](firestore.rules) ở gốc dự án. Nếu đã cài [Firebase CLI](https://firebase.google.com/docs/cli), bạn có thể publish rule bằng lệnh sau thay vì copy/paste thủ công mỗi lần:
+> ```bash
+> npm install -g firebase-tools
+> firebase login
+> firebase deploy --only firestore:rules
+> ```
 
 ---
 

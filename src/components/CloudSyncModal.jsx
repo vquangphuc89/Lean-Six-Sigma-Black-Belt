@@ -51,7 +51,7 @@ export default function CloudSyncModal({ user, studyData, syncInfo, onClose, onD
   };
 
   const copyRulesToClipboard = () => {
-    const rulesCode = `rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write: if request.auth != null;\n    }\n  }\n}`;
+    const rulesCode = `rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /study_data/{userId} {\n      allow read, write: if request.auth != null && request.auth.uid == userId;\n    }\n    match /users/{userId} {\n      allow read, write: if request.auth != null && request.auth.uid == userId;\n    }\n  }\n}`;
     navigator.clipboard.writeText(rulesCode);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
@@ -195,9 +195,9 @@ export default function CloudSyncModal({ user, studyData, syncInfo, onClose, onD
                 whiteSpace: 'pre-wrap',
                 lineHeight: 1.4
               }}>
-                {`rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write: if request.auth != null;\n    }\n  }\n}`}
-                
-                <button 
+                {`rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /study_data/{userId} {\n      allow read, write: if request.auth != null && request.auth.uid == userId;\n    }\n    match /users/{userId} {\n      allow read, write: if request.auth != null && request.auth.uid == userId;\n    }\n  }\n}`}
+
+                <button
                   onClick={copyRulesToClipboard}
                   style={{
                     position: 'absolute',

@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiểm Soát Biến Thiên Đầu Vào — Six Sigma Masterclass</title>
+<style>
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.68;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
+
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  .pro-tip {
+    background: var(--gold-bg);
+    border: 1px solid #fde68a;
+    border-left: 6px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 22px 0;
+  }
+  .pro-tip-title { font-size: 0.95rem; font-weight: 800; color: var(--wood-bark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pro-tip-desc { font-size: 0.96rem; color: #713f12; margin: 0; }
+
+  /* Native Math Cards */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.12rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.12rem;
+  }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+  }
+  .math-card .desc strong { color: #ffffff; }
+
+  /* Data Table */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.93rem;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  table.data-table th {
+    background: linear-gradient(135deg, var(--wood-dark), var(--vi-green));
+    color: #ffffff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  table.data-table th .th-vi { display: block; font-size: 0.8rem; font-weight: 400; color: #a7f3d0; font-style: italic; }
+  table.data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+    vertical-align: top;
+  }
+  table.data-table tr:hover { background: #f8fafc; }
+  .td-sub { display: block; font-size: 0.82rem; color: #64748b; margin-top: 2px; }
+
+  /* VS Grid */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: stretch;
+    margin: 22px 0;
+  }
+  .vs-col { padding: 22px 24px; border-radius: 12px; }
+  .vs-col.bad { background: #fef2f2; border: 1.5px solid #fecaca; border-left: 5px solid var(--red); }
+  .vs-col.good { background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 5px solid var(--green); }
+  .vs-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .vs-badge.bad { background: #fee2e2; color: var(--red); }
+  .vs-badge.good { background: #dcfce7; color: var(--green); }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { font-size: 0.93rem; margin-bottom: 8px; color: #1e293b; }
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: var(--wood-dark);
+    font-size: 1.1rem;
+    padding: 0 6px;
+  }
+
+  /* Case Study Cards */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 22px 0;
+  }
+  .case-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .case-card.mfg { border-top: 4px solid #0284c7; }
+  .case-card.svc { border-top: 4px solid #7c3aed; }
+  .case-tag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .case-tag.mfg { color: #0284c7; }
+  .case-tag.svc { color: #7c3aed; }
+  .case-title { font-size: 1.12rem; font-weight: 700; color: var(--wood-dark); margin: 0 0 8px; }
+  .case-body { font-size: 0.92rem; color: #334155; line-height: 1.6; }
+  .case-metric {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: #0f172a;
+  }
+
+  /* Interactive Arena */
+  .interactive-arena {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    border-radius: 16px;
+    padding: 38px 40px;
+    margin: 40px 0;
+    color: #ffffff;
+    box-shadow: 0 12px 36px rgba(2,44,34,0.4);
+    border: 2px solid var(--emerald);
+  }
+  .interactive-arena h2 { font-size: 1.7rem; font-weight: 800; color: #ffffff; margin: 0 0 6px; }
+  .arena-desc { color: var(--emerald-mint); font-size: 1.02rem; margin-bottom: 28px; }
+
+  .quiz-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+  .quiz-tag {
+    display: inline-block;
+    background: rgba(16,185,129,0.25);
+    border: 1px solid var(--emerald-mint);
+    color: var(--emerald-mint);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .quiz-q { font-size: 1.06rem; font-weight: 700; color: #ffffff; margin-bottom: 16px; line-height: 1.5; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ecfdf5;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .quiz-btn:hover {
+    background: rgba(16,185,129,0.2);
+    border-color: var(--emerald-mint);
+    transform: translateX(4px);
+  }
+  .quiz-btn.correct {
+    background: var(--green) !important;
+    border-color: #86efac !important;
+    color: #ffffff !important;
+    font-weight: 700;
+  }
+  .quiz-btn.wrong {
+    background: var(--red) !important;
+    border-color: #fca5a5 !important;
+    color: #ffffff !important;
+  }
+  .quiz-fb {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+  .quiz-fb.show { display: block; animation: fadeIn 0.3s ease; }
+  .quiz-fb.success { background: rgba(22,163,74,0.25); border: 1px solid #86efac; color: #dcfce7; }
+  .quiz-fb.error { background: rgba(185,28,28,0.25); border: 1px solid #fca5a5; color: #fee2e2; }
+
+  /* 3D Flashcards */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .flashcard { perspective: 1000px; min-height: 190px; cursor: pointer; }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 12px;
+  }
+  .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+  .flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 22px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flashcard-front {
+    background: linear-gradient(145deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
+    border: 1.5px solid var(--emerald-mint);
+    color: #ffffff;
+  }
+  .flashcard-front .term { font-size: 1.12rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
+  .flashcard-front .term-vi { font-size: 0.9rem; color: var(--emerald-mint); font-style: italic; }
+  .flashcard-front .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
+  
+  .flashcard-back {
+    background: linear-gradient(145deg, #064e3b, #047857);
+    border: 1.5px solid #86efac;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    text-align: left;
+  }
+  .flashcard-back strong { color: #fef08a; }
+  .flashcard-back .vi { display: block; margin-top: 8px; color: #d1fae5; font-size: 0.86rem; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 6px; }
+
+  /* Action Checklist */
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #e2e8f0;
+  }
+  .action-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--emerald);
+    cursor: pointer;
+    margin-top: 3px;
+  }
+  .action-text { font-size: 0.96rem; color: #1e293b; line-height: 1.55; }
+  .action-text strong { color: var(--wood-dark); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media(max-width: 768px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-divider { display: none; }
+    .case-grid { grid-template-columns: 1fr; }
+    .section-card { padding: 22px 18px; }
+    .interactive-arena { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">PHÂN HỆ 05: PROJECT APPLICATION • CHUYÊN ĐỀ 01: VALUE CREATION</span>
+    <h1 class="hero-title">Kiểm Soát Biến Thiên Đầu Vào</h1>
+    <div class="hero-title-en">Control Input Variations — Taming Variation Around Action Settings &amp; Murphy's Law</div>
+    <p class="hero-desc">Bảo toàn thành quả cải tiến: Tìm ra thiết lập tối ưu mới chỉ là 50% chặng đường. Bí quyết sống còn của Six Sigma là thắt chặt băng thông biến thiên xung quanh thiết lập đó, triệt tiêu Định luật Murphy và biến năng lực giải quyết vấn đề thành phản xạ có ý thức.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- TRỤ CỘT 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 • Executive Summary</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành Trong 60 Giây</h2>
+    <div class="section-subheading">Hiểu rõ tại sao cải tiến không bền vững nếu thiếu kiểm soát biến thiên đầu vào</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Bẫy Biến Thiên Xung Quanh Thiết Lập (Variation Around Settings):</strong> Đổi thiết lập giờ giao báo sang 06:00 sáng là bước tiến lớn. Nhưng nếu có hôm giao lúc 05:45, hôm khác giao lúc 07:15, thì "Cửa sổ biến thiên" (Window of Variation) vẫn để ngỏ rủi ro cho con chó hàng xóm cắn nát báo vào ngày có tin tuyển dụng quyết định (Định luật Murphy).</li>
+        <li><strong>Kiểm Soát Đầu Vào Để Bảo Toàn Đầu Ra:</strong> Chất lượng đầu ra $Y$ không thể ổn định nếu các tham số đầu vào $X$ rung lắc hỗn loạn. Kiểm soát biến thiên $\sigma_X$ là chiếc khiên sắt bảo vệ thiết lập hành động tối ưu đã dày công xác lập.</li>
+        <li><strong>Đoạn Tuyệt Tư Duy "Chữa Cháy":</strong> Dr. Mikel Harry đặt câu hỏi: <em>"Người ta bảo hiểu DMAIC từ 30 năm trước, vậy tại sao không ai làm?"</em> Vì phần lớn doanh nghiệp chỉ quan sát và sửa lỗi ở đầu ra $Y$ thay vì kiểm soát biến thiên của các $X$ ở đầu vào.</li>
+        <li><strong>Chuyển Hóa Từ Tiềm Thức Sang Ý Thức (Conscious Habit):</strong> Kiểm soát biến thiên phải được rèn luyện thành thói quen kỷ luật, có quy chuẩn hóa và giám sát định kỳ tại Gemba để ngăn chặn quy trình trôi dạt về trạng thái hỗn độn tự nhiên.</li>
+      </ul>
+    </div>
+    <div class="pro-tip">
+      <div class="pro-tip-title">💡 Mikel J. Harry Master Insight</div>
+      <p class="pro-tip-desc">"Some of the greatest breakthroughs occur when the not-so-obvious becomes obvious. Many do this subconsciously, but to make it teachable and make it habit, we must consciously remove variations around the optimal action settings for the vital few forces time and time again."</p>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 2: CORE FRAMEWORKS & PURE MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 • Core Frameworks &amp; Pure Math</span>
+    <h2 class="section-heading">Lan Truyền Biến Thiên &amp; Chỉ Số Năng Lực Đầu Vào</h2>
+    <div class="section-subheading">Toán học giải tích về sự lan truyền phương sai từ đầu vào X sang đầu ra Y</div>
+
+    <div class="math-card">
+      <div class="title">1. Phương Trình Lan Truyền Biến Thiên (Error Propagation Model)</div>
+      <div class="math-equation">
+        &sigma;<sub><i>Y</i></sub><sup>2</sup> &approx; &sum; 
+        <span style="font-size:1.4rem;">(</span>
+        <div class="math-frac">
+          <span class="math-num">&part;<i>f</i></span>
+          <span class="math-den">&part;<i>X<sub>i</sub></i></span>
+        </div>
+        <span style="font-size:1.4rem;">)</span><sup>2</sup> &middot; &sigma;<sub><i>X<sub>i</sub></i></sub><sup>2</sup>
+      </div>
+      <div class="desc">
+        Phương sai đầu ra $\sigma_Y^2$ là tổng độ nhạy bình phương nhân với phương sai đầu vào $\sigma_{X_i}^2$. Muốn giá trị $Y$ ổn định hoàn hảo, bắt buộc phải ép $\sigma_{X_i} \to 0$ trên các biến số có độ dốc nhạy cảm cao.
+      </div>
+    </div>
+
+    <div class="math-card">
+      <div class="title">2. Năng Lực Kiểm Soát Thiết Lập Hành Động (Action Setting Capability - Cpk)</div>
+      <div class="math-equation">
+        <i>C<sub>pk</sub></i>(<i>X</i>) = min
+        <span style="font-size:1.6rem;">[</span>
+        <div class="math-frac">
+          <span class="math-num"><i>USL<sub>X</sub></i> &minus; &mu;<sub><i>X</i></sub></span>
+          <span class="math-den">3&sigma;<sub><i>X</i></sub></span>
+        </div>,
+        <div class="math-frac">
+          <span class="math-num">&mu;<sub><i>X</i></sub> &minus; <i>LSL<sub>X</sub></i></span>
+          <span class="math-den">3&sigma;<sub><i>X</i></sub></span>
+        </div>
+        <span style="font-size:1.6rem;">]</span> &ge; 1.50 &nbsp;(Chuẩn Six Sigma)
+      </div>
+      <div class="desc">
+        Một thiết lập được xem là kiểm soát đạt chuẩn khi và chỉ khi phân phối dao động thực tế của nó nằm lọt thỏm trong cửa sổ dung sai cho phép với $C_{pk} \ge 1.50$.
+      </div>
+    </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px;">Kế Hoạch Kiểm Soát Biến Thiên Đầu Vào Chuẩn SSMI (Input Variation Control Plan)</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Biến Số Đầu Vào (X)<span class="th-vi">Critical Parameter</span></th>
+            <th>Thiết Lập Chuẩn (&mu;<sub>X</sub>)<span class="th-vi">Optimal Setting</span></th>
+            <th>Băng Thông Biến Thiên (&plusmn;3&sigma;)<span class="th-vi">Allowable Window</span></th>
+            <th>Cơ Chế Kiểm Soát Triệt Tiêu Biến Thiên<span class="th-vi">Variation Control Method</span></th>
+            <th>Tần Suất Giám Sát<span class="th-vi">Monitoring Frequency</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Giờ giao báo buổi sáng</strong></td>
+            <td>06:00 AM</td>
+            <td><strong>05:50 AM &ndash; 06:10 AM</strong><br>(&plusmn;10 phút)</td>
+            <td>Hệ thống giám sát GPS trên xe giao hàng của bưu tá; chuông cảnh báo nếu trễ sau 06:10.</td>
+            <td>100% các ngày trong năm</td>
+          </tr>
+          <tr>
+            <td><strong>Nồng độ chất xúc tác mạ Niken</strong></td>
+            <td>18.5 g / L</td>
+            <td><strong>18.2 &ndash; 18.8 g / L</strong><br>(&plusmn;0.3 g/L)</td>
+            <td>Hệ thống châm hóa chất tự động điều khiển bằng cảm biến quang phổ (Auto-dosing system).</td>
+            <td>Liên tục theo thời gian thực (Real-time IoT)</td>
+          </tr>
+          <tr>
+            <td><strong>Lực siết bu-lông gầm xe</strong></td>
+            <td>120 N&middot;m</td>
+            <td><strong>118 &ndash; 122 N&middot;m</strong><br>(&plusmn;2 N&middot;m)</td>
+            <td>Súng siết ốc thông minh ngắt lực tự động có kết nối Wi-Fi ghi nhận dữ liệu vào MES.</td>
+            <td>100% từng bu-lông siết</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 3: CASE STUDIES & VS GRID -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 • Case Studies &amp; VS Comparison</span>
+    <h2 class="section-heading">Tình Huống Thực Tế &amp; Lưới Đối Chiếu Kiểm Soát</h2>
+    <div class="section-subheading">Từ sự trả giá vì Định luật Murphy đến giải pháp kiểm soát phương sai nghìn đô</div>
+
+    <div class="case-grid">
+      <div class="case-card mfg">
+        <span class="case-tag mfg">Sản Xuất • Dây Chuyền Hàn Bảng Mạch SMT</span>
+        <h3 class="case-title">Biến Thiên Độ Nhớt Kem Hàn Gây Lỗi Cầu Nối Chân IC</h3>
+        <p class="case-body">Nhiệt độ lò hàn đã được cải tiến lên mức tối ưu 245&deg;C. Tuy nhiên, tỷ lệ lỗi chập mạch vẫn thỉnh thoảng tăng vọt lên 4%. Phân tích phương sai chỉ ra: Kem hàn để ngoài không khí phòng lạnh dao động nhiệt độ từ 18&deg;C đến 28&deg;C làm độ nhớt biến thiên lớn. Khi độ nhớt thấp, kem hàn chảy loang tạo cầu nối (solder bridges).</p>
+        <div class="case-metric"><strong>Giải pháp Kiểm soát:</strong> Trang bị tủ ủ kem hàn tự động kiểm soát nhiệt độ 22 &plusmn; 0.5&deg;C trước khi quét, triệt tiêu 100% biến thiên độ nhớt, đưa DPMO về dưới 3.4.</div>
+      </div>
+
+      <div class="case-card svc">
+        <span class="case-tag svc">Ẩn Dụ Cốt Lõi • Giờ Giao Báo &amp; Định Luật Murphy</span>
+        <h3 class="case-title">Tại Sao Rơi Vào Khung Giờ Biến Thiên Lại Trả Giá Đắt?</h3>
+        <p class="case-body">Mikel Harry cảnh báo: Bạn đã hẹn giao báo lúc 06:00. Nhưng nếu người giao báo không có kỷ luật, hôm giao 6:00, hôm giao 6:30, và có hôm trời mưa xe hỏng giao lúc 07:45. Định luật Murphy sẽ xuất hiện: Chính vào buổi sáng bạn cần đọc bài tuyển dụng của công ty mơ ước nhất, tờ báo lại bị giao vào khung giờ 08:00 và con chó cắn nát nó.</p>
+        <div class="case-metric"><strong>Đúc kết Master:</strong> Nếu không kiểm soát độ biến thiên xung quanh thiết lập hành động, bạn vẫn chỉ là nạn nhân bất lực của sự ngẫu nhiên.</div>
+      </div>
+    </div>
+
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Thói Quen Vô Kỷ Luật / Trap</span>
+        <ul>
+          <li>Cho rằng chỉ cần chỉnh thiết lập 1 lần là xong, mặc kệ biến thiên tự do trôi dạt.</li>
+          <li>Đổ lỗi cho hoàn cảnh, thời tiết và Định luật Murphy mỗi khi có sự cố bất ngờ.</li>
+          <li>Dung sai kiểm soát quá rộng, cho phép công nhân thao tác tùy tiện theo cảm xúc.</li>
+          <li>Chỉ kiểm tra chất lượng thành phẩm sau cùng; hoàn toàn mù lòa trước biến động đầu vào.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Kỷ Luật SSMI / Master Black Belt</span>
+        <ul>
+          <li>Nhận diện biến thiên xung quanh thiết lập hành động là kẻ thù số 1 của chất lượng.</li>
+          <li>Chủ động thắt chặt băng thông biến thiên (&plusmn;3&sigma;) bằng cơ cấu Poka-Yoke và tự động hóa.</li>
+          <li>Xây dựng Biểu đồ Kiểm soát (SPC Control Charts) giám sát biến thiên của $X$ theo thời gian thực.</li>
+          <li>Rèn luyện tư duy kiểm soát phương sai thành phản xạ có ý thức ăn sâu vào văn hóa doanh nghiệp.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num">Trụ Cột 4 • Đấu Trường Tình Huống Thực Chiến</span>
+    <h2>Đấu Trường Trắc Nghiệm Tình Huống (Scenario-Based Arena)</h2>
+    <p class="arena-desc">Thử thách 8 câu hỏi tình huống chuyên sâu về kiểm soát phương sai đầu vào, chống Định luật Murphy và duy trì thành quả. Chọn đáp án và nộp bài để xem phân tích.</p>
+
+    <!-- Câu 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 1 &bull; Tầng 1: Mục Đích Kiểm Soát Biến Thiên (Core Purpose)</span>
+      <div class="quiz-q">Tại sao sau khi đã tìm ra thiết lập hành động tối ưu (Optimal Action Setting) ở Bước 5, tổ chức bắt buộc phải tiến hành bước "Kiểm soát biến thiên đầu vào" (Step 6)?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q1', 'Correct. An optimal setting without variation control is vulnerable to drift. Controlling input variation keeps the process consistently centered on its optimal setting, ensuring predictability and preventing Murphy\'s Law from destroying value.', 'Chính xác! Thiết lập tối ưu nếu không kiểm soát biến thiên sẽ lập tức bị trôi dạt. Kiểm soát biến thiên đầu vào giúp quy trình luôn ổn định bám sát tọa độ tối ưu, triệt tiêu Định luật Murphy và bảo toàn giá trị bền vững.')">A. Để bảo đảm quy trình luôn vận hành ổn định xung quanh tọa độ tối ưu, ngăn chặn trôi dạt tham số và triệt tiêu Định luật Murphy</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Trap: Variation control is an operational discipline, not a marketing showcase.', 'Sai lầm: Kiểm soát biến thiên là hoạt động kỹ thuật cốt lõi, không phải để làm màu tiếp thị.')">B. Để có thêm biểu đồ đẹp mắt đưa vào tài liệu quảng cáo bán hàng</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Trap: Over-control should not increase manual staffing; automation and Poka-Yoke reduce labor.', 'Sai lầm: Kiểm soát biến thiên bằng công nghệ giúp giảm công việc thủ công, không phải để tạo việc làm thừa.')">C. Để tạo thêm việc làm cho đội ngũ nhân viên kiểm tra chất lượng</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Trap: Variation cannot be eliminated by simply declaring the project completed.', 'Sai lầm: Tuyên bố hoàn thành dự án sớm mà bỏ qua kiểm soát sẽ khiến phế phẩm bùng phát trở lại.')">D. Để nhanh chóng giải tán nhóm dự án vì công việc đã xong từ Bước 5</button>
+      </div>
+      <div id="fb-q1" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 2 &bull; Tầng 1: Định Luật Murphy (Murphy's Law Mechanics)</span>
+      <div class="quiz-q">Trong ví dụ giao báo của Dr. Mikel Harry, Định luật Murphy (Murphy's Law) thể hiện bản chất nguy hiểm như thế nào nếu biến thiên xung quanh mốc 06:00 AM không được kiểm soát?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Trap: Murphy\'s law implies that failure occurs at the most catastrophic possible moment.', 'Sai lầm: Hiểu sai định luật Murphy; định luật chỉ ra rằng điều tồi tệ nhất sẽ xảy ra vào lúc quan trọng nhất.')">A. Con chó hàng xóm sẽ trở nên thân thiện và mang báo tận giường cho bạn</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q2', 'Correct. When variation is wide, Murphy\'s Law strikes: On the exact critical day when the vital job advertisement appears, delivery drifts into the 8:00 AM dog-window, completely annihilating your life-changing value opportunity.', 'Chính xác! Khi để tồn tại biến thiên, Định luật Murphy sẽ xuất hiện: Đúng vào ngày đăng tin tuyển dụng quan trọng nhất đời bạn, báo lại bị giao trễ vào khung giờ con chó thả rông, triệt tiêu hoàn toàn cơ hội đổi đời.')">B. Đúng vào ngày có mẩu tin tuyển dụng quan trọng nhất, báo lại bị giao trễ vào khung giờ thả chó và bị cắn nát, phá hủy hoàn toàn cơ hội giá trị</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Trap: Weather does not automatically change newspaper printing schedules.', 'Sai lầm: Trời mưa tự động đổi giờ in ấn là phỏng đoán không có căn cứ.')">C. Trời sẽ mưa to khiến công ty in ấn tự động ngừng xuất bản báo</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Trap: Trivial unrelated distraction.', 'Sai lầm: Người hàng xóm chuyển nhà không liên quan đến bài học kiểm soát biến thiên.')">D. Người hàng xóm sẽ bán con chó đi và mua một con mèo khác</button>
+      </div>
+      <div id="fb-q2" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 3 &bull; Tầng 2: Tính Toán Độ Biến Thiên Dung Sai (Tolerance Capability Math)</span>
+      <div class="quiz-q">Một thiết lập hành động của áp lực khí nén $X$ có giá trị tối ưu $\mu = 5.0\ \text{bar}$, giới hạn dung sai cho phép là $USL = 5.6\ \text{bar}$ và $LSL = 4.4\ \text{bar}$. Hiện tại độ lệch chuẩn đo được là $\sigma = 0.30\ \text{bar}$. Chỉ số năng lực $C_p$ hiện tại là bao nhiêu và quy trình đã đạt chuẩn Six Sigma ($C_p \ge 1.50$) chưa?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3', 'Correct. Tolerance = USL - LSL = 5.6 - 4.4 = 1.2 bar. Cp = 1.2 / (6 * 0.30) = 1.2 / 1.8 = 0.67. Since Cp = 0.67 < 1.50, the input variation is dangerously excessive and must be compressed by at least 2.25x.', 'Chính xác! Dung sai = 5.6 - 4.4 = 1.2 bar. Chỉ số Cp = 1.2 / (6 &times; 0.30) = 1.2 / 1.8 = 0.67. Vì Cp = 0.67 nhỏ hơn rất nhiều so với 1.50, độ biến thiên đầu vào đang cực kỳ nguy hiểm, có nguy cơ gây phế phẩm lớn.')">A. $C_p = 0.67$; chưa đạt chuẩn (biến thiên quá rộng, cần nén độ lệch chuẩn xuống $\le 0.13\ \text{bar}$)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Arithmetic calculation error.', 'Sai lầm: Tính toán sai công thức năng lực quy trình Cp.')">B. $C_p = 1.33$; đã đạt chuẩn chất lượng quốc tế</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Denominator must be 6*sigma, not 3*sigma for bilateral Cp.', 'Sai lầm: Chia cho 3*sigma thay vì 6*sigma của dung sai hai phía.')">C. $C_p = 2.00$; đạt chuẩn đẳng cấp thế giới</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Completely wrong formula and interpretation.', 'Sai lầm: Nhận định sai hoàn toàn về chỉ số năng lực.')">D. $C_p = 0.30$; quy trình hoàn toàn không có sai số</button>
+      </div>
+      <div id="fb-q3" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 4 &bull; Tầng 2: Lan Truyền Phương Sai (Variance Contribution)</span>
+      <div class="quiz-q">Một quy trình lắp ráp có độ dày thành phẩm $Y = 2\cdot X_1 + 3\cdot X_2$. Biết độ lệch chuẩn của $X_1$ là $\sigma_1 = 0.2\ \text{mm}$ và của $X_2$ là $\sigma_2 = 0.1\ \text{mm}$. Biến số nào đóng góp phương sai lớn hơn vào sự dao động của $Y$?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Contribution of X1 is (2)^2 * (0.2)^2 = 4 * 0.04 = 0.16. Contribution of X2 is (3)^2 * (0.1)^2 = 9 * 0.01 = 0.09. X1 contributes more!', 'Sai lầm: Phương sai do X1 tạo ra là 4 * 0.04 = 0.16; do X2 tạo ra là 9 * 0.01 = 0.09. X1 đóng góp lớn hơn X2.')">A. Biến số $X_2$ đóng góp lớn hơn vì có hệ số nhạy cảm là 3</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q4', 'Correct. Variance contribution: Var(2*X1) = 2^2 * Var(X1) = 4 * (0.2)^2 = 0.16. Var(3*X2) = 3^2 * Var(X2) = 9 * (0.1)^2 = 0.09. Since 0.16 > 0.09, X1 accounts for 64% of total output variance and must be controlled first.', 'Chính xác! Lan truyền phương sai: $\sigma^2(X_1) = 2^2 \times 0.2^2 = 4 \times 0.04 = 0.16$; $\sigma^2(X_2) = 3^2 \times 0.1^2 = 9 \times 0.01 = 0.09$. Biến số $X_1$ chiếm tới 64% tổng phương sai đầu ra ($0.16 / 0.25$) và phải được ưu tiên kiểm soát biến thiên trước.')">B. Biến số $X_1$ đóng góp lớn hơn (chiếm 64% tổng phương sai đầu ra do $\sigma_1$ lớn gấp đôi)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Contributions are unequal: 0.16 vs 0.09.', 'Sai lầm: Hai biến số đóng góp không bằng nhau.')">C. Hai biến số đóng góp hoàn toàn bằng nhau</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Output variance is mathematically determined by input variances in linear combinations.', 'Sai lầm: Tổng phương sai hoàn toàn có thể tính được bằng công thức giải tích.')">D. Không thể xác định được nếu không chạy mô phỏng Monte Carlo 10,000 lần</button>
+      </div>
+      <div id="fb-q4" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 5 &bull; Tầng 2: Công Cụ Giám Sát Phương Sai (Statistical Process Control - SPC)</span>
+      <div class="quiz-q">Để phát hiện sớm các dấu hiệu trôi dạt biến thiên của biến số đầu vào $X$ trước khi nó kịp tạo ra phế phẩm ở đầu ra $Y$, công cụ thống kê thực chiến nào là chuẩn mực bắt buộc?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q5', 'Correct. Statistical Process Control (SPC) control charts (such as X-bar & R or I-MR charts) track process mean and variance in real-time, signaling special causes before defects are produced.', 'Chính xác! Biểu đồ kiểm soát quá trình bằng thống kê (SPC Control Charts, ví dụ X-bar & R hoặc I-MR) giám sát độ dịch chuyển trung bình và phương sai theo thời gian thực, phát cảnh báo trước khi lỗi xuất hiện.')">A. Biểu đồ kiểm soát thống kê SPC (X-bar &amp; R hoặc I-MR Chart) với các giới hạn kiểm soát thống kê UCL/LCL</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Pie charts are static descriptive tools, useless for tracking time-series variation.', 'Sai lầm: Biểu đồ hình tròn chỉ mô tả tỷ lệ tĩnh, hoàn toàn vô dụng trong theo dõi chuỗi thời gian.')">B. Biểu đồ hình tròn phân chia tỷ lệ phần trăm các loại lỗi</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Ishikawa diagrams identify potential causes, but do not monitor continuous real-time variance.', 'Sai lầm: Biểu đồ xương cá dùng để tìm nguyên nhân ban đầu, không dùng để kiểm soát phương sai hàng ngày.')">C. Biểu đồ xương cá dán ở bảng tin phân xưởng</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: P&L financial reports are lagging indicators received weeks after scrap is generated.', 'Sai lầm: Báo cáo tài chính kế toán là chỉ số trễ, chỉ biết được sự việc khi tiền đã mất.')">D. Báo cáo lỗ lãi P&amp;L hàng tháng của phòng kế toán</button>
+      </div>
+      <div id="fb-q5" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 6 &bull; Tầng 3: Biến Thiên Do Sự Khác Biệt Giữa Các Ca (Shift-to-Shift Variance Crisis)</span>
+      <div class="quiz-q">Tại một nhà máy lắp ráp linh kiện quang học, tỷ lệ lỗi ở Ca 1 là 0.2%, nhưng sang Ca 2 tăng lên 3.8% và Ca 3 là 5.1%. Thiết bị và máy móc hoàn toàn giống nhau. Master Black Belt chẩn đoán nguyên nhân gốc rễ và đưa ra giải pháp nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Trap: Firing entire shifts ignores systemic training and standardization root causes.', 'Sai lầm: Sa thải hàng loạt công nhân ca đêm là cách hành xử nóng vội, bỏ qua nguyên nhân biến thiên phương pháp.')">A. Sa thải toàn bộ công nhân Ca 2 và Ca 3 vì thái độ làm việc kém cỏi</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q6', 'Correct. Mikel Harry highlights operator/instructor differences: Shift-to-shift variance stems from unstandardized human methods and lack of calibrated training. Implement Single Minute Video SOPs, cross-shift calibration audits, and standardized jigs that eliminate operator touch variance.', 'Chính xác! Biến thiên phương pháp thao tác con người (Operator Variance): Sự khác biệt trong cách căn chỉnh giữa các trưởng ca gây ra biến thiên đầu vào khổng lồ. Cần chuẩn hóa video thao tác SOP 1 phút, kiểm toán chéo giữa các ca, và thiết kế đồ gá định vị cứng để triệt tiêu phụ thuộc vào tay nghề cá nhân.')">B. Xác định nguyên nhân gốc là "Biến thiên do con người": Chuẩn hóa phương pháp thao tác bằng Video SOP trực quan, kiểm toán kỹ năng chéo giữa các ca và dùng đồ gá khóa cữ</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Trap: Banning night shifts destroys plant capacity and cap-ex utilization.', 'Sai lầm: Cấm ca đêm làm giảm 60% công suất nhà máy, tự sát về mặt tài chính.')">C. Đóng cửa toàn bộ ca đêm và chỉ sản xuất vào ban ngày</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Trap: Financial bonuses without standardized operating methods cannot eliminate physical error.', 'Sai lầm: Tăng tiền phụ cấp ca đêm không giải quyết được sai lệch kỹ thuật thao tác.')">D. Tăng gấp đôi tiền phụ cấp ca đêm để công nhân tự động làm cẩn thận hơn</button>
+      </div>
+      <div id="fb-q6" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 7 &bull; Tầng 3: Xung Đột Dung Sai Mua Hàng (Procurement Tolerance Dispute)</span>
+      <div class="quiz-q">Phòng Thu Mua muốn nới rộng dung sai độ tròn của trục thép từ &plusmn;0.01 mm thành &plusmn;0.05 mm để có thể chọn được nhà cung cấp giá rẻ hơn 15%. Black Belt dùng mô hình lan truyền biến thiên chứng minh điều gì với Giám đốc Điều hành?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q7', 'Correct. Show variance transmission to Y: Demonstrate quantitatively that increasing input variance by 5x on raw shafts causes 18% vibration failure in the finished motor, increasing warranty and scrap costs by $480k, completely wiping out the $60k purchase discount.', 'Chính xác! Chứng minh bằng mô hình lan truyền phương sai: Việc nới rộng biến thiên đầu vào lên gấp 5 lần sẽ khuếch đại độ rung lắc mô-tơ thành phẩm, làm tăng 18% tỷ lệ lỗi bảo hành tương đương thiệt hại 480,000 USD, triệt tiêu sạch khoản tiết kiệm mua hàng 60,000 USD.')">A. Chứng minh bằng toán học: Nới rộng biến thiên đầu vào gấp 5 lần sẽ khuếch đại rung lắc mô-tơ, gây thiệt hại bảo hành 480,000 USD, xóa sạch khoản tiết kiệm mua hàng 60,000 USD</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Yielding to poor input quality triggers downstream manufacturing chaos.', 'Sai lầm: Đồng ý với thu mua để đạt KPI ngắn hạn sẽ phá hủy danh tiếng chất lượng công ty.')">B. Đồng ý với phòng Thu Mua để giúp công ty đạt chỉ tiêu cắt giảm chi phí quý này</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Emotional arguments without engineering math fail in executive forums.', 'Sai lầm: Tố cáo phòng Thu Mua phá hoại công ty mà không có số liệu phân tích kỹ thuật.')">C. Đăng đàn tố cáo phòng Thu Mua đang tìm cách phá hoại uy tín chất lượng công ty</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Hand-sorting raw materials is a colossal waste of lean labor.', 'Sai lầm: Thuê thêm người đo thủ công từng thanh thép làm chi phí vận hành bùng nổ.')">D. Chấp nhận thép kém chất lượng và thuê thêm 20 công nhân ngồi sàng lọc từng thanh thép</button>
+      </div>
+      <div id="fb-q7" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 8 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 8 &bull; Tầng 3: Rèn Luyện Phản Xạ Ý Thức (Conscious Habit Culture)</span>
+      <div class="quiz-q">Để đưa việc "Kiểm soát biến thiên đầu vào" từ nhận thức lý thuyết trở thành một phản xạ có ý thức (Conscious Habit) trong toàn thể tổ chức, giải pháp thể chế nào là bền vững nhất?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8', 'Trap: Slogans on posters are passive and fail to change daily operating behavior.', 'Sai lầm: Khẩu hiệu suông chỉ nằm trên tường, không tác động đến hành vi vận hành máy móc.')">A. In khẩu hiệu "Hãy kiểm soát biến thiên" dán lên mọi cánh cửa trong công ty</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8', 'Correct. Institutionalize Layered Process Audits (LPA), real-time SPC telemetry at the operator workstation, and daily 5-minute Gemba standups reviewing parameter drifts, embedding input variation control into the organizational DNA.', 'Chính xác! Thể chế hóa Hệ thống Kiểm toán Phân tầng (Layered Process Audits - LPA), tích hợp bảng hiển thị SPC trực quan tại từng vị trí làm việc, và duy trì cuộc họp giao ban Gemba 5 phút hàng ngày rà soát các biến số bị trôi dạt, biến kiểm soát phương sai thành ADN vận hành.')">B. Thiết lập Hệ thống Kiểm toán Quy trình Phân tầng (LPA), tích hợp màn hình SPC tại trạm thao tác và duy trì giao ban Gemba 5 phút hàng ngày rà soát độ lệch tham số</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8', 'Trap: Yearly examinations are too disconnected from daily real-time variance.', 'Sai lầm: Thi lý thuyết 1 lần/năm không giúp kiểm soát được biến thiên nhiệt độ lò nung hàng ngày.')">C. Bắt toàn bộ nhân viên làm bài kiểm tra trắc nghiệm lý thuyết Six Sigma mỗi năm 1 lần</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8', 'Trap: Delegating input control entirely to IT software creates blind reliance.', 'Sai lầm: Giao toàn bộ cho phần mềm tự động mà công nhân không hiểu bản chất sẽ gây thảm họa khi hệ thống lỗi.')">D. Phụ thuộc hoàn toàn vào hệ thống máy tính và không cho phép con người can thiệp</button>
+      </div>
+      <div id="fb-q8" class="quiz-fb"></div>
+    </div>
+
+    <!-- 3D Flashcards -->
+    <h3 style="color:#fff; margin-top:42px; font-size:1.3rem;">🎴 Thẻ Ghi Nhớ Phản Xạ 3D (Click để lật thẻ)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Input Variation</div>
+            <div class="term-vi">Biến Thiên Đầu Vào</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Variance occurring around optimal action settings</strong>
+            <span class="vi">Sự dao động chập chờn của các biến số điều kiện đầu vào $X$ xung quanh tọa độ thiết lập mục tiêu.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Tolerance Window</div>
+            <div class="term-vi">Cửa Sổ Băng Thông Dung Sai</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>The allowable boundary [X* - &Delta;, X* + &Delta;]</strong>
+            <span class="vi">Giới hạn dao động cho phép bảo đảm hệ thống không bị kích hoạt lỗi hoặc Định luật Murphy.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Error Propagation</div>
+            <div class="term-vi">Lan Truyền Phương Sai</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Mathematical amplification of input noise into output defects</strong>
+            <span class="vi">Quy luật toán học giải thích sự biến thiên nhỏ ở đầu vào $X$ bị khuếch đại thành phế phẩm khổng lồ ở đầu ra $Y$.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Murphy's Law Mitigation</div>
+            <div class="term-vi">Hóa Giải Định Luật Murphy</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Tightening variation so failure becomes statistically impossible</strong>
+            <span class="vi">Nén chặt băng thông biến thiên để xác suất rủi ro rơi vào vùng nguy hiểm tiệm cận bằng 0.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Conscious Habit</div>
+            <div class="term-vi">Phản Xạ Có Ý Thức</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Disciplined, repeatable parameter control embedded in culture</strong>
+            <span class="vi">Nâng tầm kiểm soát chất lượng từ trực giác tiềm thức thành thói quen kỷ luật lặp đi lặp lại có chủ đích.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 5: ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 • Sáng Thứ Hai Làm Gì?</span>
+    <h2 class="section-heading">Checklist Hành Động Thực Chiến Tại Doanh Nghiệp</h2>
+    <div class="section-subheading">Quy trình 3 bước thắt chặt phương sai và hóa giải Định luật Murphy</div>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 1: Tính toán dung sai cho phép và xác lập băng thông $\pm 3\sigma$ (Calculate Tolerance Window):</strong> Áp dụng công thức lan truyền phương sai để quy định giới hạn trên ($USL_X$) và giới hạn dưới ($LSL_X$) cho từng biến số đầu vào then chốt; yêu cầu $C_{pk}(X) \ge 1.50$.
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 2: Triển khai công cụ kiểm soát tại nguồn (Install Real-Time SPC &amp; Poka-Yoke):</strong> Trang bị cảm biến tự động, bộ gá khóa vị trí hoặc biểu đồ kiểm soát SPC trực quan tại trạm làm việc; cài đặt cơ chế tự động ngắt máy (Andon) khi tham số vượt giới hạn kiểm soát.
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 3: Thiết lập nhịp điệu Kiểm toán Phân tầng hàng ngày (Layered Process Audit - LPA):</strong> Bắt buộc Tổ trưởng kiểm tra tham số 2 lần/ca; Quản đốc kiểm tra 1 lần/ngày; Black Belt kiểm toán độc lập 1 lần/tuần để loại bỏ triệt để hiện tượng trôi dạt tham số.
+      </span>
+    </label>
+
+    <h3 style="color:var(--wood-dark); margin-top:30px;">Kế Hoạch Kiểm Soát Biến Thiên Đầu Vào (Input Variation Control Sheet - IVCS)</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tham Số Nút Vặn (X)<span class="th-vi">Critical Parameter</span></th>
+            <th>Thiết Lập Chuẩn (Target)<span class="th-vi">Nominal Value</span></th>
+            <th>Băng Thông Biến Thiên Kiểm Soát<span class="th-vi">Statistical Control Limits</span></th>
+            <th>Hành Động Khắc Phục Khi Lệch Chuẩn<span class="th-vi">Out-of-Control Action Plan</span></th>
+            <th>Người Chịu Trách Nhiệm<span class="th-vi">Process Owner</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nhiệt độ bể rửa siêu âm mạch điện</strong></td>
+            <td>55.0&deg;C</td>
+            <td>54.0&deg;C &ndash; 56.0&deg;C (&plusmn;1.0&deg;C)</td>
+            <td>Rơ-le tự ngắt chuyền cấp phôi; bật gia nhiệt phụ trợ</td>
+            <td>Kỹ thuật viên ca vận hành</td>
+          </tr>
+          <tr>
+            <td><strong>Tốc độ quay trục cán màng nhựa</strong></td>
+            <td>1,200 rpm</td>
+            <td>1,195 &ndash; 1,205 rpm (&plusmn;5 rpm)</td>
+            <td>Hiệu chỉnh mạch hồi tiếp encoder điều khiển servo</td>
+            <td>Kỹ sư Bảo trì Cơ điện</td>
+          </tr>
+          <tr>
+            <td><strong>Độ ẩm bột sữa đóng gói</strong></td>
+            <td>2.80%</td>
+            <td>2.60% &ndash; 3.00% (&plusmn;0.20%)</td>
+            <td>Tăng nhiệt độ gió thổi tháp sấy; cô lập mẻ sữa lệch</td>
+            <td>Trưởng ca Quản lý Chất lượng</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
+  </p>
+</footer>
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

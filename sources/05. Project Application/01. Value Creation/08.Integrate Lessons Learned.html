@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tích Hợp Bài Học Kinh Nghiệm — Six Sigma Masterclass</title>
+<style>
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.68;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
+
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  .pro-tip {
+    background: var(--gold-bg);
+    border: 1px solid #fde68a;
+    border-left: 6px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 22px 0;
+  }
+  .pro-tip-title { font-size: 0.95rem; font-weight: 800; color: var(--wood-bark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pro-tip-desc { font-size: 0.96rem; color: #713f12; margin: 0; }
+
+  /* Native Math Cards */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+  }
+  .math-card .desc strong { color: #ffffff; }
+
+  /* Data Table */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.93rem;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  table.data-table th {
+    background: linear-gradient(135deg, var(--wood-dark), var(--vi-green));
+    color: #ffffff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  table.data-table th .th-vi { display: block; font-size: 0.8rem; font-weight: 400; color: #a7f3d0; font-style: italic; }
+  table.data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+    vertical-align: top;
+  }
+  table.data-table tr:hover { background: #f8fafc; }
+  .td-sub { display: block; font-size: 0.82rem; color: #64748b; margin-top: 2px; }
+
+  /* VS Grid */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: stretch;
+    margin: 22px 0;
+  }
+  .vs-col { padding: 22px 24px; border-radius: 12px; }
+  .vs-col.bad { background: #fef2f2; border: 1.5px solid #fecaca; border-left: 5px solid var(--red); }
+  .vs-col.good { background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 5px solid var(--green); }
+  .vs-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .vs-badge.bad { background: #fee2e2; color: var(--red); }
+  .vs-badge.good { background: #dcfce7; color: var(--green); }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { font-size: 0.93rem; margin-bottom: 8px; color: #1e293b; }
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: var(--wood-dark);
+    font-size: 1.1rem;
+    padding: 0 6px;
+  }
+
+  /* Case Study Cards */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 22px 0;
+  }
+  .case-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .case-card.mfg { border-top: 4px solid #0284c7; }
+  .case-card.svc { border-top: 4px solid #7c3aed; }
+  .case-tag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .case-tag.mfg { color: #0284c7; }
+  .case-tag.svc { color: #7c3aed; }
+  .case-title { font-size: 1.12rem; font-weight: 700; color: var(--wood-dark); margin: 0 0 8px; }
+  .case-body { font-size: 0.92rem; color: #334155; line-height: 1.6; }
+  .case-metric {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: #0f172a;
+  }
+
+  /* Interactive Arena */
+  .interactive-arena {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    border-radius: 16px;
+    padding: 38px 40px;
+    margin: 40px 0;
+    color: #ffffff;
+    box-shadow: 0 12px 36px rgba(2,44,34,0.4);
+    border: 2px solid var(--emerald);
+  }
+  .interactive-arena h2 { font-size: 1.7rem; font-weight: 800; color: #ffffff; margin: 0 0 6px; }
+  .arena-desc { color: var(--emerald-mint); font-size: 1.02rem; margin-bottom: 28px; }
+
+  .quiz-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+  .quiz-tag {
+    display: inline-block;
+    background: rgba(16,185,129,0.25);
+    border: 1px solid var(--emerald-mint);
+    color: var(--emerald-mint);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .quiz-q { font-size: 1.06rem; font-weight: 700; color: #ffffff; margin-bottom: 16px; line-height: 1.5; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ecfdf5;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .quiz-btn:hover {
+    background: rgba(16,185,129,0.2);
+    border-color: var(--emerald-mint);
+    transform: translateX(4px);
+  }
+  .quiz-btn.correct {
+    background: var(--green) !important;
+    border-color: #86efac !important;
+    color: #ffffff !important;
+    font-weight: 700;
+  }
+  .quiz-btn.wrong {
+    background: var(--red) !important;
+    border-color: #fca5a5 !important;
+    color: #ffffff !important;
+  }
+  .quiz-fb {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+  .quiz-fb.show { display: block; animation: fadeIn 0.3s ease; }
+  .quiz-fb.success { background: rgba(22,163,74,0.25); border: 1px solid #86efac; color: #dcfce7; }
+  .quiz-fb.error { background: rgba(185,28,28,0.25); border: 1px solid #fca5a5; color: #fee2e2; }
+
+  /* 3D Flashcards */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .flashcard { perspective: 1000px; min-height: 190px; cursor: pointer; }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 12px;
+  }
+  .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+  .flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 22px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flashcard-front {
+    background: linear-gradient(145deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
+    border: 1.5px solid var(--emerald-mint);
+    color: #ffffff;
+  }
+  .flashcard-front .term { font-size: 1.12rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
+  .flashcard-front .term-vi { font-size: 0.9rem; color: var(--emerald-mint); font-style: italic; }
+  .flashcard-front .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
+  
+  .flashcard-back {
+    background: linear-gradient(145deg, #064e3b, #047857);
+    border: 1.5px solid #86efac;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    text-align: left;
+  }
+  .flashcard-back strong { color: #fef08a; }
+  .flashcard-back .vi { display: block; margin-top: 8px; color: #d1fae5; font-size: 0.86rem; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 6px; }
+
+  /* Action Checklist */
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #e2e8f0;
+  }
+  .action-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--emerald);
+    cursor: pointer;
+    margin-top: 3px;
+  }
+  .action-text { font-size: 0.96rem; color: #1e293b; line-height: 1.55; }
+  .action-text strong { color: var(--wood-dark); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media(max-width: 768px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-divider { display: none; }
+    .case-grid { grid-template-columns: 1fr; }
+    .section-card { padding: 22px 18px; }
+    .interactive-arena { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">PHÂN HỆ 05: PROJECT APPLICATION • CHUYÊN ĐỀ 01: VALUE CREATION</span>
+    <h1 class="hero-title">Tích Hợp Bài Học Kinh Nghiệm</h1>
+    <div class="hero-title-en">Integrate Lessons Learned — Blending Knowledge into Corporate DNA &amp; Personal Fabric</div>
+    <p class="hero-desc">Bước chốt hạ chu trình kiến tạo giá trị RDMAICSI: Hòa trộn tri thức thực chiến (Street Smart) và lý thuyết hàn lâm (Book Smart), xác lập các nguyên tắc cấm kỵ (Universal Don'ts) và bắt buộc (Universal Do's), đưa bài học vào cấu trúc vận hành vĩnh cửu của tổ chức.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- TRỤ CỘT 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 • Executive Summary</span>
+    <h2 class="section-heading">Tóm Tắt Điều Hành Trong 60 Giây</h2>
+    <div class="section-subheading">Biến trải nghiệm xương máu thành thể chế chính sách ngăn ngừa tái diễn sai lỗi</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Bản Chất Của Sự Học Hỏi (The True Nature of Learning):</strong> Theo Dr. Mikel J. Harry, bạn không thể biết một điều gì đó nếu chưa học nó. Tri thức đến từ hai nguồn: <em>Lý thuyết sách vở (Book Smart - công thức, phương trình)</em> và <em>Trải nghiệm thực tế (Street Smart - nghe tiếng chó gầm gừ cắn nát báo ngoài cửa sổ)</em>. Cả hai phải được kết hợp nhuần nhuyễn.</li>
+        <li><strong>Định Nghĩa Tích Hợp (To Integrate Means to Blend In):</strong> Tích hợp không phải là cất tài liệu vào tủ lưu trữ. Tích hợp là hòa trộn tri thức vào cấu trúc vận hành hàng ngày của doanh nghiệp và triết lý sống cá nhân (<em>"blend it all together into the fabric of your life"</em>).</li>
+        <li><strong>Quy Tắc Phổ Quát Do's &amp; Don'ts:</strong> Mọi chu trình cải tiến đều đúc rút ra những điều bắt buộc phải làm (Must Do's) và những điều tuyệt đối không được làm (Must Don'ts) có giá trị phổ quát &mdash; giống như quy tắc <em>"Đừng bao giờ thò tay vào lửa"</em>, bất kể đó là bếp nhà hay lửa trại.</li>
+        <li><strong>Bộ Lọc Tư Duy Tạo Giá Trị (The Mental Filter):</strong> Người làm Six Sigma rèn luyện một bộ lọc tinh thần sắc bén: chắt lọc mọi trải nghiệm thành từng giọt tinh hoa thành công, nuôi dưỡng văn hóa tổ chức và liên tục kiến tạo giá trị với hiệu suất cao hơn.</li>
+      </ul>
+    </div>
+    <div class="pro-tip">
+      <div class="pro-tip-title">💡 Mikel J. Harry Master Insight</div>
+      <p class="pro-tip-desc">"To integrate means to mix in, to blend it into the fabric of everything you do. Out of repeated cycles come universal do's and don'ts that govern your future direction. If an organization repeats the same mistake twice, it is no longer a technical error; it is an executive failure to integrate lessons learned."</p>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 2: CORE FRAMEWORKS & PURE MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 • Core Frameworks &amp; Pure Math</span>
+    <h2 class="section-heading">Đường Cong Tích Lũy Tri Thức &amp; Chỉ Số Thể Chế Hóa</h2>
+    <div class="section-subheading">Mô hình toán học lượng hóa sự suy thoái tri thức và năng lực phòng ngừa tái diễn lỗi</div>
+
+    <div class="math-card">
+      <div class="title">1. Mô Hình Tích Lũy &amp; Suy Thoái Tri Thức Tổ Chức (Organizational Knowledge Retention)</div>
+      <div class="math-equation">
+        <i>K</i>(<i>t</i>) = <i>K</i><sub>0</sub> &plus; &sum; &Delta;<i>K<sub>j</sub></i> &middot; <i>e</i><sup>&minus;&lambda;(<i>t</i> &minus; <i>t<sub>j</sub></i>)</sup> &nbsp;|&nbsp; 
+        &lambda; &to; 0 &iff; <i>Policy Integration Achieved</i>
+      </div>
+      <div class="desc">
+        Trong đó: <strong>&Delta;K<sub>j</sub></strong> là bài học thu được từ dự án thứ <em>j</em>; <strong>&lambda;</strong> là hệ số lãng quên tự nhiên của con người. Chỉ khi bài học được tích hợp thành <em>Chính sách thể chế (Policy Integration)</em> thì &lambda; mới tiệm cận 0, bảo toàn tri thức vĩnh cửu.
+      </div>
+    </div>
+
+    <div class="math-card">
+      <div class="title">2. Tỷ Số Phòng Ngừa Lặp Lại Lỗi (Recurrence Prevention Factor - RPF)</div>
+      <div class="math-equation">
+        <i>RPF</i> = 1 &minus; 
+        <div class="math-frac">
+          <span class="math-num"><i>Defects</i><sub>Post-Integration</sub></span>
+          <span class="math-den"><i>Defects</i><sub>Pre-Integration</sub></span>
+        </div> &ge; 0.95 &nbsp;(Mục tiêu đẳng cấp Black Belt)
+      </div>
+      <div class="desc">
+        Một bài học chỉ được công nhận là đã tích hợp thành công khi tỷ lệ tái phát sinh sai hỏng của chính vấn đề đó trong 12 tháng tiếp theo giảm ít nhất 95% ($RPF \ge 0.95$).
+      </div>
+    </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px;">Ma Trận Quy Chuẩn Do's &amp; Don'ts Cấp Thể Chế (Executive Do's and Don'ts Matrix)</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Lĩnh Vực Quản Trị<span class="th-vi">Operational Arena</span></th>
+            <th>Điều Bắt Buộc Phải Làm (Universal MUST DO)<span class="th-vi">Mandatory Operating Discipline</span></th>
+            <th>Điều Tuyệt Đối Cấm Kỵ (Universal MUST NOT)<span class="th-vi">Strictly Prohibited Action</span></th>
+            <th>Cơ Chế Thể Chế Hóa<span class="th-vi">Institutional Mechanism</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Thiết kế &amp; Khởi động quy trình</strong></td>
+            <td>Luôn quét môi trường thực tế Is vs Ought tại Gemba trước khi thiết lập mục tiêu cải tiến.</td>
+            <td>Tuyệt đối không ra quyết định dựa trên phỏng đoán cảm tính hoặc dữ liệu gián tiếp làm đẹp.</td>
+            <td>Cổng kiểm soát dự án (Tollgate Review Stage 0 bắt buộc).</td>
+          </tr>
+          <tr>
+            <td><strong>Quản lý chuỗi cung ứng &amp; Mua hàng</strong></td>
+            <td>Đánh giá tổng chi phí sở hữu (TCO) và năng lực Cpk của nhà cung cấp trước khi ký hợp đồng.</td>
+            <td>Tuyệt đối không độc quyền nguồn cung đơn lẻ (Single-sourcing) cho các linh kiện hạng A.</td>
+            <td>Chính sách Đấu thầu Tập đoàn (Procurement Policy Rev 4).</td>
+          </tr>
+          <tr>
+            <td><strong>Bảo trì &amp; Vận hành máy móc</strong></td>
+            <td>Khóa cứng thiết lập hành động tối ưu bằng cơ cấu nắp che Poka-Yoke và phân quyền số.</td>
+            <td>Tuyệt đối không cho phép nhân viên tự ý vặn lại núm điều khiển theo thói quen cá nhân.</td>
+            <td>Quy chuẩn LOTO (Lockout / Tagout Standard).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 3: CASE STUDIES & VS GRID -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 • Case Studies &amp; VS Comparison</span>
+    <h2 class="section-heading">Tình Huống Thực Chiến &amp; Lưới Đối Chiếu Tích Hợp</h2>
+    <div class="section-subheading">Sự khác biệt giữa lưu kho biên bản rút kinh nghiệm và thể chế hóa chính sách</div>
+
+    <div class="case-grid">
+      <div class="case-card mfg">
+        <span class="case-tag mfg">Sản Xuất • Tập Đoàn Lắp Ráp Bo Mạch Hàng Không</span>
+        <h3 class="case-title">Sửa Đổi Hướng Dẫn Kỹ Thuật (Design Guidelines) Toàn Cầu</h3>
+        <p class="case-body">Sau sự cố nứt mối hàn do rung động cộng hưởng trên một dòng bo mạch điều khiển bay, dự án Black Belt phát hiện khoảng cách giữa hai ốc cố định bo mạch vượt quá ngưỡng an toàn. Không chỉ sửa lỗi cho chiếc bo mạch đó, Master Black Belt đưa bài học vào "Hướng Dẫn Thiết Kế Toàn Cầu" (Global Design Rule): Mọi bo mạch tương lai có diện tích > 150 cm² bắt buộc phải bố trí điểm chống rung ở tâm.</p>
+        <div class="case-metric"><strong>Kết quả thể chế:</strong> Trong 5 năm tiếp theo, 42 dòng sản phẩm mới ra đời mà không có bất kỳ lỗi nứt mối hàn rung động nào, bảo vệ thương hiệu hàng triệu USD.</div>
+      </div>
+
+      <div class="case-card svc">
+        <span class="case-tag svc">Ẩn Dụ Cốt Lõi • Bài Học Tờ Báo &amp; Ngọn Lửa</span>
+        <h3 class="case-title">"Đừng Bao Giờ Thò Tay Vào Ngọn Lửa"</h3>
+        <p class="case-body">Mikel Harry đúc kết: Bạn học được bài học con chó qua trải nghiệm thực tế (Street Smart). Bạn tích hợp nó thành nguyên tắc sống: Luôn kiểm tra môi trường tiếp nhận trước khi triển khai hành động. Giống như đứa trẻ bị bỏng tay một lần sẽ học được bài học vĩnh cửu: "Không bao giờ thò tay vào lửa", dù là lửa nhà bếp hay lửa trại rực rỡ.</p>
+        <div class="case-metric"><strong>Đúc kết Master:</strong> Tích hợp bài học kinh nghiệm là quá trình chắt lọc các quy tắc phổ quát để không bao giờ bị tổn thương bởi cùng một nguyên nhân lần thứ hai.</div>
+      </div>
+    </div>
+
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">Thói Quen Hình Thức / Trap</span>
+        <ul>
+          <li>Lập biên bản rút kinh nghiệm qua loa rồi cất vào tủ hồ sơ lưu trữ để phủ bụi.</li>
+          <li>Cùng một sự cố chất lượng lặp đi lặp lại năm này qua tháng khác tại các phân xưởng.</li>
+          <li>Khi nhân sự chủ chốt nghỉ việc, toàn bộ kinh nghiệm giải quyết vấn đề bị xóa sổ.</li>
+          <li>Xem đào tạo bài học kinh nghiệm là nghĩa vụ hành chính nhàm chán tốn thời gian.</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">Kỷ Luật SSMI / Master Black Belt</span>
+        <ul>
+          <li>Chuyển hóa 100% bài học dự án thành các quy chuẩn Universal Do's và Don'ts cụ thể.</li>
+          <li>Sửa đổi trực tiếp vào tài liệu ISO, quy trình kỹ thuật và phần mềm tự động của tổ chức.</li>
+          <li>Đo lường Chỉ số phòng ngừa tái diễn lỗi (RPF &ge; 0.95) để đánh giá năng lực thể chế.</li>
+          <li>Rèn luyện bộ lọc tư duy tinh thần (Mental Filter) biến tri thức thành văn hóa sống còn.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <span class="section-num">Trụ Cột 4 • Đấu Trường Tình Huống Thực Chiến</span>
+    <h2>Đấu Trường Trắc Nghiệm Tình Huống (Scenario-Based Arena)</h2>
+    <p class="arena-desc">Trải nghiệm 8 câu hỏi tình huống thực tế về tích hợp bài học kinh nghiệm, hòa trộn tri thức và quản trị chống lặp lại lỗi. Chọn đáp án và nộp bài để xem giải thích.</p>
+
+    <!-- Câu 1 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 1 &bull; Tầng 1: Định Nghĩa Tích Hợp (Integration Concept)</span>
+      <div class="quiz-q">Theo Dr. Mikel J. Harry, từ "Tích hợp" (Integrate) trong bước cuối cùng của chu trình RDMAICSI mang ý nghĩa cốt lõi nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q1', 'Correct. Mikel Harry defines integrate as \'to mix in, to blend it all together, to put it into the contents of other things I do in my life\', embedding learned lessons into the organizational fabric and personal philosophy.', 'Chính xác! Tích hợp có nghĩa là hòa trộn, đan cài và thẩm thấu toàn bộ bài học kinh nghiệm vào cấu trúc của mọi hoạt động trong doanh nghiệp và triết lý sống cá nhân.')">A. Hòa trộn, đan cài và thẩm thấu toàn bộ bài học kinh nghiệm vào cấu trúc vận hành của tổ chức và triết lý sống cá nhân</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Trap: Archiving documents in storage cabinets is the exact opposite of dynamic living integration.', 'Sai lầm: Lưu trữ tài liệu vào tủ hồ sơ chỉ là hành động hình thức, làm chết tri thức.')">B. Cất giữ báo cáo dự án vào kho lưu trữ hồ sơ tuyệt mật của công ty</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Trap: Merging computer databases is IT infrastructure, not experiential knowledge integration.', 'Sai lầm: Gộp cơ sở dữ liệu máy tính chỉ là thao tác công nghệ thông tin, không phản ánh việc tích hợp bài học.')">C. Gộp cơ sở dữ liệu của hai phòng ban vào cùng một máy chủ lưu trữ</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1', 'Trap: Deleting old files destroys historical baseline knowledge.', 'Sai lầm: Xóa bỏ dữ liệu cũ là phá hủy dấu vết lịch sử, vi phạm quy chuẩn lưu trữ.')">D. Xóa bỏ toàn bộ các quy trình cũ để viết lại từ đầu</button>
+      </div>
+      <div id="fb-q1" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 2 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 2 &bull; Tầng 1: Phân Biệt Book Smart vs Street Smart (Epistemology)</span>
+      <div class="quiz-q">Trong bài giảng, Dr. Mikel Harry phân biệt hai nguồn gốc của tri thức: "Book Smart" và "Street Smart" qua ví dụ nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Trap: Academic degrees alone do not confer street smart operational wisdom.', 'Sai lầm: Bằng cấp đại học chỉ là một phần của Book Smart, không bao hàm Street Smart.')">A. Book Smart là có bằng tiến sĩ, còn Street Smart là biết lái xe tải</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q2', 'Correct. Mikel Harry contrasts equations and textbooks (Book Smart) with direct physical experience (Street Smart), such as hearing the neighbor\'s dog growl and shred the morning newspaper outside your bedroom window.', 'Chính xác! Book Smart là tri thức sách vở và công thức toán học; Street Smart là tri thức trải nghiệm thực địa xương máu (như việc nghe tiếng con chó gầm gừ cắn nát tờ báo dưới cửa sổ phòng ngủ).')">B. Book Smart là công thức toán học và sách vở; Street Smart là tri thức trải nghiệm thực địa (như nghe tiếng con chó gầm gừ cắn nát tờ báo ngoài cửa sổ)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Trap: Street smart is not about avoiding reading; it is about empirical observation.', 'Sai lầm: Street Smart không phải là không cần đọc sách, mà là năng lực cảm nhận thực tế Gemba.')">C. Book Smart là người thích đọc sách, còn Street Smart là người ghét đi học</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q2', 'Trap: Irrelevant geography distinction.', 'Sai lầm: Phân biệt thành thị nông thôn không phản ánh bản chất tri thức luận.')">D. Book Smart dành cho kỹ sư thành phố, Street Smart dành cho công nhân nông thôn</button>
+      </div>
+      <div id="fb-q2" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 3 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 3 &bull; Tầng 2: Tính Toán Tỷ Số Phòng Ngừa Tái Diễn Lỗi (RPF Metric)</span>
+      <div class="quiz-q">Trước khi thực hiện dự án cải tiến, nhà máy ghi nhận 180 sự cố chập điện do ẩm ướt mỗi năm. Sau khi hoàn thành dự án và tích hợp quy chuẩn chống ẩm Poka-Yoke vào chính sách bảo trì, số sự cố trong năm tiếp theo giảm xuống còn 3 vụ. Tỷ số Phòng Ngừa Tái Diễn Lỗi ($RPF$) đạt được là bao nhiêu?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Calculated raw error ratio: 3 / 180 = 0.0167 (1.67%).', 'Sai lầm: Lấy tỷ số lỗi còn lại thay vì tính tỷ số phòng ngừa thành công.')">A. $RPF = 0.0167$ (1.67%)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3', 'Correct. RPF = 1 - (3 / 180) = 1 - 0.0167 = 0.9833 (98.33%). Since RPF = 98.33% >= 95%, the institutional integration of lessons learned is verified at the world-class Master Black Belt standard.', 'Chính xác! Tỷ số RPF = 1 - (3 / 180) = 1 - 0.0167 = 0.9833 (98.33%). Với kết quả đạt 98.33% (vượt xa chuẩn 95%), bài học kinh nghiệm đã được tích hợp thể chế xuất sắc, triệt tiêu gần như hoàn toàn nguy cơ lặp lại lỗi.')">B. $RPF = 0.9833$ (98.33% &mdash; Đạt chuẩn thể chế hóa xuất sắc của Master Black Belt)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Arithmetic error in subtraction.', 'Sai lầm: Tính toán sai số học trong công thức trừ.')">C. $RPF = 0.8500$ (85.00%)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: RPF cannot exceed 1.0 (100%).', 'Sai lầm: Tỷ số RPF tối đa là 1.0 (100%), không thể bằng 60 lần.')">D. $RPF = 60.0\times$</button>
+      </div>
+      <div id="fb-q3" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 4 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 4 &bull; Tầng 2: Quy Tắc Phổ Quát "Không Thò Tay Vào Lửa" (Universal Rules)</span>
+      <div class="quiz-q">Ví dụ của Dr. Mikel Harry về việc <em>"Không bao giờ thò tay vào ngọn lửa (dù là bếp ga hay lửa trại)"</em> mang bài học phương pháp luận nào cho việc thiết lập chính sách doanh nghiệp?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Fire safety is only the literal metaphor, not the organizational management principle.', 'Sai lầm: Hiểu theo nghĩa đen chỉ về phòng cháy chữa cháy mà bỏ qua bài học quản trị thể chế.')">A. Doanh nghiệp chỉ cần đầu tư mua bình chữa cháy khí CO2</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q4', 'Correct. The metaphor illustrates Universal Must-Don\'ts: Critical operating lessons must be codified into absolute, context-invariant rules that apply across every division without exception, eliminating catastrophic recurrent failures.', 'Chính xác! Quy tắc Cấm Kỵ Phổ Quát (Universal Must-Don\'ts): Những bài học sống còn phải được đúc kết thành các nguyên tắc cấm đoán tuyệt đối, có hiệu lực trên mọi phòng ban và mọi dự án mà không có bất kỳ ngoại lệ nào.')">B. Những bài học sống còn phải được đúc kết thành nguyên tắc cấm kỵ tuyệt đối (Universal Must-Don\'ts), có hiệu lực nhất quán trên mọi phân xưởng mà không có ngoại lệ</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Prohibiting stove cooking in plant canteens is an absurd misinterpretation.', 'Sai lầm: Cấm nấu ăn trong căng tin là cách diễn giải ấu trĩ.')">C. Cấm toàn bộ công nhân sử dụng bếp lửa trong khuôn viên nhà máy</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Allowing flexibility on catastrophic safety/quality rules destroys governance.', 'Sai lầm: Cho phép linh hoạt với các quy tắc an toàn cốt tử sẽ dẫn đến thảm họa.')">D. Mọi quy định chỉ mang tính chất tham khảo, công nhân có quyền tự quyết định</button>
+      </div>
+      <div id="fb-q4" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 5 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 5 &bull; Tầng 2: Cơ Chế Bộ Lọc Tư Duy (The Mental Filter Mechanism)</span>
+      <div class="quiz-q">Khái niệm "Bộ lọc tư duy" (Mental Filter) mà Dr. Mikel Harry mô tả ở cuối bài học hoạt động như thế nào trong tâm trí của một nhà lãnh đạo Six Sigma?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q5', 'Correct. The Mental Filter continuously processes complex, noisy operational events, filtering out the trivial trivia and distilling the pure sweet drops of vital success factors and lessons learned to govern all future decisions.', 'Chính xác! Bộ lọc tư duy liên tục tiếp nhận các sự kiện hỗn độn của hiện trường, lọc bỏ các nhiễu số tầm thường và chắt lọc những giọt tinh hoa thành công cùng bài học kinh nghiệm để định hướng cho mọi quyết sách tương lai.')">A. Tiếp nhận các biến động phức tạp của môi trường, lọc bỏ các tiểu tiết vụn vặt và chắt lọc những giọt tinh hoa bài học để điều hướng mọi quyết định tương lai</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Filtering is an analytical distillation process, not psychological denial.', 'Sai lầm: Bộ lọc tư duy không phải là thái độ chối bỏ sự thật khó khăn.')">B. Tự động quên đi mọi thất bại trong quá khứ để duy trì tâm lý tích cực ảo tưởng</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Filtering must be based on statistical facts, not personal favoritism.', 'Sai lầm: Lọc thông tin theo sở thích cá nhân là hành vi thiên vị chủ quan.')">C. Chỉ lắng nghe những lời khen ngợi của cấp dưới và phớt lờ các phàn nàn của khách hàng</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: A mental filter is an internal leadership framework, not an IT spam software.', 'Sai lầm: Bộ lọc tư duy là năng lực trí tuệ lãnh đạo, không phải phần mềm lọc thư rác email.')">D. Cài đặt phần mềm lọc thư rác trên hòm thư điện tử công ty</button>
+      </div>
+      <div id="fb-q5" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 6 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 6 &bull; Tầng 3: Khủng Hoảng Lỗi Cũ Tái Phát (Chronic Failure Relapse)</span>
+      <div class="quiz-q">Một lỗi gãy bu-lông bánh xe từng gây thu hồi sản phẩm cách đây 3 năm bất ngờ xuất hiện trở lại trên dòng xe mới ra mắt, khiến công ty thiệt hại 1.5 triệu USD. Khi kiểm tra, phát hiện kỹ sư thiết kế dòng xe mới là nhân sự mới tuyển và hoàn toàn không biết về bài học 3 năm trước. Trách nhiệm quản trị cao nhất thuộc về ai?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Trap: Blaming the new junior engineer abdicates systemic management responsibility.', 'Sai lầm: Đổ lỗi cho kỹ sư trẻ mới vào nghề là hành vi thoái thác trách nhiệm của ban lãnh đạo.')">A. Thuộc về kỹ sư mới tuyển vì đã không tự đi tìm tài liệu cũ của công ty để đọc</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q6', 'Correct. This is a severe systemic failure of Step 8 Integration. The Chief Technology Officer and Master Black Belt failed to embed the historical lesson into the mandatory CAD design check-rules and onboarding checklist, allowing an institutional memory gap.', 'Chính xác! Lỗi hệ thống nghiêm trọng tại Bước 8 Tích Hợp: Giám đốc Kỹ thuật và Master Black Belt đã thất bại trong việc đưa bài học xương máu vào bộ quy tắc khóa thiết kế CAD tự động và chương trình đào tạo bắt buộc, để xảy ra lỗ hổng mất trí nhớ tổ chức.')">B. Thuộc về Giám đốc Kỹ thuật và Master Black Belt: Đã không tích hợp bài học thành quy tắc khóa thiết kế CAD tự động và chương trình đào tạo bắt buộc, gây ra lỗ hổng mất trí nhớ tổ chức</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Trap: Blaming HR ignores engineering governance and CAD rule design integration.', 'Sai lầm: Phòng nhân sự chỉ tuyển người, không chịu trách nhiệm về tiêu chuẩn kỹ thuật bu-lông.')">C. Thuộc về Phòng Nhân sự vì đã tuyển một kỹ sư thiếu kinh nghiệm</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Trap: The supplier only builds to the drawing provided by internal engineers.', 'Sai lầm: Nhà cung ứng chỉ sản xuất theo bản vẽ do công ty cấp, lỗi gốc nằm ở khâu thiết kế.')">D. Thuộc về Nhà cung ứng bu-lông vì đã không cảnh báo cho kỹ sư mới</button>
+      </div>
+      <div id="fb-q6" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 7 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 7 &bull; Tầng 3: Tích Hợp Vào Văn Hóa Doanh Nghiệp (Cultural Integration)</span>
+      <div class="quiz-q">Làm thế nào để một tổ chức xây dựng được văn hóa "Học hỏi từ sai lầm mà không tạo ra văn hóa sợ hãi, che giấu lỗi" tại hiện trường Gemba?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Severe punishment guarantees that workers will conceal defects underground.', 'Sai lầm: Phạt nặng công nhân báo cáo lỗi sẽ khuyến khích văn hóa che giấu và chôn lấp phế phẩm.')">A. Đưa ra quy định: Bất kỳ ai để xảy ra lỗi sẽ bị bêu tên công khai trước toàn nhà máy</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q7', 'Correct. Institutionalize Blameless Post-Mortems & Psychological Safety: Reward the immediate disclosure of gaps, treat defects as system flaws rather than personal crimes, and co-create Poka-Yoke solutions with frontline workers to lock lessons into procedures.', 'Chính xác! Thể chế hóa Cơ chế Khám nghiệm Không Quy Kết (Blameless Post-Mortem) và An Toàn Tâm Lý: Khen thưởng những người chủ động phát hiện và báo cáo khoảng trống; xem sai lỗi là cơ hội cải tiến hệ thống chứ không phải tội lỗi cá nhân; cùng công nhân xây dựng giải pháp Poka-Yoke khóa vào quy trình.')">B. Thiết lập cơ chế "Khám nghiệm Không Quy Kết" (Blameless Post-Mortem): Khen thưởng việc chủ động báo cáo khoảng trống, coi lỗi là khiếm khuyết của hệ thống và cùng công nhân thiết kế giải pháp Poka-Yoke</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Passivity and lack of tracking allow defects to metastasize.', 'Sai lầm: Bỏ qua lỗi và không ghi chép sẽ khiến chất lượng ngày càng xuống dốc.')">C. Bỏ qua mọi sai lỗi và không ghi chép gì để mọi người luôn vui vẻ</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Financial deductibles for reporting errors discourage all transparency.', 'Sai lầm: Trừ tiền bảo hiểm khi báo cáo sự cố sẽ triệt tiêu hoàn toàn tính minh bạch.')">D. Yêu cầu công nhân phải tự bỏ tiền túi đền bù 100% giá trị sản phẩm hỏng</button>
+      </div>
+      <div id="fb-q7" class="quiz-fb"></div>
+    </div>
+
+    <!-- Câu 8 -->
+    <div class="quiz-card">
+      <span class="quiz-tag">Câu 8 &bull; Tầng 3: Vòng Lặp Khép Kín Của Chu Trình RDMAICSI (The Breakthrough Loop)</span>
+      <div class="quiz-q">Sau khi hoàn thành bước 8 "Tích hợp bài học kinh nghiệm", chu trình Đột Phá Kiến Tạo Giá Trị (Breakthrough Strategy) của Dr. Mikel J. Harry sẽ tiếp diễn như thế nào?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8', 'Trap: Breakthrough strategy is a continuous perpetual engine, not a one-time terminal sprint.', 'Sai lầm: Xem Six Sigma là dự án làm 1 lần rồi thôi là tư duy phong trào ngắn hạn.')">A. Khép lại vĩnh viễn và doanh nghiệp không cần thực hiện thêm bất kỳ cải tiến nào nữa</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8', 'Correct. The cycle ascends to a higher spiral: The integrated lessons learned recalibrate the organization\'s rightful level of expectation, initiating a new Recognize phase (Step 1) at a higher Sigma benchmark, creating continuous perpetual value expansion.', 'Chính xác! Chu trình thăng hoa lên một nấc thang xoắn ốc cao hơn: Các bài học đã tích hợp nâng cao mức kỳ vọng chính đáng (Rightful Expectation) của tổ chức, tái khởi động bước 1 Nhận Biết Nhu Cầu Giá Trị ở một đẳng cấp Sigma cao hơn, tạo nên cỗ máy kiến tạo giá trị vĩnh cửu.')">B. Nâng tầm lên nấc thang mới: Tri thức tích hợp tái xác lập mức kỳ vọng Entitlement cao hơn, tái khởi động bước Nhận Biết Nhu Cầu ở cấp độ Sigma vượt trội</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8', 'Trap: Repeating the exact same cycle on solved problems wastes capital.', 'Sai lầm: Quay lại làm y hệt vấn đề cũ chứng tỏ cải tiến trước đó không có tác dụng.')">C. Quay trở lại làm lại y hệt 8 bước với chính vấn đề con chó và tờ báo cũ</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8', 'Trap: Downsizing the continuous improvement office dismantles core capability.', 'Sai lầm: Giải thể phòng cải tiến liên tục là tự tước bỏ vũ khí cạnh tranh chiến lược.')">D. Giải thể phòng cải tiến Six Sigma để tiết kiệm chi phí văn phòng</button>
+      </div>
+      <div id="fb-q8" class="quiz-fb"></div>
+    </div>
+
+    <!-- 3D Flashcards -->
+    <h3 style="color:#fff; margin-top:42px; font-size:1.3rem;">🎴 Thẻ Ghi Nhớ Phản Xạ 3D (Click để lật thẻ)</h3>
+    <div class="flashcards-grid">
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Integrate Lessons Learned</div>
+            <div class="term-vi">Tích Hợp Bài Học Kinh Nghiệm</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Blending empirical wisdom into operational policies and life philosophy</strong>
+            <span class="vi">Hòa trộn tri thức thực tế vào chính sách thể chế và triết lý sống để định hướng cho mọi quyết sách tương lai.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Book Smart vs Street Smart</div>
+            <div class="term-vi">Lý Thuyết vs Thực Tiễn</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Equations &amp; principles combined with direct Gemba physical experience</strong>
+            <span class="vi">Sự kết hợp hoàn hảo giữa công thức học thuật và tri thức hiện trường từ những trải nghiệm xương máu.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Universal Do's &amp; Don'ts</div>
+            <div class="term-vi">Quy Tắc Bắt Buộc &amp; Cấm Kỵ</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Absolute operating rules like "Never put your hand in the fire"</strong>
+            <span class="vi">Những nguyên tắc bất biến rút ra từ chu trình cải tiến có giá trị phổ quát, bảo vệ tổ chức khỏi thảm họa.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Recurrence Prevention Factor</div>
+            <div class="term-vi">Hệ Số Phòng Ngừa Tái Diễn</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>RPF = 1 - (Defects_Post / Defects_Pre) &ge; 0.95</strong>
+            <span class="vi">Chỉ số đo lường mức độ thành công của việc thể chế hóa bài học: Giảm tối thiểu 95% tỷ lệ lặp lại lỗi cũ.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="term">Mental Filter</div>
+            <div class="term-vi">Bộ Lọc Tư Duy Tạo Giá Trị</div>
+            <div class="hint">Click to reveal &bull; Nhấn để lật</div>
+          </div>
+          <div class="flashcard-back">
+            <strong>Distilling chaos into sweet drops of vital success factors</strong>
+            <span class="vi">Bộ lọc tinh thần giúp lãnh đạo bóc tách sự vụn vặt, chắt lọc tinh hoa bài học để liên tục mở rộng giá trị.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 5: ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 • Sáng Thứ Hai Làm Gì?</span>
+    <h2 class="section-heading">Checklist Hành Động Thực Chiến Tại Doanh Nghiệp</h2>
+    <div class="section-subheading">Kế hoạch 3 bước thể chế hóa bài học và ngăn ngừa tái diễn sai lỗi</div>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 1: Tổ chức phiên Khám nghiệm không quy kết đúc rút Do's &amp; Don'ts (Blameless Post-Mortem):</strong> Ngay sau khi nghiệm thu dự án, tập hợp toàn đội ngũ đúc kết thành văn bản 3 điều Bắt buộc phải làm (Must Do) và 3 điều Tuyệt đối cấm kỵ (Must Don't).
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 2: Cập nhật thể chế chính sách và phần mềm vận hành (Codify into Policies &amp; ERP/MES):</strong> Đưa các quy tắc cấm kỵ vào cổng kiểm soát phần mềm (khóa tự động không cho nhập sai), sửa đổi trực tiếp tài liệu quy trình ISO và tiêu chuẩn thiết kế tập đoàn.
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 3: Tích hợp vào chương trình đào tạo nhập môn và đo lường RPF hàng quý (Onboarding &amp; RPF Audit):</strong> Bắt buộc 100% nhân viên mới và nhà thầu phải được huấn luyện các bài học Universal Don'ts; theo dõi định kỳ chỉ số Phòng ngừa tái diễn ($RPF \ge 0.95$) báo cáo Hội đồng Quản trị.
+      </span>
+    </label>
+
+    <h3 style="color:var(--wood-dark); margin-top:30px;">Nhật Ký Tích Hợp Bài Học Kinh Nghiệm Thể Chế (Institutional Lessons Learned Log - ILL)</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Mã Bài Học<span class="th-vi">Lesson ID</span></th>
+            <th>Sự Cố Khởi Phát<span class="th-vi">Triggering Incident</span></th>
+            <th>Quy Tắc Phổ Quát Đúc Kết (Do / Don't)<span class="th-vi">Universal Rule Codified</span></th>
+            <th>Văn Bản Thể Chế Đã Sửa Đổi<span class="th-vi">Policy / System Updated</span></th>
+            <th>Chỉ Số RPF Thực Đo<span class="th-vi">Measured RPF</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ILL-2026-01</strong></td>
+            <td>Cháy bo mạch nguồn do cắm ngược cực pin</td>
+            <td><strong>Must Don't:</strong> Cấm sử dụng cổng kết nối đối xứng cho nguồn DC.<br><strong>Must Do:</strong> Thiết kế jack cắm có ngàm định hướng chống cắm ngược Poka-Yoke.</td>
+            <td>Tiêu Chuẩn Thiết Kế Điện Tử STD-EE-09</td>
+            <td><strong>100%</strong> (0 lỗi / 250,000 sp)</td>
+          </tr>
+          <tr>
+            <td><strong>ILL-2026-02</strong></td>
+            <td>Trễ hạn nộp hồ sơ thầu do mất mạng Internet</td>
+            <td><strong>Must Do:</strong> Toàn bộ hồ sơ thầu phải hoàn tất nộp trước giờ đóng thầu 24 giờ. Cấm nộp trong 60 phút cuối cùng.</td>
+            <td>Quy Chế Đấu Thầu &amp; Pháp Chế BID-POL-04</td>
+            <td><strong>100%</strong> (Không còn sự cố trễ thầu)</td>
+          </tr>
+          <tr>
+            <td><strong>ILL-2026-03</strong></td>
+            <td>Giao hàng thiếu chi tiết do kiểm đếm thủ công</td>
+            <td><strong>Must Don't:</strong> Cấm xuất xưởng thùng hàng khi chưa qua cân điện tử kiểm tra trọng lượng tự động.</td>
+            <td>Quy Trình Xuất Kho WH-SOP-55</td>
+            <td><strong>99.4%</strong> (Giảm từ 160 vụ xuống 1 vụ)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
+  </p>
+</footer>
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

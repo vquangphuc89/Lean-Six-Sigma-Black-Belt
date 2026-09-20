@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thực Hành Ứng Dụng Cơ Hội Sai Lỗi — Phần A (Sản Xuất Cơ Khí Phức Tạp) — Six Sigma Masterclass</title>
+<title>Thực Hành Ứng Dụng Cơ Hội Sai Lỗi — Phần A — Six Sigma Masterclass</title>
 <style>
   :root {
     --wood-deep: #022c22;
@@ -57,7 +57,7 @@
   }
   .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
   .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
-  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
 
   .section-card {
     background: #ffffff;
@@ -250,23 +250,22 @@
     color: #0f172a;
   }
 
-  /* Interactive Arena */
+  /* Trắc Nghiệm & Flashcards */
   .interactive-arena {
-    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
-    border-radius: 16px;
-    padding: 38px 40px;
-    margin: 40px 0;
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--water-ocean) 100%);
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
     color: #ffffff;
-    box-shadow: 0 12px 36px rgba(2,44,34,0.4);
-    border: 2px solid var(--emerald);
+    box-shadow: 0 8px 30px rgba(2,44,34,0.3);
   }
-  .interactive-arena h2 {
-    font-size: 1.7rem;
+  .arena-heading {
+    font-size: 1.55rem;
     font-weight: 800;
+    margin: 0 0 4px;
     color: #ffffff;
-    margin: 0 0 6px;
   }
-  .arena-desc {
+  .arena-subheading {
     color: var(--emerald-mint);
     font-size: 1.02rem;
     margin-bottom: 28px;
@@ -379,44 +378,67 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 12px;
-    padding: 22px 20px;
-    box-sizing: border-box;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
   }
   .flashcard-front {
-    background: linear-gradient(145deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
-    border: 1.5px solid var(--emerald-mint);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(110,231,183,0.3);
     color: #ffffff;
   }
-  .flashcard-front .term { font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
-  .flashcard-front .term-vi { font-size: 0.9rem; color: var(--emerald-mint); font-style: italic; }
-  .flashcard-front .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
-  
   .flashcard-back {
-    background: linear-gradient(145deg, #064e3b, #047857);
-    border: 1.5px solid #86efac;
+    background: linear-gradient(135deg, var(--emerald-vibrant) 0%, var(--wood-dark) 100%);
     color: #ffffff;
     transform: rotateY(180deg);
-    font-size: 0.92rem;
-    line-height: 1.55;
-    text-align: left;
+    border: 1px solid var(--emerald-mint);
   }
-  .flashcard-back strong { color: #fef08a; }
-  .flashcard-back .vi { display: block; margin-top: 8px; color: #d1fae5; font-size: 0.86rem; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 6px; }
+  .fc-num {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .fc-q { font-size: 0.98rem; font-weight: 600; line-height: 1.45; }
+  .fc-a { font-size: 0.92rem; line-height: 1.5; }
+
+  /* Data Table */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .data-table th {
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+  }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
 
   /* Action Checklist */
   .action-item {
     display: flex;
     align-items: flex-start;
-    gap: 14px;
+    gap: 12px;
     padding: 14px 16px;
     background: #f8fafc;
     border-radius: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     border: 1px solid #e2e8f0;
+    cursor: pointer;
   }
   .action-item input[type="checkbox"] {
     width: 20px;
@@ -451,9 +473,9 @@
 <header class="hero">
   <div class="hero-inner">
     <span class="hero-badge">04. Process Management • 06. Defect Opportunity</span>
-    <h1 class="hero-title">Thực Hành Ứng Dụng Cơ Hội Sai Lỗi — Phần A (Sản Xuất Cơ Khí Phức Tạp)</h1>
-    <div class="hero-title-en">Practical Application of Defect Opportunities - Part A</div>
-    <p class="hero-desc">Thực hành ứng dụng toàn diện cơ hội sai lỗi trong sản xuất công nghiệp: Bài toán gia công lốc máy và lắp ráp động cơ ô tô đa công đoạn, phân rã ma trận TOP và Năng suất dồn RTY.</p>
+    <h1 class="hero-title">Thực Hành Ứng Dụng Cơ Hội Sai Lỗi — Phần A</h1>
+    <div class="hero-title-en">Practical Application of Defect Opportunities — Part A</div>
+    <p class="hero-desc">Hệ Thống Kiểm Toán Và Quản Trị Hiệu Suất Golden Spur (DPMO-Based Performance Audit System): 6,288 cơ hội sai lỗi toàn trang trại, 5 thước đo điều hành gắn với quỹ thưởng nhân viên và lộ trình chinh phục 5.0 Sigma.</p>
   </div>
 </header>
 
@@ -461,211 +483,360 @@
 
   <!-- PHẦN 1: EXECUTIVE SUMMARY -->
   <section class="section-card">
-    <span class="section-num">Phần 1 • Executive Summary</span>
-    <h2 class="section-heading">Tóm Tắt Điều Hành (Executive Summary)</h2>
-    <div class="section-subheading">Nắm trọn tinh hoa bài học trong 60 giây</div>
-    <div class="exec-summary"><ul><li>Bài tập thực chiến sản xuất cơ khí: Lắp ráp Động cơ V6 gồm 4 công đoạn chính: Đúc lốc máy &rarr; Gia công cơ khí CNC &rarr; Lắp ráp trục khuỷu piston &rarr; Thử nghiệm động lực học.</li><li>Xác định ma trận $O_i$ cho từng công đoạn: Xác lập tổng số $TOP = \sum (U_i 	imes O_i)$ trên quy mô sản xuất 1,000 động cơ.</li><li>Tính toán chi tiết DPU, DPO, DPMO và Z_score cho từng công đoạn thành phần.</li><li>Tổng hợp Năng suất dồn ($RTY$) của toàn bộ dây chuyền và lượng hóa chi phí thất thoát COPQ tại công đoạn điểm nghẽn.</li></ul></div>
+    <span class="section-num">Trụ Cột 1 • Tóm Tắt Điều Hành</span>
+    <h2 class="section-heading">Executive Summary &amp; Thước Đo Lãnh Đạo</h2>
+    <div class="section-subheading">Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Quy mô Ma trận Toàn trang trại Golden Spur:</strong> Riêng hạng mục Tòa nhà và Phòng ốc có 88 hàng và 21 cột &rarr; tạo ra 1,848 cơ hội. Khi tính toán toàn bộ các danh mục (xe cộ, công cụ, động vật, thức ăn, hàng rào, sân bãi, hồ bơi), tổng số cơ hội sai lỗi toàn trang trại lên tới đúng <em>6,288 cơ hội</em> cho những điều có thể đi chệch khỏi giá trị.</li>
+        <li><strong>Năm Thước đo Quản trị Điều hành (The 5 Executive Metrics):</strong><br>&bull; 1. <em>Quality (Chất lượng):</em> Đếm số sai lệch (Discrepancies) trên Mẫu số Cơ hội (6,288) &bull; Trọng số: 25%.<br>&bull; 2. <em>Safety (An toàn):</em> Đếm số sự cố (Incidents) trên Mẫu số Giờ làm việc thực tế &bull; Trọng số cao (Heavy hitter).<br>&bull; 3. <em>Productivity (Năng suất):</em> Đếm số việc tồn đọng chưa sửa (Carryovers) trên Mẫu số Tổng số sai lệch &bull; Trọng số cao (Heavy hitter).<br>&bull; 4. <em>Attendance (Chuyên cần):</em> Đếm số giờ mất (Lost hours) trên Mẫu số Giờ dự kiến &bull; Trọng số vừa.<br>&bull; 5. <em>Savings (Tiết kiệm):</em> Đếm số hành động cải tiến trên Mẫu số Cơ hội tiết kiệm.</li>
+        <li><strong>Gắn kết trực tiếp với Quỹ tiền thưởng nhân viên (Bonus Pool):</strong> Toàn bộ điểm số DPMO và mức Sigma của 5 thước đo trên được tổng hợp theo trọng số để hình thành quỹ thưởng minh bạch cho toàn thể nhân viên trang trại.</li>
+        <li><strong>Lộ trình cải tiến từ 3.65 Sigma lên 5.0 Sigma:</strong><br>&bull; Mốc cơ sở (Tháng 3/2001): 101 sai lệch/kỳ kiểm toán &approx; 3.65 Sigma (Dr. Harry hài hước: <em>"Chúng tôi làm việc trang trại tốt tương đương các hãng hàng không xử lý hành lý thất lạc!"</em>).<br>&bull; Mục tiêu 1 năm: Đạt 4.0 Sigma (yêu cầu tốc độ cải tiến liên tục 1.8% &ndash; 2.0% mỗi tuần).<br>&bull; Mục tiêu 2 năm (Tháng 3/2003): Đạt đẳng cấp thế giới 5.0 Sigma.</li>
+      </ul>
+    </div>
     <div class="pro-tip">
-      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Insight)</div>
-      <p class="pro-tip-desc">Khi làm bài toán sản xuất đa công đoạn, hãy lập bảng tính Excel theo đúng 4 cột: Công đoạn, Số đơn vị U, Số cơ hội O, Số lỗi D. Từ 4 cột này, bạn sẽ tính ra toàn bộ thế giới Six Sigma một cách chính xác tuyệt đối!</p>
+      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Practical Insight)</div>
+      <p class="pro-tip-desc">Đây là tinh hoa của Quản trị Hiệu suất Six Sigma (Performance Management): Biến các cơ hội sai lỗi kỹ thuật thành một hệ thống thưởng phạt tài chính minh bạch, nơi mỗi công nhân đều hiểu rõ 1 lỗi tồn đọng (Carryover) làm sụt giảm bao nhiêu tiền thưởng của chính họ!</p>
     </div>
   </section>
 
   <!-- PHẦN 2: CORE FRAMEWORKS & REAL MATH -->
   <section class="section-card">
-    <span class="section-num">Phần 2 • Core Frameworks &amp; Real Math</span>
-    <h2 class="section-heading">Nguyên Lý &amp; Công Thức Lượng Hóa</h2>
-    <div class="section-subheading">Các mô hình định lượng và công thức chuyển hóa hiệu suất thực chiến</div>
-    <p>Trong bài thực hành phần A, Dr. Mikel Harry hướng dẫn giải chi tiết bài toán ứng dụng cơ hội sai lỗi trong sản xuất chế tạo đa công đoạn:</p>
+    <span class="section-num">Trụ Cột 2 • Khung Lý Thuyết &amp; Mô Hình Toán Học</span>
+    <h2 class="section-heading">Nguyên Lý Lượng Hóa Cốt Lõi</h2>
+    <div class="section-subheading">Mô hình toán học thuần túy giải phóng quy trình khỏi biến thiên cảm tính</div>
+    <p>Dr. Mikel J. Harry công bố toàn bộ cấu trúc toán học và quy trình tính toán của Hệ thống Quản trị Hiệu suất DPMO tại Golden Spur Ranch:</p>
     
-    <div class="math-card">
-      <div class="title">1. Ma Trận Cơ Hội Tổng Thể Đa Công Đoạn / Multi-Stage TOP Matrix</div>
-      <div class="math-equation"><i>TOP</i><sub>System</sub> = &sum;<sub>i=1</sub><sup>k</sup> (<i>U</i><sub>i</sub> &times; <i>O</i><sub>i</sub>) &nbsp;|&nbsp; <i>DPU</i><sub>System</sub> = &sum;<sub>i=1</sub><sup>k</sup> <div class="math-frac"><div class="math-num"><i>D</i><sub>i</sub></div><div class="math-den"><i>U</i><sub>i</sub></div></div></div>
-      <div class="desc"><strong>Tổng hợp hệ thống:</strong><br>&bull; Mẫu số tổng thể và tử số khuyết tật tích lũy qua toàn bộ chuỗi sản xuất.</div>
-    </div>
-    <div class="math-card">
-      <div class="title">2. Năng Suất Dồn Xác Suất / Rolled Throughput Yield Formulation</div>
-      <div class="math-equation"><i>RTY</i> = <i>e</i><sup>&minus;<i>DPU</i><sub>System</sub></sup> &nbsp;&rArr;&nbsp; <i>Z</i><sub>System, ST</sub> = &Phi;<sup>&minus;1</sup>(<i>RTY</i>) + 1.50</div>
-      <div class="desc"><strong>Mô hình Poisson:</strong><br>&bull; Phản ánh xác suất động cơ hoàn thành không có bất kỳ lỗi nào qua cả 4 công đoạn.</div>
-    </div>
-    <div class="math-card">
-      <div class="title">3. Phương Trình Phân Tích Đóng Góp Điểm Nghẽn / Bottleneck Leverage Analysis</div>
-      <div class="math-equation"><i>Bottleneck Ratio</i> = <div class="math-frac"><div class="math-num"><i>DPU</i><sub>Max Stage</sub></div><div class="math-den"><i>DPU</i><sub>System</sub></div></div> &ge; 50%</div>
-      <div class="desc"><strong>Định vị mục tiêu:</strong><br>&bull; Công đoạn chiếm trên 50% tổng DPU được chỉ định làm dự án Black Belt số 1.</div>
-    </div>
+    
+      <div class="math-card">
+        <div class="title">1. Thuật Toán Tính Toán 2 Bước / 2-Step DPMO Computation Protocol</div>
+        <div class="math-equation"><i>Step 1:</i> <i>C</i> = <div class="math-frac"><div class="math-num"><i>Count</i> (<i>A</i>)</div><div class="math-den"><i>Base</i> (<i>B</i>)</div></div> &nbsp;|&nbsp; <i>Step 2:</i> <i>DPMO</i> = <i>C</i> &times; 1,000,000</div>
+        <div class="desc"><strong>Quy trình chuẩn:</strong><br>&bull; <em>Bước 1:</em> Lấy số đếm sai lệch <em>A</em> chia cho cơ sở cơ hội <em>B</em> để ra tỷ số <em>C</em>.<br>&bull; <em>Bước 2:</em> Nhân <em>C</em> với 1,000,000 để ra chỉ số DPMO chuẩn hóa toàn cầu.</div>
+      </div>
+
+      <div class="math-card">
+        <div class="title">2. Cấu Trúc Trọng Số Quỹ Thưởng / Weighted Performance Score Model</div>
+        <div class="math-equation"><i>Score</i><sub>Total</sub> = 0.25 &times; <i>Z</i><sub>Quality</sub> + <i>w</i><sub><i>S</i></sub> &times; <i>Z</i><sub>Safety</sub> + <i>w</i><sub><i>P</i></sub> &times; <i>Z</i><sub>Productivity</sub> + <i>w</i><sub><i>A</i></sub> &times; <i>Z</i><sub>Attendance</sub> + <i>w</i><sub><i>$</i></sub> &times; <i>Z</i><sub>Savings</sub></div>
+        <div class="desc"><strong>Tích hợp điều hành:</strong><br>&bull; An toàn (Safety) và Năng suất tồn đọng (Productivity Carryovers) là hai trọng số lớn nhất (Heavy hitters).<br>&bull; Điểm số tổng hợp quyết định quy mô giải ngân quỹ thưởng nhân viên.</div>
+      </div>
+
+      <div class="math-card">
+        <div class="title">3. Phương Trình Tốc Độ Cải Tiến Hàng Tuần / Weekly Improvement Trajectory</div>
+        <div class="math-equation"><i>DPMO</i><sub><i>w</i></sub> = <i>DPMO</i><sub>0</sub> &times; (1 &minus; <i>r</i>)<sup><i>w</i></sup> &nbsp;|&nbsp; <i>r</i> &approx; 1.8% &ndash; 2.0% / <i>week</i> &rArr; &Delta;<i>Z</i> = +0.35 &sigma; / <i>year</i></div>
+        <div class="desc"><strong>Động học chuyển hóa:</strong><br>&bull; Để nâng từ 3.65 Sigma lên 4.0 Sigma trong vòng 52 tuần, hệ thống bắt buộc phải duy trì tốc độ giảm lỗi đều đặn 1.8% &ndash; 2.0% mỗi tuần.</div>
+      </div>
+
     <div class="pro-tip">
       <div class="pro-tip-title">MBB Interpretation • Diễn giải điều hành</div>
-      <p class="pro-tip-desc">Thực hành tính toán cụ thể biến lý thuyết trừu tượng thành công cụ thực chiến sắc bén. Bạn sẽ tự tin làm chủ mọi dây chuyền sản xuất phức tạp nhất thế giới.</p>
+      <p class="pro-tip-desc">Lời bình luận của Dr. Harry: "Chúng tôi làm việc trang trại tốt tương đương các hãng hàng không xử lý hành lý" là một bài học đắt giá về sự khiêm nhường và thực tế của Black Belt. Chỉ khi dũng cảm đo lường và thấy mình đang ở 3.65 Sigma, doanh nghiệp mới có thể đặt mục tiêu trở thành Đẳng cấp thế giới.</p>
     </div>
   </section>
 
-  <!-- PHẦN 3: CASE STUDIES -->
+  <!-- PHẦN 3: CASE STUDIES & VS COMPARISON -->
   <section class="section-card">
-    <span class="section-num">Phần 3 • Real-World Case Studies &amp; VS Comparison</span>
-    <h2 class="section-heading">Tình Huống Thực Chiến &amp; Bảng Đối Chiếu</h2>
-    <div class="section-subheading">Một lăng kính cho sản xuất, một lăng kính cho dịch vụ</div>
+    <span class="section-num">Trụ Cột 3 • Tình Huống Thực Chiến &amp; Đối Chiếu Phản Tư</span>
+    <h2 class="section-heading">Nghiên Cứu Điển Hình Công Nghiệp &amp; Dịch Vụ</h2>
+    <div class="section-subheading">Từ thực tiễn nhà xưởng phức tạp đến dòng chảy dịch vụ giao dịch thương mại</div>
+    
     <div class="case-grid">
       <div class="case-card mfg">
-        <span class="case-tag mfg">Sản xuất • Nhà máy Sản xuất Động cơ V6</span>
-        <h3 class="case-title">Giải bài toán toàn diện 4 công đoạn động cơ V6</h3>
-        <p class="case-body">Khảo sát U = 1,000 động cơ qua 4 khâu: (1) Đúc lốc: O1=15, D1=45 &rarr; DPU1=0.045, DPO1=0.00300 (4.25&sigma;); (2) Gia công CNC: O2=40, D2=220 &rarr; DPU2=0.220, DPO2=0.00550 (4.05&sigma;); (3) Lắp ráp piston: O3=60, D3=35 &rarr; DPU3=0.035, DPO3=0.00058 (4.75&sigma;); (4) Thử nghiệm Dyno: O4=10, D4=12 &rarr; DPU4=0.012, DPO4=0.00120 (4.54&sigma;).</p>
-        <div class="case-metric"><strong>Phân tích MBB:</strong> Tổng DPU = 0.312 &rarr; RTY = e^(-0.312) = 73.20% &rarr; Z_ST = 2.12 Sigma. Khâu Gia công CNC chiếm 70.5% tổng số lỗi (0.220/0.312) &rarr; Tập trung Black Belt xử lý dao tiện CNC nâng RTY lên 96.5%.</div>
+        <span class="case-tag mfg">Nhà Máy Sản Xuất Thép Tấm</span>
+        <h3 class="case-title">Áp Dụng Mô Hình Golden Spur Vào Hệ Thống Thưởng An Toàn & Năng Suất</h3>
+        <p class="case-body">Nhà máy cán thép có 12,000 cơ hội lỗi an toàn và thiết bị mỗi tháng. Ban tổng giám đốc áp dụng đúng 5 thước đo của Dr. Harry: Chất lượng tấm thép (25% trọng số); Sự cố an toàn lao động (Heavy hitter); Tồn đọng lỗi thiết bị qua ca (Heavy hitter); Tỷ lệ chuyên cần; và Tiết kiệm phế liệu. Điểm tổng hợp liên kết với 15% quỹ lương mềm.</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Sau 1 năm duy trì tốc độ cải tiến 1.9%/tuần, mức Sigma toàn nhà máy tăng từ 3.42 lên 4.15 Sigma, tai nạn lao động giảm 85%, giải phóng 2.1 triệu USD tiền thưởng cho công nhân từ chi phí tiết kiệm được.</div>
       </div>
       <div class="case-card svc">
-        <span class="case-tag svc">Dịch vụ • Trung tâm Đăng kiểm và Dịch vụ Sau bán hàng</span>
-        <h3 class="case-title">Xác lập cơ hội lỗi trong quy trình bảo dưỡng động cơ tại đại lý</h3>
-        <p class="case-body">Quy trình kiểm tra bảo dưỡng gồm 15 tiêu chí CTQ: Thay dầu đúng phẩm cấp, áp lực xi-lanh, khe hở xu-páp, kiểm tra bugi, căn chỉnh góc đánh lửa (O = 15). Khảo sát 1,000 xe bảo dưỡng phát hiện 25 lỗi.</p>
-        <div class="case-metric"><strong>Phân tích MBB:</strong> DPO = 25 / (1,000 × 15) = 0.00167 (1,670 DPMO &rarr; Z_ST = 4.43 Sigma), tăng điểm hài lòng bảo dưỡng lên 97.8%.</div>
-      </div></div>
+        <span class="case-tag svc">Tập Đoàn Bán Lẻ & Chuỗi Siêu Thị</span>
+        <h3 class="case-title">Hệ Thống Kiểm Toán DPMO Cho Chuỗi 50 Đại Siêu Thị</h3>
+        <p class="case-body">Áp dụng ma trận 88 hàng x 21 cột phòng ốc của Golden Spur vào kiểm toán siêu thị (Gian hàng, Quầy lạnh, Kho, Thu ngân... với các hành động: Sạch, Chỉnh, Sửa, Bổ sung hàng). Tổng số cơ hội kiểm toán = 5,500 cơ hội/siêu thị. Gắn kết trực tiếp với quỹ thưởng cuối năm của Giám đốc siêu thị.</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Mức cơ sở ban đầu 3.5 Sigma (trung bình 125 lỗi/kỳ kiểm toán) được cải tiến liên tục 2%/tuần, đạt 4.2 Sigma sau 12 tháng, doanh thu chuỗi tăng 14% nhờ siêu thị luôn sạch bóng và đầy đủ hàng hóa.</div>
+      </div>
+    </div>
+
     <div class="vs-grid">
       <div class="vs-col bad">
-        <span class="vs-badge bad">Bad / Trap • Tư duy sai lầm</span>
-        <ul><li>Tùy tiện đếm khống số cơ hội lỗi O (Opportunity Inflation) để làm đẹp điểm Sigma giả tạo.</li><li>Bỏ qua tính độc lập thống kê giữa các cơ hội lỗi, tính gộp cả các lỗi phụ thuộc nhân quả.</li><li>Không chuẩn hóa định nghĩa cơ hội lỗi giữa các nhà máy và các đối tác trong chuỗi cung ứng.</li><li>Xem cơ hội sai lỗi chỉ là lý thuyết thống kê mà không gắn kết với yêu cầu CTQ của khách hàng.</li></ul>
+        <span class="vs-badge bad">❌ Thưởng Phạt Cảm Tính, Mơ Hồ</span>
+        <ul>
+          <li>Đánh giá hiệu suất nhân viên dựa vào sự yêu ghét của cấp quản lý</li>
+          <li>Không có số liệu cơ sở (Baseline) rõ ràng để đo lường sự tiến bộ</li>
+          <li>Chất lượng và An toàn không được lượng hóa về cùng một mẫu số DPMO</li>
+          <li>Không có lộ trình cải tiến hàng tuần định lượng</li>
+        </ul>
       </div>
-      <div class="vs-divider">VS</div>
+      <div class="vs-divider">&harr;</div>
       <div class="vs-col good">
-        <span class="vs-badge good">Good / MBB • Chuẩn Six Sigma</span>
-        <ul><li>Xác lập Cơ hội sai lỗi (Defect Opportunity - O) dựa trên các yêu cầu CTQ độc lập và đo lường được.</li><li>Minh bạch hóa toàn bộ bảng phân rã cơ hội lỗi trong Project Charter có chữ ký phê duyệt.</li><li>Áp dụng nguyên tắc chuẩn hóa cơ hội lỗi để so sánh công bằng giữa sản xuất cơ khí và giao dịch dịch vụ.</li><li>Chống gian lận số liệu thông qua cơ chế kiểm toán độc lập định nghĩa cơ hội sai lỗi (Opportunity Audit).</li></ul>
+        <span class="vs-badge good">✅ Hệ Thống Kiểm Toán Hiệu Suất Golden Spur</span>
+        <ul>
+          <li>Lượng hóa toàn bộ 6,288 cơ hội sai lỗi thành mẫu số công bằng</li>
+          <li>Tích hợp 5 thước đo điều hành với ma trận trọng số minh bạch</li>
+          <li>Liên kết trực tiếp kết quả giảm lỗi DPMO với quỹ tiền thưởng nhân viên</li>
+          <li>Thiết lập lộ trình cải tiến khoa học: 1.8% - 2.0% mỗi tuần để đạt 5 Sigma</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- PHẦN 4: INTERACTIVE ARENA -->
+  <!-- PHẦN 4: INTERACTIVE ARENA (8 QUIZZES & 5 FLASHCARDS) -->
   <section class="interactive-arena">
-    <span class="section-num">Phần 4 • Interactive Arena</span>
-    <h2>Đấu Trường Trắc Nghiệm Tình Huống (Scenario-Based Practice)</h2>
-    <p class="arena-desc">Chọn một đáp án để nhận phản hồi tức thì bằng tiếng Anh chuyên ngành và tiếng Việt ứng dụng.</p>
-    
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 1 • Tầng 1 • Recall & Concept</span>
-      <div class="quiz-q">Trong bài toán sản xuất cơ khí 4 công đoạn, nếu công đoạn 2 có DPU2 = 0.220 trên tổng số DPU_System = 0.312, tỷ trọng đóng góp lỗi của công đoạn 2 là bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q12-1', &quot;Stage 2 defect contribution = 0.220 / 0.312 = 70.51% &amp;approx; 70.5%.&quot;, &quot;Công đoạn 2 chiếm hơn 70% tổng lượng lỗi của toàn bộ dây chuyền, là điểm nghẽn đòn bẩy tuyệt đối.&quot;)">A. Đóng góp 70.5% tổng số lỗi (0.220 / 0.312 = 70.51%)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-1', &quot;Stage 2 defect contribution = 0.220 / 0.312 = 70.51% &amp;approx; 70.5%.&quot;, &quot;Công đoạn 2 chiếm hơn 70% tổng lượng lỗi của toàn bộ dây chuyền, là điểm nghẽn đòn bẩy tuyệt đối.&quot;)">B. Đóng góp 25.0%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-1', &quot;Stage 2 defect contribution = 0.220 / 0.312 = 70.51% &amp;approx; 70.5%.&quot;, &quot;Công đoạn 2 chiếm hơn 70% tổng lượng lỗi của toàn bộ dây chuyền, là điểm nghẽn đòn bẩy tuyệt đối.&quot;)">C. Đóng góp 50.0%</button></div>
-      <div id="fb-q12-1" class="quiz-fb"></div>
+    <span class="section-num" style="background:var(--emerald-vibrant); color:#022c22;">Trụ Cột 4 • Khảo Hạch Năng Lực &amp; Phản Xạ 3D</span>
+    <h2 class="arena-heading">Đấu Trường Khảo Hạch Black Belt</h2>
+    <div class="arena-subheading">8 Tình huống trắc nghiệm chuyên sâu &bull; 5 Thẻ ghi nhớ phản xạ 3D &bull; Chuẩn hóa năng lực SSMI</div>
+
+    <!-- 8 QUIZZES -->
+    <div class="quizzes-container">
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 1/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Tổng số cơ hội sai lỗi được Dr. Mikel J. Harry tính toán cho toàn bộ Trang trại Golden Spur trên tất cả các danh mục là bao nhiêu?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-1', 'Dr. Harry states: &quot;If I do that for each of the categories, we discover a total of 6,288 opportunities for something to go astray with respect to value here at the ranch.&quot;', 'Tính toán cho tất cả các danh mục, chúng tôi phát hiện tổng cộng 6,288 cơ hội để xảy ra sai lệch giá trị tại trang trại.')">A. 1,848 cơ hội</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-12-1', 'Dr. Harry states: &quot;If I do that for each of the categories, we discover a total of 6,288 opportunities for something to go astray with respect to value here at the ranch.&quot;', 'Tính toán cho tất cả các danh mục, chúng tôi phát hiện tổng cộng 6,288 cơ hội để xảy ra sai lệch giá trị tại trang trại.')">B. 6,288 cơ hội sai lỗi (A total of 6,288 opportunities for something to go astray with respect to value)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-1', 'Dr. Harry states: &quot;If I do that for each of the categories, we discover a total of 6,288 opportunities for something to go astray with respect to value here at the ranch.&quot;', 'Tính toán cho tất cả các danh mục, chúng tôi phát hiện tổng cộng 6,288 cơ hội để xảy ra sai lệch giá trị tại trang trại.')">C. 100,000 cơ hội</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-1', 'Dr. Harry states: &quot;If I do that for each of the categories, we discover a total of 6,288 opportunities for something to go astray with respect to value here at the ranch.&quot;', 'Tính toán cho tất cả các danh mục, chúng tôi phát hiện tổng cộng 6,288 cơ hội để xảy ra sai lệch giá trị tại trang trại.')">D. 3,000 cơ hội</button>
+        </div>
+        <div id="fb-12-1" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 2/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Hai thước đo nào được Dr. Harry coi là "trọng tâm lớn nhất" (the big hitters) trong hệ thống đánh giá hiệu suất của trang trại?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-2', 'Dr. Harry explicitly states: &quot;Quality has a 25%. Safety and productivity are the big hitters. And attendance and savings is less weighted.&quot;', 'Chất lượng chiếm 25%. An toàn và năng suất là những trọng tâm lớn nhất (big hitters). Chuyên cần và tiết kiệm có trọng số thấp hơn.')">A. Chuyên cần và Tiết kiệm chi phí</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-12-2', 'Dr. Harry explicitly states: &quot;Quality has a 25%. Safety and productivity are the big hitters. And attendance and savings is less weighted.&quot;', 'Chất lượng chiếm 25%. An toàn và năng suất là những trọng tâm lớn nhất (big hitters). Chuyên cần và tiết kiệm có trọng số thấp hơn.')">B. An toàn (Safety) và Năng suất (Productivity)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-2', 'Dr. Harry explicitly states: &quot;Quality has a 25%. Safety and productivity are the big hitters. And attendance and savings is less weighted.&quot;', 'Chất lượng chiếm 25%. An toàn và năng suất là những trọng tâm lớn nhất (big hitters). Chuyên cần và tiết kiệm có trọng số thấp hơn.')">C. Chất lượng và Chuyên cần</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-2', 'Dr. Harry explicitly states: &quot;Quality has a 25%. Safety and productivity are the big hitters. And attendance and savings is less weighted.&quot;', 'Chất lượng chiếm 25%. An toàn và năng suất là những trọng tâm lớn nhất (big hitters). Chuyên cần và tiết kiệm có trọng số thấp hơn.')">D. Doanh thu bán bò và tiền gửi ngân hàng</button>
+        </div>
+        <div id="fb-12-2" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 3/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Trong thước đo Năng suất (Productivity), khái niệm "Carryovers" được giải thích chính xác là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-3', 'Dr. Harry: &quot;Productivity is carryovers. Now, what do we mean by that? Those are things that didn\'t get fixed that were supposed to have gotten fixed. They’re carryovers. And that\'s a productivity issue.&quot;', 'Năng suất là các lỗi tồn đọng (carryovers) - những việc đáng lẽ phải sửa xong nhưng chưa sửa mà bị kéo dài dây dưa sang kỳ sau.')">A. Hàng hóa mang đi xuất khẩu</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-12-3', 'Dr. Harry: &quot;Productivity is carryovers. Now, what do we mean by that? Those are things that didn\'t get fixed that were supposed to have gotten fixed. They’re carryovers. And that\'s a productivity issue.&quot;', 'Năng suất là các lỗi tồn đọng (carryovers) - những việc đáng lẽ phải sửa xong nhưng chưa sửa mà bị kéo dài dây dưa sang kỳ sau.')">B. Những thứ đã hỏng nhưng không được sửa chữa mà bị tồn đọng chuyển sang chu kỳ sau (Things that didn't get fixed that were supposed to have gotten fixed)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-3', 'Dr. Harry: &quot;Productivity is carryovers. Now, what do we mean by that? Those are things that didn\'t get fixed that were supposed to have gotten fixed. They’re carryovers. And that\'s a productivity issue.&quot;', 'Năng suất là các lỗi tồn đọng (carryovers) - những việc đáng lẽ phải sửa xong nhưng chưa sửa mà bị kéo dài dây dưa sang kỳ sau.')">C. Số tiền mang sang năm tài chính mới</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-3', 'Dr. Harry: &quot;Productivity is carryovers. Now, what do we mean by that? Those are things that didn\'t get fixed that were supposed to have gotten fixed. They’re carryovers. And that\'s a productivity issue.&quot;', 'Năng suất là các lỗi tồn đọng (carryovers) - những việc đáng lẽ phải sửa xong nhưng chưa sửa mà bị kéo dài dây dưa sang kỳ sau.')">D. Các công nhân làm thêm giờ</button>
+        </div>
+        <div id="fb-12-3" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 4/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Mức năng lực cơ sở (Baseline) ban đầu của trang trại vào tháng 3/2001 đạt mức bao nhiêu Sigma?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-4', 'Dr. Harry: &quot;The baseline in March of 2001 was running about, in the audits, about 101 discrepancies per audit, or about 3.65 Sigma.&quot;', 'Đường cơ sở vào tháng 3/2001 ghi nhận khoảng 101 sai lệch trên mỗi kỳ kiểm toán, tương đương mức 3.65 Sigma.')">A. 6.00 Sigma</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-12-4', 'Dr. Harry: &quot;The baseline in March of 2001 was running about, in the audits, about 101 discrepancies per audit, or about 3.65 Sigma.&quot;', 'Đường cơ sở vào tháng 3/2001 ghi nhận khoảng 101 sai lệch trên mỗi kỳ kiểm toán, tương đương mức 3.65 Sigma.')">B. 3.65 Sigma (khoảng 101 sai lệch/kỳ kiểm toán)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-4', 'Dr. Harry: &quot;The baseline in March of 2001 was running about, in the audits, about 101 discrepancies per audit, or about 3.65 Sigma.&quot;', 'Đường cơ sở vào tháng 3/2001 ghi nhận khoảng 101 sai lệch trên mỗi kỳ kiểm toán, tương đương mức 3.65 Sigma.')">C. 2.00 Sigma</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-4', 'Dr. Harry: &quot;The baseline in March of 2001 was running about, in the audits, about 101 discrepancies per audit, or about 3.65 Sigma.&quot;', 'Đường cơ sở vào tháng 3/2001 ghi nhận khoảng 101 sai lệch trên mỗi kỳ kiểm toán, tương đương mức 3.65 Sigma.')">D. 5.00 Sigma</button>
+        </div>
+        <div id="fb-12-4" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 5/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Để đạt được mục tiêu 4.0 Sigma sau 12 tháng từ mức cơ sở 3.65 Sigma, tốc độ cải tiến liên tục hàng tuần cần duy trì là bao nhiêu?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-5', 'Dr. Harry: &quot;We set a weekly rate of improvement of 1.8%, in order to get us to the goal of Four Sigma at the end of 12 months. So basically, I need to improve by about 2% weekly.&quot;', 'Chúng tôi thiết lập tốc độ cải tiến hàng tuần là 1.8% đến 2% mỗi tuần để đạt mục tiêu 4 Sigma sau 12 tháng.')">A. 10% mỗi tuần</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-12-5', 'Dr. Harry: &quot;We set a weekly rate of improvement of 1.8%, in order to get us to the goal of Four Sigma at the end of 12 months. So basically, I need to improve by about 2% weekly.&quot;', 'Chúng tôi thiết lập tốc độ cải tiến hàng tuần là 1.8% đến 2% mỗi tuần để đạt mục tiêu 4 Sigma sau 12 tháng.')">B. Khoảng 1.8% đến 2.0% mỗi tuần (Improve by about 2% weekly)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-5', 'Dr. Harry: &quot;We set a weekly rate of improvement of 1.8%, in order to get us to the goal of Four Sigma at the end of 12 months. So basically, I need to improve by about 2% weekly.&quot;', 'Chúng tôi thiết lập tốc độ cải tiến hàng tuần là 1.8% đến 2% mỗi tuần để đạt mục tiêu 4 Sigma sau 12 tháng.')">C. 0.1% mỗi tuần</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-5', 'Dr. Harry: &quot;We set a weekly rate of improvement of 1.8%, in order to get us to the goal of Four Sigma at the end of 12 months. So basically, I need to improve by about 2% weekly.&quot;', 'Chúng tôi thiết lập tốc độ cải tiến hàng tuần là 1.8% đến 2% mỗi tuần để đạt mục tiêu 4 Sigma sau 12 tháng.')">D. 50% mỗi tháng</button>
+        </div>
+        <div id="fb-12-5" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 6/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Mục tiêu tối thượng dài hạn vào tháng 3/2003 (sau 2 năm) của Dr. Harry cho trang trại là đạt mức năng lực nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-6', 'Dr. Harry: &quot;So, the goal for one year is to get that up to four, and the goal, ultimately, in March 2003 was to get that to Five Sigma... to become world-class in how we operate and run the ranch.&quot;', 'Mục tiêu 1 năm là lên 4 Sigma, và mục tiêu tối thượng vào tháng 3/2003 là đạt 5 Sigma để trở thành đẳng cấp thế giới trong vận hành trang trại.')">A. Đạt 3.8 Sigma</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-12-6', 'Dr. Harry: &quot;So, the goal for one year is to get that up to four, and the goal, ultimately, in March 2003 was to get that to Five Sigma... to become world-class in how we operate and run the ranch.&quot;', 'Mục tiêu 1 năm là lên 4 Sigma, và mục tiêu tối thượng vào tháng 3/2003 là đạt 5 Sigma để trở thành đẳng cấp thế giới trong vận hành trang trại.')">B. Đạt Đẳng cấp thế giới 5.0 Sigma (Five Sigma / become world-class)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-6', 'Dr. Harry: &quot;So, the goal for one year is to get that up to four, and the goal, ultimately, in March 2003 was to get that to Five Sigma... to become world-class in how we operate and run the ranch.&quot;', 'Mục tiêu 1 năm là lên 4 Sigma, và mục tiêu tối thượng vào tháng 3/2003 là đạt 5 Sigma để trở thành đẳng cấp thế giới trong vận hành trang trại.')">C. Đạt 10 Sigma</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-6', 'Dr. Harry: &quot;So, the goal for one year is to get that up to four, and the goal, ultimately, in March 2003 was to get that to Five Sigma... to become world-class in how we operate and run the ranch.&quot;', 'Mục tiêu 1 năm là lên 4 Sigma, và mục tiêu tối thượng vào tháng 3/2003 là đạt 5 Sigma để trở thành đẳng cấp thế giới trong vận hành trang trại.')">D. Duy trì nguyên trạng 3.65 Sigma</button>
+        </div>
+        <div id="fb-12-6" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 7/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Hệ thống kiểm toán hiệu suất DPMO tại Golden Spur được liên kết trực tiếp với cơ chế điều hành nào của tổ chức?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-7', 'Dr. Harry: &quot;In turn, that helps us to form a bonus pool for the employees at the ranch.&quot;', 'Hệ thống điểm số kiểm toán này giúp hình thành quỹ tiền thưởng cho nhân viên làm việc tại trang trại.')">A. Lịch nghỉ phép của ban giám đốc</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-12-7', 'Dr. Harry: &quot;In turn, that helps us to form a bonus pool for the employees at the ranch.&quot;', 'Hệ thống điểm số kiểm toán này giúp hình thành quỹ tiền thưởng cho nhân viên làm việc tại trang trại.')">B. Quỹ tiền thưởng của toàn thể nhân viên (Bonus pool for the employees)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-7', 'Dr. Harry: &quot;In turn, that helps us to form a bonus pool for the employees at the ranch.&quot;', 'Hệ thống điểm số kiểm toán này giúp hình thành quỹ tiền thưởng cho nhân viên làm việc tại trang trại.')">C. Giá bán các sản phẩm nông sản</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-7', 'Dr. Harry: &quot;In turn, that helps us to form a bonus pool for the employees at the ranch.&quot;', 'Hệ thống điểm số kiểm toán này giúp hình thành quỹ tiền thưởng cho nhân viên làm việc tại trang trại.')">D. Hợp đồng vay vốn ngân hàng</button>
+        </div>
+        <div id="fb-12-7" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 8/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Một giám đốc nhà máy muốn áp dụng hệ thống Golden Spur vào doanh nghiệp mình. Trình tự tính toán 2 bước chuẩn tắc của Dr. Harry là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-8', 'Dr. Harry explains the calculation: &quot;Step 1 is A over B. So, we take the count over the base. That\'s equal to C. We multiply C by a million.&quot;', 'Bước 1: Lấy A chia cho B (số đếm chia cơ sở cơ hội) được tỷ số C; Bước 2: Nhân C với 1 triệu để ra DPMO.')">A. Bước 1: Tính chi phí &rarr; Bước 2: Báo cáo thuế</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-12-8', 'Dr. Harry explains the calculation: &quot;Step 1 is A over B. So, we take the count over the base. That\'s equal to C. We multiply C by a million.&quot;', 'Bước 1: Lấy A chia cho B (số đếm chia cơ sở cơ hội) được tỷ số C; Bước 2: Nhân C với 1 triệu để ra DPMO.')">B. Bước 1: Lấy số đếm sai lệch A chia cho cơ sở cơ hội B để ra tỷ số C; Bước 2: Nhân C với 1,000,000 để ra DPMO</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-8', 'Dr. Harry explains the calculation: &quot;Step 1 is A over B. So, we take the count over the base. That\'s equal to C. We multiply C by a million.&quot;', 'Bước 1: Lấy A chia cho B (số đếm chia cơ sở cơ hội) được tỷ số C; Bước 2: Nhân C với 1 triệu để ra DPMO.')">C. Bước 1: Sa thải nhân viên yếu &rarr; Bước 2: Tuyển dụng nhân sự mới</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-12-8', 'Dr. Harry explains the calculation: &quot;Step 1 is A over B. So, we take the count over the base. That\'s equal to C. We multiply C by a million.&quot;', 'Bước 1: Lấy A chia cho B (số đếm chia cơ sở cơ hội) được tỷ số C; Bước 2: Nhân C với 1 triệu để ra DPMO.')">D. Bước 1: Mua máy tính &rarr; Bước 2: Nhập số liệu tùy ý</button>
+        </div>
+        <div id="fb-12-8" class="quiz-fb"></div>
+      </div>
     </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 2 • Tầng 1 • Recall & Concept</span>
-      <div class="quiz-q">Khi biết tổng chỉ số DPU của hệ thống sản xuất là DPU_System = 0.312, công thức nào tính chính xác Năng suất dồn RTY của toàn bộ dây chuyền?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q12-2', &quot;Poisson rolled yield formulation strictly computes RTY = e^(-0.312) = 73.20%.&quot;, &quot;Năng suất dồn xác suất RTY bằng e mũ trừ 0.312, đạt chính xác 73.20%.&quot;)">A. RTY = e^(-0.312) &amp;approx; 73.20%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-2', &quot;Poisson rolled yield formulation strictly computes RTY = e^(-0.312) = 73.20%.&quot;, &quot;Năng suất dồn xác suất RTY bằng e mũ trừ 0.312, đạt chính xác 73.20%.&quot;)">B. RTY = 1 - 0.312 = 68.80%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-2', &quot;Poisson rolled yield formulation strictly computes RTY = e^(-0.312) = 73.20%.&quot;, &quot;Năng suất dồn xác suất RTY bằng e mũ trừ 0.312, đạt chính xác 73.20%.&quot;)">C. RTY = 0.312 / 100 = 0.312%</button></div>
-      <div id="fb-q12-2" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 3 • Tầng 2 • Analytical & Math</span>
-      <div class="quiz-q">Một xưởng đúc có U = 1,000 lốc máy. Mỗi lốc máy có O = 15 cơ hội. Phát hiện D = 45 lỗi. Chỉ số DPU, DPO và DPMO của xưởng đúc là bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q12-3', &quot;DPU = 45 / 1,000 = 0.045; DPO = 45 / (1,000 × 15) = 0.00300; DPMO = 3,000.&quot;, &quot;DPU = 0.045 defects/lốc, DPO = 0.00300 và DPMO = 3,000 lỗi trên một triệu cơ hội.&quot;)">A. DPU = 0.045; DPO = 0.00300; DPMO = 3,000 lỗi</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-3', &quot;DPU = 45 / 1,000 = 0.045; DPO = 45 / (1,000 × 15) = 0.00300; DPMO = 3,000.&quot;, &quot;DPU = 0.045 defects/lốc, DPO = 0.00300 và DPMO = 3,000 lỗi trên một triệu cơ hội.&quot;)">B. DPU = 0.450; DPO = 0.03000; DPMO = 30,000</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-3', &quot;DPU = 45 / 1,000 = 0.045; DPO = 45 / (1,000 × 15) = 0.00300; DPMO = 3,000.&quot;, &quot;DPU = 0.045 defects/lốc, DPO = 0.00300 và DPMO = 3,000 lỗi trên một triệu cơ hội.&quot;)">C. DPU = 0.003; DPO = 0.00020; DPMO = 200</button></div>
-      <div id="fb-q12-3" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 4 • Tầng 2 • Analytical & Math</span>
-      <div class="quiz-q">Dây chuyền sản xuất 100,000 động cơ/năm với RTY = 73.20% (26.8% động cơ bị lỗi phải sửa chữa lại). Chi phí sửa chữa trung bình là $350/động cơ. Dự án Six Sigma nâng RTY lên 96.50% (lỗi giảm còn 3.5%). Số tiền tiết kiệm hàng năm là bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q12-4', &quot;Annual savings = 100,000 × (0.268 - 0.035) × $350 = 23,300 recovered engines × $350 = $8,155,000/year.&quot;, &quot;Tăng RTY từ 73.2% lên 96.5% giải phóng hơn 8.1 triệu USD chi phí sửa chữa động cơ mỗi năm.&quot;)">A. $8,155,000/năm (100,000 × (26.8% - 3.5%) × $350 = 23,300 × $350)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-4', &quot;Annual savings = 100,000 × (0.268 - 0.035) × $350 = 23,300 recovered engines × $350 = $8,155,000/year.&quot;, &quot;Tăng RTY từ 73.2% lên 96.5% giải phóng hơn 8.1 triệu USD chi phí sửa chữa động cơ mỗi năm.&quot;)">B. $1,000,000/năm</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-4', &quot;Annual savings = 100,000 × (0.268 - 0.035) × $350 = 23,300 recovered engines × $350 = $8,155,000/year.&quot;, &quot;Tăng RTY từ 73.2% lên 96.5% giải phóng hơn 8.1 triệu USD chi phí sửa chữa động cơ mỗi năm.&quot;)">C. $3,500,000/năm</button></div>
-      <div id="fb-q12-4" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 5 • Tầng 3 • Executive Decision</span>
-      <div class="quiz-q">Sau khi hoàn thành bài toán phân tích 4 công đoạn, Black Belt nên trình bày kế hoạch hành động với Ban Giám đốc Nhà máy như thế nào?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q12-5', &quot;Present the DPU Heatmap and launch Black Belt Project #1 attacking the CNC Machining bottleneck (70% of defects) to save $5.8M.&quot;, &quot;Trình bày trực quan điểm nghẽn Gia công CNC chiếm 70% lỗi và cam kết tiết kiệm hàng triệu USD là cách thuyết phục lãnh đạo hoàn hảo nhất.&quot;)">A. Trình bày Bản đồ Nhiệt DPU: Đề xuất mở ngay Dự án Black Belt số 1 tập trung 100% vào khâu Gia công CNC (nơi chiếm 70% lỗi) để nén DPU từ 0.220 xuống 0.020, cam kết tiết kiệm 5.8 triệu USD trong 6 tháng</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-5', &quot;Present the DPU Heatmap and launch Black Belt Project #1 attacking the CNC Machining bottleneck (70% of defects) to save $5.8M.&quot;, &quot;Trình bày trực quan điểm nghẽn Gia công CNC chiếm 70% lỗi và cam kết tiết kiệm hàng triệu USD là cách thuyết phục lãnh đạo hoàn hảo nhất.&quot;)">B. Đề xuất thay toàn bộ máy móc cả 4 khâu</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-5', &quot;Present the DPU Heatmap and launch Black Belt Project #1 attacking the CNC Machining bottleneck (70% of defects) to save $5.8M.&quot;, &quot;Trình bày trực quan điểm nghẽn Gia công CNC chiếm 70% lỗi và cam kết tiết kiệm hàng triệu USD là cách thuyết phục lãnh đạo hoàn hảo nhất.&quot;)">C. Yêu cầu công nhân làm việc cẩn thận hơn</button></div>
-      <div id="fb-q12-5" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 6 • Tầng 3 • Executive Decision</span>
-      <div class="quiz-q">Chỉ số thống kê nào nên được đưa vào bảng lương thưởng hàng tháng của Quản đốc Phân xưởng Gia công CNC?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q12-6', &quot;First Time Yield (FTY) and CNC Stage DPO linked directly to quality performance bonus.&quot;, &quot;Gắn chỉ số FTY và DPO của công đoạn vào chính sách thưởng giúp Quản đốc luôn tập trung kiểm soát chất lượng ngay từ nguồn.&quot;)">A. Chỉ số Năng suất Lần đầu (FTY) và Mật độ lỗi DPO của khâu CNC</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-6', &quot;First Time Yield (FTY) and CNC Stage DPO linked directly to quality performance bonus.&quot;, &quot;Gắn chỉ số FTY và DPO của công đoạn vào chính sách thưởng giúp Quản đốc luôn tập trung kiểm soát chất lượng ngay từ nguồn.&quot;)">B. Tổng số giờ làm thêm ca</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q12-6', &quot;First Time Yield (FTY) and CNC Stage DPO linked directly to quality performance bonus.&quot;, &quot;Gắn chỉ số FTY và DPO của công đoạn vào chính sách thưởng giúp Quản đốc luôn tập trung kiểm soát chất lượng ngay từ nguồn.&quot;)">C. Số lượng phôi sắt đã tiện</button></div>
-      <div id="fb-q12-6" class="quiz-fb"></div>
-    </div>
-    <h3 style="color:#fff; margin-top:38px; font-size:1.25rem;">🎴 Flashcards Ôn Tập Nhanh (Click để lật thẻ 3D)</h3>
+
+    <!-- 5 FLASHCARDS -->
+    <h3 style="color:#ffffff; margin: 38px 0 10px; font-size:1.25rem;">Thẻ Ghi Nhớ Phản Xạ Nhanh 3D (Interactive Flip Cards)</h3>
+    <p style="color:var(--emerald-mint); font-size:0.92rem; margin-bottom:20px;">Nhấp vào thẻ để lật mặt sau và kiểm tra phản xạ cốt lõi:</p>
     <div class="flashcards-grid">
+      
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Practical Manufacturing Application</div>
-            <div class="term-vi">Ứng dụng thực hành sản xuất</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #1 • Nhấn để lật</span>
+            <div class="fc-q">Tổng số cơ hội sai lỗi được xác định trên toàn bộ Trang trại Golden Spur là bao nhiêu?</div>
           </div>
           <div class="flashcard-back">
-            <strong>End-to-end mathematical baseline computation on multi-stage line</strong>
-            <span class="vi">Quy trình tính toán thực chứng đường cơ sở trên dây chuyền nhiều công đoạn.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Tổng cộng có đúng 6,288 cơ hội sai lỗi cho những điều có thể đi chệch khỏi giá trị trên toàn trang trại.</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Multi-Stage TOP Matrix</div>
-            <div class="term-vi">Ma trận tổng cơ hội đa khâu</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #2 • Nhấn để lật</span>
+            <div class="fc-q">Năm thước đo quản trị điều hành cốt lõi trong hệ thống kiểm toán của Dr. Harry là gì?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Cumulative opportunities across sequential machining and assembly</strong>
-            <span class="vi">Bảng tổng hợp số cơ hội sai lỗi tích lũy qua các bước sản xuất.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">1. Quality (Chất lượng); 2. Safety (An toàn); 3. Productivity (Năng suất - Lỗi tồn đọng); 4. Attendance (Chuyên cần); 5. Savings (Tiết kiệm).</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Bottleneck Stage Leverage</div>
-            <div class="term-vi">Đòn bẩy công đoạn điểm nghẽn</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #3 • Nhấn để lật</span>
+            <div class="fc-q">Trong thước đo Năng suất (Productivity), khái niệm "Carryovers" nghĩa là gì?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Isolating the single process step generating majority of DPU</strong>
-            <span class="vi">Khoanh vùng công đoạn đóng góp trên 50% lượng phế phẩm toàn nhà máy.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Là những sự cố, sai lệch không được sửa chữa mà bị tồn đọng, mang vác sang các ca làm việc hoặc chu kỳ tiếp theo.</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Rolled Yield Surge</div>
-            <div class="term-vi">Bứt phá năng suất dồn</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #4 • Nhấn để lật</span>
+            <div class="fc-q">Mức năng lực cơ sở ban đầu (Baseline) của trang trại vào tháng 3/2001 là bao nhiêu?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Dramatic increase in RTY achieved by curing the bottleneck stage</strong>
-            <span class="vi">Sự tăng vọt của năng suất tổng thể khi giải quyết dứt điểm mắt xích yếu nhất.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Khoảng 101 sai lệch/kỳ kiểm toán, tương đương mức năng lực 3.65 Sigma (tương đương năng lực ngành hàng không xử lý hành lý).</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Engine Dynamic Dyno Test</div>
-            <div class="term-vi">Thử nghiệm động lực học Dyno</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #5 • Nhấn để lật</span>
+            <div class="fc-q">Để đạt mục tiêu nâng từ 3.65 Sigma lên 4.0 Sigma trong vòng 1 năm, tốc độ cải tiến hàng tuần cần đạt là bao nhiêu?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Final functional verification step confirming engine power and emissions</strong>
-            <span class="vi">Bước kiểm tra chức năng công suất và khí thải cuối cùng của động cơ.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Cần duy trì tốc độ cải tiến liên tục khoảng 1.8% đến 2.0% mỗi tuần (Improve by about 2% weekly).</div>
           </div>
         </div>
-      </div></div>
+      </div>
+    </div>
   </section>
 
-  <!-- PHẦN 5: ACTION CHECKLIST -->
+  <!-- PHẦN 5: ACTION CHECKLIST & TEMPLATES -->
   <section class="section-card">
-    <span class="section-num">Phần 5 • 1-Page Action Checklist &amp; Template</span>
-    <h2 class="section-heading">Checklist Hành Động Tại Doanh Nghiệp</h2>
-    <div class="section-subheading">Thực thi quản trị quy trình theo chuẩn mực Master Black Belt</div>
-    <label class="action-item"><input type="checkbox"><span class="action-text"><strong>Lập bảng tính 4 cột (Khâu, U, O, D) cho toàn bộ dây chuyền:</strong> Thu thập dữ liệu chính xác tại từng trạm kiểm tra trung gian.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Tính toán DPU từng khâu và Năng suất dồn RTY tổng thể:</strong> Xác định công đoạn chiếm &amp;ge; 50% DPU làm mục tiêu đột phá.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Xây dựng Project Charter với mục tiêu nâng RTY lên &amp;ge; 95%:</strong> Trình ký phê duyệt dự án cải tiến cùng Financial Champion.</span></label>
-    <h3 style="color:var(--wood-dark); margin-top:28px;">Template Quản Trị Quy Trình (Process Management Template)</h3>
-    <div style="overflow-x:auto;">
-      <table style="width:100%; border-collapse:collapse; margin-top:12px; font-size:0.92rem; background:#ffffff;">
-        <thead><tr style="background:#064e3b; color:#fff;">
-          <th style="padding:10px; text-align:left; border-radius:6px 0 0 0;">Hạng mục thực thi</th>
-          <th style="padding:10px; text-align:left;">Thông số / Dữ liệu cần xác lập</th>
-          <th style="padding:10px; text-align:left; border-radius:0 6px 0 0;">Tiêu chuẩn kiểm chứng (Deliverable)</th>
-        </tr></thead>
-        <tbody><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Công đoạn sản xuất V6</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Dữ liệu đo (U, O, D)</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">DPU &amp; DPO công đoạn</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">1. Đúc lốc máy nhôm</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">U=1,000, O=15, D=45</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">DPU=0.045 | DPO=0.00300</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">2. Gia công CNC thân lốc</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">U=1,000, O=40, D=220</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">DPU=0.220 | DPO=0.00550</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">3. Lắp ráp piston trục khuỷu</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">U=1,000, O=60, D=35</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">DPU=0.035 | DPO=0.00058</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">4. Thử nghiệm Dyno test</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">U=1,000, O=10, D=12</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">DPU=0.012 | DPO=0.00120</td></tr></tbody>
+    <span class="section-num">Trụ Cột 5 • Sáng Thứ Hai Làm Gì?</span>
+    <h2 class="section-heading">Kế Hoạch Hành Động 3 Bước &amp; Biểu Mẫu Thực Thi</h2>
+    <div class="section-subheading">Quy trình tác chiến hiện trường dành cho Giám đốc Chất lượng &amp; Black Belt</div>
+
+    
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 1:</strong> Tính toán tổng số cơ hội sai lỗi toàn diện của cơ sở (Base B) trên toàn bộ tài sản và công đoạn.
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 2:</strong> Xây dựng bảng quy đổi DPMO và ma trận 5 thước đo (Chất lượng 25%, An toàn & Năng suất tồn đọng trọng số cao).
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 3:</strong> Thiết lập nhịp kiểm toán định kỳ hàng tuần, theo dõi tốc độ cải tiến mục tiêu 2%/tuần và công khai quỹ thưởng.
+      </span>
+    </label>
+
+    <h3 style="color:var(--wood-dark); margin-top:32px; font-size:1.15rem;">Biểu Mẫu Quản Trị &amp; Khung Kiểm Soát Thực Chiến</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Thước Đo Điều Hành</th><th>Số Đếm (Tử Số A)</th><th>Cơ Sở Cơ Hội (Mẫu Số B)</th><th>Trọng Số Quỹ Thưởng</th><th>Ý Nghĩa Vận Hành</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><strong>Chất Lượng (Quality)</strong></td>
+              <td>Số sai lệch ghi nhận (Discrepancies)</td>
+              <td>Tổng cơ hội O = 6,288</td>
+              <td>25%</td>
+              <td>Độ hoàn hảo của cơ sở hạ tầng</td>
+            </tr>
+            <tr>
+              <td><strong>An Toàn (Safety)</strong></td>
+              <td>Số sự cố tai nạn (Incidents)</td>
+              <td>Tổng giờ làm việc thực tế</td>
+              <td>Trọng tâm cao (Heavy hitter)</td>
+              <td>Bảo toàn tính mạng và sức khỏe</td>
+            </tr>
+            <tr>
+              <td><strong>Năng Suất (Productivity)</strong></td>
+              <td>Số lỗi tồn đọng (Carryovers)</td>
+              <td>Tổng số sai lệch cần sửa</td>
+              <td>Trọng tâm cao (Heavy hitter)</td>
+              <td>Tốc độ giải quyết dứt điểm vấn đề</td>
+            </tr>
+            <tr>
+              <td><strong>Chuyên Cần (Attendance)</strong></td>
+              <td>Số giờ vắng mặt (Lost hours)</td>
+              <td>Tổng giờ làm việc dự kiến</td>
+              <td>Trung bình</td>
+              <td>Tính kỷ luật và độ sẵn sàng</td>
+            </tr>
+            <tr>
+              <td><strong>Tiết Kiệm (Savings)</strong></td>
+              <td>Số hành động cải tiến hoàn tất</td>
+              <td>Tổng cơ hội tiết kiệm chi phí</td>
+              <td>Trung bình</td>
+              <td>Đóng góp giá trị gia tăng</td>
+            </tr>
+        </tbody>
       </table>
     </div>
-    <p style="margin-top:18px; color:var(--vi-green-2);"><strong>Định nghĩa hoàn tất:</strong> Đo lường chính xác sức mạnh hệ thống đo, xác lập đường cơ sở Baseline, thiết lập benchmark và đếm cơ hội sai lỗi theo chuẩn Six Sigma quốc tế.</p>
   </section>
 
 </main>
 
 <footer>
   <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
-    &copy; Six Sigma Master Black Belt Executive Curriculum • Process Management Architecture
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
   </p>
 </footer>
 
@@ -685,7 +856,7 @@ function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
   } else {
     btn.classList.add('wrong');
     feedbackEl.className = 'quiz-fb show error';
-    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
   }
 }
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thực Hành Ứng Dụng Cơ Hội Sai Lỗi — Phần B (Dịch Vụ Giao Dịch Tài Chính) — Six Sigma Masterclass</title>
+<title>Thực Hành Ứng Dụng Cơ Hội Sai Lỗi — Phần B — Six Sigma Masterclass</title>
 <style>
   :root {
     --wood-deep: #022c22;
@@ -57,7 +57,7 @@
   }
   .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
   .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
-  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
 
   .section-card {
     background: #ffffff;
@@ -250,23 +250,22 @@
     color: #0f172a;
   }
 
-  /* Interactive Arena */
+  /* Trắc Nghiệm & Flashcards */
   .interactive-arena {
-    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
-    border-radius: 16px;
-    padding: 38px 40px;
-    margin: 40px 0;
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--water-ocean) 100%);
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
     color: #ffffff;
-    box-shadow: 0 12px 36px rgba(2,44,34,0.4);
-    border: 2px solid var(--emerald);
+    box-shadow: 0 8px 30px rgba(2,44,34,0.3);
   }
-  .interactive-arena h2 {
-    font-size: 1.7rem;
+  .arena-heading {
+    font-size: 1.55rem;
     font-weight: 800;
+    margin: 0 0 4px;
     color: #ffffff;
-    margin: 0 0 6px;
   }
-  .arena-desc {
+  .arena-subheading {
     color: var(--emerald-mint);
     font-size: 1.02rem;
     margin-bottom: 28px;
@@ -379,44 +378,67 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 12px;
-    padding: 22px 20px;
-    box-sizing: border-box;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
   }
   .flashcard-front {
-    background: linear-gradient(145deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
-    border: 1.5px solid var(--emerald-mint);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(110,231,183,0.3);
     color: #ffffff;
   }
-  .flashcard-front .term { font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
-  .flashcard-front .term-vi { font-size: 0.9rem; color: var(--emerald-mint); font-style: italic; }
-  .flashcard-front .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
-  
   .flashcard-back {
-    background: linear-gradient(145deg, #064e3b, #047857);
-    border: 1.5px solid #86efac;
+    background: linear-gradient(135deg, var(--emerald-vibrant) 0%, var(--wood-dark) 100%);
     color: #ffffff;
     transform: rotateY(180deg);
-    font-size: 0.92rem;
-    line-height: 1.55;
-    text-align: left;
+    border: 1px solid var(--emerald-mint);
   }
-  .flashcard-back strong { color: #fef08a; }
-  .flashcard-back .vi { display: block; margin-top: 8px; color: #d1fae5; font-size: 0.86rem; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 6px; }
+  .fc-num {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .fc-q { font-size: 0.98rem; font-weight: 600; line-height: 1.45; }
+  .fc-a { font-size: 0.92rem; line-height: 1.5; }
+
+  /* Data Table */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .data-table th {
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+  }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
 
   /* Action Checklist */
   .action-item {
     display: flex;
     align-items: flex-start;
-    gap: 14px;
+    gap: 12px;
     padding: 14px 16px;
     background: #f8fafc;
     border-radius: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     border: 1px solid #e2e8f0;
+    cursor: pointer;
   }
   .action-item input[type="checkbox"] {
     width: 20px;
@@ -451,9 +473,9 @@
 <header class="hero">
   <div class="hero-inner">
     <span class="hero-badge">04. Process Management • 06. Defect Opportunity</span>
-    <h1 class="hero-title">Thực Hành Ứng Dụng Cơ Hội Sai Lỗi — Phần B (Dịch Vụ Giao Dịch Tài Chính)</h1>
-    <div class="hero-title-en">Practical Application of Defect Opportunities - Part B</div>
-    <p class="hero-desc">Thực hành ứng dụng toàn diện cơ hội sai lỗi trong lĩnh vực dịch vụ và tài chính: Bài toán quy trình phát hành thẻ tín dụng và thanh toán số, phân rã ma trận điểm chạm và tỷ lệ thông suốt STP.</p>
+    <h1 class="hero-title">Thực Hành Ứng Dụng Cơ Hội Sai Lỗi — Phần B</h1>
+    <div class="hero-title-en">Practical Application of Defect Opportunities — Part B</div>
+    <p class="hero-desc">Tiêu Chuẩn Tay Nghề Thi Công Bang Arizona (Arizona ROC Standards): Phân loại PD, AT, CR trong hệ thống HVAC và nguyên lý Gom cụm cơ hội từ Hạng mục kỹ thuật lên Toàn bộ Công trình xây dựng.</p>
   </div>
 </header>
 
@@ -461,211 +483,353 @@
 
   <!-- PHẦN 1: EXECUTIVE SUMMARY -->
   <section class="section-card">
-    <span class="section-num">Phần 1 • Executive Summary</span>
-    <h2 class="section-heading">Tóm Tắt Điều Hành (Executive Summary)</h2>
-    <div class="section-subheading">Nắm trọn tinh hoa bài học trong 60 giây</div>
-    <div class="exec-summary"><ul><li>Bài tập thực chiến dịch vụ tài chính: Quy trình Phát hành Thẻ Tín dụng Quốc tế (Credit Card Issuance) gồm 4 giai đoạn: Tiếp nhận đơn &rarr; Thẩm định rủi ro CIC &rarr; Phê duyệt hạn mức &rarr; Dập thẻ và giao nhận.</li><li>Xác định cơ hội sai lỗi trên từng điểm chạm giao dịch: Ma trận $O_i$ cho 20,000 hồ sơ phát hành thẻ.</li><li>Tính toán DPU, DPO, DPMO, Z_ST và Tỷ lệ thông suốt không chạm ($STP$).</li><li>Định lượng tổn thất tài chính do hồ sơ bị trả về (Touchbacks) và xây dựng phương án tự động hóa số hóa triệt tiêu điểm nghẽn.</li></ul></div>
+    <span class="section-num">Trụ Cột 1 • Tóm Tắt Điều Hành</span>
+    <h2 class="section-heading">Executive Summary &amp; Thước Đo Lãnh Đạo</h2>
+    <div class="section-subheading">Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Bộ tiêu chuẩn tay nghề xây dựng bang Arizona (Arizona ROC Workmanship Standards):</strong> Dr. Mikel J. Harry phân tích bộ quy chuẩn xây dựng nhà ở của Arizona Registrar of Contractors. Hệ thống sử dụng 3 phân loại cốt lõi: <em>PD (Possible Deficiency - Khiếm khuyết tiềm ẩn)</em>, <em>AT (Acceptable Tolerance - Dung sai chấp nhận được)</em>, và <em>CR (Contractor Responsibility - Trách nhiệm nhà thầu)</em>.</li>
+        <li><strong>Phân tích phân hệ Điều hòa và Sưởi ấm (Air Conditioning & Heating):</strong> Bóc tách dòng 12 của quy chuẩn: Gồm các khiếm khuyết tiềm ẩn (PD): (1) Hệ thống sưởi không đủ ấm (Inadequate heat); (2) Ống dẫn gió gây ồn quá mức (Excessive noise from ducts); (3) Khe thông gió buồng đốt không đạt chuẩn (Inadequate combustion air vent); (4) Cục nóng đặt quá gần cửa ra vào (Unit too close to the door).</li>
+        <li><strong>Mỗi khiếm khuyết tiềm ẩn là một Cơ hội Sai lỗi:</strong> Mỗi tiêu chuẩn PD trong bộ luật xây dựng cấu thành một cơ hội sai lỗi độc lập được định lượng rõ ràng.</li>
+        <li><strong>Nguyên lý Gom cụm cơ hội lên cấp công trình (Pooling Opportunities Upward):</strong> Bằng cách gom cụm các cơ hội lỗi từ từng phân hệ kỹ thuật (HVAC) &rarr; Từng phòng ốc &rarr; Toàn bộ tòa nhà, Black Belt có thể tính toán mức năng lực Sigma cho riêng hệ thống HVAC cũng như mức Sigma tổng thể cho toàn bộ công trình xây dựng.</li>
+      </ul>
+    </div>
     <div class="pro-tip">
-      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Insight)</div>
-      <p class="pro-tip-desc">Trong dịch vụ tài chính, hãy nhớ rằng: Mỗi ngày hồ sơ thẻ bị chậm trễ là một ngày ngân hàng mất đi doanh thu phí quẹt thẻ và lãi vay! Cải tiến mức Sigma dịch vụ là cách nhanh nhất để tăng trưởng doanh thu ròng!</p>
+      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Practical Insight)</div>
+      <p class="pro-tip-desc">Mọi tiêu chuẩn kỹ thuật hoặc bộ luật thi công (như Arizona ROC) thực chất là một "từ điển cơ hội sai lỗi" đã được luật hóa. Đừng tự phát minh ra tiêu chuẩn mới, hãy khai thác chính các bộ quy chuẩn ngành để thiết lập ma trận cơ hội Six Sigma!</p>
     </div>
   </section>
 
   <!-- PHẦN 2: CORE FRAMEWORKS & REAL MATH -->
   <section class="section-card">
-    <span class="section-num">Phần 2 • Core Frameworks &amp; Real Math</span>
-    <h2 class="section-heading">Nguyên Lý &amp; Công Thức Lượng Hóa</h2>
-    <div class="section-subheading">Các mô hình định lượng và công thức chuyển hóa hiệu suất thực chiến</div>
-    <p>Trong bài học kết thúc chuyên đề Cơ Hội Sai Lỗi, Dr. Mikel Harry hướng dẫn giải chi tiết bài toán ứng dụng trong ngành dịch vụ và giao dịch tài chính:</p>
+    <span class="section-num">Trụ Cột 2 • Khung Lý Thuyết &amp; Mô Hình Toán Học</span>
+    <h2 class="section-heading">Nguyên Lý Lượng Hóa Cốt Lõi</h2>
+    <div class="section-subheading">Mô hình toán học thuần túy giải phóng quy trình khỏi biến thiên cảm tính</div>
+    <p>Dr. Mikel J. Harry chứng minh tính phổ quát toàn cầu của Six Sigma thông qua việc chuyển hóa Bộ luật thi công xây dựng bang Arizona thành các cơ hội sai lỗi chuẩn hóa:</p>
     
-    <div class="math-card">
-      <div class="title">1. Ma Trận Dòng Chảy Giao Dịch Dịch Vụ / Service Transaction Flow Matrix</div>
-      <div class="math-equation"><i>TOP</i><sub>Finance</sub> = &sum;<sub>i=1</sub><sup>k</sup> (<i>Applications</i><sub>i</sub> &times; <i>Touchpoint Opportunities</i> <i>O</i><sub>i</sub>)</div>
-      <div class="desc"><strong>Mô hình hóa dòng giao dịch:</strong><br>&bull; Tính toán tổng cơ hội sai lỗi tích lũy qua 4 trạm xử lý hồ sơ tín dụng.</div>
-    </div>
-    <div class="math-card">
-      <div class="title">2. Chỉ Số Năng Suất Thông Suốt Tự Động / Straight-Through Yield (STY)</div>
-      <div class="math-equation"><i>STY</i> = <i>e</i><sup>&minus;<i>DPU</i><sub>Total</sub></sup> &nbsp;|&nbsp; <i>Defect Cost</i> = <i>Applications</i> &times; (1 &minus; <i>STY</i>) &times; <i>Cost per Touchback</i></div>
-      <div class="desc"><strong>Lượng hóa tổn thất:</strong><br>&bull; Chi phí làm lại phát sinh khi hồ sơ bị trả về bổ sung giấy tờ giữa các phòng ban.</div>
-    </div>
-    <div class="math-card">
-      <div class="title">3. Hệ Số Tăng Trưởng Doanh Thu Phí / Revenue Acceleration Factor (RAF)</div>
-      <div class="math-equation"><i>RAF</i> = &Delta;<i>STY</i> &times; <i>Annual Active Card Spend</i> &times; <i>Interchange Fee %</i></div>
-      <div class="desc"><strong>Tác động tăng trưởng:</strong><br>&bull; Rút ngắn thời gian phát hành thẻ giúp khách hàng kích hoạt chi tiêu sớm hơn.</div>
-    </div>
+    
+      <div class="math-card">
+        <div class="title">1. Bộ Ba Phân Loại Thi Công / Construction Triad Classification</div>
+        <div class="math-equation"><b>Defect Condition</b> &hArr; (<i>Measured</i> &notin; <b>AT</b>) &and; (<b>PD</b> = <i>True</i>) &and; (<b>CR</b> = <i>True</i>)</div>
+        <div class="desc"><strong>Định nghĩa pháp lý kỹ thuật:</strong><br>&bull; <em>PD</em>: Possible Deficiency (Hạng mục khiếm khuyết tiềm ẩn).<br>&bull; <em>AT</em>: Acceptable Tolerance (Dung sai kỹ thuật cho phép).<br>&bull; <em>CR</em>: Contractor Responsibility (Thuộc phạm vi trách nhiệm nhà thầu phải sửa chữa).</div>
+      </div>
+
+      <div class="math-card">
+        <div class="title">2. Mô Hình Gom Cụm Năng Lực Tích Lũy / Hierarchical Opportunity Pooling Model</div>
+        <div class="math-equation"><i>O</i><sub>Structure</sub> = &sum;<sub><i>t</i>=1</sub><sup><i>T</i></sup> <i>O</i><sub>Trade, <i>t</i></sub> &nbsp;|&nbsp; <i>DPMO</i><sub>Building</sub> = <div class="math-frac"><div class="math-num">&sum; <i>D</i><sub>All Trades</sub></div><div class="math-den"><i>O</i><sub>Structure</sub></div></div> &times; 10<sup>6</sup></div>
+        <div class="desc"><strong>Gom cụm đa phân hệ:</strong><br>&bull; Tích lũy cơ hội từ các phân hệ: Điện, Nước, HVAC, Xây tô, Sơn bả, Mái lợp... để tính toán mức Sigma toàn diện cho cả tòa nhà.</div>
+      </div>
+
+      <div class="math-card">
+        <div class="title">3. Năng Lực Năng Suất Dồn Công Trình / Rolled Building Throughput Yield</div>
+        <div class="math-equation"><i>RTY</i><sub>Building</sub> = &prod;<sub><i>t</i>=1</sub><sup><i>T</i></sup> <i>Yield</i><sub>Trade, <i>t</i></sub> = <i>e</i><sup>&minus;&sum; <i>DPU</i><sub><i>t</i></sub></sup></div>
+        <div class="desc"><strong>Chỉ số bàn giao không lỗi:</strong><br>&bull; Xác suất để một ngôi nhà được bàn giao cho khách hàng mà không có bất kỳ lỗi Punch List nào trên mọi hạng mục kỹ thuật.</div>
+      </div>
+
     <div class="pro-tip">
       <div class="pro-tip-title">MBB Interpretation • Diễn giải điều hành</div>
-      <p class="pro-tip-desc">Dịch vụ tài chính hiện đại là cuộc đua về tốc độ và sự chính xác. Làm chủ toán học cơ hội sai lỗi giúp ngân hàng loại bỏ hoàn toàn ma sát giấy tờ, mang lại trải nghiệm khách hàng vượt trội và dẫn đầu thị trường số.</p>
+      <p class="pro-tip-desc">Nguyên lý này có tính khái quát hóa cực kỳ cao (very generalizable). Dù bạn xây dựng nhà ở dân dụng tại Arizona, lắp ráp vệ tinh không gian hay triển khai hệ thống phần mềm lõi ngân hàng, việc bóc tách tiêu chuẩn thành PD/AT/CR và gom cụm cơ hội là chìa khóa vạn năng của Master Black Belt.</p>
     </div>
   </section>
 
-  <!-- PHẦN 3: CASE STUDIES -->
+  <!-- PHẦN 3: CASE STUDIES & VS COMPARISON -->
   <section class="section-card">
-    <span class="section-num">Phần 3 • Real-World Case Studies &amp; VS Comparison</span>
-    <h2 class="section-heading">Tình Huống Thực Chiến &amp; Bảng Đối Chiếu</h2>
-    <div class="section-subheading">Một lăng kính cho sản xuất, một lăng kính cho dịch vụ</div>
+    <span class="section-num">Trụ Cột 3 • Tình Huống Thực Chiến &amp; Đối Chiếu Phản Tư</span>
+    <h2 class="section-heading">Nghiên Cứu Điển Hình Công Nghiệp &amp; Dịch Vụ</h2>
+    <div class="section-subheading">Từ thực tiễn nhà xưởng phức tạp đến dòng chảy dịch vụ giao dịch thương mại</div>
+    
     <div class="case-grid">
       <div class="case-card mfg">
-        <span class="case-tag mfg">Sản xuất • Dây chuyền Dập và Mã hóa Thẻ Chip Thông minh</span>
-        <h3 class="case-title">Toán học cơ hội lỗi dây chuyền dập phôi thẻ và gắn chip EMV</h3>
-        <p class="case-body">Sản xuất 100,000 thẻ ngân hàng qua 3 khâu: Dập phôi nhựa (O=4, D=80), Cấy chip EMV (O=6, D=120), In laser dập nổi (O=5, D=50). Tổng DPU = 0.0008 + 0.0012 + 0.0005 = 0.0025.</p>
-        <div class="case-metric"><strong>Phân tích MBB:</strong> RTY = e^(-0.0025) = 99.75% &rarr; Z_ST = 4.31 Sigma, định vị khâu Cấy chip EMV chiếm 48% phế phẩm.</div>
+        <span class="case-tag mfg">Xây Lắp & Thi Công Cơ Điện EPC</span>
+        <h3 class="case-title">Áp Dụng Bộ Tiêu Chuẩn ROC Cho Dự Án Nhà Máy Dược Phẩm GMP</h3>
+        <p class="case-body">Tổng thầu cơ điện áp dụng cấu trúc Arizona ROC cho hệ thống phòng sạch: Phân hệ HVAC phòng sạch có 14 tiêu chuẩn PD (Chênh áp phòng, Số lần trao đổi khí, Độ ẩm, Vận tốc gió qua lọc HEPA...). Tổng cộng 12 phòng sạch tạo ra 12 × 14 = 168 cơ hội lỗi HVAC. Kiểm toán nghiệm thu phát hiện 2 vị trí lọc HEPA bị rò rỉ khí (D=2).</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> DPO phân hệ HVAC = 2 / 168 = 0.0119 (11,900 DPMO, Z = 3.76 Sigma). Khắc phục triệt để trước khi gom cụm lên mức Sigma toàn nhà máy đạt 4.85 Sigma.</div>
       </div>
       <div class="case-card svc">
-        <span class="case-tag svc">Dịch vụ • Ngân hàng Thương mại Bán lẻ</span>
-        <h3 class="case-title">Giải bài toán toàn diện quy trình phát hành thẻ tín dụng</h3>
-        <p class="case-body">Đo lường U = 20,000 hồ sơ phát hành thẻ qua 4 bước: (1) Tiếp nhận hồ sơ: O1=8, D1=1,200 &rarr; DPU1=0.060, DPO1=0.00750 (3.93&sigma;); (2) Thẩm định CIC & Thu nhập: O2=12, D2=2,800 &rarr; DPU2=0.140, DPO2=0.01167 (3.77&sigma;); (3) Phê duyệt hạn mức: O3=5, D3=200 &rarr; DPU3=0.010, DPO3=0.00200 (4.38&sigma;); (4) Dập thẻ & Giao nhận: O4=5, D4=100 &rarr; DPU4=0.005, DPO4=0.00100 (4.59&sigma;).</p>
-        <div class="case-metric"><strong>Phân tích MBB:</strong> Tổng DPU = 0.215 &rarr; STY = e^(-0.215) = 80.65% (19.35% hồ sơ bị trả lại tốn $25/lần xử lý = $96,750/tháng). Khâu Thẩm định CIC chiếm 65.1% lỗi &rarr; Tự động hóa API tra cứu CIC giảm DPU về 0.020, STY tăng lên 98.0%, tiết kiệm 1.1 triệu USD/năm.</div>
-      </div></div>
+        <span class="case-tag svc">Pháp Chế & Tuân Thủ Ngân Hàng (Compliance)</span>
+        <h3 class="case-title">Mô Hình PD/AT/CR Cho Hồ Sơ Thẩm Định Tín Dụng Doanh Nghiệp</h3>
+        <p class="case-body">Khối Quản trị Rủi ro xây dựng bộ tiêu chuẩn thẩm định tín dụng theo mô hình Arizona: PD là các lỗi pháp lý tiềm ẩn (Thiếu biên bản họp HĐQT, Sai tỷ lệ đòn bẩy nợ, Định giá tài sản vượt trần); AT là dung sai sai lệch tài chính cho phép (±2%); CR là trách nhiệm của chuyên viên quan hệ khách hàng RM. Mỗi bộ hồ sơ có 45 tiêu chí PD.</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Kiểm toán 200 bộ hồ sơ (9,000 cơ hội) phát hiện 27 lỗi vượt dung sai AT &rarr; DPO = 27 / 9,000 = 0.003 (3,000 DPMO, Z = 4.25 Sigma), ngăn ngừa các khoản nợ xấu tiềm ẩn.</div>
+      </div>
+    </div>
+
     <div class="vs-grid">
       <div class="vs-col bad">
-        <span class="vs-badge bad">Bad / Trap • Tư duy sai lầm</span>
-        <ul><li>Tùy tiện đếm khống số cơ hội lỗi O (Opportunity Inflation) để làm đẹp điểm Sigma giả tạo.</li><li>Bỏ qua tính độc lập thống kê giữa các cơ hội lỗi, tính gộp cả các lỗi phụ thuộc nhân quả.</li><li>Không chuẩn hóa định nghĩa cơ hội lỗi giữa các nhà máy và các đối tác trong chuỗi cung ứng.</li><li>Xem cơ hội sai lỗi chỉ là lý thuyết thống kê mà không gắn kết với yêu cầu CTQ của khách hàng.</li></ul>
+        <span class="vs-badge bad">❌ Nghiệm Thu Cảm Tính, Thiếu Chuẩn</span>
+        <ul>
+          <li>Tranh cãi giữa chủ đầu tư và nhà thầu vì không có định nghĩa dung sai rõ ràng</li>
+          <li>Đánh đồng lỗi nhỏ thẩm mỹ với lỗi kỹ thuật nghiêm trọng thuộc trách nhiệm nhà thầu</li>
+          <li>Không biết cách tổng hợp năng lực chất lượng của từng nhà thầu phụ</li>
+          <li>Bàn giao công trình với hàng trăm lỗi Punch List kéo dài nhiều tháng</li>
+        </ul>
       </div>
-      <div class="vs-divider">VS</div>
+      <div class="vs-divider">&harr;</div>
       <div class="vs-col good">
-        <span class="vs-badge good">Good / MBB • Chuẩn Six Sigma</span>
-        <ul><li>Xác lập Cơ hội sai lỗi (Defect Opportunity - O) dựa trên các yêu cầu CTQ độc lập và đo lường được.</li><li>Minh bạch hóa toàn bộ bảng phân rã cơ hội lỗi trong Project Charter có chữ ký phê duyệt.</li><li>Áp dụng nguyên tắc chuẩn hóa cơ hội lỗi để so sánh công bằng giữa sản xuất cơ khí và giao dịch dịch vụ.</li><li>Chống gian lận số liệu thông qua cơ chế kiểm toán độc lập định nghĩa cơ hội sai lỗi (Opportunity Audit).</li></ul>
+        <span class="vs-badge good">✅ Quy Chuẩn Thi Công Arizona ROC Chuẩn Dr. Harry</span>
+        <ul>
+          <li>Phân loại minh bạch: PD (Khiếm khuyết tiềm ẩn), AT (Dung sai), CR (Trách nhiệm)</li>
+          <li>Mỗi điều khoản kỹ thuật là một cơ hội sai lỗi được luật hóa rõ ràng</li>
+          <li>Gom cụm cơ hội từ từng phân hệ kỹ thuật lên toàn bộ công trình</li>
+          <li>Xác lập năng lực Six Sigma chuẩn tắc cho từng nhà thầu và toàn dự án</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- PHẦN 4: INTERACTIVE ARENA -->
+  <!-- PHẦN 4: INTERACTIVE ARENA (8 QUIZZES & 5 FLASHCARDS) -->
   <section class="interactive-arena">
-    <span class="section-num">Phần 4 • Interactive Arena</span>
-    <h2>Đấu Trường Trắc Nghiệm Tình Huống (Scenario-Based Practice)</h2>
-    <p class="arena-desc">Chọn một đáp án để nhận phản hồi tức thì bằng tiếng Anh chuyên ngành và tiếng Việt ứng dụng.</p>
-    
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 1 • Tầng 1 • Recall & Concept</span>
-      <div class="quiz-q">Trong bài toán dịch vụ phát hành thẻ tín dụng 4 công đoạn, nếu công đoạn 2 (Thẩm định CIC) có DPU2 = 0.140 trên tổng DPU = 0.215, tỷ trọng đóng góp lỗi của công đoạn này là bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q13-1', &quot;Stage 2 defect contribution = 0.140 / 0.215 = 65.12% &amp;approx; 65.1%.&quot;, &quot;Khâu Thẩm định CIC chiếm 65.1% tổng số lỗi, là điểm nghẽn chiến lược số 1 cần can thiệp tự động hóa.&quot;)">A. Đóng góp 65.1% tổng số lỗi (0.140 / 0.215 = 65.12%)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-1', &quot;Stage 2 defect contribution = 0.140 / 0.215 = 65.12% &amp;approx; 65.1%.&quot;, &quot;Khâu Thẩm định CIC chiếm 65.1% tổng số lỗi, là điểm nghẽn chiến lược số 1 cần can thiệp tự động hóa.&quot;)">B. Đóng góp 25.0%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-1', &quot;Stage 2 defect contribution = 0.140 / 0.215 = 65.12% &amp;approx; 65.1%.&quot;, &quot;Khâu Thẩm định CIC chiếm 65.1% tổng số lỗi, là điểm nghẽn chiến lược số 1 cần can thiệp tự động hóa.&quot;)">C. Đóng góp 10.0%</button></div>
-      <div id="fb-q13-1" class="quiz-fb"></div>
+    <span class="section-num" style="background:var(--emerald-vibrant); color:#022c22;">Trụ Cột 4 • Khảo Hạch Năng Lực &amp; Phản Xạ 3D</span>
+    <h2 class="arena-heading">Đấu Trường Khảo Hạch Black Belt</h2>
+    <div class="arena-subheading">8 Tình huống trắc nghiệm chuyên sâu &bull; 5 Thẻ ghi nhớ phản xạ 3D &bull; Chuẩn hóa năng lực SSMI</div>
+
+    <!-- 8 QUIZZES -->
+    <div class="quizzes-container">
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 1/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Trong bài giảng của Dr. Harry về tiêu chuẩn xây dựng bang Arizona (Arizona Registrar of Contractors), ba chữ viết tắt cốt lõi PD, AT, CR đại diện cho điều gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-1', 'Dr. Harry explicitly explains: &quot;We have PD, for possible deficiency, AT, acceptable tolerance, and CR contractor responsibility.&quot;', 'Dr. Harry giải thích rõ: PD là khiếm khuyết tiềm ẩn, AT là dung sai chấp nhận được, và CR là trách nhiệm của nhà thầu.')">A. PD: Project Design, AT: Actual Time, CR: Cost Reduction</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-13-1', 'Dr. Harry explicitly explains: &quot;We have PD, for possible deficiency, AT, acceptable tolerance, and CR contractor responsibility.&quot;', 'Dr. Harry giải thích rõ: PD là khiếm khuyết tiềm ẩn, AT là dung sai chấp nhận được, và CR là trách nhiệm của nhà thầu.')">B. PD: Possible Deficiency, AT: Acceptable Tolerance, CR: Contractor Responsibility</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-1', 'Dr. Harry explicitly explains: &quot;We have PD, for possible deficiency, AT, acceptable tolerance, and CR contractor responsibility.&quot;', 'Dr. Harry giải thích rõ: PD là khiếm khuyết tiềm ẩn, AT là dung sai chấp nhận được, và CR là trách nhiệm của nhà thầu.')">C. PD: Past Due, AT: Audit Trail, CR: Credit Rating</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-1', 'Dr. Harry explicitly explains: &quot;We have PD, for possible deficiency, AT, acceptable tolerance, and CR contractor responsibility.&quot;', 'Dr. Harry giải thích rõ: PD là khiếm khuyết tiềm ẩn, AT là dung sai chấp nhận được, và CR là trách nhiệm của nhà thầu.')">D. PD: Public Document, AT: Air Temperature, CR: Customer Return</button>
+        </div>
+        <div id="fb-13-1" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 2/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Trong phân hệ Điều hòa và Sưởi ấm (Air Conditioning and Heating, dòng 12), khiếm khuyết tiềm ẩn đầu tiên được Dr. Harry nêu là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-13-2', 'Dr. Harry: &quot;So, on row 12, we have a potential deficiency called inadequate heat... Another, is excessive noise from ducts.&quot;', 'Ở dòng 12 có một khiếm khuyết tiềm ẩn là sưởi không đủ ấm (inadequate heat), tiếp theo là tiếng ồn quá mức từ đường ống dẫn gió.')">A. Hệ thống sưởi không đủ ấm (Inadequate heat)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-2', 'Dr. Harry: &quot;So, on row 12, we have a potential deficiency called inadequate heat... Another, is excessive noise from ducts.&quot;', 'Ở dòng 12 có một khiếm khuyết tiềm ẩn là sưởi không đủ ấm (inadequate heat), tiếp theo là tiếng ồn quá mức từ đường ống dẫn gió.')">B. Màu sơn máy lạnh bị xấu</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-2', 'Dr. Harry: &quot;So, on row 12, we have a potential deficiency called inadequate heat... Another, is excessive noise from ducts.&quot;', 'Ở dòng 12 có một khiếm khuyết tiềm ẩn là sưởi không đủ ấm (inadequate heat), tiếp theo là tiếng ồn quá mức từ đường ống dẫn gió.')">C. Điều khiển từ xa hết pin</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-2', 'Dr. Harry: &quot;So, on row 12, we have a potential deficiency called inadequate heat... Another, is excessive noise from ducts.&quot;', 'Ở dòng 12 có một khiếm khuyết tiềm ẩn là sưởi không đủ ấm (inadequate heat), tiếp theo là tiếng ồn quá mức từ đường ống dẫn gió.')">D. Tiền điện hàng tháng quá cao</button>
+        </div>
+        <div id="fb-13-2" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 3/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Bốn cơ hội sai lỗi PD trong hệ thống HVAC được Dr. Harry liệt kê lần lượt là những hạng mục nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-3', 'Dr. Harry: &quot;The first one was inadequate heating. Second is excessive noise from ducts. And third, is inadequate combustion air vent. Here\'s another one. The unit is too close to the door.&quot;', 'Bốn cơ hội lỗi: Sưởi không đủ ấm, tiếng ồn quá mức từ ống gió, thiếu khe cấp gió buồng đốt, và cục nóng đặt quá gần cửa.')">A. Giá đắt, bảo hành ngắn, máy to, tốn điện</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-13-3', 'Dr. Harry: &quot;The first one was inadequate heating. Second is excessive noise from ducts. And third, is inadequate combustion air vent. Here\'s another one. The unit is too close to the door.&quot;', 'Bốn cơ hội lỗi: Sưởi không đủ ấm, tiếng ồn quá mức từ ống gió, thiếu khe cấp gió buồng đốt, và cục nóng đặt quá gần cửa.')">B. Sưởi không đủ ấm, tiếng ồn từ ống gió, thiếu khe cấp gió buồng đốt, và máy đặt quá gần cửa</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-3', 'Dr. Harry: &quot;The first one was inadequate heating. Second is excessive noise from ducts. And third, is inadequate combustion air vent. Here\'s another one. The unit is too close to the door.&quot;', 'Bốn cơ hội lỗi: Sưởi không đủ ấm, tiếng ồn quá mức từ ống gió, thiếu khe cấp gió buồng đốt, và cục nóng đặt quá gần cửa.')">C. Thiếu gas, đứt dây điện, vỡ cánh quạt, mốc lưới lọc</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-3', 'Dr. Harry: &quot;The first one was inadequate heating. Second is excessive noise from ducts. And third, is inadequate combustion air vent. Here\'s another one. The unit is too close to the door.&quot;', 'Bốn cơ hội lỗi: Sưởi không đủ ấm, tiếng ồn quá mức từ ống gió, thiếu khe cấp gió buồng đốt, và cục nóng đặt quá gần cửa.')">D. Giao hàng chậm, nhân viên thô lỗ, hóa đơn sai, không có khuyến mãi</button>
+        </div>
+        <div id="fb-13-3" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 4/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Khái niệm "Gom cụm cơ hội lên phía trên" (Pooling opportunities upward) được Dr. Harry mô tả như thế nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-4', 'Dr. Harry: &quot;We could develop a Sigma capability for air conditioning and heating. As well as for the entire structure, by pooling them upward.&quot;', 'Ta có thể xây dựng mức Sigma cho riêng phân hệ HVAC, cũng như mức Sigma cho toàn bộ công trình bằng cách gom cụm các cơ hội lỗi lên trên.')">A. Góp tiền thưởng của công nhân vào quỹ ban giám đốc</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-13-4', 'Dr. Harry: &quot;We could develop a Sigma capability for air conditioning and heating. As well as for the entire structure, by pooling them upward.&quot;', 'Ta có thể xây dựng mức Sigma cho riêng phân hệ HVAC, cũng như mức Sigma cho toàn bộ công trình bằng cách gom cụm các cơ hội lỗi lên trên.')">B. Phát triển mức năng lực Sigma cho riêng hệ thống HVAC, sau đó gom cụm các cơ hội lỗi của toàn bộ công trình để phát triển mức Sigma cho toàn bộ kết cấu tòa nhà</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-4', 'Dr. Harry: &quot;We could develop a Sigma capability for air conditioning and heating. As well as for the entire structure, by pooling them upward.&quot;', 'Ta có thể xây dựng mức Sigma cho riêng phân hệ HVAC, cũng như mức Sigma cho toàn bộ công trình bằng cách gom cụm các cơ hội lỗi lên trên.')">C. Chuyển các lỗi từ nhà thầu phụ sang cho chủ nhà tự chịu</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-4', 'Dr. Harry: &quot;We could develop a Sigma capability for air conditioning and heating. As well as for the entire structure, by pooling them upward.&quot;', 'Ta có thể xây dựng mức Sigma cho riêng phân hệ HVAC, cũng như mức Sigma cho toàn bộ công trình bằng cách gom cụm các cơ hội lỗi lên trên.')">D. Đổ bê tông từ móng lên đến nóc nhà</button>
+        </div>
+        <div id="fb-13-4" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 5/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Tại sao Dr. Harry khẳng định ví dụ về xây dựng tại Arizona có tính "rất khái quát hóa cho các lĩnh vực khác" (very generalizable to other areas)?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-5', 'Dr. Harry: &quot;Again our job here, is to simply look at what constitutes a defect opportunity. This time we\'re doing it in the area of construction. This should be very generalizable to other areas.&quot;', 'Nhiệm vụ của chúng ta là xem xét cái gì cấu thành một cơ hội sai lỗi; phương pháp áp dụng trong xây dựng này có tính khái quát hóa rất cao cho mọi lĩnh vực.')">A. Vì thợ xây dựng có thể làm việc ở mọi nhà máy</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-13-5', 'Dr. Harry: &quot;Again our job here, is to simply look at what constitutes a defect opportunity. This time we\'re doing it in the area of construction. This should be very generalizable to other areas.&quot;', 'Nhiệm vụ của chúng ta là xem xét cái gì cấu thành một cơ hội sai lỗi; phương pháp áp dụng trong xây dựng này có tính khái quát hóa rất cao cho mọi lĩnh vực.')">B. Vì bản chất việc xác định điều gì cấu thành cơ hội lỗi từ các bộ quy chuẩn kỹ thuật có thể áp dụng chính xác cho bất kỳ ngành kỹ thuật, sản xuất hay dịch vụ nào</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-5', 'Dr. Harry: &quot;Again our job here, is to simply look at what constitutes a defect opportunity. This time we\'re doing it in the area of construction. This should be very generalizable to other areas.&quot;', 'Nhiệm vụ của chúng ta là xem xét cái gì cấu thành một cơ hội sai lỗi; phương pháp áp dụng trong xây dựng này có tính khái quát hóa rất cao cho mọi lĩnh vực.')">C. Vì bang Arizona có nền kinh tế lớn nhất thế giới</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-5', 'Dr. Harry: &quot;Again our job here, is to simply look at what constitutes a defect opportunity. This time we\'re doing it in the area of construction. This should be very generalizable to other areas.&quot;', 'Nhiệm vụ của chúng ta là xem xét cái gì cấu thành một cơ hội sai lỗi; phương pháp áp dụng trong xây dựng này có tính khái quát hóa rất cao cho mọi lĩnh vực.')">D. Vì vật liệu xây dựng ở đâu cũng giống nhau</button>
+        </div>
+        <div id="fb-13-5" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 6/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Một dự án xây dựng biệt thự cao cấp có 5 phân hệ kỹ thuật: Kết cấu (300 cơ hội), Cơ điện MEP (450 cơ hội), Nhôm kính (200 cơ hội), Sơn bả (150 cơ hội), và Nội thất gỗ (400 cơ hội). Tổng số cơ hội sai lỗi của toàn bộ ngôi nhà khi gom cụm là bao nhiêu?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-6', 'Total pooled structure opportunities = 300 + 450 + 200 + 150 + 400 = 1,500 defect opportunities for the entire residence.', 'Tổng cơ hội gom cụm toàn bộ công trình = 300 + 450 + 200 + 150 + 400 = 1,500 cơ hội sai lỗi.')">A. 450 cơ hội</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-13-6', 'Total pooled structure opportunities = 300 + 450 + 200 + 150 + 400 = 1,500 defect opportunities for the entire residence.', 'Tổng cơ hội gom cụm toàn bộ công trình = 300 + 450 + 200 + 150 + 400 = 1,500 cơ hội sai lỗi.')">B. 1,500 cơ hội sai lỗi (Tổng cộng 5 phân hệ = 1,500 cơ hội)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-6', 'Total pooled structure opportunities = 300 + 450 + 200 + 150 + 400 = 1,500 defect opportunities for the entire residence.', 'Tổng cơ hội gom cụm toàn bộ công trình = 300 + 450 + 200 + 150 + 400 = 1,500 cơ hội sai lỗi.')">C. 300 cơ hội</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-6', 'Total pooled structure opportunities = 300 + 450 + 200 + 150 + 400 = 1,500 defect opportunities for the entire residence.', 'Tổng cơ hội gom cụm toàn bộ công trình = 300 + 450 + 200 + 150 + 400 = 1,500 cơ hội sai lỗi.')">D. 5 cơ hội</button>
+        </div>
+        <div id="fb-13-6" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 7/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Trong quá trình nghiệm thu ngôi nhà trên, thanh tra phát hiện tổng cộng 15 lỗi thuộc trách nhiệm nhà thầu (CR) vượt dung sai (AT). Chỉ số DPMO của công trình là bao nhiêu?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-7', 'DPO = 15 / 1500 = 0.010. DPMO = 0.010 * 1,000,000 = 10,000 DPMO (equivalent to approximately 3.83 Sigma).', 'DPO = 15 / 1500 = 0.010 &rarr; DPMO = 10,000 DPMO (tương đương mức năng lực khoảng 3.83 Sigma).')">A. 15,000 DPMO</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-13-7', 'DPO = 15 / 1500 = 0.010. DPMO = 0.010 * 1,000,000 = 10,000 DPMO (equivalent to approximately 3.83 Sigma).', 'DPO = 15 / 1500 = 0.010 &rarr; DPMO = 10,000 DPMO (tương đương mức năng lực khoảng 3.83 Sigma).')">B. 10,000 DPMO (DPO = 15 / 1500 = 0.010 &rarr; DPMO = 10,000)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-7', 'DPO = 15 / 1500 = 0.010. DPMO = 0.010 * 1,000,000 = 10,000 DPMO (equivalent to approximately 3.83 Sigma).', 'DPO = 15 / 1500 = 0.010 &rarr; DPMO = 10,000 DPMO (tương đương mức năng lực khoảng 3.83 Sigma).')">C. 1,000 DPMO</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-7', 'DPO = 15 / 1500 = 0.010. DPMO = 0.010 * 1,000,000 = 10,000 DPMO (equivalent to approximately 3.83 Sigma).', 'DPO = 15 / 1500 = 0.010 &rarr; DPMO = 10,000 DPMO (tương đương mức năng lực khoảng 3.83 Sigma).')">D. 150 DPMO</button>
+        </div>
+        <div id="fb-13-7" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 8/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Sự khác biệt cốt lõi giữa "Khiếm khuyết tiềm ẩn" (PD) và một "Sai lỗi thực tế" (Realized Defect) trong nghiệm thu công trình là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-8', 'A Possible Deficiency (PD) is an opportunity definition; it becomes an actual defect only when the measured condition exceeds the Acceptable Tolerance (AT) under Contractor Responsibility (CR).', 'PD là định nghĩa cơ hội tiềm ẩn theo luật; nó chỉ trở thành lỗi thực tế khi giá trị đo đạc vượt ngoài dung sai cho phép (AT) và thuộc trách nhiệm sửa chữa của nhà thầu (CR).')">A. Không có sự khác biệt nào</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-13-8', 'A Possible Deficiency (PD) is an opportunity definition; it becomes an actual defect only when the measured condition exceeds the Acceptable Tolerance (AT) under Contractor Responsibility (CR).', 'PD là định nghĩa cơ hội tiềm ẩn theo luật; nó chỉ trở thành lỗi thực tế khi giá trị đo đạc vượt ngoài dung sai cho phép (AT) và thuộc trách nhiệm sửa chữa của nhà thầu (CR).')">B. PD là một cơ hội sai lỗi được luật hóa trên giấy tờ; nó chỉ trở thành sai lỗi thực tế khi kết quả đo lường hiện trường vượt quá dung sai cho phép (AT) và thuộc trách nhiệm nhà thầu (CR)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-8', 'A Possible Deficiency (PD) is an opportunity definition; it becomes an actual defect only when the measured condition exceeds the Acceptable Tolerance (AT) under Contractor Responsibility (CR).', 'PD là định nghĩa cơ hội tiềm ẩn theo luật; nó chỉ trở thành lỗi thực tế khi giá trị đo đạc vượt ngoài dung sai cho phép (AT) và thuộc trách nhiệm sửa chữa của nhà thầu (CR).')">C. PD chỉ áp dụng cho nhà cấp 4</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-13-8', 'A Possible Deficiency (PD) is an opportunity definition; it becomes an actual defect only when the measured condition exceeds the Acceptable Tolerance (AT) under Contractor Responsibility (CR).', 'PD là định nghĩa cơ hội tiềm ẩn theo luật; nó chỉ trở thành lỗi thực tế khi giá trị đo đạc vượt ngoài dung sai cho phép (AT) và thuộc trách nhiệm sửa chữa của nhà thầu (CR).')">D. PD do chủ nhà quyết định còn sai lỗi do tòa án quyết định</button>
+        </div>
+        <div id="fb-13-8" class="quiz-fb"></div>
+      </div>
     </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 2 • Tầng 1 • Recall & Concept</span>
-      <div class="quiz-q">Khi một quy trình dịch vụ tài chính có tổng DPU = 0.215, Năng suất thông suốt tự động Straight-Through Yield (STY = e^-DPU) đạt bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q13-2', &quot;Straight-Through Yield STY = e^(-0.215) = 80.65%.&quot;, &quot;STY đạt 80.65%, đồng nghĩa với việc gần 20% hồ sơ khách hàng bị kẹt lại và phải xử lý thủ công.&quot;)">A. STY = e^(-0.215) &amp;approx; 80.65%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-2', &quot;Straight-Through Yield STY = e^(-0.215) = 80.65%.&quot;, &quot;STY đạt 80.65%, đồng nghĩa với việc gần 20% hồ sơ khách hàng bị kẹt lại và phải xử lý thủ công.&quot;)">B. STY = 95.0%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-2', &quot;Straight-Through Yield STY = e^(-0.215) = 80.65%.&quot;, &quot;STY đạt 80.65%, đồng nghĩa với việc gần 20% hồ sơ khách hàng bị kẹt lại và phải xử lý thủ công.&quot;)">C. STY = 78.5%</button></div>
-      <div id="fb-q13-2" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 3 • Tầng 2 • Analytical & Math</span>
-      <div class="quiz-q">Ngân hàng tiếp nhận 20,000 hồ sơ thẻ/tháng với 19.35% hồ sơ bị lỗi trả về làm lại (3,870 hồ sơ/tháng). Chi phí xử lý lại là $25/hồ sơ. Tổn thất tài chính hàng năm của nhà máy ẩn giấy tờ này là bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q13-3', &quot;Annual paperwork rework loss = 3,870 rejected apps/mo × $25 × 12 months = $1,161,000/year.&quot;, &quot;Nhà máy ẩn giấy tờ đang làm bốc hơi hơn 1.16 triệu USD mỗi năm chỉ riêng tiền xử lý lại các hồ sơ bị từ chối.&quot;)">A. $1,161,000/năm (3,870 hồ sơ × $25 × 12 tháng)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-3', &quot;Annual paperwork rework loss = 3,870 rejected apps/mo × $25 × 12 months = $1,161,000/year.&quot;, &quot;Nhà máy ẩn giấy tờ đang làm bốc hơi hơn 1.16 triệu USD mỗi năm chỉ riêng tiền xử lý lại các hồ sơ bị từ chối.&quot;)">B. $500,000/năm</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-3', &quot;Annual paperwork rework loss = 3,870 rejected apps/mo × $25 × 12 months = $1,161,000/year.&quot;, &quot;Nhà máy ẩn giấy tờ đang làm bốc hơi hơn 1.16 triệu USD mỗi năm chỉ riêng tiền xử lý lại các hồ sơ bị từ chối.&quot;)">C. $100,000/năm</button></div>
-      <div id="fb-q13-3" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 4 • Tầng 2 • Analytical & Math</span>
-      <div class="quiz-q">Quy trình mở tài khoản chứng khoán Margin có 50,000 tài khoản (U = 50,000). Mỗi tài khoản có O = 8 cơ hội. Số lỗi phát hiện là D = 400 lỗi. Giá trị DPMO và Z_ST (với NORMSINV(1 - 0.0001) = 3.72) là bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q13-4', &quot;DPO = 400 / (50,000 × 8) = 0.00010 &amp;rarr; DPMO = 100 &amp;rarr; Z_ST = 3.72 + 1.50 = 5.22 Sigma.&quot;, &quot;DPO = 0.00010 tương ứng với 100 DPMO và mức năng lực đỉnh cao 5.22 Sigma.&quot;)">A. DPMO = 100 và Z_ST = 3.72 + 1.50 = 5.22 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-4', &quot;DPO = 400 / (50,000 × 8) = 0.00010 &amp;rarr; DPMO = 100 &amp;rarr; Z_ST = 3.72 + 1.50 = 5.22 Sigma.&quot;, &quot;DPO = 0.00010 tương ứng với 100 DPMO và mức năng lực đỉnh cao 5.22 Sigma.&quot;)">B. DPMO = 1,000 và Z_ST = 4.50 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-4', &quot;DPO = 400 / (50,000 × 8) = 0.00010 &amp;rarr; DPMO = 100 &amp;rarr; Z_ST = 3.72 + 1.50 = 5.22 Sigma.&quot;, &quot;DPO = 0.00010 tương ứng với 100 DPMO và mức năng lực đỉnh cao 5.22 Sigma.&quot;)">C. DPMO = 80 và Z_ST = 6.00 Sigma</button></div>
-      <div id="fb-q13-4" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 5 • Tầng 3 • Executive Decision</span>
-      <div class="quiz-q">Tổng Giám đốc hỏi: &#x27;Làm thế nào để vừa giảm chi phí xử lý hồ sơ 1.1 triệu USD/năm vừa rút ngắn thời gian phát hành thẻ từ 7 ngày xuống còn 15 phút?&#x27;. MBB tư vấn chiến lược gì?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q13-5', &quot;Re-architect the process via DFSS: Implement automated API credit bureau lookups and AI auto-underwriting to push STP to 98%.&quot;, &quot;Tái thiết kế luồng thẩm định tự động bằng API và AI chấm điểm tín dụng là giải pháp kép vừa cắt giảm chi phí vừa nâng tầm trải nghiệm khách hàng vượt bậc.&quot;)">A. Tái thiết kế quy trình (DFSS): Tích hợp API tự động tra cứu dữ liệu dân cư và chấm điểm tín dụng tự động (Auto-Underwriting), đưa tỷ lệ thông suốt STP lên 98%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-5', &quot;Re-architect the process via DFSS: Implement automated API credit bureau lookups and AI auto-underwriting to push STP to 98%.&quot;, &quot;Tái thiết kế luồng thẩm định tự động bằng API và AI chấm điểm tín dụng là giải pháp kép vừa cắt giảm chi phí vừa nâng tầm trải nghiệm khách hàng vượt bậc.&quot;)">B. Thuê thêm 50 nhân viên thẩm định thủ công</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-5', &quot;Re-architect the process via DFSS: Implement automated API credit bureau lookups and AI auto-underwriting to push STP to 98%.&quot;, &quot;Tái thiết kế luồng thẩm định tự động bằng API và AI chấm điểm tín dụng là giải pháp kép vừa cắt giảm chi phí vừa nâng tầm trải nghiệm khách hàng vượt bậc.&quot;)">C. Bỏ qua bước kiểm tra tín dụng</button></div>
-      <div id="fb-q13-5" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 6 • Tầng 3 • Executive Decision</span>
-      <div class="quiz-q">Bài học đúc kết quan trọng nhất sau khi hoàn thành 13 bài học chuyên sâu về Cơ Hội Sai Lỗi (Defect Opportunities) là gì?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q13-6', &quot;Defect opportunity is the equitable denominator and strategic compass of Six Sigma: Mastering O unlocks sustained capability breakthrough and enterprise wealth.&quot;, &quot;Làm chủ khái niệm và toán học Cơ hội sai lỗi là vũ khí tối thượng giúp Master Black Belt kiến tạo những bước nhảy vọt chất lượng và tài chính vĩ đại cho doanh nghiệp.&quot;)">A. Cơ hội sai lỗi là mẫu số công bằng và là la bàn định hướng của toàn bộ hệ thống Six Sigma: Xác định đúng O, chuẩn hóa O và kiểm soát O là chìa khóa mở ra cánh cửa đột phá năng lực và thịnh vượng tài chính</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-6', &quot;Defect opportunity is the equitable denominator and strategic compass of Six Sigma: Mastering O unlocks sustained capability breakthrough and enterprise wealth.&quot;, &quot;Làm chủ khái niệm và toán học Cơ hội sai lỗi là vũ khí tối thượng giúp Master Black Belt kiến tạo những bước nhảy vọt chất lượng và tài chính vĩ đại cho doanh nghiệp.&quot;)">B. Cơ hội sai lỗi chỉ là lý thuyết sách vở</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q13-6', &quot;Defect opportunity is the equitable denominator and strategic compass of Six Sigma: Mastering O unlocks sustained capability breakthrough and enterprise wealth.&quot;, &quot;Làm chủ khái niệm và toán học Cơ hội sai lỗi là vũ khí tối thượng giúp Master Black Belt kiến tạo những bước nhảy vọt chất lượng và tài chính vĩ đại cho doanh nghiệp.&quot;)">C. Chỉ cần đo số lỗi là đủ</button></div>
-      <div id="fb-q13-6" class="quiz-fb"></div>
-    </div>
-    <h3 style="color:#fff; margin-top:38px; font-size:1.25rem;">🎴 Flashcards Ôn Tập Nhanh (Click để lật thẻ 3D)</h3>
+
+    <!-- 5 FLASHCARDS -->
+    <h3 style="color:#ffffff; margin: 38px 0 10px; font-size:1.25rem;">Thẻ Ghi Nhớ Phản Xạ Nhanh 3D (Interactive Flip Cards)</h3>
+    <p style="color:var(--emerald-mint); font-size:0.92rem; margin-bottom:20px;">Nhấp vào thẻ để lật mặt sau và kiểm tra phản xạ cốt lõi:</p>
     <div class="flashcards-grid">
+      
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Practical Service Application</div>
-            <div class="term-vi">Ứng dụng thực hành dịch vụ</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #1 • Nhấn để lật</span>
+            <div class="fc-q">Ba chữ viết tắt cốt lõi trong Tiêu chuẩn tay nghề thi công bang Arizona (Arizona ROC) là gì?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Complete mathematical baseline modeling across financial transaction workflows</strong>
-            <span class="vi">Quy trình tính toán đường cơ sở thực chứng trong quy trình tài chính dịch vụ.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">PD: Possible Deficiency (Khiếm khuyết tiềm ẩn); AT: Acceptable Tolerance (Dung sai chấp nhận được); CR: Contractor Responsibility (Trách nhiệm nhà thầu).</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Touchpoint Opportunity Matrix</div>
-            <div class="term-vi">Ma trận cơ hội điểm chạm</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #2 • Nhấn để lật</span>
+            <div class="fc-q">Bốn khiếm khuyết tiềm ẩn (PD) điển hình trong phân hệ Điều hòa & Sưởi ấm (HVAC) được Dr. Harry nêu là gì?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Discrete error opportunities mapped across the customer application journey</strong>
-            <span class="vi">Bảng phân rã các cơ hội sai sót qua từng chặng hành trình khách hàng.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">1. Inadequate heat (Sưởi không đủ ấm); 2. Excessive noise from ducts (Ống gió quá ồn); 3. Inadequate combustion air vent (Thiếu gió buồng đốt); 4. Unit too close to door (Cục nóng quá gần cửa).</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Straight-Through Yield (STY)</div>
-            <div class="term-vi">Năng suất thông suốt dịch vụ</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #3 • Nhấn để lật</span>
+            <div class="fc-q">Nguyên lý "Gom cụm cơ hội lên phía trên" (Pooling opportunities upward) có ý nghĩa gì?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Percentage of applications approved end-to-end with zero rework loops</strong>
-            <span class="vi">Tỷ lệ hồ sơ được phê duyệt tự động hoàn hảo không qua sửa chữa.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Là phương pháp tích lũy các cơ hội sai lỗi từ từng thiết bị &rarr; phân hệ kỹ thuật &rarr; từng phòng &rarr; toàn bộ kết cấu công trình để tính mức Sigma tổng thể.</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Touchback Rework Cost</div>
-            <div class="term-vi">Chi phí xử lý hồ sơ trả về</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #4 • Nhấn để lật</span>
+            <div class="fc-q">Tại sao việc tiêu chuẩn hóa cơ hội lỗi trong ngành xây dựng lại có tính khái quát hóa cao (very generalizable)?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Direct operational expense incurred each time an application is rejected</strong>
-            <span class="vi">Khoản chi phí phát sinh mỗi lần hồ sơ bị trả lại yêu cầu bổ sung giấy tờ.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Vì mọi ngành công nghiệp khác (sản xuất, dịch vụ, tài chính) đều có các bộ quy chuẩn kỹ thuật tương tự có thể bóc tách thành các cơ hội lỗi theo mô hình này.</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Auto-Underwriting Engine</div>
-            <div class="term-vi">Cơ chế thẩm định tự động</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #5 • Nhấn để lật</span>
+            <div class="fc-q">Mục đích tối thượng của việc phát triển năng lực Sigma cho một công trình xây dựng là gì?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Algorithmic decision engine evaluating credit risk in milliseconds</strong>
-            <span class="vi">Hệ thống thuật toán phê duyệt tín dụng tức thời trong vài phần trăm giây.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Để kiểm soát chất lượng thi công có hệ thống, bàn giao nhà ở đạt chuẩn hoàn hảo lần đầu (First Time Yield cao) và triệt tiêu danh mục Punch List kéo dài.</div>
           </div>
         </div>
-      </div></div>
+      </div>
+    </div>
   </section>
 
-  <!-- PHẦN 5: ACTION CHECKLIST -->
+  <!-- PHẦN 5: ACTION CHECKLIST & TEMPLATES -->
   <section class="section-card">
-    <span class="section-num">Phần 5 • 1-Page Action Checklist &amp; Template</span>
-    <h2 class="section-heading">Checklist Hành Động Tại Doanh Nghiệp</h2>
-    <div class="section-subheading">Thực thi quản trị quy trình theo chuẩn mực Master Black Belt</div>
-    <label class="action-item"><input type="checkbox"><span class="action-text"><strong>Lập bảng phân tích 4 khâu dòng giao dịch thẻ tín dụng:</strong> Thu thập số liệu hồ sơ U, cơ hội O và số lỗi D tại từng phòng ban.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Tính toán Năng suất thông suốt STY và chi phí lãng phí Touchbacks:</strong> Lượng hóa số tiền thất thoát hàng năm để trình Ban Điều hành Ngân hàng.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Thiết kế dự án DFSS tự động hóa khâu thẩm định bằng API:</strong> Đặt mục tiêu nâng mức Sigma quy trình phát hành thẻ lên &amp;ge; 5.0 Sigma.</span></label>
-    <h3 style="color:var(--wood-dark); margin-top:28px;">Template Quản Trị Quy Trình (Process Management Template)</h3>
-    <div style="overflow-x:auto;">
-      <table style="width:100%; border-collapse:collapse; margin-top:12px; font-size:0.92rem; background:#ffffff;">
-        <thead><tr style="background:#064e3b; color:#fff;">
-          <th style="padding:10px; text-align:left; border-radius:6px 0 0 0;">Hạng mục thực thi</th>
-          <th style="padding:10px; text-align:left;">Thông số / Dữ liệu cần xác lập</th>
-          <th style="padding:10px; text-align:left; border-radius:0 6px 0 0;">Tiêu chuẩn kiểm chứng (Deliverable)</th>
-        </tr></thead>
-        <tbody><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Khâu giao dịch thẻ tín dụng</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Dữ liệu đo (U, O, D)</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">DPU &amp; DPO giao dịch</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">1. Tiếp nhận hồ sơ đơn</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">U=20k, O=8, D=1,200</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">DPU=0.060 | DPO=0.00750</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">2. Thẩm định CIC &amp; Thu nhập</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">U=20k, O=12, D=2,800</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">DPU=0.140 | DPO=0.01167</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">3. Phê duyệt hạn mức thẻ</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">U=20k, O=5, D=200</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">DPU=0.010 | DPO=0.00200</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">4. Dập thẻ &amp; Giao nhận</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">U=20k, O=5, D=100</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">DPU=0.005 | DPO=0.00100</td></tr></tbody>
+    <span class="section-num">Trụ Cột 5 • Sáng Thứ Hai Làm Gì?</span>
+    <h2 class="section-heading">Kế Hoạch Hành Động 3 Bước &amp; Biểu Mẫu Thực Thi</h2>
+    <div class="section-subheading">Quy trình tác chiến hiện trường dành cho Giám đốc Chất lượng &amp; Black Belt</div>
+
+    
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 1:</strong> Nghiên cứu kỹ bộ quy chuẩn kỹ thuật ngành áp dụng (ROC, tiêu chuẩn thi công, quy định nội bộ).
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 2:</strong> Lập bảng ma trận phân loại PD (Khiếm khuyết), AT (Dung sai cho phép) và CR (Trách nhiệm sửa chữa).
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 3:</strong> Thực hiện gom cụm cơ hội từ các hạng mục thành phần lên cấp độ toàn bộ công trình để xác lập chỉ số DPMO bàn giao.
+      </span>
+    </label>
+
+    <h3 style="color:var(--wood-dark); margin-top:32px; font-size:1.15rem;">Biểu Mẫu Quản Trị &amp; Khung Kiểm Soát Thực Chiến</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Mã Quy Chuẩn ROC</th><th>Hạng Mục Kỹ Thuật (Trade)</th><th>Khiếm Khuyết Tiềm Ẩn (PD)</th><th>Dung Sai Chấp Nhận (AT)</th><th>Trách Nhiệm Nhà Thầu (CR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><strong>HVAC Row 12.1</strong></td>
+              <td>Hệ thống sưởi ấm</td>
+              <td>Nhiệt độ phòng không đạt cam kết</td>
+              <td>Chênh lệch &le; 1.5&deg;C so với cài đặt</td>
+              <td>Có trách nhiệm cân chỉnh hệ thống</td>
+            </tr>
+            <tr>
+              <td><strong>HVAC Row 12.2</strong></td>
+              <td>Đường ống gió (Ducts)</td>
+              <td>Tiếng ồn gió rít vượt ngưỡng</td>
+              <td>Độ ồn &le; 42 dBA tại miệng gió</td>
+              <td>Có trách nhiệm bọc tiêu âm ống</td>
+            </tr>
+            <tr>
+              <td><strong>HVAC Row 12.3</strong></td>
+              <td>Buồng đốt khí gas</td>
+              <td>Thiếu khe cấp gió tươi</td>
+              <td>Đúng diện tích thông gió theo code</td>
+              <td>Có trách nhiệm mở thêm cửa gió</td>
+            </tr>
+            <tr>
+              <td><strong>HVAC Row 12.4</strong></td>
+              <td>Cục nóng ngoài trời</td>
+              <td>Đặt quá gần cửa sổ / cửa đi</td>
+              <td>Khoảng cách tối thiểu &ge; 1.0 m</td>
+              <td>Có trách nhiệm di dời vị trí máy</td>
+            </tr>
+        </tbody>
       </table>
     </div>
-    <p style="margin-top:18px; color:var(--vi-green-2);"><strong>Định nghĩa hoàn tất:</strong> Đo lường chính xác sức mạnh hệ thống đo, xác lập đường cơ sở Baseline, thiết lập benchmark và đếm cơ hội sai lỗi theo chuẩn Six Sigma quốc tế.</p>
   </section>
 
 </main>
 
 <footer>
   <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
-    &copy; Six Sigma Master Black Belt Executive Curriculum • Process Management Architecture
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
   </p>
 </footer>
 
@@ -685,7 +849,7 @@ function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
   } else {
     btn.classList.add('wrong');
     feedbackEl.className = 'quiz-fb show error';
-    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
   }
 }
 

@@ -57,7 +57,7 @@
   }
   .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
   .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
-  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 900px; margin: 0; line-height: 1.6; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
 
   .section-card {
     background: #ffffff;
@@ -250,23 +250,22 @@
     color: #0f172a;
   }
 
-  /* Interactive Arena */
+  /* Trắc Nghiệm & Flashcards */
   .interactive-arena {
-    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
-    border-radius: 16px;
-    padding: 38px 40px;
-    margin: 40px 0;
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--water-ocean) 100%);
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
     color: #ffffff;
-    box-shadow: 0 12px 36px rgba(2,44,34,0.4);
-    border: 2px solid var(--emerald);
+    box-shadow: 0 8px 30px rgba(2,44,34,0.3);
   }
-  .interactive-arena h2 {
-    font-size: 1.7rem;
+  .arena-heading {
+    font-size: 1.55rem;
     font-weight: 800;
+    margin: 0 0 4px;
     color: #ffffff;
-    margin: 0 0 6px;
   }
-  .arena-desc {
+  .arena-subheading {
     color: var(--emerald-mint);
     font-size: 1.02rem;
     margin-bottom: 28px;
@@ -379,44 +378,67 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 12px;
-    padding: 22px 20px;
-    box-sizing: border-box;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
   }
   .flashcard-front {
-    background: linear-gradient(145deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
-    border: 1.5px solid var(--emerald-mint);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(110,231,183,0.3);
     color: #ffffff;
   }
-  .flashcard-front .term { font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
-  .flashcard-front .term-vi { font-size: 0.9rem; color: var(--emerald-mint); font-style: italic; }
-  .flashcard-front .hint { font-size: 0.78rem; color: #a7f3d0; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
-  
   .flashcard-back {
-    background: linear-gradient(145deg, #064e3b, #047857);
-    border: 1.5px solid #86efac;
+    background: linear-gradient(135deg, var(--emerald-vibrant) 0%, var(--wood-dark) 100%);
     color: #ffffff;
     transform: rotateY(180deg);
-    font-size: 0.92rem;
-    line-height: 1.55;
-    text-align: left;
+    border: 1px solid var(--emerald-mint);
   }
-  .flashcard-back strong { color: #fef08a; }
-  .flashcard-back .vi { display: block; margin-top: 8px; color: #d1fae5; font-size: 0.86rem; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 6px; }
+  .fc-num {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .fc-q { font-size: 0.98rem; font-weight: 600; line-height: 1.45; }
+  .fc-a { font-size: 0.92rem; line-height: 1.5; }
+
+  /* Data Table */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .data-table th {
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+  }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
 
   /* Action Checklist */
   .action-item {
     display: flex;
     align-items: flex-start;
-    gap: 14px;
+    gap: 12px;
     padding: 14px 16px;
     background: #f8fafc;
     border-radius: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     border: 1px solid #e2e8f0;
+    cursor: pointer;
   }
   .action-item input[type="checkbox"] {
     width: 20px;
@@ -453,7 +475,7 @@
     <span class="hero-badge">04. Process Management • 06. Defect Opportunity</span>
     <h1 class="hero-title">Hiểu Sâu Sắc Về Cơ Hội Xuất Hiện Sai Lỗi</h1>
     <div class="hero-title-en">Gaining a Deeper Understanding of Defect Opportunities</div>
-    <p class="hero-desc">Bản chất triết học và toán học của Cơ hội sai lỗi (Defect Opportunity - O): Mẫu số công bằng giải phóng hệ thống Six Sigma khỏi sự thiên lệch về quy mô và độ phức tạp.</p>
+    <p class="hero-desc">Bản chất nền tảng của Six Sigma tại cấp độ nút (Node Level): Định nghĩa cơ hội sai lỗi như một tập hợp điều kiện thuận lợi cho sự hình thành khiếm khuyết, và triết lý hai mặt của cùng một đồng xu (Heads or Tails).</p>
   </div>
 </header>
 
@@ -461,211 +483,349 @@
 
   <!-- PHẦN 1: EXECUTIVE SUMMARY -->
   <section class="section-card">
-    <span class="section-num">Phần 1 • Executive Summary</span>
-    <h2 class="section-heading">Tóm Tắt Điều Hành (Executive Summary)</h2>
-    <div class="section-subheading">Nắm trọn tinh hoa bài học trong 60 giây</div>
-    <div class="exec-summary"><ul><li>Cơ hội sai lỗi (Defect Opportunity - O) là khái niệm phân định ranh giới giữa Quản lý chất lượng truyền thống và Six Sigma hiện đại.</li><li>Tại sao cần O: Nếu không có O, một sản phẩm gồm 10,000 linh kiện sẽ luôn bị đánh giá là 'kém chất lượng' hơn một sản phẩm chỉ có 2 linh kiện dù từng mối hàn của nó đều tinh xảo gấp 100 lần.</li><li>Định nghĩa chuẩn mực: Cơ hội sai lỗi là một đặc tính chất lượng CTQ có thể xảy ra sai hỏng độc lập và có thể đo lường định lượng được trong thực tế.</li><li>Tác động chiến lược: Xác định đúng O giúp tổ chức tính toán chính xác DPO, DPMO và xây dựng các dự án cải tiến nhắm trúng trọng tâm.</li></ul></div>
+    <span class="section-num">Trụ Cột 1 • Tóm Tắt Điều Hành</span>
+    <h2 class="section-heading">Executive Summary &amp; Thước Đo Lãnh Đạo</h2>
+    <div class="section-subheading">Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Cấp độ nút (The Node Level):</strong> Tại gốc rễ của mọi giao dịch, quy trình sản xuất hay dịch vụ thương mại luôn tồn tại các "nút" cơ hội. Six Sigma không đo lường ở mức độ sản phẩm tổng quát mà vận hành chính xác tại cấp độ cơ hội này.</li>
+        <li><strong>Định nghĩa khoa học của Cơ hội:</strong> Một cơ hội (Opportunity) là một tập hợp các tình huống, hoàn cảnh thuận lợi để dẫn đến một kết quả (A set of circumstances favorable to an end).</li>
+        <li><strong>Cơ hội Sai lỗi (Defect Opportunity):</strong> Khi gắn tiền tố "Defect", đây là tập hợp điều kiện thuận lợi cho sự hình thành một lỗi, một sai sót hoặc một sự không phù hợp (Favorable to the formation of a defect, error, or fault).</li>
+        <li><strong>Hai mặt của cùng một đồng xu (Two sides of the same coin):</strong> Cơ hội tạo ra lỗi và cơ hội tạo ra thành công (Yield) là hai mặt song hành. Đếm số cơ hội không phải để bi quan hóa quy trình mà để xác lập chuẩn mực công bằng lượng hóa năng lực thực sự.</li>
+      </ul>
+    </div>
     <div class="pro-tip">
-      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Insight)</div>
-      <p class="pro-tip-desc">Đừng bao giờ coi O là một con số bất biến do kỹ thuật viên tự gán. O là một hợp đồng chất lượng giữa Doanh nghiệp và Khách hàng, phản ánh đúng những gì khách hàng quan tâm!</p>
+      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Practical Insight)</div>
+      <p class="pro-tip-desc">Cơ hội sai lỗi là mẫu số công bằng của Six Sigma. Nếu chỉ đếm lỗi trên mỗi sản phẩm (Defects per Unit - DPU), bạn sẽ trừng phạt bất công các sản phẩm tinh xảo phức tạp và tưởng thưởng một cách ngây thơ cho các quy trình đơn giản nông cạn.</p>
     </div>
   </section>
 
   <!-- PHẦN 2: CORE FRAMEWORKS & REAL MATH -->
   <section class="section-card">
-    <span class="section-num">Phần 2 • Core Frameworks &amp; Real Math</span>
-    <h2 class="section-heading">Nguyên Lý &amp; Công Thức Lượng Hóa</h2>
-    <div class="section-subheading">Các mô hình định lượng và công thức chuyển hóa hiệu suất thực chiến</div>
-    <p>Trong bài học mở đầu chuyên đề Cơ Hội Sai Lỗi, Dr. Mikel Harry làm sáng tỏ bản chất của đại lượng O:</p>
+    <span class="section-num">Trụ Cột 2 • Khung Lý Thuyết &amp; Mô Hình Toán Học</span>
+    <h2 class="section-heading">Nguyên Lý Lượng Hóa Cốt Lõi</h2>
+    <div class="section-subheading">Mô hình toán học thuần túy giải phóng quy trình khỏi biến thiên cảm tính</div>
+    <p>Trong bài giảng mở đầu, Dr. Mikel J. Harry đặt nền móng tư duy cho toàn bộ hệ thống Six Sigma bằng cách đưa đại lượng đo lường về cấp độ nguyên tử: Cấp độ Nút (Node Level). Dưới đây là các mô hình toán học và logic chuẩn tắc:</p>
     
-    <div class="math-card">
-      <div class="title">1. Phương Trình Chuẩn Hóa Độ Phức Tạp / Complexity Normalization Model</div>
-      <div class="math-equation"><i>DPO</i> = <div class="math-frac"><div class="math-num"><i>Total Defects Observed</i> (<i>D</i>)</div><div class="math-den"><i>Total Units</i> (<i>U</i>) &times; <i>Opportunities per Unit</i> (<i>O</i>)</div></div> &nbsp;|&nbsp; <i>DPMO</i> = <i>DPO</i> &times; 10<sup>6</sup></div>
-      <div class="desc"><strong>Nguyên lý bình đẳng:</strong><br>&bull; Mẫu số (U &times; O) đại diện cho toàn bộ số lần thử nghiệm độc lập mà quy trình có thể tạo ra lỗi hoặc thành công.</div>
-    </div>
-    <div class="math-card">
-      <div class="title">2. Ba Tiêu Chuẩn Vàng Của Một Cơ Hội Hợp Lệ / Triad of Valid Opportunity</div>
-      <div class="math-equation"><i>Valid Opportunity</i> = <i>CTQ-Linked</i> &nbsp;&and;&nbsp; <i>Statistically Independent</i> &nbsp;&and;&nbsp; <i>Physically Measurable</i></div>
-      <div class="desc"><strong>Ba điều kiện bắt buộc:</strong><br>&bull; (1) Phải quan trọng với khách hàng (CTQ).<br>&bull; (2) Độc lập thống kê.<br>&bull; (3) Đo lường được rõ ràng.</div>
-    </div>
-    <div class="math-card">
-      <div class="title">3. Hệ Số Độ Phức Tạp Sản Phẩm / Product Complexity Factor (PCF)</div>
-      <div class="math-equation"><i>PCF</i> = &sum; <i>O</i><sub>Subassembly, i</sub> &nbsp;&rArr;&nbsp; <i>Target Yield</i> = <i>e</i><sup>&minus;<i>DPO</i> &times; <i>PCF</i></sup></div>
-      <div class="desc"><strong>Ý nghĩa:</strong><br>&bull; Sản phẩm càng phức tạp (PCF càng cao), mức Sigma yêu cầu trên từng cơ hội càng phải cao để bảo toàn năng suất dồn.</div>
-    </div>
+    
+      <div class="math-card">
+        <div class="title">1. Phương Trình Chuẩn Hóa Cơ Hội / Opportunity Normalization Equation</div>
+        <div class="math-equation"><i>DPO</i> = <div class="math-frac"><div class="math-num"><i>D</i> (<i>Total Defects</i>)</div><div class="math-den"><i>U</i> (<i>Units</i>) &times; <i>O</i> (<i>Opportunities per Unit</i>)</div></div> &nbsp;|&nbsp; <i>DPMO</i> = <i>DPO</i> &times; 10<sup>6</sup></div>
+        <div class="desc"><strong>Giải thích đại lượng:</strong><br>&bull; <em>D</em>: Tổng số sai lỗi quan sát được trên toàn bộ mẫu kiểm tra.<br>&bull; <em>U &times; O</em>: Tổng số cơ hội xuất hiện sai lỗi tích lũy (Tổng số lần thử nghiệm độc lập mà quy trình có thể tạo ra lỗi hoặc thành công).<br>&bull; <em>DPMO</em>: Số lỗi trên một triệu cơ hội — chuẩn thước đo toàn cầu cho năng lực Six Sigma.</div>
+      </div>
+
+      <div class="math-card">
+        <div class="title">2. Nguyên Lý Hai Mặt Đồng Xu / The Coin Equivalence Principle</div>
+        <div class="math-equation"><i>P</i>(<i>Pass</i>) + <i>P</i>(<i>Fail</i>) = 1 &nbsp;&rArr;&nbsp; <i>P</i>(<i>Defect</i>) = 1 &minus; <i>P</i>(<i>Yield</i>)</div>
+        <div class="desc"><strong>Ý nghĩa xác suất:</strong><br>&bull; Tại mỗi nút cơ hội, kết quả chỉ có thể là Thành công (Heads/Yield) hoặc Thất bại (Tails/Defect).<br>&bull; Cơ hội đi đúng và cơ hội đi sai xuất phát từ cùng một trạng thái vận hành của hệ thống.</div>
+      </div>
+
+      <div class="math-card">
+        <div class="title">3. Năng Lực Cấp Độ Nút / Node-Level Process Capability</div>
+        <div class="math-equation"><i>Z</i><sub>node</sub> = &Phi;<sup>&minus;1</sup>(1 &minus; <i>DPO</i>) + 1.50</div>
+        <div class="desc"><strong>Chuyển đổi mức Sigma:</strong><br>&bull; &Phi;<sup>-1</sup> là hàm nghịch đảo của phân phối chuẩn chuẩn tắc.<br>&bull; Mức Sigma được tính trên từng nút cơ hội độc lập, phản ánh khả năng chế ngự biến thiên tại từng điểm tiếp xúc của quy trình.</div>
+      </div>
+
     <div class="pro-tip">
       <div class="pro-tip-title">MBB Interpretation • Diễn giải điều hành</div>
-      <p class="pro-tip-desc">Cơ hội sai lỗi là mẫu số công bằng của nền văn minh công nghiệp. Nhờ có O, chúng ta có thể đánh giá sự hoàn hảo của một con tàu vũ trụ và một chiếc thìa nhựa trên cùng một cán cân thống kê.</p>
+      <p class="pro-tip-desc">Khi Dr. Harry khẳng định "Six Sigma applies at the opportunity level", ông muốn giải phóng các kỹ sư khỏi bẫy tư duy tỷ lệ phần trăm phế phẩm truyền thống. Muốn đưa một cỗ máy phức tạp lên 6 Sigma, ta phải kiểm soát từng nút cơ hội độc lập của nó đạt chuẩn 6 Sigma.</p>
     </div>
   </section>
 
-  <!-- PHẦN 3: CASE STUDIES -->
+  <!-- PHẦN 3: CASE STUDIES & VS COMPARISON -->
   <section class="section-card">
-    <span class="section-num">Phần 3 • Real-World Case Studies &amp; VS Comparison</span>
-    <h2 class="section-heading">Tình Huống Thực Chiến &amp; Bảng Đối Chiếu</h2>
-    <div class="section-subheading">Một lăng kính cho sản xuất, một lăng kính cho dịch vụ</div>
+    <span class="section-num">Trụ Cột 3 • Tình Huống Thực Chiến &amp; Đối Chiếu Phản Tư</span>
+    <h2 class="section-heading">Nghiên Cứu Điển Hình Công Nghiệp &amp; Dịch Vụ</h2>
+    <div class="section-subheading">Từ thực tiễn nhà xưởng phức tạp đến dòng chảy dịch vụ giao dịch thương mại</div>
+    
     <div class="case-grid">
       <div class="case-card mfg">
-        <span class="case-tag mfg">Sản xuất • Vệ tinh Viễn thông Địa tĩnh</span>
-        <h3 class="case-title">Chuẩn hóa cơ hội sai lỗi cho vệ tinh 500,000 linh kiện</h3>
-        <p class="case-body">Một vệ tinh viễn thông có 500,000 mối hàn và linh kiện điện tử (O = 500,000). Trong quá trình kiểm tra tích hợp, phát hiện 2 mối hàn bị hở. Nếu tính theo phế phẩm cổ điển (Defective = 1/1 = 100% hỏng), dự án là thảm họa. Nhưng khi tính theo DPO = 2 / 500,000 = 0.000004 &rarr; DPMO = 4.0 (Z = 5.95 Sigma).</p>
-        <div class="case-metric"><strong>Phân tích MBB:</strong> Bảo vệ thành quả công nghệ xuất sắc của đội ngũ kỹ sư, khẳng định vệ tinh đạt chuẩn an toàn 6 Sigma phóng lên quỹ đạo.</div>
+        <span class="case-tag mfg">Sản Xuất Cơ Khí Chính Xác</span>
+        <h3 class="case-title">Xác Lập Cấp Độ Nút Cho Khối Động Cơ Hàng Không</h3>
+        <p class="case-body">Một khối động cơ máy bay hoàn thiện gồm 8,500 vị trí lắp ráp và kiểm tra. Ban giám đốc ban đầu chỉ theo dõi tỷ lệ phế phẩm thành phẩm (Scrap Rate = 12%). Black Belt đã tái cấu trúc lại phép đo về cấp độ nút: Mỗi khối động cơ có 8,500 cơ hội lỗi độc lập. Với 100 động cơ được sản xuất và ghi nhận 170 lỗi, DPO = 170 / (100 × 8,500) = 0.0002. Mức Sigma tại cấp độ nút đạt 5.05 Sigma.</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Nhận diện đúng 12 vị trí nút có tỷ lệ lỗi tập trung cao nhất, tái thiết kế đồ gá và nâng mức Sigma cấp độ nút lên 5.8 Sigma, tiết kiệm 1.4 triệu USD chi phí thử nghiệm lại.</div>
       </div>
       <div class="case-card svc">
-        <span class="case-tag svc">Dịch vụ • Chuỗi Nhà hàng 5 Sao Toàn cầu</span>
-        <h3 class="case-title">Xác định cơ hội lỗi trên 1 bữa ăn tối Fine-Dining</h3>
-        <p class="case-body">Một trải nghiệm ăn tối gồm 20 cơ hội sai lỗi CTQ (Đặt bàn, đón tiếp, nhiệt độ vang, độ chín của thịt bò, thời gian ra món, thanh toán). Kiểm tra 1,000 bữa ăn ghi nhận 35 lỗi.</p>
-        <div class="case-metric"><strong>Phân tích MBB:</strong> DPO = 35 / (1,000 × 20) = 0.00175 (1,750 DPMO &rarr; Z = 4.42 Sigma), định vị chính xác khâu ra món trễ là điểm cần cải tiến.</div>
-      </div></div>
+        <span class="case-tag svc">Dịch Vụ Ngân Hàng Số</span>
+        <h3 class="case-title">Định Lượng Cấp Độ Nút Trong Quy Trình Mở Tài Khoản E-KYC</h3>
+        <p class="case-body">Khách hàng hoàn tất mở tài khoản e-KYC qua 4 bước: Tải ảnh CCCD, Quét khuôn mặt, Điền thông tin cá nhân và Xác thực OTP. Ban điều hành chỉ theo dõi tỷ lệ rớt khách (Drop-off rate = 18%). MBB phân rã e-KYC thành 14 cơ hội lỗi cấp nút (độ mờ ảnh CCCD, lóa sáng, sai số OCR họ tên, sai ngày cấp, lệch sinh trắc học...).</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Bằng cách đo lường DPO trên từng nút trong số 14 cơ hội, nhóm phát hiện nút "Nhận diện số CCCD có chíp bị lóa" chiếm 68% tổng số lỗi. Sau khi bổ sung thuật toán chống lóa tự động, tỷ lệ thành công e-KYC tăng từ 82% lên 97.4%.</div>
+      </div>
+    </div>
+
     <div class="vs-grid">
       <div class="vs-col bad">
-        <span class="vs-badge bad">Bad / Trap • Tư duy sai lầm</span>
-        <ul><li>Tùy tiện đếm khống số cơ hội lỗi O (Opportunity Inflation) để làm đẹp điểm Sigma giả tạo.</li><li>Bỏ qua tính độc lập thống kê giữa các cơ hội lỗi, tính gộp cả các lỗi phụ thuộc nhân quả.</li><li>Không chuẩn hóa định nghĩa cơ hội lỗi giữa các nhà máy và các đối tác trong chuỗi cung ứng.</li><li>Xem cơ hội sai lỗi chỉ là lý thuyết thống kê mà không gắn kết với yêu cầu CTQ của khách hàng.</li></ul>
+        <span class="vs-badge bad">❌ Tư Duy Đo Lường Truyền Thống</span>
+        <ul>
+          <li>Chỉ đếm tỷ lệ phế phẩm trên sản phẩm hoàn thiện (Defective Rate / Scrap %)</li>
+          <li>Đánh đồng một chiếc đinh vít đơn giản với một chiếc máy bay 1 triệu linh kiện</li>
+          <li>Coi cơ hội là số lượng bất kỳ do kỹ sư cảm tính tự quy ước</li>
+          <li>Không phân rã được nguyên nhân gốc rễ vì dữ liệu bị gom cục bộ</li>
+        </ul>
       </div>
-      <div class="vs-divider">VS</div>
+      <div class="vs-divider">&harr;</div>
       <div class="vs-col good">
-        <span class="vs-badge good">Good / MBB • Chuẩn Six Sigma</span>
-        <ul><li>Xác lập Cơ hội sai lỗi (Defect Opportunity - O) dựa trên các yêu cầu CTQ độc lập và đo lường được.</li><li>Minh bạch hóa toàn bộ bảng phân rã cơ hội lỗi trong Project Charter có chữ ký phê duyệt.</li><li>Áp dụng nguyên tắc chuẩn hóa cơ hội lỗi để so sánh công bằng giữa sản xuất cơ khí và giao dịch dịch vụ.</li><li>Chống gian lận số liệu thông qua cơ chế kiểm toán độc lập định nghĩa cơ hội sai lỗi (Opportunity Audit).</li></ul>
+        <span class="vs-badge good">✅ Tư Duy Cấp Độ Nút Six Sigma Chuẩn Dr. Harry</span>
+        <ul>
+          <li>Đo lường năng lực tại từng nút cơ hội sai lỗi độc lập (Opportunity Level)</li>
+          <li>Chuẩn hóa độ phức tạp thông qua chỉ số DPO và DPMO công bằng</li>
+          <li>Định nghĩa cơ hội là tập hợp điều kiện cụ thể thuận lợi cho việc hình thành lỗi</li>
+          <li>Nhìn nhận cơ hội theo nguyên lý hai mặt đồng xu (Pass vs Fail song hành)</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- PHẦN 4: INTERACTIVE ARENA -->
+  <!-- PHẦN 4: INTERACTIVE ARENA (8 QUIZZES & 5 FLASHCARDS) -->
   <section class="interactive-arena">
-    <span class="section-num">Phần 4 • Interactive Arena</span>
-    <h2>Đấu Trường Trắc Nghiệm Tình Huống (Scenario-Based Practice)</h2>
-    <p class="arena-desc">Chọn một đáp án để nhận phản hồi tức thì bằng tiếng Anh chuyên ngành và tiếng Việt ứng dụng.</p>
-    
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 1 • Tầng 1 • Recall & Concept</span>
-      <div class="quiz-q">Mục đích cốt lõi nhất của việc đưa tham số &#x27;Cơ hội sai lỗi&#x27; (Defect Opportunity - O) vào mẫu số tính toán Six Sigma là gì?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q1-1', &quot;Defect opportunities normalize process complexity, creating scale-invariant benchmarks across diverse products.&quot;, &quot;Cơ hội sai lỗi chuẩn hóa độ phức tạp, giúp so sánh công bằng mọi loại sản phẩm trên cùng một thước đo.&quot;)">A. Chuẩn hóa và triệt tiêu ảnh hưởng của độ phức tạp sản phẩm, cho phép so sánh công bằng giữa các hệ thống có quy mô linh kiện khác nhau</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-1', &quot;Defect opportunities normalize process complexity, creating scale-invariant benchmarks across diverse products.&quot;, &quot;Cơ hội sai lỗi chuẩn hóa độ phức tạp, giúp so sánh công bằng mọi loại sản phẩm trên cùng một thước đo.&quot;)">B. Để tăng thêm điểm thưởng cho kỹ sư</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-1', &quot;Defect opportunities normalize process complexity, creating scale-invariant benchmarks across diverse products.&quot;, &quot;Cơ hội sai lỗi chuẩn hóa độ phức tạp, giúp so sánh công bằng mọi loại sản phẩm trên cùng một thước đo.&quot;)">C. Để giảm bớt việc cho phòng chất lượng</button></div>
-      <div id="fb-q1-1" class="quiz-fb"></div>
+    <span class="section-num" style="background:var(--emerald-vibrant); color:#022c22;">Trụ Cột 4 • Khảo Hạch Năng Lực &amp; Phản Xạ 3D</span>
+    <h2 class="arena-heading">Đấu Trường Khảo Hạch Black Belt</h2>
+    <div class="arena-subheading">8 Tình huống trắc nghiệm chuyên sâu &bull; 5 Thẻ ghi nhớ phản xạ 3D &bull; Chuẩn hóa năng lực SSMI</div>
+
+    <!-- 8 QUIZZES -->
+    <div class="quizzes-container">
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 1/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Theo Dr. Mikel J. Harry, Six Sigma thực sự được áp dụng và vận hành hiệu quả nhất tại cấp độ nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-1', 'Dr. Harry explicitly stated: &quot;Six Sigma applies at the opportunity level of a product or service. At the node level, at the base, is an opportunity.&quot;', 'Dr. Harry nhấn mạnh: Six Sigma vận hành ở cấp độ cơ hội của sản phẩm hoặc dịch vụ. Tại cấp độ nút, ở tận cùng gốc rễ, chính là một cơ hội.')">A. Cấp độ doanh thu tài chính tổng thể của tập đoàn</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-1', 'Dr. Harry explicitly stated: &quot;Six Sigma applies at the opportunity level of a product or service. At the node level, at the base, is an opportunity.&quot;', 'Dr. Harry nhấn mạnh: Six Sigma vận hành ở cấp độ cơ hội của sản phẩm hoặc dịch vụ. Tại cấp độ nút, ở tận cùng gốc rễ, chính là một cơ hội.')">B. Cấp độ nút cơ hội (The node / opportunity level) của sản phẩm hoặc dịch vụ</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-1', 'Dr. Harry explicitly stated: &quot;Six Sigma applies at the opportunity level of a product or service. At the node level, at the base, is an opportunity.&quot;', 'Dr. Harry nhấn mạnh: Six Sigma vận hành ở cấp độ cơ hội của sản phẩm hoặc dịch vụ. Tại cấp độ nút, ở tận cùng gốc rễ, chính là một cơ hội.')">C. Cấp độ toàn bộ dây chuyền sản xuất lắp ráp cuối cùng</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-1', 'Dr. Harry explicitly stated: &quot;Six Sigma applies at the opportunity level of a product or service. At the node level, at the base, is an opportunity.&quot;', 'Dr. Harry nhấn mạnh: Six Sigma vận hành ở cấp độ cơ hội của sản phẩm hoặc dịch vụ. Tại cấp độ nút, ở tận cùng gốc rễ, chính là một cơ hội.')">D. Cấp độ tỷ lệ phần trăm phế phẩm trung bình hàng tháng</button>
+        </div>
+        <div id="fb-01-1" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 2/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Một cơ hội (Opportunity) được định nghĩa khoa học là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-2', 'According to Dr. Harry: &quot;An opportunity is a set of circumstances that is favorable to an end.&quot;', 'Theo Dr. Harry: Một cơ hội là một tập hợp các tình huống/hoàn cảnh thuận lợi để dẫn đến một cứu cánh hay kết quả nhất định.')">A. Một may mắn ngẫu nhiên xuất hiện trong quá trình vận hành</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-2', 'According to Dr. Harry: &quot;An opportunity is a set of circumstances that is favorable to an end.&quot;', 'Theo Dr. Harry: Một cơ hội là một tập hợp các tình huống/hoàn cảnh thuận lợi để dẫn đến một cứu cánh hay kết quả nhất định.')">B. Một tập hợp các tình huống, hoàn cảnh thuận lợi để dẫn đến một kết quả (A set of circumstances favorable to an end)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-2', 'According to Dr. Harry: &quot;An opportunity is a set of circumstances that is favorable to an end.&quot;', 'Theo Dr. Harry: Một cơ hội là một tập hợp các tình huống/hoàn cảnh thuận lợi để dẫn đến một cứu cánh hay kết quả nhất định.')">C. Một chỉ tiêu KPI do ban giám đốc áp đặt từ trên xuống</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-2', 'According to Dr. Harry: &quot;An opportunity is a set of circumstances that is favorable to an end.&quot;', 'Theo Dr. Harry: Một cơ hội là một tập hợp các tình huống/hoàn cảnh thuận lợi để dẫn đến một cứu cánh hay kết quả nhất định.')">D. Một đặc tính bắt buộc phải tốn chi phí kiểm tra 100%</button>
+        </div>
+        <div id="fb-01-2" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 3/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Khi đặt từ "Defect" vào trước "Opportunity", khái niệm "Defect Opportunity" biểu thị điều gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-3', 'Dr. Harry: &quot;When we put the word defect in front of it, we’re saying it is a set of circumstances, conditions, that is favorable to the formation of a defect, an error, a fault.&quot;', 'Khi đặt từ defect phía trước, nó có nghĩa là một tập hợp các hoàn cảnh, điều kiện thuận lợi cho việc tạo ra một sai lỗi, khiếm khuyết.')">A. Khả năng nhân viên cố tình phá hoại sản phẩm</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-3', 'Dr. Harry: &quot;When we put the word defect in front of it, we’re saying it is a set of circumstances, conditions, that is favorable to the formation of a defect, an error, a fault.&quot;', 'Khi đặt từ defect phía trước, nó có nghĩa là một tập hợp các hoàn cảnh, điều kiện thuận lợi cho việc tạo ra một sai lỗi, khiếm khuyết.')">B. Một tập hợp điều kiện, hoàn cảnh thuận lợi cho sự hình thành của một khiếm khuyết, lỗi sai (Favorable to the formation of a defect, an error, a fault)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-3', 'Dr. Harry: &quot;When we put the word defect in front of it, we’re saying it is a set of circumstances, conditions, that is favorable to the formation of a defect, an error, a fault.&quot;', 'Khi đặt từ defect phía trước, nó có nghĩa là một tập hợp các hoàn cảnh, điều kiện thuận lợi cho việc tạo ra một sai lỗi, khiếm khuyết.')">C. Số lượng sản phẩm bị loại bỏ trong thùng rác</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-3', 'Dr. Harry: &quot;When we put the word defect in front of it, we’re saying it is a set of circumstances, conditions, that is favorable to the formation of a defect, an error, a fault.&quot;', 'Khi đặt từ defect phía trước, nó có nghĩa là một tập hợp các hoàn cảnh, điều kiện thuận lợi cho việc tạo ra một sai lỗi, khiếm khuyết.')">D. Số tiền phạt mà công ty phải bồi thường cho khách hàng</button>
+        </div>
+        <div id="fb-01-3" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 4/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Ý niệm "Heads and Tails - Hai mặt của cùng một đồng xu" trong bài giảng ám chỉ mối quan hệ nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-4', 'Dr. Harry explains: &quot;Whether it goes right or whether it goes wrong, heads and tails, different sides of the same coin.&quot;', 'Dù diễn ra đúng hay diễn ra sai, mặt sấp và mặt ngửa đều là các mặt khác nhau của cùng một đồng xu vận hành.')">A. Mối quan hệ giữa tiền thưởng và tiền phạt của ban giám đốc</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-4', 'Dr. Harry explains: &quot;Whether it goes right or whether it goes wrong, heads and tails, different sides of the same coin.&quot;', 'Dù diễn ra đúng hay diễn ra sai, mặt sấp và mặt ngửa đều là các mặt khác nhau của cùng một đồng xu vận hành.')">B. Cơ hội để mọi việc diễn ra đúng đắn (Right/Yield) và cơ hội để xảy ra sai sót (Wrong/Defect) là hai mặt thống nhất của cùng một bản chất</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-4', 'Dr. Harry explains: &quot;Whether it goes right or whether it goes wrong, heads and tails, different sides of the same coin.&quot;', 'Dù diễn ra đúng hay diễn ra sai, mặt sấp và mặt ngửa đều là các mặt khác nhau của cùng một đồng xu vận hành.')">C. Mối quan hệ đối đầu giữa bộ phận Sản xuất và bộ phận Quản lý chất lượng</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-4', 'Dr. Harry explains: &quot;Whether it goes right or whether it goes wrong, heads and tails, different sides of the same coin.&quot;', 'Dù diễn ra đúng hay diễn ra sai, mặt sấp và mặt ngửa đều là các mặt khác nhau của cùng một đồng xu vận hành.')">D. Trò chơi may rủi trong việc chọn mẫu kiểm định ngẫu nhiên</button>
+        </div>
+        <div id="fb-01-4" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 5/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Một dây chuyền lắp ráp điện thoại sản xuất 500 chiếc smartphone, mỗi chiếc có 200 nút cơ hội lỗi độc lập. Trong ca làm việc phát hiện 40 lỗi. Chỉ số DPO là bao nhiêu?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-5', 'Total opportunities = 500 * 200 = 100,000. DPO = Total Defects / Total Opportunities = 40 / 100,000 = 0.0004 (400 DPMO).', 'Tổng cơ hội = 500 x 200 = 100,000. DPO = 40 / 100,000 = 0.0004 (tương đương 400 DPMO, khoảng 4.85 Sigma).')">A. 0.0800</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-5', 'Total opportunities = 500 * 200 = 100,000. DPO = Total Defects / Total Opportunities = 40 / 100,000 = 0.0004 (400 DPMO).', 'Tổng cơ hội = 500 x 200 = 100,000. DPO = 40 / 100,000 = 0.0004 (tương đương 400 DPMO, khoảng 4.85 Sigma).')">B. 0.0004</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-5', 'Total opportunities = 500 * 200 = 100,000. DPO = Total Defects / Total Opportunities = 40 / 100,000 = 0.0004 (400 DPMO).', 'Tổng cơ hội = 500 x 200 = 100,000. DPO = 40 / 100,000 = 0.0004 (tương đương 400 DPMO, khoảng 4.85 Sigma).')">C. 0.0040</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-5', 'Total opportunities = 500 * 200 = 100,000. DPO = Total Defects / Total Opportunities = 40 / 100,000 = 0.0004 (400 DPMO).', 'Tổng cơ hội = 500 x 200 = 100,000. DPO = 40 / 100,000 = 0.0004 (tương đương 400 DPMO, khoảng 4.85 Sigma).')">D. 0.0200</button>
+        </div>
+        <div id="fb-01-5" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 6/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Nếu chỉ theo dõi tỷ lệ phế phẩm DPU (Defects Per Unit) mà bỏ qua số cơ hội O trên sản phẩm, hậu quả quản trị nghiêm trọng nhất là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-6', 'Without opportunity normalization (O), complex products with thousands of nodes appear falsely worse than simple products with 2 nodes, even if each node in the complex product is far superior.', 'Không có O để chuẩn hóa, sản phẩm phức tạp nhiều nút sẽ luôn bị đánh giá oan là kém chất lượng hơn sản phẩm đơn giản, làm tê liệt động lực cải tiến.')">A. Làm sai lệch báo cáo kế toán thuế cuối năm</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-6', 'Without opportunity normalization (O), complex products with thousands of nodes appear falsely worse than simple products with 2 nodes, even if each node in the complex product is far superior.', 'Không có O để chuẩn hóa, sản phẩm phức tạp nhiều nút sẽ luôn bị đánh giá oan là kém chất lượng hơn sản phẩm đơn giản, làm tê liệt động lực cải tiến.')">B. Trừng phạt các sản phẩm có độ phức tạp cao (nhiều linh kiện) và tạo ra ảo tưởng chất lượng cho các sản phẩm đơn giản</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-6', 'Without opportunity normalization (O), complex products with thousands of nodes appear falsely worse than simple products with 2 nodes, even if each node in the complex product is far superior.', 'Không có O để chuẩn hóa, sản phẩm phức tạp nhiều nút sẽ luôn bị đánh giá oan là kém chất lượng hơn sản phẩm đơn giản, làm tê liệt động lực cải tiến.')">C. Làm tăng tốc độ hỏng hóc tự nhiên của máy móc thiết bị</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-6', 'Without opportunity normalization (O), complex products with thousands of nodes appear falsely worse than simple products with 2 nodes, even if each node in the complex product is far superior.', 'Không có O để chuẩn hóa, sản phẩm phức tạp nhiều nút sẽ luôn bị đánh giá oan là kém chất lượng hơn sản phẩm đơn giản, làm tê liệt động lực cải tiến.')">D. Làm giảm số lượng nhân sự tham gia vào phòng ban Six Sigma</button>
+        </div>
+        <div id="fb-01-6" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 7/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Tại một nút giao dịch cấp tín dụng, nếu điều kiện dẫn đến lỗi (chậm duyệt hồ sơ) chưa từng có quy định cụ thể về thời gian chuẩn thì có cơ hội lỗi hợp lệ hay không?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-7', 'A defect opportunity requires defined circumstances and standards where failure can be objectively evaluated as favorable to an end.', 'Cơ hội sai lỗi đòi hỏi phải có điều kiện và chuẩn mực định lượng rõ ràng; nếu không có chuẩn thì không thể xác lập trạng thái sai lỗi khách quan.')">A. Vẫn có, vì khách hàng cảm thấy lâu là thành lỗi</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-7', 'A defect opportunity requires defined circumstances and standards where failure can be objectively evaluated as favorable to an end.', 'Cơ hội sai lỗi đòi hỏi phải có điều kiện và chuẩn mực định lượng rõ ràng; nếu không có chuẩn thì không thể xác lập trạng thái sai lỗi khách quan.')">B. Không có cơ hội lỗi hợp lệ vì chưa có tiêu chuẩn định lượng để phân định ranh giới giữa Right và Wrong</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-7', 'A defect opportunity requires defined circumstances and standards where failure can be objectively evaluated as favorable to an end.', 'Cơ hội sai lỗi đòi hỏi phải có điều kiện và chuẩn mực định lượng rõ ràng; nếu không có chuẩn thì không thể xác lập trạng thái sai lỗi khách quan.')">C. Tự động mặc định là 6 Sigma</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-7', 'A defect opportunity requires defined circumstances and standards where failure can be objectively evaluated as favorable to an end.', 'Cơ hội sai lỗi đòi hỏi phải có điều kiện và chuẩn mực định lượng rõ ràng; nếu không có chuẩn thì không thể xác lập trạng thái sai lỗi khách quan.')">D. Có cơ hội lỗi nhưng chỉ tính khi thanh tra đến kiểm tra</button>
+        </div>
+        <div id="fb-01-7" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 8/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Hành động đầu tiên một Black Belt cần làm vào sáng thứ Hai khi tiếp nhận dự án giảm tỷ lệ lỗi là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-8', 'The first operational step is Gemba decomposition down to the node level to understand the actual circumstances that make defect formation favorable.', 'Bước thực chiến đầu tiên là xuống Gemba phân rã quy trình đến tận cấp độ nút để nhận diện đúng hoàn cảnh tạo ra lỗi theo chuẩn Dr. Harry.')">A. Yêu cầu thay thế toàn bộ thiết bị và sa thải công nhân thao tác lỗi</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-8', 'The first operational step is Gemba decomposition down to the node level to understand the actual circumstances that make defect formation favorable.', 'Bước thực chiến đầu tiên là xuống Gemba phân rã quy trình đến tận cấp độ nút để nhận diện đúng hoàn cảnh tạo ra lỗi theo chuẩn Dr. Harry.')">B. Đi xuống hiện trường (Gemba) để phân rã quy trình thành các nút cơ hội độc lập và kiểm tra điều kiện hình thành lỗi</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-8', 'The first operational step is Gemba decomposition down to the node level to understand the actual circumstances that make defect formation favorable.', 'Bước thực chiến đầu tiên là xuống Gemba phân rã quy trình đến tận cấp độ nút để nhận diện đúng hoàn cảnh tạo ra lỗi theo chuẩn Dr. Harry.')">C. Mua ngay phần mềm thống kê đắt tiền để vẽ biểu đồ Pareto</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-8', 'The first operational step is Gemba decomposition down to the node level to understand the actual circumstances that make defect formation favorable.', 'Bước thực chiến đầu tiên là xuống Gemba phân rã quy trình đến tận cấp độ nút để nhận diện đúng hoàn cảnh tạo ra lỗi theo chuẩn Dr. Harry.')">D. Họp toàn thể công ty để phát động phong trào thi đua không lỗi</button>
+        </div>
+        <div id="fb-01-8" class="quiz-fb"></div>
+      </div>
     </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 2 • Tầng 1 • Recall & Concept</span>
-      <div class="quiz-q">Theo Dr. Mikel Harry, một đặc tính chỉ được công nhận là một Cơ hội sai lỗi (O) hợp lệ khi thỏa mãn đồng thời 3 tiêu chuẩn nào?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q1-2', &quot;A valid opportunity must be (1) Customer CTQ-linked, (2) Statistically independent, and (3) Physically measurable.&quot;, &quot;Ba tiêu chuẩn vàng: Gắn kết CTQ, Độc lập thống kê và Đo lường được định lượng.&quot;)">A. (1) Là một yêu cầu CTQ của khách hàng; (2) Độc lập thống kê; (3) Đo lường được rõ ràng trong thực tế</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-2', &quot;A valid opportunity must be (1) Customer CTQ-linked, (2) Statistically independent, and (3) Physically measurable.&quot;, &quot;Ba tiêu chuẩn vàng: Gắn kết CTQ, Độc lập thống kê và Đo lường được định lượng.&quot;)">B. (1) Dễ đo; (2) Số lượng nhiều; (3) Không tốn chi phí</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-2', &quot;A valid opportunity must be (1) Customer CTQ-linked, (2) Statistically independent, and (3) Physically measurable.&quot;, &quot;Ba tiêu chuẩn vàng: Gắn kết CTQ, Độc lập thống kê và Đo lường được định lượng.&quot;)">C. (1) Giám đốc thích; (2) Kế toán duyệt; (3) Máy tính đo được</button></div>
-      <div id="fb-q1-2" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 3 • Tầng 2 • Analytical & Math</span>
-      <div class="quiz-q">Sản phẩm A có 10 linh kiện, phát hiện 1 lỗi trên 100 sản phẩm (DPO_A = 1/(100×10) = 0.001). Sản phẩm B có 1,000 linh kiện, phát hiện 5 lỗi trên 100 sản phẩm (DPO_B = 5/(100×1,000) = 0.00005). Quy trình sản xuất sản phẩm nào có chất lượng cao hơn?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q1-3', &quot;Process B is 20× superior in defect density (DPO_B = 0.00005 vs DPO_A = 0.00100).&quot;, &quot;Quy trình B vượt trội hơn 20 lần về độ tinh khiết; nhìn vào số lượng lỗi thô sẽ dẫn đến phán đoán sai lầm hoàn toàn.&quot;)">A. Quy trình sản xuất B có chất lượng cao hơn gấp 20 lần (DPO của B thấp hơn 20 lần so với A)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-3', &quot;Process B is 20× superior in defect density (DPO_B = 0.00005 vs DPO_A = 0.00100).&quot;, &quot;Quy trình B vượt trội hơn 20 lần về độ tinh khiết; nhìn vào số lượng lỗi thô sẽ dẫn đến phán đoán sai lầm hoàn toàn.&quot;)">B. Quy trình A tốt hơn vì ít lỗi hơn</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-3', &quot;Process B is 20× superior in defect density (DPO_B = 0.00005 vs DPO_A = 0.00100).&quot;, &quot;Quy trình B vượt trội hơn 20 lần về độ tinh khiết; nhìn vào số lượng lỗi thô sẽ dẫn đến phán đoán sai lầm hoàn toàn.&quot;)">C. Hai quy trình bằng nhau</button></div>
-      <div id="fb-q1-3" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 4 • Tầng 2 • Analytical & Math</span>
-      <div class="quiz-q">Một hệ thống phức tạp có PCF = 2,000 cơ hội lỗi. Mức năng lực của từng cơ hội đạt DPO = 0.0001 (4.87 Sigma). Xác suất để toàn bộ hệ thống vận hành hoàn hảo không lỗi (Yield = e^-(DPO × PCF)) là bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q1-4', &quot;Rolled Yield = e^(-0.0001 × 2,000) = e^(-0.20) = 81.87%.&quot;, &quot;Khi tích lũy 2,000 cơ hội, dù từng cơ hội đạt gần 5 Sigma, năng suất dồn tổng thể vẫn rơi xuống 81.87% do độ phức tạp cao.&quot;)">A. Yield = e^(-0.0001 × 2,000) = e^(-0.20) &amp;approx; 81.87%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-4', &quot;Rolled Yield = e^(-0.0001 × 2,000) = e^(-0.20) = 81.87%.&quot;, &quot;Khi tích lũy 2,000 cơ hội, dù từng cơ hội đạt gần 5 Sigma, năng suất dồn tổng thể vẫn rơi xuống 81.87% do độ phức tạp cao.&quot;)">B. Yield = 99.9%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-4', &quot;Rolled Yield = e^(-0.0001 × 2,000) = e^(-0.20) = 81.87%.&quot;, &quot;Khi tích lũy 2,000 cơ hội, dù từng cơ hội đạt gần 5 Sigma, năng suất dồn tổng thể vẫn rơi xuống 81.87% do độ phức tạp cao.&quot;)">C. Yield = 50.0%</button></div>
-      <div id="fb-q1-4" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 5 • Tầng 3 • Executive Decision</span>
-      <div class="quiz-q">Một Trưởng phòng đề xuất: &#x27;Để nâng mức Sigma của công ty lên 6 Sigma, chúng ta hãy đếm mọi con ốc, sợi chỉ và hạt bụi thành một cơ hội lỗi riêng lẻ&#x27;. MBB phản hồi thế nào?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q1-5', &quot;Strictly prohibit opportunity inflation. Only genuine, independent, customer-valued CTQs qualify as valid opportunities.&quot;, &quot;Thổi phồng cơ hội lỗi là vi phạm liêm chính nghề nghiệp Six Sigma. Bắt buộc phải tuân thủ nghiêm ngặt định nghĩa CTQ độc lập.&quot;)">A. Nghiêm cấm hành vi thổi phồng cơ hội lỗi (Opportunity Inflation): Chỉ các đặc tính thực sự độc lập và mang lại giá trị CTQ cho khách hàng mới được tính là O; đếm khống là gian lận thống kê</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-5', &quot;Strictly prohibit opportunity inflation. Only genuine, independent, customer-valued CTQs qualify as valid opportunities.&quot;, &quot;Thổi phồng cơ hội lỗi là vi phạm liêm chính nghề nghiệp Six Sigma. Bắt buộc phải tuân thủ nghiêm ngặt định nghĩa CTQ độc lập.&quot;)">B. Đồng ý để đạt 6 Sigma nhanh</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-5', &quot;Strictly prohibit opportunity inflation. Only genuine, independent, customer-valued CTQs qualify as valid opportunities.&quot;, &quot;Thổi phồng cơ hội lỗi là vi phạm liêm chính nghề nghiệp Six Sigma. Bắt buộc phải tuân thủ nghiêm ngặt định nghĩa CTQ độc lập.&quot;)">C. Tăng thêm số cơ hội gấp đôi</button></div>
-      <div id="fb-q1-5" class="quiz-fb"></div>
-    </div>
-    <div class="quiz-card">
-      <span class="quiz-tag">Câu 6 • Tầng 3 • Executive Decision</span>
-      <div class="quiz-q">Làm thế nào để truyền thông khái niệm Cơ hội sai lỗi cho toàn thể nhân viên hiểu mà không bị sa vào thuật ngữ toán học phức tạp?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q1-6', &quot;Communicate opportunity as a specific customer promise: Each opportunity is a distinct chance to deliver perfection or fail.&quot;, &quot;Giải thích bằng ngôn ngữ khách hàng: Mỗi cơ hội là một lời cam kết chất lượng cụ thể mà doanh nghiệp trao cho người mua.&quot;)">A. Giải thích: &#x27;Mỗi cơ hội lỗi là một lần chúng ta hứa với khách hàng sẽ làm đúng một điều gì đó; nếu làm sai lời hứa đó, ta tạo ra một khuyết tật&#x27;</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-6', &quot;Communicate opportunity as a specific customer promise: Each opportunity is a distinct chance to deliver perfection or fail.&quot;, &quot;Giải thích bằng ngôn ngữ khách hàng: Mỗi cơ hội là một lời cam kết chất lượng cụ thể mà doanh nghiệp trao cho người mua.&quot;)">B. Bắt nhân viên học thuộc công thức tích phân</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q1-6', &quot;Communicate opportunity as a specific customer promise: Each opportunity is a distinct chance to deliver perfection or fail.&quot;, &quot;Giải thích bằng ngôn ngữ khách hàng: Mỗi cơ hội là một lời cam kết chất lượng cụ thể mà doanh nghiệp trao cho người mua.&quot;)">C. Không cần giải thích</button></div>
-      <div id="fb-q1-6" class="quiz-fb"></div>
-    </div>
-    <h3 style="color:#fff; margin-top:38px; font-size:1.25rem;">🎴 Flashcards Ôn Tập Nhanh (Click để lật thẻ 3D)</h3>
+
+    <!-- 5 FLASHCARDS -->
+    <h3 style="color:#ffffff; margin: 38px 0 10px; font-size:1.25rem;">Thẻ Ghi Nhớ Phản Xạ Nhanh 3D (Interactive Flip Cards)</h3>
+    <p style="color:var(--emerald-mint); font-size:0.92rem; margin-bottom:20px;">Nhấp vào thẻ để lật mặt sau và kiểm tra phản xạ cốt lõi:</p>
     <div class="flashcards-grid">
+      
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Defect Opportunity (O)</div>
-            <div class="term-vi">Cơ hội sai lỗi</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #1 • Nhấn để lật</span>
+            <div class="fc-q">Theo Dr. Mikel J. Harry, "Cấp độ nút" (The Node Level) trong Six Sigma là gì?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Measurable CTQ event with potential for nonconformance</strong>
-            <span class="vi">Đặc tính chất lượng có khả năng xảy ra sai lỗi độc lập.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Là cấp độ gốc rễ nhỏ nhất tại mỗi điểm tương tác, nơi một cơ hội độc lập được hình thành trong quy trình sản xuất, thương mại hoặc dịch vụ.</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Complexity Normalization</div>
-            <div class="term-vi">Chuẩn hóa độ phức tạp</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #2 • Nhấn để lật</span>
+            <div class="fc-q">Định nghĩa chính xác của một "Cơ hội" (Opportunity) là gì?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Eliminating component count bias via the U × O denominator</strong>
-            <span class="vi">Cơ chế toán học triệt tiêu sự thiên lệch do số lượng linh kiện gây ra.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Là một tập hợp các tình huống hoặc hoàn cảnh thuận lợi để dẫn đến một kết quả nhất định (A set of circumstances favorable to an end).</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Opportunity Inflation</div>
-            <div class="term-vi">Thổi phồng cơ hội</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #3 • Nhấn để lật</span>
+            <div class="fc-q">Định nghĩa chính xác của "Cơ hội sai lỗi" (Defect Opportunity) là gì?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Artificial inflation of O to fraudulently elevate Sigma scores</strong>
-            <span class="vi">Hành vi gian lận số liệu bằng cách đếm khống các cơ hội giả tạo.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Là một tập hợp các tình huống hoặc điều kiện thuận lợi cho sự hình thành của một khiếm khuyết, sai sót hoặc lỗi hỏng (Favorable to the formation of a defect).</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Product Complexity Factor</div>
-            <div class="term-vi">Hệ số độ phức tạp</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #4 • Nhấn để lật</span>
+            <div class="fc-q">Ý nghĩa của triết lý "Hai mặt của cùng một đồng xu" (Heads or Tails) là gì?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Sum of all component opportunities across the product</strong>
-            <span class="vi">Tổng số cơ hội sai lỗi tích lũy trong toàn bộ sản phẩm hoàn chỉnh.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Cơ hội để làm đúng (Yield) và cơ hội để làm sai (Defect) là hai mặt song hành của cùng một trạng thái hệ thống: P(Pass) + P(Fail) = 1.</div>
           </div>
         </div>
       </div>
+
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">CTQ Independence</div>
-            <div class="term-vi">Tính độc lập CTQ</div>
-            <div class="hint">Click to reveal • Nhấn để lật</div>
+            <span class="fc-num">Thẻ #5 • Nhấn để lật</span>
+            <div class="fc-q">Tại sao Six Sigma phải vận hành ở cấp độ cơ hội thay vì cấp độ sản phẩm?</div>
           </div>
           <div class="flashcard-back">
-            <strong>Zero correlation between failure modes of separate opportunities</strong>
-            <span class="vi">Yêu cầu các dạng sai lỗi không được có quan hệ nhân quả ràng buộc.</span>
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Bởi vì cấp độ cơ hội loại bỏ sự thiên lệch về độ phức tạp, cho phép so sánh công bằng năng lực giữa các quy trình và linh kiện khác nhau qua chỉ số DPO/DPMO.</div>
           </div>
         </div>
-      </div></div>
+      </div>
+    </div>
   </section>
 
-  <!-- PHẦN 5: ACTION CHECKLIST -->
+  <!-- PHẦN 5: ACTION CHECKLIST & TEMPLATES -->
   <section class="section-card">
-    <span class="section-num">Phần 5 • 1-Page Action Checklist &amp; Template</span>
-    <h2 class="section-heading">Checklist Hành Động Tại Doanh Nghiệp</h2>
-    <div class="section-subheading">Thực thi quản trị quy trình theo chuẩn mực Master Black Belt</div>
-    <label class="action-item"><input type="checkbox"><span class="action-text"><strong>Lập danh mục cơ hội lỗi chuẩn hóa cho từng sản phẩm:</strong> Liệt kê chi tiết các cơ hội O gắn kết trực tiếp với tiếng nói khách hàng VOC.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Kiểm tra tính độc lập thống kê của từng cơ hội O:</strong> Loại bỏ các biến số phụ thuộc khỏi bảng tính năng lực.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Ban hành Ma trận Cơ hội sai lỗi có chữ ký phê duyệt:</strong> Đóng dấu phê duyệt định nghĩa O trong hồ sơ dự án Six Sigma.</span></label>
-    <h3 style="color:var(--wood-dark); margin-top:28px;">Template Quản Trị Quy Trình (Process Management Template)</h3>
-    <div style="overflow-x:auto;">
-      <table style="width:100%; border-collapse:collapse; margin-top:12px; font-size:0.92rem; background:#ffffff;">
-        <thead><tr style="background:#064e3b; color:#fff;">
-          <th style="padding:10px; text-align:left; border-radius:6px 0 0 0;">Hạng mục thực thi</th>
-          <th style="padding:10px; text-align:left;">Thông số / Dữ liệu cần xác lập</th>
-          <th style="padding:10px; text-align:left; border-radius:0 6px 0 0;">Tiêu chuẩn kiểm chứng (Deliverable)</th>
-        </tr></thead>
-        <tbody><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Tên sản phẩm / Giao dịch</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Mô tả cơ hội sai lỗi (O)</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Tổng số O / Unit</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Vệ tinh viễn thông</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Mối hàn SMD, tiếp điểm vi mạch</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">O = 500,000</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Bữa ăn tối Fine-Dining</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Nhiệt độ món, độ tươi, thời gian ra đĩa</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">O = 20</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Lắp ráp hộp số tự động</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Lực siết bu-lông, khe hở bánh răng</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">O = 120</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Hợp đồng bảo hiểm nhân thọ</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Thông tin nhân thân, mức phí, chữ ký</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">O = 15</td></tr></tbody>
+    <span class="section-num">Trụ Cột 5 • Sáng Thứ Hai Làm Gì?</span>
+    <h2 class="section-heading">Kế Hoạch Hành Động 3 Bước &amp; Biểu Mẫu Thực Thi</h2>
+    <div class="section-subheading">Quy trình tác chiến hiện trường dành cho Giám đốc Chất lượng &amp; Black Belt</div>
+
+    
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 1:</strong> Khảo sát hiện trường (Gemba) để xác lập sơ đồ cây phân rã quy trình đến tận cấp độ nút (Node Level Decomposition).
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 2:</strong> Liệt kê các điều kiện có thể dẫn đến sai hỏng (Defect Conditions) tại từng nút và phân lập khỏi các sự kiện ngẫu nhiên.
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 3:</strong> Thiết lập hệ thống đo lường đếm kép (Song song đếm số lần đúng - Yield và số lần sai - Defect) để tính toán chuẩn DPO.
+      </span>
+    </label>
+
+    <h3 style="color:var(--wood-dark); margin-top:32px; font-size:1.15rem;">Biểu Mẫu Quản Trị &amp; Khung Kiểm Soát Thực Chiến</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tên Quy Trình</th><th>Cấp Độ Nút (Node)</th><th>Điều Kiện Dẫn Đến Lỗi</th><th>Chuẩn Đúng (Heads/Yield)</th><th>Chuẩn Sai (Tails/Defect)</th><th>Hành Động Kiểm Soát</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><strong>Hàn bo mạch SMT</strong></td>
+              <td>Nút chân linh kiện QFP</td>
+              <td>Nhiệt độ mỏ hàn lệch, thiếu kem hàn</td>
+              <td>Mối hàn bóng, ngấu đều, không cầu chì</td>
+              <td>Cầu hàn, thiếu chì, mối hàn nguội</td>
+              <td>Kiểm tra nhiệt độ hồ quang tự động</td>
+            </tr>
+            <tr>
+              <td><strong>Nhập liệu hóa đơn</strong></td>
+              <td>Nút mã số thuế khách hàng</td>
+              <td>Chữ viết tay mờ, nhân viên gõ vội</td>
+              <td>Đúng 10 hoặc 13 chữ số, trùng khớp Tổng cục Thuế</td>
+              <td>Sai chữ số, thiếu ký tự, không tồn tại</td>
+              <td>Cài đặt thuật toán kiểm tra Checksum tức thì</td>
+            </tr>
+            <tr>
+              <td><strong>Chiết rót dược phẩm</strong></td>
+              <td>Nút siết nắp lọ vaccine</td>
+              <td>Mô-men xoắn motor siết bị trượt</td>
+              <td>Lực siết 1.2 - 1.5 Nm, nắp kín hoàn toàn</td>
+              <td>Lực siết < 1.2 Nm (hở) hoặc > 1.5 Nm (nứt)</td>
+              <td>Cảm biến lực điện tử ngắt tự động</td>
+            </tr>
+        </tbody>
       </table>
     </div>
-    <p style="margin-top:18px; color:var(--vi-green-2);"><strong>Định nghĩa hoàn tất:</strong> Đo lường chính xác sức mạnh hệ thống đo, xác lập đường cơ sở Baseline, thiết lập benchmark và đếm cơ hội sai lỗi theo chuẩn Six Sigma quốc tế.</p>
   </section>
 
 </main>
 
 <footer>
   <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
-    &copy; Six Sigma Master Black Belt Executive Curriculum • Process Management Architecture
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
   </p>
 </footer>
 
@@ -685,7 +845,7 @@ function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
   } else {
     btn.classList.add('wrong');
     feedbackEl.className = 'quiz-fb show error';
-    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
   }
 }
 

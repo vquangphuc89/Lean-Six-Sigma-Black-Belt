@@ -8,10 +8,13 @@ import {
   setActiveLesson, 
   addStudyTime, 
   getAppTheme, 
-  setAppTheme 
+  setAppTheme,
+  fetchCloudStudyData,
+  subscribeToCloudStudyData
 } from './services/storage';
 
-import { getCurrentUser } from './services/auth';
+import { getCurrentUser, subscribeToAuthChanges, logout } from './services/auth';
+import { isFirebaseConfigured } from './services/firebase';
 
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
@@ -31,10 +34,9 @@ import {
   BookOpen, 
   LayoutDashboard, 
   Sparkles,
-  ChevronRight,
   Flame,
-  User,
-  LogIn
+  LogIn,
+  Cloud
 } from 'lucide-react';
 
 export default function App() {
@@ -64,19 +66,43 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  // Lắng nghe trạng thái đăng nhập Firebase tự động
+  useEffect(() => {
+    const unsubscribeAuth = subscribeToAuthChanges(async (newUser) => {
+      setUser(newUser);
+      if (newUser) {
+        const cloudData = await fetchCloudStudyData(newUser);
+        setStudyData(cloudData);
+      }
+    });
+    return () => unsubscribeAuth();
+  }, []);
+
+  // Lắng nghe cập nhật dữ liệu thời gian thực từ Cloud Firestore khi đã đăng nhập
+  useEffect(() => {
+    if (!user || !user.id || user.id.startsWith('usr-default')) {
+      return;
+    }
+    const unsubscribeData = subscribeToCloudStudyData(user.id, (cloudUpdatedData) => {
+      setStudyData(cloudUpdatedData);
+    });
+    return () => unsubscribeData();
+  }, [user?.id]);
+
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     setAppTheme(newTheme);
   };
 
-  const handleLoginSuccess = (loggedInUser) => {
+  const handleLoginSuccess = async (loggedInUser) => {
     setUser(loggedInUser);
-    // Reload study data specifically for this user
-    setStudyData(getStudyData());
+    const cloudData = await fetchCloudStudyData(loggedInUser);
+    setStudyData(cloudData);
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await logout();
     setUser(null);
     setStudyData(getStudyData());
   };
@@ -190,6 +216,42 @@ export default function App() {
 
           {/* Right Actions */}
           <div className="nav-actions">
+            {/* Cloud Sync Status Badge */}
+            <div 
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border-color)',
+                padding: '5px 11px',
+                borderRadius: '20px',
+                fontSize: '0.78rem',
+                fontWeight: '600',
+                color: (isFirebaseConfigured && user) ? 'var(--emerald-mint)' : 'var(--text-secondary)',
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                if (!user) setShowAuthModal(true);
+              }}
+              title={
+                isFirebaseConfigured 
+                  ? (user ? "Cloud Sync: Đã kết nối Firebase & đồng bộ tự động giữa các máy tính" : "Cloud Ready: Bấm để đăng nhập và tự động đồng bộ tiến độ") 
+                  : "Chế độ lưu bộ nhớ cục bộ (Local Storage). Hãy kết nối Firebase để tự động đồng bộ mọi thiết bị."
+              }
+            >
+              <span style={{
+                width: '7px',
+                height: '7px',
+                borderRadius: '50%',
+                background: (isFirebaseConfigured && user) ? 'var(--emerald-vibrant)' : (isFirebaseConfigured ? '#38bdf8' : '#f59e0b'),
+                boxShadow: (isFirebaseConfigured && user) ? '0 0 6px var(--emerald-vibrant)' : 'none'
+              }} />
+              <span style={{ display: window.innerWidth < 1100 ? 'none' : 'inline' }}>
+                {(isFirebaseConfigured && user) ? 'Cloud Synced' : (isFirebaseConfigured ? 'Cloud Ready' : 'Local Mode')}
+              </span>
+            </div>
+
             {/* Streak & Progress */}
             <div style={{
               display: 'flex',
@@ -212,7 +274,7 @@ export default function App() {
             <button 
               className="btn-icon" 
               onClick={() => setShowExportModal(true)}
-              title="Sao lưu hoặc khôi phục dữ liệu học tập"
+              title="Sao lưu hoặc khôi phục dữ liệu học tập (.json)"
             >
               <Database size={17} />
             </button>
@@ -294,7 +356,7 @@ export default function App() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.84rem', color: 'var(--emerald-mint)' }}>
               <Sparkles size={16} color="var(--emerald-vibrant)" />
               <span>
-                Đăng nhập tài khoản để lưu giữ tiến độ cá nhân, sổ tay ghi chú và chứng chỉ của bạn!
+                Đăng nhập tài khoản để tự động đồng bộ tiến độ học tập trên mọi thiết bị qua Cloud!
               </span>
             </div>
             <button

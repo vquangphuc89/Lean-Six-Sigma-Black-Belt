@@ -80,7 +80,10 @@ git push
 
 ---
 
-## 💾 Tính Năng Bảo Toàn Tiến Độ Học Tập Trên Vercel
+## 💾 Tính Năng Bảo Toàn & Tự Động Đồng Bộ Đa Thiết Bị
 
-* **Bộ nhớ LocalStorage:** Toàn bộ trạng thái bài đã học, bookmark ⭐, điểm số trắc nghiệm và ghi chú cá nhân của bạn được lưu an toàn trực tiếp trên trình duyệt của bạn.
-* **Tính năng Sao lưu (Export / Import):** Bạn có thể nhấn vào nút biểu tượng **Database 🗄️** trên thanh Header của trang web để tải tệp JSON sao lưu về máy, giúp bạn chuyển đổi máy tính hoặc học trên điện thoại/máy tính bảng mà không bao giờ bị mất tiến độ.
+* **Đồng Bộ Đám Mây Tự Động (Firebase Cloud Sync):** Hệ thống đã hỗ trợ kết nối Firebase Authentication và Cloud Firestore. Khi đăng nhập, toàn bộ tiến độ học tập, ghi chú cá nhân và điểm thi trắc nghiệm sẽ **tự động đồng bộ thời gian thực** giữa mọi máy tính, laptop và điện thoại của bạn.
+  👉 Xem chi tiết từng bước cài đặt tại [FIREBASE_SETUP_GUIDE.md](file:///e:/OneDrive/Desktop/Lean%20Six%20Sigma%20Black%20Belt/FIREBASE_SETUP_GUIDE.md).
+* **Bộ Nhớ Cục Bộ (Offline-First LocalStorage):** Dữ liệu luôn được lưu tức thì vào trình duyệt giúp ứng dụng phản hồi mượt mà không có độ trễ và có thể học ngay cả khi mất kết nối mạng.
+* **Tính Năng Sao Lưu Độc Lập (Export / Import JSON):** Bạn luôn có thể bấm vào biểu tượng **Database 🗄️** trên thanh Header để tải file sao lưu `.json` về máy tính bất kỳ lúc nào.
+

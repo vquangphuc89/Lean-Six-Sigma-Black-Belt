@@ -216,7 +216,9 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
 ### Bước 4: Kiểm Định Chất Lượng Đầu Ra (MBB Quality Gate)
 * [ ] File HTML chạy độc lập, mở ngay trên trình duyệt không cần internet.
 * [ ] Kiểm tra hiển thị công thức toán học trên di động và màn hình rộng.
-* [ ] Đủ 8 câu trắc nghiệm, bấm nút có phản hồi tức thì và khóa các nút còn lại.
+* [ ] Đủ đúng **8 câu trắc nghiệm tình huống**, cấu trúc HTML đúng chuẩn `.quiz-card`, `.quiz-btn`, `.quiz-fb`.
+* [ ] Hàm JavaScript `checkQuiz(btn, isCorrect, feedbackId, ...)` có tham số `isCorrect` là boolean (`true`/`false`), tương thích 100% với Cầu nối tự động Iframe Bridge.
+* [ ] Tuân thủ nghiêm ngặt **Quy chuẩn 3 trạng thái**: Cam (Chưa nộp), Xanh (Hoàn thành &ge; 80%), Đỏ (Cần ôn lại < 80%).
 * [ ] Đủ 3 đầu việc tại Action Checklist "Sáng Thứ Hai Làm Gì?".
 * [ ] Đổi tên file thành định dạng: `[Số thứ tự].[Tên bài học]_Done.html`.
 
@@ -254,6 +256,74 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
   - **Sidebar:** Hiển thị huy hiệu điểm số `%` bên cạnh từng bài đã nộp (xanh nếu &ge; 80%, đỏ nếu < 80%), bổ sung tab lọc riêng "Đã thi".
   - **Lesson Reader:** Thanh trạng thái trắc nghiệm phân hóa 3 màu tương ứng (Cam khi chưa nộp, Xanh khi &ge; 80%, Đỏ khi < 80%), hỗ trợ tự động cuộn đến trắc nghiệm và tự động highlight đáp án khi bài học đã đạt chuẩn.
   - **Practice Arena:** Thanh KPI 3 cột lọc nhanh theo 3 trạng thái chuẩn hóa, bộ lọc tìm kiếm tức thời và hỗ trợ nộp bài nhanh chỉ với 1 click.
+
+---
+
+## 8. Bộ Quy Tắc Bắt Buộc Cho Mọi Bài Học Mới Tạo (Mandatory Rules for All Future Lessons)
+
+> [!IMPORTANT]
+> **Cam Kết Bất Biến (Strict Protocol):** Bất kỳ bài học mới nào được khởi tạo hoặc biên soạn bổ sung trong toàn bộ hệ thống Black Belt Masterclass đều **bắt buộc tuân thủ 100%** 4 quy tắc nền tảng dưới đây. Tuyệt đối không tự ý thay đổi quy chuẩn này để đảm bảo tính đồng bộ hoàn hảo giữa nội dung tĩnh (HTML), SPA React, Đấu Trường Luyện Đề và Cloud Sync.
+
+### Quy Tắc 1: Chuẩn Hóa 8 Câu Hỏi Trắc Nghiệm Tình Huống ($N = 8$)
+* Mỗi bài học mới **bắt buộc có đúng 8 câu hỏi trắc nghiệm thực chiến**, được chia thành 3 tầng tư duy của Dr. Mikel J. Harry:
+  - **Tầng 1 (2 câu):** Khái niệm nền tảng, thuật ngữ cốt lõi, ma trận thẩm quyền đai.
+  - **Tầng 2 (3 câu):** Bài toán định lượng số liệu, bẫy đơn vị đo lường, tính toán quy đổi Hard Savings/COPQ/Yield/Sigma.
+  - **Tầng 3 (3 câu):** Giải quyết xung đột thực tế tại hiện trường (Gemba), bóc trần dữ liệu bị làm đẹp, quản trị sự thay đổi.
+* Số lượng 8 câu là mẫu số tiêu chuẩn ($N=8$) dùng chung cho thuật toán tính phần trăm tự động trên toàn hệ sinh thái.
+
+### Quy Tắc 2: Cấu Trúc HTML Markup Chuẩn Cho Cầu Nối Iframe Bridge
+Để Cầu nối 2 chiều (Iframe Bridge) trong `LessonReader.jsx` tự động bắt điểm, tính toán tỷ lệ và lưu trữ Cloud, mã nguồn HTML của bài học mới **phải sử dụng chính xác các class và thuộc tính sau**:
+
+```html
+<!-- BẮT BUỘC: Thẻ bao quanh mỗi câu hỏi phải có class="quiz-card" -->
+<div class="quiz-card">
+  <span class="quiz-tag">Câu [Số] &bull; Tầng [1/2/3]: [Tên chủ đề]</span>
+  <div class="quiz-q">[Nội dung câu hỏi tình huống thực chiến]</div>
+  
+  <!-- BẮT BUỘC: Khối đáp án chứa các nút class="quiz-btn" -->
+  <div class="quiz-opts">
+    <!-- BẮT BUỘC: Nút đúng gọi checkQuiz với tham số thứ 2 là TRUE -->
+    <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-bai-cau', 'Master Black Belt Analysis EN...', 'Phân tích tiếng Việt...')">
+      A. [Nội dung phương án đúng]
+    </button>
+    
+    <!-- BẮT BUỘC: Nút sai gọi checkQuiz với tham số thứ 2 là FALSE -->
+    <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-bai-cau', 'Common Trap Analysis EN...', 'Phân tích tiếng Việt...')">
+      B. [Nội dung phương án gây nhiễu]
+    </button>
+  </div>
+  
+  <!-- BẮT BUỘC: Thẻ phản hồi có id tương ứng và class="quiz-fb" -->
+  <div id="fb-bai-cau" class="quiz-fb"></div>
+</div>
+```
+
+* **Tuyệt đối không:** Đổi tên class `.quiz-card`, `.quiz-btn`, `.quiz-fb` hoặc đổi tên hàm `checkQuiz`, vì React parent dựa vào các bộ chọn này để tính điểm tự động.
+
+### Quy Tắc 3: Bảng Quy Chuẩn 3 Trạng Thái & Nhận Diện Màu Sắc
+
+Mọi bài học mới khi được tích hợp vào hệ thống sẽ được phân loại và hiển thị theo đúng 3 trạng thái bất biến sau:
+
+| STT | Trạng thái | Ngưỡng điểm số | Mã màu nhận diện | Biểu tượng | Hành vi giao diện & Nút thao tác |
+| :---: | :--- | :---: | :---: | :---: | :--- |
+| **1** | **Chưa nộp bài** | Chưa có dữ liệu nộp bài | 🟠 **Màu Cam**<br>`#f59e0b` / `#fbbf24`<br>`rgba(245, 158, 11, 0.15)` | ⏳ `Clock` | • Viền thẻ bài cam nhạt, sáng cam khi hover.<br>• Huy hiệu góc trên: `⏳ Chưa nộp bài`.<br>• Nút hành động nổi bật: `⚡ Nộp nhanh 100%` (màu cam).<br>• Nút chính: `Vào Làm Đề`. |
+| **2** | **Hoàn thành** | **Làm đúng $\ge 80\%$**<br>(Từ 7/8 câu hoặc 8/8 câu) | 🟢 **Màu Xanh Lá**<br>`#10b981` / Emerald<br>`rgba(16, 185, 129, 0.18)` | ✅ `CheckCircle2` | • Viền thẻ bài màu xanh lục bảo.<br>• Huy hiệu góc trên: `✅ Hoàn thành (XX%)`.<br>• Tự động tích dấu hoàn thành bài học.<br>• Tự động tô xanh các đáp án đúng trong iframe.<br>• Nút thao tác: `Xem Lại / Thi Lại`. |
+| **3** | **Cần ôn lại** | **Làm đúng $< 80\%$**<br>(Nhỏ hơn 7/8 câu, tức $\le 6/8$ câu) | 🔴 **Màu Đỏ**<br>`#ef4444` / Red<br>`rgba(239, 68, 68, 0.15)` | ⚠️ `AlertCircle` | • Viền thẻ bài màu đỏ cảnh báo.<br>• Huy hiệu góc trên: `⚠️ Cần ôn lại (XX%)`.<br>• Ghi nhận vào KPI số lượng bài cần ôn luyện.<br>• Cung cấp nút `Ôn Luyện Lại` và `Nâng 100%`. |
+
+### Quy Tắc 4: Quy Trình Đóng Gói & Tích Hợp Bài Mới Vào Hệ Thống
+Sau khi tạo hoặc chỉnh sửa tệp bài học HTML mới, thực hiện chuẩn xác 3 bước sau:
+1. **Lưu tệp vào đúng thư mục phân hệ:** `sources/[Tên Phân Hệ]/[Tên Chuyên Đề]/[Số thứ tự].[Tên bài]_Done.html`.
+2. **Chạy lệnh đồng bộ & chỉ mục:**
+   ```powershell
+   npm run build
+   ```
+   * Script `scripts/generate-curriculum.js` sẽ tự động quét tệp mới, đếm số câu trắc nghiệm tình huống, cập nhật `src/data/curriculum.json` và đồng bộ vào thư mục `public/sources/`.
+   * Trình biên dịch Vite sẽ tạo bundle tối ưu và kiểm tra không có bất kỳ lỗi cú pháp nào.
+3. **Đẩy lên GitHub để tự động triển khai Vercel:**
+   ```powershell
+   git add -A; git commit -m "feat: add new lesson [Tên bài học]"; git push
+   ```
+
 
 
 

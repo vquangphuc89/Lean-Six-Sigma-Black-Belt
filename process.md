@@ -219,3 +219,29 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
 * [ ] Đủ 8 câu trắc nghiệm, bấm nút có phản hồi tức thì và khóa các nút còn lại.
 * [ ] Đủ 3 đầu việc tại Action Checklist "Sáng Thứ Hai Làm Gì?".
 * [ ] Đổi tên file thành định dạng: `[Số thứ tự].[Tên bài học]_Done.html`.
+
+---
+
+## 7. Kiến Trúc Đồng Bộ Đám Mây & Bảo Toàn Dữ Liệu Học Viên (Cloud Sync Architecture)
+
+Để giải quyết bài toán học viên học trên nhiều thiết bị (máy tính cơ quan, laptop ở nhà, điện thoại), hệ thống tích hợp kiến trúc **Hybrid (Lai)** đa tầng:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│  TRÌNH DUYỆT HỌC VIÊN (Client SPA - React + Vite)                       │
+│  - Lưu tức thì vào LocalStorage (0ms phản hồi, học offline khi mất mạng)│
+├────────────────────────────────────────────────────────────────────────┤
+│  LỚP ĐỒNG BỘ ĐÁM MÂY (Firebase Cloud Engine)                           │
+│  - Firebase Authentication: Xác thực đa kênh (Email/Password & Google)  │
+│  - Cloud Firestore: Tự động đồng bộ 2 chiều (Real-time Listener)       │
+│    + Collection 'users/{uid}': Hồ sơ học viên, đai mục tiêu, doanh nghiệp│
+│    + Collection 'study_data/{uid}': Tiến độ 228 bài, ghi chú, điểm test│
+├────────────────────────────────────────────────────────────────────────┤
+│  CƠ CHẾ BẢO TOÀN THÔNG MINH                                            │
+│  - Smart Merge: Tự động gộp tiến độ khi đổi thiết bị, không mất bài cũ  │
+│  - Debounce 1.2s: Gom các thao tác ghi liên tục, tối ưu chi phí và mạng │
+│  - Graceful Fallback: Luôn chạy mượt ở Local Mode nếu ngắt kết nối     │
+│  - Huy hiệu Header: Trạng thái 🟢 Cloud Synced | 🔵 Cloud Ready | 🟡 Local│
+└────────────────────────────────────────────────────────────────────────┘
+```
+

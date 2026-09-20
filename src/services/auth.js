@@ -63,6 +63,11 @@ const formatFirebaseError = (error) => {
       return 'Mật khẩu quá ngắn, vui lòng nhập ít nhất 6 ký tự.';
     case 'auth/invalid-email':
       return 'Định dạng email không hợp lệ.';
+    case 'auth/configuration-not-found':
+      return 'Chưa bật phương thức Đăng nhập Google trong Firebase Console (Vào Authentication > Sign-in method > Bật Google).';
+    case 'auth/unauthorized-domain':
+      return 'Tên miền này chưa được cấp phép. Vui lòng thêm lean-six-sigma-black-belt.vercel.app vào Authentication > Settings > Authorized domains.';
+
     case 'auth/popup-closed-by-user':
       return 'Đã hủy cửa sổ đăng nhập Google.';
     case 'auth/too-many-requests':

@@ -245,3 +245,6 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
+* **Cầu Nối Trắc Nghiệm Hai Chiều (Iframe Quiz Bridge):** Tự động bắt sự kiện khi học viên chọn đáp án trong tệp HTML bài học, tính toán tỷ lệ đúng/sai theo chuẩn SSMI và lập tức đồng bộ điểm số vào Đấu Trường Luyện Đề (Practice Arena) & Cloud Firestore.
+
+

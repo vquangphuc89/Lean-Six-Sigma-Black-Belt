@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { 
   CheckCircle2, 
   Circle, 
@@ -12,7 +12,9 @@ import {
   Share2, 
   Maximize2,
   Minimize2,
-  BookOpen
+  BookOpen,
+  Sparkles,
+  HelpCircle
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -26,12 +28,97 @@ export default function LessonReader({
   onNavigateNext,
   hasPrev,
   hasNext,
-  onAddStudyTime
+  onAddStudyTime,
+  onRecordQuizResult
 }) {
   const [showNotes, setShowNotes] = useState(false);
   const [noteText, setNoteText] = useState('');
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const iframeRef = useRef(null);
+
+  // Lấy kết quả quiz đã lưu của bài hiện tại
+  const quizRecord = studyData.quizScores ? studyData.quizScores[lesson?.id] : null;
+
+  // Cầu nối giao tiếp 2 chiều với Iframe để tự động bắt kết quả 8 câu trắc nghiệm
+  const setupIframeBridge = useCallback(() => {
+    try {
+      const iframe = iframeRef.current;
+      if (!iframe || !lesson) return;
+      const iframeWin = iframe.contentWindow;
+      const iframeDoc = iframe.contentDocument || iframeWin?.document;
+      if (!iframeWin || !iframeDoc) return;
+
+      const scanAndRecord = () => {
+        try {
+          const allQuizCards = iframeDoc.querySelectorAll('.quiz-card');
+          const total = allQuizCards.length;
+          if (total === 0) return;
+
+          const answeredCards = Array.from(allQuizCards).filter(card => 
+            card.querySelector('.quiz-btn.correct') || card.querySelector('.quiz-btn.wrong')
+          );
+          const correctCards = Array.from(allQuizCards).filter(card => 
+            card.querySelector('.quiz-btn.correct')
+          );
+
+          const score = correctCards.length;
+          const answeredCount = answeredCards.length;
+
+          if (answeredCount > 0 && onRecordQuizResult) {
+            onRecordQuizResult(lesson.id, score, total);
+          }
+
+          if (answeredCount === total && total > 0) {
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+            // Tự động đánh dấu hoàn thành bài học nếu đạt từ 75% trở lên
+            if (score / total >= 0.75 && !studyData.completedLessons[lesson.id] && onToggleComplete) {
+              onToggleComplete(lesson.id);
+            }
+          }
+        } catch (scanErr) {
+          console.warn('Lỗi quét đáp án trong iframe:', scanErr);
+        }
+      };
+
+      // Quét ngay lập tức nếu đã có đáp án được chọn
+      scanAndRecord();
+
+      if (iframeWin.__quizBridgeAttached) return;
+
+      const originalCheckQuiz = iframeWin.checkQuiz;
+
+      // Ghi đè hàm checkQuiz trong iframe để bắt sự kiện mỗi khi học viên click chọn đáp án
+      iframeWin.checkQuiz = function(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+        if (typeof originalCheckQuiz === 'function') {
+          originalCheckQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi);
+        } else {
+          var parent = btn.parentElement;
+          var buttons = parent.querySelectorAll('.quiz-btn');
+          buttons.forEach(function(b) { b.disabled = true; });
+          var feedbackEl = iframeDoc.getElementById(feedbackId);
+          if (isCorrect) {
+            btn.classList.add('correct');
+            if (feedbackEl) {
+              feedbackEl.className = 'quiz-fb show success';
+              feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:4px;">' + explanationVi + '</em>';
+            }
+          } else {
+            btn.classList.add('wrong');
+            if (feedbackEl) {
+              feedbackEl.className = 'quiz-fb show error';
+              feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:4px;">' + explanationVi + '</em>';
+            }
+          }
+        }
+
+        // Chờ DOM cập nhật class rồi tính điểm và lưu
+        setTimeout(scanAndRecord, 80);
+      };
+
+      iframeWin.__quizBridgeAttached = true;
+    } catch (err) {
+      console.warn('Iframe bridge error:', err);
+    }
+  }, [lesson, onRecordQuizResult, onToggleComplete, studyData.completedLessons]);
 
   // Đồng bộ ghi chú của bài học hiện tại
   useEffect(() => {
@@ -47,6 +134,16 @@ export default function LessonReader({
     }, 10000);
     return () => clearInterval(timer);
   }, [lesson, onAddStudyTime]);
+
+  // Tự động kết nối cầu nối khi bài học thay đổi hoặc iframe load lại
+  useEffect(() => {
+    const t1 = setTimeout(setupIframeBridge, 500);
+    const t2 = setTimeout(setupIframeBridge, 1200);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, [lesson?.id, setupIframeBridge]);
 
   if (!lesson) {
     return (
@@ -90,7 +187,29 @@ export default function LessonReader({
         </div>
 
         {/* Action Controls */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+          {/* Huy hiệu điểm Quiz */}
+          {quizRecord && (
+            <div 
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                background: quizRecord.percentage >= 80 ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                border: `1px solid ${quizRecord.percentage >= 80 ? 'var(--emerald-vibrant)' : 'var(--red)'}`,
+                padding: '5px 11px',
+                borderRadius: '8px',
+                fontSize: '0.8rem',
+                fontWeight: '700',
+                color: quizRecord.percentage >= 80 ? 'var(--emerald-mint)' : '#fca5a5'
+              }}
+              title="Điểm số bài trắc nghiệm đã được ghi nhận tự động vào Đấu Trường Luyện Đề và Cloud!"
+            >
+              <Sparkles size={14} color={quizRecord.percentage >= 80 ? 'var(--emerald-vibrant)' : '#f87171'} />
+              <span>Điểm: {quizRecord.percentage}% ({quizRecord.score}/{quizRecord.total})</span>
+            </div>
+          )}
+
           {/* Nút Hoàn thành */}
           <button 
             className={`btn ${isCompleted ? 'btn-primary' : 'btn-outline'}`}
@@ -175,6 +294,7 @@ export default function LessonReader({
           src={lesson.url}
           title={lesson.cleanTitle}
           className="reader-frame"
+          onLoad={setupIframeBridge}
         />
 
         {/* Notes Drawer */}
@@ -203,7 +323,7 @@ export default function LessonReader({
 
             <div style={{ padding: '12px 20px', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
               <span>{noteText.trim() ? `${noteText.trim().split(/\s+/).length} từ` : 'Trống'}</span>
-              <span>Đã lưu vào bộ nhớ máy</span>
+              <span>Đã lưu vào bộ nhớ &amp; Cloud</span>
             </div>
           </aside>
         )}

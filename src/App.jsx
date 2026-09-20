@@ -10,7 +10,8 @@ import {
   getAppTheme, 
   setAppTheme,
   fetchCloudStudyData,
-  subscribeToCloudStudyData
+  subscribeToCloudStudyData,
+  recordQuizResult
 } from './services/storage';
 
 import { getCurrentUser, subscribeToAuthChanges, logout } from './services/auth';
@@ -133,6 +134,12 @@ export default function App() {
     const updated = addStudyTime(sec);
     setStudyData({ ...updated });
   };
+
+  const handleRecordQuizResult = (lessonId, score, total) => {
+    const updated = recordQuizResult(lessonId, score, total);
+    setStudyData({ ...updated });
+  };
+
 
   // Prev / Next index
   const currentIndex = allLessons.findIndex(l => l.id === activeLesson?.id);
@@ -400,6 +407,7 @@ export default function App() {
             hasPrev={hasPrev}
             hasNext={hasNext}
             onAddStudyTime={handleAddStudyTime}
+            onRecordQuizResult={handleRecordQuizResult}
           />
         )}
 

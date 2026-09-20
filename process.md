@@ -109,12 +109,17 @@ Mỗi file bài học là **một tệp HTML độc lập (Single-file Self-cont
   1. **Tầng 1 (Cơ bản & Thẩm quyền):** Vai trò của Đai, trách nhiệm phê duyệt, thuật ngữ cốt lõi.
   2. **Tầng 2 (Tính toán & Số liệu):** Tính toán DPMO, Cpk, Yield, chi phí chất lượng kém (COPQ), quy đổi Hard Savings.
   3. **Tầng 3 (Xử lý khủng hoảng thực tế):** Tranh chấp phòng ban, che giấu số liệu, áp lực tiến độ từ ban điều hành.
-* **Cơ chế phản hồi tức thì (Instant Feedback Engine):**
-  * Khi bấm chọn đáp án, các nút trong câu tự động khóa lại (`disabled = true`).
-  * Nút đúng sáng xanh (`.correct`), nút sai đỏ rực (`.wrong`).
-  * Khung phản hồi (`.quiz-fb`) bung ra ngay lập tức với 2 phần:
-    * **Tiếng Anh:** Master Black Belt Analysis (Chuẩn phương pháp luận).
-    * **Tiếng Việt:** Phân tích thực chiến & Giải mã bẫy tâm lý tại sao các phương án khác lại sai.
+* **Cơ chế Thi & Nộp Bài Chuẩn Mực (Exam & Submit Engine):**
+  * **Khi chọn đáp án:** Nút bấm chỉ kích hoạt trạng thái lựa chọn (`.selected`), học viên có thể tự do đổi đáp án giữa các phương án trong cùng một câu trước khi nộp bài. Tuyệt đối **chưa** hiện đúng/sai hoặc giải thích để đảm bảo tính khách quan như một bài thi thật.
+  * **Nút Nộp Bài (`.quiz-submit-btn`):** Đặt ở cuối 8 câu hỏi, hiển thị tiến độ số câu đã chọn.
+  * **Sau khi nhấn Nộp Bài (Submit):**
+    * Hệ thống tự động khóa tất cả đáp án (`disabled = true`).
+    * Nút chọn đúng chuyển sang màu xanh (`.correct`), nút chọn sai chuyển sang màu đỏ (`.wrong`).
+    * Nếu chọn sai, hệ thống tự động đánh dấu viền xanh nét đứt cho đáp án đúng chuẩn (`.correct-answer-hint`) để học viên học hỏi ngay.
+    * Khung phản hồi (`.quiz-fb`) của từng câu đồng loạt bung ra với 2 phần giải thích chuyên sâu:
+      * **Tiếng Anh:** Master Black Belt Analysis (Chuẩn phương pháp luận).
+      * **Tiếng Việt:** Phân tích thực chiến & Bóc trần bẫy tư duy quản trị.
+    * Khung tổng kết điểm hiển thị tỷ lệ %, phân định rõ **Hoàn thành ($\ge 80\%$)** hoặc **Cần ôn lại ($< 80\%$)**, kèm nút **`[🔄 Làm Lại Bài Thi]`**.
 * **Bộ thẻ Flashcards 3D:** Tương tác bấm để xoay mặt trước/sau (`flipCard(this)`), giúp học viên ghi nhớ phản xạ các khái niệm then chốt.
 
 ### Trụ Cột 5: Action Checklist (Sáng Thứ Hai Làm Gì?)
@@ -161,30 +166,63 @@ Tất cả các bài học trong chuỗi Masterclass bắt buộc dùng chung h�
 
 ---
 
-## 5. Mẫu JavaScript Tương Tác Chuẩn (Standalone Quiz & Flip Engine)
+## 5. Mẫu JavaScript Tương Tác Chuẩn (Standalone Quiz & Submit Engine)
 
-Không nhúng thư viện ngoài; toàn bộ tương tác gói gọn trong ~25 dòng code thuần JavaScript:
+Không nhúng thư viện ngoài; cấu trúc hỗ trợ chọn đáp án trước và chỉ chấm điểm sau khi nhấn Nộp Bài:
 
 ```javascript
+var examSubmitted = false;
+
+// 1. Khi click chọn phương án: Chỉ đánh dấu lựa chọn
 function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
-  var parent = btn.parentElement;
-  var buttons = parent.querySelectorAll('.quiz-btn');
-  buttons.forEach(function(b) {
-    b.disabled = true;
-  });
+  if (examSubmitted) return;
+  var card = btn.closest('.quiz-card');
+  if (!card) return;
   
-  var feedbackEl = document.getElementById(feedbackId);
-  if (isCorrect) {
-    btn.classList.add('correct');
-    feedbackEl.className = 'quiz-fb show success';
-    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + 
-      explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:4px;">' + explanationVi + '</em>';
-  } else {
-    btn.classList.add('wrong');
-    feedbackEl.className = 'quiz-fb show error';
-    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + 
-      explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:4px;">' + explanationVi + '</em>';
-  }
+  var buttons = card.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  
+  card._selectedData = {
+    btn: btn,
+    isCorrect: isCorrect,
+    feedbackId: feedbackId,
+    explanationEn: explanationEn,
+    explanationVi: explanationVi
+  };
+}
+
+// 2. Khi bấm Nộp Bài: Khóa nút, chấm điểm và hiển thị toàn bộ giải thích
+function submitExam() {
+  var cards = document.querySelectorAll('.quiz-card');
+  examSubmitted = true;
+  var score = 0;
+  
+  cards.forEach(function(card) {
+    card.querySelectorAll('.quiz-btn').forEach(function(b) { b.disabled = true; });
+    if (card._selectedData) {
+      var d = card._selectedData;
+      var fb = document.getElementById(d.feedbackId);
+      if (d.isCorrect) {
+        score++;
+        d.btn.classList.add('correct');
+        if (fb) {
+          fb.className = 'quiz-fb show success';
+          fb.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + 
+            d.explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:4px;">' + d.explanationVi + '</em>';
+        }
+      } else {
+        d.btn.classList.add('wrong');
+        var correctBtn = card.querySelector('.quiz-btn[onclick*="true"]');
+        if (correctBtn && correctBtn !== d.btn) correctBtn.classList.add('correct-answer-hint');
+        if (fb) {
+          fb.className = 'quiz-fb show error';
+          fb.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + 
+            d.explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:4px;">' + d.explanationVi + '</em>';
+        }
+      }
+    }
+  });
 }
 
 function flipCard(card) {

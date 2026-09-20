@@ -90,7 +90,7 @@ export default function LessonReader({
     }
   };
 
-  // Cầu nối giao tiếp 2 chiều với Iframe để tự động bắt kết quả 8 câu trắc nghiệm
+  // Cầu nối giao tiếp 2 chiều với Iframe để thực thi Chế độ Thi & Nộp Bài (Submit Mode)
   const setupIframeBridge = useCallback(() => {
     try {
       const iframe = iframeRef.current;
@@ -99,96 +99,280 @@ export default function LessonReader({
       const iframeDoc = iframe.contentDocument || iframeWin?.document;
       if (!iframeWin || !iframeDoc) return;
 
-      const scanAndRecord = () => {
-        try {
-          const allQuizCards = iframeDoc.querySelectorAll('.quiz-card');
-          const total = allQuizCards.length;
-          if (total === 0) return;
+      const allQuizCards = iframeDoc.querySelectorAll('.quiz-card');
+      const total = allQuizCards.length;
+      if (total === 0) return;
 
-          const answeredCards = Array.from(allQuizCards).filter(card => 
-            card.querySelector('.quiz-btn.correct') || card.querySelector('.quiz-btn.wrong')
-          );
-          const correctCards = Array.from(allQuizCards).filter(card => 
-            card.querySelector('.quiz-btn.correct')
-          );
-
-          const score = correctCards.length;
-          const answeredCount = answeredCards.length;
-
-          if (answeredCount > 0 && onRecordQuizResult) {
-            onRecordQuizResult(lesson.id, score, total);
+      // 1. Tiêm CSS cho chế độ Chọn Đáp Án & Nút Nộp Bài
+      if (!iframeDoc.getElementById('quiz-exam-styles')) {
+        const styleEl = iframeDoc.createElement('style');
+        styleEl.id = 'quiz-exam-styles';
+        styleEl.textContent = `
+          .quiz-btn.selected {
+            background: rgba(16, 185, 129, 0.28) !important;
+            border-color: #34d399 !important;
+            box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.4) !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
           }
-
-          if (answeredCount === total && total > 0) {
-            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-            if (score / total >= 0.75 && !studyData.completedLessons[lesson.id] && onToggleComplete) {
-              onToggleComplete(lesson.id);
-            }
+          .quiz-btn.correct-answer-hint {
+            border: 2px dashed #34d399 !important;
+            background: rgba(16, 185, 129, 0.12) !important;
+            color: #d1fae5 !important;
           }
-        } catch (scanErr) {
-          console.warn('Lỗi quét đáp án trong iframe:', scanErr);
+          .quiz-btn.correct-answer-hint::after {
+            content: " ★ (Đáp án đúng SSMI)";
+            color: #34d399;
+            font-weight: 800;
+            font-size: 0.8rem;
+          }
+          .quiz-submit-container {
+            background: linear-gradient(135deg, rgba(2, 44, 34, 0.95), rgba(6, 78, 59, 0.95));
+            border: 2px solid var(--emerald-vibrant, #10b981);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0 24px 0;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+          }
+          .quiz-submit-btn {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: #ffffff;
+            border: none;
+            padding: 13px 36px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+            font-family: inherit;
+          }
+          .quiz-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+          }
+          .quiz-retake-btn {
+            background: rgba(16, 185, 129, 0.15);
+            color: #6ee7b7;
+            border: 1px solid #10b981;
+            padding: 10px 24px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            margin-top: 14px;
+          }
+          .quiz-retake-btn:hover {
+            background: rgba(16, 185, 129, 0.3);
+            color: #ffffff;
+          }
+        `;
+        iframeDoc.head.appendChild(styleEl);
+      }
+
+      // 2. Tạo hoặc tìm khung Nộp Bài (Submit Container)
+      let submitBox = iframeDoc.getElementById('quiz-submit-container');
+      if (!submitBox) {
+        submitBox = iframeDoc.createElement('div');
+        submitBox.id = 'quiz-submit-container';
+        submitBox.className = 'quiz-submit-container';
+        const lastCard = allQuizCards[allQuizCards.length - 1];
+        lastCard.parentNode.insertBefore(submitBox, lastCard.nextSibling);
+      }
+
+      // 3. Hàm hiển thị Kết quả sau khi Nộp Bài
+      const renderResultView = (score, totalCount, percentage) => {
+        const isPassed = percentage >= 80;
+        submitBox.innerHTML = `
+          <div style="border-radius: 12px; padding: 20px; background: ${isPassed ? 'rgba(16, 185, 129, 0.18)' : 'rgba(239, 68, 68, 0.18)'}; border: 1px solid ${isPassed ? '#10b981' : '#ef4444'}; text-align: center;">
+            <div style="font-size: 1.35rem; font-weight: 800; color: ${isPassed ? '#6ee7b7' : '#fca5a5'}; margin-bottom: 6px;">
+              ${isPassed ? '🎉 HOÀN THÀNH ĐẠT CHUẨN SSMI (≥ 80%)' : '⚠️ CẦN ÔN LUYỆN LẠI (< 80%)'}
+            </div>
+            <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 8px;">
+              Kết quả: <span style="color: ${isPassed ? '#34d399' : '#f87171'}; font-size: 1.35rem;">${score} / ${totalCount} câu (${percentage}%)</span>
+            </div>
+            <p style="color: ${isPassed ? '#a7f3d0' : '#fecaca'}; font-size: 0.88rem; margin: 0 auto 16px auto; max-width: 600px; line-height: 1.5;">
+              ${isPassed 
+                ? 'Xuất sắc! Bạn đã đạt yêu cầu từ 80% trở lên của phân cấp Master Black Belt. Kết quả đã được đồng bộ lên Đấu Trường Luyện Đề & Cloud!'
+                : 'Điểm số dưới 80%. Bạn hãy đọc kỹ phần giải thích Master Black Belt ở từng câu hỏi phía trên để củng cố kiến thức trước khi làm lại.'
+              }
+            </p>
+            <button id="btn-quiz-retake" class="quiz-retake-btn">
+              🔄 Làm Lại Bài Thi (Retake Exam)
+            </button>
+          </div>
+        `;
+        const retakeBtn = submitBox.querySelector('#btn-quiz-retake');
+        if (retakeBtn) {
+          retakeBtn.onclick = resetExam;
         }
       };
 
-      // Quét ngay lập tức nếu đã có đáp án được chọn
-      scanAndRecord();
+      // 4. Hàm làm lại bài thi (Reset Exam)
+      const resetExam = () => {
+        iframeWin.__examSubmitted = false;
+        allQuizCards.forEach(card => {
+          delete card._selectedData;
+          const buttons = card.querySelectorAll('.quiz-btn');
+          buttons.forEach(b => {
+            b.disabled = false;
+            b.classList.remove('selected', 'correct', 'wrong', 'correct-answer-hint');
+          });
+          const fbs = card.querySelectorAll('.quiz-fb');
+          fbs.forEach(fb => {
+            fb.className = 'quiz-fb';
+            fb.innerHTML = '';
+          });
+        });
+        renderSubmitBar();
+        const firstCard = allQuizCards[0];
+        if (firstCard) {
+          firstCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      };
 
-      // Nếu đã có điểm đạt chuẩn >= 80% được lưu trước đó, hiển thị trực quan các thẻ trắc nghiệm trong iframe
-      if (quizRecord && quizRecord.percentage >= 80) {
-        try {
-          const allCards = iframeDoc.querySelectorAll('.quiz-card');
-          allCards.forEach(card => {
-            const correctBtn = card.querySelector('.quiz-btn[onclick*="true"]');
-            if (correctBtn && !card.querySelector('.quiz-btn.correct')) {
-              correctBtn.classList.add('correct');
-              const fb = card.querySelector('.quiz-fb');
-              if (fb) {
-                fb.className = 'quiz-fb show success';
-                fb.innerHTML = '<strong>✅ Đã hoàn thành (&ge; 80%):</strong><br>Kết quả trắc nghiệm đã được ghi nhận vào Đấu Trường &amp; Cloud.';
+      // 5. Hàm thực thi Nộp Bài (Submit Exam)
+      const submitExam = () => {
+        const answered = Array.from(allQuizCards).filter(c => c._selectedData).length;
+        if (answered < total) {
+          const confirmSubmit = iframeWin.confirm(
+            `Bạn mới chọn ${answered}/${total} câu hỏi. Bạn có chắc chắn muốn nộp bài thi ngay bây giờ không?`
+          );
+          if (!confirmSubmit) return;
+        }
+
+        iframeWin.__examSubmitted = true;
+        let score = 0;
+
+        allQuizCards.forEach(card => {
+          const buttons = card.querySelectorAll('.quiz-btn');
+          buttons.forEach(b => { b.disabled = true; });
+
+          if (card._selectedData) {
+            const { btn, isCorrect, feedbackId, explanationEn, explanationVi } = card._selectedData;
+            const feedbackEl = iframeDoc.getElementById(feedbackId);
+
+            if (isCorrect) {
+              score++;
+              btn.classList.add('correct');
+              if (feedbackEl) {
+                feedbackEl.className = 'quiz-fb show success';
+                feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + 
+                  explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:4px;">' + explanationVi + '</em>';
+              }
+            } else {
+              btn.classList.add('wrong');
+              const correctBtn = card.querySelector('.quiz-btn[onclick*="true"]');
+              if (correctBtn && correctBtn !== btn) {
+                correctBtn.classList.add('correct-answer-hint');
+              }
+              if (feedbackEl) {
+                feedbackEl.className = 'quiz-fb show error';
+                feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + 
+                  explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:4px;">' + explanationVi + '</em>';
               }
             }
-          });
-        } catch (e) {
-          // ignore
-        }
-      }
-
-      if (iframeWin.__quizBridgeAttached) return;
-
-      const originalCheckQuiz = iframeWin.checkQuiz;
-
-      // Ghi đè hàm checkQuiz trong iframe để bắt sự kiện mỗi khi học viên click chọn đáp án
-      iframeWin.checkQuiz = function(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
-        if (typeof originalCheckQuiz === 'function') {
-          originalCheckQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi);
-        } else {
-          var parent = btn.parentElement;
-          var buttons = parent.querySelectorAll('.quiz-btn');
-          buttons.forEach(function(b) { b.disabled = true; });
-          var feedbackEl = iframeDoc.getElementById(feedbackId);
-          if (isCorrect) {
-            btn.classList.add('correct');
-            if (feedbackEl) {
-              feedbackEl.className = 'quiz-fb show success';
-              feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:4px;">' + explanationVi + '</em>';
-            }
           } else {
-            btn.classList.add('wrong');
-            if (feedbackEl) {
-              feedbackEl.className = 'quiz-fb show error';
-              feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:4px;">' + explanationVi + '</em>';
+            const correctBtn = card.querySelector('.quiz-btn[onclick*="true"]');
+            if (correctBtn) correctBtn.classList.add('correct-answer-hint');
+            const firstFb = card.querySelector('.quiz-fb');
+            if (firstFb) {
+              firstFb.className = 'quiz-fb show error';
+              firstFb.innerHTML = '<strong>⚠️ Chưa chọn đáp án:</strong> Vui lòng xem đáp án đúng phía trên.';
             }
           }
+        });
+
+        const percentage = Math.round((score / total) * 100);
+        renderResultView(score, total, percentage);
+
+        if (onRecordQuizResult) {
+          onRecordQuizResult(lesson.id, score, total);
         }
 
-        setTimeout(scanAndRecord, 80);
+        if (percentage >= 80) {
+          confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+          if (!studyData.completedLessons[lesson.id] && onToggleComplete) {
+            onToggleComplete(lesson.id);
+          }
+        }
+      };
+
+      // 6. Hàm hiển thị Thanh Nộp Bài trước khi nộp
+      const renderSubmitBar = () => {
+        const answered = Array.from(allQuizCards).filter(c => c._selectedData).length;
+        submitBox.innerHTML = `
+          <div style="font-size: 0.95rem; color: #a7f3d0; margin-bottom: 12px; font-weight: 600;">
+            Tiến độ: <strong style="color: #ffffff; font-size: 1.15rem;">${answered} / ${total}</strong> câu đã chọn
+          </div>
+          <button id="btn-quiz-submit-exam" class="quiz-submit-btn">
+            🚀 NỘP BÀI (SUBMIT EXAM)
+          </button>
+          <div style="color: #6ee7b7; font-size: 0.78rem; margin-top: 10px; font-style: italic;">
+            Sau khi bấm Nộp bài, hệ thống sẽ chấm điểm và hiển thị giải thích chi tiết đúng/sai của từng câu.
+          </div>
+        `;
+        const submitBtn = submitBox.querySelector('#btn-quiz-submit-exam');
+        if (submitBtn) {
+          submitBtn.onclick = submitExam;
+        }
+      };
+
+      // 7. Nếu học viên đã có kết quả trước đó, hiển thị trạng thái đã nộp kèm giải thích
+      if (quizRecord) {
+        iframeWin.__examSubmitted = true;
+        allQuizCards.forEach(card => {
+          const buttons = card.querySelectorAll('.quiz-btn');
+          buttons.forEach(b => { b.disabled = true; });
+          const correctBtn = card.querySelector('.quiz-btn[onclick*="true"]');
+          if (correctBtn) {
+            correctBtn.classList.add('correct');
+          }
+          const fb = card.querySelector('.quiz-fb');
+          if (fb) {
+            fb.className = 'quiz-fb show success';
+            fb.innerHTML = '<strong>✅ Đáp án chuẩn (Master Black Belt Standard):</strong><br>Kết quả bài thi đã được ghi nhận trên hệ thống.';
+          }
+        });
+        renderResultView(quizRecord.score, quizRecord.total, quizRecord.percentage);
+      } else {
+        renderSubmitBar();
+      }
+
+      // 8. Ghi đè hàm checkQuiz trong iframe thành Chế độ Chọn (Selection Mode)
+      iframeWin.checkQuiz = function(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+        if (iframeWin.__examSubmitted) return;
+
+        var card = btn.closest('.quiz-card');
+        if (!card) return;
+
+        var siblingButtons = card.querySelectorAll('.quiz-btn');
+        siblingButtons.forEach(function(b) {
+          b.classList.remove('selected');
+        });
+
+        btn.classList.add('selected');
+
+        card._selectedData = {
+          btn: btn,
+          isCorrect: isCorrect,
+          feedbackId: feedbackId,
+          explanationEn: explanationEn,
+          explanationVi: explanationVi
+        };
+
+        renderSubmitBar();
       };
 
       iframeWin.__quizBridgeAttached = true;
     } catch (err) {
       console.warn('Iframe bridge error:', err);
     }
-  }, [lesson, onRecordQuizResult, onToggleComplete, studyData.completedLessons]);
+  }, [lesson, onRecordQuizResult, onToggleComplete, quizRecord, studyData.completedLessons]);
 
   // Đồng bộ ghi chú của bài học hiện tại
   useEffect(() => {

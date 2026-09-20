@@ -1,18 +1,19 @@
 import React, { useState, useMemo } from 'react';
 import { 
-  BookOpen, 
+  ChevronDown, 
+  ChevronRight, 
   CheckCircle2, 
   Circle, 
   Star, 
-  ChevronDown, 
-  ChevronRight, 
   Search, 
-  Bookmark, 
   FileText, 
+  LayoutDashboard, 
+  BookOpen, 
   Sparkles,
-  LayoutDashboard,
+  Award,
   Layers,
-  Award
+  Flame,
+  X
 } from 'lucide-react';
 
 export default function Sidebar({ 
@@ -26,30 +27,25 @@ export default function Sidebar({
   onClose
 }) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filterTab, setFilterTab] = useState('all'); // 'all' | 'completed' | 'uncompleted' | 'bookmarked'
   const [expandedModules, setExpandedModules] = useState({ 'mod-01': true });
   const [expandedSubtopics, setExpandedSubtopics] = useState({ 'sub-01-01': true });
+  const [filterTab, setFilterTab] = useState('all'); // 'all' | 'completed' | 'quiz' | 'bookmarked'
 
-  // Toggle Module Accordion
   const toggleModule = (modId) => {
     setExpandedModules(prev => ({ ...prev, [modId]: !prev[modId] }));
   };
 
-  // Toggle Subtopic Accordion
   const toggleSubtopic = (subId) => {
     setExpandedSubtopics(prev => ({ ...prev, [subId]: !prev[subId] }));
   };
 
-  // Filter lessons
+  // Lọc bài học theo tìm kiếm và tab
   const filteredCurriculum = useMemo(() => {
-    if (!searchQuery && filterTab === 'all') return curriculum.modules;
-
     const query = searchQuery.toLowerCase().trim();
 
     return curriculum.modules.map(mod => {
       const filteredSubtopics = mod.subtopics.map(sub => {
         const filteredLessons = sub.lessons.filter(les => {
-          // Lọc theo search query
           const matchesQuery = !query || 
             les.cleanTitle.toLowerCase().includes(query) || 
             (les.titleEn && les.titleEn.toLowerCase().includes(query)) ||
@@ -57,13 +53,14 @@ export default function Sidebar({
 
           if (!matchesQuery) return false;
 
-          // Lọc theo tab
           const isCompleted = !!studyData.completedLessons[les.id];
           const isBookmarked = !!studyData.bookmarkedLessons[les.id];
+          const hasQuiz = !!(studyData.quizScores && studyData.quizScores[les.id]);
 
           if (filterTab === 'completed') return isCompleted;
           if (filterTab === 'uncompleted') return !isCompleted;
           if (filterTab === 'bookmarked') return isBookmarked;
+          if (filterTab === 'quiz') return hasQuiz;
 
           return true;
         });
@@ -77,6 +74,8 @@ export default function Sidebar({
 
   // Thống kê nhanh
   const totalCompleted = Object.keys(studyData.completedLessons || {}).length;
+  const totalBookmarked = Object.keys(studyData.bookmarkedLessons || {}).length;
+  const totalTested = Object.keys(studyData.quizScores || {}).length;
   const totalLessons = curriculum.totalLessons || 228;
   const progressPercent = Math.round((totalCompleted / totalLessons) * 100);
 
@@ -159,10 +158,17 @@ export default function Sidebar({
           Đã học ({totalCompleted})
         </button>
         <button 
+          className={`nav-tab-btn ${filterTab === 'quiz' ? 'active' : ''}`}
+          onClick={() => setFilterTab('quiz')}
+          title="Xem các bài đã nộp trắc nghiệm"
+        >
+          Đã thi ({totalTested})
+        </button>
+        <button 
           className={`nav-tab-btn ${filterTab === 'bookmarked' ? 'active' : ''}`}
           onClick={() => setFilterTab('bookmarked')}
         >
-          ⭐ Lưu ({Object.keys(studyData.bookmarkedLessons || {}).length})
+          ⭐ ({totalBookmarked})
         </button>
       </div>
 
@@ -175,17 +181,18 @@ export default function Sidebar({
         ) : (
           filteredCurriculum.map(mod => {
             const isModExpanded = expandedModules[mod.id] || searchQuery.length > 0;
-            const modCompletedCount = mod.subtopics.reduce((acc, sub) => {
-              return acc + sub.lessons.filter(l => !!studyData.completedLessons[l.id]).length;
-            }, 0);
+            const modCompletedCount = mod.subtopics.flatMap(s => s.lessons)
+              .filter(l => studyData.completedLessons[l.id]).length;
 
             return (
-              <div key={mod.id} className="module-accordion">
-                {/* Module Header */}
-                <div className="module-header" onClick={() => toggleModule(mod.id)}>
-                  <div className="module-header-title">
-                    <Layers size={16} color="var(--emerald-vibrant)" />
-                    <span style={{ fontSize: '0.86rem' }}>{mod.cleanName}</span>
+              <div key={mod.id} className="module-item">
+                <div 
+                  className="module-header"
+                  onClick={() => toggleModule(mod.id)}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Layers size={16} color="var(--emerald-mint)" />
+                    <span style={{ fontWeight: '700' }}>{mod.cleanName}</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span style={{ 
@@ -223,7 +230,12 @@ export default function Sidebar({
                                 const isCompleted = !!studyData.completedLessons[les.id];
                                 const isBookmarked = !!studyData.bookmarkedLessons[les.id];
                                 const hasNote = !!studyData.notes[les.id];
+                                const quiz = studyData.quizScores ? studyData.quizScores[les.id] : null;
                                 const isActive = activeLesson && activeLesson.id === les.id;
+                                const cleanTitleDecoded = (les.cleanTitle || '')
+                                  .replace(/&amp;/g, '&')
+                                  .replace(/&lt;/g, '<')
+                                  .replace(/&gt;/g, '>');
 
                                 return (
                                   <div 
@@ -244,8 +256,24 @@ export default function Sidebar({
                                       textOverflow: 'ellipsis', 
                                       whiteSpace: 'nowrap' 
                                     }}>
-                                      {les.order}. {les.cleanTitle}
+                                      {les.order}. {cleanTitleDecoded}
                                     </span>
+                                    {quiz && (
+                                      <span 
+                                        style={{
+                                          fontSize: '0.66rem',
+                                          fontWeight: '800',
+                                          padding: '1px 5px',
+                                          borderRadius: '4px',
+                                          background: quiz.percentage >= 80 ? 'rgba(16, 185, 129, 0.2)' : 'rgba(239, 68, 68, 0.2)',
+                                          color: quiz.percentage >= 80 ? '#6ee7b7' : '#fca5a5',
+                                          flexShrink: 0
+                                        }}
+                                        title={`Điểm trắc nghiệm: ${quiz.score}/${quiz.total} (${quiz.percentage}%)`}
+                                      >
+                                        {quiz.percentage}%
+                                      </span>
+                                    )}
                                     {isBookmarked && (
                                       <Star size={13} fill="var(--gold)" color="var(--gold)" />
                                     )}

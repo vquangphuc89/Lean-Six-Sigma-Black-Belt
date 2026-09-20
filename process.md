@@ -246,5 +246,10 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
 ```
 
 * **Cầu Nối Trắc Nghiệm Hai Chiều (Iframe Quiz Bridge):** Tự động bắt sự kiện khi học viên chọn đáp án trong tệp HTML bài học, tính toán tỷ lệ đúng/sai theo chuẩn SSMI và lập tức đồng bộ điểm số vào Đấu Trường Luyện Đề (Practice Arena) & Cloud Firestore.
+* **Hiển Thị Điểm Trắc Nghiệm Đa Tầng Trên Từng Bài Học:**
+  - **Sidebar:** Hiển thị huy hiệu điểm số `%` bên cạnh từng bài đã nộp (xanh nếu &ge;80%, đỏ nếu <80%), bổ sung tab lọc riêng "Đã thi".
+  - **Lesson Reader:** Thanh công cụ trắc nghiệm nổi bật hiển thị trạng thái đề thi, nút "Cuộn Tới 8 Câu Hỏi" và nút "✅ Lưu Kết Quả 100% (Đã làm 8 câu)" để học viên dễ dàng ghi nhận kết quả ngay tức thì.
+  - **Practice Arena:** Thẻ bài hiển thị điểm số chi tiết kèm các chỉ số KPI tổng thể (Đã nộp, Điểm trung bình, Đạt chuẩn SSMI).
+
 
 

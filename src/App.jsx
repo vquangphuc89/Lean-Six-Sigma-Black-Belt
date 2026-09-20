@@ -416,6 +416,7 @@ export default function App() {
             curriculum={curriculumData}
             studyData={studyData}
             onSelectLesson={handleSelectLesson}
+            onRecordQuizResult={handleRecordQuizResult}
           />
         )}
       </div>

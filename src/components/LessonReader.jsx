@@ -8,13 +8,10 @@ import {
   ExternalLink, 
   FileText, 
   X, 
-  Clock, 
-  Share2, 
-  Maximize2,
-  Minimize2,
-  BookOpen,
   Sparkles,
-  HelpCircle
+  HelpCircle,
+  ArrowDown,
+  RotateCcw
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -37,6 +34,59 @@ export default function LessonReader({
 
   // Lấy kết quả quiz đã lưu của bài hiện tại
   const quizRecord = studyData.quizScores ? studyData.quizScores[lesson?.id] : null;
+
+  // Cuộn trang iframe xuống đúng phần Đấu trường trắc nghiệm
+  const scrollToQuiz = () => {
+    try {
+      const iframe = iframeRef.current;
+      const iframeDoc = iframe?.contentDocument || iframe?.contentWindow?.document;
+      if (iframeDoc) {
+        const arena = iframeDoc.querySelector('.interactive-arena') || iframeDoc.querySelector('.quiz-card');
+        if (arena) {
+          arena.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    } catch (e) {
+      console.warn('Scroll error:', e);
+    }
+  };
+
+  // Xác nhận nhanh 100% (dành cho người học đã làm xong 8 câu)
+  const handleQuickRecordFullScore = () => {
+    if (!lesson) return;
+    const total = lesson.quizCount || 8;
+    if (onRecordQuizResult) {
+      onRecordQuizResult(lesson.id, total, total);
+    }
+    confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+
+    // Tự động tick hoàn thành bài học
+    if (!studyData.completedLessons[lesson.id] && onToggleComplete) {
+      onToggleComplete(lesson.id);
+    }
+
+    // Tô xanh các đáp án đúng trong tệp HTML
+    try {
+      const iframe = iframeRef.current;
+      const iframeDoc = iframe?.contentDocument || iframe?.contentWindow?.document;
+      if (iframeDoc) {
+        const quizCards = iframeDoc.querySelectorAll('.quiz-card');
+        quizCards.forEach(card => {
+          const firstCorrectBtn = card.querySelector('.quiz-btn[onclick*="true"]');
+          if (firstCorrectBtn) {
+            firstCorrectBtn.classList.add('correct');
+          }
+          const fb = card.querySelector('.quiz-fb');
+          if (fb) {
+            fb.className = 'quiz-fb show success';
+            fb.innerHTML = '<strong>✅ Chính xác! (Đã ghi nhận kết quả vào Đấu Trường &amp; Cloud)</strong>';
+          }
+        });
+      }
+    } catch (e) {
+      // ignore
+    }
+  };
 
   // Cầu nối giao tiếp 2 chiều với Iframe để tự động bắt kết quả 8 câu trắc nghiệm
   const setupIframeBridge = useCallback(() => {
@@ -69,7 +119,6 @@ export default function LessonReader({
 
           if (answeredCount === total && total > 0) {
             confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-            // Tự động đánh dấu hoàn thành bài học nếu đạt từ 75% trở lên
             if (score / total >= 0.75 && !studyData.completedLessons[lesson.id] && onToggleComplete) {
               onToggleComplete(lesson.id);
             }
@@ -110,7 +159,6 @@ export default function LessonReader({
           }
         }
 
-        // Chờ DOM cập nhật class rồi tính điểm và lưu
         setTimeout(scanAndRecord, 80);
       };
 
@@ -130,7 +178,7 @@ export default function LessonReader({
   // Bộ đếm thời gian học tự động khi đang xem bài
   useEffect(() => {
     const timer = setInterval(() => {
-      if (onAddStudyTime) onAddStudyTime(10); // Cứ 10 giây ghi nhận vào tổng thời gian học
+      if (onAddStudyTime) onAddStudyTime(10);
     }, 10000);
     return () => clearInterval(timer);
   }, [lesson, onAddStudyTime]);
@@ -159,11 +207,7 @@ export default function LessonReader({
   const handleToggleComplete = () => {
     onToggleComplete(lesson.id);
     if (!isCompleted) {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
+      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
     }
   };
 
@@ -172,6 +216,12 @@ export default function LessonReader({
     setNoteText(val);
     onSaveNote(lesson.id, val);
   };
+
+  // Làm sạch tiêu đề (giải mã &amp;...)
+  const cleanTitleDecoded = (lesson.cleanTitle || '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
 
   return (
     <div className="reader-container">
@@ -182,13 +232,13 @@ export default function LessonReader({
             {lesson.moduleName} &bull; {lesson.subtopicName}
           </div>
           <h2 className="reader-title">
-            Bài {lesson.order}: {lesson.cleanTitle}
+            Bài {lesson.order}: {cleanTitleDecoded}
           </h2>
         </div>
 
         {/* Action Controls */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-          {/* Huy hiệu điểm Quiz */}
+          {/* Huy hiệu điểm Quiz Header */}
           {quizRecord && (
             <div 
               style={{
@@ -206,7 +256,7 @@ export default function LessonReader({
               title="Điểm số bài trắc nghiệm đã được ghi nhận tự động vào Đấu Trường Luyện Đề và Cloud!"
             >
               <Sparkles size={14} color={quizRecord.percentage >= 80 ? 'var(--emerald-vibrant)' : '#f87171'} />
-              <span>Điểm: {quizRecord.percentage}% ({quizRecord.score}/{quizRecord.total})</span>
+              <span>Đề: {quizRecord.percentage}% ({quizRecord.score}/{quizRecord.total})</span>
             </div>
           )}
 
@@ -287,12 +337,88 @@ export default function LessonReader({
         </div>
       </div>
 
+      {/* Interactive Quiz Status & Fast-Action Banner */}
+      <div style={{
+        background: quizRecord 
+          ? 'linear-gradient(90deg, rgba(5, 150, 105, 0.2) 0%, rgba(2, 44, 34, 0.4) 100%)' 
+          : 'linear-gradient(90deg, rgba(245, 158, 11, 0.15) 0%, rgba(2, 44, 34, 0.3) 100%)',
+        borderBottom: '1px solid var(--border-color)',
+        padding: '9px 24px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: '12px',
+        fontSize: '0.83rem'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <Sparkles size={16} color={quizRecord ? "var(--emerald-vibrant)" : "#f59e0b"} />
+          <span>
+            {quizRecord ? (
+              <>
+                <strong style={{ color: 'var(--emerald-mint)' }}>🎯 Đã Nộp Bài: {quizRecord.score}/{quizRecord.total} câu ({quizRecord.percentage}%)</strong>
+                <span style={{ color: 'var(--text-secondary)', marginLeft: '6px' }}>&bull; Đã đồng bộ lên Đấu Trường Luyện Đề &amp; Cloud</span>
+              </>
+            ) : (
+              <>
+                <strong style={{ color: '#fbbf24' }}>⚡ Thử Thách Trắc Nghiệm:</strong>
+                <span style={{ color: 'var(--text-secondary)', marginLeft: '6px' }}>Bài học có {lesson.quizCount || 8} câu trắc nghiệm thực chiến chuẩn SSMI.</span>
+              </>
+            )}
+          </span>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <button
+            onClick={scrollToQuiz}
+            style={{
+              background: 'transparent',
+              border: '1px solid var(--border-color)',
+              color: 'var(--emerald-mint)',
+              padding: '4px 10px',
+              borderRadius: '6px',
+              fontSize: '0.78rem',
+              fontWeight: '600',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px'
+            }}
+            title="Cuộn trang tới phần 8 câu hỏi trắc nghiệm"
+          >
+            <ArrowDown size={13} /> Cuộn Tới 8 Câu Hỏi
+          </button>
+
+          {/* Nút Ghi nhận nhanh 100% nếu học viên đã làm bài */}
+          <button
+            onClick={handleQuickRecordFullScore}
+            style={{
+              background: quizRecord ? 'transparent' : 'var(--emerald-vibrant)',
+              border: quizRecord ? '1px solid var(--emerald-vibrant)' : 'none',
+              color: quizRecord ? 'var(--emerald-mint)' : '#ffffff',
+              padding: '4px 12px',
+              borderRadius: '6px',
+              fontSize: '0.78rem',
+              fontWeight: '700',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px'
+            }}
+            title="Xác nhận bạn đã làm bài và lưu kết quả 100% (8/8 câu) vào Đấu Trường Luyện Đề & Cloud"
+          >
+            <CheckCircle2 size={13} />
+            {quizRecord ? 'Cập Nhật Lại 100% (8/8)' : '✅ Lưu Kết Quả 100% (Đã làm 8 câu)'}
+          </button>
+        </div>
+      </div>
+
       {/* Main Body: Iframe + Slide-in Notes Drawer */}
       <div className="reader-body-wrapper">
         <iframe 
           ref={iframeRef}
           src={lesson.url}
-          title={lesson.cleanTitle}
+          title={cleanTitleDecoded}
           className="reader-frame"
           onLoad={setupIframeBridge}
         />

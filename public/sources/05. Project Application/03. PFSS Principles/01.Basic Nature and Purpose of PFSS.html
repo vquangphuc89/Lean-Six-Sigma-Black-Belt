@@ -154,6 +154,24 @@
     color: var(--emerald-mint);
     font-size: 1.15rem;
   }
+  .math-vec {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.35em;
+    margin: 0 1px;
+  }
+  .math-vec::before {
+    content: "→";
+    position: absolute;
+    top: -0.22em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    line-height: 1;
+    color: var(--emerald-mint);
+    font-style: normal;
+    font-weight: 800;
+  }
   .math-card .desc {
     font-size: 0.92rem;
     color: #d1fae5;
@@ -483,7 +501,7 @@
 
   <!-- PHẦN 1: EXECUTIVE SUMMARY -->
   <section class="section-card">
-    <span class="section-num">Trụ Cột 1 • Tóm Tắt Điều Hành</span>
+    <span class="section-num">TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH</span>
     <h2 class="section-heading">Executive Summary &amp; Thước Đo Lãnh Đạo</h2>
     <div class="section-subheading">Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây</div>
     <div class="exec-summary">
@@ -516,13 +534,13 @@
 
       <div class="math-card">
         <div class="title">2. Năng Lực Đặc Quyền Chuyển Đổi / Transformational Entitlement</div>
-        <div class="math-equation">&Delta;<i>V</i><sub>Entitlement</sub> = <i>Value</i>(<i>State B</i>) &minus; <i>Value</i>(<i>State A</i>) = <i>Max</i> &hArr; &vec;<i>X</i><sub>CTP</sub> = &vec;<i>X</i><sub>Optimal</sub></div>
+        <div class="math-equation">&Delta;<i>V</i><sub>Entitlement</sub> = <i>Value</i>(<i>State B</i>) &minus; <i>Value</i>(<i>State A</i>) = <i>Max</i> &hArr; <span class="math-vec"><i>X</i></span><sub>CTP</sub> = <span class="math-vec"><i>X</i></span><sub>Optimal</sub></div>
         <div class="desc"><strong>Tối đa hóa giá trị:</strong><br>&bull; Giá trị gia tăng đạt cực đại khi và chỉ khi toàn bộ các biến số CTP trọng yếu được thiết lập chính xác tại tọa độ tối ưu.</div>
       </div>
 
       <div class="math-card">
         <div class="title">3. Chuỗi Tích Lũy Giá Trị / Multi-Stage Value Accretion Model</div>
-        <div class="math-equation"><i>Deliverable</i><sub>Final</sub> = &prod;<sub><i>i</i>=1</sub><sup><i>m</i></sup> <b>Op</b><sub><i>i</i></sub>(<i>Deliverable</i><sub><i>i</i>&minus;1</sub> | &vec;<i>X</i><sub>CTP, <i>i</i></sub>)</div>
+        <div class="math-equation"><i>Deliverable</i><sub>Final</sub> = &prod;<sub><i>i</i>=1</sub><sup><i>m</i></sup> <b>Op</b><sub><i>i</i></sub>(<i>Deliverable</i><sub><i>i</i>&minus;1</sub> | <span class="math-vec"><i>X</i></span><sub>CTP, <i>i</i></sub>)</div>
         <div class="desc"><strong>Dòng chảy liên tục:</strong><br>&bull; Sản phẩm bàn giao của Op 1 trở thành nguyên liệu đầu vào cho Op 2, tích lũy giá trị qua từng mắt xích của chuỗi giá trị.</div>
       </div>
 

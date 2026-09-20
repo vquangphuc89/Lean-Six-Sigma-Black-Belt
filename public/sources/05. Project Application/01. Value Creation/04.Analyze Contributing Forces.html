@@ -136,6 +136,24 @@
     margin: 10px 0 16px;
     line-height: 1.4;
   }
+  .math-vec {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.35em;
+    margin: 0 1px;
+  }
+  .math-vec::before {
+    content: "→";
+    position: absolute;
+    top: -0.22em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    line-height: 1;
+    color: var(--emerald-mint);
+    font-style: normal;
+    font-weight: 800;
+  }
   .math-card .desc {
     font-size: 0.92rem;
     color: #d1fae5;
@@ -425,9 +443,9 @@
 
   <!-- TRỤ CỘT 1: EXECUTIVE SUMMARY -->
   <section class="section-card">
-    <span class="section-num">Trụ Cột 1 • Executive Summary</span>
-    <h2 class="section-heading">Tóm Tắt Điều Hành Trong 60 Giây</h2>
-    <div class="section-subheading">Hiểu rõ bản chất lực trường để xoay chuyển hiện trạng về mục tiêu mong muốn</div>
+    <span class="section-num">TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH</span>
+    <h2 class="section-heading">Executive Summary &amp; Phân Tích Các Lực Đóng Góp</h2>
+    <div class="section-subheading">Nắm trọn tinh hoa bài học trong 60 giây &bull; Hiểu rõ bản chất lực trường để xoay chuyển hiện trạng về mục tiêu mong muốn</div>
     <div class="exec-summary">
       <ul>
         <li><strong>Bản Chất Động Lực Học Của Điều Kiện (Conditions as Forces):</strong> Mỗi điều kiện hình thành cơ hội thực chất là một lực tác động vật lý hoặc tổ chức. Sức mạnh của điều kiện được biểu diễn bằng độ dài của vector lực.</li>
@@ -451,11 +469,11 @@
     <div class="math-card">
       <div class="title">1. Phương Trình Cân Bằng Lực Tổng Hợp (Net Force Vector Equation)</div>
       <div class="math-equation">
-        &vec;<i>F<sub>Net</sub></i> = &sum; &vec;<i>F<sub>Driving</sub></i> &minus; &sum; &vec;<i>F<sub>Restraining</sub></i> &nbsp;&rArr;&nbsp;
-        &vec;<i>F<sub>Net</sub></i> &gt; 0 &implies; <i>Opportunity Expands (&Delta;Y &gt; 0)</i>
+        <span class="math-vec"><i>F</i></span><sub>Net</sub> = &sum; <span class="math-vec"><i>F</i></span><sub>Driving</sub> &minus; &sum; <span class="math-vec"><i>F</i></span><sub>Restraining</sub> &nbsp;&rArr;&nbsp;
+        <span class="math-vec"><i>F</i></span><sub>Net</sub> &gt; 0 &rArr; <i>Opportunity Expands (&Delta;Y &gt; 0)</i>
       </div>
       <div class="desc">
-        Trong đó: Độ dài của vector biểu thị độ lớn (Strength) của lực. Khi $\vec{F}_{Net} > 0$, hệ thống tự động gia tốc tiến về trạng thái Ought Condition, thu hẹp khoảng cách giá trị.
+        Trong đó: Độ dài của vector biểu thị độ lớn (Strength) của lực. Khi <span class="math-vec"><i>F</i></span><sub>Net</sub> &gt; 0, hệ thống tự động gia tốc tiến về trạng thái Ought Condition, thu hẹp khoảng cách giá trị.
       </div>
     </div>
 
@@ -464,7 +482,7 @@
       <div class="math-equation">
         <i>LI<sub>k</sub></i> = 
         <div class="math-frac">
-          <span class="math-num">| &part;<i>Y</i> / &part;<i>F<sub>k</sub></i> | &times; | &vec;<i>F<sub>k</sub></i> |</span>
+          <span class="math-num">| &part;<i>Y</i> / &part;<i>F<sub>k</sub></i> | &times; | <span class="math-vec"><i>F</i></span><sub>k</sub> |</span>
           <span class="math-den"><i>Implementation Cost</i> (<i>C<sub>k</sub></i>) &times; <i>Cycle Time</i> (<i>T<sub>k</sub></i>)</span>
         </div>
       </div>
@@ -777,7 +795,7 @@
             <th>Mục Tiêu Thu Hẹp Khoảng Trống<span class="th-vi">Target Gap Objective</span></th>
             <th>Lực Dẫn Hướng Chính (+Driving)<span class="th-vi">Positive Drivers (Strength)</span></th>
             <th>Lực Cản Trở Cốt Tử (-Restraining)<span class="th-vi">Critical Resistances (Strength)</span></th>
-            <th>Vectơ Lực Tổng Hợp<span class="th-vi">Net Force (&vec;F<sub>Net</sub>)</span></th>
+            <th>Vectơ Lực Tổng Hợp<span class="th-vi">Net Force (<span class="math-vec"><i>F</i></span><sub>Net</sub>)</span></th>
             <th>Nút Vặn Can Thiệp Ưu Tiên<span class="th-vi">Selected Leverage Knob</span></th>
           </tr>
         </thead>

@@ -33,9 +33,12 @@ Mỗi file bài học là **một tệp HTML độc lập (Single-file Self-cont
 ┌────────────────────────────────────────────────────────────────────────┐
 │  HERO HEADER: Badge phân hệ • Tiêu đề song ngữ • Tóm tắt điều hành     │
 ├────────────────────────────────────────────────────────────────────────┤
-│  TRỤ CỘT 1: EXECUTIVE SUMMARY (Tóm tắt điều hành trong 60 giây)        │
-│  - 4 gạch đầu dòng cốt tử dành cho lãnh đạo C-Suite & Black Belt       │
-│  - Nguyên lý cốt lõi / Tầm nhìn chiến lược của Dr. Mikel J. Harry      │
+│  TRỤ CỘT 1: EXECUTIVE SUMMARY & TÓM TẮT ĐIỀU HÀNH                       │
+│  - Badge chuẩn: "TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH"                        │
+│  - Heading: "Executive Summary & [Chủ đề / Thước Đo Lãnh Đạo]"         │
+│  - Subheading khẩu quyết: "Nắm trọn tinh hoa bài học trong 60 giây"    │
+│  - 4-5 gạch đầu dòng cốt tử dành cho lãnh đạo C-Suite & Black Belt     │
+│  - Hộp MBB Practical Insights bóc trần bẫy tư duy quản trị             │
 ├────────────────────────────────────────────────────────────────────────┤
 │  TRỤ CỘT 2: CORE FRAMEWORKS, DATA TABLES & PURE MATH                   │
 │  - Bảng ma trận phân vai (Belt Matrix) hoặc tiêu chuẩn kỹ thuật        │
@@ -60,12 +63,42 @@ Mỗi file bài học là **một tệp HTML độc lập (Single-file Self-cont
 
 ## 3. Chi Tiết Kỹ Thuật Từng Trụ Cột (Detailed Component Blueprint)
 
-### Trụ Cột 1: Executive Summary
-* **Mục đích:** Giúp người học nắm bắt 80% giá trị của bài trong 60 giây đầu tiên.
-* **Quy chuẩn:**
-  * Thẻ `.exec-summary` nền xanh ngọc nhạt (`#f4fbf7`), viền trái màu ngọc lục bảo (`--emerald`).
-  * Danh sách từ **3 đến 4 gạch đầu dòng** in đậm từ khóa chính.
-  * Trích dẫn câu nói kinh điển của các bậc thầy chất lượng (Ví dụ: *"In God we trust, all others must bring data"*).
+### Trụ Cột 1: Executive Summary & Tóm Tắt Điều Hành (Nắm Trọn Tinh Hoa Trong 60 Giây)
+* **Mục đích:** Giúp lãnh đạo C-Suite, Giám đốc khối, Champion và Master Black Belt nắm bắt trọn vẹn 80% giá trị cốt lõi và thông điệp hành động của bài học chỉ trong đúng **60 giây** đầu tiên trước khi đi sâu vào chi tiết kỹ thuật.
+* **Bộ 3 Tiêu Chí Bắt Buộc (The 3-Element Executive Standard):**
+  1. **Badge Định Danh Số Hiệu (`.section-num`):**
+     * Bắt buộc ghi chuẩn xác: `<span class="section-num">TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH</span>`.
+     * Tuyệt đối không dùng các nhãn mập mờ hoặc thiếu yếu tố tóm tắt điều hành như *"Khẩu Lệnh Chiến Lược"*, *"Pillar 1"* hay chỉ viết *"Executive Summary"*.
+  2. **Tiêu Đề Trụ Cột (`h2.section-heading`):**
+     * Bắt buộc có tiền tố song ngữ nhận diện rõ nét: `Executive Summary & [Tên Chủ Đề / Thước Đo Lãnh Đạo / Quyết Sách Chiến Lược]`.
+     * Ví dụ: `Executive Summary & Thước Đo Lãnh Đạo`, `Executive Summary & Bản Chất Cốt Lõi Của MFSS`, `Executive Summary & Hồ Sơ Doanh Nghiệp 4-Sigma`.
+  3. **Phụ Đề Khẩu Quyết 60 Giây (`div.section-subheading`):**
+     * Bắt buộc chứa thông điệp tốc độ và học thuật đỉnh cao:
+       * Mẫu chuẩn A: `Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây`
+       * Mẫu chuẩn B: `Nắm trọn tinh hoa bài học trong 60 giây` (hoặc `Nắm trọn tinh hoa bài học trong 60 giây &bull; [Mô tả ngắn gọn]`).
+* **Cấu Trúc HTML Mẫu Chuẩn Cho Trụ Cột 1:**
+  ```html
+  <!-- PHẦN 1: EXECUTIVE BRIEFING -->
+  <section class="section-card">
+    <span class="section-num">TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH</span>
+    <h2 class="section-heading">Executive Summary &amp; Thước Đo Lãnh Đạo</h2>
+    <div class="section-subheading">Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây</div>
+    
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Thông điệp cốt lõi từ Dr. Mikel J. Harry:</strong> Trích xuất chân lý phương pháp luận hoặc nguyên tắc điều hành tối thượng.</li>
+        <li><strong>Bản chất quy trình &amp; Đòn bẩy tài chính P&L:</strong> Chỉ rõ dự án/công cụ tác động trực tiếp vào giảm lãng phí (COPQ), tăng biên lợi nhuận (EBITDA) hay tối ưu vốn lưu động ở đâu.</li>
+        <li><strong>Cơ chế phân quyền tác chiến (Champion / BB / MBB):</strong> Xác lập rõ vai trò chịu trách nhiệm bảo trợ chính trị và hiện thực hóa kết quả.</li>
+        <li><strong>Nguyên tắc sống còn (Critical Takeaway):</strong> Điều gì sẽ khiến sáng kiến thất bại nếu lãnh đạo bỏ qua?</li>
+      </ul>
+    </div>
+    
+    <div class="pro-tip">
+      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Practical Insight)</div>
+      <p class="pro-tip-desc">Bài học xương máu từ hơn 40 cuộc triển khai thực tế: Đừng bao giờ mang công cụ thống kê đi trình bày với C-Suite; hãy mang bài toán dòng tiền và lộ trình giải phóng vốn bị giam hãm trong phế phẩm!</p>
+    </div>
+  </section>
+  ```
 
 ### Trụ Cột 2: Core Frameworks, Data Tables & Pure Math
 * **Bảng dữ liệu chuẩn (`table.data-table`):**
@@ -300,7 +333,14 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
 ## 8. Bộ Quy Tắc Bắt Buộc Cho Mọi Bài Học Mới Tạo (Mandatory Rules for All Future Lessons)
 
 > [!IMPORTANT]
-> **Cam Kết Bất Biến (Strict Protocol):** Bất kỳ bài học mới nào được khởi tạo hoặc biên soạn bổ sung trong toàn bộ hệ thống Black Belt Masterclass đều **bắt buộc tuân thủ 100%** 4 quy tắc nền tảng dưới đây. Tuyệt đối không tự ý thay đổi quy chuẩn này để đảm bảo tính đồng bộ hoàn hảo giữa nội dung tĩnh (HTML), SPA React, Đấu Trường Luyện Đề và Cloud Sync.
+> **Cam Kết Bất Biến (Strict Protocol):** Bất kỳ bài học mới nào được khởi tạo hoặc biên soạn bổ sung trong toàn bộ hệ thống Black Belt Masterclass đều **bắt buộc tuân thủ 100%** 5 quy tắc nền tảng dưới đây. Tuyệt đối không tự ý thay đổi quy chuẩn này để đảm bảo tính đồng bộ hoàn hảo giữa nội dung tĩnh (HTML), SPA React, Đấu Trường Luyện Đề và Cloud Sync.
+
+### Quy Tắc 0: Chuẩn Hóa Trụ Cột 1 — Tóm Tắt Điều Hành 60 Giây (Executive Briefing Protocol)
+* Trụ Cột 1 là gương mặt đại diện của bài học, giúp học viên và lãnh đạo C-Suite thấu suốt tinh hoa trước khi đào sâu vào toán học và tình huống. Mọi bài học **bắt buộc** hiển thị chuẩn bộ 3 yếu tố:
+  1. **Badge:** `<span class="section-num">TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH</span>`
+  2. **Heading:** `<h2 class="section-heading">Executive Summary &amp; [Tên Chủ Đề / Thước Đo Lãnh Đạo]</h2>`
+  3. **Subheading:** `<div class="section-subheading">Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây</div>` (hoặc `Nắm trọn tinh hoa bài học trong 60 giây`)
+* **Nội dung:** Tối thiểu 4 gạch đầu dòng cô đọng trong khối `.exec-summary` và 1 hộp `.pro-tip` Lời khuyên của Master Black Belt.
 
 ### Quy Tắc 1: Chuẩn Hóa 8 Câu Hỏi Trắc Nghiệm Tình Huống ($N = 8$)
 * Mỗi bài học mới **bắt buộc có đúng 8 câu hỏi trắc nghiệm thực chiến**, được chia thành 3 tầng tư duy của Dr. Mikel J. Harry:

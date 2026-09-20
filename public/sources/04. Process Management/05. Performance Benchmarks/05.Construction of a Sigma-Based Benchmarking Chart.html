@@ -154,6 +154,24 @@
     color: var(--emerald-mint);
     font-size: 1.15rem;
   }
+  .math-vec {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.35em;
+    margin: 0 1px;
+  }
+  .math-vec::before {
+    content: "→";
+    position: absolute;
+    top: -0.22em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    line-height: 1;
+    color: var(--emerald-mint);
+    font-style: normal;
+    font-weight: 800;
+  }
   .math-card .desc {
     font-size: 0.92rem;
     color: #d1fae5;
@@ -461,7 +479,7 @@
 
   <!-- PHẦN 1: EXECUTIVE SUMMARY -->
   <section class="section-card">
-    <span class="section-num">Phần 1 • Executive Summary</span>
+    <span class="section-num">TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH</span>
     <h2 class="section-heading">Tóm Tắt Điều Hành (Executive Summary)</h2>
     <div class="section-subheading">Nắm trọn tinh hoa bài học trong 60 giây</div>
     <div class="exec-summary"><ul><li>Biểu đồ Điểm chuẩn Sigma (Sigma Benchmarking Chart) là công cụ trực quan hóa tối thượng kết nối giữa kỹ thuật và tài chính.</li><li>Cấu trúc biểu đồ 4 góc phần tư: Trục hoành là Độ phức tạp (Số cơ hội lỗi O); Trục tung là Năng lực Sigma ($Z$); Đường đồng mức thể hiện Chi phí tổn thất COPQ.</li><li>Định vị các đối thủ cạnh tranh trên biểu đồ: Phân nhóm rõ ràng giữa nhóm Dẫn đầu (World-Class &ge; 5&sigma;), nhóm Cạnh tranh (Industry Average 3-4&sigma;) và nhóm Nguy cơ đào thải (&lt; 3&sigma;).</li><li>Sức mạnh truyền thông: Một biểu đồ trực quan sắc sảo có giá trị hơn 100 trang báo cáo thuyết minh bằng văn bản.</li></ul></div>
@@ -490,7 +508,7 @@
     </div>
     <div class="math-card">
       <div class="title">3. Vectơ Chuyển Dịch Đột Phá / Breakthrough Trajectory Vector</div>
-      <div class="math-equation">&vec;<i>V</i><sub>Breakthrough</sub> = ( &Delta;<i>O</i><sub>Optimized</sub>, &Delta;<i>Z</i><sub>Improvement</sub> ) &nbsp;&rArr;&nbsp; ||&vec;<i>V</i>|| &rarr; max</div>
+      <div class="math-equation"><span class="math-vec"><i>V</i></span><sub>Breakthrough</sub> = ( &Delta;<i>O</i><sub>Optimized</sub>, &Delta;<i>Z</i><sub>Improvement</sub> ) &nbsp;&rArr;&nbsp; ||<span class="math-vec"><i>V</i></span>|| &rarr; max</div>
       <div class="desc"><strong>Định hướng hành động:</strong><br>&bull; Tối ưu hóa thiết kế giảm O (DFSS) đồng thời nâng cao mức Sigma Z (DMAIC).</div>
     </div>
     <div class="pro-tip">

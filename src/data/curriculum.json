@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-20T13:07:38.864Z",
+  "generatedAt": "2026-09-20T13:51:07.055Z",
   "totalModules": 5,
   "totalSubtopics": 30,
   "totalLessons": 261,
@@ -103,7 +103,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 10,
+              "readTimeMin": 11,
               "url": "/sources/01.%20Foundation%20Vision/01.%20Introduction/06.The%20Encyclopedia%20of%20Lean.html",
               "moduleName": "01. Foundation Vision",
               "subtopicName": "01. Introduction"
@@ -329,7 +329,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 10,
+              "readTimeMin": 11,
               "url": "/sources/01.%20Foundation%20Vision/03.%20Foundational%20Philosophies/07.Foundational%20Philosophies%20of%20Six%20Sigma%20Part%20B.html",
               "moduleName": "01. Foundation Vision",
               "subtopicName": "03. Foundational Philosophies"
@@ -359,7 +359,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 10,
+              "readTimeMin": 11,
               "url": "/sources/01.%20Foundation%20Vision/03.%20Foundational%20Philosophies/09.Foundational%20Philosophies%20of%20Six%20Sigma%20Part%20D.html",
               "moduleName": "01. Foundation Vision",
               "subtopicName": "03. Foundational Philosophies"
@@ -669,7 +669,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 10,
+              "readTimeMin": 11,
               "url": "/sources/02.%20Breakthrough%20Vision/01.%20Content%20Overview/02.Basic%20Nature%20and%20Aims%20of%20Six%20Sigma.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "01. Content Overview"
@@ -684,7 +684,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 10,
+              "readTimeMin": 11,
               "url": "/sources/02.%20Breakthrough%20Vision/01.%20Content%20Overview/03.Organizational%20Perspectives%20of%20Six%20Sigma.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "01. Content Overview"
@@ -812,7 +812,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 10,
+              "readTimeMin": 11,
               "url": "/sources/02.%20Breakthrough%20Vision/02.%20Driving%20Need/05.Nine%20Determinants%20of%20Business%20Success%20-%20Part%20A.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "02. Driving Need"
@@ -827,7 +827,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 10,
+              "readTimeMin": 11,
               "url": "/sources/02.%20Breakthrough%20Vision/02.%20Driving%20Need/06.Nine%20Determinants%20of%20Business%20Success%20-%20Part%20B.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "02. Driving Need"
@@ -1015,7 +1015,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 11,
+              "readTimeMin": 12,
               "url": "/sources/02.%20Breakthrough%20Vision/03.%20Customer%20Focus/04.Domino%20Effect%20of%20Product%20and%20Service%20Quality.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "03. Customer Focus"
@@ -1030,7 +1030,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 10,
+              "readTimeMin": 11,
               "url": "/sources/02.%20Breakthrough%20Vision/03.%20Customer%20Focus/05.Voice-of-the-Customer%20(VOC)%20and%20the%20Aim%20of%20Business.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "03. Customer Focus"
@@ -1090,7 +1090,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 10,
+              "readTimeMin": 11,
               "url": "/sources/02.%20Breakthrough%20Vision/03.%20Customer%20Focus/09.Basics%20of%20Kano%20Analysis%20and%20Six%20Sigma%20-%20Part%20C.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "03. Customer Focus"
@@ -1113,7 +1113,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 11,
+              "readTimeMin": 12,
               "url": "/sources/02.%20Breakthrough%20Vision/04.%20Core%20Beliefs/01.Underpinning%20Logic%20and%20Reasoning%20of%20Six%20Sigma%20-%20Part%20A.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "04. Core Beliefs"
@@ -1203,7 +1203,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 11,
+              "readTimeMin": 12,
               "url": "/sources/02.%20Breakthrough%20Vision/04.%20Core%20Beliefs/07.Core%20Beliefs%20Inherent%20to%20Six%20Sigma%20-%20Part%20B.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "04. Core Beliefs"
@@ -1218,7 +1218,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 10,
+              "readTimeMin": 11,
               "url": "/sources/02.%20Breakthrough%20Vision/04.%20Core%20Beliefs/08.Core%20Beliefs%20Inherent%20to%20Six%20Sigma%20-%20Part%20C.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "04. Core Beliefs"
@@ -1564,7 +1564,7 @@
               "quizCount": 6,
               "flashcardCount": 5,
               "checklistCount": 3,
-              "readTimeMin": 16,
+              "readTimeMin": 17,
               "url": "/sources/02.%20Breakthrough%20Vision/06.%20Leverage%20Principle/08.Development%20of%20Breakthrough%20Power%20-%20Part%20A.html",
               "moduleName": "02. Breakthrough Vision",
               "subtopicName": "06. Leverage Principle"
@@ -1995,7 +1995,7 @@
               "quizCount": 1,
               "flashcardCount": 0,
               "checklistCount": 0,
-              "readTimeMin": 4,
+              "readTimeMin": 5,
               "url": "/sources/03.%20Business%20Principles/02.%20Value%20Proposition/01.Primary%20Elements%20of%20Product%20and%20Service%20Value.html",
               "moduleName": "03. Business Principles",
               "subtopicName": "02. Value Proposition"
@@ -2108,7 +2108,7 @@
               "quizCount": 3,
               "flashcardCount": 3,
               "checklistCount": 3,
-              "readTimeMin": 9,
+              "readTimeMin": 10,
               "url": "/sources/03.%20Business%20Principles/03.%20Success%20Factors/03.Building%20the%20Momentum%20toward%20Breakthrough.html",
               "moduleName": "03. Business Principles",
               "subtopicName": "03. Success Factors"
@@ -2198,7 +2198,7 @@
               "quizCount": 2,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 7,
+              "readTimeMin": 8,
               "url": "/sources/03.%20Business%20Principles/03.%20Success%20Factors/09.Developing%20Highly%20Capable%20People%20and%20Leaders.html",
               "moduleName": "03. Business Principles",
               "subtopicName": "03. Success Factors"
@@ -2213,7 +2213,7 @@
               "quizCount": 1,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 7,
+              "readTimeMin": 8,
               "url": "/sources/03.%20Business%20Principles/03.%20Success%20Factors/10.Motivating%20the%20Creation%20of%20Compelling%20Ideas.html",
               "moduleName": "03. Business Principles",
               "subtopicName": "03. Success Factors"
@@ -2266,7 +2266,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 11,
+              "readTimeMin": 12,
               "url": "/sources/03.%20Business%20Principles/04.%20Metrics%20Reporting/04.Business%20Needs%20and%20Performance%20Metrics.html",
               "moduleName": "03. Business Principles",
               "subtopicName": "04. Metrics Reporting"
@@ -2416,7 +2416,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 12,
+              "readTimeMin": 13,
               "url": "/sources/03.%20Business%20Principles/04.%20Metrics%20Reporting/14.Correlating%20Performance%20Characteristics%20-%20Part%20B.html",
               "moduleName": "03. Business Principles",
               "subtopicName": "04. Metrics Reporting"
@@ -2431,7 +2431,7 @@
               "quizCount": 8,
               "flashcardCount": 2,
               "checklistCount": 3,
-              "readTimeMin": 11,
+              "readTimeMin": 12,
               "url": "/sources/03.%20Business%20Principles/04.%20Metrics%20Reporting/15.Effective%20Use%20of%20Performance%20Dashboards.html",
               "moduleName": "03. Business Principles",
               "subtopicName": "04. Metrics Reporting"
@@ -3148,7 +3148,7 @@
               "quizCount": 6,
               "flashcardCount": 5,
               "checklistCount": 3,
-              "readTimeMin": 16,
+              "readTimeMin": 17,
               "url": "/sources/04.%20Process%20Management/04.%20Establishing%20Baselines/06.Extending%20the%20Need%20for%20Performance%20Baselining.html",
               "moduleName": "04. Process Management",
               "subtopicName": "04. Establishing Baselines"
@@ -3676,7 +3676,7 @@
               "quizCount": 8,
               "flashcardCount": 5,
               "checklistCount": 3,
-              "readTimeMin": 21,
+              "readTimeMin": 22,
               "url": "/sources/05.%20Project%20Application/01.%20Value%20Creation/01.Recognize%20Value%20Needs.html",
               "moduleName": "05. Project Application",
               "subtopicName": "01. Value Creation"

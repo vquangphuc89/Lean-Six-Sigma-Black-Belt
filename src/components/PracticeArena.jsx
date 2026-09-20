@@ -9,12 +9,10 @@ import {
   PlayCircle, 
   RotateCcw,
   Search,
-  Filter,
-  Check
+  Filter
 } from 'lucide-react';
-import confetti from 'canvas-confetti';
 
-export default function PracticeArena({ curriculum, studyData, onSelectLesson, onRecordQuizResult }) {
+export default function PracticeArena({ curriculum, studyData, onSelectLesson }) {
   const [selectedModule, setSelectedModule] = useState('all');
   const [statusFilter, setStatusFilter] = useState('all'); // 'all' | 'unsubmitted' | 'passed' | 'review'
   const [searchTerm, setSearchTerm] = useState('');
@@ -47,15 +45,6 @@ export default function PracticeArena({ curriculum, studyData, onSelectLesson, o
   const avgScore = totalSubmitted > 0 
     ? Math.round(allScores.reduce((acc, q) => acc + (q.percentage || 0), 0) / totalSubmitted) 
     : 0;
-
-  const handleQuickMarkDone = (e, lesson) => {
-    e.stopPropagation();
-    const total = lesson.quizCount || 8;
-    if (onRecordQuizResult) {
-      onRecordQuizResult(lesson.id, total, total);
-      confetti({ particleCount: 90, spread: 70, origin: { y: 0.6 } });
-    }
-  };
 
   return (
     <div className="content-scrollable">
@@ -384,55 +373,11 @@ export default function PracticeArena({ curriculum, studyData, onSelectLesson, o
                 </span>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  {isUnsubmitted && (
-                    <button 
-                      className="btn"
-                      onClick={(e) => handleQuickMarkDone(e, les)}
-                      style={{
-                        fontSize: '0.74rem',
-                        padding: '5px 10px',
-                        background: 'rgba(245, 158, 11, 0.15)',
-                        border: '1px solid rgba(245, 158, 11, 0.6)',
-                        color: '#fbbf24',
-                        fontWeight: '700',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '4px'
-                      }}
-                      title="Bấm để nộp nhanh kết quả 100% cho bài này và lưu lên Cloud"
-                    >
-                      <Sparkles size={12} color="#fbbf24" /> ⚡ Nộp nhanh 100%
-                    </button>
-                  )}
-
-                  {isReview && (
-                    <button 
-                      className="btn"
-                      onClick={(e) => handleQuickMarkDone(e, les)}
-                      style={{
-                        fontSize: '0.74rem',
-                        padding: '5px 10px',
-                        background: 'rgba(16, 185, 129, 0.15)',
-                        border: '1px solid var(--emerald-vibrant)',
-                        color: 'var(--emerald-mint)',
-                        fontWeight: '700',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '4px'
-                      }}
-                      title="Nâng điểm lên 100%"
-                    >
-                      <Check size={12} /> Nâng 100%
-                    </button>
-                  )}
-
                   <button 
                     className="btn btn-outline"
                     style={{ 
                       fontSize: '0.78rem', 
-                      padding: '5px 12px',
+                      padding: '6px 14px',
                       borderColor: isPassed ? 'rgba(16, 185, 129, 0.4)' : (isReview ? 'rgba(239, 68, 68, 0.4)' : 'var(--border-color)')
                     }}
                   >

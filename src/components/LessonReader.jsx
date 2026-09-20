@@ -426,7 +426,7 @@ export default function LessonReader({
               <span>
                 <strong style={{ color: '#fbbf24' }}>⏳ Chưa nộp bài:</strong>
                 <span style={{ color: 'var(--text-secondary)', marginLeft: '6px' }}>
-                  Bài học có {lesson.quizCount || 8} câu hỏi trắc nghiệm tình huống. Làm bài trực tiếp bên dưới hoặc bấm Nộp nhanh 100%.
+                  Bài học có {lesson.quizCount || 8} câu hỏi trắc nghiệm tình huống chuẩn SSMI. Hãy cuộn xuống để làm bài.
                 </span>
               </span>
             </div>
@@ -435,42 +435,21 @@ export default function LessonReader({
               <button
                 onClick={scrollToQuiz}
                 style={{
-                  background: 'transparent',
-                  border: '1px solid rgba(245, 158, 11, 0.4)',
+                  background: 'rgba(245, 158, 11, 0.15)',
+                  border: '1px solid rgba(245, 158, 11, 0.6)',
                   color: '#fbbf24',
-                  padding: '5px 12px',
-                  borderRadius: '6px',
-                  fontSize: '0.78rem',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px'
-                }}
-                title="Cuộn trang tới phần câu hỏi trắc nghiệm"
-              >
-                <ArrowDown size={13} /> Cuộn Tới Câu Hỏi
-              </button>
-
-              <button
-                onClick={handleQuickRecordFullScore}
-                style={{
-                  background: '#f59e0b',
-                  border: 'none',
-                  color: '#1a1003',
                   padding: '5px 14px',
                   borderRadius: '6px',
                   fontSize: '0.78rem',
-                  fontWeight: '800',
+                  fontWeight: '700',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '5px',
-                  boxShadow: '0 2px 6px rgba(245, 158, 11, 0.3)'
+                  gap: '5px'
                 }}
-                title="Nộp nhanh kết quả 100% (8/8 câu) lên Đấu Trường Luyện Đề & Cloud"
+                title="Cuộn trang tới phần câu hỏi trắc nghiệm"
               >
-                <Sparkles size={13} /> ⚡ Nộp Nhanh 100%
+                <ArrowDown size={13} /> Làm Bài Trắc Nghiệm
               </button>
             </div>
           </>
@@ -534,13 +513,13 @@ export default function LessonReader({
               <button
                 onClick={scrollToQuiz}
                 style={{
-                  background: 'transparent',
+                  background: 'rgba(239, 68, 68, 0.15)',
                   border: '1px solid #ef4444',
                   color: '#fca5a5',
-                  padding: '5px 12px',
+                  padding: '5px 14px',
                   borderRadius: '6px',
                   fontSize: '0.78rem',
-                  fontWeight: '600',
+                  fontWeight: '700',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
@@ -549,26 +528,6 @@ export default function LessonReader({
                 title="Làm lại các câu hỏi trắc nghiệm"
               >
                 <RotateCcw size={13} /> Làm Lại Đề Thi
-              </button>
-
-              <button
-                onClick={handleQuickRecordFullScore}
-                style={{
-                  background: 'rgba(16, 185, 129, 0.2)',
-                  border: '1px solid var(--emerald-vibrant)',
-                  color: 'var(--emerald-mint)',
-                  padding: '5px 14px',
-                  borderRadius: '6px',
-                  fontSize: '0.78rem',
-                  fontWeight: '700',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '5px'
-                }}
-                title="Xác nhận đạt 100%"
-              >
-                <CheckCircle2 size={13} /> Nâng Lên 100%
               </button>
             </div>
           </>

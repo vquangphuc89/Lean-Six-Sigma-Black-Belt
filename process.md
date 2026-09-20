@@ -249,13 +249,13 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
 
 * **Cầu Nối Trắc Nghiệm Hai Chiều (Iframe Quiz Bridge):** Tự động bắt sự kiện khi học viên chọn đáp án trong tệp HTML bài học, tính toán tỷ lệ đúng/sai theo chuẩn SSMI và lập tức đồng bộ điểm số vào Đấu Trường Luyện Đề (Practice Arena) & Cloud Firestore.
 * **Quy Chuẩn 3 Trạng Thái Trắc Nghiệm Thống Nhất Toàn Hệ Thống:**
-  1. ⏳ **Chưa nộp bài (Màu Cam - `#f59e0b` / `#fbbf24`):** Bài học chưa nộp kết quả trắc nghiệm. Thẻ bài có viền cam nhạt, huy hiệu đồng hồ, nút hành động rõ ràng `[⚡ Nộp nhanh 100%]`.
-  2. ✅ **Hoàn thành (Màu Xanh Lá - `#10b981` / `var(--emerald-mint)`):** Đạt tỷ lệ đúng từ 80% trở lên (&ge; 80%). Thẻ bài có viền xanh lục bảo, huy hiệu tích xanh hoàn thành, đồng bộ trực tiếp lên KPI.
-  3. ⚠️ **Cần ôn lại (Màu Đỏ - `#ef4444` / `#fca5a5`):** Tỷ lệ đúng nhỏ hơn 80% (< 80%). Thẻ bài có viền đỏ cảnh báo, huy hiệu tam giác cảnh báo kèm nút `[Ôn luyện lại]` và `[Nâng 100%]`.
+  1. ⏳ **Chưa nộp bài (Màu Cam - `#f59e0b` / `#fbbf24`):** Bài học chưa nộp kết quả trắc nghiệm. Thẻ bài có viền cam nhạt, huy hiệu đồng hồ, nút hành động mở làm bài: `[Vào Làm Đề]`.
+  2. ✅ **Hoàn thành (Màu Xanh Lá - `#10b981` / `var(--emerald-mint)`):** Đạt tỷ lệ đúng từ 80% trở lên (&ge; 80%). Thẻ bài có viền xanh lục bảo, huy hiệu tích xanh hoàn thành, nút: `[Xem Lại / Thi Lại]`, đồng bộ trực tiếp lên KPI.
+  3. ⚠️ **Cần ôn lại (Màu Đỏ - `#ef4444` / `#fca5a5`):** Tỷ lệ đúng nhỏ hơn 80% (< 80%). Thẻ bài có viền đỏ cảnh báo, huy hiệu tam giác cảnh báo kèm nút: `[Ôn Luyện Lại]`.
 * **Hiển Thị Đồng Bộ Trên Từng Giao Diện:**
   - **Sidebar:** Hiển thị huy hiệu điểm số `%` bên cạnh từng bài đã nộp (xanh nếu &ge; 80%, đỏ nếu < 80%), bổ sung tab lọc riêng "Đã thi".
   - **Lesson Reader:** Thanh trạng thái trắc nghiệm phân hóa 3 màu tương ứng (Cam khi chưa nộp, Xanh khi &ge; 80%, Đỏ khi < 80%), hỗ trợ tự động cuộn đến trắc nghiệm và tự động highlight đáp án khi bài học đã đạt chuẩn.
-  - **Practice Arena:** Thanh KPI 3 cột lọc nhanh theo 3 trạng thái chuẩn hóa, bộ lọc tìm kiếm tức thời và hỗ trợ nộp bài nhanh chỉ với 1 click.
+  - **Practice Arena:** Thanh KPI 3 cột lọc nhanh theo 3 trạng thái chuẩn hóa, bộ lọc tìm kiếm tức thời và vào làm đề chuẩn xác.
 
 ---
 
@@ -306,9 +306,9 @@ Mọi bài học mới khi được tích hợp vào hệ thống sẽ được 
 
 | STT | Trạng thái | Ngưỡng điểm số | Mã màu nhận diện | Biểu tượng | Hành vi giao diện & Nút thao tác |
 | :---: | :--- | :---: | :---: | :---: | :--- |
-| **1** | **Chưa nộp bài** | Chưa có dữ liệu nộp bài | 🟠 **Màu Cam**<br>`#f59e0b` / `#fbbf24`<br>`rgba(245, 158, 11, 0.15)` | ⏳ `Clock` | • Viền thẻ bài cam nhạt, sáng cam khi hover.<br>• Huy hiệu góc trên: `⏳ Chưa nộp bài`.<br>• Nút hành động nổi bật: `⚡ Nộp nhanh 100%` (màu cam).<br>• Nút chính: `Vào Làm Đề`. |
+| **1** | **Chưa nộp bài** | Chưa có dữ liệu nộp bài | 🟠 **Màu Cam**<br>`#f59e0b` / `#fbbf24`<br>`rgba(245, 158, 11, 0.15)` | ⏳ `Clock` | • Viền thẻ bài cam nhạt, sáng cam khi hover.<br>• Huy hiệu góc trên: `⏳ Chưa nộp bài`.<br>• Nút thao tác duy nhất: `Vào Làm Đề` (mở bài học và làm trắc nghiệm). |
 | **2** | **Hoàn thành** | **Làm đúng $\ge 80\%$**<br>(Từ 7/8 câu hoặc 8/8 câu) | 🟢 **Màu Xanh Lá**<br>`#10b981` / Emerald<br>`rgba(16, 185, 129, 0.18)` | ✅ `CheckCircle2` | • Viền thẻ bài màu xanh lục bảo.<br>• Huy hiệu góc trên: `✅ Hoàn thành (XX%)`.<br>• Tự động tích dấu hoàn thành bài học.<br>• Tự động tô xanh các đáp án đúng trong iframe.<br>• Nút thao tác: `Xem Lại / Thi Lại`. |
-| **3** | **Cần ôn lại** | **Làm đúng $< 80\%$**<br>(Nhỏ hơn 7/8 câu, tức $\le 6/8$ câu) | 🔴 **Màu Đỏ**<br>`#ef4444` / Red<br>`rgba(239, 68, 68, 0.15)` | ⚠️ `AlertCircle` | • Viền thẻ bài màu đỏ cảnh báo.<br>• Huy hiệu góc trên: `⚠️ Cần ôn lại (XX%)`.<br>• Ghi nhận vào KPI số lượng bài cần ôn luyện.<br>• Cung cấp nút `Ôn Luyện Lại` và `Nâng 100%`. |
+| **3** | **Cần ôn lại** | **Làm đúng $< 80\%$**<br>(Nhỏ hơn 7/8 câu, tức $\le 6/8$ câu) | 🔴 **Màu Đỏ**<br>`#ef4444` / Red<br>`rgba(239, 68, 68, 0.15)` | ⚠️ `AlertCircle` | • Viền thẻ bài màu đỏ cảnh báo.<br>• Huy hiệu góc trên: `⚠️ Cần ôn lại (XX%)`.<br>• Ghi nhận vào KPI số lượng bài cần ôn luyện.<br>• Nút thao tác: `Ôn Luyện Lại` (mở lại để thi cải thiện điểm). |
 
 ### Quy Tắc 4: Quy Trình Đóng Gói & Tích Hợp Bài Mới Vào Hệ Thống
 Sau khi tạo hoặc chỉnh sửa tệp bài học HTML mới, thực hiện chuẩn xác 3 bước sau:

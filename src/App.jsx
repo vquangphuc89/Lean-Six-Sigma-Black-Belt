@@ -11,7 +11,10 @@ import {
   setAppTheme,
   fetchCloudStudyData,
   subscribeToCloudStudyData,
-  recordQuizResult
+  recordQuizResult,
+  subscribeToSyncStatus,
+  getSyncStatus,
+  migrateGuestDataToUser
 } from './services/storage';
 
 import { getCurrentUser, subscribeToAuthChanges, logout } from './services/auth';
@@ -24,6 +27,7 @@ import PracticeArena from './components/PracticeArena';
 import ExportModal from './components/ExportModal';
 import AuthModal from './components/AuthModal';
 import UserProfileModal from './components/UserProfileModal';
+import CloudSyncModal from './components/CloudSyncModal';
 
 import { 
   Award, 
@@ -49,6 +53,8 @@ export default function App() {
   const [showExportModal, setShowExportModal] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
+  const [showSyncModal, setShowSyncModal] = useState(false);
+  const [syncInfo, setSyncInfo] = useState(() => getSyncStatus());
 
   // Flatten all lessons into linear list for easy prev/next navigation
   const allLessons = useMemo(() => {
@@ -67,11 +73,20 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  // Lắng nghe trạng thái đồng bộ Firestore
+  useEffect(() => {
+    const unsubscribeSync = subscribeToSyncStatus((newStatus) => {
+      setSyncInfo({ ...newStatus });
+    });
+    return () => unsubscribeSync();
+  }, []);
+
   // Lắng nghe trạng thái đăng nhập Firebase tự động
   useEffect(() => {
     const unsubscribeAuth = subscribeToAuthChanges(async (newUser) => {
       setUser(newUser);
       if (newUser) {
+        migrateGuestDataToUser(newUser);
         const cloudData = await fetchCloudStudyData(newUser);
         setStudyData(cloudData);
       }
@@ -98,6 +113,7 @@ export default function App() {
 
   const handleLoginSuccess = async (loggedInUser) => {
     setUser(loggedInUser);
+    migrateGuestDataToUser(loggedInUser);
     const cloudData = await fetchCloudStudyData(loggedInUser);
     setStudyData(cloudData);
   };
@@ -223,39 +239,71 @@ export default function App() {
 
           {/* Right Actions */}
           <div className="nav-actions">
-            {/* Cloud Sync Status Badge */}
+            {/* Cloud Sync Status Badge (Interactive: Click to Open Cloud Sync Center) */}
             <div 
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '6px',
-                background: 'var(--bg-card)',
-                border: '1px solid var(--border-color)',
-                padding: '5px 11px',
+                background: syncInfo.status === 'error' 
+                  ? 'rgba(239, 68, 68, 0.18)' 
+                  : syncInfo.status === 'synced' 
+                    ? 'rgba(16, 185, 129, 0.14)' 
+                    : 'rgba(56, 189, 248, 0.12)',
+                border: `1px solid ${
+                  syncInfo.status === 'error' 
+                    ? 'rgba(239, 68, 68, 0.45)' 
+                    : syncInfo.status === 'synced' 
+                      ? 'rgba(16, 185, 129, 0.35)' 
+                      : 'rgba(56, 189, 248, 0.3)'
+                }`,
+                padding: '5px 12px',
                 borderRadius: '20px',
                 fontSize: '0.78rem',
-                fontWeight: '600',
-                color: (isFirebaseConfigured && user) ? 'var(--emerald-mint)' : 'var(--text-secondary)',
-                cursor: 'pointer'
+                fontWeight: '700',
+                color: syncInfo.status === 'error' 
+                  ? '#f87171' 
+                  : syncInfo.status === 'synced' 
+                    ? 'var(--emerald-mint)' 
+                    : '#38bdf8',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                boxShadow: syncInfo.status === 'error' ? '0 0 10px rgba(239, 68, 68, 0.2)' : 'none'
               }}
               onClick={() => {
                 if (!user) setShowAuthModal(true);
+                else setShowSyncModal(true);
               }}
               title={
-                isFirebaseConfigured 
-                  ? (user ? "Cloud Sync: Đã kết nối Firebase & đồng bộ tự động giữa các máy tính" : "Cloud Ready: Bấm để đăng nhập và tự động đồng bộ tiến độ") 
-                  : "Chế độ lưu bộ nhớ cục bộ (Local Storage). Hãy kết nối Firebase để tự động đồng bộ mọi thiết bị."
+                syncInfo.status === 'error'
+                  ? `Lỗi đồng bộ: ${syncInfo.error?.message || 'Quyền truy cập Firestore bị chặn'}. Bấm để xem hướng dẫn sửa trong 30s.`
+                  : syncInfo.status === 'synced'
+                    ? `Đã đồng bộ Cloud lúc ${syncInfo.lastSyncTime || 'vừa xong'}. Bấm để mở Trung tâm Đồng bộ.`
+                    : "Đang kiểm tra kết nối Đám mây. Bấm để mở Trung tâm Đồng bộ."
               }
             >
               <span style={{
                 width: '7px',
                 height: '7px',
                 borderRadius: '50%',
-                background: (isFirebaseConfigured && user) ? 'var(--emerald-vibrant)' : (isFirebaseConfigured ? '#38bdf8' : '#f59e0b'),
-                boxShadow: (isFirebaseConfigured && user) ? '0 0 6px var(--emerald-vibrant)' : 'none'
+                background: syncInfo.status === 'error' 
+                  ? '#ef4444' 
+                  : syncInfo.status === 'synced' 
+                    ? 'var(--emerald-vibrant)' 
+                    : '#38bdf8',
+                boxShadow: syncInfo.status === 'error' 
+                  ? '0 0 8px #ef4444' 
+                  : syncInfo.status === 'synced' 
+                    ? '0 0 6px var(--emerald-vibrant)' 
+                    : 'none',
+                animation: (syncInfo.status === 'syncing' || syncInfo.status === 'error') ? 'pulse 1.5s infinite' : 'none'
               }} />
               <span style={{ display: window.innerWidth < 1100 ? 'none' : 'inline' }}>
-                {(isFirebaseConfigured && user) ? 'Cloud Synced' : (isFirebaseConfigured ? 'Cloud Ready' : 'Local Mode')}
+                {syncInfo.status === 'error' 
+                  ? '⚠️ Lỗi Đồng Bộ Cloud' 
+                  : syncInfo.status === 'synced' 
+                    ? 'Cloud Synced' 
+                    : (isFirebaseConfigured ? 'Đang Đồng Bộ...' : 'Chế Độ Offline')}
               </span>
             </div>
 
@@ -446,6 +494,17 @@ export default function App() {
           onClose={() => setShowProfileModal(false)}
           onUserUpdated={(updatedUser) => setUser(updatedUser)}
           onLogout={handleLogout}
+        />
+      )}
+
+      {/* Cloud Sync Diagnostic & Force Sync Modal */}
+      {showSyncModal && (
+        <CloudSyncModal 
+          user={user}
+          studyData={studyData}
+          syncInfo={syncInfo}
+          onClose={() => setShowSyncModal(false)}
+          onDataUpdated={(newData) => setStudyData({ ...newData })}
         />
       )}
     </div>

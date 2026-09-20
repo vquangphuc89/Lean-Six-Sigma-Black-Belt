@@ -40,17 +40,14 @@ Hệ thống **Lean Six Sigma Black Belt Masterclass** đã được tích hợp
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Chỉ cho phép học viên đã đăng nhập đọc và ghi dữ liệu của chính mình
-    match /users/{userId} {
-      allow read, write: if request.auth != null;
-    }
-    match /study_data/{userId} {
+    // Cho phép tất cả học viên đã đăng nhập (Google/Email) đọc & ghi dữ liệu học tập
+    match /{document=**} {
       allow read, write: if request.auth != null;
     }
   }
 }
 ```
-6. Nhấn nút **Publish** màu xanh để lưu quy tắc.
+6. **BẮT BUỘC:** Nhấn nút **Publish** màu xanh ở góc trên để quy tắc có hiệu lực ngay lập tức (Nếu không bấm Publish, Firebase sẽ chặn toàn bộ đồng bộ giữa các máy).
 
 ---
 

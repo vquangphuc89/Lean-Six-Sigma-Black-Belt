@@ -362,6 +362,40 @@ Sau khi tạo hoặc chỉnh sửa tệp bài học HTML mới, thực hiện ch
    git add -A; git commit -m "feat: add new lesson [Tên bài học]"; git push
    ```
 
+### Quy Tắc 5: Kiến Trúc Đồng Bộ Đám Mây Đa Thiết Bị (Cloud Sync Engine)
+
+Hệ thống hỗ trợ học viên học tập liền mạch trên nhiều máy tính (máy công ty, laptop ở nhà, điện thoại) dựa trên nền tảng **Google Firebase Authentication** và **Cloud Firestore**:
+
+1. **Nguyên Tắc Hợp Nhất Dữ Liệu Hai Chiều (Bidirectional Deep Merge):**
+   * Khi người dùng mở một máy tính mới, hệ thống tải dữ liệu từ Firestore và hợp nhất sâu với bộ nhớ cục bộ (`LocalStorage`).
+   * Không bao giờ ghi đè làm mất bài học: Nếu Máy 1 học 2 bài, Máy 2 học 1 bài, khi đồng bộ cả 2 máy đều sẽ có đủ 3 bài học.
+   * Điểm trắc nghiệm giữ lại kết quả cao nhất và mới nhất.
+
+2. **Chuyển Đổi Tiến Độ Khách (Guest Auto-Migration):**
+   * Nếu người học làm bài trước khi đăng nhập, hệ thống tự động gộp toàn bộ tiến độ từ tài khoản Khách (`lss_study_data_guest`) sang tài khoản Google UID ngay khi đăng nhập thành công.
+
+3. **Cấu Hình Firestore Security Rules Bắt Buộc Trên Firebase Console:**
+   * Mặc định khi tạo Firestore ở chế độ Production, Google sẽ chặn mọi quyền đọc/ghi (`allow read, write: if false;`).
+   * **Bắt buộc:** Vào **Firebase Console > Firestore Database > tab Rules**, dán đoạn mã sau và bấm **Publish**:
+   ```javascript
+   rules_version = '2';
+   service cloud.firestore {
+     match /databases/{database}/documents {
+       match /{document=**} {
+         allow read, write: if request.auth != null;
+       }
+     }
+   }
+   ```
+
+4. **Trung Tâm Kiểm Soát & Chuẩn Đoán (Cloud Sync Center):**
+   * Huy hiệu trên thanh điều hướng phản ánh trung thực trạng thái:
+     * 🟢 `Cloud Synced`: Đã đồng bộ với Cloud Firestore thành công.
+     * 🔄 `Đang Đồng Bộ...`: Đang tải hoặc đẩy dữ liệu.
+     * 🔴 `⚠️ Lỗi Đồng Bộ Cloud`: Báo động khi Firestore bị từ chối quyền (kèm hướng dẫn sửa lỗi 30 giây).
+   * Cung cấp nút **`[⬆️ Đẩy Lên Cloud (Force Push)]`** và **`[⬇️ Tải Về Từ Cloud (Force Pull)]`** để người học chủ động ép đồng bộ dữ liệu giữa các máy tính bất kỳ lúc nào.
+
+
 
 
 

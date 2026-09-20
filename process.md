@@ -22,6 +22,9 @@ Khi chuyển hóa bất kỳ tài liệu, video hay transcript nào của khóa 
    * Sử dụng HTML/CSS thuần (Flexbox, borders, italic) để hiển thị công thức phân số và biến số thống kê đẹp mắt, sắc nét, không dùng hình ảnh mờ hay thư viện MathJax/LaTeX nặng nề.
 5. **Đấu trường Trắc nghiệm Đa Tầng (Multi-tier Scenario Arena):**
    * Đặt người học vào vai trò Black Belt / Champion đối mặt với khủng hoảng thực tế: xung đột chính trị phòng ban, dữ liệu bị sai lệch, phản kháng từ quản lý cấp trung, áp lực từ CFO.
+6. **Độc Lập Số Thứ Tự Theo Từng Thư Mục (Folder-Isolated Local Numbering):**
+   * Trong mỗi thư mục chuyên đề (subtopic), bài học luôn được đánh số từ **Bài 01** tăng dần cho riêng thư mục đó (`Bài 01:`, `Bài 02:`, `Bài 03:`...).
+   * Tuyệt đối không dùng số thứ tự lũy kế toàn cục xuyên suốt các folder để bảo toàn tính độc lập, tránh hiện tượng thêm bài mới ở folder trước làm nhảy số thứ tự của các folder sau.
 
 ---
 
@@ -291,7 +294,8 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
 * [ ] Hàm JavaScript `checkQuiz(btn, isCorrect, feedbackId, ...)` có tham số `isCorrect` là boolean (`true`/`false`), tương thích 100% với Cầu nối tự động Iframe Bridge.
 * [ ] Tuân thủ nghiêm ngặt **Quy chuẩn 3 trạng thái**: Cam (Chưa nộp), Xanh (Hoàn thành &ge; 80%), Đỏ (Cần ôn lại < 80%).
 * [ ] Đủ 3 đầu việc tại Action Checklist "Sáng Thứ Hai Làm Gì?".
-* [ ] Đổi tên file thành định dạng: `[Số thứ tự].[Tên bài học]_Done.html`.
+* [ ] Đổi tên file theo số thứ tự cục bộ trong folder: `[01..N].[Tên bài học tiếng Anh].html`.
+* [ ] Thẻ `<title>` bắt buộc theo cấu trúc cục bộ: `<title>Bài [01..N]: [Tên bài học tiếng Việt] — Six Sigma Masterclass</title>`.
 
 ---
 
@@ -333,7 +337,7 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
 ## 8. Bộ Quy Tắc Bắt Buộc Cho Mọi Bài Học Mới Tạo (Mandatory Rules for All Future Lessons)
 
 > [!IMPORTANT]
-> **Cam Kết Bất Biến (Strict Protocol):** Bất kỳ bài học mới nào được khởi tạo hoặc biên soạn bổ sung trong toàn bộ hệ thống Black Belt Masterclass đều **bắt buộc tuân thủ 100%** 5 quy tắc nền tảng dưới đây. Tuyệt đối không tự ý thay đổi quy chuẩn này để đảm bảo tính đồng bộ hoàn hảo giữa nội dung tĩnh (HTML), SPA React, Đấu Trường Luyện Đề và Cloud Sync.
+> **Cam Kết Bất Biến (Strict Protocol):** Bất kỳ bài học mới nào được khởi tạo hoặc biên soạn bổ sung trong toàn bộ hệ thống Black Belt Masterclass đều **bắt buộc tuân thủ 100%** 6 quy tắc nền tảng dưới đây. Tuyệt đối không tự ý thay đổi quy chuẩn này để đảm bảo tính đồng bộ hoàn hảo giữa nội dung tĩnh (HTML), SPA React, Đấu Trường Luyện Đề và Cloud Sync.
 
 ### Quy Tắc 0: Chuẩn Hóa Trụ Cột 1 — Tóm Tắt Điều Hành 60 Giây (Executive Briefing Protocol)
 * Trụ Cột 1 là gương mặt đại diện của bài học, giúp học viên và lãnh đạo C-Suite thấu suốt tinh hoa trước khi đào sâu vào toán học và tình huống. Mọi bài học **bắt buộc** hiển thị chuẩn bộ 3 yếu tố:
@@ -341,6 +345,12 @@ Khi tiếp nhận một bài học mới (Video, bài nói chuyện, tài liệu
   2. **Heading:** `<h2 class="section-heading">Executive Summary &amp; [Tên Chủ Đề / Thước Đo Lãnh Đạo]</h2>`
   3. **Subheading:** `<div class="section-subheading">Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây</div>` (hoặc `Nắm trọn tinh hoa bài học trong 60 giây`)
 * **Nội dung:** Tối thiểu 4 gạch đầu dòng cô đọng trong khối `.exec-summary` và 1 hộp `.pro-tip` Lời khuyên của Master Black Belt.
+
+### Quy Tắc 0.1: Độc Lập Số Thứ Tự Theo Thư Mục Bắt Đầu Từ Bài 01 (Subtopic-Isolated Numbering)
+* **Bản chất quản trị:** Mỗi thư mục chuyên đề (subtopic) là một đơn vị tổ chức học liệu độc lập. Số thứ tự bài học trong mỗi thư mục luôn bắt đầu bằng **`Bài 01:`** và đếm tăng dần (`Bài 01:`, `Bài 02:`, `Bài 03:`... đến hết bài của thư mục đó).
+* **Tuyệt đối không đếm dồn dập toàn cục:** Không được đưa số thứ tự lũy kế toàn khóa học (`1..261`) vào trước tên bài học khi hiển thị (như `238. Bài...` hay `1. Bài 01:`).
+  * **Lý do sống còn:** Khi bổ sung, cập nhật bài học mới vào bất kỳ thư mục nào (ví dụ thêm bài vào Module 04), số thứ tự của các bài học ở các thư mục khác (như Module 05) hoàn toàn không bị ảnh hưởng, không bị nhảy số hay xáo trộn.
+* **Chuẩn thẻ `<title>` trong HTML:** Bắt buộc có dạng: `<title>Bài [01..N]: [Tên bài học tiếng Việt] — Six Sigma Masterclass</title>`.
 
 ### Quy Tắc 1: Chuẩn Hóa 8 Câu Hỏi Trắc Nghiệm Tình Huống ($N = 8$)
 * Mỗi bài học mới **bắt buộc có đúng 8 câu hỏi trắc nghiệm thực chiến**, được chia thành 3 tầng tư duy của Dr. Mikel J. Harry:

@@ -256,7 +256,7 @@ export default function Sidebar({
                                       textOverflow: 'ellipsis', 
                                       whiteSpace: 'nowrap' 
                                     }}>
-                                      {les.order}. {cleanTitleDecoded}
+                                      {cleanTitleDecoded}
                                     </span>
                                     {quiz && (
                                       <span 

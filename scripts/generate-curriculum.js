@@ -107,9 +107,12 @@ for (const mod of moduleDirs) {
       .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 
     const lessonsData = [];
+    let localLessonIndex = 0;
 
     for (const file of files) {
       globalLessonIndex++;
+      localLessonIndex++;
+      const paddedIndex = String(localLessonIndex).padStart(2, '0');
       const filePath = path.join(subPath, file);
       const relativeUrl = `/sources/${encodeURIComponent(mod.name)}/${encodeURIComponent(sub.name)}/${encodeURIComponent(file)}`;
       
@@ -122,12 +125,16 @@ for (const mod of moduleDirs) {
 
       const cleanFileName = file.replace(/\.html$/i, '').replace(/_Done$/i, '');
       const meta = extractHtmlMetadata(htmlContent, cleanFileName);
+      let rawTitle = (meta.title || cleanFileName).replace(/^bài\s*\d+:\s*/i, '').trim();
+      const localizedTitle = `Bài ${paddedIndex}: ${rawTitle}`;
 
       lessonsData.push({
         id: `lss-${globalLessonIndex}`,
         order: globalLessonIndex,
+        localOrder: localLessonIndex,
         file: file,
-        cleanTitle: meta.title || cleanFileName,
+        cleanTitle: localizedTitle,
+        rawTitle: rawTitle,
         titleEn: meta.titleEn,
         description: meta.description,
         quizCount: meta.quizCount,

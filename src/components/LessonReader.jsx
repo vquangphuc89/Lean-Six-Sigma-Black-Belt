@@ -438,7 +438,7 @@ export default function LessonReader({
             {lesson.moduleName} &bull; {lesson.subtopicName}
           </div>
           <h2 className="reader-title">
-            Bài {lesson.order}: {cleanTitleDecoded}
+            {cleanTitleDecoded}
           </h2>
         </div>
 

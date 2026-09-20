@@ -299,7 +299,7 @@ export default function PracticeArena({ curriculum, studyData, onSelectLesson })
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
                   <span style={{ fontSize: '0.74rem', color: 'var(--emerald-mint)', fontWeight: '700' }}>
-                    {les.moduleName.substring(0, 2)} • Bài {les.order}
+                    {les.subtopicName}
                   </span>
 
                   {/* 3 Trạng Thái Hiển Thị Chuẩn Hóa Theo Yêu Cầu */}

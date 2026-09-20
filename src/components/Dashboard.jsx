@@ -133,7 +133,7 @@ export default function Dashboard({
                 style={{ padding: '10px 22px', fontSize: '0.95rem' }}
               >
                 <PlayCircle size={18} />
-                Tiếp Tục Học: Bài {nextLesson.order}
+                Tiếp Tục Học: {nextLesson.cleanTitle}
               </button>
             )}
 
@@ -318,7 +318,7 @@ export default function Dashboard({
                 >
                   <div style={{ overflow: 'hidden', paddingRight: '12px' }}>
                     <div style={{ fontSize: '0.88rem', fontWeight: '700', color: 'var(--text-primary)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-                      {les.order}. {les.cleanTitle}
+                      {les.cleanTitle}
                     </div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--emerald-mint)' }}>
                       {les.moduleName} • {les.readTimeMin} phút đọc

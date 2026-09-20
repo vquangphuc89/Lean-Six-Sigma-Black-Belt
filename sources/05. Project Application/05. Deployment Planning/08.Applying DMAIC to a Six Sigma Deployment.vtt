@@ -1,0 +1,396 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Applying DMAIC to a Six Sigma Deployment
+Áp dụng DMAIC vào Triển khai Six Sigma
+
+2
+00:00:05.000 --> 00:00:08.000
+Hello, Mike Harry. Welcome back to this session on deployment planning.
+Xin chào, Mike Harry. Chào mừng bạn trở lại với phiên học về lập kế hoạch triển khai.
+
+3
+00:00:08.000 --> 00:00:11.000
+Very quickly, let's remember,
+Rất nhanh thôi, hãy cùng nhau nhớ lại,
+
+4
+00:00:11.000 --> 00:00:15.000
+we’re focused at the business level to illustrate the idea of deployment.
+chúng ta đang tập trung vào cấp độ kinh doanh để minh họa ý tưởng về triển khai.
+
+5
+00:00:15.000 --> 00:00:19.766
+And we are applying the breakthrough strategy
+Và chúng ta đang áp dụng chiến lược đột phá
+
+6
+00:00:19.766 --> 00:00:23.499
+to help guide us through the deployment
+để giúp hướng dẫn chúng ta trong suốt quá trình triển khai
+
+7
+00:00:23.500 --> 00:00:29.233
+of the Six Sigma effort or process improvement initiative that we’ve got going.
+nỗ lực Six Sigma hoặc sáng kiến cải tiến quy trình mà chúng ta đang thực hiện.
+
+8
+00:00:29.233 --> 00:00:35.466
+We discovered the elements of that. Starting with the goal, eliminate chronic waste.
+Chúng ta đã khám phá ra các yếu tố của nó. Bắt đầu với mục tiêu, loại bỏ lãng phí mãn tính.
+
+9
+00:00:35.466 --> 00:00:40.799
+We looked at the deployment strategies. The deployment process.
+Chúng ta đã xem xét các chiến lược triển khai. Quy trình triển khai.
+
+10
+00:00:40.800 --> 00:00:44.800
+Found that we’re deploying people, knowledge, money, and plans.
+Nhận thấy rằng chúng ta đang triển khai con người, kiến thức, tiền bạc và kế hoạch.
+
+11
+00:00:44.800 --> 00:00:49.433
+Well, now let's take a look at each element
+Chà, bây giờ hãy cùng xem xét từng yếu tố
+
+12
+00:00:49.433 --> 00:00:53.433
+of the breakthrough strategy in relationship to deployment.
+của chiến lược đột phá trong mối quan hệ với triển khai.
+
+13
+00:00:53.433 --> 00:01:00.433
+First thing we have to do is recognize. We gotta recognize that something has to be done.
+Điều đầu tiên chúng ta phải làm là nhận ra. Chúng ta phải nhận ra rằng cần phải làm điều gì đó.
+
+14
+00:01:00.433 --> 00:01:06.733
+So, with that thought in mind, I look over here to the right and I see three keywords.
+Vì vậy, với suy nghĩ đó trong đầu, tôi nhìn sang bên phải và tôi thấy ba từ khóa.
+
+15
+00:01:06.733 --> 00:01:10.733
+Three very keywords.
+Ba từ khóa rất quan trọng.
+
+16
+00:01:10.733 --> 00:01:16.966
+Discover, resolve, and commit. What do those mean?
+Khám phá, quyết tâm và cam kết. Những điều đó có nghĩa là gì?
+
+17
+00:01:16.966 --> 00:01:23.332
+You’ll recognize the blue symbol there, is the Greek letter delta, meaning change.
+Bạn sẽ nhận ra biểu tượng màu xanh lam ở đó, đó là chữ cái delta trong tiếng Hy Lạp, có nghĩa là thay đổi.
+
+18
+00:01:23.333 --> 00:01:28.166
+So, we need to discover change, resolve the change, and commit to change.
+Vì vậy, chúng ta cần khám phá sự thay đổi, quyết tâm thay đổi và cam kết thay đổi.
+
+19
+00:01:28.166 --> 00:01:32.666
+In other words, we need to discover the need for change.
+Nói cách khác, chúng ta cần khám phá sự cần thiết của việc thay đổi.
+
+20
+00:01:32.666 --> 00:01:38.799
+And I use the word discover. You don't go out and find it you got to discover it.
+Và tôi sử dụng từ khám phá. Bạn không đi ra ngoài và tìm thấy nó, bạn phải khám phá ra nó.
+
+21
+00:01:38.800 --> 00:01:44.133
+We can do that through benchmarking and any number of ways.
+Chúng ta có thể làm điều đó thông qua so sánh chuẩn và nhiều cách khác.
+
+22
+00:01:44.133 --> 00:01:48.299
+You know in Motorola, thinking that we were a world-class company,
+Bạn biết đấy ở Motorola, khi nghĩ rằng chúng tôi là một công ty đẳng cấp thế giới,
+
+23
+00:01:48.300 --> 00:01:51.733
+and we did our quantitative benchmarking and found that we’re Four Sigma.
+và chúng tôi đã thực hiện so sánh chuẩn định lượng của mình và phát hiện ra rằng chúng tôi đang ở Mức Bốn Sigma.
+
+24
+00:01:51.733 --> 00:01:55.366
+Found out we had a couple competitors out past Five Sigma.
+Phát hiện ra chúng tôi có một vài đối thủ cạnh tranh vượt xa Mức Năm Sigma.
+
+25
+00:01:55.366 --> 00:01:58.366
+Wow, was that a significant emotional event.
+Ồ, đó có phải là một sự kiện cảm xúc đáng kể không.
+
+26
+00:01:58.366 --> 00:02:02.366
+Everybody focused on that gap and said what do we gotta do to close that?
+Mọi người tập trung vào khoảng cách đó và nói chúng ta phải làm gì để thu hẹp nó?
+
+27
+00:02:02.366 --> 00:02:08.299
+Before we saw that benchmarking data, everybody had a false belief.
+Trước khi chúng tôi thấy dữ liệu so sánh chuẩn đó, mọi người đều có một niềm tin sai lầm.
+
+28
+00:02:08.300 --> 00:02:11.333
+We were resting on our laurels.
+Chúng tôi đã ngủ quên trên vòng лауре.
+
+29
+00:02:11.333 --> 00:02:16.366
+So, we discovered the need for change through benchmarking.
+Vì vậy, chúng tôi đã khám phá ra sự cần thiết phải thay đổi thông qua so sánh chuẩn.
+
+30
+00:02:16.366 --> 00:02:20.366
+Then we had to develop the resolve to close that gap.
+Sau đó, chúng tôi phải phát triển quyết tâm để thu hẹp khoảng cách đó.
+
+31
+00:02:20.366 --> 00:02:26.332
+Whatever it takes. We had to get the will to survive.
+Bằng bất cứ giá nào. Chúng tôi phải có ý chí sinh tồn.
+
+32
+00:02:26.333 --> 00:02:29.733
+The will to move forward.
+Ý chí để tiến về phía trước.
+
+33
+00:02:29.733 --> 00:02:32.999
+Then we had to commit the resources to do that.
+Sau đó, chúng tôi phải cam kết nguồn lực để thực hiện điều đó.
+
+34
+00:02:33.000 --> 00:02:39.166
+And that is three key elements for the recognize part
+Và đó là ba yếu tố chính cho phần nhận ra
+
+35
+00:02:39.166 --> 00:02:42.666
+of the breakthrough strategy, in the business phase.
+của chiến lược đột phá, trong giai đoạn kinh doanh.
+
+36
+00:02:42.666 --> 00:02:49.299
+And you know something? It applies at the operations and process levels as well.
+Và bạn biết không? Nó cũng áp dụng cho cả cấp độ hoạt động và quy trình.
+
+37
+00:02:49.300 --> 00:02:54.000
+Then we define. We've talked about this.
+Sau đó chúng ta xác định. Chúng ta đã nói về điều này.
+
+38
+00:02:54.000 --> 00:03:01.133
+We define our deployment process. In terms of focus, plans, implementation, and review.
+Chúng ta xác định quy trình triển khai của mình. Về mặt tập trung, kế hoạch, thực hiện và đánh giá.
+
+39
+00:03:01.133 --> 00:03:06.099
+Then we have to measure those projects.
+Sau đó, chúng ta phải đo lường các dự án đó.
+
+40
+00:03:06.100 --> 00:03:10.333
+Cause remember the projects is what's going to deliver
+Bởi vì hãy nhớ rằng các dự án là những gì sẽ mang lại
+
+41
+00:03:10.333 --> 00:03:14.199
+improvement that eliminates that chronic waste.
+cải tiến giúp loại bỏ lãng phí mãn tính đó.
+
+42
+00:03:14.200 --> 00:03:17.300
+Then we have to analyze the gaps.
+Sau đó, chúng ta phải phân tích các khoảng cách.
+
+43
+00:03:17.300 --> 00:03:20.600
+We have to look at what those projects are actually doing
+Chúng ta phải xem xét những gì các dự án đó thực sự đang làm
+
+44
+00:03:20.600 --> 00:03:23.600
+versus what they should be doing.
+so với những gì họ nên làm.
+
+45
+00:03:23.600 --> 00:03:26.600
+Analyze the gap. Why is it there?
+Phân tích khoảng cách. Tại sao nó lại ở đó?
+
+46
+00:03:26.600 --> 00:03:31.200
+Then we've gotta take action through improvement, to reduce that gap.
+Sau đó, chúng ta phải hành động thông qua cải tiến, để giảm khoảng cách đó.
+
+47
+00:03:31.200 --> 00:03:35.733
+If that gap is one of focus, in plans, of implementation,
+Nếu khoảng cách đó là một trong những trọng tâm, trong kế hoạch, thực hiện,
+
+48
+00:03:35.733 --> 00:03:39.733
+or the review process. We've got to close that gap.
+hoặc quy trình đánh giá. Chúng ta phải thu hẹp khoảng cách đó.
+
+49
+00:03:39.733 --> 00:03:42.633
+We find out how to do that because we’re measuring it
+Chúng ta tìm ra cách thực hiện điều đó vì chúng ta đang đo lường nó
+
+50
+00:03:42.633 --> 00:03:46.633
+all through the focus, plan, implement, and review cycle.
+trong suốt chu kỳ tập trung, lập kế hoạch, thực hiện và đánh giá.
+
+51
+00:03:46.633 --> 00:03:51.366
+And we have to have tollgate's. And tollgate criteria.
+Và chúng ta phải có các cổng kiểm soát (tollgate). Và tiêu chí cổng kiểm soát.
+
+52
+00:03:51.366 --> 00:03:58.399
+Because we have tollgate criteria built into the milestone reviews,
+Bởi vì chúng ta có tiêu chí cổng kiểm soát được xây dựng trong các đánh giá cột mốc quan trọng,
+
+53
+00:03:58.400 --> 00:04:04.133
+then we know that we're progressing with the momentum
+thì chúng ta biết rằng chúng ta đang tiến triển với động lực
+
+54
+00:04:04.133 --> 00:04:08.133
+that we need to continue us to the next milestone.
+mà chúng ta cần để tiếp tục chúng ta đến cột mốc quan trọng tiếp theo.
+
+55
+00:04:08.133 --> 00:04:13.199
+Then we’ve gotta standardize,
+Sau đó, chúng ta phải tiêu chuẩn hóa,
+
+56
+00:04:13.200 --> 00:04:16.233
+on those best project practices.
+về các thực hành dự án tốt nhất đó.
+
+57
+00:04:16.233 --> 00:04:20.966
+Both people practices and tool practices.
+Cả thực hành về con người và thực hành về công cụ.
+
+58
+00:04:20.966 --> 00:04:23.966
+We've gotta standardize on the ones that work best.
+Chúng ta phải tiêu chuẩn hóa các thực hành hoạt động tốt nhất.
+
+59
+00:04:23.966 --> 00:04:30.966
+To get the fastest gains. The biggest gains. Quickest.
+Để đạt được lợi ích nhanh nhất. Lợi ích lớn nhất. Nhanh nhất.
+
+60
+00:04:30.966 --> 00:04:37.966
+Then we've gotta standardize. We've got a standardize on the lessons learned.
+Sau đó, chúng ta phải tiêu chuẩn hóa. Chúng ta phải tiêu chuẩn hóa các bài học kinh nghiệm.
+
+61
+00:04:37.966 --> 00:04:43.399
+See, so that standardization,
+Bạn thấy đấy, vì vậy tiêu chuẩn hóa đó,
+
+62
+00:04:43.400 --> 00:04:49.366
+is best practice standardization and lessons learned.
+là tiêu chuẩn hóa thực hành tốt nhất và bài học kinh nghiệm.
+
+63
+00:04:49.366 --> 00:04:54.499
+So, between the lessons learned and the best practices,
+Vì vậy, giữa các bài học kinh nghiệm và các thực hành tốt nhất,
+
+64
+00:04:54.500 --> 00:04:59.633
+that forms the remedies we need to implement
+điều đó tạo thành các biện pháp khắc phục mà chúng ta cần thực hiện
+
+65
+00:04:59.633 --> 00:05:04.666
+in an ongoing basis to sustain our momentum.
+một cách liên tục để duy trì động lực của chúng ta.
+
+66
+00:05:04.666 --> 00:05:08.666
+To keep the idea alive and well.
+Để giữ cho ý tưởng luôn sống động và tốt đẹp.
+
+67
+00:05:08.666 --> 00:05:13.866
+Then we have to integrate. People say what do you mean by integrate. Well, I like this cartoon.
+Sau đó, chúng ta phải tích hợp. Mọi người nói ý của bạn về tích hợp là gì. Chà, tôi thích phim hoạt hình này.
+
+68
+00:05:13.866 --> 00:05:18.832
+Kind of says it. This guy over here in the left-hand corner comes along and says,
+Nó nói lên điều đó. Anh chàng này ở góc bên trái đến và nói,
+
+69
+00:05:18.833 --> 00:05:23.833
+Hey Peter, we got an inter-generational strategy.
+Này Peter, chúng ta có một chiến lược giữa các thế hệ.
+
+70
+00:05:23.833 --> 00:05:27.833
+Peter here says, I'm just honing it.
+Peter ở đây nói, tôi chỉ đang mài giũa nó thôi.
+
+71
+00:05:27.833 --> 00:05:33.233
+Well you know, we need to hone the process
+Chà, bạn biết đấy, chúng ta cần mài giũa quy trình
+
+72
+00:05:33.233 --> 00:05:37.233
+as we move through cycles of deployment.
+khi chúng ta di chuyển qua các chu kỳ triển khai.
+
+73
+00:05:37.233 --> 00:05:42.999
+We need to hone the focus, the plans,
+Chúng ta cần mài giũa sự tập trung, các kế hoạch,
+
+74
+00:05:43.000 --> 00:05:48.000
+the implementation guidelines, the tollgate reviews.
+hướng dẫn thực hiện, đánh giá cổng kiểm soát.
+
+75
+00:05:48.000 --> 00:05:54.366
+We’ve gotta hone all that, every cycle that we go through.
+Chúng ta phải mài giũa tất cả những điều đó, mỗi chu kỳ mà chúng ta trải qua.
+
+76
+00:05:54.366 --> 00:06:01.299
+And by doing that, we close the gap. We’re able to derive the benefit.
+Và bằng cách đó, chúng ta thu hẹp khoảng cách. Chúng ta có thể thu được lợi ích.
+
+77
+00:06:01.300 --> 00:06:07.233
+In the improve portion of this cycle.
+Trong phần cải tiến của chu kỳ này.
+
+78
+00:06:07.233 --> 00:06:14.233
+and that is testament to our discovery, to our resolve, and to our commitment.
+và đó là minh chứng cho sự khám phá, quyết tâm và cam kết của chúng ta.
+
+79
+00:06:14.233 --> 00:06:19.199
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

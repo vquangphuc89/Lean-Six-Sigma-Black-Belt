@@ -1,0 +1,286 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Six Sigma Deployment and Implementation Guidelines
+Hướng dẫn Triển khai và Thực hiện Six Sigma
+
+2
+00:00:05.000 --> 00:00:09.533
+Hello, Mike Harry back with you again here. And we’re talking about deployment planning.
+Xin chào, Mike Harry đã trở lại với các bạn. Và chúng ta đang nói về lập kế hoạch triển khai.
+
+3
+00:00:09.533 --> 00:00:14.033
+Covering the various levels. Focusing in on the business level.
+Bao gồm các cấp độ khác nhau. Tập trung vào cấp độ kinh doanh.
+
+4
+00:00:14.033 --> 00:00:16.999
+We took a look at the various deployment strategies.
+Chúng ta đã xem xét các chiến lược triển khai khác nhau.
+
+5
+00:00:17.000 --> 00:00:22.700
+Being driven from the level at which we are trying to eliminate
+Được thúc đẩy từ cấp độ mà chúng ta đang cố gắng loại bỏ
+
+6
+00:00:22.700 --> 00:00:26.700
+chronic non-value added activity.
+hoạt động mãn tính không gia tăng giá trị.
+
+7
+00:00:26.700 --> 00:00:30.700
+Now, let's go a little bit further with our deployment strategies.
+Bây giờ, hãy đi sâu hơn một chút về các chiến lược triển khai của chúng ta.
+
+8
+00:00:30.700 --> 00:00:36.900
+In this particular case, we’re going to discuss the most common approach.
+Trong trường hợp cụ thể này, chúng ta sẽ thảo luận về phương pháp tiếp cận phổ biến nhất.
+
+9
+00:00:36.900 --> 00:00:42.433
+Which is the top down. Illustrated in the upper right-hand corner.
+Đó là từ trên xuống. Được minh họa ở góc trên bên phải.
+
+10
+00:00:42.433 --> 00:00:47.266
+Now, fundamentally the process is simple.
+Về cơ bản, quy trình rất đơn giản.
+
+11
+00:00:47.266 --> 00:00:52.132
+We focus, we plan, we implement, and we review.
+Chúng ta tập trung, chúng ta lập kế hoạch, chúng ta thực hiện và chúng ta đánh giá.
+
+12
+00:00:52.133 --> 00:00:57.733
+And during the implementation phase, we bring projects online.
+Và trong giai đoạn thực hiện, chúng ta đưa các dự án vào hoạt động.
+
+13
+00:00:57.733 --> 00:01:04.033
+Of course, this occurs over time. Now, what do we mean by focus?
+Tất nhiên, điều này xảy ra theo thời gian. Bây giờ, ý của chúng ta về "tập trung" là gì?
+
+14
+00:01:04.033 --> 00:01:09.166
+Well we’re going to focus the deployment. We focus it on something.
+Chà, chúng ta sẽ tập trung việc triển khai. Chúng ta tập trung nó vào một điều gì đó.
+
+15
+00:01:09.166 --> 00:01:12.132
+That's what we were getting at up here.
+Đó là những gì chúng ta đã đề cập ở trên.
+
+16
+00:01:12.133 --> 00:01:18.433
+We want to focus it, for example, on the elimination of chronic waste.
+Ví dụ, chúng ta muốn tập trung nó vào việc loại bỏ lãng phí mãn tính.
+
+17
+00:01:18.433 --> 00:01:24.599
+Now, what could that stem from or be? We could focus it on, for example, growth.
+Bây giờ, điều đó có thể bắt nguồn từ đâu hoặc là gì? Ví dụ, chúng ta có thể tập trung nó vào tăng trưởng.
+
+18
+00:01:24.600 --> 00:01:29.566
+Or cost reduction, or customer satisfaction, at the business level.
+Hoặc giảm chi phí, hoặc sự hài lòng của khách hàng, ở cấp độ kinh doanh.
+
+19
+00:01:29.566 --> 00:01:34.966
+RONA, return on net assets. Any number of
+RONA, lợi tức trên tài sản ròng. Bất kỳ số lượng nào
+
+20
+00:01:34.966 --> 00:01:39.999
+measurements, we could focus that on to improve.
+các phép đo, chúng ta có thể tập trung vào đó để cải thiện.
+
+21
+00:01:40.000 --> 00:01:43.233
+In other words, we could focus our improvement initiative
+Nói cách khác, chúng ta có thể tập trung sáng kiến cải tiến của mình
+
+22
+00:01:43.233 --> 00:01:46.233
+on one of those elements.
+vào một trong những yếu tố đó.
+
+23
+00:01:46.233 --> 00:01:51.766
+Now, I don't recommend having multiple goals. I believe in the singular focus.
+Bây giờ, tôi không khuyến nghị có nhiều mục tiêu. Tôi tin vào sự tập trung duy nhất.
+
+24
+00:01:51.766 --> 00:01:57.266
+If you're going to implement Six Sigma or whatever process improvement initiative,
+Nếu bạn định triển khai Six Sigma hoặc bất kỳ sáng kiến cải tiến quy trình nào,
+
+25
+00:01:57.266 --> 00:02:04.232
+focus it on one thing. Bring concise, clear definition to what needs to be done.
+hãy tập trung nó vào một điều. Đưa ra định nghĩa rõ ràng, ngắn gọn về những gì cần phải làm.
+
+26
+00:02:04.233 --> 00:02:08.233
+One goal. Then we plan.
+Một mục tiêu. Sau đó chúng ta lập kế hoạch.
+
+27
+00:02:08.233 --> 00:02:13.866
+We have to plan the deployment. So, we focus the deployment. We plan the deployment.
+Chúng ta phải lập kế hoạch triển khai. Vì vậy, chúng ta tập trung triển khai. Chúng ta lập kế hoạch triển khai.
+
+28
+00:02:13.866 --> 00:02:17.432
+Then we implement the deployment.
+Sau đó chúng ta thực hiện việc triển khai.
+
+29
+00:02:17.433 --> 00:02:23.566
+And the mechanism of implementation, primary mechanism, is projects.
+Và cơ chế thực hiện, cơ chế chính, là các dự án.
+
+30
+00:02:23.566 --> 00:02:30.266
+And of course, within the projects, is where we start to deploy tools.
+Và tất nhiên, trong các dự án, là nơi chúng ta bắt đầu triển khai các công cụ.
+
+31
+00:02:30.266 --> 00:02:33.232
+And implement tools.
+Và thực hiện các công cụ.
+
+32
+00:02:33.233 --> 00:02:36.199
+Then we go through review.
+Sau đó chúng ta trải qua quá trình đánh giá.
+
+33
+00:02:36.200 --> 00:02:42.533
+So, those are the four key elements of the deployment process.
+Vì vậy, đó là bốn yếu tố chính của quy trình triển khai.
+
+34
+00:02:42.533 --> 00:02:47.099
+So, what is it that needs to be deployed?
+Vậy, những gì cần được triển khai là gì?
+
+35
+00:02:47.100 --> 00:02:52.333
+Well, people. We need to deploy belts.
+Chà, là con người. Chúng ta cần triển khai các cấp bậc chứng nhận (belts).
+
+36
+00:02:52.333 --> 00:02:56.333
+Master black belts, green belts, champions, yellow belts.
+Master Black Belts, Green Belts, Champions, Yellow Belts.
+
+37
+00:02:56.333 --> 00:03:03.366
+We need to deploy knowledge, tools, and strategy.
+Chúng ta cần triển khai kiến thức, công cụ và chiến lược.
+
+38
+00:03:03.366 --> 00:03:10.366
+We need to deploy methodologies, procedures.
+Chúng ta cần triển khai phương pháp luận, quy trình.
+
+39
+00:03:10.366 --> 00:03:15.466
+And we need to deploy money.
+Và chúng ta cần triển khai tiền.
+
+40
+00:03:15.466 --> 00:03:20.966
+So, when we look at that. All that comes down to is plans.
+Vì vậy, khi chúng ta nhìn vào điều đó. Tất cả đều quy về kế hoạch.
+
+41
+00:03:20.966 --> 00:03:26.066
+So, we need to deploy plans. For example, we need to deploy communication plan,
+Vì vậy, chúng ta cần triển khai các kế hoạch. Ví dụ, chúng ta cần triển khai kế hoạch truyền thông,
+
+42
+00:03:26.066 --> 00:03:31.966
+a human resource plan, a tollgate review plan.
+kế hoạch nguồn nhân lực, kế hoạch đánh giá cổng kiểm soát (tollgate).
+
+43
+00:03:31.966 --> 00:03:37.732
+There are a number of critical plans that needs to be deployed.
+Có một số kế hoạch quan trọng cần được triển khai.
+
+44
+00:03:37.733 --> 00:03:40.733
+The budget plan.
+Kế hoạch ngân sách.
+
+45
+00:03:40.733 --> 00:03:46.933
+So, these plans are created, obviously,
+Vì vậy, những kế hoạch này được tạo ra, một cách hiển nhiên,
+
+46
+00:03:46.933 --> 00:03:50.299
+during the planning stage.
+trong giai đoạn lập kế hoạch.
+
+47
+00:03:50.300 --> 00:03:53.266
+Well those plans have to be deployed.
+Chà, những kế hoạch đó phải được triển khai.
+
+48
+00:03:53.266 --> 00:03:58.232
+The way they’re deployed is by division of effort.
+Cách chúng được triển khai là bằng cách phân chia nỗ lực.
+
+49
+00:03:58.233 --> 00:04:03.899
+So, the high level communication plan is broken down into subordinate plans,
+Vì vậy, kế hoạch truyền thông cấp cao được chia thành các kế hoạch cấp dưới,
+
+50
+00:04:03.900 --> 00:04:07.900
+at the operations level, and then at the process level.
+ở cấp độ hoạt động và sau đó ở cấp độ quy trình.
+
+51
+00:04:07.900 --> 00:04:13.866
+So, all these plans have to be integrated, interconnected.
+Vì vậy, tất cả các kế hoạch này phải được tích hợp, kết nối với nhau.
+
+52
+00:04:13.866 --> 00:04:20.099
+So again, we deploy people, knowledge, and money.
+Vì vậy, một lần nữa, chúng ta triển khai con người, kiến thức và tiền bạc.
+
+53
+00:04:20.100 --> 00:04:24.100
+In the form of our plans.
+Dưới hình thức các kế hoạch của chúng ta.
+
+54
+00:04:24.100 --> 00:04:31.133
+And we do that in order to drop the level of chronic waste.
+Và chúng ta làm điều đó để giảm mức độ lãng phí mãn tính.
+
+55
+00:04:31.133 --> 00:04:37.866
+And that's how we go about it at the business level,
+Và đó là cách chúng ta thực hiện ở cấp độ kinh doanh,
+
+56
+00:04:37.866 --> 00:04:42.766
+from 30,000 feet, applying the breakthrough strategy.
+từ góc độ 30.000 feet, áp dụng chiến lược đột phá.
+
+57
+00:04:42.766 --> 00:04:47.766
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

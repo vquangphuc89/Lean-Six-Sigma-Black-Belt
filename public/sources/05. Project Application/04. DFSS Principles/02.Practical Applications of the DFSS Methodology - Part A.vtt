@@ -1,0 +1,314 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Practical Applications of the DFSS Methodology
+
+2
+00:00:05.000 --> 00:00:08.733
+Welcome back to this segment on Design for Six Sigma.
+
+3
+00:00:08.733 --> 00:00:12.199
+Let's start with a simple notion to understand
+
+4
+00:00:12.200 --> 00:00:16.200
+a little bit better about what we mean by Designing for Six Sigma.
+
+5
+00:00:16.200 --> 00:00:19.933
+Let's suppose for the sake of argument
+
+6
+00:00:19.933 --> 00:00:24.699
+that I have a little product here. I’m going to use a hardware example to start with.
+
+7
+00:00:24.700 --> 00:00:30.366
+We’ll say it's a radio. Represented by the box, a little antenna, and a radio wave there.
+
+8
+00:00:30.366 --> 00:00:36.266
+Now we know, that inside of here is circuits.
+
+9
+00:00:36.266 --> 00:00:41.532
+That operate that. We’ve all seen them with all the little lines going everywhere.
+
+10
+00:00:41.533 --> 00:00:44.733
+There's an electrical circuit. Now, I’m going to blow that
+
+11
+00:00:44.733 --> 00:00:48.133
+circuit up and show that as a circuit board.
+
+12
+00:00:48.133 --> 00:00:53.733
+And there's holes on there. And as we know,
+
+13
+00:00:53.733 --> 00:01:00.499
+for example a resistor, see there's like a resistor. There's the leads of the resistor.
+
+14
+00:01:00.500 --> 00:01:03.566
+Now, I'm not a hot artist, but you get the idea.
+
+15
+00:01:03.566 --> 00:01:08.732
+Going down through the hole and basically we come in here,
+
+16
+00:01:08.733 --> 00:01:13.633
+and we solder it right there, and we solder it right there.
+
+17
+00:01:13.633 --> 00:01:18.999
+So, that the electricity then can flow through that resistor
+
+18
+00:01:19.000 --> 00:01:24.900
+as it happily follows. It's what we call trace, on that circuit board.
+
+19
+00:01:24.900 --> 00:01:31.300
+Now, one element of that. For example, is related to this hole.
+
+20
+00:01:31.300 --> 00:01:36.300
+If I cross-section that hole, what I wind up with,
+
+21
+00:01:36.300 --> 00:01:41.800
+if I look at a cross-section through this board. Looking at it through here.
+
+22
+00:01:41.800 --> 00:01:46.066
+At that angle. There's the circuit board,
+
+23
+00:01:46.066 --> 00:01:50.066
+and there's a hole.
+
+24
+00:01:50.066 --> 00:01:54.066
+So, now we have that lead,
+
+25
+00:01:54.066 --> 00:01:59.066
+that kinda goes down through here like so, turns,
+
+26
+00:01:59.066 --> 00:02:03.066
+and there's the body of that resistor.
+
+27
+00:02:03.066 --> 00:02:09.699
+Now, I’m going to fill this in so we can get a little bit more of a better view of this.
+
+28
+00:02:09.700 --> 00:02:15.766
+Take just a second, but it will be worth it graphically here, to help us understand.
+
+29
+00:02:15.766 --> 00:02:21.499
+And I’ll make this kinda flow kinda solid like that.
+
+30
+00:02:21.500 --> 00:02:24.500
+And we’ll just make the resistor just
+
+31
+00:02:24.500 --> 00:02:27.966
+kinda like that. We can kinda begin to see what's going on there now. Huh?
+
+32
+00:02:27.966 --> 00:02:33.966
+Well, that's solder joint. Kinda comes in here like this and here
+
+33
+00:02:33.966 --> 00:02:36.966
+and here and here.
+
+34
+00:02:36.966 --> 00:02:43.466
+So, what we do is we put that solder on to lock that component
+
+35
+00:02:43.466 --> 00:02:50.432
+onto the circuit board. So, it don't move around and that ensures the electricity flows
+
+36
+00:02:50.433 --> 00:02:54.699
+through there, while maintaining it solid.
+
+37
+00:02:54.700 --> 00:03:00.200
+Now, if I could apply an upward force
+
+38
+00:03:00.200 --> 00:03:04.466
+to this. That's pull strength. So, imagine I got that and I’m pulling upward.
+
+39
+00:03:04.466 --> 00:03:09.599
+See. I'm trying to break the lead free of the circuit board.
+
+40
+00:03:09.600 --> 00:03:15.533
+So, I pull up on it and that's something that's called pull strength.
+
+41
+00:03:15.533 --> 00:03:21.666
+Pull strength. Very simple concept.
+
+42
+00:03:21.666 --> 00:03:27.832
+I've got a device, locate it, I pull it, and I measure how much force is required
+
+43
+00:03:27.833 --> 00:03:31.833
+to break that lead free of the solder connection.
+
+44
+00:03:31.833 --> 00:03:35.833
+Well, one of the things that we have.
+
+45
+00:03:35.833 --> 00:03:39.833
+When I do that. I'm going to make a scale here.
+
+46
+00:03:39.833 --> 00:03:44.733
+I'm going to make that as a vertical scale.
+
+47
+00:03:44.733 --> 00:03:49.133
+And I'm going to call that pull strength. Just pull for short.
+
+48
+00:03:49.133 --> 00:03:55.299
+Now along this axis, might be the solder joint temperature.
+
+49
+00:03:55.300 --> 00:03:59.300
+Temperature of the solder.
+
+50
+00:03:59.300 --> 00:04:06.133
+When the joint was made, and this is the corresponding pull strength.
+
+51
+00:04:06.133 --> 00:04:12.866
+Now what I do, is go out and make a bunch of solder joints, and I pull them and test them.
+
+52
+00:04:12.866 --> 00:04:17.566
+So, I’ve recorded, here’s circuit board 1.
+
+53
+00:04:17.566 --> 00:04:21.432
+Board number 1, 2, 3, 4.
+
+54
+00:04:21.433 --> 00:04:26.799
+Here's the pull strength. Whatever that may be, right there.
+
+55
+00:04:26.800 --> 00:04:33.533
+And there's the temperature for that board when it was made.
+
+56
+00:04:33.533 --> 00:04:38.599
+See, that's the corresponding temperature. So, there's the temperature.
+
+57
+00:04:38.600 --> 00:04:43.300
+And there's the scale of the pull strength for each board.
+
+58
+00:04:43.300 --> 00:04:47.300
+And I simply now locate it. I find the temperature
+
+59
+00:04:47.300 --> 00:04:51.300
+and the corresponding pull strength, and I make a dot.
+
+60
+00:04:51.300 --> 00:04:55.300
+Now, I do that for all my circuit boards.
+
+61
+00:04:55.300 --> 00:04:59.000
+That’s the way it kinda winds up.
+
+62
+00:04:59.000 --> 00:05:02.000
+Of course, this is called a scatter diagram.
+
+63
+00:05:02.000 --> 00:05:06.200
+It shows the correlation between temperature and pull strength.
+
+64
+00:05:06.200 --> 00:05:09.833
+Now, at a certain point it’s going to get so hot out here.
+
+65
+00:05:09.833 --> 00:05:12.933
+It's gonna start to roll back over again and come back down.
+
+66
+00:05:12.933 --> 00:05:15.899
+Well we’re going to ignore that for right now.
+
+67
+00:05:15.900 --> 00:05:19.900
+And what I’m going to do is put in here, an upper limit
+
+68
+00:05:19.900 --> 00:05:26.166
+and I'm going to put in here a lower limit. Just kinda like that. That bands that relationship.
+
+69
+00:05:26.166 --> 00:05:32.832
+So, if I know that the minimum pull strength expectation is right here.
+
+70
+00:05:32.833 --> 00:05:38.599
+Minimum pull strength. That's what the customer wants. That's the customer standard.
+
+71
+00:05:38.600 --> 00:05:42.600
+The minimum accepted pull strength is right there.
+
+72
+00:05:42.600 --> 00:05:49.233
+Then given that minimum. I also might have a maximum.
+
+73
+00:05:49.233 --> 00:05:55.333
+That the customer wants. So, I project top to top.
+
+74
+00:05:55.333 --> 00:05:58.333
+Bottom to bottom, project down,
+
+75
+00:05:58.333 --> 00:06:05.266
+and that's the range of temperature that I have to hold to ensure
+
+76
+00:06:05.266 --> 00:06:09.266
+the pull strength is between those limits.
+
+77
+00:06:09.266 --> 00:06:12.599
+So, what I'm doing is setting specifications.
+
+78
+00:06:12.600 --> 00:06:17.600
+Thank you for choosing SSMI.
+

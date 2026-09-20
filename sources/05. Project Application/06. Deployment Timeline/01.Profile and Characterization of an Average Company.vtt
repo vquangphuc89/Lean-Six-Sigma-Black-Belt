@@ -1,0 +1,241 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Profile and Characterization of an Average Company
+Hồ sơ và Đặc điểm của một Công ty Trung bình
+
+2
+00:00:05.000 --> 00:00:08.633
+Welcome to this session on the deployment timeline.
+Chào mừng bạn đến với phiên này về dòng thời gian triển khai.
+
+3
+00:00:08.633 --> 00:00:13.433
+In order to understand how the timeline works.
+Để hiểu cách thức hoạt động của dòng thời gian.
+
+4
+00:00:13.433 --> 00:00:16.433
+It’s going to seem a little odd, but we've gotta backup.
+Có vẻ hơi lạ, nhưng chúng ta phải quay lại.
+
+5
+00:00:16.433 --> 00:00:22.766
+What I want to do is very quickly review what the average company looks like.
+Điều tôi muốn làm là nhanh chóng xem lại một công ty trung bình trông như thế nào.
+
+6
+00:00:22.766 --> 00:00:28.732
+In other words, what does a Four Sigma organization look like?
+Nói cách khác, một tổ chức Bốn Sigma trông như thế nào?
+
+7
+00:00:28.733 --> 00:00:31.733
+Recall from our previous training
+Hãy nhớ lại từ buổi đào tạo trước của chúng ta
+
+8
+00:00:31.733 --> 00:00:38.533
+we stated Four Sigma was the targeted average for manufacturing companies,
+chúng ta đã nói rằng Bốn Sigma là mức trung bình mục tiêu cho các công ty sản xuất,
+
+9
+00:00:38.533 --> 00:00:44.866
+World Class is Five Sigma, and Six Sigma is near perfection.
+Đẳng cấp Thế giới là Năm Sigma và Sáu Sigma là gần như hoàn hảo.
+
+10
+00:00:44.866 --> 00:00:49.066
+We also mentioned for manufactuirng
+Chúng tôi cũng đã đề cập đối với sản xuất
+
+11
+00:00:49.066 --> 00:00:53.499
+Three Sigma is considered below average
+Ba Sigma được coi là dưới mức trung bình
+
+12
+00:00:53.500 --> 00:00:58.533
+and most companies who think they are operating at Four Sigma
+và hầu hết các công ty nghĩ rằng họ đang hoạt động ở mức Bốn Sigma
+
+13
+00:00:58.533 --> 00:01:02.733
+are really operating below Three Sigma.
+thực sự đang hoạt động dưới mức Ba Sigma.
+
+14
+00:01:02.733 --> 00:01:09.566
+We also noted most service companies operate closer to Two Sigma.
+Chúng tôi cũng lưu ý rằng hầu hết các công ty dịch vụ hoạt động gần với Hai Sigma hơn.
+
+15
+00:01:09.566 --> 00:01:16.532
+Mikel calls those companies striving for Four Sigma, "Average Companies."
+Mikel gọi những công ty đang cố gắng đạt được Bốn Sigma là "Các Công ty Trung bình".
+
+16
+00:01:16.533 --> 00:01:22.199
+Let's hear what Mikel has to say about a Four Sigma Company.
+Hãy cùng nghe Mikel nói gì về một Công ty Bốn Sigma.
+
+17
+00:01:22.200 --> 00:01:27.400
+Well basically, we know this. They’re profitable
+Về cơ bản, chúng ta biết điều này. Họ có lợi nhuận
+
+18
+00:01:27.400 --> 00:01:31.400
+and growing.
+và đang phát triển.
+
+19
+00:01:31.400 --> 00:01:38.400
+We know that about a Four Sigma company. We also know that their market prices
+Chúng ta biết điều đó về một công ty Bốn Sigma. Chúng ta cũng biết rằng giá thị trường của họ
+
+20
+00:01:38.400 --> 00:01:43.066
+are going down. Their market prices are declining.
+đang giảm xuống. Giá thị trường của họ đang giảm.
+
+21
+00:01:43.066 --> 00:01:49.666
+The number of competitors is increasing.
+Số lượng đối thủ cạnh tranh đang tăng lên.
+
+22
+00:01:49.666 --> 00:01:54.266
+You know, it’s interesting. They do have a QA program, so they are sensitive
+Bạn biết đấy, điều thú vị là. Họ có một chương trình QA, vì vậy họ nhạy cảm
+
+23
+00:01:54.266 --> 00:02:03.266
+to quality assurance issues. They spend about 10 to 25 percent
+với các vấn đề đảm bảo chất lượng. Họ chi khoảng 10 đến 25 phần trăm
+
+24
+00:02:03.266 --> 00:02:10.232
+of every sales dollar on rework and repair. Now beat that.
+trên mỗi đô la doanh thu cho việc làm lại và sửa chữa. Bạn thấy đấy.
+
+25
+00:02:10.233 --> 00:02:16.199
+Wow. What a number. 10 to 25% of every sales dollar spent on rework and repair.
+Wow. Thật là một con số lớn. 10 đến 25% trên mỗi đô la doanh thu chi cho việc làm lại và sửa chữa.
+
+26
+00:02:16.200 --> 00:02:21.366
+They believe in quality. Some have even flirted with Six Sigma.
+Họ tin vào chất lượng. Một số thậm chí đã thử nghiệm với Six Sigma.
+
+27
+00:02:21.366 --> 00:02:24.332
+The competitors are increasing, market prices declining,
+Các đối thủ cạnh tranh đang tăng lên, giá thị trường giảm,
+
+28
+00:02:24.333 --> 00:02:30.066
+they’re profitable, and growing. That’s an average company.
+họ có lợi nhuận và đang phát triển. Đó là một công ty trung bình.
+
+29
+00:02:30.066 --> 00:02:36.899
+You know something else. They are totally unaware, totally unaware.
+Bạn biết một điều nữa không. Họ hoàn toàn không nhận thức được, hoàn toàn không nhận thức được.
+
+30
+00:02:36.900 --> 00:02:42.066
+That there are other processes out there, similar to what they're doing and using
+Rằng có những quy trình khác ngoài kia, tương tự như những gì họ đang làm và sử dụng
+
+31
+00:02:42.066 --> 00:02:49.032
+in the world. That's a 100 X. A 100 X, better than they are they are.
+trên thế giới. Tốt hơn họ đến 100 lần.
+
+32
+00:02:49.033 --> 00:02:52.033
+They’re unaware of that.
+Họ không nhận thức được điều đó.
+
+33
+00:02:52.033 --> 00:02:55.033
+They’re also unaware that have
+Họ cũng không nhận thức được rằng họ có
+
+34
+00:02:55.033 --> 00:02:59.033
+ten times the number of suppliers they need to run the business.
+số lượng nhà cung cấp gấp mười lần so với số lượng họ cần để điều hành doanh nghiệp.
+
+35
+00:02:59.033 --> 00:03:01.999
+They're getting some feel for that. But, nonetheless they still got
+Họ đang bắt đầu cảm nhận được điều đó. Nhưng, tuy nhiên họ vẫn có
+
+36
+00:03:02.000 --> 00:03:04.966
+way too many suppliers.
+quá nhiều nhà cung cấp.
+
+37
+00:03:04.966 --> 00:03:09.732
+And finally, 5 to 10%
+Và cuối cùng, 5 đến 10%
+
+38
+00:03:09.733 --> 00:03:14.366
+of their customers are dissatisfied.
+khách hàng của họ không hài lòng.
+
+39
+00:03:14.366 --> 00:03:19.166
+Now, let's think about that a minute. 5 to 10% of your customers are dissatisfied.
+Bây giờ, hãy nghĩ về điều đó một phút. 5 đến 10% khách hàng của bạn không hài lòng.
+
+40
+00:03:19.166 --> 00:03:22.832
+You got ten times the number suppliers you need to run the business.
+Bạn có số lượng nhà cung cấp gấp mười lần số lượng bạn cần để điều hành doanh nghiệp.
+
+41
+00:03:22.833 --> 00:03:26.266
+You're totally unaware there's other processes, similar to yours,
+Bạn hoàn toàn không biết rằng có những quy trình khác, tương tự như quy trình của bạn,
+
+42
+00:03:26.266 --> 00:03:29.299
+that are at least 100 times better than you are.
+tốt hơn bạn ít nhất 100 lần.
+
+43
+00:03:29.300 --> 00:03:32.866
+You are wasting 10 to 25% of every sales dollar.
+Bạn đang lãng phí 10 đến 25% trên mỗi đô la doanh thu.
+
+44
+00:03:32.866 --> 00:03:38.699
+You stand up and say amen to quality. You believe in it. You got a quality program going.
+Bạn đứng lên và nói đồng ý với chất lượng. Bạn tin vào nó. Bạn có một chương trình chất lượng đang hoạt động.
+
+45
+00:03:38.700 --> 00:03:43.266
+You see everyday your competitors are increasing. Your market prices are going down.
+Bạn thấy mỗi ngày các đối thủ cạnh tranh của bạn đang tăng lên. Giá thị trường của bạn đang giảm xuống.
+
+46
+00:03:43.266 --> 00:03:50.232
+You’re profitable and growing. And you say, I don't need Six Sigma.
+Bạn có lợi nhuận và đang phát triển. Và bạn nói, tôi không cần Six Sigma.
+
+47
+00:03:50.233 --> 00:03:56.999
+Well let me tell you, if anything, the driving need. Here are some of them.
+Chà, để tôi nói cho bạn biết, nếu có bất cứ điều gì, thì đó là nhu cầu cấp thiết. Đây là một vài trong số đó.
+
+48
+00:03:57.000 --> 00:04:02.000
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

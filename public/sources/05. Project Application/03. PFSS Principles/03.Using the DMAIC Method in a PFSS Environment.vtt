@@ -1,0 +1,178 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Using the DMAIC Method in a PFSS Environment
+
+2
+00:00:05.000 --> 00:00:09.433
+Welcome back to this session on PFSS, Processing for Six Sigma.
+
+3
+00:00:09.433 --> 00:00:13.866
+Recall, that we had left off with looking at our
+
+4
+00:00:13.866 --> 00:00:18.466
+optimal setting here for the vital few of our operation.
+
+5
+00:00:18.466 --> 00:00:22.466
+That if we find the optimal setting
+
+6
+00:00:22.466 --> 00:00:28.799
+of a vital few, of a critical to process variable, yield goes up. And as the yield goes up here,
+
+7
+00:00:28.800 --> 00:00:31.800
+and the yield goes up here, and the yield goes up there,
+
+8
+00:00:31.800 --> 00:00:34.766
+by finding the CTP's here, here, and here.
+
+9
+00:00:34.766 --> 00:00:38.766
+And finding their optimal settings, the throughput yield goes up.
+
+10
+00:00:38.766 --> 00:00:42.766
+The rolled throughput yield. As it goes up, profit goes up. That simple.
+
+11
+00:00:42.766 --> 00:00:48.266
+Now, we’ve got an interesting case here. Here's the case.
+
+12
+00:00:48.266 --> 00:00:54.166
+There are natural variations. There are variables that controls that X.
+
+13
+00:00:54.166 --> 00:01:01.199
+For example, if this is a temperature setting. Well, if you set the temperature at 104°F.
+
+14
+00:01:01.200 --> 00:01:05.700
+There's going to be variation there, because the switch may fall
+
+15
+00:01:05.700 --> 00:01:10.266
+to as low as 102° before it kicks on to raise the temperature back up.
+
+16
+00:01:10.266 --> 00:01:15.799
+And it may raise to 106 before it kicks off. To where 104 is the average.
+
+17
+00:01:15.800 --> 00:01:22.833
+So, what we see is variation. We see variation.
+
+18
+00:01:22.833 --> 00:01:27.266
+And what we want to do is to look out here at the tails.
+
+19
+00:01:27.266 --> 00:01:31.566
+See, that's above the upper spec and the lower spec. We want to minimize that.
+
+20
+00:01:31.566 --> 00:01:38.599
+So, we want to take this process capability, for that knob, from a condition like that
+
+21
+00:01:38.600 --> 00:01:43.833
+to a condition like this. Can you see that real good?
+
+22
+00:01:43.833 --> 00:01:49.599
+I want to narrow the bandwidth of operation of this process.
+
+23
+00:01:49.600 --> 00:01:54.966
+So, that I maximize the yield of this.
+
+24
+00:01:54.966 --> 00:02:01.232
+I don't have all this over hang out here. As the yield of this CTP goes up,
+
+25
+00:02:01.233 --> 00:02:06.766
+the rolled throughput yield goes up. If I do that for every critical to process characteristic.
+
+26
+00:02:06.766 --> 00:02:12.066
+Narrow it's operating bandwidth. Now that's what we mean by process capability
+
+27
+00:02:12.066 --> 00:02:19.066
+So, the purpose of Processing for Six Sigma is to go in and do a simple thing.
+
+28
+00:02:19.066 --> 00:02:26.066
+D M A I C.
+
+29
+00:02:26.066 --> 00:02:31.799
+I want to define the CTQ’s. I want to measure the CTQ’s.
+
+30
+00:02:31.800 --> 00:02:38.200
+I want to analyze the CTQ’s . I want to improve the CTP’s.
+
+31
+00:02:38.200 --> 00:02:42.200
+See, I want to also identify my CTP’s here, that's the crossover.
+
+32
+00:02:42.200 --> 00:02:48.866
+And then control those CTP's, over time. I want to control this bandwidth.
+
+33
+00:02:48.866 --> 00:02:52.766
+Keeping it narrow and from wiggling around over time.
+
+34
+00:02:52.766 --> 00:02:57.732
+For temperature, which is a vital few variable here, a critical to process variable.
+
+35
+00:02:57.733 --> 00:03:00.966
+I want to do it for each of those critical to process variables.
+
+36
+00:03:00.966 --> 00:03:07.866
+As that occurs, this yield or the capability of this step increases.
+
+37
+00:03:07.866 --> 00:03:11.899
+If I do that here, here and here.
+
+38
+00:03:11.900 --> 00:03:18.133
+Then collectively, the whole process improves.
+
+39
+00:03:18.133 --> 00:03:24.166
+As that process improves, say that's an HR process with hiring people.
+
+40
+00:03:24.166 --> 00:03:27.732
+As it improves and my legal processes improve,
+
+41
+00:03:27.733 --> 00:03:31.733
+and my engineering processes improve. Guess what happens to the company?
+
+42
+00:03:31.733 --> 00:03:36.099
+It gets better. And that's the purpose of Processing for Six Sigma.
+
+43
+00:03:36.100 --> 00:03:42.566
+Identify all these variables and improve their performance capability.
+
+44
+00:03:42.566 --> 00:03:47.566
+Thank you for choosing SSMI.
+

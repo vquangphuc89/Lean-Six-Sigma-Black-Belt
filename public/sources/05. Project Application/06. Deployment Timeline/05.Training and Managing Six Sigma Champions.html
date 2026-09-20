@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đào Tạo Và Quản Lý Các Nhà Vô Địch Six Sigma — Six Sigma Masterclass</title>
+<style>
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.68;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
+
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  .pro-tip {
+    background: var(--gold-bg);
+    border: 1px solid #fde68a;
+    border-left: 6px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 22px 0;
+  }
+  .pro-tip-title { font-size: 0.95rem; font-weight: 800; color: var(--wood-bark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pro-tip-desc { font-size: 0.96rem; color: #713f12; margin: 0; }
+
+  /* Native Math Cards */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--emerald-mint);
+    margin-bottom: 12px;
+  }
+  .math-card .formula {
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    padding: 16px 0;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .math-card .desc {
+    font-size: 0.94rem;
+    color: #a7f3d0;
+    line-height: 1.6;
+    margin-top: 10px;
+    border-top: 1px solid rgba(16,185,129,0.25);
+    padding-top: 10px;
+  }
+  .fraction {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 4px;
+  }
+  .fraction-top {
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+  }
+  .fraction-bottom {
+    padding-top: 2px;
+  }
+
+  /* Tables */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.96rem;
+  }
+  .data-table th {
+    background: var(--wood-dark);
+    color: #ffffff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    border: 1px solid #047857;
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+  }
+  .data-table tr:nth-child(even) td { background: #f8fafc; }
+  .data-table tr:hover td { background: #f0fdf4; }
+
+  /* VS Grid */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    margin: 24px 0;
+    align-items: stretch;
+  }
+  @media (max-width: 768px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-badge { display: none; }
+  }
+  .vs-col {
+    border-radius: 10px;
+    padding: 22px 24px;
+  }
+  .vs-bad {
+    background: #fef2f2;
+    border: 1.5px solid #fecaca;
+    border-top: 4px solid var(--red);
+  }
+  .vs-good {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-top: 4px solid var(--emerald-vibrant);
+  }
+  .vs-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--wood-dark);
+  }
+  .vs-title { font-weight: 800; font-size: 1.05rem; margin-bottom: 12px; }
+  .vs-bad .vs-title { color: var(--red); }
+  .vs-good .vs-title { color: var(--emerald-vibrant); }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { font-size: 0.94rem; margin-bottom: 8px; color: #1e293b; }
+
+  /* Case Studies */
+  .case-box {
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 24px;
+    margin: 20px 0;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .case-tag {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .case-title { font-size: 1.2rem; font-weight: 800; color: var(--wood-dark); margin: 0 0 12px; }
+
+  /* Interactive Arena: Quizzes & Flashcards */
+  .interactive-arena {
+    background: linear-gradient(180deg, var(--wood-deep) 0%, var(--wood-forest) 100%);
+    border-radius: 16px;
+    padding: 40px 36px;
+    margin: 40px 0;
+    box-shadow: 0 12px 40px rgba(2,44,34,0.45);
+    border: 2px solid var(--emerald);
+    color: #ecfdf5;
+  }
+  .arena-heading { font-size: 1.85rem; font-weight: 800; color: #ffffff; text-align: center; margin: 0 0 8px; }
+  .arena-subheading { text-align: center; color: var(--emerald-mint); font-size: 1rem; margin-bottom: 34px; }
+
+  .quizzes-container { display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px; }
+  .quiz-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(110,231,183,0.25);
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+  }
+  .quiz-tag {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--emerald-mint);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .quiz-q { font-size: 1.06rem; font-weight: 700; color: #ffffff; margin-bottom: 16px; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(255,255,255,0.08);
+    color: #f1f5f9;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .quiz-btn:hover:not(:disabled) {
+    background: rgba(16,185,129,0.22);
+    border-color: var(--emerald-vibrant);
+    transform: translateX(4px);
+  }
+  .quiz-btn.correct {
+    background: #065f46 !important;
+    border-color: #34d399 !important;
+    color: #ecfdf5 !important;
+    font-weight: 700;
+  }
+  .quiz-btn.wrong {
+    background: #7f1d1d !important;
+    border-color: #f87171 !important;
+    color: #fef2f2 !important;
+    font-weight: 700;
+  }
+  .quiz-fb {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.success { background: rgba(5,150,105,0.25); border: 1px solid #10b981; color: #ecfdf5; }
+  .quiz-fb.error { background: rgba(185,28,28,0.25); border: 1px solid #ef4444; color: #fee2e2; }
+
+  /* 3D Flashcards */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .flashcard {
+    height: 180px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  .flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+  }
+  .fc-front, .fc-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .fc-front {
+    background: linear-gradient(135deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
+    border: 1px solid rgba(110,231,183,0.4);
+    color: #ffffff;
+  }
+  .fc-back {
+    background: linear-gradient(135deg, rgba(8,47,73,0.95), rgba(6,78,59,0.95));
+    border: 1px solid var(--emerald-vibrant);
+    color: #ecfdf5;
+    transform: rotateY(180deg);
+  }
+  .fc-q { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+  .fc-hint { font-size: 0.76rem; color: var(--emerald-mint); opacity: 0.85; text-transform: uppercase; }
+  .fc-a { font-size: 0.9rem; line-height: 1.45; color: #d1fae5; }
+
+  /* Action Checklist */
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .action-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--emerald);
+    cursor: pointer;
+    margin-top: 3px;
+  }
+  .action-text { font-size: 0.96rem; color: #1e293b; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">PHÂN HỆ 05: PROJECT APPLICATION • CHUYÊN ĐỀ 06: DEPLOYMENT TIMELINE</span>
+    <h1 class="hero-title">Đào Tạo Và Quản Lý Các Nhà Vô Địch Six Sigma</h1>
+    <div class="hero-title-en">Training and Managing Six Sigma Champions: Managing for Six Sigma (MFSS) and the Shepherds of the Black Belt Flocks</div>
+    <p class="hero-desc">Cột mốc Tháng thứ 2 (Tuần thứ 8): Triển khai chương trình Đào tạo Quản lý Six Sigma (Managing for Six Sigma - MFSS), cấu trúc 3 tầng Champion (Corporate, Business Unit, Project Champion), vai trò "Người Chăn Dắt Đàn Black Belt" và cơ chế bảo vệ Belt trước các rào cản chính trị nội bộ.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PHẦN 1: EXECUTIVE BRIEFING -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 • Khẩu Lệnh Chiến Lược</span>
+    <h2 class="section-heading">Cột Mốc Tháng Thứ 2: Khóa Đào Tạo MFSS & Người Chăn Dắt Đàn Black Belt</h2>
+    <div class="section-subheading">Tại sao Champion phải được huấn luyện trước Black Belt và bản chất của cơ chế bảo hộ dự án trong doanh nghiệp?</div>
+
+    <div class="exec-summary">
+      <div style="font-size:0.88rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--emerald); margin-bottom:8px;">
+        💡 Thông Điệp Cốt Lõi Từ Dr. Mikel J. Harry
+      </div>
+      <p style="margin:0 0 12px; font-size:1.05rem; font-style:italic; color:var(--wood-deep); font-weight:600;">
+        "About two months after you make the decision to adopt Six Sigma. Conduct the executive summit. You should start the champion training. This again is a very, very important activity. It's also called managing for Six Sigma (MFSS)... Remember, the champions are the shepherds of the black belt flocks. So you have a Corporate Champion responsible for creation of deployment plans at the global level. Then you have Business Unit Champions responsible for implementation plans at the local level. And then we have Project Champions — the project champions are the ones that the black belts directly report to. Now all these champions have gotta be trained. Guess who's going to do it? The consultants that you investigated during due diligence... typically done within eight weeks of the decision to adopt Six Sigma."
+      </p>
+      <p style="margin:0; font-size:0.98rem; color:#064e3b;">
+        <em>Ý nghĩa tác chiến:</em> Khoảng hai tháng (8 tuần) sau khi bạn đưa ra quyết định áp dụng Six Sigma và tiến hành hội nghị thượng đỉnh điều hành, bạn nên bắt đầu đào tạo các nhà vô địch (Champion). Đây một lần nữa là một hoạt động cực kỳ, cực kỳ quan trọng. Nó còn được gọi là 'Quản lý cho Six Sigma' (Managing for Six Sigma - MFSS)... Hãy nhớ rằng, các nhà vô địch chính là những người chăn dắt đàn Black Belt! Bạn có một Nhà Vô Địch Cấp Tập Đoàn (Corporate Champion) chịu trách nhiệm tạo lập kế hoạch triển khai ở cấp độ toàn cầu. Sau đó bạn có các Nhà Vô Địch Đơn Vị Kinh Doanh (Business Unit Champions) chịu trách nhiệm về kế hoạch thực thi ở cấp độ địa phương. Và chúng ta có các Nhà Vô Địch Dự Án (Project Champions) — đây là những người mà các Black Belt trực tiếp báo cáo. Tất cả các Champion này bắt buộc phải được đào tạo bài bản bởi các nhà tư vấn mà bạn đã thẩm định kỹ lưỡng... và khóa học này thường được tiến hành trong vòng 8 tuần kể từ quyết định áp dụng Six Sigma.
+      </p>
+    </div>
+
+    <div class="exec-summary">
+      <div style="font-weight:800; color:var(--wood-dark); margin-bottom:10px; text-transform:uppercase; font-size:0.92rem;">
+        📌 Bản Tóm Tắt Điều Hành Dành Cho C-Suite &amp; Black Belt:
+      </div>
+      <ul style="padding-left:20px; margin:0;">
+        <li><strong>Cột mốc Tuần 8 (Tháng thứ 2):</strong> Đào tạo Champion (MFSS) bắt buộc phải diễn ra trước khi đào tạo Black Belt. Không bao giờ cử Black Belt đi học nếu lãnh đạo trực tiếp của họ chưa hiểu rõ phương pháp luận.</li>
+        <li><strong>Ẩn dụ 'Người chăn dắt đàn cừu':</strong> Black Belt là những chuyên gia kỹ thuật và thống kê nhạy cảm; họ rất dễ bị 'sói dữ' (sự đố kỵ phòng ban, thói quen trì trệ và áp lực việc sự vụ) tấn công. Champion đóng vai trò người chăn dắt cầm gậy bảo vệ và dọn đường cho đàn Black Belt tiến bước.</li>
+        <li><strong>Cấu trúc phân tầng 3 cấp Champion:</strong> (1) <em>Corporate Champion:</em> Định hướng chiến lược tập đoàn và báo cáo CEO/HĐQT; (2) <em>Business Unit Champion:</em> Điều phối nguồn lực và ngân sách cấp nhà máy/khối; (3) <em>Project Champion:</em> Chủ sở hữu quy trình trực tiếp phê duyệt cổng Tollgate và tháo gỡ rào cản hàng ngày.</li>
+        <li><strong>Nội dung đào tạo MFSS:</strong> Khóa học MFSS không tập trung vào giải thuật toán học phức tạp mà trang bị tư duy lãnh đạo chất lượng: Cách lựa chọn dự án, xây dựng Charter, đánh giá cổng Tollgate DMAIC và quản trị dòng tiền P&L.</li>
+      </ul>
+    </div>
+
+    <div class="pro-tip">
+      <div class="pro-tip-title">⚡ Lời Khuyên Của Master Black Belt (Executive Takeaway)</div>
+      <div class="pro-tip-desc">Nhiệm vụ số 1 của một Project Champion không phải là dạy Black Belt cách tính ANOVA hay Regression. Nhiệm vụ tối thượng của Champion là: Mỗi sáng thứ Hai hỏi Black Belt: 'Tuần này em đang bị ai cản trở, dữ liệu nào xin chưa cho, phân xưởng nào không phối hợp để anh trực tiếp nhấc máy giải quyết ngay trong 15 phút?'.</div>
+    </div>
+  </section>
+
+  <!-- PHẦN 2: MATHEMATICAL & ENGINEERING FOUNDATIONS -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 • Cơ Sở Kỹ Thuật &amp; Quản Trị</span>
+    <h2 class="section-heading">Mô Hình Định Lượng: Định Mức Quản Trị & Tốc Độ Phê Duyệt Tollgate</h2>
+    <div class="section-subheading">Các công thức toán học xác lập tỷ lệ bao phủ lý tưởng của Champion và kiểm soát tiến độ dự án</div>
+
+    
+      <div class="math-card">
+        <div class="title">Tỷ Lệ Bao Phủ Của Nhà Vô Địch (Champion-to-Belt Span of Control)</div>
+        <div class="formula">R<sub>Span</sub> = <span class="fraction"><span class="fraction-top">N<sub>Active Black Belts</sub></span><span class="fraction-bottom">N<sub>Project Champions</sub></span></span> &le; 3.0</div>
+        <div class="desc">Nguyên tắc quản trị SSMI: Mỗi Project Champion chỉ nên phụ trách tối đa <strong>2 đến 3 Black Belt</strong> cùng lúc. Nếu tỷ lệ này vượt quá 3 (R<sub>Span</sub> &gt; 3), Champion sẽ không đủ thời gian xem xét kỹ lưỡng các cổng Tollgate, dẫn tới dự án bị tắc nghẽn hoặc phê duyệt qua loa.</div>
+      </div>
+
+      <div class="math-card">
+        <div class="title">Chỉ Số Tốc Độ Phê Duyệt Cổng Dự Án (Tollgate Approval Velocity Index - TVI)</div>
+        <div class="formula">TVI = <span class="fraction"><span class="fraction-top">T<sub>Planned Gate Cycle</sub> (Days)</span><span class="fraction-bottom">T<sub>Actual Gate Sign-off</sub> (Days)</span></span> &ge; 1.0</div>
+        <div class="desc">Chỉ số đo lường hiệu năng của Champion: Thời gian phê duyệt cổng DMAIC (Define, Measure, Analyze, Improve, Control) không được vượt quá <strong>5 ngày làm việc</strong>. Khi TVI &lt; 1.0, Champion đang là nút thắt cổ chai làm chậm tốc độ thu hồi dòng tiền của dự án.</div>
+      </div>
+
+    <h3 style="color:var(--wood-dark); margin-top:28px; font-size:1.15rem;">Bảng Phân Định Thẩm Quyền & Trách Nhiệm 3 Tầng Champion (SSMI Champion Hierarchy)</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Cấp Bậc Champion</th><th>Thẩm Quyền & Phạm Vi Phụ Trách</th><th>Trách Nhiệm Cốt Lõi Tại Gemba</th><th>Tỷ Lệ Thời Gian Dành Cho LSS</th><th>Tần Suất Báo Cáo</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td><strong>Corporate Champion (Cấp Tập Đoàn)</strong></td><td>Toàn bộ các đơn vị kinh doanh, nhà máy và chi nhánh toàn cầu</td><td>Xây dựng kế hoạch triển khai toàn cầu, giải quyết xung đột liên khối, báo cáo HĐQT</td><td>15% &ndash; 20% thời gian làm việc</td><td>Báo cáo CEO/HĐQT hàng tháng</td>
+          </tr>
+          <tr>
+            <td><strong>Business Unit Champion (Cấp Khối / Nhà Máy)</strong></td><td>Toàn bộ các phân xưởng và phòng ban trong đơn vị kinh doanh</td><td>Cụ thể hóa kế hoạch triển khai tại địa phương, phân bổ ngân sách, bảo toàn nhân sự</td><td>20% &ndash; 30% thời gian làm việc</td><td>Báo cáo Corporate Champion 2 tuần/lần</td>
+          </tr>
+          <tr>
+            <td><strong>Project Champion (Cấp Dự Án Trực Tiếp)</strong></td><td>Quy trình cụ thể nơi dự án Black Belt đang triển khai</td><td>Phê duyệt Charter, ký cổng Tollgate, tháo gỡ rào cản thu thập dữ liệu, nghiệm thu P&L</td><td>15% &ndash; 25% thời gian cho mỗi dự án</td><td>Gặp gỡ Black Belt hàng tuần (1-on-1)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PHẦN 3: CASE STUDIES & VS COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 • Đối Chiếu Thực Chiến &amp; Điển Cứu</span>
+    <h2 class="section-heading">Phân Tích Đối Chiếu Hai Cực: Ký Tên Chiếu Lệ vs Lá Chắn Thực Quyền</h2>
+    <div class="section-subheading">Sự đối lập giữa Champion bù nhìn trên danh nghĩa và Nhà Vô Địch thực chiến theo chuẩn SSMI</div>
+
+    <div class="vs-grid">
+      <div class="vs-col vs-bad">
+        <div class="vs-title">CHAMPION TRÊN DANH NGHĨA (BÙ NHÌN)</div>
+        <ul>
+          <li>Chỉ ký tên vào bản Project Charter lúc bắt đầu rồi bỏ mặc Black Belt tự xoay sở suốt 4 tháng.</li>
+              <li>Khi Black Belt xin số liệu phân xưởng bị từ chối, Champion nói: "Em tự đi ngoại giao với quản đốc đi".</li>
+              <li>Vắng mặt trong các buổi đánh giá cổng Tollgate hoặc cử trợ lý đi họp thay.</li>
+              <li>Sợ va chạm chính trị, không dám đối đầu với các quản lý cũ để bảo vệ giải pháp cải tiến mới.</li>
+              <li>Khi dự án thành công thì nhận hết công lao, khi dự án chậm trễ thì đổ lỗi do năng lực Black Belt kém.</li>
+        </ul>
+      </div>
+      <div class="vs-badge">VS</div>
+      <div class="vs-col vs-good">
+        <div class="vs-title">NHÀ VÔ ĐỊCH THỰC CHIẾN CHUẨN SSMI</div>
+        <ul>
+          <li>Trực tiếp tham gia xác lập bài toán kinh doanh và bảo vệ tính khả thi của mục tiêu tài chính với CFO.</li>
+              <li>Chủ động tháo gỡ mọi rào cản chính trị, ra chỉ thị yêu cầu các bộ phận liên quan phối hợp 100%.</li>
+              <li>Đích thân chủ trì các phiên nghiệm thu cổng DMAIC, chất vấn sắc bén dựa trên dữ liệu thống kê.</li>
+              <li>Dám bảo vệ các giải pháp đột phá có tính gián đoạn và cam kết nguồn lực thử nghiệm tại xưởng.</li>
+              <li>Đứng mũi chịu sào về kết quả P&L, tôn vinh xứng đáng đóng góp kỹ thuật của đội ngũ Black Belt.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="case-box">
+      <span class="case-tag">Điển Cứu Thực Tế • Công Ty Hóa Chất & Vật Liệu Tân Á</span>
+      <h3 class="case-title">Hóa Chất Tân Á: Sức Mạnh Của Project Champion Khi Đối Mặt Với Sự Phá Hoại Ngầm</h3>
+      <p style="margin:0 0 10px; font-size:0.96rem; color:#334155;"><strong>Bối cảnh &amp; Thách thức:</strong> Tại nhà máy polymer Tân Á, một Black Belt triển khai dự án tối ưu hóa thời gian phản ứng trùng hợp (tiềm năng tiết kiệm $450,000/năm). Tuy nhiên, Quản đốc phân xưởng vận hành viện cớ "an toàn kỹ thuật" để cấm Black Belt can thiệp vào van điều áp và giấu toàn bộ nhật ký vận hành.</p>
+      <p style="margin:0 0 10px; font-size:0.96rem; color:#334155;"><strong>Nguyên nhân gốc rễ:</strong> Quản đốc xưởng lo sợ nếu quy trình được cải tiến sẽ phơi bày sự thiếu trách nhiệm và lãng phí suốt 5 năm qua dưới quyền quản lý của ông ta.</p>
+      <p style="margin:0 0 10px; font-size:0.96rem; color:#334155;"><strong>Giải pháp can thiệp Six Sigma:</strong> Black Belt báo cáo sự việc cho Project Champion (vốn là Phó Giám đốc Sản xuất của công ty). Vị Champion này lập tức xuống hiện trường, triệu tập cuộc họp bất thường ngay tại phòng điều khiển trung tâm. Ông khẳng định: "Đây là dự án có chữ ký của Tổng Giám đốc. Nếu ca trực nào không cung cấp số liệu trung thực, Quản đốc ca đó sẽ bị đình chỉ công tác 1 tháng". Đồng thời, Champion cam kết sẽ cùng chia sẻ thưởng KPI cho phân xưởng nếu dự án đạt mục tiêu.</p>
+      <p style="margin:0; font-size:0.96rem; color:var(--vi-green-2); font-weight:700;"><strong>Kết quả tài chính P&amp;L kiểm toán:</strong> Rào cản được dỡ bỏ trong vòng 24 giờ. Black Belt thu thập đủ dữ liệu, tìm ra nguyên nhân gốc rễ và tối ưu hóa chu kỳ phản ứng, mang lại $520,000 tiền mặt kiểm toán cho công ty trong năm đầu tiên.</p>
+    </div>
+  </section>
+
+  <!-- PHẦN 4: INTERACTIVE ARENA (8 Quizzes + 5 Flashcards) -->
+  <section class="interactive-arena">
+    <h2 class="arena-heading">Đấu Trường Trắc Nghiệm Tình Huống Thực Chiến</h2>
+    <div class="arena-subheading">8 Tình huống giả định &bull; 3 Tầng tư duy Master Black Belt &bull; Thẩm định kết quả tự động</div>
+
+    <div class="quizzes-container">
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 1 • Tầng 1: Mốc Thời Gian & Khái Niệm MFSS</span>
+        <div class="quiz-q">Khóa đào tạo Nhà Vô Địch (Champion Training) diễn ra vào thời điểm nào và thường được gọi bằng thuật ngữ chuyên môn nào trong bài giảng của Dr. Harry?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-1', 'Week 2 is for Due Diligence investigation, not Champion training.', 'Sai. Tuần thứ 2 là thẩm định đối tác tư vấn.')">
+            A. Diễn ra ở Tuần thứ 2 và gọi là Due Diligence Training
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-06-05-1', 'Correct. Dr. Harry states that about two months (week 8) after the adoption decision, champion training begins, also known as Managing for Six Sigma (MFSS).', 'Chính xác! Đào tạo Champion bắt đầu ở tháng thứ 2 (tuần thứ 8) và được gọi chính thức là &quot;Managing for Six Sigma&quot; (MFSS) — trang bị phương pháp quản trị cho cấp lãnh đạo.')">
+            B. Diễn ra vào khoảng Tháng thứ 2 (Tuần thứ 8) và còn được gọi là "Quản lý cho Six Sigma" (Managing for Six Sigma - MFSS)
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-1', 'Month 7 is when project cash savings appear in the Improve phase.', 'Sai. Tháng thứ 7 là mốc máy tính tiền reo chuông trong pha Improve.')">
+            C. Diễn ra ở Tháng thứ 7 cùng lúc với chu kỳ Improve
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-1', 'Reactive training contradicts planned deployment discipline.', 'Sai. Đào tạo theo kế hoạch chiến lược, không làm theo kiểu chữa cháy.')">
+            D. Chỉ diễn ra khi có khiếu nại nghiêm trọng từ khách hàng
+          </button>
+        </div>
+        <div id="fb-05-06-05-1" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 2 • Tầng 1: Ẩn Dụ "Shepherds of the Black Belt Flocks"</span>
+        <div class="quiz-q">Khi ví von các Champion là "Người chăn dắt đàn Black Belt" (Shepherds of the Black Belt flocks), Dr. Harry muốn truyền tải thông điệp cốt lõi nào?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-2', 'Exploitative work practices have nothing to do with six sigma governance.', 'Sai. Đây là quan điểm quản trị sai trái.')">
+            A. Champion phải ép buộc Black Belt làm việc 14 tiếng mỗi ngày
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-06-05-2', 'Correct. As shepherds, Champions protect Black Belts from organizational predators, corporate politics, and operational distractions so they can focus on breakthrough execution.', 'Chính xác! Black Belt cần sự che chở của Champion trước những rào cản chính trị nội bộ, sự bất hợp tác của các phòng ban và nguy cơ bị cuốn vào việc sự vụ, giúp họ tập trung 100% vào việc tạo ra Hard Savings.')">
+            B. Black Belt là tài sản quý báu nhưng rất dễ bị tổn thương trước sức ép thường nhật và sự đố kỵ phòng ban; Champion phải là người bảo vệ, che chở và dọn sạch các chướng ngại vật để đàn Belt an tâm tạo ra dòng tiền
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-2', 'Champions provide governance and barrier removal, not technical number crunching.', 'Sai. Champion không làm thay việc phân tích thống kê của Belt.')">
+            C. Champion phải tự mình trực tiếp tính toán toàn bộ số liệu thay cho Black Belt
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-2', 'Absurd micromanagement.', 'Sai. Không mang ý nghĩa cô lập hay vi quản lý cực đoan.')">
+            D. Black Belt không được phép nói chuyện với bất kỳ ai nếu chưa có sự đồng ý của Champion
+          </button>
+        </div>
+        <div id="fb-05-06-05-2" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 3 • Tầng 2: Tính Toán Định Mức Quản Trị Của Project Champion</span>
+        <div class="quiz-q">Công ty chuẩn bị khởi động Làn sóng 1 gồm 24 Black Belt toàn thời gian. Theo chuẩn mực quản trị SSMI, mỗi Project Champion chỉ nên quản lý tối đa 2 đến 3 Black Belt để đảm bảo chất lượng hướng dẫn và ký duyệt tollgate. Công ty cần tuyển chọn và đào tạo tối thiểu bao nhiêu Project Champion?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-3', '24 / 4 = 6 Belts/Champion (overloaded span of control).', 'Sai. 4 Champion sẽ phải quản 6 Belt/người, gây quá tải nghiêm trọng.')">
+            A. 4 Project Champion
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-06-05-3', 'Correct: Minimum Project Champions = 24 / 3 = 8 Project Champions (each manages exactly 3 Belts).', 'Chính xác! Số lượng Project Champion tối thiểu = 24 / 3 = 8 Project Champion (mỗi người quản lý đúng 3 Black Belt). Nếu tỷ lệ này vượt quá 3, thời gian đánh giá cổng dự án sẽ bị trễ hạn.')">
+            B. 8 Project Champion
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-3', '24 / 2 = 12 (acceptable but not the minimum threshold).', 'Sai. 12 là mức lý tưởng (2 Belt/người) nhưng không phải số lượng tối thiểu.')">
+            C. 12 Project Champion
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-3', '1:1 ratio is unnecessary and wastes executive bandwidth.', 'Sai. Tỷ lệ 1:1 gây lãng phí thời gian điều hành của lãnh đạo.')">
+            D. 24 Project Champion
+          </button>
+        </div>
+        <div id="fb-05-06-05-3" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 4 • Tầng 2: Đo Lường Thiệt Hại Do Tắc Nghẽn Phê Duyệt Cổng Tollgate</span>
+        <div class="quiz-q">Một dự án Black Belt có tiềm năng mang lại $360,000 Hard Savings/năm (tương đương $30,000/tháng hay $1,000/ngày). Do Project Champion bận đi công tác và trì hoãn ký duyệt cổng Measure mất 21 ngày làm việc (so với quy chuẩn tối đa 5 ngày). Thiệt hại dòng tiền do sự chậm trễ này gây ra là bao nhiêu?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-4', '5 days * $1,000.', 'Sai. Đây là thời gian định mức cho phép.')">
+            A. $5,000
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-06-05-4', 'Correct: Delay duration = 21 - 5 = 16 days. Cash loss = 16 days * $1,000/day = $16,000.', 'Chính xác! Số ngày chậm trễ vượt định mức = 21 - 5 = 16 ngày làm việc. Thiệt hại tiền mặt do chậm thu hoạch lợi ích dự án = 16 ngày × $1,000/ngày = $16,000.')">
+            B. $16,000
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-4', 'Ignores the 5 allowable buffer days.', 'Sai. Không trừ đi 5 ngày định mức được phép.')">
+            C. $21,000
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-4', 'Full month loss.', 'Sai. Chưa tròn 1 tháng.')">
+            D. $30,000
+          </button>
+        </div>
+        <div id="fb-05-06-05-4" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 5 • Tầng 2: Tính Suất Sinh Lời Của Khóa Học MFSS</span>
+        <div class="quiz-q">Khóa học MFSS cho 10 Champion tiêu tốn tổng chi phí $35,000. Đội ngũ 10 Champion này bảo trợ thành công 20 dự án Black Belt Wave 1, mang lại tổng cộng $7.0 triệu Hard Savings đã kiểm toán. Tỷ lệ chi phí đào tạo Champion trên tổng giá trị mang lại là bao nhiêu phần trăm?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-5', '350k / 7M = 5%.', 'Sai. Tính thừa một số 0.')">
+            A. 5.0%
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-06-05-5', 'Correct: Ratio = $35,000 / $7,000,000 = 0.005 = 0.5% (half of one percent).', 'Chính xác! Chi phí đào tạo Champion chỉ chiếm: $35,000 / $7,000,000 = 0.005 = 0.5% tổng giá trị tài chính thu về. Một khoản đầu tư mang lại đòn bẩy gấp 200 lần!')">
+            B. 0.5%
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-5', 'Miscalculation.', 'Sai. Phép tính không đúng.')">
+            C. 2.0%
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-5', 'Miscalculation: one order of magnitude too low.', 'Sai. Thiếu một số 0.')">
+            D. 0.05%
+          </button>
+        </div>
+        <div id="fb-05-06-05-5" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 6 • Tầng 3: Giải Quyết Xung Đột Quyền Lực Tại Hiện Trường</span>
+        <div class="quiz-q">Một Black Belt báo cáo: Quản đốc phân xưởng sơn kiên quyết từ chối cho phép nhóm dự án gắn cảm biến nhiệt độ vào lò sấy vì "sợ làm hỏng lò và ảnh hưởng chỉ tiêu sản lượng ca". Là Project Champion của dự án, hành động chuẩn xác nhất của bạn là gì?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-6', 'Abandoning root cause analysis capitulates to process variation.', 'Sai. Né tránh nguyên nhân gốc rễ sẽ làm dự án thất bại.')">
+            A. Bảo Black Belt bỏ qua lò sấy và tìm công đoạn khác dễ hơn để làm dự án
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-06-05-6', 'Correct. The Champion acts as a shield and authority figure, absorbing operational risk and compelling compliance so data collection proceeds unhindered.', 'Chính xác! Champion phải thực thi quyền lực lãnh đạo: Xuống tận Gemba, đứng ra gánh vác rủi ro kỹ thuật cho cấp dưới và chỉ đạo dứt điểm để Black Belt có được dữ liệu đo lường cần thiết.')">
+            B. Trực tiếp xuống hiện trường cùng Black Belt và Giám đốc Kỹ thuật; ký văn bản cam kết chịu trách nhiệm bảo hiểm kỹ thuật cho lò sấy và yêu cầu Quản đốc hỗ trợ lắp cảm biến trong 24 giờ
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-6', 'Escalating routine operational friction up to the CEO wastes leadership time and stalls momentum.', 'Sai. Làm phiền CEO những việc thuộc thẩm quyền của Champion sẽ làm trễ tiến độ.')">
+            C. Viết thư phàn nàn gửi lên Tổng Giám đốc và chờ đợi xử lý sau 2 tuần
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-6', 'Disproportionate and legally reckless action.', 'Sai. Hành vi nóng nảy thiếu chuyên nghiệp.')">
+            D. Sa thải ngay lập tức Quản đốc phân xưởng sơn
+          </button>
+        </div>
+        <div id="fb-05-06-05-6" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 7 • Tầng 3: Kiểm Soát Tính Xác Thực Của Project Charter</span>
+        <div class="quiz-q">Khi một Black Belt nộp Project Charter đề xuất mục tiêu "Nâng cao sự hài lòng của nhân viên đóng gói", Project Champion được đào tạo chuẩn SSMI sẽ phản hồi như thế nào?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-7', 'Vague subjective goals violate Six Sigma financial rigor.', 'Sai. Thiếu tính định lượng và không gắn với P&L.')">
+            A. Lập tức ký duyệt vì đây là mục tiêu nhân văn rất đáng khích lệ
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-06-05-7', 'Correct. Champions must enforce metric rigor. Projects must translate subjective desires into CTQ metrics and audited financial savings.', 'Chính xác! Khóa học MFSS dạy Champion rằng: &quot;Mọi cảm xúc phải được chuyển hóa thành số liệu&quot;. Charter phải được định lượng bằng chỉ số đo lường cụ thể và giá trị tiền tệ Hard Savings được tài chính thẩm định.')">
+            B. Yêu cầu viết lại Charter: Bác bỏ các khẩu hiệu cảm tính; bắt buộc phải lượng hóa bài toán thành chỉ số cụ thể (ví dụ: Giảm tỷ lệ nhầm tem nhãn bao bì từ 4.2% xuống 0.5%, tiết kiệm $180,000 chi phí đổi trả hàng) và phải có chữ ký xác nhận của kế toán quản trị
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-7', 'Capital expenditure is not a Six Sigma process improvement solution.', 'Sai. Six Sigma ưu tiên tối ưu hóa quy trình trước khi chi tiền mua máy móc mới.')">
+            C. Đổi đề tài sang dự án mua sắm máy móc đóng gói mới tự động
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-7', 'Champions guide and coach Belts to refine problem statements, not discard them.', 'Sai. Champion có nhiệm vụ huấn luyện Belt định hình lại bài toán kinh doanh.')">
+            D. Đề xuất hủy bỏ đề tài và cho Black Belt về làm việc cũ
+          </button>
+        </div>
+        <div id="fb-05-06-05-7" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 8 • Tầng 3: Đánh Giá Cổng Tollgate Pha Analyze</span>
+        <div class="quiz-q">Tại phiên đánh giá cổng Analyze (Pha A), Black Belt trình bày 15 nguyên nhân khả dĩ nhưng chưa thực hiện phân tích thống kê (Hypothesis Testing / ANOVA) để chứng minh nguyên nhân cốt lõi (Root Cause). Project Champion cần ra quyết định gì?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-8', 'Passing tollgates prematurely based on unproven intuition leads to failed solutions.', 'Sai. Thông qua vội vã dựa trên cảm tính sẽ dẫn đến việc áp dụng các giải pháp sai lầm tốn kém.')">
+            A. Cho phép thông qua cổng Analyze để Black Belt kịp tiến độ triển khai giải pháp ở pha Improve
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-06-05-8', 'Correct. The Champion must maintain methodological discipline: Y = f(X) must be statistically verified before any capital or effort is invested in solutions.', 'Chính xác! Giữ vững kỷ luật phương pháp luận: Cổng Analyze chỉ được phê duyệt khi Black Belt đã dùng dữ liệu thống kê chứng minh quan hệ nhân quả Y = f(X). Không bao giờ cho phép chuyển sang Improve nếu chỉ dựa vào trực giác chủ quan.')">
+            B. Quyết định: Chưa thông qua (Gate Held). Yêu cầu Black Belt sử dụng dữ liệu thực tế để kiểm định giả thuyết thống kê, chứng minh ít nhất 2 biến đầu vào X quan trọng chi phối đầu ra Y trước khi bước sang pha Improve
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-8', 'Punitive measures destroy psychological safety needed for statistical discovery.', 'Sai. Đánh giá cổng là cơ chế kiểm soát chất lượng, không phải phiên tòa kỷ luật.')">
+            C. Ký biên bản đình chỉ dự án vĩnh viễn và phạt tiền Black Belt
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-06-05-8', 'Violates role boundaries.', 'Sai. Champion làm thay sẽ làm triệt tiêu năng lực phát triển của Black Belt.')">
+            D. Tự mình làm phân tích ANOVA thay cho Black Belt rồi ký duyệt
+          </button>
+        </div>
+        <div id="fb-05-06-05-8" class="quiz-fb"></div>
+      </div>
+    </div>
+
+    <!-- 5 FLASHCARDS 3D -->
+    <h3 style="color:#ffffff; font-size:1.35rem; margin:36px 0 16px; text-align:center;">Bộ Thẻ Phản Xạ Tư Duy 3D (Click Để Lật Mở)</h3>
+    <div class="flashcards-grid">
+      
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Khóa đào tạo Champion diễn ra vào mốc thời gian nào?</div>
+            <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Diễn ra ở Tháng thứ 2 (khoảng Tuần thứ 8 kể từ mốc Time 0), ngay sau khi kết thúc Executive Summit.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Thuật ngữ "MFSS" trong bài giảng của Dr. Harry là viết tắt của từ gì?</div>
+            <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Managing for Six Sigma — Khóa đào tạo dành riêng cho lãnh đạo và Champion về quản trị chiến lược Six Sigma.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Ba tầng cấu trúc của đội ngũ Champion là gì?</div>
+            <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">(1) Corporate Champion (Cấp Tập đoàn); (2) Business Unit Champion (Cấp Khối/Nhà máy); (3) Project Champion (Cấp Dự án trực tiếp).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Nhiệm vụ tối thượng của một Project Champion là gì?</div>
+            <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Làm người chăn dắt đàn Black Belt: Bảo vệ Belt trước chính trị nội bộ, tháo gỡ rào cản thu thập dữ liệu và ký duyệt các cổng Tollgate.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Định mức tối đa mỗi Project Champion nên quản lý bao nhiêu Black Belt?</div>
+            <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Tối đa từ 2 đến 3 Black Belt cùng lúc để đảm bảo thời gian hỗ trợ sát sao và không làm trễ hạn phê duyệt cổng dự án.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 5: ACTION CHECKLIST & TEMPLATES -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 • Sáng Thứ Hai Làm Gì?</span>
+    <h2 class="section-heading">Kế Hoạch Hành Động 3 Bước & Ma Trận Phân Nhiệm Champion</h2>
+    <div class="section-subheading">Các bước triển khai chương trình MFSS và bàn giao thẩm quyền tại mốc Tuần thứ 8</div>
+
+    
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text"><strong>Bước 1: Tổ Chức Khóa Huấn Luyện MFSS Tập Trung (3-5 Ngày):</strong> Mời chuyên gia Wagon Master đã thẩm định về đào tạo toàn bộ 3 tầng Champion về phương pháp luận quản trị và phê duyệt Tollgate.</span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text"><strong>Bước 2: Phê Duyệt Danh Sách Đề Tài & Project Charter Wave 1:</strong> Mỗi Project Champion cùng chuyên gia tư vấn hoàn thiện tối thiểu 2-3 đề cương dự án có lượng hóa chỉ số tài chính rõ ràng.</span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text"><strong>Bước 3: Thiết Lập Lịch Đánh Giá Cổng Tollgate Định Kỳ:</strong> Ban hành lịch họp 1-on-1 hàng tuần giữa Champion và Black Belt, cam kết thời gian phản hồi và phê duyệt cổng không quá 5 ngày làm việc.</span>
+    </label>
+
+    <h3 style="color:var(--wood-dark); margin-top:32px; font-size:1.15rem;">Biểu Mẫu Quản Trị &amp; Khung Kiểm Soát Thực Chiến</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Nội Dung Phân Nhiệm Champion</th><th>Trách Nhiệm Của Champion</th><th>Đầu Ra Bắt Buộc (Deliverables)</th><th>Chỉ Số Đánh Giá Hiệu Quả (KPI)</th><th>Cấp Báo Cáo</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><strong>Phê duyệt Project Charter</strong></td><td>Thẩm định tính thực tế của bài toán kinh doanh và quy đổi P&L</td><td>Bản Charter có đủ chữ ký của CFO và Champion</td><td>100% dự án có cam kết Hard Savings &ge; $100k</td><td>Business Unit Champion</td>
+            </tr>
+            <tr>
+              <td><strong>Dọn đường thu thập dữ liệu tại Gemba</strong></td><td>Hóa giải kháng cự của các Quản đốc và Trưởng phòng liên quan</td><td>Văn bản ủy quyền can thiệp quy trình cho Black Belt</td><td>Tỷ lệ thu thập dữ liệu đúng hạn &ge; 95%</td><td>Project Champion</td>
+            </tr>
+            <tr>
+              <td><strong>Chủ trì đánh giá cổng Tollgate DMAIC</strong></td><td>Kiểm tra tính kỷ luật của phương pháp luận và dữ liệu thống kê</td><td>Biên bản nghiệm thu từng cổng (Sign-off Sheet)</td><td>TVI &ge; 1.0 (Phê duyệt trong &le; 5 ngày)</td><td>Ban Chỉ Đạo Six Sigma</td>
+            </tr>
+            <tr>
+              <td><strong>Bảo toàn 100% thời gian cho Black Belt</strong></td><td>Ngăn chặn tình trạng Black Belt bị kéo vào công việc sự vụ</td><td>Báo cáo chấm công và phân bổ thời gian thực tế</td><td>Tỷ lệ thời gian dành cho dự án đạt 100%</td><td>Giám Đốc Nhân Sự (CHRO)</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
+  </p>
+</footer>
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

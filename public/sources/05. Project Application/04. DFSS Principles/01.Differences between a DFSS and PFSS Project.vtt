@@ -1,0 +1,158 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Differences between a DFSS and PFSS Project
+
+2
+00:00:05.000 --> 00:00:08.733
+Welcome to this session on Design for Six Sigma.
+
+3
+00:00:08.733 --> 00:00:13.999
+Or what we call DFSS Design for Six Sigma.
+
+4
+00:00:14.000 --> 00:00:20.833
+This is a very, very powerful concept, and normally follows Processing for Six Sigma.
+
+5
+00:00:20.833 --> 00:00:27.133
+Remember the aim of Processing for Six Sigma, PFSS.
+
+6
+00:00:27.133 --> 00:00:32.666
+Here's a scale of measure.
+
+7
+00:00:32.666 --> 00:00:38.232
+Here is a performance distribution, say of some CTQ.
+
+8
+00:00:38.233 --> 00:00:44.033
+And, let's suppose that, here's the target.
+
+9
+00:00:44.033 --> 00:00:48.333
+Thus, the average of this distribution,
+
+10
+00:00:48.333 --> 00:00:52.399
+is right there. That's the center of the capability that you have.
+
+11
+00:00:52.400 --> 00:00:56.133
+Notice it’s separated from the target.
+
+12
+00:00:56.133 --> 00:01:01.766
+There's the target. And it's off location.
+
+13
+00:01:01.766 --> 00:01:08.766
+Well, what's our goal of PFSS? Our goal is to take that distribution and put it on center.
+
+14
+00:01:08.766 --> 00:01:13.266
+And narrow the variation.
+
+15
+00:01:13.266 --> 00:01:19.999
+See, that's our goal. We’re going to zoom in there and really start to focus on that.
+
+16
+00:01:20.000 --> 00:01:24.566
+Processing for Six Sigma is about
+
+17
+00:01:24.566 --> 00:01:29.699
+putting the center of that distribution on the target
+
+18
+00:01:29.700 --> 00:01:34.233
+and concurrently narrowing the spread. The variation.
+
+19
+00:01:34.233 --> 00:01:39.566
+Cause remember, that variation is the enemy. It constitutes uncertainty.
+
+20
+00:01:39.566 --> 00:01:42.599
+And we want to remove uncertainty.
+
+21
+00:01:42.600 --> 00:01:48.033
+We want to make our processes operate as certain as possible.
+
+22
+00:01:48.033 --> 00:01:52.999
+Now this is all fine and well but it's relative to something.
+
+23
+00:01:53.000 --> 00:02:00.000
+What is that goal relative to? It’s relative to this target.
+
+24
+00:02:00.000 --> 00:02:05.200
+Who sets that target? Recall here, if I look at this,
+
+25
+00:02:05.200 --> 00:02:09.266
+I can view this as an is condition.
+
+26
+00:02:09.266 --> 00:02:13.132
+Is. See, there's the average. That's the is.
+
+27
+00:02:13.133 --> 00:02:18.999
+And the target here is the ought. And the difference is a delta.
+
+28
+00:02:19.000 --> 00:02:21.966
+Or gap, as we call it.
+
+29
+00:02:21.966 --> 00:02:24.999
+Now who sets this?
+
+30
+00:02:25.000 --> 00:02:30.800
+Who is responsible out there, to determine what ought to be?
+
+31
+00:02:30.800 --> 00:02:36.666
+Obviously, we know how to determine is, we do that through PFSS.
+
+32
+00:02:36.666 --> 00:02:40.666
+The ought is done through DFSS.
+
+33
+00:02:40.666 --> 00:02:46.666
+And that's what we’re going to explore as we talk about Design for Six Sigma.
+
+34
+00:02:46.666 --> 00:02:53.499
+How to set the expectations, such as the upper spec limit, the target,
+
+35
+00:02:53.500 --> 00:02:57.500
+and the lower specification limits?
+
+36
+00:02:57.500 --> 00:03:01.500
+How do we set the standards? The performance expectation?
+
+37
+00:03:01.500 --> 00:03:07.100
+How do we establish the window of operation for our CTQ’s?
+
+38
+00:03:07.100 --> 00:03:13.866
+That's what Design for Six Sigma is about. Setting those standards and expectations.
+
+39
+00:03:13.866 --> 00:03:18.866
+Thank you for choosing SSMI.
+

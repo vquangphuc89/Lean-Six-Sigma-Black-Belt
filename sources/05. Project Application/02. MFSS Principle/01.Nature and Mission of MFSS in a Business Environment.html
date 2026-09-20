@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bản Chất Và Sứ Mệnh Của MFSS Trong Môi Trường Doanh Nghiệp — Six Sigma Masterclass</title>
+<style>
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.68;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
+
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  .pro-tip {
+    background: var(--gold-bg);
+    border: 1px solid #fde68a;
+    border-left: 6px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 22px 0;
+  }
+  .pro-tip-title { font-size: 0.95rem; font-weight: 800; color: var(--wood-bark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pro-tip-desc { font-size: 0.96rem; color: #713f12; margin: 0; }
+
+  /* Native Math Cards */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* VS Grid */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: stretch;
+    margin: 22px 0;
+  }
+  .vs-col {
+    padding: 22px 24px;
+    border-radius: 12px;
+  }
+  .vs-col.bad {
+    background: #fef2f2;
+    border: 1.5px solid #fecaca;
+    border-left: 5px solid var(--red);
+  }
+  .vs-col.good {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-left: 5px solid var(--green);
+  }
+  .vs-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .vs-badge.bad { background: #fee2e2; color: var(--red); }
+  .vs-badge.good { background: #dcfce7; color: var(--green); }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { font-size: 0.93rem; margin-bottom: 8px; color: #1e293b; }
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: var(--wood-dark);
+    font-size: 1.1rem;
+    padding: 0 6px;
+  }
+
+  /* Case Study Cards */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 22px 0;
+  }
+  .case-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .case-card.mfg { border-top: 4px solid #0284c7; }
+  .case-card.svc { border-top: 4px solid #7c3aed; }
+  .case-tag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .case-tag.mfg { color: #0284c7; }
+  .case-tag.svc { color: #7c3aed; }
+  .case-title { font-size: 1.12rem; font-weight: 700; color: var(--wood-dark); margin: 0 0 8px; }
+  .case-body { font-size: 0.92rem; color: #334155; line-height: 1.6; }
+  .case-metric {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: #0f172a;
+  }
+
+  /* Trắc Nghiệm & Flashcards */
+  .interactive-arena {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--water-ocean) 100%);
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    color: #ffffff;
+    box-shadow: 0 8px 30px rgba(2,44,34,0.3);
+  }
+  .arena-heading {
+    font-size: 1.55rem;
+    font-weight: 800;
+    margin: 0 0 4px;
+    color: #ffffff;
+  }
+  .arena-subheading {
+    color: var(--emerald-mint);
+    font-size: 1.02rem;
+    margin-bottom: 28px;
+  }
+
+  .quiz-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+  .quiz-tag {
+    display: inline-block;
+    background: rgba(16,185,129,0.25);
+    border: 1px solid var(--emerald-mint);
+    color: var(--emerald-mint);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .quiz-q {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ecfdf5;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.96rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .quiz-btn:hover {
+    background: rgba(16,185,129,0.2);
+    border-color: var(--emerald-mint);
+    transform: translateX(4px);
+  }
+  .quiz-btn.correct {
+    background: var(--green) !important;
+    border-color: #86efac !important;
+    color: #ffffff !important;
+    font-weight: 700;
+  }
+  .quiz-btn.wrong {
+    background: var(--red) !important;
+    border-color: #fca5a5 !important;
+    color: #ffffff !important;
+  }
+  .quiz-fb {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+  .quiz-fb.show { display: block; animation: fadeIn 0.3s ease; }
+  .quiz-fb.success {
+    background: rgba(22,163,74,0.25);
+    border: 1px solid #86efac;
+    color: #dcfce7;
+  }
+  .quiz-fb.error {
+    background: rgba(185,28,28,0.25);
+    border: 1px solid #fca5a5;
+    color: #fee2e2;
+  }
+
+  /* 3D Flashcards */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .flashcard {
+    perspective: 1000px;
+    min-height: 190px;
+    cursor: pointer;
+  }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 12px;
+  }
+  .flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+  }
+  .flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .flashcard-front {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(110,231,183,0.3);
+    color: #ffffff;
+  }
+  .flashcard-back {
+    background: linear-gradient(135deg, var(--emerald-vibrant) 0%, var(--wood-dark) 100%);
+    color: #ffffff;
+    transform: rotateY(180deg);
+    border: 1px solid var(--emerald-mint);
+  }
+  .fc-num {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .fc-q { font-size: 0.98rem; font-weight: 600; line-height: 1.45; }
+  .fc-a { font-size: 0.92rem; line-height: 1.5; }
+
+  /* Data Table */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .data-table th {
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+  }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
+
+  /* Action Checklist */
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+  }
+  .action-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--emerald);
+    cursor: pointer;
+    margin-top: 3px;
+  }
+  .action-text {
+    font-size: 0.96rem;
+    color: #1e293b;
+    line-height: 1.55;
+  }
+  .action-text strong { color: var(--wood-dark); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media(max-width: 768px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-divider { display: none; }
+    .case-grid { grid-template-columns: 1fr; }
+    .section-card { padding: 22px 18px; }
+    .interactive-arena { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">05. Project Application • 02. MFSS Principle</span>
+    <h1 class="hero-title">Bản Chất Và Sứ Mệnh Của MFSS Trong Môi Trường Doanh Nghiệp</h1>
+    <div class="hero-title-en">Nature and Mission of MFSS in a Business Environment</div>
+    <p class="hero-desc">Học thuyết Managing for Six Sigma (MFSS) của Dr. Mikel J. Harry: Chất keo gắn kết giữa Thiết kế (DFSS) và Quy trình (PFSS), định nghĩa kinh điển về Quản trị, và mô hình 3 tầng phân phối năng lượng: Triển khai (Deploy), Thực thi (Implement), Ứng dụng (Apply).</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PHẦN 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 • Tóm Tắt Điều Hành</span>
+    <h2 class="section-heading">Executive Summary &amp; Thước Đo Lãnh Đạo</h2>
+    <div class="section-subheading">Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Tam giác ba vòng tròn giao thoa (The Triad of Three Overlapping Circles):</strong> Hệ sinh thái Six Sigma toàn diện được cấu thành từ 3 trụ cột: <em>MFSS</em> (Managing for Six Sigma), <em>DFSS</em> (Design for Six Sigma), và <em>PFSS</em> (Processing for Six Sigma). Trong đó, MFSS là đỉnh cao lãnh đạo tạo ra mối liên kết và giám sát cả hai trụ cột còn lại.</li>
+        <li><strong>MFSS là chất keo kết dính (The Bonding Agent):</strong> MFSS đóng vai trò là chất kết dính đưa DFSS (sáng tạo sản phẩm mới không lỗi ngay từ đầu) và PFSS (tinh gọn, loại bỏ biến thiên trên quy trình hiện hữu) lại với nhau thành một thể thống nhất.</li>
+        <li><strong>Định nghĩa kinh điển về Quản trị của Dr. Harry:</strong> <em>"Management is the judicious use of control for the attainment of an end"</em> (Quản trị là việc sử dụng sáng suốt sự kiểm soát nhằm đạt được một cứu cánh). Cứu cánh tối thượng ở đây chính là đẳng cấp chất lượng Six Sigma, được hiện thực hóa thông qua hai phương tiện PFSS và DFSS.</li>
+        <li><strong>Mô hình 3 tầng phân bổ năng lượng (Deploy &rarr; Implement &rarr; Apply):</strong> MFSS vận hành theo cấu trúc 3 tầng chặt chẽ: Cấp độ toàn cục (Global) &rarr; Triển khai nguồn lực, con người, tài chính, tri thức (Deploy); Cấp độ cục bộ (Local) &rarr; Thực thi tại nhà máy, chi nhánh (Implement); Cấp độ tác nghiệp (Activity) &rarr; Ứng dụng công cụ giải quyết bài toán cụ thể (Apply).</li>
+        <li><strong>Phép loại suy Động cơ điện (Electric Motor Analogy):</strong> DFSS và PFSS là các động cơ điện công suất lớn, nhưng MFSS chính là hệ thống lưới điện truyền tải và phân phối năng lượng để làm cho các động cơ đó vận hành. Thiếu MFSS, mọi công cụ kỹ thuật sẽ chết yểu và tê liệt hoàn toàn.</li>
+      </ul>
+    </div>
+    <div class="pro-tip">
+      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Practical Insight)</div>
+      <p class="pro-tip-desc">Hơn 70% các sáng kiến Six Sigma thất bại trên thế giới không phải vì các công thức thống kê sai (PFSS/DFSS), mà vì sự sụp đổ của hệ thống quản trị lãnh đạo (MFSS): Thiếu cam kết tài nguyên từ C-Suite, thiếu cơ chế phân bổ vốn rõ ràng và không gắn kết kết quả cải tiến với dòng tiền P&L Hard Savings thực tế!</p>
+    </div>
+  </section>
+
+  <!-- PHẦN 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 • Khung Lý Thuyết &amp; Mô Hình Toán Học</span>
+    <h2 class="section-heading">Nguyên Lý Lượng Hóa &amp; Cơ Chế Phân Phối Năng Lượng</h2>
+    <div class="section-subheading">Học thuyết quản trị định lượng biến tầm nhìn chiến lược thành hiệu quả tài chính</div>
+    <p>Dr. Mikel J. Harry khẳng định rằng MFSS không phải là lý thuyết quản trị trừu tượng, mà là một hệ thống các quy trình có thể đặc trưng hóa (characterization) và tối ưu hóa (optimization) bằng toán học:</p>
+    
+    <div class="math-card">
+      <div class="title">1. Phương Trình Giao Thoa Hệ Sinh Thái / Six Sigma Ecosystem Intersection Model</div>
+      <div class="math-equation"><i>SixSigma</i><sub>Enterprise</sub> = <i>MFSS</i> &cap; (<i>DFSS</i> &cup; <i>PFSS</i>) &nbsp;|&nbsp; <i>MFSS</i> = 0 &rArr; <i>P&amp;L</i><sub>Impact</sub> = 0</div>
+      <div class="desc"><strong>Ý nghĩa điều kiện tiên quyết:</strong><br>&bull; MFSS là toán tử điều kiện tiên quyết (Prerequisite Operator). Cho dù doanh nghiệp có công cụ DFSS hay PFSS tinh xảo đến đâu, nếu năng lực quản trị MFSS bằng 0 thì giá trị tài chính thực tế thu về trên báo cáo kết quả kinh doanh P&amp;L sẽ bằng 0.</div>
+    </div>
+
+    <div class="math-card">
+      <div class="title">2. Vector Truyền Dẫn Năng Lượng 3 Tầng / 3-Tier Energy Transmission Vector</div>
+      <div class="math-equation">&vec;<i>E</i><sub>MFSS</sub> = &vec;<i>D</i><sub>Global</sub> (<i>R</i>, <i>P</i>, <i>C</i>, <i>K</i>) &otimes; &vec;<i>I</i><sub>Local</sub> (<i>BU</i>) &otimes; &vec;<i>A</i><sub>Activity</sub> (<i>Projects</i>)</div>
+      <div class="desc"><strong>Cấu trúc vector chuyển hóa:</strong><br>&bull; <em>R</em>: Resources (Thiết bị, cơ sở hạ tầng); <em>P</em>: People (Nhân sự đai đen, đai xanh, champion); <em>C</em>: Capital (Vốn ngân sách đầu tư); <em>K</em>: Knowledge (Tri thức, bản quyền công nghệ).<br>&bull; Năng lượng quản trị lan truyền từ cấp tập đoàn xuống đơn vị thành viên (BU) và kết tinh tại các dự án cải tiến tác nghiệp.</div>
+    </div>
+
+    <div class="math-card">
+      <div class="title">3. Hiệu Suất Truyền Dẫn Quản Trị / Management Transmission Efficiency (MTE)</div>
+      <div class="math-equation"><i>MTE</i> = <div class="math-frac"><div class="math-num">&Delta; <i>Hard Savings Realized on P&amp;L</i> ($)</div><div class="math-den">&sum; <i>Capital &amp; Resource Invested in Six Sigma</i> ($)</div></div> &times; <div class="math-frac"><div class="math-num"><i>N</i><sub>Completed Projects</sub></div><div class="math-den"><i>N</i><sub>Chartered Projects</sub></div></div></div>
+      <div class="desc"><strong>Chỉ số kiểm toán điều hành:</strong><br>&bull; Đo lường tỷ suất hoàn vốn trên mỗi đồng đầu tư vào chương trình Six Sigma.<br>&bull; Hệ số hoàn thành dự án phản ánh kỷ luật giám sát và khả năng bảo vệ tài nguyên của Ban điều hành.</div>
+    </div>
+
+    <div class="pro-tip">
+      <div class="pro-tip-title">MBB Interpretation • Diễn giải điều hành</div>
+      <p class="pro-tip-desc">Phép loại suy "Động cơ điện" của Dr. Harry là kim chỉ nam cho Giám đốc điều hành. Đừng mua thêm động cơ điện (đào tạo thêm Black Belts, mua thêm phần mềm đắt tiền) nếu đường dây truyền tải điện (hệ thống đánh giá KPI, quỹ khen thưởng, thẩm quyền giải phóng mặt bằng cải tiến) chưa được thiết lập đồng bộ!</p>
+    </div>
+  </section>
+
+  <!-- PHẦN 3: CASE STUDIES & VS COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 • Tình Huống Thực Chiến &amp; Đối Chiếu Phản Tư</span>
+    <h2 class="section-heading">Nghiên Cứu Điển Hình Công Nghiệp &amp; Dịch Vụ</h2>
+    <div class="section-subheading">Từ nhà máy chế tạo công nghệ cao đến định chế tài chính ngân hàng quốc tế</div>
+    
+    <div class="case-grid">
+      <div class="case-card mfg">
+        <span class="case-tag mfg">Chế Tạo Công Nghiệp Nặng &bull; Turbines Năng Lượng</span>
+        <h3 class="case-title">MFSS Kết Nối DFSS Và PFSS Cho Tuabin Gió Thế Hệ Mới</h3>
+        <p class="case-body">Một tập đoàn chế tạo tuabin gió gặp bế tắc: Phòng R&amp;D áp dụng DFSS thiết kế cánh quạt sợi carbon siêu nhẹ nhưng dung sai quá hẹp; Xưởng sản xuất áp dụng PFSS liên tục phàn nàn tỷ lệ nứt phôi lên tới 18%. Hai bên đổ lỗi cho nhau khiến dự án trễ hạn 14 tháng. Ban điều hành kích hoạt cơ chế MFSS: (1) Cấp độ Global: Phân bổ 3.2 triệu USD quỹ đổi mới công nghệ và tái cơ cấu nhóm dự án hỗn hợp DFSS-PFSS chung một KPI tài chính; (2) Cấp độ Local: Triển khai trạm thử nghiệm mô phỏng áp lực dòng khí tại nhà máy; (3) Cấp độ Activity: Black Belt sử dụng DOE tối ưu hóa đồng thời độ dày cánh quạt (DFSS) và nhiệt độ buồng sấy chân không (PFSS).</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Tỷ lệ nứt phôi giảm từ 18% xuống 0.25% (5.3 Sigma), rút ngắn thời gian thương mại hóa 6 tháng, mang lại 24.5 triệu USD doanh thu ròng năm đầu tiên nhờ vai trò chất keo kết dính của MFSS.</div>
+      </div>
+      <div class="case-card svc">
+        <span class="case-tag svc">Ngân Hàng Thương Mại &bull; Chuyển Đổi Số Tín Dụng</span>
+        <h3 class="case-title">MFSS Dẫn Dắt Quy Trình Phê Duyệt Vay Mua Nhà Trực Tuyến</h3>
+        <p class="case-body">Ngân hàng bán lẻ triển khai số hóa gói vay mua nhà: Nhóm công nghệ dùng DFSS thiết kế ứng dụng di động nộp hồ sơ trong 5 phút; Khối quản trị rủi ro dùng PFSS siết chặt 48 tiêu chuẩn kiểm tra thủ công khiến thời gian giải ngân thực tế bị kéo dài tới 12 ngày (khách hàng bỏ sang ngân hàng khác 35%). Giám đốc điều hành (CEO) trực tiếp đóng vai trò MFSS Champion: Triển khai nguồn lực liên phòng ban, phê duyệt thuật toán chấm điểm tín dụng tự động (Automated Underwriting Engine) thay thế 35 bước duyệt thủ công, liên kết trực tiếp KPI của Khối Công nghệ và Khối Rủi ro vào tỷ lệ giải ngân an toàn.</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Thời gian phê duyệt rút ngắn từ 12 ngày xuống đúng 45 phút, tỷ lệ nợ xấu duy trì dưới 0.12%, quy mô giải ngân tăng trưởng 320% đạt 450 triệu USD trong năm tài chính.</div>
+      </div>
+    </div>
+
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">❌ Triển Khai Six Sigma Hình Thức (Ad-hoc Program)</span>
+        <ul>
+          <li>Coi Six Sigma là phong trào của riêng phòng Quản lý Chất lượng (QA/QC)</li>
+          <li>Giao phó toàn quyền cho Black Belt tự "bơi" mà không có sự bảo trợ tài chính từ C-Suite</li>
+          <li>DFSS và PFSS vận hành tách rời như hai ốc đảo, liên tục xung đột về dung sai thiết kế</li>
+          <li>Đào tạo nhân sự ồ ạt nhưng không phân bổ dự án cụ thể gắn với báo cáo tài chính P&amp;L</li>
+        </ul>
+      </div>
+      <div class="vs-divider">&harr;</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">✅ Hệ Thống Quản Trị MFSS Chuẩn Dr. Mikel J. Harry</span>
+        <ul>
+          <li>Lãnh đạo cấp cao sử dụng sáng suốt quyền kiểm soát vì mục tiêu Six Sigma chiến lược</li>
+          <li>MFSS đóng vai trò chất keo kết dính và cơ quan giám sát liên kết chặt chẽ DFSS và PFSS</li>
+          <li>Quy trình phân bổ năng lượng 3 tầng minh bạch: Deploy (Toàn cục) &rarr; Implement &rarr; Apply</li>
+          <li>Mọi dự án cải tiến đều được thẩm định tài chính bởi CFO và mang lại Hard Savings thực tế</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 4: INTERACTIVE ARENA (8 QUIZZES & 5 FLASHCARDS) -->
+  <section class="interactive-arena">
+    <span class="section-num" style="background:var(--emerald-vibrant); color:#022c22;">Trụ Cột 4 • Khảo Hạch Năng Lực &amp; Phản Xạ 3D</span>
+    <h2 class="arena-heading">Đấu Trường Khảo Hạch Black Belt</h2>
+    <div class="arena-subheading">8 Tình huống trắc nghiệm chuyên sâu &bull; 5 Thẻ ghi nhớ phản xạ 3D &bull; Chuẩn hóa năng lực SSMI</div>
+
+    <!-- 8 QUIZZES -->
+    <div class="quizzes-container">
+      
+      <!-- Câu 1 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 1/8 • Cấu trúc Ba Vòng Tròn Giao Thoa</span>
+        <div class="quiz-q">Theo Dr. Mikel J. Harry, ba vòng tròn giao thoa (three overlapping circles) cấu thành hệ sinh thái Six Sigma toàn diện bao gồm những thành tố nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-1', 'Incorrect. Lean, Agile and Kaizen are continuous improvement frameworks but not the three core overlapping circles of Dr. Harry standard.', 'Chưa chính xác. Lean, Agile và Kaizen là các phương pháp cải tiến nhưng không phải là bộ ba vòng tròn giao thoa chuẩn của Dr. Harry.')">A. Lean, Agile và Kaizen</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-1', 'Correct! Dr. Harry explicitly identifies the three overlapping circles as MFSS (Managing for Six Sigma), PFSS (Processing for Six Sigma), and DFSS (Design for Six Sigma).', 'Chính xác! Dr. Harry định danh rõ ba vòng tròn giao thoa là MFSS (Quản trị), PFSS (Quy trình) và DFSS (Thiết kế).')">B. MFSS (Managing for Six Sigma), PFSS (Processing for Six Sigma), và DFSS (Design for Six Sigma)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-1', 'Incorrect. DMAIC, DMADV and IDOV are methodology roadmaps, not the structural triad of Six Sigma execution.', 'Chưa chính xác. DMAIC, DMADV và IDOV là các lộ trình phương pháp luận, không phải là tam giác thực thi tổ chức.')">C. DMAIC, DMADV và IDOV</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-1', 'Incorrect. Leadership, Culture and Technology are managerial domains but not the formal triad of Six Sigma.', 'Chưa chính xác. Lãnh đạo, Văn hóa và Công nghệ là các phạm trù quản lý chung, không phải thuật ngữ chuyên môn của Dr. Harry.')">D. Leadership, Corporate Culture, và Advanced Technology</button>
+        </div>
+        <div id="fb-01-1" class="quiz-fb"></div>
+      </div>
+
+      <!-- Câu 2 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 2/8 • Vai Trò Của MFSS</span>
+        <div class="quiz-q">Vai trò bản chất nhất của MFSS (Managing for Six Sigma) trong mối quan hệ với PFSS và DFSS được Dr. Harry mô tả là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-2', 'Incorrect. MFSS is not a passive statistical software or documentation tool.', 'Chưa chính xác. MFSS không phải là công cụ phần mềm hay tài liệu lưu trữ thụ động.')">A. Là một phần mềm thống kê để vẽ biểu đồ kiểm soát SPC</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-2', 'Correct! Dr. Harry defines MFSS as the bonding agent that brings PFSS and DFSS together and oversees both.', 'Chính xác! Dr. Harry định nghĩa MFSS là chất keo kết dính (bonding agent) đưa PFSS và DFSS lại với nhau và giám sát cả hai.')">B. Là chất keo kết dính (bonding agent) liên kết và giám sát toàn diện cả PFSS và DFSS</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-2', 'Incorrect. MFSS does not replace engineers; it empowers leadership governance.', 'Chưa chính xác. MFSS không thay thế kỹ sư mà cung cấp cơ chế quản trị lãnh đạo.')">C. Là một phòng ban độc lập có nhiệm vụ thay thế toàn bộ kỹ sư thiết kế</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-2', 'Incorrect. MFSS is a proactive strategic management system, not a mere auditing checklist.', 'Chưa chính xác. MFSS là hệ thống quản trị chiến lược chủ động, không đơn thuần là danh sách kiểm tra audit.')">D. Là bảng danh mục các câu hỏi thanh tra audit cuối năm</button>
+        </div>
+        <div id="fb-01-2" class="quiz-fb"></div>
+      </div>
+
+      <!-- Câu 3 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 3/8 • Định Nghĩa Khoa Học Về Quản Trị</span>
+        <div class="quiz-q">Định nghĩa khoa học kinh điển về "Quản trị" (Management) được Dr. Mikel J. Harry nêu rõ từng từ trong bài giảng là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-3', 'Incorrect. Management is not merely telling workers what to do.', 'Chưa chính xác. Quản trị không đơn thuần là ra lệnh cho cấp dưới.')">A. Quản trị là việc cắt giảm tối đa chi phí nhân công và ép tiến độ sản xuất</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-3', 'Correct! Dr. Harry verbatim states: "Management is the judicious use of control for the attainment of an end."', 'Chính xác! Dr. Harry khẳng định từng chữ: Quản trị là việc sử dụng sáng suốt sự kiểm soát nhằm đạt được một cứu cánh.')">B. Quản trị là việc sử dụng sáng suốt sự kiểm soát nhằm đạt được một cứu cánh (The judicious use of control for the attainment of an end)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-3', 'Incorrect. Management encompasses far more than organizing meetings.', 'Chưa chính xác. Quản trị bao hàm nhiều giá trị hơn việc tổ chức các cuộc họp nội bộ.')">C. Quản trị là việc tổ chức các cuộc họp giao ban hàng tuần để giải quyết xung đột</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-3', 'Incorrect. Delegating everything without control is abdication, not management.', 'Chưa chính xác. Giao phó toàn bộ mà không có sự kiểm soát là buông xuôi trách nhiệm, không phải quản trị.')">D. Quản trị là giao phó toàn quyền cho chuyên gia tư vấn bên ngoài tự quyết định</button>
+        </div>
+        <div id="fb-01-3" class="quiz-fb"></div>
+      </div>
+
+      <!-- Câu 4 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 4/8 • Mục Tiêu Và Phương Tiện Của MFSS</span>
+        <div class="quiz-q">Trong định nghĩa về quản trị của Dr. Harry, "Cứu cánh" (The End) và "Phương tiện" (The Means) tương ứng với những thành tố nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-4', 'Incorrect. The end is Six Sigma quality and the means are PFSS and DFSS.', 'Chưa chính xác. Cứu cánh là Six Sigma, phương tiện là PFSS và DFSS.')">A. Cứu cánh là cắt giảm nhân sự; Phương tiện là tự động hóa dây chuyền</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-4', 'Correct! Dr. Harry explains that management uses control toward the attainment of an end (Six Sigma) through the means of Processing for Six Sigma (PFSS) and Designing for Six Sigma (DFSS).', 'Chính xác! Cứu cánh là đạt chuẩn Six Sigma, được thực hiện thông qua hai phương tiện là Quy trình (PFSS) và Thiết kế (DFSS).')">B. Cứu cánh là đạt chuẩn Six Sigma; Phương tiện là Processing for Six Sigma (PFSS) và Designing for Six Sigma (DFSS)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-4', 'Incorrect. ISO certification is a standard, not the primary end of Six Sigma.', 'Chưa chính xác. Chứng chỉ ISO không phải là cứu cánh tối thượng của Six Sigma.')">C. Cứu cánh là đạt chứng chỉ ISO; Phương tiện là viết tài liệu quy trình</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-4', 'Incorrect. Marketing is promotional, not the technical means of Six Sigma.', 'Chưa chính xác. Marketing quảng cáo không phải là phương tiện kỹ thuật của Six Sigma.')">D. Cứu cánh là đánh bại đối thủ cạnh tranh; Phương tiện là quảng cáo tiếp thị</button>
+        </div>
+        <div id="fb-01-4" class="quiz-fb"></div>
+      </div>
+
+      <!-- Câu 5 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 5/8 • Ba Cấp Độ Triển Khai MFSS</span>
+        <div class="quiz-q">Mô hình phân bổ hoạt động của MFSS từ trên xuống dưới được cấu trúc theo 3 cấp độ nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-5', 'Incorrect. Plan, Do, Check, Act is the Deming cycle.', 'Chưa chính xác. Kế hoạch, Thực hiện, Kiểm tra, Xử lý là chu trình PDCA.')">A. Kế hoạch (Plan) &rarr; Thực hiện (Do) &rarr; Đánh giá (Review)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-5', 'Correct! Dr. Harry outlines the 3-tier hierarchy: Global Level (Deploy resources, people, money, knowledge) &rarr; Local Level (Implement) &rarr; Activity Level (Apply).', 'Chính xác! Cấu trúc chuẩn 3 tầng gồm: Cấp toàn cục (Deploy - Triển khai tài nguyên) &rarr; Cấp cục bộ (Implement - Thực thi) &rarr; Cấp tác nghiệp (Apply - Ứng dụng công cụ).')">B. Cấp toàn cục (Deploy - Triển khai tài nguyên) &rarr; Cấp cục bộ (Implement - Thực thi) &rarr; Cấp tác nghiệp (Apply - Ứng dụng công cụ)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-5', 'Incorrect. Define, Measure, Analyze is part of DMAIC.', 'Chưa chính xác. Định nghĩa, Đo lường, Phân tích là các bước trong DMAIC.')">C. Định nghĩa (Define) &rarr; Đo lường (Measure) &rarr; Phân tích (Analyze)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-5', 'Incorrect. Strategy, Tactics, Operations is general military terminology.', 'Chưa chính xác. Chiến lược, Chiến thuật, Tác chiến là thuật ngữ quân sự thông thường.')">D. Chiến lược (Strategy) &rarr; Chiến thuật (Tactics) &rarr; Tác chiến (Operations)</button>
+        </div>
+        <div id="fb-01-5" class="quiz-fb"></div>
+      </div>
+
+      <!-- Câu 6 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 6/8 • Các Nguồn Lực Tại Cấp Toàn Cục</span>
+        <div class="quiz-q">Tại cấp độ Toàn cục (Global level), hoạt động "Triển khai" (Deploy) của MFSS bao gồm việc phân bổ những nguồn lực cốt lõi nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-6', 'Incorrect. Machinery and raw materials alone miss the critical elements of people, capital, and knowledge.', 'Chưa chính xác. Chỉ có máy móc và nguyên vật liệu là chưa đủ các yếu tố con người, vốn và tri thức.')">A. Chỉ có máy móc và nguyên vật liệu tồn kho</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-6', 'Correct! Dr. Harry explicitly details: Deploy resources, deploy people, deploy money, and deploy knowledge at the global level.', 'Chính xác! Dr. Harry nêu rõ: Triển khai tài nguyên (resources), con người (people), tài chính/tiền bạc (money), và tri thức (knowledge).')">B. Triển khai tài nguyên (Resources), con người (People), tài chính (Money), và tri thức (Knowledge)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-6', 'Incorrect. Promotional items are not strategic Six Sigma resources.', 'Chưa chính xác. Quà tặng khuyến mãi không phải là tài nguyên Six Sigma chiến lược.')">C. Triển khai các ấn phẩm truyền thông và đồng phục nhân viên</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-6', 'Incorrect. Software licenses without people and capital cannot deploy Six Sigma.', 'Chưa chính xác. Bản quyền phần mềm đơn lẻ không thể tạo ra năng lực triển khai.')">D. Mua sắm bản quyền phần mềm phân tích dữ liệu</button>
+        </div>
+        <div id="fb-01-6" class="quiz-fb"></div>
+      </div>
+
+      <!-- Câu 7 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 7/8 • Phép Loại Suy Động Cơ Điện</span>
+        <div class="quiz-q">Trong phép loại suy của Dr. Harry: "Làm thế nào để đưa năng lượng đến động cơ điện?", MFSS đóng vai trò tương ứng với bộ phận nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-7', 'Incorrect. The electric motor represents PFSS and DFSS tools, not MFSS.', 'Chưa chính xác. Chiếc động cơ điện đại diện cho công cụ PFSS và DFSS, không phải MFSS.')">A. Chiếc động cơ điện đang quay để làm việc</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-7', 'Correct! Dr. Harry states: "Managing for Six Sigma is about distribution of that energy to make these two things happen." MFSS is the energy distribution network.', 'Chính xác! Dr. Harry khẳng định: MFSS chính là việc phân phối nguồn năng lượng đó để làm cho hai động cơ PFSS và DFSS vận hành.')">B. Mạng lưới phân phối và truyền dẫn năng lượng (Energy Distribution) để làm cho PFSS và DFSS vận hành</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-7', 'Incorrect. Lubricating oil is a maintenance consumable, not the energy transmission.', 'Chưa chính xác. Dầu bôi trơn không đại diện cho mạng lưới truyền tải năng lượng quản trị.')">C. Dầu bôi trơn chống ma sát cho các trục quay cơ khí</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-7', 'Incorrect. The cooling fan is a subsystem, not the management infrastructure.', 'Chưa chính xác. Cánh quạt làm mát là linh kiện phụ trợ, không phải cơ chế quản trị.')">D. Cánh quạt làm mát phía sau đuôi động cơ</button>
+        </div>
+        <div id="fb-01-7" class="quiz-fb"></div>
+      </div>
+
+      <!-- Câu 8 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 8/8 • Phán Đoán Cấp Điều Hành C-Suite</span>
+        <div class="quiz-q">Một Tổng Giám đốc (CEO) tuyên bố: "Công ty chúng ta đã đầu tư 1 triệu USD đào tạo 50 Black Belt (PFSS) và mua bản quyền CAD tiên tiến (DFSS), nên không cần quan tâm đến MFSS nữa". Với tư cách là Master Black Belt, bạn đánh giá rủi ro lớn nhất của tuyên bố này là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-8', 'Incorrect. Software depreciation is a minor accounting issue compared to systemic failure.', 'Chưa chính xác. Khấu hao phần mềm chỉ là vấn đề kế toán nhỏ so với sự sụp đổ hệ thống.')">A. Làm tăng chi phí khấu hao tài sản cố định trong báo cáo tài chính quý 1</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-8', 'Correct! Without MFSS (leadership governance, resource allocation, and strategy alignment), DFSS and PFSS become paralyzed engines without energy, leading to project abandonment and zero P&L return.', 'Chính xác! Thiếu MFSS (sự bảo trợ lãnh đạo, phân bổ tài nguyên, gắn kết mục tiêu), DFSS và PFSS sẽ trở thành các động cơ không có năng lượng, dự án sẽ tan rã và không mang lại bất kỳ dòng tiền P&L nào.')">B. Thiếu MFSS đóng vai trò chất keo kết dính và truyền dẫn năng lượng, các động cơ DFSS và PFSS sẽ bị tê liệt hoàn toàn, dẫn đến dự án tan rã và không mang lại lợi nhuận P&amp;L</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-8', 'Incorrect. Black Belts quitting is a symptom of MFSS absence, but the systemic risk is total initiative paralysis.', 'Chưa chính xác. Nhân viên nghỉ việc là hệ quả, nhưng rủi ro cốt lõi là sự tê liệt hoàn toàn của hệ sinh thái Six Sigma.')">C. Các Black Belt sẽ yêu cầu tăng lương gấp đôi</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-8', 'Incorrect. Training records are HR paperwork, not the primary strategic threat.', 'Chưa chính xác. Hồ sơ đào tạo chỉ là thủ tục hành chính, không phải rủi ro chiến lược lớn nhất.')">D. Phòng nhân sự sẽ không biết cách lưu trữ hồ sơ chứng chỉ</button>
+        </div>
+        <div id="fb-01-8" class="quiz-fb"></div>
+      </div>
+
+    </div>
+
+    <!-- 5 FLASHCARDS -->
+    <h3 style="color:#ffffff; margin: 38px 0 10px; font-size:1.25rem;">Thẻ Ghi Nhớ Phản Xạ Nhanh 3D (Interactive Flip Cards)</h3>
+    <p style="color:var(--emerald-mint); font-size:0.92rem; margin-bottom:20px;">Nhấp vào thẻ để lật mặt sau và kiểm tra phản xạ cốt lõi:</p>
+    <div class="flashcards-grid">
+      
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="fc-num">Thẻ #1 • Nhấn để lật</span>
+            <div class="fc-q">MFSS là chữ viết tắt của thuật ngữ nào và có vị trí gì trong Six Sigma?</div>
+          </div>
+          <div class="flashcard-back">
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a"><strong>Managing for Six Sigma</strong> &mdash; Trụ cột quản trị lãnh đạo tối cao, đóng vai trò là chất keo kết dính (bonding agent) và cơ quan giám sát liên kết DFSS và PFSS.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="fc-num">Thẻ #2 • Nhấn để lật</span>
+            <div class="fc-q">Định nghĩa kinh điển về "Quản trị" (Management) của Dr. Mikel J. Harry là gì?</div>
+          </div>
+          <div class="flashcard-back">
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a"><em>"Management is the judicious use of control for the attainment of an end."</em> (Quản trị là việc sử dụng sáng suốt sự kiểm soát nhằm đạt được một cứu cánh).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="fc-num">Thẻ #3 • Nhấn để lật</span>
+            <div class="fc-q">Ba cấp độ phân bổ hoạt động trong hệ thống MFSS là gì?</div>
+          </div>
+          <div class="flashcard-back">
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">1. <strong>Global Level:</strong> Deploy (Nguồn lực, Con người, Tiền bạc, Tri thức);<br>2. <strong>Local Level:</strong> Implement (Thực thi dự án);<br>3. <strong>Activity Level:</strong> Apply (Ứng dụng công cụ).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="fc-num">Thẻ #4 • Nhấn để lật</span>
+            <div class="fc-q">Bản chất cốt lõi của MFSS được Dr. Harry đúc kết chính xác qua cụm từ nào?</div>
+          </div>
+          <div class="flashcard-back">
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a"><em>"The characterization and optimization of the processes necessary to deploy, implement, and apply PFSS and DFSS tools and concepts."</em></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="fc-num">Thẻ #5 • Nhấn để lật</span>
+            <div class="fc-q">Ý nghĩa của phép loại suy "Động cơ điện" (Electric Motor Analogy) trong bài giảng là gì?</div>
+          </div>
+          <div class="flashcard-back">
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">DFSS và PFSS là các động cơ điện máy móc; MFSS là hệ thống truyền dẫn và phân phối nguồn năng lượng lãnh đạo để làm cho các động cơ đó vận hành.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHẦN 5: ACTION CHECKLIST & TEMPLATES -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 • Sáng Thứ Hai Làm Gì?</span>
+    <h2 class="section-heading">Kế Hoạch Hành Động 3 Bước &amp; Biểu Mẫu Thực Thi</h2>
+    <div class="section-subheading">Quy trình tác chiến hiện trường dành cho Giám đốc điều hành &amp; Champion</div>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 1: Thành lập Hội đồng Chỉ đạo Six Sigma Cấp cao (Establish MFSS Executive Steering Committee):</strong> Tổng Giám đốc (CEO) hoặc Phó Tổng Giám đốc trực tiếp chủ trì; bổ nhiệm Champion và phân bổ chính thức ngân sách vốn (Money), nhân sự đai đen biệt phái 100% thời gian (People), cơ sở hạ tầng (Resources) và mua sắm bản quyền phương pháp luận chuẩn (Knowledge).
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 2: Xây dựng Cơ chế Giao diện Hôn phối DFSS - PFSS (Establish Design-Process Interface Protocol):</strong> Xóa bỏ ranh giới biệt lập giữa phòng Nghiên cứu Phát triển R&amp;D và Phân xưởng sản xuất; ban hành quy chế bắt buộc mọi bản vẽ thiết kế mới (DFSS) phải được thẩm định năng lực quy trình thực tế (PFSS Capability Matrix) trước khi đóng băng thiết kế.
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 3: Thiết lập Hệ thống Kiểm toán Hiệu suất Truyền dẫn Quản trị (Deploy Quarterly MTE Audit):</strong> Giám đốc Tài chính (CFO) định kỳ hàng quý kiểm toán độc lập chỉ số Hiệu suất Truyền dẫn MTE; đối chiếu số tiền tiết kiệm cứng (Hard Savings) thực ghi nhận trên báo cáo tài chính với số ngân sách đã giải ngân cho chương trình Six Sigma.
+      </span>
+    </label>
+
+    <h3 style="color:var(--wood-dark); margin-top:32px; font-size:1.15rem;">Biểu Mẫu Quản Trị &amp; Khung Kiểm Soát Tích Hợp MFSS - DFSS - PFSS</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Cấp Độ Phân Bổ<span style="display:block; font-size:11px; color:#a7f3d0; font-weight:400;">Hierarchy Tier</span></th>
+            <th>Hành Động Trọng Tâm<span style="display:block; font-size:11px; color:#a7f3d0; font-weight:400;">Core Action</span></th>
+            <th>Nguồn Lực Triển Khai (Resources)<span style="display:block; font-size:11px; color:#a7f3d0; font-weight:400;">Deployment Vectors</span></th>
+            <th>Phương Tiện Thực Thi<span style="display:block; font-size:11px; color:#a7f3d0; font-weight:400;">Operational Means</span></th>
+            <th>Thước Đo Thành Công P&amp;L<span style="display:block; font-size:11px; color:#a7f3d0; font-weight:400;">Hard Savings &amp; KPI</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Global Level</strong><br><em style="color:#64748b; font-size:11px;">Cấp Toàn Cục Tập Đoàn</em></td>
+            <td><strong>DEPLOY</strong><br>Triển khai chiến lược</td>
+            <td>Vốn đầu tư ($), Nhân sự Black Belt biệt phái, Bản quyền tri thức SSMI, Phòng thí nghiệm mô phỏng</td>
+            <td>Chiến lược kinh doanh gắn với MFSS Steering Committee</td>
+            <td>Tỷ suất hoàn vốn đầu tư ROI &ge; 5:1, Tăng trưởng thị phần ròng</td>
+          </tr>
+          <tr>
+            <td><strong>Local Level</strong><br><em style="color:#64748b; font-size:11px;">Cấp Chi Nhánh / Nhà Máy</em></td>
+            <td><strong>IMPLEMENT</strong><br>Thực thi kế hoạch</td>
+            <td>Hạ tầng thử nghiệm thực địa, Phần mềm Minitab, Trạm kiểm chuẩn dung sai nhà máy</td>
+            <td>Giao diện DFSS (Thiết kế sản phẩm mới) kết hợp PFSS (Tối ưu quy trình)</td>
+            <td>Tỷ lệ hoàn thành Project Charter &ge; 90%, Rút ngắn chu kỳ sản xuất 30%</td>
+          </tr>
+          <tr>
+            <td><strong>Activity Level</strong><br><em style="color:#64748b; font-size:11px;">Cấp Dự Án Tác Nghiệp</em></td>
+            <td><strong>APPLY</strong><br>Ứng dụng công cụ</td>
+            <td>Thời gian làm việc của nhóm dự án Gemba, Dụng cụ đo kiểm Gage R&amp;R, Máy đo quang học</td>
+            <td>Bộ công cụ DMAIC, Taguchi DOE, FMEA, SPC Control Charts</td>
+            <td>Đạt chuẩn &ge; 5.0 Sigma tại cấp độ nút, Tiết kiệm phế phẩm ròng (P&amp;L)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
+  </p>
+</footer>
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

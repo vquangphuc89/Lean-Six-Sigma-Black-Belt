@@ -1,0 +1,239 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Practical Applications of the DFSS Methodology
+
+2
+00:00:05.000 --> 00:00:08.500
+Welcome back to this session on Design for Six Sigma.
+
+3
+00:00:08.500 --> 00:00:11.500
+Recall that we were looking about
+
+4
+00:00:11.500 --> 00:00:16.133
+how to take the X and Y measurements and form a simple scatterplot here.
+
+5
+00:00:16.133 --> 00:00:22.366
+What we’re going to do, is we're looking how to perform tolerancing, or Design for Six Sigma.
+
+6
+00:00:22.366 --> 00:00:25.866
+What we've done is inserted a line of best fit.
+
+7
+00:00:25.866 --> 00:00:30.166
+Now, that's a line that you can see pretty much goes through the center of the data.
+
+8
+00:00:30.166 --> 00:00:34.166
+So, if I draw an envelope around this data,
+
+9
+00:00:34.166 --> 00:00:38.166
+we can kinda see that that line runs through that envelope.
+
+10
+00:00:38.166 --> 00:00:41.732
+And what I've done. And we’re going to zero in here.
+
+11
+00:00:41.733 --> 00:00:48.166
+I'm now going to turn this Y scale around on us here. As we zero in.
+
+12
+00:00:48.166 --> 00:00:53.799
+We’re going to say for the sake of argument, that the customer
+
+13
+00:00:53.800 --> 00:00:58.233
+set a lower specification limit on Y here.
+
+14
+00:00:58.233 --> 00:01:02.233
+And an upper specification limit on Y there.
+
+15
+00:01:02.233 --> 00:01:05.766
+And a target expectation here.
+
+16
+00:01:05.766 --> 00:01:09.732
+So, that's the bandwidth that the customer wants.
+
+17
+00:01:09.733 --> 00:01:15.733
+Now, what I do is come over,
+
+18
+00:01:15.733 --> 00:01:20.399
+and I'm going to project this line. Now this isn’t precise.
+
+19
+00:01:20.400 --> 00:01:26.366
+So, statisticians out there don't turn in your grave. I'm going to project, upper to upper
+
+20
+00:01:26.366 --> 00:01:32.832
+and lower to lower here.
+
+21
+00:01:32.833 --> 00:01:38.833
+See, as I project over. I’m going to turn it around.
+
+22
+00:01:38.833 --> 00:01:44.966
+We’re going to zoom back out a little bit here and I'm going to project down.
+
+23
+00:01:44.966 --> 00:01:51.166
+Just like this. As so.
+
+24
+00:01:51.166 --> 00:01:54.199
+So, notice the correlation, the lower
+
+25
+00:01:54.200 --> 00:01:57.933
+element of X goes to the lower element of Y. Upper to upper.
+
+26
+00:01:57.933 --> 00:02:03.466
+Now, what is this saying? Here comes what's so, so vital.
+
+27
+00:02:03.466 --> 00:02:07.899
+I would now in engineering this, say this.
+
+28
+00:02:07.900 --> 00:02:13.400
+That there is the upper specification limit on X.
+
+29
+00:02:13.400 --> 00:02:16.766
+There is the lower specification limit.
+
+30
+00:02:16.766 --> 00:02:23.566
+And I project over and down, and there's the target value of X.
+
+31
+00:02:23.566 --> 00:02:27.699
+So, what that’s saying is this. Now, listen to this. Here’s what’s cool.
+
+32
+00:02:27.700 --> 00:02:31.700
+If this is the capability through here,
+
+33
+00:02:31.700 --> 00:02:38.733
+that transfers up and over to the capability here.
+
+34
+00:02:38.733 --> 00:02:45.266
+See, what I'm doing is reversing it. I'm starting here and projecting down
+
+35
+00:02:45.266 --> 00:02:49.499
+to the temperature. Remember, X was temperature.
+
+36
+00:02:49.500 --> 00:02:54.933
+So, this tells me the range in which I must operate,
+
+37
+00:02:54.933 --> 00:03:01.666
+process, say, process operation 1, process operation 2, process operation 3.
+
+38
+00:03:01.666 --> 00:03:07.066
+And out comes, here is the product with the circuit board.
+
+39
+00:03:07.066 --> 00:03:13.699
+If I want that to operate properly here, that solder joint’s gotta be strong enough
+
+40
+00:03:13.700 --> 00:03:19.333
+to hold up to do that. And this says if that's the pull strength expectation.
+
+41
+00:03:19.333 --> 00:03:25.099
+Then that's the temperature range I have to hold.
+
+42
+00:03:25.100 --> 00:03:28.466
+To make that happen.
+
+43
+00:03:28.466 --> 00:03:32.366
+Well what I'm doing is Designing for Six Sigma.
+
+44
+00:03:32.366 --> 00:03:35.366
+Because I know this.
+
+45
+00:03:35.366 --> 00:03:42.066
+If I find a temperature control method or device
+
+46
+00:03:42.066 --> 00:03:45.566
+that stops it from varying over time,
+
+47
+00:03:45.566 --> 00:03:49.899
+this little distribution here, is going to get more narrow.
+
+48
+00:03:49.900 --> 00:03:52.633
+To such an extent,
+
+49
+00:03:52.633 --> 00:03:59.299
+that I want that to be Six Sigma capable, ± 6σ.
+
+50
+00:03:59.300 --> 00:04:03.300
+6σ to the right, 6σ to the left.
+
+51
+00:04:03.300 --> 00:04:08.566
+As that happens guess what? Those 6σ
+limits transfers up and over.
+
+52
+00:04:08.566 --> 00:04:12.566
+That means I get Six Sigma performance out here.
+
+53
+00:04:12.566 --> 00:04:17.499
+Now, I just reverse the process if I'm Designing for Six Sigma.
+
+54
+00:04:17.500 --> 00:04:21.433
+I define Six Sigma here and project back and it tells me
+
+55
+00:04:21.433 --> 00:04:25.433
+where I have to run my process to achieve my goals.
+
+56
+00:04:25.433 --> 00:04:30.933
+So in essence, as I set my design standards that way, I improve the yields
+
+57
+00:04:30.933 --> 00:04:34.933
+at each step, which improves the rolled throughput.
+
+58
+00:04:34.933 --> 00:04:38.166
+And that's what we call Designing for Six Sigma.
+
+59
+00:04:38.166 --> 00:04:43.166
+Thank you for choosing SSMI.
+

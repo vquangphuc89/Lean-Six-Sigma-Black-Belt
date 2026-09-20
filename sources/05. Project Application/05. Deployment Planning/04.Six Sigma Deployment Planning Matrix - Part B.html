@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ma Trận Hoạch Định Triển Khai Six Sigma (Phần B) — Chiều Sâu Thực Thi: Truyền Thông, Đào Tạo & Kế Toán — Six Sigma Masterclass</title>
+<style>
+
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.68;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
+
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  .pro-tip {
+    background: var(--gold-bg);
+    border: 1px solid #fde68a;
+    border-left: 6px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 22px 0;
+  }
+  .pro-tip-title { font-size: 0.95rem; font-weight: 800; color: var(--wood-bark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pro-tip-desc { font-size: 0.96rem; color: #713f12; margin: 0; }
+
+  /* Native Math Cards */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--emerald-mint);
+    margin-bottom: 12px;
+  }
+  .math-card .formula {
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    padding: 16px 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .math-card .desc {
+    font-size: 0.94rem;
+    color: #a7f3d0;
+    line-height: 1.6;
+    margin-top: 10px;
+    border-top: 1px solid rgba(16,185,129,0.25);
+    padding-top: 10px;
+  }
+
+  .fraction {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 4px;
+  }
+  .fraction-top {
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+  }
+  .fraction-bottom {
+    padding-top: 2px;
+  }
+
+  /* Tables */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.96rem;
+  }
+  .data-table th {
+    background: var(--wood-dark);
+    color: #ffffff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    border: 1px solid #047857;
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+  }
+  .data-table tr:nth-child(even) td { background: #f8fafc; }
+  .data-table tr:hover td { background: #f0fdf4; }
+
+  /* Case Studies */
+  .case-box {
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 24px;
+    margin: 20px 0;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .case-tag {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .case-title { font-size: 1.2rem; font-weight: 800; color: var(--wood-dark); margin: 0 0 12px; }
+
+  /* Interactive Arena: Quizzes & Flashcards */
+  .interactive-arena {
+    background: linear-gradient(180deg, var(--wood-deep) 0%, var(--wood-forest) 100%);
+    border-radius: 16px;
+    padding: 40px 36px;
+    margin: 40px 0;
+    box-shadow: 0 12px 40px rgba(2,44,34,0.45);
+    border: 2px solid var(--emerald);
+    color: #ecfdf5;
+  }
+  .arena-heading { font-size: 1.85rem; font-weight: 800; color: #ffffff; text-align: center; margin: 0 0 8px; }
+  .arena-subheading { text-align: center; color: var(--emerald-mint); font-size: 1rem; margin-bottom: 34px; }
+
+  .quizzes-container { display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px; }
+  .quiz-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(110,231,183,0.25);
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+  }
+  .quiz-tag {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--emerald-mint);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .quiz-q { font-size: 1.06rem; font-weight: 700; color: #ffffff; margin-bottom: 16px; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(255,255,255,0.08);
+    color: #f1f5f9;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .quiz-btn:hover:not(:disabled) {
+    background: rgba(16,185,129,0.22);
+    border-color: var(--emerald-vibrant);
+    transform: translateX(4px);
+  }
+  .quiz-btn.correct {
+    background: #065f46 !important;
+    border-color: #34d399 !important;
+    color: #ecfdf5 !important;
+    font-weight: 700;
+  }
+  .quiz-btn.wrong {
+    background: #7f1d1d !important;
+    border-color: #f87171 !important;
+    color: #fef2f2 !important;
+    font-weight: 700;
+  }
+  .quiz-fb {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.success { background: rgba(5,150,105,0.25); border: 1px solid #10b981; color: #ecfdf5; }
+  .quiz-fb.error { background: rgba(185,28,28,0.25); border: 1px solid #ef4444; color: #fee2e2; }
+
+  /* 3D Flashcards */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .flashcard {
+    height: 180px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  .flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+  }
+  .fc-front, .fc-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .fc-front {
+    background: linear-gradient(135deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
+    border: 1px solid rgba(110,231,183,0.4);
+    color: #ffffff;
+  }
+  .fc-back {
+    background: linear-gradient(135deg, rgba(8,47,73,0.95), rgba(6,78,59,0.95));
+    border: 1px solid var(--emerald-vibrant);
+    color: #ecfdf5;
+    transform: rotateY(180deg);
+  }
+  .fc-q { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+  .fc-hint { font-size: 0.76rem; color: var(--emerald-mint); opacity: 0.85; text-transform: uppercase; }
+  .fc-a { font-size: 0.9rem; line-height: 1.45; color: #d1fae5; }
+
+  /* Action Checklist */
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .action-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--emerald);
+    cursor: pointer;
+    margin-top: 3px;
+  }
+  .action-text { font-size: 0.96rem; color: #1e293b; }
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">PHÂN HỆ 05: PROJECT APPLICATION • CHUYÊN ĐỀ 05</span>
+    <h1 class="hero-title">Ma Trận Hoạch Định Triển Khai Six Sigma (Phần B) — Chiều Sâu Thực Thi: Truyền Thông, Đào Tạo & Kế Toán</h1>
+    <div class="hero-title-en">Six Sigma Deployment Planning Matrix - Part B: Deep Dive on Communications, Training & Accounting Governance</div>
+    <p class="hero-desc">Nghiên cứu chuyên sâu các kế hoạch trụ cột trong ma trận triển khai: Kế hoạch truyền thông đa tầng (kể cả giới phân tích tài chính phố Wall), thiết kế khung chương trình đào tạo & cố vấn, và hệ thống kế toán thích ứng với tốc độ mở rộng dự án.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PHẦN 1: EXECUTIVE BRIEFING -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 • Khẩu Lệnh Chiến Lược</span>
+    <h2 class="section-heading">Mổ Xẻ Chuyên Sâu Các Kế Hoạch Trụ Cột Trong Ma Trận Triển Khai</h2>
+    <div class="section-subheading">Cách thức quản trị truyền thông tài chính, thiết kế chương trình đào tạo và kiểm toán dòng tiền Six Sigma</div>
+
+    <div class="exec-summary">
+      <div style="font-size:0.88rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--emerald); margin-bottom:8px;">
+        💡 Thông Điệp Cốt Lõi Từ Dr. Mikel J. Harry
+      </div>
+      <p style="margin:0 0 12px; font-size:1.05rem; font-style:italic; color:var(--wood-deep); font-weight:600;">
+        "We're now looking at the communication plan: Who should communicate what, when, where, how, and why... Do we want to communicate with the analysts on the street? That's usually a good idea before you go in and roll Six Sigma across the corporation because it can have an effect on stock prices... For training, you've got to define the curriculum and course content for your champions, black belts, master black belts, green belts, white belts... And for accounting: Are you modifying or augmenting your accounting system at a rate that can keep up with the rates at which your projects are expanding?"
+      </p>
+      <p style="margin:0; font-size:0.98rem; color:#064e3b;">
+        <em>Ý nghĩa tác chiến:</em> Bây giờ chúng ta xem xét kế hoạch truyền thông: Ai nên truyền thông điều gì, khi nào, ở đâu, như thế nào và tại sao... Chúng ta có muốn truyền thông với các nhà phân tích trên thị trường chứng khoán không? Đó thường là một ý kiến xuất sắc trước khi triển khai Six Sigma trên toàn tập đoàn vì nó có thể tác động trực tiếp đến giá cổ phiếu... Về đào tạo, bạn phải thiết kế chương trình khung và nội dung cho Champions, Black Belts, Master Black Belts, Green Belts, White Belts... Và về kế toán: Liệu hệ thống kế toán của bạn có đang được nâng cấp với tốc độ đủ nhanh để theo kịp tốc độ mở rộng về quy mô và chiều sâu của các dự án Black Belt không?
+      </p>
+    </div>
+
+    
+      <p>Trong phần tiếp theo (Part B) của Ma trận Triển khai, Tiến sĩ Mikel J. Harry tập trung mổ xẻ chiều sâu của <strong>3 Kế Hoạch Mang Tính Đòn Bẩy Cao Nhất</strong>:</p>
+      
+      <div class="exec-summary">
+        <ul>
+          <li><strong>1. Kế Hoạch Truyền Thông Đa Tầng (Communications Plan):</strong>
+            <ul>
+              <li><em>Truyền thông bên ngoài (External):</em> Giao tiếp chủ động với các <strong>nhà phân tích tài chính phố Wall (Wall Street Analysts)</strong> và cổ đông chiến lược. Khi thị trường tài chính hiểu rằng doanh nghiệp đang đầu tư bài bản vào Six Sigma để tái cấu trúc biên lợi nhuận, định giá cổ phiếu P/E sẽ được nâng cấp mạnh mẽ (như trường hợp GE tăng vốn hóa thêm hàng trăm tỷ USD).</li>
+              <li><em>Truyền thông nội bộ (Internal):</em> Vận hành đồng thời ở cả 3 cấp độ: Cấp Kinh doanh (chia sẻ tầm nhìn), Cấp Vận hành (công nhận thành tích phân xưởng), và Cấp Quy trình (tôn vinh sáng kiến công nhân).</li>
+            </ul>
+          </li>
+          <li><strong>2. Kế Hoạch Đào Tạo &amp; Cố Vấn (Training &amp; Mentoring Plan):</strong>
+            <ul>
+              <li>Thiết kế chương trình khung phân hóa rõ rệt: Khóa nhận thức cho Executive (1-2 ngày), Champion (3-5 ngày), Green Belt (2 tuần), Black Belt (4 tuần tích hợp dự án thực tế), Master Black Belt (đào tạo sư phạm &amp; thống kê nâng cao).</li>
+              <li>Xác định rõ phương thức giảng dạy: Kết hợp E-learning lý thuyết nền tảng với thực hành giải quyết tình huống trên lớp (Blended Learning).</li>
+              <li>Quy định số giờ kèm cặp cố vấn (Mentoring Hours) bắt buộc của Master Black Belt cho từng học viên Black Belt khi quay lại hiện trường.</li>
+            </ul>
+          </li>
+          <li><strong>3. Kế Hoạch Kế Toán Thích Ứng (Accounting Governance Plan):</strong>
+            <ul>
+              <li>Hệ thống kế toán chi phí truyền thống thường phản ứng chậm chạp và không ghi nhận được các khoản tiết kiệm gián tiếp (Soft Savings) như giảm diện tích sàn, giảm hàng tồn kho trên chuyền hay giải phóng năng lực máy móc.</li>
+              <li>Dr. Harry đặt ra câu hỏi then chốt: <em>"Tốc độ thích ứng và nâng cấp của hệ thống kế toán có đuổi kịp tốc độ bùng nổ của các dự án Black Belt hay không?"</em></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    
+
+    <div class="pro-tip">
+      <div class="pro-tip-title">⚡ Lời Khuyên Của Master Black Belt (Executive Takeaway)</div>
+      <div class="pro-tip-desc">Hãy bổ nhiệm một "Kiểm toán viên Tài chính Độc lập" (Finance Representative) chuyên trách thẩm định từng dự án Six Sigma. Black Belt tính toán cải tiến kỹ thuật, nhưng chỉ có chữ ký của chuyên viên tài chính mới biến con số tiết kiệm trên giấy thành tiền mặt được công nhận chính thức trong báo cáo doanh nghiệp.</div>
+    </div>
+  </section>
+
+  <!-- PHẦN 2: MATHEMATICAL & ENGINEERING FOUNDATIONS -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 • Cơ Sở Kỹ Thuật &amp; Quản Trị</span>
+    <h2 class="section-heading">Phân Loại Lợi Ích Tài Chính: Hard Savings vs Soft Savings</h2>
+    <div class="section-subheading">Mô hình hóa kế toán quản trị giúp bảo vệ tính minh bạch của các dự án Six Sigma</div>
+
+    
+      <div class="math-card">
+        <div class="title">Phương Trình Giá Trị Tài Chính Dự Án (Project Financial Impact)</div>
+        <div class="formula">
+          Total Savings = Net Hard Savings + &alpha; &middot; Validated Soft Savings
+        </div>
+        <div class="desc">
+          Trong đó: <strong>Net Hard Savings (&alpha; = 1.0):</strong> Tiết kiệm tiền mặt thực tế làm giảm chi phí trên P&amp;L (giảm phế phẩm, giảm chi phí mua nguyên vật liệu, giảm làm thêm giờ, giảm chi phí bảo hành ngoài hiện trường).<br>
+          <strong>Validated Soft Savings (&alpha; = 0.0 &rarr; 0.5):</strong> Lợi ích giải phóng nguồn lực (giảm thời gian chu kỳ, tăng công suất dự phòng, cải thiện sự hài lòng của khách hàng). Kế toán quản trị chỉ công nhận soft savings khi nguồn lực giải phóng được chuyển hóa thành doanh thu mới hoặc cắt giảm được chi phí tương ứng.
+        </div>
+      </div>
+
+      <h3 style="color:var(--wood-dark); margin-top:28px;">Bảng So Sánh Cấu Trúc Đào Tạo Các Cấp Đai (Belt Curriculum Architecture)</h3>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Cấp Bậc Chứng Nhận</th>
+              <th>Thời Lượng Đào Tạo Chuẩn</th>
+              <th>Phương Thức Phân Phối</th>
+              <th>Yêu Cầu Kèm Cặp (Mentoring)</th>
+              <th>Điều Kiện Tốt Nghiệp Bắt Buộc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Executive Leader</strong></td>
+              <td>1 &ndash; 2 Ngày</td>
+              <td>Hội thảo chiến lược trực tiếp</td>
+              <td>Tư vấn 1-1 bởi Trưởng ban MBB</td>
+              <td>Phê duyệt Điều lệ Triển khai Tập đoàn</td>
+            </tr>
+            <tr>
+              <td><strong>Deployment Champion</strong></td>
+              <td>3 &ndash; 5 Ngày</td>
+              <td>Lớp học chuyên sâu + Case study</td>
+              <td>Đồng hành cùng MBB tuyển chọn dự án</td>
+              <td>Bảo trợ tối thiểu 5 dự án Black Belt</td>
+            </tr>
+            <tr>
+              <td><strong>Master Black Belt (MBB)</strong></td>
+              <td>Huấn luyện liên tục 6 &ndash; 12 tháng</td>
+              <td>Học viện nội bộ + Đồ án chuyển giao</td>
+              <td>Huấn luyện bởi chuyên gia SSMI</td>
+              <td>Đào tạo &gt; 20 BB, mang lại &gt; $5M tích lũy</td>
+            </tr>
+            <tr>
+              <td><strong>Black Belt (BB)</strong></td>
+              <td>4 Tuần (160 Giờ, chia 4 đợt)</td>
+              <td>Blended: E-learning + Thực hành lớp</td>
+              <td>Tối thiểu 4 giờ/tuần cùng MBB</td>
+              <td>Hoàn tất 1-2 dự án lớn (&ge; $100k - $250k)</td>
+            </tr>
+            <tr>
+              <td><strong>Green Belt (GB)</strong></td>
+              <td>2 Tuần (80 Giờ, chia 2 đợt)</td>
+              <td>Lớp học trực tiếp kết hợp dự án</td>
+              <td>Tối thiểu 2 giờ/tuần cùng BB/MBB</td>
+              <td>Hoàn tất 1 dự án quy mô vừa (&ge; $25k - $50k)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+  </section>
+
+  <!-- PHẦN 3: CASE STUDIES & STRATEGIC APPLICATIONS -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 • Thực Chiến Thương Trường</span>
+    <h2 class="section-heading">Hai Tình Huống Thực Chiến: Tranh Cãi Kế Toán & Hiệu Ứng Phố Wall</h2>
+    <div class="section-subheading">Cách xử lý tranh chấp số liệu tiết kiệm và chiến lược truyền thông cổ phiếu tại tập đoàn hàng không</div>
+
+    
+      <div class="case-box">
+        <span class="case-tag">Nghiên Cứu Tình Huống 1 • Tập Đoàn Chế Tạo Máy Công Nghiệp</span>
+        <h3 class="case-title">Cuộc Chiến Giữa Kỹ Sư Black Belt Và Kế Toán Trưởng</h3>
+        <p><strong>Bối cảnh:</strong> Một nhóm Black Belt hoàn thành dự án tối ưu hóa lò nhiệt luyện, báo cáo tiết kiệm được 1.2 triệu USD nhờ rút ngắn thời gian nung từ 8 giờ xuống 5 giờ (tăng 37.5% công suất lò). Tuy nhiên, Giám đốc Tài chính (CFO) thẳng thừng gạch bỏ con số này trong buổi họp giao ban vì sổ sách kế toán không thấy phát sinh thêm một đồng tiền mặt nào.</p>
+        <p><strong>Bản chất vấn đề:</strong> Nhóm Black Belt chỉ tạo ra Soft Savings (giải phóng công suất lò), nhưng do thị trường không có thêm đơn hàng mới, lò nhiệt luyện sau khi nung nhanh lại nằm đắp chiếu 3 giờ mỗi ngày. Tiền điện và khấu hao máy vẫn giữ nguyên, không tạo ra Hard Savings thực tế.</p>
+        <p><strong>Bài học quản trị:</strong> Kế hoạch Kế toán (Accounting Plan) được sửa đổi ngay lập tức: Mọi dự án giải phóng công suất bắt buộc phải có sự phối hợp của phòng Kinh doanh để ký hợp đồng nhận thêm đơn hàng mới, hoặc chuyển bớt sản phẩm gia công ngoài về tự làm để cắt giảm chi phí thuê ngoài (insourcing), biến Soft Savings thành Hard Cash Flow.</p>
+      </div>
+
+      <div class="case-box">
+        <span class="case-tag">Nghiên Cứu Tình Huống 2 • Hãng Hàng Không Quốc Gia</span>
+        <h3 class="case-title">Chiến Dịch Truyền Thông Với Các Nhà Phân Tích Chứng Khoán (Wall Street Analysts)</h3>
+        <p><strong>Bối cảnh:</strong> Khi một hãng hàng không lớn công bố chương trình Six Sigma tiêu tốn 80 triệu USD chi phí đào tạo và phần mềm trong năm đầu, giá cổ phiếu bị sụt giảm 6% do các nhà phân tích Phố Wall lo ngại chi phí quản lý tăng cao làm xói mòn lợi nhuận ngắn hạn.</p>
+        <p><strong>Hành động truyền thông:</strong> Tổng Giám đốc và Giám đốc Six Sigma triển khai Kế hoạch Truyền thông Phố Wall chuyên nghiệp: Tổ chức một buổi thuyết trình "Investor Day" chuyên đề chất lượng, công bố minh bạch lộ trình cắt giảm 450 triệu USD chi phí bảo dưỡng máy bay và thất lạc hành lý trong 3 năm. Ban lãnh đạo đưa ra các thước đo tương quan dọc và cam kết gắn lương thưởng điều hành với chỉ số EPS điều chỉnh theo Six Sigma. Sau buổi họp, các quỹ đầu tư lớn đã nâng hạng khuyến nghị mua mạnh mẽ, giá cổ phiếu tăng vọt 24% trong 18 tháng tiếp theo.</p>
+      </div>
+    
+  </section>
+
+  <!-- PHẦN 4: INTERACTIVE ARENA (8 QUIZZES & 5 FLASHCARDS) -->
+  <section class="interactive-arena">
+    <span class="section-num" style="background:var(--emerald-vibrant); color:#022c22;">Trụ Cột 4 • Khảo Hạch Năng Lực &amp; Phản Xạ 3D</span>
+    <h2 class="arena-heading">Đấu Trường Khảo Hạch Black Belt</h2>
+    <div class="arena-subheading">8 Tình huống trắc nghiệm chuyên sâu &bull; 5 Thẻ ghi nhớ phản xạ 3D &bull; Chuẩn hóa năng lực SSMI</div>
+
+    <!-- 8 QUIZZES -->
+    <div class="quizzes-container">
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 1/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Tại sao Dr. Harry khuyến nghị doanh nghiệp nên có kế hoạch truyền thông chủ động với các nhà phân tích trên thị trường chứng khoán (Wall Street Analysts)?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-1', 'Wall Street analysts do not issue zero-interest commercial loans.', 'Nhà phân tích chứng khoán không cung cấp vốn vay 0%.')">A. Để vay tiền ngân hàng với lãi suất 0%</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-04-1', 'Dr. Harry points out: &quot;Do we want to communicate with the analysts on the street? That\'s usually a good idea before you go in and roll Six Sigma across the corporation because it can have an effect on stock prices.&quot;', 'Dr. Harry chỉ rõ: Truyền thông với các nhà phân tích tài chính là một ý kiến xuất sắc trước khi triển khai Six Sigma toàn tập đoàn vì nó có thể tác động trực tiếp đến giá cổ phiếu.')">B. Vì việc triển khai Six Sigma trên quy mô lớn tốn kém chi phí ban đầu và có thể tác động trực tiếp đến kỳ vọng thị trường và giá cổ phiếu của doanh nghiệp</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-1', 'Financial analysts are not factory maintenance technicians.', 'Chuyên gia tài chính không phải thợ sửa máy cơ khí.')">C. Để nhờ họ đến trực tiếp nhà máy sửa chữa các linh kiện cơ khí bị hỏng</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-1', 'Bribery or gift favors violate corporate governance.', 'Tặng quà sai quy định vi phạm đạo đức quản trị doanh nghiệp.')">D. Để tặng vé máy bay miễn phí cho gia đình của các chuyên gia phân tích</button>
+          
+        </div>
+        <div id="fb-05-04-1" class="quiz-fb"></div>
+      </div>
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 2/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Thế nào là "Sự đồng bộ về tốc độ" trong Kế hoạch Kế toán (Accounting Plan) theo phân tích của Dr. Harry?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-04-2', 'Dr. Harry asks: &quot;Are you modifying it or augmenting it at a rate that can keep up with the rates at which your projects are expanding in terms of scope and depth?&quot;', 'Dr. Harry đặt câu hỏi cốt lõi: Bạn có đang nâng cấp và tăng cường hệ thống kế toán với tốc độ đủ nhanh để theo kịp tốc độ mở rộng về quy mô và chiều sâu của các dự án Black Belt hay không?')">A. Hệ thống kế toán phải được nâng cấp và thích ứng với tốc độ tương đương với tốc độ mở rộng về quy mô và chiều sâu của các dự án Black Belt</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-2', 'Typing speed is irrelevant to accounting methodology agility.', 'Tốc độ gõ phím không liên quan tới phương pháp luận kế toán.')">B. Các kế toán viên phải đánh máy nhanh gấp đôi bình thường</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-2', 'Robotic automation without governance framework fails.', 'Tự động hóa mà thiếu khung quản trị sẽ thất bại.')">C. Công ty phải thay thế toàn bộ nhân viên kế toán bằng robot</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-2', 'Sub-second speed without accurate benefit validation is useless.', 'Báo cáo nhanh mà không xác thực lợi ích thực tế là vô nghĩa.')">D. Mọi báo cáo tài chính phải được xuất bản trong vòng 5 giây</button>
+          
+        </div>
+        <div id="fb-05-04-2" class="quiz-fb"></div>
+      </div>
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 3/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Sự khác biệt cốt tử giữa "Tiết kiệm tiền mặt cứng" (Hard Savings) và "Tiết kiệm tiềm năng mềm" (Soft Savings) là gì?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-3', 'Absurd literal physical currency interpretation.', 'Hiểu sai nực cười sang hình thái tiền vật lý.')">A. Hard savings được trả bằng tiền xu kim loại; Soft savings được trả bằng tiền giấy polymer</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-04-3', 'Hard savings reflect direct bottom-line cash impact (scrap, warranty, overtime reduction); Soft savings represent capacity/time freed up which must be redeployed to generate tangible cash.', 'Hard savings trực tiếp giảm chi phí tiền mặt trên báo cáo tài chính P&L; Soft savings là giải phóng năng lực nguồn lực, chỉ mang lại giá trị khi nguồn lực đó được chuyển hóa thành tiền mặt cụ thể.')">B. Hard savings trực tiếp làm giảm chi phí hoặc tăng dòng tiền thực tế trên báo cáo P&L; còn Soft savings là việc giải phóng năng lực (thời gian, diện tích) chỉ có giá trị khi được chuyển hóa thành tiền thực tế</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-3', 'Industry labels do not define cost categories.', 'Tên ngành không định nghĩa bản chất kế toán quản trị.')">C. Hard savings chỉ xảy ra trong ngành xây dựng; Soft savings chỉ xảy ra trong ngành dệt may</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-3', 'CFOs strictly distinguish hard cash from soft capacity benefits.', 'Các Giám đốc Tài chính luôn phân biệt rạch ròi giữa tiền mặt và năng lực dư thừa.')">D. Hai khái niệm này hoàn toàn không có sự khác biệt trong kiểm toán</button>
+          
+        </div>
+        <div id="fb-05-04-3" class="quiz-fb"></div>
+      </div>
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 4/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Trong Kế hoạch Đào tạo (Training Plan), yếu tố nào dưới đây là BẮT BUỘC phải quy định rõ sau khi học viên kết thúc các buổi học lý thuyết?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-04-4', 'Dr. Harry states: &quot;You\'ve got to define how much mentoring will occur once they\'re back on the job, and document that.&quot;', 'Dr. Harry chỉ rõ: Bạn bắt buộc phải xác định mức độ kèm cặp cố vấn (mentoring) sẽ diễn ra khi họ quay lại công việc, và phải văn bản hóa điều đó.')">A. Số giờ kèm cặp cố vấn (Mentoring Hours) trực tiếp trên hiện trường của Master Black Belt dành cho học viên</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-4', 'Dinner locations are trivial social logistics.', 'Địa điểm ăn tối là việc hậu cần ăn uống.')">B. Địa điểm ăn tối của lớp học sau khi bế giảng</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-4', 'Stationery color is cosmetic.', 'Màu sắc cặp vở là yếu tố hình thức.')">C. Màu sắc của chiếc cặp đựng tài liệu được phát cho học viên</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-4', 'Pen brand is irrelevant.', 'Nhãn hiệu bút bi không ảnh hưởng tới năng lực Six Sigma.')">D. Thương hiệu bút bi mà học viên phải dùng khi làm bài thi</button>
+          
+        </div>
+        <div id="fb-05-04-4" class="quiz-fb"></div>
+      </div>
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 5/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Tại sao Dr. Harry lại nhấn mạnh yêu cầu phải "Xác thực nội dung đào tạo" (Validate training content)?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-5', 'Printing ink inspection is clerical.', 'Kiểm tra mực in thuộc khâu nhà in ấn.')">A. Để kiểm tra xem chữ in trong sách giáo trình có bị nhòe mực hay không</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-04-5', 'Dr. Harry emphasizes: &quot;You\'ve gotta validate the content: Does it do for you what it purports to do? In other words, if the training says it\'s going to lead to breakthrough, does it really lead to breakthrough?&quot;', 'Dr. Harry nhấn mạnh: Phải xác thực nội dung: Nó có thực sự làm được những gì nó tuyên bố hay không? Nếu khóa học nói sẽ mang lại đột phá, liệu nó có thực sự mang lại đột phá trong thực tế?')">B. Để chứng minh xem khóa đào tạo có thực sự mang lại kết quả đột phá (Breakthrough) như cam kết ban đầu hay không</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-5', 'Grant applications are unrelated to training efficacy validation.', 'Xin tài trợ không liên quan tới việc đo lường hiệu quả đào tạo.')">C. Để xin tài trợ tiền in ấn từ các tổ chức phi chính phủ</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-5', 'Passing written tests does not guarantee actual field project breakthrough.', 'Điểm thi lý thuyết cao không đảm bảo dự án hiện trường mang lại tiền tỷ.')">D. Để đảm bảo tất cả học viên đều đạt điểm 10 tuyệt đối trong bài kiểm tra trắc nghiệm</button>
+          
+        </div>
+        <div id="fb-05-04-5" class="quiz-fb"></div>
+      </div>
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 6/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Ai là người có thẩm quyền cao nhất trong việc ký duyệt và xác nhận tính hợp lệ của các con số tiết kiệm tài chính trong dự án Six Sigma?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-6', 'Self-validation creates severe conflict of interest.', 'Tự đánh giá kết quả của chính mình tạo ra xung đột lợi ích nghiêm trọng.')">A. Bản thân kỹ sư Black Belt thực hiện dự án đó</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-04-6', 'Only an independent finance controller or CFO has statutory authority to validate and certify net financial savings to prevent inflated claims.', 'Chỉ có đại diện độc lập của phòng Tài chính/Kế toán hoặc CFO mới có thẩm quyền xác nhận số liệu tiết kiệm để tránh việc thổi phồng thành tích.')">B. Đại diện bộ phận Tài chính / Kế toán độc lập (Finance Representative / CFO)</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-6', 'Maintenance contractors do not audit corporate project savings.', 'Nhà thầu bảo trì không có thẩm quyền kiểm toán tài chính công ty.')">C. Đơn vị bảo trì máy móc của bên thứ ba</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-6', 'Consumer associations are external public bodies.', 'Hiệp hội người tiêu dùng không kiểm toán nội bộ doanh nghiệp.')">D. Hiệp hội người tiêu dùng địa phương</button>
+          
+        </div>
+        <div id="fb-05-04-6" class="quiz-fb"></div>
+      </div>
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 7/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Làm thế nào để chuyển hóa lợi ích "Tiết kiệm thời gian chu kỳ" (Soft Savings) thành "Dòng tiền tiết kiệm cứng" (Hard Savings) trên báo cáo P&L?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-7', 'Idle downtime increases non-value-added waste.', 'Ngồi rảnh rỗi chỉ làm tăng thêm lãng phí thời gian.')">A. Yêu cầu nhân viên ngồi uống trà trong khoảng thời gian dôi dư vừa tiết kiệm được</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-04-7', 'Soft capacity savings become hard cash only when the freed capacity is commercialized (additional sales throughput) or operational expenses are eliminated (reduced overtime, reduced temporary labor).', 'Năng lực thời gian giải phóng chỉ biến thành tiền mặt cứng khi được thương mại hóa (sản xuất thêm hàng bán ra thị trường) hoặc triệt tiêu chi phí phụ trội (cắt giảm tăng ca, giảm nhân sự thời vụ).')">B. Tận dụng công suất và thời gian vừa được giải phóng để sản xuất thêm sản phẩm đáp ứng đơn hàng mới, hoặc cắt giảm làm thêm giờ (overtime)</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-7', 'Deleting time-tracking destroys payroll accuracy.', 'Xóa chấm công làm mất khả năng quản trị nhân sự.')">C. Xóa bỏ toàn bộ hệ thống chấm công của nhà máy</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-7', 'Fictitious accounting entries constitute financial fraud.', 'Ghi khống số dư tài khoản là hành vi gian lận tài chính.')">D. Tự ý cộng thêm tiền vào tài khoản ngân hàng của công ty trên phần mềm mô phỏng</button>
+          
+        </div>
+        <div id="fb-05-04-7" class="quiz-fb"></div>
+      </div>
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 8/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Một chương trình đào tạo Black Belt chuẩn mực theo Dr. Harry thường được thiết kế theo hình thức phân phối nào để tối ưu hóa hiệu quả thực chiến?</div>
+        <div class="quiz-opts">
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-8', 'Classroom theory without real projects produces zero business breakthrough.', 'Chỉ học lý thuyết trong phòng kín mà không làm dự án sẽ không tạo ra bất kỳ đột phá nào.')">A. Học liên tục 4 tuần lý thuyết trong phòng kín và không cần làm bất kỳ dự án thực tế nào</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-05-04-8', 'Dr. Harry standard: Alternating classroom weeks with real application sprints on the shop floor supported by dedicated Master Black Belt mentoring.', 'Chuẩn mực Dr. Harry: Xen kẽ giữa các tuần đào tạo công cụ trên lớp và các tuần quay về xưởng trực tiếp giải quyết dự án thực tế dưới sự cố vấn của MBB.')">B. Mô hình kết hợp (Blended Learning): Xen kẽ giữa các tuần học lý thuyết/công cụ và các khoảng thời gian quay về hiện trường giải quyết dự án thực tế dưới sự kèm cặp của MBB</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-8', 'Superficial video snippets cannot teach statistical engineering rigor.', 'Video ngắn giải trí không thể truyền tải tri thức kỹ thuật Six Sigma sâu sắc.')">C. Chỉ xem các đoạn video ngắn 15 giây trên mạng xã hội giải trí</button>
+          
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-05-04-8', 'Cheating delegitimizes certification and destroys organizational capability.', 'Làm hộ bài là hành vi gian lận phá hủy năng lực tổ chức.')">D. Thuê công ty tư vấn làm bài hộ cho học viên</button>
+          
+        </div>
+        <div id="fb-05-04-8" class="quiz-fb"></div>
+      </div>
+      
+    </div>
+
+    <!-- 5 FLASHCARDS 3D -->
+    <h3 style="color:#ffffff; font-size:1.35rem; margin:36px 0 16px; text-align:center;">Bộ Thẻ Phản Xạ Tư Duy 3D (Click Để Lật Mở)</h3>
+    <div class="flashcards-grid">
+      
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Tại sao truyền thông với các nhà phân tích Phố Wall lại quan trọng trong DFSS/PFSS?</div>
+            <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Vì triển khai Six Sigma toàn tập đoàn đòi hỏi đầu tư vốn lớn; truyền thông minh bạch giúp thị trường tài chính định giá đúng tiềm năng tăng trưởng và nâng cao giá cổ phiếu.</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Sự khác biệt căn bản giữa Hard Savings và Soft Savings?</div>
+            <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Hard savings là tiền mặt thực tế làm giảm chi phí trên báo cáo P&L; Soft savings là giải phóng năng lực/thời gian, cần chuyển hóa thành doanh thu mới để thành tiền mặt.</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Vai trò của đại diện Kế toán / Tài chính trong dự án Six Sigma là gì?</div>
+            <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Đóng vai trò kiểm toán viên độc lập thẩm định, xác thực và ký duyệt các con số tiết kiệm tiền mặt thực tế để đảm bảo tính minh bạch tài chính.</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Yếu tố bắt buộc phải có trong Kế hoạch Đào tạo sau khi rời lớp học?</div>
+            <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Số giờ kèm cặp cố vấn trực tiếp (Mentoring hours) của Master Black Belt dành cho Black Belt tại hiện trường để giải quyết dự án.</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Làm thế nào để chuyển hóa Soft Savings thành Hard Cash?</div>
+            <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Bằng cách tận dụng công suất/thời gian vừa giải phóng để nhận thêm đơn hàng mới, hoặc cắt giảm chi phí tăng ca và nhân sự thời vụ.</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- PHẦN 5: ACTION CHECKLIST & TEMPLATES -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 • Sáng Thứ Hai Làm Gì?</span>
+    <h2 class="section-heading">Kế Hoạch Hành Động 3 Bước &amp; Biểu Mẫu Thực Thi</h2>
+    <div class="section-subheading">Quy trình tác chiến hiện trường dành cho Giám đốc Điều hành &amp; Champion</div>
+
+    
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 1:</strong> Thiết lập Quy chế Tài chính Six Sigma (Six Sigma Financial Governance Policy) phân định rõ tiêu chuẩn công nhận Hard Savings và Soft Savings.
+      </span>
+    </label>
+    
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 2:</strong> Ký hợp đồng dịch vụ cố vấn nội bộ quy định tối thiểu 4 giờ kèm cặp (Mentoring) hàng tuần giữa Master Black Belt và từng Black Belt đang làm dự án.
+      </span>
+    </label>
+    
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 3:</strong> Xây dựng Bản Kế Hoạch Truyền Thông Cổ Đông & Giới Phân Tích Tài Chính (Investor Relations Six Sigma Briefing) trước kỳ báo cáo thường niên.
+      </span>
+    </label>
+    
+
+    <h3 style="color:var(--wood-dark); margin-top:32px; font-size:1.15rem;">Biểu Mẫu Quản Trị &amp; Khung Kiểm Soát Thực Chiến</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Dự Án Black Belt</th><th>Khoản Tiết Kiệm Khai Báo</th><th>Phân Loại (Hard / Soft)</th><th>Cơ Chế Kiểm Chứng Dòng Tiền</th><th>Chữ Ký Phê Duyệt Của Kế Toán</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><strong>Giảm phế phẩm đúc áp lực nhôm</strong></td><td>$280,000 / năm</td><td>Hard Savings (Tiền mặt cứng)</td><td>Đối soát hóa đơn thu mua phôi nhôm giảm thực tế</td><td>Đã thẩm định & phê duyệt P&L (CFO)</td>
+            </tr>
+          
+            <tr>
+              <td><strong>Rút ngắn 35% chu kỳ chuyển đổi mã khuôn</strong></td><td>120 Giờ máy dôi dư</td><td>Soft Savings (Năng lực mềm)</td><td>Nhận thêm 3 đơn hàng gia công mới lấp đầy 120 giờ</td><td>Đã chuyển thành $95,000 doanh thu mới</td>
+            </tr>
+          
+            <tr>
+              <td><strong>Tối ưu hóa hành trình giao hàng xe tải</strong></td><td>$145,000 / năm</td><td>Hard Savings (Tiền mặt cứng)</td><td>Giảm chi phí mua xăng dầu và cắt giảm 2 xe thuê ngoài</td><td>Đã thẩm định & phê duyệt P&L (CFO)</td>
+            </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
+  </p>
+</footer>
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

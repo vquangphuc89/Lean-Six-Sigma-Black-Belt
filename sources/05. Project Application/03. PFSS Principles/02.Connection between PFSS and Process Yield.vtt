@@ -1,0 +1,238 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Connection between PFSS and Process Yield
+
+2
+00:00:05.000 --> 00:00:08.600
+Welcome back to our session on Processing for Six Sigma.
+
+3
+00:00:08.600 --> 00:00:15.200
+Recall, that we looked at a little process consisting of three steps, three operations.
+
+4
+00:00:15.200 --> 00:00:22.233
+Operation 1, 2, 3. Also recall, that each of these operations
+
+5
+00:00:22.233 --> 00:00:25.199
+created a deliverable.
+
+6
+00:00:25.200 --> 00:00:31.600
+That the input coming into operation 1 adds value to what came in
+
+7
+00:00:31.600 --> 00:00:35.433
+and puts it out with higher value.
+
+8
+00:00:35.433 --> 00:00:40.566
+So, from a graphical point of view. If this is the scale of value,
+
+9
+00:00:40.566 --> 00:00:46.866
+our value steadily increases as we move through the process.
+
+10
+00:00:46.866 --> 00:00:50.866
+Okay. Now, here's something interesting.
+
+11
+00:00:50.866 --> 00:00:57.666
+We said that each operation has certain X’s.
+
+12
+00:00:57.666 --> 00:01:03.999
+X1, X2, through XN.
+
+13
+00:01:04.000 --> 00:01:09.266
+And that these X’s if you will, are what we call
+
+14
+00:01:09.266 --> 00:01:14.832
+critical to process variables. These are my CTP’s.
+
+15
+00:01:14.833 --> 00:01:18.066
+The ones that are among the vital few
+
+16
+00:01:18.066 --> 00:01:22.266
+are critical to the quality of the deliverable.
+
+17
+00:01:22.266 --> 00:01:27.299
+The trivial many down here. The X’s that are among the trivial many, are not CTP’s
+
+18
+00:01:27.300 --> 00:01:30.666
+because they're not critical to process operation.
+
+19
+00:01:30.666 --> 00:01:37.666
+They may be essential to process operation. But they're not critical to process operation.
+
+20
+00:01:37.666 --> 00:01:42.666
+In other words, how much light in the room
+
+21
+00:01:42.666 --> 00:01:46.266
+has little to do, but it is essential to see your work.
+
+22
+00:01:46.266 --> 00:01:50.832
+The process might be able to operate in the dark. See, it’s is not critical to process.
+
+23
+00:01:50.833 --> 00:01:53.833
+That's important to understand.
+
+24
+00:01:53.833 --> 00:01:59.033
+That the vital few X’s
+
+25
+00:01:59.033 --> 00:02:02.166
+are the critical to process variables.
+
+26
+00:02:02.166 --> 00:02:07.932
+Now, we have to also recognize that every one of these
+
+27
+00:02:07.933 --> 00:02:14.933
+critical to process variables has on its scale of measure.
+
+28
+00:02:14.933 --> 00:02:21.399
+A standard, like an upper spec limit and a lower spec limit
+
+29
+00:02:21.400 --> 00:02:25.400
+and a target value that's optimal.
+
+30
+00:02:25.400 --> 00:02:31.966
+In other words, this target value right here, is the optimal setting
+
+31
+00:02:31.966 --> 00:02:35.966
+for that vital few variable, for that critical to process variable.
+
+32
+00:02:35.966 --> 00:02:42.299
+Now, if all of the critical to process variables are at their optimal setting,
+
+33
+00:02:42.300 --> 00:02:48.433
+then the yield from this operation will be high.
+
+34
+00:02:48.433 --> 00:02:55.433
+So, there is a direct correlation to the goodness of the settings of the vital few variables.
+
+35
+00:02:55.433 --> 00:03:01.633
+The critical to process variables and the operations metric called yield.
+
+36
+00:03:01.633 --> 00:03:08.633
+Now, if this yield. And, I'm going to blow this up a little bit.
+
+37
+00:03:08.633 --> 00:03:15.566
+To where we've got operation 1, flowing into operation 2.
+
+38
+00:03:15.566 --> 00:03:21.599
+You see, if this yield right here and this yield.
+
+39
+00:03:21.600 --> 00:03:26.766
+Let's say that this is 90% and that that's 80%,
+
+40
+00:03:26.766 --> 00:03:32.332
+then the throughput yield, or the probability of going for both operations defect free
+
+41
+00:03:32.333 --> 00:03:38.233
+is .90 times .80 or .72 or 72%.
+
+42
+00:03:38.233 --> 00:03:42.499
+That’s to say there's a 72% probably of going through here defect free.
+
+43
+00:03:42.500 --> 00:03:46.800
+Now, listen to this. I’m going to give it to you real quick. This is important.
+
+44
+00:03:46.800 --> 00:03:53.766
+If I find the vital few, the critical to process variables, at operation 1
+
+45
+00:03:53.766 --> 00:03:59.632
+and I find their optimal setting. Their most advantageous setting.
+
+46
+00:03:59.633 --> 00:04:04.199
+And I set those variables there. Then this yield is going to increase.
+
+47
+00:04:04.200 --> 00:04:10.366
+This yield is going to go from like 90% to maybe 99.
+
+48
+00:04:10.366 --> 00:04:16.366
+If I do it at this operation as well. The yield might go from 80% to 90.
+
+49
+00:04:16.366 --> 00:04:23.332
+So, the net effect is .99 times .90 is approximately .90.
+
+50
+00:04:23.333 --> 00:04:30.166
+Compared to 72, which mean there's been about an 18% improvement in yield
+
+51
+00:04:30.166 --> 00:04:33.166
+from this operation.
+
+52
+00:04:33.166 --> 00:04:39.099
+Now, as that yield improves from that process.
+
+53
+00:04:39.100 --> 00:04:43.100
+See, there's that process right there, three operations.
+
+54
+00:04:43.100 --> 00:04:50.100
+Process A and I have process B, and I have process C that come together,
+
+55
+00:04:50.100 --> 00:04:54.400
+to blend into yet another process and that yield goes up.
+
+56
+00:04:54.400 --> 00:05:01.266
+Then the yield of the whole factory goes up. Which means the profits go up.
+
+57
+00:05:01.266 --> 00:05:07.499
+And that's the connectivity that we’re looking for and how it relates back
+
+58
+00:05:07.500 --> 00:05:10.966
+to process capability.
+
+59
+00:05:10.966 --> 00:05:15.966
+Thank you for choosing SSMI
+

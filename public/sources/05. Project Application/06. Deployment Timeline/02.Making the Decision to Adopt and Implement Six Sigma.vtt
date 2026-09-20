@@ -1,0 +1,211 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Making the Decision to Adopt and Implement Six Sigma
+Đưa ra Quyết định Áp dụng và Triển khai Six Sigma
+
+2
+00:00:05.000 --> 00:00:07.400
+Welcome to this session on deployment planning.
+Chào mừng bạn đến với phiên học về lập kế hoạch triển khai.
+
+3
+00:00:07.400 --> 00:00:11.600
+Recall that we looked at the profile of an average company.
+Hãy nhớ lại rằng chúng ta đã xem xét hồ sơ của một công ty trung bình.
+
+4
+00:00:11.600 --> 00:00:15.600
+Well we’re going to see how that plays in here.
+Chà, chúng ta sẽ xem điều đó thể hiện ở đây như thế nào.
+
+5
+00:00:15.600 --> 00:00:21.100
+Along this scale, I have months. Now, it's not necessarily a linear scale.
+Dọc theo thang đo này, tôi có các tháng. Bây giờ, nó không nhất thiết phải là một thang đo tuyến tính.
+
+6
+00:00:21.100 --> 00:00:24.166
+I'm quickly moving to month: one, two, three, four, seven, eight.
+Tôi đang nhanh chóng chuyển sang tháng: một, hai, ba, bốn, bảy, tám.
+
+7
+00:00:24.166 --> 00:00:28.166
+There's twelve, eighteen, twenty-four and so on.
+Có mười hai, mười tám, hai mươi bốn, v.v.
+
+8
+00:00:28.166 --> 00:00:35.166
+Now, along this way, each line item here, on this Gantt chart is a milestone.
+Bây giờ, dọc theo cách này, mỗi mục dòng ở đây, trên biểu đồ Gantt này là một cột mốc quan trọng.
+
+9
+00:00:35.166 --> 00:00:40.366
+And what I want to do is to zero in, as we look at the rollout profile.
+Và điều tôi muốn làm là tập trung vào, khi chúng ta xem xét hồ sơ triển khai.
+
+10
+00:00:40.366 --> 00:00:47.332
+That's what I'm focusing here. A rollout profile for Six Sigma. The timing of a deployment.
+Đó là những gì tôi đang tập trung ở đây. Hồ sơ triển khai cho Six Sigma. Thời gian triển khai.
+
+11
+00:00:47.333 --> 00:00:51.166
+We’re going to really zoom in.
+Chúng ta sẽ thực sự phóng to.
+
+12
+00:00:51.166 --> 00:00:56.832
+And at time zero, we have some decision
+Và tại thời điểm không, chúng ta có một số quyết định
+
+13
+00:00:56.833 --> 00:01:00.633
+to adopt Six Sigma.
+để áp dụng Six Sigma.
+
+14
+00:01:00.633 --> 00:01:06.799
+And that flows all the way through, from due diligence to an executive summit.
+Và điều đó diễn ra xuyên suốt, từ thẩm định đến hội nghị thượng đỉnh điều hành.
+
+15
+00:01:06.800 --> 00:01:10.800
+To training the leadership. To creating the black belts.
+Đến đào tạo đội ngũ lãnh đạo. Đến việc tạo ra các Black Belt.
+
+16
+00:01:10.800 --> 00:01:15.433
+In processing for Six Sigma. Then implementing Design for Six Sigma.
+Trong quá trình xử lý cho Six Sigma. Sau đó thực hiện Thiết kế cho Six Sigma.
+
+17
+00:01:15.433 --> 00:01:20.699
+And then finally two years later, starting to see some results from the supply base.
+Và sau đó cuối cùng hai năm sau, bắt đầu thấy một số kết quả từ cơ sở cung ứng.
+
+18
+00:01:20.700 --> 00:01:24.566
+That's what we're looking at here to roll this out.
+Đó là những gì chúng ta đang xem xét ở đây để triển khai điều này.
+
+19
+00:01:24.566 --> 00:01:27.666
+Now, what we're going to do is we're going to come back,
+Bây giờ, những gì chúng ta sẽ làm là chúng ta sẽ quay lại,
+
+20
+00:01:27.666 --> 00:01:31.466
+and look at each one of these elements independently.
+và xem xét từng yếu tố này một cách độc lập.
+
+21
+00:01:31.466 --> 00:01:36.732
+The first one we’re going to start with is the decision to adopt Six Sigma.
+Điều đầu tiên chúng ta sẽ bắt đầu là quyết định áp dụng Six Sigma.
+
+22
+00:01:36.733 --> 00:01:42.266
+Now recall, that we profiled an average company in our previous session.
+Bây giờ hãy nhớ lại, rằng chúng ta đã lập hồ sơ cho một công ty trung bình trong phiên trước của chúng ta.
+
+23
+00:01:42.266 --> 00:01:45.599
+They’re profitable and growing. Their market prices are declining.
+Họ có lợi nhuận và đang phát triển. Giá thị trường của họ đang giảm.
+
+24
+00:01:45.600 --> 00:01:48.600
+Competitors are increasing.
+Đối thủ cạnh tranh đang tăng lên.
+
+25
+00:01:48.600 --> 00:01:55.566
+They believe in quality. They spend 10 to 25% of every sales dollar on rework and repair.
+Họ tin vào chất lượng. Họ chi 10 đến 25% trên mỗi đô la doanh thu cho việc làm lại và sửa chữa.
+
+26
+00:01:55.566 --> 00:02:00.299
+Other similar processes are a hundred times better. They got ten times the suppliers.
+Các quy trình tương tự khác tốt hơn hàng trăm lần. Họ có số lượng nhà cung cấp gấp mười lần.
+
+27
+00:02:00.300 --> 00:02:03.366
+And 5 to 10% of their customers are dissatisfied.
+Và 5 đến 10% khách hàng của họ không hài lòng.
+
+28
+00:02:03.366 --> 00:02:10.366
+If that's not a reason, a decision to go adopt Six Sigma. I don't know what is.
+Nếu đó không phải là lý do, một quyết định để áp dụng Six Sigma. Tôi không biết cái gì là lý do nữa.
+
+29
+00:02:10.366 --> 00:02:14.032
+Now, we discover that through benchmarking.
+Bây giờ, chúng ta khám phá ra điều đó thông qua so sánh chuẩn.
+
+30
+00:02:14.033 --> 00:02:17.266
+So you go out and you do some simple benchmarks.
+Vì vậy, bạn ra ngoài và bạn thực hiện một số so sánh chuẩn đơn giản.
+
+31
+00:02:17.266 --> 00:02:22.032
+And, as an executive team. Life’s simple. Get together. Look at yourselves.
+Và, với tư cách là một đội ngũ điều hành. Cuộc sống thật đơn giản. Hãy cùng nhau. Hãy nhìn nhận bản thân.
+
+32
+00:02:22.033 --> 00:02:28.666
+And say, given the success from General Electric, Allied Signal, Ford, Sony.
+Và nói, cho rằng thành công từ General Electric, Allied Signal, Ford, Sony.
+
+33
+00:02:28.666 --> 00:02:32.632
+The success everybody has had. DuPont, Dow.
+Sự thành công mà mọi người đã có. DuPont, Dow.
+
+34
+00:02:32.633 --> 00:02:36.633
+All the biggies have done it. And benefited hugely from it.
+Tất cả những công ty lớn đều đã làm điều đó. Và hưởng lợi rất nhiều từ nó.
+
+35
+00:02:36.633 --> 00:02:42.399
+So, why aren’t you. If your watching this tape, maybe your company is.
+Vậy, tại sao bạn lại không. Nếu bạn đang xem đoạn băng này, có lẽ công ty của bạn đang làm.
+
+36
+00:02:42.400 --> 00:02:45.433
+But, nonetheless. That's the first step.
+Nhưng, tuy nhiên. Đó là bước đầu tiên.
+
+37
+00:02:45.433 --> 00:02:49.566
+You've gotta make a conscious decision on behalf of the leadership
+Bạn phải đưa ra một quyết định có ý thức thay mặt cho lãnh đạo
+
+38
+00:02:49.566 --> 00:02:53.899
+to go out and adopt Six Sigma.
+để ra ngoài và áp dụng Six Sigma.
+
+39
+00:02:53.900 --> 00:03:00.966
+That is absolutely vital. If that is not done at the top level. The very top.
+Điều đó hoàn toàn quan trọng. Nếu điều đó không được thực hiện ở cấp cao nhất. Cấp cao nhất.
+
+40
+00:03:00.966 --> 00:03:06.499
+Forget it. That's a key to deployment. Six Sigma is top down driven.
+Quên nó đi. Đó là chìa khóa để triển khai. Six Sigma được điều khiển từ trên xuống.
+
+41
+00:03:06.500 --> 00:03:13.033
+So the very top has got to make the decision to adopt Six Sigma as an initiative.
+Vì vậy, cấp cao nhất phải đưa ra quyết định áp dụng Six Sigma như một sáng kiến.
+
+42
+00:03:13.033 --> 00:03:18.033
+Thank you for Choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

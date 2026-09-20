@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bản Chất Cơ Bản Và Mục Đích Của PFSS — Six Sigma Masterclass</title>
+<style>
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.68;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
+
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  .pro-tip {
+    background: var(--gold-bg);
+    border: 1px solid #fde68a;
+    border-left: 6px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 22px 0;
+  }
+  .pro-tip-title { font-size: 0.95rem; font-weight: 800; color: var(--wood-bark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pro-tip-desc { font-size: 0.96rem; color: #713f12; margin: 0; }
+
+  /* Native Math Cards */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .math-equation {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Cambria Math', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 16px;
+    line-height: 1.4;
+  }
+  .math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .math-num {
+    border-bottom: 2px solid var(--emerald-mint);
+    padding-bottom: 4px;
+    color: #ffffff;
+    font-size: 1.15rem;
+  }
+  .math-den {
+    padding-top: 4px;
+    color: var(--emerald-mint);
+    font-size: 1.15rem;
+  }
+  .math-card .desc {
+    font-size: 0.92rem;
+    color: #d1fae5;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(110,231,183,0.3);
+    padding-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .math-card .desc strong { color: #ffffff; }
+  .math-card .desc em { color: var(--emerald-mint); font-style: normal; font-weight: 600; }
+
+  /* VS Grid */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: stretch;
+    margin: 22px 0;
+  }
+  .vs-col {
+    padding: 22px 24px;
+    border-radius: 12px;
+  }
+  .vs-col.bad {
+    background: #fef2f2;
+    border: 1.5px solid #fecaca;
+    border-left: 5px solid var(--red);
+  }
+  .vs-col.good {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-left: 5px solid var(--green);
+  }
+  .vs-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .vs-badge.bad { background: #fee2e2; color: var(--red); }
+  .vs-badge.good { background: #dcfce7; color: var(--green); }
+  .vs-col ul { margin: 0; padding-left: 18px; }
+  .vs-col li { font-size: 0.93rem; margin-bottom: 8px; color: #1e293b; }
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: var(--wood-dark);
+    font-size: 1.1rem;
+    padding: 0 6px;
+  }
+
+  /* Case Study Cards */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 22px 0;
+  }
+  .case-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .case-card.mfg { border-top: 4px solid #0284c7; }
+  .case-card.svc { border-top: 4px solid #7c3aed; }
+  .case-tag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .case-tag.mfg { color: #0284c7; }
+  .case-tag.svc { color: #7c3aed; }
+  .case-title { font-size: 1.12rem; font-weight: 700; color: var(--wood-dark); margin: 0 0 8px; }
+  .case-body { font-size: 0.92rem; color: #334155; line-height: 1.6; }
+  .case-metric {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: #0f172a;
+  }
+
+  /* Trắc Nghiệm & Flashcards */
+  .interactive-arena {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--water-ocean) 100%);
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    color: #ffffff;
+    box-shadow: 0 8px 30px rgba(2,44,34,0.3);
+  }
+  .arena-heading {
+    font-size: 1.55rem;
+    font-weight: 800;
+    margin: 0 0 4px;
+    color: #ffffff;
+  }
+  .arena-subheading {
+    color: var(--emerald-mint);
+    font-size: 1.02rem;
+    margin-bottom: 28px;
+  }
+
+  .quiz-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+  .quiz-tag {
+    display: inline-block;
+    background: rgba(16,185,129,0.25);
+    border: 1px solid var(--emerald-mint);
+    color: var(--emerald-mint);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .quiz-q {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ecfdf5;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.96rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .quiz-btn:hover {
+    background: rgba(16,185,129,0.2);
+    border-color: var(--emerald-mint);
+    transform: translateX(4px);
+  }
+  .quiz-btn.correct {
+    background: var(--green) !important;
+    border-color: #86efac !important;
+    color: #ffffff !important;
+    font-weight: 700;
+  }
+  .quiz-btn.wrong {
+    background: var(--red) !important;
+    border-color: #fca5a5 !important;
+    color: #ffffff !important;
+  }
+  .quiz-fb {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+  .quiz-fb.show { display: block; animation: fadeIn 0.3s ease; }
+  .quiz-fb.success {
+    background: rgba(22,163,74,0.25);
+    border: 1px solid #86efac;
+    color: #dcfce7;
+  }
+  .quiz-fb.error {
+    background: rgba(185,28,28,0.25);
+    border: 1px solid #fca5a5;
+    color: #fee2e2;
+  }
+
+  /* 3D Flashcards */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .flashcard {
+    perspective: 1000px;
+    min-height: 190px;
+    cursor: pointer;
+  }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 12px;
+  }
+  .flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+  }
+  .flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .flashcard-front {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(110,231,183,0.3);
+    color: #ffffff;
+  }
+  .flashcard-back {
+    background: linear-gradient(135deg, var(--emerald-vibrant) 0%, var(--wood-dark) 100%);
+    color: #ffffff;
+    transform: rotateY(180deg);
+    border: 1px solid var(--emerald-mint);
+  }
+  .fc-num {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald-mint);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .fc-q { font-size: 0.98rem; font-weight: 600; line-height: 1.45; }
+  .fc-a { font-size: 0.92rem; line-height: 1.5; }
+
+  /* Data Table */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .data-table th {
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+  }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
+
+  /* Action Checklist */
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+  }
+  .action-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--emerald);
+    cursor: pointer;
+    margin-top: 3px;
+  }
+  .action-text {
+    font-size: 0.96rem;
+    color: #1e293b;
+    line-height: 1.55;
+  }
+  .action-text strong { color: var(--wood-dark); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media(max-width: 768px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-divider { display: none; }
+    .case-grid { grid-template-columns: 1fr; }
+    .section-card { padding: 22px 18px; }
+    .interactive-arena { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">05. Project Application • 03. PFSS Principles</span>
+    <h1 class="hero-title">Bản Chất Cơ Bản Và Mục Đích Của PFSS</h1>
+    <div class="hero-title-en">Basic Nature and Purpose of PFSS</div>
+    <p class="hero-desc">Bản chất khoa học của Processing for Six Sigma (PFSS): Dòng chảy gia tăng giá trị qua các công đoạn, khái niệm Sản phẩm bàn giao (Deliverable), sự phân rã giữa CTQ đầu ra và các nút vặn CTP đầu vào, và hàm số chuyển giao Y = f(X).</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PHẦN 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 1 • Tóm Tắt Điều Hành</span>
+    <h2 class="section-heading">Executive Summary &amp; Thước Đo Lãnh Đạo</h2>
+    <div class="section-subheading">Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây</div>
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Processing for Six Sigma (PFSS) là gì?</strong> Là phân hệ chuyên sâu của Six Sigma tập trung vào việc mô hình hóa, đặc trưng hóa và tối ưu hóa các quy trình vận hành hiện hữu để chế ngự biến thiên và đưa năng suất đạt mức tiệm cận hoàn hảo.</li>
+        <li><strong>Dòng chảy công đoạn và Khái niệm Sản phẩm Bàn giao (Deliverable):</strong> Một quy trình là chuỗi các công đoạn nối tiếp (Op 1 &rarr; Op 2 &rarr; Op 3). Mỗi công đoạn tiếp nhận một đầu vào, thực hiện các hoạt động gia tăng giá trị (Value-added activity) để biến đổi sản phẩm bàn giao từ Trạng thái A sang Trạng thái B (giá trị cao hơn, vùng màu xanh mở rộng, đường nét đứt biến thành nét liền).</li>
+        <li><strong>Phân định rạch ròi giữa CTQ của Sản phẩm và CTP của Quy trình:</strong> Kết quả đầu ra là các đặc tính chất lượng trọng yếu CTQ (Critical to Quality). Nhưng để tạo ra CTQ đó, tại mỗi công đoạn luôn tồn tại hàng loạt biến số quy trình CTP (Critical to Process characteristics) &mdash; chính là các nút vặn, công tắc, vật liệu và tay nghề thao tác.</li>
+        <li><strong>Hàm số Chuyển giao và Quy luật Vital Few:</strong> Mối quan hệ giữa CTQ và CTP tuân theo hàm toán học <em>Y = f(X1, X2, ..., XN)</em>. Trong số hàng trăm biến X (Trivial Many), Black Belt phải cô lập được nhóm ít biến số trọng yếu (Vital Few CTPs) và tìm ra thiết lập tối ưu để đạt được Năng lực đặc quyền chuyển đổi (Transformational Entitlement).</li>
+      </ul>
+    </div>
+    <div class="pro-tip">
+      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Practical Insight)</div>
+      <p class="pro-tip-desc">Đừng bao giờ cố gắng kiểm soát tất cả các biến số! Nhiệm vụ của Black Belt trong PFSS là dùng công cụ sàng lọc để tách 5-7 biến số CTPs cốt lõi (Vital Few) ra khỏi hàng trăm biến số phụ (Trivial Many), sau đó đóng băng thiết lập tối ưu cho chúng.</p>
+    </div>
+  </section>
+
+  <!-- PHẦN 2: CORE FRAMEWORKS & REAL MATH -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 2 • Khung Lý Thuyết &amp; Mô Hình Toán Học</span>
+    <h2 class="section-heading">Nguyên Lý Lượng Hóa Cốt Lõi</h2>
+    <div class="section-subheading">Mô hình toán học thuần túy giải phóng quy trình khỏi biến thiên cảm tính</div>
+    <p>Dr. Mikel J. Harry mô hình hóa cấu trúc vận hành của PFSS thông qua chuỗi chuyển hóa giá trị từ Trạng thái A sang Trạng thái B trên từng công đoạn:</p>
+    
+    
+      <div class="math-card">
+        <div class="title">1. Hàm Số Chuyển Giao Công Đoạn / Operational Transfer Function</div>
+        <div class="math-equation"><i>Y</i><sub>CTQ</sub> = <i>f</i>(<i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>, ..., <i>X</i><sub><i>n</i></sub>) &nbsp;|&nbsp; <i>X</i> &isin; {<b>Vital Few CTPs</b> &cup; <b>Trivial Many</b>}</div>
+        <div class="desc"><strong>Cơ chế toán học:</strong><br>&bull; <em>Y</em>: Đặc tính chất lượng đầu ra của sản phẩm bàn giao (Deliverable).<br>&bull; <em>X_i</em>: Các biến số thông số quy trình (nút vặn, nhiệt độ, áp suất, tốc độ đưa phôi).</div>
+      </div>
+
+      <div class="math-card">
+        <div class="title">2. Năng Lực Đặc Quyền Chuyển Đổi / Transformational Entitlement</div>
+        <div class="math-equation">&Delta;<i>V</i><sub>Entitlement</sub> = <i>Value</i>(<i>State B</i>) &minus; <i>Value</i>(<i>State A</i>) = <i>Max</i> &hArr; &vec;<i>X</i><sub>CTP</sub> = &vec;<i>X</i><sub>Optimal</sub></div>
+        <div class="desc"><strong>Tối đa hóa giá trị:</strong><br>&bull; Giá trị gia tăng đạt cực đại khi và chỉ khi toàn bộ các biến số CTP trọng yếu được thiết lập chính xác tại tọa độ tối ưu.</div>
+      </div>
+
+      <div class="math-card">
+        <div class="title">3. Chuỗi Tích Lũy Giá Trị / Multi-Stage Value Accretion Model</div>
+        <div class="math-equation"><i>Deliverable</i><sub>Final</sub> = &prod;<sub><i>i</i>=1</sub><sup><i>m</i></sup> <b>Op</b><sub><i>i</i></sub>(<i>Deliverable</i><sub><i>i</i>&minus;1</sub> | &vec;<i>X</i><sub>CTP, <i>i</i></sub>)</div>
+        <div class="desc"><strong>Dòng chảy liên tục:</strong><br>&bull; Sản phẩm bàn giao của Op 1 trở thành nguyên liệu đầu vào cho Op 2, tích lũy giá trị qua từng mắt xích của chuỗi giá trị.</div>
+      </div>
+
+    <div class="pro-tip">
+      <div class="pro-tip-title">MBB Interpretation • Diễn giải điều hành</div>
+      <p class="pro-tip-desc">Khi Dr. Harry minh họa đường nét đứt biến thành nét liền và vùng màu xanh mở rộng, ông muốn nhắc nhở chúng ta: Mỗi công đoạn sinh ra chỉ có một lý do duy nhất là gia tăng giá trị thực tế cho sản phẩm. Mọi thao tác không làm tăng vùng màu xanh đều là lãng phí Muda cần triệt tiêu.</p>
+    </div>
+  </section>
+
+  <!-- PHẦN 3: CASE STUDIES & VS COMPARISON -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 3 • Tình Huống Thực Chiến &amp; Đối Chiếu Phản Tư</span>
+    <h2 class="section-heading">Nghiên Cứu Điển Hình Công Nghiệp &amp; Dịch Vụ</h2>
+    <div class="section-subheading">Từ thực tiễn nhà xưởng phức tạp đến dòng chảy dịch vụ giao dịch thương mại</div>
+    
+    <div class="case-grid">
+      <div class="case-card mfg">
+        <span class="case-tag mfg">Gia Công Đúc Áp Lực Hợp Kim Magie</span>
+        <h3 class="case-title">Xác Định CTP Cho Nguyên Công Đúc Vỏ Máy Tính Siêu Mỏng</h3>
+        <p class="case-body">Nhà máy đúc vỏ máy tính xách tay magie bị lỗi rỗ khí và nứt mép: Đầu ra CTQ là độ kín khít và chiều dày thành vỏ (0.8 ± 0.05 mm). Tại trạm đúc (Op 1), có 42 biến số quy trình. Black Belt sử dụng ma trận C&E và phân tích hồi quy cô lập được đúng 3 CTP trọng yếu: Nhiệt độ khuôn đúc (185°C), Tốc độ phun kim loại lỏng (4.2 m/s) và Áp suất nén duy trì (85 MPa).</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Cố định thiết lập tối ưu cho 3 CTP giúp tỷ lệ phế phẩm đúc giảm từ 14.5% xuống 0.6%, nâng mức Sigma công đoạn từ 2.56 lên 4.62 Sigma, tiết kiệm 820,000 USD chi phí nấu chảy lại.</div>
+      </div>
+      <div class="case-card svc">
+        <span class="case-tag svc">Bảo Hiểm Nhân Thọ & Bồi Thường</span>
+        <h3 class="case-title">Tối Ưu Hóa CTP Trong Quy Trình Bồi Thường Tử Kỳ</h3>
+        <p class="case-body">Hồ sơ yêu cầu bồi thường bảo hiểm nhân thọ trải qua 3 công đoạn: Tiếp nhận (Op 1) &rarr; Thẩm định y khoa (Op 2) &rarr; Chi trả ngân hàng (Op 3). Đầu ra CTQ là thời gian giải quyết đúng hẹn (≤ 5 ngày làm việc). Tại Op 1, Black Belt nhận diện 2 CTP trọng yếu: Tỷ lệ điền đủ mẫu xác nhận bệnh viện lần đầu (≥ 98%) và Độ phân giải ảnh quét hồ sơ bệnh án (≥ 300 DPI).</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Thiết kế biểu mẫu điện tử thông minh có kiểm soát bắt buộc 2 CTP này giúp thời gian thẩm định Op 2 rút ngắn từ 11 ngày xuống 2.5 ngày, tỷ lệ hài lòng của khách hàng tăng từ 68% lên 97%.</div>
+      </div>
+    </div>
+
+    <div class="vs-grid">
+      <div class="vs-col bad">
+        <span class="vs-badge bad">❌ Quản Lý Quy Trình Cảm Tính</span>
+        <ul>
+          <li>Chỉ tập trung mắng mỏ công nhân khi đầu ra Y bị lỗi mà không biết X nào gây ra</li>
+          <li>Cố gắng kiểm soát cả trăm biến số vụn vặt dẫn đến kiệt sức và mất phương hướng</li>
+          <li>Mỗi ca làm việc tự ý vặn nút điều khiển theo kinh nghiệm cá nhân</li>
+          <li>Không thấy được mối liên kết giữa các công đoạn nối tiếp Op 1 &rarr; Op 2</li>
+        </ul>
+      </div>
+      <div class="vs-divider">&harr;</div>
+      <div class="vs-col good">
+        <span class="vs-badge good">✅ Khoa Học Quy Trình PFSS Chuẩn Dr. Harry</span>
+        <ul>
+          <li>Phân rã rõ ràng: Đo lường CTQ ở đầu ra và kiểm soát CTP ở đầu vào</li>
+          <li>Cô lập chuẩn xác nhóm Vital Few CTPs bằng công cụ thống kê sàng lọc</li>
+          <li>Thiết lập tọa độ chuẩn tối ưu cố định cho từng nút vặn quy trình</li>
+          <li>Xây dựng dòng chảy chuyển giao giá trị mượt mà từ Trạng thái A sang B</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 4: INTERACTIVE ARENA (8 QUIZZES & 5 FLASHCARDS) -->
+  <section class="interactive-arena">
+    <span class="section-num" style="background:var(--emerald-vibrant); color:#022c22;">Trụ Cột 4 • Khảo Hạch Năng Lực &amp; Phản Xạ 3D</span>
+    <h2 class="arena-heading">Đấu Trường Khảo Hạch Black Belt</h2>
+    <div class="arena-subheading">8 Tình huống trắc nghiệm chuyên sâu &bull; 5 Thẻ ghi nhớ phản xạ 3D &bull; Chuẩn hóa năng lực SSMI</div>
+
+    <!-- 8 QUIZZES -->
+    <div class="quizzes-container">
+      
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 1/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Trong bài giảng của Dr. Harry, chuỗi các công đoạn Op 1 tiếp nguyên liệu cho Op 2 và tiếp cho Op 3 có mục đích tối thượng là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-1', 'Dr. Harry: &quot;Value added activity occurred at operation 1. That transformed this deliverable say from a state like this, to this state... from state A to state B, a higher value state.&quot;', 'Hoạt động gia tăng giá trị diễn ra tại Op 1 đã biến đổi sản phẩm bàn giao từ trạng thái A sang trạng thái B có giá trị cao hơn.')">A. Làm tăng số lượng nhân sự trong nhà máy</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-1', 'Dr. Harry: &quot;Value added activity occurred at operation 1. That transformed this deliverable say from a state like this, to this state... from state A to state B, a higher value state.&quot;', 'Hoạt động gia tăng giá trị diễn ra tại Op 1 đã biến đổi sản phẩm bàn giao từ trạng thái A sang trạng thái B có giá trị cao hơn.')">B. Thực hiện các hoạt động gia tăng giá trị để chuyển đổi sản phẩm bàn giao từ trạng thái A sang trạng thái B có giá trị cao hơn</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-1', 'Dr. Harry: &quot;Value added activity occurred at operation 1. That transformed this deliverable say from a state like this, to this state... from state A to state B, a higher value state.&quot;', 'Hoạt động gia tăng giá trị diễn ra tại Op 1 đã biến đổi sản phẩm bàn giao từ trạng thái A sang trạng thái B có giá trị cao hơn.')">C. Làm chậm tiến độ sản xuất để kiểm tra chất lượng</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-1', 'Dr. Harry: &quot;Value added activity occurred at operation 1. That transformed this deliverable say from a state like this, to this state... from state A to state B, a higher value state.&quot;', 'Hoạt động gia tăng giá trị diễn ra tại Op 1 đã biến đổi sản phẩm bàn giao từ trạng thái A sang trạng thái B có giá trị cao hơn.')">D. Tạo ra nhiều kho chứa hàng bán thành phẩm trung gian</button>
+        </div>
+        <div id="fb-01-1" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 2/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Hình ảnh minh họa "vùng màu xanh tăng lên và đường nét đứt biến thành nét liền" của Dr. Harry biểu thị điều gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-2', 'Dr. Harry: &quot;So the purpose of operation 1, was to add value. Increase the green area and make it a solid line. In this particular case, we have now declared two critical to quality characteristics.&quot;', 'Mục đích của công đoạn là gia tăng giá trị: Mở rộng vùng màu xanh và biến nét đứt thành nét liền, xác lập các đặc tính CTQ của sản phẩm.')">A. Máy móc đã được sơn lại màu mới</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-2', 'Dr. Harry: &quot;So the purpose of operation 1, was to add value. Increase the green area and make it a solid line. In this particular case, we have now declared two critical to quality characteristics.&quot;', 'Mục đích của công đoạn là gia tăng giá trị: Mở rộng vùng màu xanh và biến nét đứt thành nét liền, xác lập các đặc tính CTQ của sản phẩm.')">B. Công đoạn đã hoàn thành việc gia tăng giá trị và tạo ra các đặc tính chất lượng CTQ đạt chuẩn của sản phẩm</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-2', 'Dr. Harry: &quot;So the purpose of operation 1, was to add value. Increase the green area and make it a solid line. In this particular case, we have now declared two critical to quality characteristics.&quot;', 'Mục đích của công đoạn là gia tăng giá trị: Mở rộng vùng màu xanh và biến nét đứt thành nét liền, xác lập các đặc tính CTQ của sản phẩm.')">C. Sản phẩm đã bị dán nhãn cảnh báo nguy hiểm</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-2', 'Dr. Harry: &quot;So the purpose of operation 1, was to add value. Increase the green area and make it a solid line. In this particular case, we have now declared two critical to quality characteristics.&quot;', 'Mục đích của công đoạn là gia tăng giá trị: Mở rộng vùng màu xanh và biến nét đứt thành nét liền, xác lập các đặc tính CTQ của sản phẩm.')">D. Công nhân đã hoàn thành ca làm việc buổi sáng</button>
+        </div>
+        <div id="fb-01-2" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 3/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Các biến số tại công đoạn như nút vặn (knobs), mặt số (dials), công tắc (switches) và tay nghề thao tác được Dr. Harry gọi là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-3', 'Dr. Harry: &quot;There is critical to process characteristic 1, through critical to process characteristic N... We further recognize that these are the knobs, and dials, and switches at this operation.&quot;', 'Đó là các đặc tính quy trình trọng yếu từ CTP1 đến CTPN: Chính là các nút vặn, mặt số đồng hồ và công tắc tại công đoạn.')">A. Là các biến số ngoại cảnh không thể kiểm soát</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-3', 'Dr. Harry: &quot;There is critical to process characteristic 1, through critical to process characteristic N... We further recognize that these are the knobs, and dials, and switches at this operation.&quot;', 'Đó là các đặc tính quy trình trọng yếu từ CTP1 đến CTPN: Chính là các nút vặn, mặt số đồng hồ và công tắc tại công đoạn.')">B. Là các đặc tính quy trình trọng yếu CTP (Critical to Process characteristics: CTP1 to CTPN)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-3', 'Dr. Harry: &quot;There is critical to process characteristic 1, through critical to process characteristic N... We further recognize that these are the knobs, and dials, and switches at this operation.&quot;', 'Đó là các đặc tính quy trình trọng yếu từ CTP1 đến CTPN: Chính là các nút vặn, mặt số đồng hồ và công tắc tại công đoạn.')">C. Là các lỗi vi phạm an toàn lao động</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-3', 'Dr. Harry: &quot;There is critical to process characteristic 1, through critical to process characteristic N... We further recognize that these are the knobs, and dials, and switches at this operation.&quot;', 'Đó là các đặc tính quy trình trọng yếu từ CTP1 đến CTPN: Chính là các nút vặn, mặt số đồng hồ và công tắc tại công đoạn.')">D. Là các khoản chi phí khấu hao tài sản cố định</button>
+        </div>
+        <div id="fb-01-3" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 4/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Phương trình toán học nào diễn tả bản chất mối quan hệ giữa kết quả đầu ra và các biến số tại công đoạn trong PFSS?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-4', 'Dr. Harry explicitly highlights: &quot;Y is a function of X1, to the Nth variable, the Nth X, where N is some large number.&quot;', 'Dr. Harry nhấn mạnh: Biến kết quả đầu ra Y là một hàm số của các biến số đầu vào X1 đến XN.')">A. E = mc²</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-4', 'Dr. Harry explicitly highlights: &quot;Y is a function of X1, to the Nth variable, the Nth X, where N is some large number.&quot;', 'Dr. Harry nhấn mạnh: Biến kết quả đầu ra Y là một hàm số của các biến số đầu vào X1 đến XN.')">B. Y = f(X1, X2, ..., XN)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-4', 'Dr. Harry explicitly highlights: &quot;Y is a function of X1, to the Nth variable, the Nth X, where N is some large number.&quot;', 'Dr. Harry nhấn mạnh: Biến kết quả đầu ra Y là một hàm số của các biến số đầu vào X1 đến XN.')">C. A² + B² = C²</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-4', 'Dr. Harry explicitly highlights: &quot;Y is a function of X1, to the Nth variable, the Nth X, where N is some large number.&quot;', 'Dr. Harry nhấn mạnh: Biến kết quả đầu ra Y là một hàm số của các biến số đầu vào X1 đến XN.')">D. PV = nRT</button>
+        </div>
+        <div id="fb-01-4" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 5/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Quy luật "Vital Few vs Trivial Many" trong PFSS khẳng định điều gì về các biến số CTPs?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-5', 'Dr. Harry: &quot;And, we recognize that some of these X’s constitute the vital few, and others constitute the trivial many.&quot;', 'Chúng ta nhận thức rằng một số biến số X cấu thành nhóm ít biến trọng yếu (vital few), trong khi những biến khác thuộc nhóm nhiều biến tầm thường (trivial many).')">A. Mọi biến số X đều có tầm quan trọng ngang nhau</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-5', 'Dr. Harry: &quot;And, we recognize that some of these X’s constitute the vital few, and others constitute the trivial many.&quot;', 'Chúng ta nhận thức rằng một số biến số X cấu thành nhóm ít biến trọng yếu (vital few), trong khi những biến khác thuộc nhóm nhiều biến tầm thường (trivial many).')">B. Chỉ có một số ít biến số X cấu thành nhóm trọng yếu (Vital Few CTPs), trong khi phần lớn các biến số khác thuộc nhóm tầm thường (Trivial Many)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-5', 'Dr. Harry: &quot;And, we recognize that some of these X’s constitute the vital few, and others constitute the trivial many.&quot;', 'Chúng ta nhận thức rằng một số biến số X cấu thành nhóm ít biến trọng yếu (vital few), trong khi những biến khác thuộc nhóm nhiều biến tầm thường (trivial many).')">C. Nhóm Trivial Many cần được đầu tư 80% ngân sách</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-5', 'Dr. Harry: &quot;And, we recognize that some of these X’s constitute the vital few, and others constitute the trivial many.&quot;', 'Chúng ta nhận thức rằng một số biến số X cấu thành nhóm ít biến trọng yếu (vital few), trong khi những biến khác thuộc nhóm nhiều biến tầm thường (trivial many).')">D. Các biến số Vital Few không thể điều chỉnh được</button>
+        </div>
+        <div id="fb-01-5" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 6/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Điều gì xảy ra đối với các đặc tính chất lượng CTQ khi Black Belt cô lập được các biến Vital Few CTPs và thiết lập đúng tọa độ tối ưu cho chúng?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-6', 'Dr. Harry: &quot;I isolate the correct settings for them. What\'s going to happen out here? The CTQ\'s is going to get better. Which means that I get more transformational entitlement going from state A to state B.&quot;', 'Cô lập và thiết lập đúng các CTPs sẽ làm CTQ tốt hơn, giúp quy trình đạt được toàn bộ năng lực chuyển đổi giá trị từ trạng thái A sang B.')">A. CTQ sẽ bị biến động mạnh hơn</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-6', 'Dr. Harry: &quot;I isolate the correct settings for them. What\'s going to happen out here? The CTQ\'s is going to get better. Which means that I get more transformational entitlement going from state A to state B.&quot;', 'Cô lập và thiết lập đúng các CTPs sẽ làm CTQ tốt hơn, giúp quy trình đạt được toàn bộ năng lực chuyển đổi giá trị từ trạng thái A sang B.')">B. CTQ sẽ được cải thiện vượt bậc và quy trình đạt được toàn bộ năng lực chuyển đổi giá trị đặc quyền (Transformational Entitlement)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-6', 'Dr. Harry: &quot;I isolate the correct settings for them. What\'s going to happen out here? The CTQ\'s is going to get better. Which means that I get more transformational entitlement going from state A to state B.&quot;', 'Cô lập và thiết lập đúng các CTPs sẽ làm CTQ tốt hơn, giúp quy trình đạt được toàn bộ năng lực chuyển đổi giá trị từ trạng thái A sang B.')">C. Khách hàng sẽ yêu cầu giảm giá bán</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-6', 'Dr. Harry: &quot;I isolate the correct settings for them. What\'s going to happen out here? The CTQ\'s is going to get better. Which means that I get more transformational entitlement going from state A to state B.&quot;', 'Cô lập và thiết lập đúng các CTPs sẽ làm CTQ tốt hơn, giúp quy trình đạt được toàn bộ năng lực chuyển đổi giá trị từ trạng thái A sang B.')">D. Máy móc sẽ bị quá tải nhiệt</button>
+        </div>
+        <div id="fb-01-6" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 7/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Một kỹ sư bảo trì mất 3 tuần để tìm cách căn chỉnh độ sáng bóng của vỏ máy sơn, trong khi nhiệt độ sấy mới là biến số ảnh hưởng đến độ bền mối hàn. Lỗi của kỹ sư này theo thuật ngữ Dr. Harry là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-7', 'Focusing on cosmetic secondary factors rather than the vital few functional process parameters wastes resources on the trivial many.', 'Kỹ sư đã rơi vào bẫy tiêu tốn thời gian vào biến số tầm thường (Trivial Many) thay vì tìm kiếm và tối ưu biến số quy trình trọng yếu (Vital Few).')">A. Không có lỗi vì làm đẹp vỏ máy là quan trọng</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-7', 'Focusing on cosmetic secondary factors rather than the vital few functional process parameters wastes resources on the trivial many.', 'Kỹ sư đã rơi vào bẫy tiêu tốn thời gian vào biến số tầm thường (Trivial Many) thay vì tìm kiếm và tối ưu biến số quy trình trọng yếu (Vital Few).')">B. Đã lãng phí nguồn lực vào một biến số thuộc nhóm "Trivial Many" thay vì tập trung vào "Vital Few CTPs"</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-7', 'Focusing on cosmetic secondary factors rather than the vital few functional process parameters wastes resources on the trivial many.', 'Kỹ sư đã rơi vào bẫy tiêu tốn thời gian vào biến số tầm thường (Trivial Many) thay vì tìm kiếm và tối ưu biến số quy trình trọng yếu (Vital Few).')">C. Chưa mua đúng loại sơn cao cấp</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-7', 'Focusing on cosmetic secondary factors rather than the vital few functional process parameters wastes resources on the trivial many.', 'Kỹ sư đã rơi vào bẫy tiêu tốn thời gian vào biến số tầm thường (Trivial Many) thay vì tìm kiếm và tối ưu biến số quy trình trọng yếu (Vital Few).')">D. Chưa báo cáo cho phòng nhân sự</button>
+        </div>
+        <div id="fb-01-7" class="quiz-fb"></div>
+      </div>
+
+      <div class="quiz-card">
+        <span class="quiz-tag">Tình huống 8/8 • Khảo hạch Black Belt</span>
+        <div class="quiz-q">Định nghĩa tổng kết súc tích nhất của Dr. Mikel J. Harry về Processing for Six Sigma (PFSS) là gì?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-8', 'Dr. Harry concludes: &quot;As the process capability improves, the capability of these CTP\'s and this operation to transform this input deliverable to this output deliverable. That\'s what we’re talking about by Processing for Six Sigma.&quot;', 'PFSS chính là nâng cao năng lực quy trình của các CTPs và của công đoạn để chuyển đổi sản phẩm bàn giao đầu vào thành đầu ra đạt giá trị cao nhất.')">A. Là việc thay thế toàn bộ công nhân bằng rô-bốt tự động</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-01-8', 'Dr. Harry concludes: &quot;As the process capability improves, the capability of these CTP\'s and this operation to transform this input deliverable to this output deliverable. That\'s what we’re talking about by Processing for Six Sigma.&quot;', 'PFSS chính là nâng cao năng lực quy trình của các CTPs và của công đoạn để chuyển đổi sản phẩm bàn giao đầu vào thành đầu ra đạt giá trị cao nhất.')">B. Là việc nâng cao năng lực của các biến CTPs và các công đoạn để chuyển đổi hoàn hảo sản phẩm bàn giao đầu vào thành đầu ra đạt chuẩn 6 Sigma</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-8', 'Dr. Harry concludes: &quot;As the process capability improves, the capability of these CTP\'s and this operation to transform this input deliverable to this output deliverable. That\'s what we’re talking about by Processing for Six Sigma.&quot;', 'PFSS chính là nâng cao năng lực quy trình của các CTPs và của công đoạn để chuyển đổi sản phẩm bàn giao đầu vào thành đầu ra đạt giá trị cao nhất.')">C. Là việc chuẩn bị hồ sơ để xin cấp chứng chỉ chất lượng</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-01-8', 'Dr. Harry concludes: &quot;As the process capability improves, the capability of these CTP\'s and this operation to transform this input deliverable to this output deliverable. That\'s what we’re talking about by Processing for Six Sigma.&quot;', 'PFSS chính là nâng cao năng lực quy trình của các CTPs và của công đoạn để chuyển đổi sản phẩm bàn giao đầu vào thành đầu ra đạt giá trị cao nhất.')">D. Là việc tổ chức các cuộc thi đua khen thưởng cuối năm</button>
+        </div>
+        <div id="fb-01-8" class="quiz-fb"></div>
+      </div>
+    </div>
+
+    <!-- 5 FLASHCARDS -->
+    <h3 style="color:#ffffff; margin: 38px 0 10px; font-size:1.25rem;">Thẻ Ghi Nhớ Phản Xạ Nhanh 3D (Interactive Flip Cards)</h3>
+    <p style="color:var(--emerald-mint); font-size:0.92rem; margin-bottom:20px;">Nhấp vào thẻ để lật mặt sau và kiểm tra phản xạ cốt lõi:</p>
+    <div class="flashcards-grid">
+      
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="fc-num">Thẻ #1 • Nhấn để lật</span>
+            <div class="fc-q">Processing for Six Sigma (PFSS) tập trung vào sứ mệnh cốt lõi nào?</div>
+          </div>
+          <div class="flashcard-back">
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Tối ưu hóa, kiểm soát và giảm thiểu biến thiên trên các quy trình vận hành hiện hữu để nâng cao năng suất và chất lượng đầu ra đạt chuẩn 6 Sigma.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="fc-num">Thẻ #2 • Nhấn để lật</span>
+            <div class="fc-q">Khái niệm "Sản phẩm bàn giao" (Deliverable) trong bài giảng của Dr. Harry là gì?</div>
+          </div>
+          <div class="flashcard-back">
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Là kết quả đầu ra cụ thể của một công đoạn (Op 1), mang giá trị cao hơn đầu vào (chuyển từ Trạng thái A sang Trạng thái B) và được chuyển tiếp làm đầu vào cho công đoạn sau.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="fc-num">Thẻ #3 • Nhấn để lật</span>
+            <div class="fc-q">Sự khác biệt căn bản giữa CTQ của sản phẩm và CTP của quy trình là gì?</div>
+          </div>
+          <div class="flashcard-back">
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">CTQ (Critical to Quality) là đặc tính chất lượng của sản phẩm mà khách hàng thụ hưởng (Y); CTP (Critical to Process) là các thông số nút vặn, biến số quy trình tạo nên CTQ đó (X).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="fc-num">Thẻ #4 • Nhấn để lật</span>
+            <div class="fc-q">Công thức toán học nền tảng liên kết giữa kết quả đầu ra và các biến số quy trình là gì?</div>
+          </div>
+          <div class="flashcard-back">
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Hàm số chuyển giao: Y = f(X1, X2, ..., XN), trong đó một số ít X thuộc nhóm Vital Few (CTPs) và số đông X thuộc nhóm Trivial Many.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="fc-num">Thẻ #5 • Nhấn để lật</span>
+            <div class="fc-q">Khi Black Belt tìm ra thiết lập tối ưu cho các biến CTP thì điều gì xảy ra ở đầu ra?</div>
+          </div>
+          <div class="flashcard-back">
+            <span class="fc-num">Đáp án chuẩn Black Belt</span>
+            <div class="fc-a">Đặc tính CTQ sẽ được cải thiện vượt bậc, quy trình đạt được Năng lực đặc quyền chuyển đổi (Transformational Entitlement) từ Trạng thái A sang Trạng thái B.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 5: ACTION CHECKLIST & TEMPLATES -->
+  <section class="section-card">
+    <span class="section-num">Trụ Cột 5 • Sáng Thứ Hai Làm Gì?</span>
+    <h2 class="section-heading">Kế Hoạch Hành Động 3 Bước &amp; Biểu Mẫu Thực Thi</h2>
+    <div class="section-subheading">Quy trình tác chiến hiện trường dành cho Giám đốc Chất lượng &amp; Black Belt</div>
+
+    
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 1:</strong> Vẽ sơ đồ dòng chảy các công đoạn liên tiếp (Op 1 &rarr; Op 2 &rarr; Op 3) và xác định rõ Sản phẩm bàn giao (Deliverable) tại mỗi bước.
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 2:</strong> Lập danh sách đầy đủ tất cả các biến số đầu vào X (nhiệt độ, áp suất, tốc độ, tay nghề) và dùng ma trận C&E sàng lọc ra nhóm Vital Few CTPs.
+      </span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text">
+        <strong>Bước 3:</strong> Tiến hành thực nghiệm DOE để xác định thiết lập tối ưu cho từng CTP, chuẩn hóa thành văn bản hướng dẫn vận hành SOP.
+      </span>
+    </label>
+
+    <h3 style="color:var(--wood-dark); margin-top:32px; font-size:1.15rem;">Biểu Mẫu Quản Trị &amp; Khung Kiểm Soát Thực Chiến</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Công Đoạn Quy Trình</th><th>Sản Phẩm Bàn Giao</th><th>Đặc Tính CTQ Đầu Ra (Y)</th><th>Biến Số CTP Trọng Yếu (X)</th><th>Thiết Lập Tối Ưu</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><strong>Op 1: Hàn dán bề mặt SMT</strong></td>
+              <td>Bo mạch in gắn linh kiện</td>
+              <td>Độ dày kem hàn, không cầu chì</td>
+              <td>Áp lực dao gạt, tốc độ quét</td>
+              <td>Áp lực 0.25 kg/cm, tốc độ 45 mm/s</td>
+            </tr>
+            <tr>
+              <td><strong>Op 2: Lò hàn đối lưu</strong></td>
+              <td>Bo mạch hàn ngấu hoàn tất</td>
+              <td>Độ ngấu mối hàn, không rỗ khí</td>
+              <td>Nhiệt độ đỉnh lò, thời gian ngâm</td>
+              <td>Nhiệt độ 245&deg;C, ngâm 65 giây</td>
+            </tr>
+            <tr>
+              <td><strong>Op 3: Kiểm tra quang học AOI</strong></td>
+              <td>Bo mạch đạt chuẩn xuất xưởng</td>
+              <td>Tỷ lệ phát hiện lỗi 100%</td>
+              <td>Góc chiếu sáng LED, độ tương phản</td>
+              <td>Góc đèn 45&deg;, cường độ sáng 85%</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
+  </p>
+</footer>
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

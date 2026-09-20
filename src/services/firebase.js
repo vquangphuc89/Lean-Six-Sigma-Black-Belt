@@ -16,8 +16,8 @@ export const isFirebaseConfigured = Boolean(
   firebaseConfig.apiKey &&
   firebaseConfig.projectId &&
   firebaseConfig.appId &&
-  !firebaseConfig.apiKey.startsWith('AIzaSy...') &&
-  firebaseConfig.apiKey.length > 15
+  !firebaseConfig.apiKey.includes('...') &&
+  firebaseConfig.apiKey.length > 20
 );
 
 let app = null;

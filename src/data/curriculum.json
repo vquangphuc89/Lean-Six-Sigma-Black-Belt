@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-20T14:03:23.240Z",
+  "generatedAt": "2026-09-21T14:16:35.616Z",
   "totalModules": 5,
-  "totalSubtopics": 30,
-  "totalLessons": 261,
+  "totalSubtopics": 31,
+  "totalLessons": 265,
   "modules": [
     {
       "id": "mod-01",
@@ -4113,8 +4113,8 @@
       "id": "mod-05",
       "name": "05. Project Application",
       "cleanName": "Project Application",
-      "subtopicsCount": 6,
-      "lessonsCount": 33,
+      "subtopicsCount": 7,
+      "lessonsCount": 37,
       "subtopics": [
         {
           "id": "sub-05-01",
@@ -4722,6 +4722,82 @@
               "url": "/sources/05.%20Project%20Application/06.%20Deployment%20Timeline/07.Implementing%20DFSS%20and%20Supply-Based%20Initiatives.html",
               "moduleName": "05. Project Application",
               "subtopicName": "06. Deployment Timeline"
+            }
+          ]
+        },
+        {
+          "id": "sub-05-07",
+          "name": "07. Roles",
+          "cleanName": "Roles",
+          "lessonsCount": 4,
+          "lessons": [
+            {
+              "id": "lss-262",
+              "order": 262,
+              "localOrder": 1,
+              "file": "03.Defining the CXO Roles for a Six Sigma Deployment.html",
+              "cleanTitle": "Bài 01: Xác Định Vai Trò CXO Trong Triển Khai Six Sigma",
+              "rawTitle": "Xác Định Vai Trò CXO Trong Triển Khai Six Sigma",
+              "titleEn": "Defining the CXO Roles for a Six Sigma Deployment",
+              "description": "Góc nhìn điều hành từ độ cao 30.000 feet: Cách thức dàn lãnh đạo C-Suite (CEO, CFO, CIO, CTO) đưa ra quyết định ngưỡng Go/No-Go, nhận diện điểm nghẽn hệ thống và cấp quyền lực chính trị cho cỗ máy đột phá Six Sigma.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 20,
+              "url": "/sources/05.%20Project%20Application/07.%20Roles/03.Defining%20the%20CXO%20Roles%20for%20a%20Six%20Sigma%20Deployment.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "07. Roles"
+            },
+            {
+              "id": "lss-263",
+              "order": 263,
+              "localOrder": 2,
+              "file": "04.Making the Six Sigma Champion as a Deployment Leader.html",
+              "cleanTitle": "Bài 02: Định Vị Champion Là Thủ Lĩnh Triển Khai",
+              "rawTitle": "Định Vị Champion Là Thủ Lĩnh Triển Khai",
+              "titleEn": "Making the Six Sigma Champion as a Deployment Leader",
+              "description": "Bản lĩnh của Senior Champion — \"Con chim không bay theo đàn\", người lãnh đạo kiên cường như chó bulldog, nắm giữ kế hoạch toàn cầu, bảo vệ đội ngũ Belt qua bão táp chính trị và giữ cho ngọn lửa đổi mới sống mãi.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 21,
+              "url": "/sources/05.%20Project%20Application/07.%20Roles/04.Making%20the%20Six%20Sigma%20Champion%20as%20a%20Deployment%20Leader.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "07. Roles"
+            },
+            {
+              "id": "lss-264",
+              "order": 264,
+              "localOrder": 3,
+              "file": "05.Comparing the Functional Roles of a Six Sigma Champion.html",
+              "cleanTitle": "Bài 03: So Sánh Vai Trò Chức Năng Của Six Sigma Champion",
+              "rawTitle": "So Sánh Vai Trò Chức Năng Của Six Sigma Champion",
+              "titleEn": "Comparing the Functional Roles of a Six Sigma Champion",
+              "description": "Kiến trúc phân tầng lãnh đạo: Triển khai ở cấp độ toàn cầu và thực thi ở cấp độ địa phương. Phân định ranh giới tác chiến giữa Senior Corporate Champion, Business Unit Champion và Project Champion.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 19,
+              "url": "/sources/05.%20Project%20Application/07.%20Roles/05.Comparing%20the%20Functional%20Roles%20of%20a%20Six%20Sigma%20Champion.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "07. Roles"
+            },
+            {
+              "id": "lss-265",
+              "order": 265,
+              "localOrder": 4,
+              "file": "06.Critical Management Skills for a Six Sigma Champion.html",
+              "cleanTitle": "Bài 04: Kỹ Năng Quản Lý Trọng Yếu Của Six Sigma Champion",
+              "rawTitle": "Kỹ Năng Quản Lý Trọng Yếu Của Six Sigma Champion",
+              "titleEn": "Critical Management Skills for a Six Sigma Champion",
+              "description": "Bóc tách chuỗi giá trị lãnh đạo theo học thuyết Dr. Mikel J. Harry: Tạo tầm nhìn, trang bị tư duy, định hướng con đường (Yellow Brick Road), hiện thực hóa lợi ích và giữ vững trận địa (Hold the ground), cùng nghệ thuật đàm phán P&L đỉnh cao.",
+              "quizCount": 8,
+              "flashcardCount": 5,
+              "checklistCount": 3,
+              "readTimeMin": 21,
+              "url": "/sources/05.%20Project%20Application/07.%20Roles/06.Critical%20Management%20Skills%20for%20a%20Six%20Sigma%20Champion.html",
+              "moduleName": "05. Project Application",
+              "subtopicName": "07. Roles"
             }
           ]
         }

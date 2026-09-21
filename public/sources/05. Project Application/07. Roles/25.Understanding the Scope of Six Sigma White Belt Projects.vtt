@@ -1,0 +1,281 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Understanding the Scope of Six Sigma White Belt Projects
+Hiểu Phạm Vi của Dự Án Đai Trắng Six Sigma
+
+2
+00:00:05.000 --> 00:00:08.866
+Welcome back to this session on white belts.
+Chào mừng bạn trở lại với buổi học về đai trắng.
+
+3
+00:00:08.866 --> 00:00:14.232
+The whole idea of white belts and what I want to do a little bit is explore
+Ý tưởng cốt lõi về đai trắng và điều tôi muốn làm một chút là khám phá
+
+4
+00:00:14.233 --> 00:00:18.133
+the idea of white belt projects in this sense.
+ý tưởng về các dự án đai trắng theo nghĩa này.
+
+5
+00:00:18.133 --> 00:00:25.099
+Now remember, I’m gonna throw something out here. We kinda have Kaizen.
+Bây giờ hãy nhớ, tôi sẽ đưa ra một điều ở đây. Chúng ta có Kaizen.
+
+6
+00:00:25.100 --> 00:00:31.466
+We’ll talk more about that later. Lean and Six Sigma.
+Chúng ta sẽ nói thêm về điều đó sau. Lean và Six Sigma.
+
+7
+00:00:31.466 --> 00:00:34.899
+A lot of times people say what's the difference
+Rất nhiều lần mọi người hỏi sự khác biệt là gì
+
+8
+00:00:34.900 --> 00:00:39.600
+between a Six Sigma project, a lean project, and a kaizen project.
+giữa một dự án Six Sigma, một dự án lean và một dự án kaizen.
+
+9
+00:00:39.600 --> 00:00:46.600
+Well here's a easy way to look at it. A Six Sigma kind of project is pretty intense.
+Đây là một cách dễ dàng để xem xét. Một dự án kiểu Six Sigma khá chuyên sâu.
+
+10
+00:00:46.600 --> 00:00:51.666
+It deals with complex problems of variation reduction,
+Nó giải quyết các vấn đề phức tạp về giảm biến động,
+
+11
+00:00:51.666 --> 00:00:58.366
+process capability issues, defect reduction, stability types of problems,
+các vấn đề về năng lực quy trình, giảm thiểu khuyết tật, các loại vấn đề về tính ổn định,
+
+12
+00:00:58.366 --> 00:01:03.199
+all kinds of problems related in that area. Those types of problems.
+tất cả các loại vấn đề liên quan trong lĩnh vực đó. Những loại vấn đề đó.
+
+13
+00:01:03.200 --> 00:01:09.866
+Involving the use of DMAIC and design of experiments and analysis of variance
+Liên quan đến việc sử dụng DMAIC và thiết kế thí nghiệm và phân tích phương sai
+
+14
+00:01:09.866 --> 00:01:14.432
+and hypothesis testing. It’s a pretty sophisticated approach.
+và kiểm định giả thuyết. Đó là một phương pháp khá phức tạp.
+
+15
+00:01:14.433 --> 00:01:21.366
+And one of these projects, a Six Sigma project, can take several weeks
+Và một trong những dự án này, một dự án Six Sigma, có thể mất vài tuần
+
+16
+00:01:21.366 --> 00:01:25.832
+to months to complete.
+đến vài tháng để hoàn thành.
+
+17
+00:01:25.833 --> 00:01:34.566
+Now, a lean project involves things like visual controls, kanban, set up,
+Bây giờ, một dự án lean liên quan đến những thứ như kiểm soát trực quan, kanban, thiết lập,
+
+18
+00:01:34.566 --> 00:01:39.199
+a lot of value stream mapping, that sort of thing.
+rất nhiều lập bản đồ chuỗi giá trị, những thứ tương tự.
+
+19
+00:01:39.200 --> 00:01:45.566
+And it can take days to weeks to complete.
+Và nó có thể mất vài ngày đến vài tuần để hoàn thành.
+
+20
+00:01:45.566 --> 00:01:51.199
+And as we look over here at a kaizen project. Well, that's a quick strike.
+Và khi chúng ta nhìn sang bên này tại một dự án kaizen. Vâng, đó là một cuộc tấn công nhanh.
+
+21
+00:01:51.200 --> 00:01:57.266
+It involves basic blocking and tackling kind of tools. The seven basic tools.
+Nó liên quan đến các công cụ kiểu chặn và giải quyết cơ bản. Bảy công cụ cơ bản.
+
+22
+00:01:57.266 --> 00:02:00.966
+Things like cause and effect analysis, and process mapping,
+Những thứ như phân tích nguyên nhân và kết quả, và lập bản đồ quy trình,
+
+23
+00:02:00.966 --> 00:02:06.566
+some fundamental types of tools. Lean practices versus kaizen tools.
+một số loại công cụ cơ bản. Thực hành Lean so với công cụ kaizen.
+
+24
+00:02:06.566 --> 00:02:12.132
+This is done in hours to days.
+Điều này được thực hiện trong vòng vài giờ đến vài ngày.
+
+25
+00:02:12.133 --> 00:02:18.999
+So, we can see in a timeline that we’re progressing upwards as we move from
+Vì vậy, chúng ta có thể thấy trong dòng thời gian rằng chúng ta đang tiến lên khi chúng ta di chuyển từ
+
+26
+00:02:19.000 --> 00:02:25.033
+a kaizen project, to a lean, to a Six Sigma project
+một dự án kaizen, đến lean, đến một dự án Six Sigma
+
+27
+00:02:25.033 --> 00:02:30.766
+in terms of committed time to execute those projects.
+về thời gian cam kết để thực hiện các dự án đó.
+
+28
+00:02:30.766 --> 00:02:36.266
+We’re moving from days and hours, to days and weeks,
+Chúng ta đang di chuyển từ ngày và giờ, đến ngày và tuần,
+
+29
+00:02:36.266 --> 00:02:39.399
+up to weeks and months.
+lên đến tuần và tháng.
+
+30
+00:02:39.400 --> 00:02:45.166
+So that’s a way to differentiate between a kaizen, a lean, and a Six Sigma project.
+Vì vậy, đó là một cách để phân biệt giữa dự án kaizen, lean và Six Sigma.
+
+31
+00:02:45.166 --> 00:02:50.466
+However, we’re going to make life simple. I don't believe there really is a differentiation.
+Tuy nhiên, chúng ta sẽ đơn giản hóa vấn đề. Tôi không tin rằng thực sự có sự khác biệt rõ ràng.
+
+32
+00:02:50.466 --> 00:02:54.166
+Come on. What we want to do is get in and close the gaps.
+Thôi nào. Điều chúng ta muốn làm là tham gia và thu hẹp khoảng cách.
+
+33
+00:02:54.166 --> 00:02:57.132
+We want to strike the gaps down.
+Chúng ta muốn loại bỏ các khoảng cách.
+
+34
+00:02:57.133 --> 00:03:00.733
+And improve them where our critical to quality characteristics are concerned.
+Và cải thiện chúng ở những nơi liên quan đến các đặc tính quan trọng đối với chất lượng của chúng ta.
+
+35
+00:03:00.733 --> 00:03:03.699
+So, what I kinda do is I kinda lump these.
+Vì vậy, những gì tôi thường làm là tôi gộp chung những thứ này.
+
+36
+00:03:03.700 --> 00:03:10.333
+In general, these are white belt types of activities.
+Nói chung, đây là các loại hoạt động của đai trắng.
+
+37
+00:03:10.333 --> 00:03:17.333
+And black belt activities are over here with Six Sigma.
+Và các hoạt động của đai đen là ở bên này với Six Sigma.
+
+38
+00:03:17.333 --> 00:03:23.299
+And green belt activities
+Và các hoạt động của đai xanh
+
+39
+00:03:23.300 --> 00:03:27.300
+overlap the two.
+chồng chéo lên cả hai.
+
+40
+00:03:27.300 --> 00:03:31.300
+That's green belt.
+Đó là đai xanh.
+
+41
+00:03:31.300 --> 00:03:35.933
+So, we’ve got our white belt, green belt and black belt.
+Vì vậy, chúng ta có đai trắng, đai xanh và đai đen.
+
+42
+00:03:35.933 --> 00:04:43.766
+And roughly how we can look at them on the belt scale, so to speak. So, in terms of time it goes up.
+Và sơ bộ cách chúng ta có thể nhìn vào chúng trên thang đo đai, có thể nói như vậy. Vì vậy, về mặt thời gian, nó tăng lên.
+
+44
+00:04:43.766 --> 00:04:48.332
+In terms of payback, it’s directly correlated. The biggest paybacks
+Về mặt lợi tức đầu tư, nó tương quan trực tiếp. Lợi tức đầu tư lớn nhất
+
+45
+00:04:48.333 --> 00:04:52.333
+are usually consistently out here in the Six Sigma zone.
+thường nhất quán ở đây trong vùng Six Sigma.
+
+46
+00:04:52.333 --> 00:04:55.933
+Followed by lean and then the kaizen. It all kinda correlates
+Tiếp theo là lean và sau đó là kaizen. Tất cả đều có sự tương quan
+
+47
+00:04:55.933 --> 00:05:02.933
+in terms of what we had looked at before. In the three axis consideration
+về những gì chúng ta đã xem xét trước đây. Trong xem xét ba trục
+
+48
+00:05:02.933 --> 00:05:09.933
+of time, scope, and depth.
+về thời gian, phạm vi và độ sâu.
+
+49
+00:05:09.933 --> 00:05:16.699
+We have on those three, moving out: kaizen, lean, Six Sigma;
+Chúng ta có trên ba trục đó, di chuyển ra ngoài: kaizen, lean, Six Sigma;
+
+50
+00:05:16.700 --> 00:05:20.700
+kaizen, lean, Six Sigma; kaizen, lean, Six Sigma.
+kaizen, lean, Six Sigma; kaizen, lean, Six Sigma.
+
+51
+00:05:20.700 --> 00:05:25.833
+Now recognize please. This is a broad generalization I’m making.
+Bây giờ xin lưu ý. Đây là một khái quát rộng mà tôi đang đưa ra.
+
+52
+00:05:25.833 --> 00:05:30.233
+I'm sure there are kaizen advocates out there that would argue that.
+Tôi chắc chắn có những người ủng hộ kaizen ngoài kia sẽ tranh luận điều đó.
+
+53
+00:05:30.233 --> 00:05:36.033
+We’re arguing shades of gray here. So, I’m looking at this from 30,000 feet,
+Chúng ta đang tranh luận về các sắc thái xám ở đây. Vì vậy, tôi đang nhìn vào điều này từ độ cao 30.000 feet,
+
+54
+00:05:36.033 --> 00:05:41.133
+to provide a new person such as yourself. New to the world of Six Sigma,
+để cung cấp cho một người mới như bạn. Người mới đến với thế giới Six Sigma,
+
+55
+00:05:41.133 --> 00:05:44.133
+going through this training for the first time,
+trải qua khóa đào tạo này lần đầu tiên,
+
+56
+00:05:44.133 --> 00:05:47.999
+a perspective as to what differentiates these things.
+một góc nhìn về điều gì phân biệt những điều này.
+
+57
+00:05:48.000 --> 00:05:53.000
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

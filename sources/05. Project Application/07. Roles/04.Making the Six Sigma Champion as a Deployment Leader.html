@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 04: Định Vị Champion Là Thủ Lĩnh Triển Khai — Six Sigma Masterclass</title>
+<style>
+  :root {
+    --wood-deep: #022c22;
+    --wood-dark: #064e3b;
+    --wood-forest: #1b4332;
+    --water-ocean: #082f49;
+    --emerald: #059669;
+    --emerald-vibrant: #10b981;
+    --emerald-mint: #6ee7b7;
+    --vi-green: #047857;
+    --vi-green-2: #065f46;
+    --red: #b91c1c;
+    --green: #16a34a;
+    --gold-bg: #fefce8;
+    --gold-border: #d97706;
+    --wood-bark: #78350f;
+    --bg-paper: #f0f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: var(--bg-paper);
+    color: #0f241d;
+    line-height: 1.68;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px 80px; }
+  a { color: var(--emerald); text-decoration: none; }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 55%, var(--water-ocean) 120%);
+    color: #fff;
+    padding: 48px 24px 38px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 32px rgba(2,44,34,0.35);
+    border-bottom: 4px solid var(--emerald);
+  }
+  .hero-inner { max-width: 1160px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.18);
+    border: 1px solid rgba(110,231,183,0.45);
+    color: var(--emerald-mint);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .hero-title { font-size: 2.15rem; font-weight: 800; margin: 0 0 6px; color: #ffffff; line-height: 1.2; }
+  .hero-title-en { font-size: 1.15rem; color: var(--emerald-mint); margin: 0 0 16px; font-weight: 500; }
+  .hero-desc { font-size: 1.02rem; color: #d1fae5; max-width: 920px; margin: 0; line-height: 1.6; }
+
+  .section-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 34px 38px;
+    margin-bottom: 34px;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.07);
+    border-top: 5px solid var(--emerald);
+    border-bottom: 1px solid #d1fae5;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--wood-dark);
+    color: #ecfdf5;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-heading { font-size: 1.55rem; color: var(--wood-dark); margin: 0 0 4px; font-weight: 800; }
+  .section-subheading { font-size: 1.05rem; color: var(--vi-green); font-style: italic; margin: 0 0 20px; font-weight: 600; }
+
+  .exec-summary {
+    background: #f4fbf7;
+    border: 1px solid #d1fae5;
+    border-left: 6px solid var(--emerald);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .exec-summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .exec-summary li { margin-bottom: 10px; font-size: 1rem; color: #0f241d; }
+  .exec-summary strong { color: var(--wood-dark); }
+
+  .pro-tip {
+    background: var(--gold-bg);
+    border: 1px solid #fde68a;
+    border-left: 6px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 22px 0;
+  }
+  .pro-tip-title { font-size: 0.95rem; font-weight: 800; color: var(--wood-bark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pro-tip-desc { font-size: 0.96rem; color: #713f12; margin: 0; }
+
+  /* Native Math Cards */
+  .math-card {
+    background: linear-gradient(135deg, var(--wood-deep) 0%, var(--wood-dark) 100%);
+    color: #ecfdf5;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    border: 1.5px solid var(--emerald);
+    box-shadow: 0 4px 16px rgba(2,44,34,0.25);
+  }
+  .math-card .title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--emerald-mint);
+    margin-bottom: 12px;
+  }
+  .math-card .formula {
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    padding: 16px 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .math-card .desc {
+    font-size: 0.94rem;
+    color: #a7f3d0;
+    line-height: 1.6;
+    margin-top: 10px;
+    border-top: 1px solid rgba(16,185,129,0.25);
+    padding-top: 10px;
+  }
+
+  .fraction {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 4px;
+  }
+  .fraction-top {
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+  }
+  .fraction-bottom {
+    padding-top: 2px;
+  }
+
+  /* Tables */
+  .table-responsive { overflow-x: auto; margin: 20px 0; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.96rem;
+  }
+  .data-table th {
+    background: linear-gradient(135deg, var(--wood-dark), var(--vi-green));
+    color: #ffffff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    border: 1px solid #047857;
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+  }
+  .data-table tr:nth-child(even) td { background: #f8fafc; }
+  .data-table tr:hover td { background: #f0fdf4; }
+
+  /* VS Comparison Grid */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+    margin: 24px 0;
+  }
+  @media (max-width: 768px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-badge { margin: 8px auto; }
+  }
+  .vs-card {
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  }
+  .vs-card.bad {
+    background: #fff5f5;
+    border: 1.5px solid #fecaca;
+    border-left: 6px solid var(--red);
+  }
+  .vs-card.good {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-left: 6px solid var(--green);
+  }
+  .vs-card h4 { margin: 0 0 10px; font-size: 1.1rem; font-weight: 800; }
+  .vs-card.bad h4 { color: var(--red); }
+  .vs-card.good h4 { color: var(--green); }
+  .vs-card ul { margin: 0; padding-left: 18px; font-size: 0.94rem; line-height: 1.6; }
+  .vs-badge {
+    background: var(--wood-deep);
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.1rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--emerald-vibrant);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* Interactive Arena */
+  .interactive-arena {
+    background: linear-gradient(180deg, var(--wood-deep) 0%, var(--wood-forest) 100%);
+    border-radius: 16px;
+    padding: 40px 36px;
+    margin: 40px 0;
+    box-shadow: 0 12px 40px rgba(2,44,34,0.45);
+    border: 2px solid var(--emerald);
+    color: #ecfdf5;
+  }
+  .arena-heading { font-size: 1.85rem; font-weight: 800; color: #ffffff; text-align: center; margin: 0 0 8px; }
+  .arena-subheading { text-align: center; color: var(--emerald-mint); font-size: 1rem; margin-bottom: 34px; }
+
+  .quizzes-container { display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px; }
+  .quiz-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(110,231,183,0.25);
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+  }
+  .quiz-tag {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--emerald-mint);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .quiz-q { font-size: 1.06rem; font-weight: 700; color: #ffffff; margin-bottom: 16px; line-height: 1.5; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-btn {
+    background: rgba(255,255,255,0.08);
+    color: #f1f5f9;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    line-height: 1.4;
+  }
+  .quiz-btn:hover:not(:disabled) {
+    background: rgba(16,185,129,0.22);
+    border-color: var(--emerald-vibrant);
+    transform: translateX(4px);
+  }
+  .quiz-btn.correct {
+    background: #065f46 !important;
+    border-color: #34d399 !important;
+    color: #ecfdf5 !important;
+    font-weight: 700;
+  }
+  .quiz-btn.wrong {
+    background: #7f1d1d !important;
+    border-color: #f87171 !important;
+    color: #fef2f2 !important;
+    font-weight: 700;
+  }
+  .quiz-fb {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.success { background: rgba(5,150,105,0.25); border: 1px solid #10b981; color: #ecfdf5; }
+  .quiz-fb.error { background: rgba(185,28,28,0.25); border: 1px solid #ef4444; color: #fee2e2; }
+
+  /* 3D Flashcards */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .flashcard {
+    height: 190px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  .flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+  }
+  .fc-front, .fc-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .fc-front {
+    background: linear-gradient(135deg, rgba(6,78,59,0.9), rgba(2,44,34,0.95));
+    border: 1px solid rgba(110,231,183,0.4);
+    color: #ffffff;
+  }
+  .fc-back {
+    background: linear-gradient(135deg, rgba(8,47,73,0.95), rgba(6,78,59,0.95));
+    border: 1px solid var(--emerald-vibrant);
+    color: #ecfdf5;
+    transform: rotateY(180deg);
+  }
+  .fc-q { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+  .fc-hint { font-size: 0.76rem; color: var(--emerald-mint); opacity: 0.85; text-transform: uppercase; }
+  .fc-a { font-size: 0.88rem; line-height: 1.45; color: #d1fae5; }
+
+  /* Action Checklist */
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .action-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--emerald);
+    cursor: pointer;
+  }
+  .action-text { font-size: 0.96rem; color: #1e293b; line-height: 1.5; }
+  .action-text strong { color: var(--wood-dark); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">PHÂN HỆ 05 &bull; TRIỂN KHAI DỰ ÁN &bull; VAI TRÒ HỆ THỐNG</div>
+    <h1 class="hero-title">Định Vị Champion Là Thủ Lĩnh Triển Khai Chiến Lược</h1>
+    <div class="hero-title-en">Making the Six Sigma Champion as a Deployment Leader</div>
+    <p class="hero-desc">
+      Bản lĩnh của Senior Champion — "Con chim không bay theo đàn", người lãnh đạo kiên cường như chó bulldog, nắm giữ kế hoạch toàn cầu, bảo vệ đội ngũ Belt qua bão táp chính trị và giữ cho ngọn lửa đổi mới sống mãi.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- TRỤ CỘT 1: EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <span class="section-num">TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH</span>
+    <h2 class="section-heading">Executive Summary &amp; Chân Dung Thủ Lĩnh Triển Khai</h2>
+    <div class="section-subheading">Nắm trọn cốt lõi học thuyết của Dr. Mikel J. Harry trong 60 giây</div>
+
+    <div class="exec-summary">
+      <ul>
+        <li><strong>Lãnh đạo xuất sắc nhất chưa ngồi ghế CXO:</strong> Senior Champion (hay Corporate Champion) bắt buộc phải là người giỏi nhất trong hàng ngũ lãnh đạo kế cận của công ty — một cá nhân kiệt xuất có uy tín vượt bậc nhưng chưa nằm trong nhóm CXO hiện tại.</li>
+        <li><strong>"Con chim không bay theo đàn" (A bird that doesn't fly with the flock):</strong> Champion là mẫu người có tư duy độc lập, sẵn sàng đi ngược lại lối mòn thói quen, kiên cường như chó bulldog (<em>tenacious as a bulldog</em>) và tuyệt đối không bao giờ chấp nhận câu trả lời "Không" từ các thế lực phản kháng.</li>
+        <li><strong>Nhiệm kỳ 3–5 năm &amp; Bước ngoặt sự nghiệp:</strong> Khác với Black Belt chỉ nhận nhiệm vụ trong 2 năm rồi luân chuyển, Senior Champion phải gánh vác sứ mệnh triển khai liên tục từ 3 đến 5 năm — đây là một sự biến động sự nghiệp khổng lồ (<em>major career change</em>).</li>
+        <li><strong>Cam kết song phương (The Catch):</strong> Nếu Champion cống hiến hết mình và mang lại thành công tài chính cho CXO, thì ban lãnh đạo C-Suite bắt buộc phải tưởng thưởng xứng đáng và bảo đảm con đường thăng tiến cao nhất cho Champion (thường là ghế CXO kế tiếp).</li>
+        <li><strong>Sứ mệnh tối thượng "Giữ cho ý tưởng sống mãi" (Keep the idea alive):</strong> Vượt qua mọi trận bão mưa đá kháng cự (<em>hailstorms of resistance</em>) từ các cấp quản lý bảo thủ để giữ vững ngọn lửa chuyển đổi Six Sigma.</li>
+      </ul>
+    </div>
+
+    <div class="pro-tip">
+      <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Practical Insight)</div>
+      <p class="pro-tip-desc">
+        Tại Motorola, CEO Bob Galvin đã đưa <strong>Jack Germain</strong> — giám đốc điều hành xuất sắc nhất mà <em>"bất kể chạm vào điều gì cũng biến thành vàng"</em> — làm Phó Chủ tịch Chất lượng đầu tiên. Mọi người lúc đó đều sững sờ nghĩ Jack bị thất sủng. Nhưng Bob hiểu rằng: Nếu không chọn người giỏi nhất làm Champion, nỗ lực Six Sigma sẽ chết ngay trong trứng nước. Jack Germain đã giữ cho ý tưởng sống mãi qua mọi cơn giông bão chính trị!
+      </p>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 2: CORE FRAMEWORKS & PURE MATH -->
+  <section class="section-card">
+    <span class="section-num">TRỤ CỘT 2 • NGUYÊN LÝ &amp; KHUNG NĂNG LỰC CỐT LÕI</span>
+    <h2 class="section-heading">Khung Năng Lực Thủ Lĩnh &amp; Phương Trình Sống Sót Dự Án</h2>
+    <div class="section-subheading">Cơ chế bảo trợ chính trị và thiết lập kế hoạch triển khai toàn cầu</div>
+
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Đặc Tính Cốt Tử Của Senior Champion</th>
+            <th>Biểu Hiện Thực Tế Tại Doanh Nghiệp</th>
+            <th>Tác Động Tới Đội Ngũ Black Belts</th>
+            <th>Hậu Quả Nếu Chọn Sai Người</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kiên Cường Như Bulldog (Tenacity)</strong></td>
+            <td>Không chấp nhận sự trì hoãn; truy vấn đến cùng các rào cản phòng ban; bảo vệ các Belt trước sức ép hành chính.</td>
+            <td>Black Belt an tâm thử nghiệm các giải pháp đột phá mà không sợ bị trừng phạt nếu gặp biến động ngắn hạn.</td>
+            <td>Dự án bị các trưởng phòng bảo thủ ép dừng lại ngay khi phát hiện lỗi hệ thống nhạy cảm.</td>
+          </tr>
+          <tr>
+            <td><strong>Tư Duy Độc Lập (Independent Bird)</strong></td>
+            <td>Không bị chi phối bởi các bè phái quyền lực; dám nói thẳng sự thật với Tổng Giám Đốc (CEO).</td>
+            <td>Định hướng dự án dựa trên dữ liệu khách quan (Data-driven) thay vì dựa vào quan hệ cá nhân.</td>
+            <td>Six Sigma biến thành công cụ tranh giành quyền lực hoặc bị biến tướng thành phong trào hình thức.</td>
+          </tr>
+          <tr>
+            <td><strong>Kế Hoạch Toàn Cầu (Global Deployment Plan)</strong></td>
+            <td>Xây dựng lộ trình tổng thể 5 năm: Mục tiêu đào tạo, hạn mức Hard Savings, cơ cấu luân chuyển Belt.</td>
+            <td>Tạo ra dòng chảy dự án liên tục, kết nối thông suốt từ chiến lược tập đoàn đến từng phân xưởng.</td>
+            <td>Triển khai manh mún, đứt gãy sau năm đầu tiên, không nhân rộng được thành công sang các chi nhánh.</td>
+          </tr>
+          <tr>
+            <td><strong>Bảo Trợ Chính Trị (Political Shield)</strong></td>
+            <td>Hứng chịu mọi áp lực và gạch đá từ các Phó Tổng Giám Đốc khác; đứng mũi chịu sào trước C-Suite.</td>
+            <td>Black Belt được che chở dưới "chiếc ô an toàn" để tập trung 100% trí lực vào thống kê và tối ưu P&amp;L.</td>
+            <td>Các Black Belt thiện chiến bị cô lập, chán nản và xin từ chức hoặc chuyển sang đối thủ cạnh tranh.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PURE CSS MATH CARD -->
+    <div class="math-card">
+      <div class="title">Chỉ Số Sống Sót Triển Khai &amp; Năng Suất Champion (Deployment Sustainability Index - DSI)</div>
+      <div class="formula">
+        <span>DSI</span>
+        <span>=</span>
+        <div class="fraction">
+          <span class="fraction-top">&sum; Dự Án Hoàn Thành Đạt Chuẩn P&amp;L</span>
+          <span class="fraction-bottom">Tổng Số Dự Án Được Phê Duyệt Khởi Động</span>
+        </div>
+        <span>&times;</span>
+        <span>&Kappa;<sub>sponsor</sub></span>
+        <span>&ge;</span>
+        <span>0.85</span>
+      </div>
+      <div class="desc">
+        <strong>Trong đó:</strong> <strong>&Kappa;<sub>sponsor</sub></strong> là Hệ số bảo trợ chính trị của Champion (đo bằng tỷ lệ rào cản phòng ban được tháo gỡ trong vòng 72 giờ, chuẩn mực &Kappa; &ge; 0.90). Theo SSMI, nếu DSI &lt; 0.85, chương trình triển khai đang rơi vào tình trạng "chết lâm sàng" do năng lực lãnh đạo của Champion bị suy yếu hoặc thiếu quyết đoán.
+      </div>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 3: CASE STUDIES & VS COMPARISON GRID -->
+  <section class="section-card">
+    <span class="section-num">TRỤ CỘT 3 • THỰC TIỄN HIỆN TRƯỜNG &amp; ĐỐI CHIẾU</span>
+    <h2 class="section-heading">Đối Chiếu Bổ Nhiệm Champion: Sai Lầm Chết Người vs. Chuẩn Mực SSMI</h2>
+    <div class="section-subheading">Phân tích bài học lịch sử Motorola và các cuộc triển khai thất bại</div>
+
+    <div class="vs-grid">
+      <div class="vs-card bad">
+        <h4>❌ Sai Lầm Bổ Nhiệm Kiểu Thỏa Hiệp (The Bureaucratic Trap)</h4>
+        <ul>
+          <li>Cử một quản lý sắp về hưu hoặc một nhân sự đang dôi dư, "không biết xếp vào đâu" làm Champion.</li>
+          <li>Người được chọn có tính cách dĩ hòa vi quý, sợ va chạm chính trị, luôn gật đầu trước sự phản kháng của các trưởng phòng ban.</li>
+          <li>Coi vị trí Champion là nhiệm vụ kiêm nhiệm bán thời gian 10%–20%, khi có việc đột xuất thì bỏ bê dự án Six Sigma.</li>
+          <li>Khi Black Belt phát hiện phế phẩm do quy trình của một "công thần" gây ra, Champion chủ động thỏa hiệp để ém nhẹm dữ liệu.</li>
+        </ul>
+      </div>
+      <div class="vs-badge">VS</div>
+      <div class="vs-card good">
+        <h4>✅ Chuẩn Mực Thủ Lĩnh SSMI (The Jack Germain Standard)</h4>
+        <ul>
+          <li>CEO kiên quyết chọn lãnh đạo giỏi nhất — người đang quản lý mảng kinh doanh cốt lõi tạo ra nhiều lợi nhuận nhất.</li>
+          <li>Champion có bản lĩnh bulldog, dám đương đầu với mọi sức ép, kiên quyết đòi hỏi dữ liệu sự thật và giải pháp triệt để.</li>
+          <li>Toàn tâm toàn ý lãnh đạo kế hoạch toàn cầu trong 3–5 năm, cam kết bảo vệ đội ngũ Belt bằng mọi giá.</li>
+          <li>Khen thưởng công khai những Black Belt dũng cảm phơi bày sự cố hệ thống; trực tiếp cùng CFO bảo vệ nguồn lực cho dự án.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 4: INTERACTIVE ARENA -->
+  <section class="interactive-arena">
+    <div class="arena-heading">Đấu Trường Tình Huống Champion &amp; Flashcards 3D</div>
+    <div class="arena-subheading">Thử thách bản lĩnh lãnh đạo triển khai và xử lý khủng hoảng chính trị theo chuẩn SSMI</div>
+
+    <div class="quizzes-container">
+      
+      <!-- CÂU 1 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 01 &bull; Tầng 1: Chân Dung & Tiêu Chuẩn Senior Champion</span>
+        <div class="quiz-q">Theo Dr. Mikel J. Harry, phẩm chất nào sau đây là đặc điểm nhận diện bắt buộc của một Senior Champion (Corporate Champion) xuất sắc?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-1', 'Correct. A bird that doesn\'t fly with the flock, tenacious as a bulldog, the best leader not in a CXO role.', 'Chính xác! Là con chim không bay theo đàn, kiên trì như chó bulldog, không chấp nhận câu trả lời không, là lãnh đạo giỏi nhất chưa ngồi ghế CXO.')">
+            A. Là "con chim không bay theo đàn", kiên cường như chó bulldog, không chấp nhận câu trả lời "Không" và là lãnh đạo giỏi nhất công ty chưa ở vị trí CXO.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-1', 'Incorrect. Champions need high executive leadership and tenacity, not just technical coding.', 'Chưa chính xác. Champion là nhà lãnh đạo chiến lược, không phải người lập trình hay giải toán thống kê thuần túy.')">
+            B. Là người có chứng chỉ thống kê cao nhất và am hiểu sâu nhất về thuật toán phần mềm Minitab.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-1', 'Incorrect. Compromising and avoiding conflict destroys the transformational power of Six Sigma.', 'Chưa chính xác. Người luôn hòa nhã dĩ hòa vi quý sẽ đầu hàng ngay trước cơn bão phản kháng của các phòng ban.')">
+            C. Là người khéo léo hòa giải, luôn sẵn sàng thỏa hiệp với các phòng ban để tránh xung đột quyền lợi.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-1', 'Incorrect. Appointing near-retirement personnel is a deadly deployment failure.', 'Chưa chính xác. Bổ nhiệm người chuẩn bị nghỉ hưu là sai lầm chết người biến chương trình thành nơi an dưỡng.')">
+            D. Là nhân sự kỳ cựu chuẩn bị nghỉ hưu cần một vị trí danh dự để kết thúc sự nghiệp êm đẹp.
+          </button>
+        </div>
+        <div id="fb-04-1" class="quiz-fb"></div>
+      </div>
+
+      <!-- CÂU 2 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 02 &bull; Tầng 1: Cam Kết Thời Gian & Vòng Đời Nhiệm Kỳ</span>
+        <div class="quiz-q">Khác với một Black Belt thường có nhiệm kỳ luân chuyển 2 năm, một Senior Champion thường phải đảm nhận vai trò này trong bao lâu để đảm bảo cỗ máy Six Sigma tự vận hành vững chắc?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-2', 'Incorrect. 6-12 months is far too short to complete even the initial waves of deployment.', 'Chưa chính xác. 6–12 tháng chỉ vừa đủ để khởi động làn sóng Black Belt đầu tiên, chưa thể tạo ra chuyển biến văn hóa.')">
+            A. Từ 6 tháng đến 1 năm.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-2', 'Correct. A Senior Champion role extends from 3 up to 5 years, representing a major career transformation.', 'Chính xác! Senior Champion gắn bó với chương trình từ 3 đến 5 năm, là một bước ngoặt lớn trong sự nghiệp.')">
+            B. Từ 3 năm đến 5 năm.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-2', 'Incorrect. Indefinite tenure creates stagnation; after 5 years the organization should be self-sustaining.', 'Chưa chính xác. Vị trí Champion không thể đảm nhiệm suốt đời; sau 5 năm tổ chức phải tự chủ hoàn toàn.')">
+            C. Suốt đời (vị trí cố định không thay đổi).
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-2', 'Incorrect. 2 years is the typical tour of duty for a Black Belt, not a Senior Champion.', 'Chưa chính xác. 2 năm là nhiệm kỳ chuẩn của Black Belt, Senior Champion cần thời gian dài hơn để thiết lập nền tảng.')">
+            D. Đúng 2 năm như Black Belt.
+          </button>
+        </div>
+        <div id="fb-04-2" class="quiz-fb"></div>
+      </div>
+
+      <!-- CÂU 3 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 03 &bull; Tầng 2: Bài Học Motorola & Sứ Mệnh Jack Germain</span>
+        <div class="quiz-q">Khi CEO Bob Galvin bổ nhiệm Jack Germain — ngôi sao lãnh đạo sáng nhất Motorola — làm Phó Chủ tịch Chất lượng (Senior Champion), quyết định này mang ý nghĩa chiến lược gì đối với tỷ lệ sống sót của Six Sigma?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-3', 'Correct. Galvin recognized that without picking the very best, the push for quality would die under executive resistance. Jack kept the idea alive.', 'Chính xác! Bob Galvin nhận ra nếu không chọn người giỏi nhất, nỗ lực chất lượng sẽ chết trước sự phản kháng của dàn lãnh đạo cấp cao. Jack Germain đã giữ cho ý tưởng sống mãi.')">
+            A. Minh chứng thông điệp sắt đá của CEO: Chất lượng là ưu tiên số một, và chỉ có uy tín vượt trội của Jack mới dập tắt được sự phản kháng từ các giám đốc điều hành khác.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-3', 'Incorrect. Jack Germain was not being punished, he was chosen because everything he touched turned to gold.', 'Chưa chính xác. Đây không phải là một hình phạt hành chính hay hạ bệ nhân sự.')">
+            B. Trừng phạt Jack Germain vì để xảy ra sự cố kỹ thuật trong các dự án viễn thông trước đó.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-3', 'Incorrect. Six Sigma was a total business initiative, not an ISO compliance exercise.', 'Chưa chính xác. Motorola triển khai Six Sigma vì sự sống còn trước đối thủ Nhật Bản, không phải để đối phó đánh giá ISO.')">
+            C. Chuẩn bị thủ tục giấy tờ để đối phó với cuộc thanh tra của cơ quan quản lý nhà nước.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-3', 'Incorrect. Jack Germain was given supreme organizational authority by Bob Galvin.', 'Chưa chính xác. Jack Germain được toàn quyền điều hành và báo cáo trực tiếp cho CEO.')">
+            D. Giảm bớt quyền lực của Jack Germain để chuyển giao quyền kiểm soát tài chính cho người khác.
+          </button>
+        </div>
+        <div id="fb-04-3" class="quiz-fb"></div>
+      </div>
+
+      <!-- CÂU 4 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 04 &bull; Tầng 2: Phân Tích "The Catch" (Cam Kết Song Phương)</span>
+        <div class="quiz-q">Quy tắc "The Catch" giữa CXO và Champion theo Dr. Harry đòi hỏi cơ chế đãi ngộ nào để giữ chân và kích hoạt tối đa động lực của Senior Champion?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-4', 'Correct. If the Champion delivers on the deployment, CXO must take care of their career progression, typically positioning them for executive C-Suite succession.', 'Chính xác! Nếu Champion hoàn thành xuất sắc mục tiêu triển khai, CXO phải bảo đảm lộ trình thăng tiến cao nhất (thường là ghế Tổng Giám Đốc hoặc Phó TGĐ Thường trực kế nhiệm).')">
+            A. Cam kết rõ ràng: Nếu Champion đem lại thành công rực rỡ cho Six Sigma, C-Suite phải nâng tầm sự nghiệp của họ, bảo đảm họ được cơ cấu vào ghế lãnh đạo cấp cao nhất kế cận.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-4', 'Incorrect. Pure fixed salary without career upside fails to motivate top leaders to take massive career risks.', 'Chưa chính xác. Chỉ trả lương cố định không tương xứng với rủi ro sự nghiệp 5 năm của một thủ lĩnh.')">
+            B. Chỉ trả lương cố định hàng tháng mà không có bất kỳ cam kết nào về cơ hội thăng tiến tương lai.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-4', 'Incorrect. Demoting a successful champion destroys organizational credibility.', 'Chưa chính xác. Yêu cầu quay lại vị trí cũ sau 5 năm sẽ khiến các nhân tài từ chối nhận vai trò Champion.')">
+            C. Yêu cầu Champion sau 5 năm phải quay trở lại làm nhân viên kỹ thuật bình thường.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-4', 'Incorrect. Financial accountability is the core metric of Six Sigma deployment.', 'Chưa chính xác. Champion phải chịu trách nhiệm tuyệt đối về kết quả dòng tiền P&L.')">
+            D. Miễn trừ mọi trách nhiệm về kết quả tài chính nếu dự án thất bại.
+          </button>
+        </div>
+        <div id="fb-04-4" class="quiz-fb"></div>
+      </div>
+
+      <!-- CÂU 5 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 05 &bull; Tầng 2: Đo Lường Năng Lực Tháo Gỡ Rào Cản (&Kappa;)</span>
+        <div class="quiz-q">Trong Quý 1, có 10 rào cản chính trị liên phòng ban được các Black Belt báo cáo lên Champion. Champion giải quyết dứt điểm 9 rào cản trong vòng 72 giờ, 1 rào cản tồn đọng. Tỷ lệ dự án hoàn thành nghiệm thu đạt 8/10. Chỉ số Sống sót Triển khai (DSI) đạt bao nhiêu và chương trình có đạt chuẩn SSMI không?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-5', 'Correct. Success rate = 8/10 = 0.8; Kappa = 9/10 = 0.9; DSI = 0.8 * 0.9 = 0.72. This is below the 0.85 threshold, indicating severe danger of deployment stall.', 'Chính xác! Tỷ lệ nghiệm thu = 8/10 = 0.80; Hệ số &Kappa; = 9/10 = 0.90; DSI = 0.80 * 0.90 = 0.72 (< 0.85). Chương trình chưa đạt chuẩn và đang có nguy cơ nghẽn triển khai!')">
+            A. DSI = 0.72 &bull; Chưa đạt chuẩn SSMI (yêu cầu DSI &ge; 0.85), cảnh báo nguy cơ nghẽn tiến độ dự án.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-5', 'Incorrect. DSI formula requires multiplying completion rate by Kappa factor.', 'Chưa chính xác. Không thể lấy tỷ lệ cộng dồn đơn giản mà phải nhân với hệ số tháo gỡ rào cản.')">
+            B. DSI = 0.90 &bull; Đạt xuất sắc vì tháo gỡ được 90% rào cản.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-5', 'Incorrect. DSI cannot exceed 1.0 in this normalized formulation.', 'Chưa chính xác. Chỉ số DSI chuẩn hóa không thể vượt quá 1.0.')">
+            C. DSI = 1.70 &bull; Vượt chỉ tiêu gấp đôi.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-5', 'Incorrect. Mathematical calculation error.', 'Chưa chính xác. Phép tính sai số học.')">
+            D. DSI = 0.50 &bull; Đánh giá thất bại hoàn toàn.
+          </button>
+        </div>
+        <div id="fb-04-5" class="quiz-fb"></div>
+      </div>
+
+      <!-- CÂU 6 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 06 &bull; Tầng 3: Bản Lĩnh Khi Đối Mặt Với Sự Tẩy Chay Ngầm</span>
+        <div class="quiz-q">Một Giám đốc Chi nhánh lớn từ chối tham gia các cuộc họp duyệt dự án Six Sigma, liên tục viện cớ bận công tác và ngầm chỉ đạo nhân viên không cung cấp số liệu phế phẩm cho Black Belt. Là Senior Champion với bản lĩnh "tenacious as a bulldog", bạn sẽ xử lý thế nào?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-6', 'Incorrect. Conceding to political evasion destroys the Champion\'s authority.', 'Chưa chính xác. Nhượng bộ sẽ tạo tiền lệ xấu khiến các chi nhánh khác làm theo.')">
+            A. Bỏ qua chi nhánh đó và chỉ tập trung làm dự án tại những nơi nhiệt tình ủng hộ.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-6', 'Correct. Tenacity means confronting resistance head-on: direct confrontation with facts, invoking CEO backing if necessary, and establishing transparency.', 'Chính xác! Trực tiếp đến làm việc tại hiện trường chi nhánh, công khai văn bản chỉ đạo của CEO, yêu cầu cung cấp dữ liệu minh bạch trong 48 giờ và báo cáo thẳng tình trạng bất hợp tác lên CEO.')">
+            B. Trực tiếp đến chi nhánh cùng văn bản ủy quyền tối cao của CEO, tổ chức đối chất minh bạch, ấn định thời hạn 48 giờ để cung cấp dữ liệu sạch và báo cáo thẳng lên CEO nếu tiếp tục chống đối.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-6', 'Incorrect. Passive resignation violates the core duty of keeping the idea alive.', 'Chưa chính xác. Chờ đợi thụ động sẽ làm lãng phí thời gian và làm giảm nhuệ khí của Black Belt.')">
+            C. Ngồi chờ đến khi nào Giám đốc Chi nhánh rảnh rỗi thì mới nối lại liên lạc.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-6', 'Incorrect. Retaliatory budget cuts without process focus harms the whole company.', 'Chưa chính xác. Cắt giảm ngân sách vận hành chi nhánh một cách cảm tính là hành vi thiếu chuyên nghiệp.')">
+            D. Ký lệnh cắt toàn bộ lương thưởng của tất cả nhân viên tại chi nhánh đó.
+          </button>
+        </div>
+        <div id="fb-04-6" class="quiz-fb"></div>
+      </div>
+
+      <!-- CÂU 7 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 07 &bull; Tầng 3: Bảo Vệ Black Belt Trước Búa Rìu Dư Luận</span>
+        <div class="quiz-q">Trong một dự án rút ngắn thời gian thông quan cảng, Black Belt phát hiện một quy trình ký nháy trung gian hoàn toàn vô giá trị nhưng lại là "quyền lực riêng" của một Trưởng phòng kỳ cựu. Vị này đe dọa sẽ đánh trượt đánh giá thi đua của Black Belt. Champion cần làm gì ngay lập tức?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-7', 'Correct. The Champion acts as a political umbrella. They must pull evaluation authority away from hostile managers and eliminate non-value-added steps.', 'Chính xác! Giương chiếc ô chính trị: Chuyển quyền đánh giá thi đua của Black Belt về ban Six Sigma, bảo vệ kết quả phân tích giá trị gia tăng (VA/NVA) và dùng thẩm quyền xóa bỏ bước ký nháy thừa.')">
+            A. Giương cao chiếc ô bảo trợ chính trị: Ký quyết định bảo vệ Black Belt, tước quyền can thiệp thi đua của vị Trưởng phòng đối với dự án và trực tiếp phê duyệt xóa bỏ bước ký nháy lãng phí.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-7', 'Incorrect. Forcing the Belt to compromise violates SSMI integrity and destroys morale.', 'Chưa chính xác. Bắt Black Belt nhượng bộ sẽ hủy hoại tính khách quan của phương pháp luận.')">
+            B. Khuyên Black Belt bỏ qua bước ký nháy đó và tìm một lỗi khác ít nhạy cảm hơn để làm.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-7', 'Incorrect. Abandoning the Belt to hostile politics violates the fundamental role of Champion.', 'Chưa chính xác. Đứng ngoài cuộc chứng kiến Black Belt bị trù dập là biểu hiện của một Champion bất tài.')">
+            C. Yêu cầu Black Belt tự đi xin lỗi vị Trưởng phòng để giữ hòa khí nội bộ.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-7', 'Incorrect. Cancelling the project rewards obstructionist behavior.', 'Chưa chính xác. Hủy bỏ đề tài dự án là đầu hàng trước thói quan liêu.')">
+            D. Đình chỉ dự án ngay lập tức để tránh làm mất lòng nhân sự kỳ cựu.
+          </button>
+        </div>
+        <div id="fb-04-7" class="quiz-fb"></div>
+      </div>
+
+      <!-- CÂU 8 -->
+      <div class="quiz-card">
+        <span class="quiz-tag">Câu 08 &bull; Tầng 3: Giữ Ngọn Lửa Sống Mãi Trong Giai Đoạn Trầm Lắng</span>
+        <div class="quiz-q">Vào năm thứ 2 triển khai, sau những thắng lợi ban đầu dễ thấy (Low-hanging fruit), các dự án bắt đầu bước vào vùng lõi phức tạp, tiến độ kéo dài và xuất hiện tâm lý mệt mỏi trong toàn công ty. Là Senior Champion, bạn sẽ làm gì để "Keep the idea alive"?</div>
+        <div class="quiz-opts">
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-8', 'Correct. Keeping the idea alive during the plateau phase requires celebrating verified P&L wins, reinforcing executive sponsorship, and upgrading technical toolkits with MBB support.', 'Chính xác! Tổ chức hội nghị tôn vinh Hard Savings kiểm toán được, đưa MBB vào gỡ rối kỹ thuật thống kê nâng cao, và mời CEO tái khẳng định cam kết chiến lược dài hạn trước toàn thể cán bộ.')">
+            A. Tổ chức hội nghị tuyên dương các điển hình thành công gắn với tiền thưởng thực tế, tăng cường sự hỗ trợ của Master Black Belt vào các bài toán hóc búa, và yêu cầu CEO tái khẳng định cam kết chiến lược.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-8', 'Incorrect. Lowering standards and certifying unverified projects pollutes belt credibility.', 'Chưa chính xác. Hạ thấp tiêu chuẩn và nghiệm thu bừa bãi sẽ làm loãng chất lượng đai và phá hủy uy tín của Six Sigma.')">
+            B. Tự động hạ thấp tiêu chuẩn nghiệm thu và cho phép thông qua các dự án chưa đạt chỉ tiêu tài chính để lấy thành tích bề nổi.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-8', 'Incorrect. Quitting halfway results in total loss of initial investments.', 'Chưa chính xác. Bỏ cuộc giữa chừng sẽ biến toàn bộ chi phí 2 năm trước đó thành lãng phí chìm.')">
+            C. Tuyên bố Six Sigma không còn phù hợp với công ty và đề xuất chuyển sang một trào lưu quản trị mới.
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-8', 'Incorrect. Replacing trained belts during tough technical phases destroys organizational knowledge.', 'Chưa chính xác. Sa thải toàn bộ Black Belt khóa cũ sẽ làm đứt gãy năng lực tri thức nội bộ.')">
+            D. Sa thải toàn bộ Black Belt khóa cũ và tuyển mới một đội ngũ khác.
+          </button>
+        </div>
+        <div id="fb-04-8" class="quiz-fb"></div>
+      </div>
+
+    </div>
+
+    <!-- 5 FLASHCARDS 3D -->
+    <h3 style="color:#ffffff; font-size:1.35rem; margin:36px 0 16px; text-align:center;">Bộ Thẻ Phản Xạ Tư Duy Champion (Click Để Lật Mở)</h3>
+    <div class="flashcards-grid">
+      
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Tại sao Senior Champion phải là "con chim không bay theo đàn"?</div>
+            <div class="fc-hint">Chạm để lật &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Vì họ phải có tư duy đột phá, dám thách thức hiện trạng, không thỏa hiệp với thói quen cũ và không bị ràng buộc bởi các liên minh lợi ích nhóm.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Ẩn dụ "Tenacious as a bulldog" mang thông điệp gì?</div>
+            <div class="fc-hint">Chạm để lật &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Bản lĩnh kiên trì bám đuổi mục tiêu đến cùng, không bao giờ chấp nhận câu trả lời "Không" từ sự phản kháng hay sự trì trệ của bộ máy.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Sứ mệnh "Keep the idea alive" là gì?</div>
+            <div class="fc-hint">Chạm để lật &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Giữ cho ngọn lửa cải tiến sống sót và bùng cháy qua mọi cơn mưa đá kháng cự (hailstorms of resistance) từ các cấp quản lý bảo thủ.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Nhiệm kỳ 3–5 năm của Champion khác gì với Black Belt (2 năm)?</div>
+            <div class="fc-hint">Chạm để lật &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Đây là bước ngoặt sự nghiệp lớn (Major career change), đòi hỏi sự cam kết dài hạn để kiến tạo văn hóa và đồng hành cùng toàn bộ vòng đời triển khai.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+          <div class="fc-front">
+            <div class="fc-q">Quy tắc "The Catch" (Cam kết song phương) quy định điều gì?</div>
+            <div class="fc-hint">Chạm để lật &rarr;</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-a">Nếu Champion dốc lòng đem lại thắng lợi triển khai cho CXO, ban điều hành bắt buộc phải đền đáp bằng việc quy hoạch bước tiến sự nghiệp cao nhất cho họ.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRỤ CỘT 5: ACTION CHECKLIST -->
+  <section class="section-card">
+    <span class="section-num">TRỤ CỘT 5 • SÁNG THỨ HAI LÀM GÌ?</span>
+    <h2 class="section-heading">Kế Hoạch Hành Động Thiết Lập Thủ Lĩnh Triển Khai</h2>
+    <div class="section-subheading">3 bước chuẩn hóa quy trình bổ nhiệm và trao quyền cho Senior Champion</div>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text"><strong>Bước 1: Rà Soát Danh Sách Nhân Sự &amp; Chọn "Ngôi Sao Đang Lên":</strong> Hội đồng C-Suite họp kín đánh giá các ứng viên lãnh đạo kế cận; kiên quyết chọn người tài năng nhất đang phụ trách mảng kinh doanh cốt lõi (không chọn người dôi dư hoặc sắp nghỉ hưu).</span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text"><strong>Bước 2: Ký Bản Cam Kết Song Phương (The Executive Catch Accord):</strong> CEO và ứng viên Champion ký thỏa thuận nhiệm kỳ 3–5 năm: Quy định rõ mục tiêu tài chính ($5M–$15M Hard Savings) đi kèm cam kết lộ trình thăng tiến lên vị trí CXO kế nhiệm khi hoàn thành xuất sắc.</span>
+    </label>
+
+    <label class="action-item">
+      <input type="checkbox">
+      <span class="action-text"><strong>Bước 3: Phê Duyệt Kế Hoạch Triển Khai Toàn Cầu (Global Deployment Plan):</strong> Champion trình bày bản kế hoạch hành động 5 năm trước ban điều hành, thiết lập hạn mức giải phóng rào cản chính trị 72 giờ và lịch trình khởi động các làn sóng đào tạo Black Belt.</span>
+    </label>
+
+    <h3 style="color:var(--wood-dark); margin-top:32px; font-size:1.15rem;">Khung Đánh Giá Năng Lực Tuyển Chọn Senior Champion (SSMI Standard)</h3>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tiêu Chí Đánh Giá</th>
+            <th>Trọng Số (%)</th>
+            <th>Biểu Hiện Hành Vi Đạt Chuẩn (Benchmark)</th>
+            <th>Mức Độ Đáp Ứng (Đạt / Không Đạt)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Uy Tín Lãnh Đạo &amp; Thành Tích Kinh Doanh</strong></td>
+            <td>35%</td>
+            <td>Từng điều hành đơn vị tạo ra dòng tiền lớn; được cấp dưới kính trọng và ngang hàng nể phục.</td>
+            <td>Bắt buộc Đạt</td>
+          </tr>
+          <tr>
+            <td><strong>2. Bản Lĩnh Bulldog &amp; Kiên Cường Chính Trị</strong></td>
+            <td>30%</td>
+            <td>Dám bảo vệ chân lý dựa trên dữ liệu; không chùn bước trước áp lực từ các giám đốc khối khác.</td>
+            <td>Bắt buộc Đạt</td>
+          </tr>
+          <tr>
+            <td><strong>3. Tư Duy Chiến Lược &amp; Nhạy Bén Tài Chính (P&amp;L)</strong></td>
+            <td>20%</td>
+            <td>Thành thạo ngôn ngữ tiền tệ và thời gian; có khả năng làm việc chặt chẽ cùng Giám đốc Tài chính (CFO).</td>
+            <td>Bắt buộc Đạt</td>
+          </tr>
+          <tr>
+            <td><strong>4. Khả Năng Cam Kết Dài Hạn (3–5 Năm)</strong></td>
+            <td>15%</td>
+            <td>Sẵn sàng coi vị trí Champion là bước đệm lịch sử trong lộ trình tiến tới ghế Tổng Giám Đốc.</td>
+            <td>Bắt buộc Đạt</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="text-align:center; color:var(--vi-green-2); font-size:0.85rem; padding:30px 0;">
+    &copy; Six Sigma Management Institute (SSMI) &bull; Master Black Belt Executive Curriculum &bull; Dr. Mikel J. Harry Standard
+  </p>
+</footer>
+
+<script>
+function checkQuiz(btn, isCorrect, feedbackId, explanationEn, explanationVi) {
+  var parent = btn.parentElement;
+  var buttons = parent.querySelectorAll('.quiz-btn');
+  buttons.forEach(function(b) {
+    b.disabled = true;
+  });
+  
+  var feedbackEl = document.getElementById(feedbackId);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    feedbackEl.className = 'quiz-fb show success';
+    feedbackEl.innerHTML = '<strong>✅ Chính xác! (Master Black Belt Analysis):</strong><br>' + explanationEn + '<br><em style="color:#a7f3d0; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  } else {
+    btn.classList.add('wrong');
+    feedbackEl.className = 'quiz-fb show error';
+    feedbackEl.innerHTML = '<strong>❌ Chưa tối ưu (Common Trap Analysis):</strong><br>' + explanationEn + '<br><em style="color:#fecaca; display:block; margin-top:6px;">' + explanationVi + '</em>';
+  }
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

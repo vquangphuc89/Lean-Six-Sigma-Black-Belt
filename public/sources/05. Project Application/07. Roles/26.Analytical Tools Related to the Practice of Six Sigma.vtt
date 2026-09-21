@@ -1,0 +1,211 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.900
+Analytical Tools Related to the Practice of Six Sigma
+Các Công Cụ Phân Tích Liên Quan Đến Thực Hành Six Sigma
+
+2
+00:00:04.900 --> 00:00:10.800
+Welcome to this session on understanding who does Six Sigma.
+Chào mừng bạn đến với buổi học về tìm hiểu ai thực hiện Six Sigma.
+
+3
+00:00:10.800 --> 00:00:14.266
+Now we are going to look at what do X belts know.
+Bây giờ chúng ta sẽ xem xét các cấp bậc đai X biết những gì.
+
+4
+00:00:14.266 --> 00:00:17.732
+Well we're going to take a look at white belts,
+Chà, chúng ta sẽ xem xét đai trắng,
+
+5
+00:00:17.733 --> 00:00:24.099
+green belts,
+đai xanh lá cây,
+
+6
+00:00:24.100 --> 00:00:31.066
+and black belts. And were going to look at some fundamental things.
+và đai đen. Và chúng ta sẽ xem xét một số điều cơ bản.
+
+7
+00:00:31.066 --> 00:00:36.066
+We’re going to look at a category called lean tools.
+Chúng ta sẽ xem xét một danh mục gọi là công cụ lean.
+
+8
+00:00:36.066 --> 00:00:41.632
+That's things like Fishbone diagram, Pareto chart, they are really basic tools.
+Đó là những thứ như sơ đồ xương cá (Fishbone), biểu đồ Pareto, chúng là những công cụ thực sự cơ bản.
+
+9
+00:00:41.633 --> 00:00:45.033
+Looking at the 5S system,
+Xem xét hệ thống 5S,
+
+10
+00:00:45.033 --> 00:00:50.199
+FEMA, and that sort of thing. Qualitative tools that help us solve problems.
+FMEA (Phân tích Hình thức Sai lỗi và Tác động), và những thứ tương tự. Các công cụ định tính giúp chúng ta giải quyết vấn đề.
+
+11
+00:00:50.200 --> 00:00:57.300
+These are the things that white belts, I'm going to say, here roughly, 80%
+Đây là những điều mà đai trắng, tôi sẽ nói, ở đây khoảng 80%
+
+12
+00:00:57.300 --> 00:01:03.233
+of their knowledge is focused in. Then we have a class of tools over here,
+kiến thức của họ tập trung vào. Sau đó, chúng ta có một loại công cụ ở bên này,
+
+13
+00:01:03.233 --> 00:01:09.166
+that I will call diagnostic tools
+mà tôi sẽ gọi là công cụ chẩn đoán
+
+14
+00:01:09.166 --> 00:01:16.099
+or basic diagnostics. Those include things like scatter diagrams,
+hoặc chẩn đoán cơ bản. Chúng bao gồm những thứ như sơ đồ phân tán,
+
+15
+00:01:16.100 --> 00:01:22.633
+histograms, scatterplots, Pareto charts.
+biểu đồ tần suất (histogram), biểu đồ phân tán (scatterplot), biểu đồ Pareto.
+
+16
+00:01:22.633 --> 00:01:27.766
+20% of their knowledge is over here.
+20% kiến thức của họ là ở đây.
+
+17
+00:01:27.766 --> 00:01:31.766
+Then there is a class of tools
+Sau đó có một loại công cụ
+
+18
+00:01:31.766 --> 00:01:35.766
+of SPC (statistical process control methods)
+của SPC (phương pháp kiểm soát quy trình bằng thống kê)
+
+19
+00:01:35.766 --> 00:01:38.432
+and design of experiments. Now of course there's a lot more.
+và thiết kế thí nghiệm. Tất nhiên, còn nhiều hơn nữa.
+
+20
+00:01:38.433 --> 00:01:43.399
+But this just kind of categorizes and simplifies our discussion here together.
+Nhưng điều này chỉ phân loại và đơn giản hóa cuộc thảo luận của chúng ta ở đây.
+
+21
+00:01:43.400 --> 00:01:48.600
+Remember we’re not trying to be precise here. We’re trying to gain perspective.
+Hãy nhớ rằng chúng ta không cố gắng chính xác ở đây. Chúng ta đang cố gắng đạt được cái nhìn tổng quan.
+
+22
+00:01:48.600 --> 00:01:53.066
+So, in large terms we’ll grant that a very small
+Vì vậy, về mặt tổng quát, chúng ta sẽ thừa nhận rằng một phần rất nhỏ
+
+23
+00:01:53.066 --> 00:02:00.066
+percentage of white belts is in SPC. So for all practical purpose we'll say zero and zero.
+tỷ lệ đai trắng là về SPC. Vì vậy, cho tất cả các mục đích thực tế, chúng ta sẽ nói là không và không.
+
+24
+00:02:00.066 --> 00:02:06.832
+Now, a green belt in terms of quality tools is probably going to be around
+Bây giờ, một đai xanh về công cụ chất lượng có lẽ sẽ vào khoảng
+
+25
+00:02:06.833 --> 00:02:12.799
+30%. Maybe 30% focus here.
+30%. Có lẽ 30% tập trung ở đây.
+
+26
+00:02:12.800 --> 00:02:18.966
+And probably about another 30% focus in SPC.
+Và có lẽ khoảng 30% tập trung vào SPC.
+
+27
+00:02:18.966 --> 00:02:22.066
+And about 10% here.
+Và khoảng 10% ở đây.
+
+28
+00:02:22.066 --> 00:02:25.832
+We’re starting to look at the weighting of their knowledge is what we’re looking at here.
+Chúng ta đang bắt đầu xem xét trọng số kiến thức của họ là những gì chúng ta đang xem xét ở đây.
+
+29
+00:02:25.833 --> 00:02:32.866
+Now down under black belt. This is kind of a where the real hit is. They're not going to use
+Bây giờ xuống dưới đai đen. Đây là nơi mà trọng tâm thực sự. Họ sẽ không sử dụng
+
+30
+00:02:32.866 --> 00:02:38.632
+these quality tools a lot. Probably what we want to see over here
+các công cụ chất lượng này nhiều. Có lẽ những gì chúng ta muốn thấy ở đây
+
+31
+00:02:38.633 --> 00:02:44.133
+is about 80% of their effort here, and 20% here
+là khoảng 80% nỗ lực của họ ở đây, và 20% ở đây
+
+32
+00:02:44.133 --> 00:02:49.933
+because we’ve got a breakthrough strategy. 0%, 0% in very rough terms.
+vì chúng ta có một chiến lược đột phá. 0%, 0% theo nghĩa rất sơ bộ.
+
+33
+00:02:49.933 --> 00:02:55.999
+That strategy is we want for every black belt project.
+Chiến lược đó là chúng ta muốn cho mọi dự án đai đen.
+
+34
+00:02:56.000 --> 00:03:00.566
+Remember this project. That black belt project or green belt project
+Hãy nhớ dự án này. Dự án đai đen đó hoặc dự án đai xanh
+
+35
+00:03:00.566 --> 00:03:03.532
+must go through some distinct stages,
+phải trải qua một số giai đoạn riêng biệt,
+
+36
+00:03:03.533 --> 00:03:06.866
+it must go through define
+nó phải trải qua xác định (define)
+
+37
+00:03:06.866 --> 00:03:12.832
+measure, analyze, improve
+đo lường (measure), phân tích (analyze), cải tiến (improve)
+
+38
+00:03:12.833 --> 00:03:18.166
+and control so these tools right here SPC
+và kiểm soát (control), vì vậy các công cụ này ở đây SPC
+
+39
+00:03:18.166 --> 00:03:23.599
+is kind of related to control. DOE is related to improve.
+có liên quan đến kiểm soát. DOE liên quan đến cải tiến.
+
+40
+00:03:23.600 --> 00:03:28.300
+Analysis is related more to diagnostics.
+Phân tích liên quan nhiều hơn đến chẩn đoán.
+
+41
+00:03:28.300 --> 00:03:31.866
+Very, very broadly described.
+Mô tả rất, rất rộng.
+
+42
+00:03:31.866 --> 00:03:36.866
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

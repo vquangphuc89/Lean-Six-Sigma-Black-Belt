@@ -1,0 +1,316 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Scope and Depth of a Six Sigma White Belt
+Phạm Vi và Mức Độ của Đai Trắng Six Sigma
+
+2
+00:00:05.000 --> 00:00:10.633
+Welcome to this session where we're going to be looking at the concept of white belts.
+Chào mừng bạn đến với buổi học này, nơi chúng ta sẽ xem xét khái niệm về đai trắng.
+
+3
+00:00:10.633 --> 00:00:16.366
+Recall in our hierarchy, as we move through here.
+Hãy nhớ lại trong hệ thống phân cấp của chúng ta, khi chúng ta tiếp tục tìm hiểu.
+
+4
+00:00:16.366 --> 00:00:19.666
+I'm going to kinda refresh us, so we can get back to where we're at.
+Tôi sẽ làm mới lại kiến thức để chúng ta có thể quay lại vị trí hiện tại.
+
+5
+00:00:19.666 --> 00:00:24.032
+We have up here what I call the CXO,
+Ở trên đỉnh hệ thống phân cấp, chúng ta có những người mà tôi gọi là CXO,
+
+6
+00:00:24.033 --> 00:00:29.233
+or the Chief Information Officer, Chief Executive Officer, whoever.
+hoặc Giám đốc Thông tin, Giám đốc điều hành, hay bất kỳ chức danh cấp cao nào.
+
+7
+00:00:29.233 --> 00:00:34.966
+All the chief officers up here, or the senior executive team is another way to kinda say that.
+Tất cả các lãnh đạo cấp cao ở đây, hoặc đội ngũ điều hành cấp cao, đó là một cách khác để diễn đạt.
+
+8
+00:00:34.966 --> 00:00:40.932
+They’re the advocates. Or what we call Six Sigma advocates.
+Họ là những người ủng hộ. Hay chúng ta gọi là những người ủng hộ Six Sigma.
+
+9
+00:00:40.933 --> 00:00:46.466
+Now, directly below there is the senior champion in the company.
+Ngay bên dưới là nhà vô địch cấp cao trong công ty.
+
+10
+00:00:46.466 --> 00:00:50.332
+Of course, that breaks down into business unit champions.
+Tất nhiên, cấp bậc này lại chia nhỏ thành các nhà vô địch đơn vị kinh doanh.
+
+11
+00:00:50.333 --> 00:00:54.599
+Or what we call deployment champions.
+Hay chúng ta gọi là nhà vô địch triển khai.
+
+12
+00:00:54.600 --> 00:01:01.366
+In turn, as it filters down into the organization, coming in down through here.
+Tiếp theo, khi hệ thống phân cấp lọc xuống tổ chức, đi xuống qua đây.
+
+13
+00:01:01.366 --> 00:01:08.032
+We have these slices here called project champions.
+Chúng ta có các phân cấp ở đây được gọi là nhà vô địch dự án.
+
+14
+00:01:08.033 --> 00:01:15.066
+And within a project, we have black belts.
+Và trong một dự án, chúng ta có các đai đen.
+
+15
+00:01:15.066 --> 00:01:19.666
+Now in addition to that, at a next level down.
+Bây giờ, thêm vào đó, ở cấp độ tiếp theo bên dưới.
+
+16
+00:01:19.666 --> 00:01:23.532
+That fans out into more green belts.
+Cấp độ này mở rộng ra thành nhiều đai xanh hơn.
+
+17
+00:01:23.533 --> 00:01:27.333
+See, you can see this is a progressive hierarchy of flow.
+Bạn thấy đấy, bạn có thể thấy đây là một hệ thống phân cấp dòng chảy tăng dần.
+
+18
+00:01:27.333 --> 00:01:33.899
+And of course sitting up here at the top is the customer. The most important thing.
+Và tất nhiên, ở trên cùng của hệ thống là khách hàng. Điều quan trọng nhất.
+
+19
+00:01:33.900 --> 00:01:37.666
+So, we can see how, like a child's mobile hanging down.
+Vì vậy, chúng ta có thể thấy cách cấu trúc này, giống như một chiếc điện thoại đồ chơi của trẻ con treo lơ lửng.
+
+20
+00:01:37.666 --> 00:01:42.799
+The X belt structure fans out.
+Cấu trúc đai chữ X mở rộng ra.
+
+21
+00:01:42.800 --> 00:01:49.766
+Now, at the very lower end of this structure is what we call the white belts.
+Bây giờ, ở cấp độ thấp nhất của cấu trúc này là những người mà chúng ta gọi là đai trắng.
+
+22
+00:01:49.766 --> 00:01:54.699
+And that's what we’re going to be examining in the session.
+Và đó là những gì chúng ta sẽ xem xét trong buổi học này.
+
+23
+00:01:54.700 --> 00:01:59.400
+So, the first logical question comes around what is a white belt?
+Vì vậy, câu hỏi logic đầu tiên đặt ra là đai trắng là gì?
+
+24
+00:01:59.400 --> 00:02:02.500
+Well to really understand what a white belt is,
+Để thực sự hiểu đai trắng là gì,
+
+25
+00:02:02.500 --> 00:02:07.966
+we need to make it relative to the black belts, the green belts, and everybody else.
+chúng ta cần so sánh nó với đai đen, đai xanh và tất cả những người khác.
+
+26
+00:02:07.966 --> 00:02:14.932
+To do that, I think a good way to begin is to look at it from three axes:
+Để làm điều đó, tôi nghĩ một cách tốt để bắt đầu là xem xét nó từ ba trục:
+
+27
+00:02:14.933 --> 00:02:21.099
+in terms of depth,
+về độ sâu,
+
+28
+00:02:21.100 --> 00:02:26.600
+scope, and time.
+phạm vi và thời gian.
+
+29
+00:02:26.600 --> 00:02:29.766
+Those three variables.
+Đó là ba biến số.
+
+30
+00:02:29.766 --> 00:02:35.499
+When we look at the commitment say, in time of a black belt. Remember they’re full-time.
+Khi chúng ta xem xét cam kết, ví dụ, về thời gian của một đai đen. Hãy nhớ rằng họ làm việc toàn thời gian.
+
+31
+00:02:35.500 --> 00:02:39.266
+So, they take high time commitment.
+Vì vậy, họ có cam kết thời gian cao.
+
+32
+00:02:39.266 --> 00:02:45.432
+When we look at a green belt. They’re part time. Probably half time.
+Khi chúng ta xem xét một đai xanh. Họ làm việc bán thời gian. Có lẽ là nửa thời gian.
+
+33
+00:02:45.433 --> 00:02:51.199
+And when we look at a white belt, they're periodic if you will.
+Và khi chúng ta xem xét một đai trắng, họ làm việc định kỳ, nếu bạn muốn nói như vậy.
+
+34
+00:02:51.200 --> 00:02:55.633
+They work on white belt projects, that we'll discuss later.
+Họ làm việc trong các dự án đai trắng, mà chúng ta sẽ thảo luận sau.
+
+35
+00:02:55.633 --> 00:03:00.899
+Now, obviously the scope of a project. Project scope.
+Bây giờ, rõ ràng là phạm vi của một dự án. Phạm vi dự án.
+
+36
+00:03:00.900 --> 00:03:07.600
+This is on the job. OJT time.
+Đây là thời gian làm việc thực tế. Thời gian đào tạo tại chỗ (OJT).
+
+37
+00:03:07.600 --> 00:03:13.300
+This is project scope over here.
+Đây là phạm vi dự án ở phía bên này.
+
+38
+00:03:13.300 --> 00:03:19.900
+What we see is that black belts scope is quite wide.
+Những gì chúng ta thấy là phạm vi của đai đen khá rộng.
+
+39
+00:03:19.900 --> 00:03:24.166
+In other words this, let’s take a process.
+Nói cách khác, hãy lấy một quy trình.
+
+40
+00:03:24.166 --> 00:03:29.166
+Consisting of a number of steps, where there’s some outcome out here.
+Bao gồm một số bước, với một số kết quả ở đây.
+
+41
+00:03:29.166 --> 00:03:36.199
+And we have a person working at this operation right there.
+Và chúng ta có một người làm việc tại hoạt động này ngay tại đó.
+
+42
+00:03:36.200 --> 00:03:43.200
+Now that individual has what I call,
+Bây giờ cá nhân đó có cái mà tôi gọi là,
+
+43
+00:03:43.200 --> 00:03:50.200
+an LOSR. A line of sight radius.
+LOSR. Bán kính tầm nhìn.
+
+44
+00:03:50.200 --> 00:03:55.000
+Now, their line of sight, that radius, that total line of sight.
+Bây giờ, tầm nhìn của họ, bán kính đó, tổng tầm nhìn đó.
+
+45
+00:03:55.000 --> 00:03:59.033
+Or diameter from one end to the next end across here.
+Hoặc đường kính từ đầu này đến đầu kia ngang qua đây.
+
+46
+00:03:59.033 --> 00:04:04.699
+Sets the scope over a process of how far this person can reach
+Đặt ra phạm vi trên một quy trình về mức độ mà người này có thể tiếp cận
+
+47
+00:04:04.700 --> 00:04:08.566
+in terms of their influence and their knowledge.
+về mặt ảnh hưởng và kiến thức của họ.
+
+48
+00:04:08.566 --> 00:04:15.032
+Well, we have out here, in the outer ring, a black belt.
+Chúng ta có ở ngoài này, trong vòng ngoài cùng, là một đai đen.
+
+49
+00:04:15.033 --> 00:04:19.566
+An inner ring is a green belt.
+Một vòng bên trong là một đai xanh.
+
+50
+00:04:19.566 --> 00:04:23.566
+And of course, the one we just described is a white belt.
+Và tất nhiên, người mà chúng ta vừa mô tả là một đai trắng.
+
+51
+00:04:23.566 --> 00:04:29.466
+Now, that's kind of what we mean by scope or reach, if you will.
+Bây giờ, đó là ý của chúng tôi về phạm vi hoặc tầm với, nếu bạn muốn.
+
+52
+00:04:29.466 --> 00:04:33.699
+Is the LOSR, the line of sight radius
+Đó là LOSR, bán kính tầm nhìn
+
+53
+00:04:33.700 --> 00:04:38.300
+of influence that a X belt has. Scope.
+về ảnh hưởng mà một đai X có. Phạm vi.
+
+54
+00:04:38.300 --> 00:04:45.266
+So, we see out here black belt, green belt and again white belt.
+Vì vậy, chúng ta thấy ở ngoài này đai đen, đai xanh và một lần nữa là đai trắng.
+
+55
+00:04:45.266 --> 00:04:51.466
+Now, the depth of knowledge that they carry, that this individual has.
+Bây giờ, độ sâu kiến thức mà họ mang theo, mà cá nhân này có.
+
+56
+00:04:51.466 --> 00:04:55.466
+How much they know. Again, is kind of at three levels.
+Họ biết bao nhiêu. Một lần nữa, nó được chia thành ba cấp độ.
+
+57
+00:04:55.466 --> 00:04:59.999
+We have a white belt, a green belt, and a black belt.
+Chúng ta có đai trắng, đai xanh và đai đen.
+
+58
+00:05:00.000 --> 00:05:03.666
+So, from a sheer volume point of view,
+Vì vậy, từ quan điểm về khối lượng kiến thức thuần túy,
+
+59
+00:05:03.666 --> 00:05:08.732
+we could see that a black belt is more heavy duty in terms of their scope,
+chúng ta có thể thấy rằng đai đen nặng ký hơn về phạm vi,
+
+60
+00:05:08.733 --> 00:05:12.233
+time, and impact and so on.
+thời gian và tác động, v.v.
+
+61
+00:05:12.233 --> 00:05:16.233
+Than perhaps a green belt, which is more so than a white belt.
+Hơn có lẽ là một đai xanh, mà lại hơn một đai trắng.
+
+62
+00:05:16.233 --> 00:05:20.033
+So, that's the basic logic and where a white belt fits in.
+Vì vậy, đó là logic cơ bản và vị trí của đai trắng trong hệ thống.
+
+63
+00:05:20.033 --> 00:05:25.033
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

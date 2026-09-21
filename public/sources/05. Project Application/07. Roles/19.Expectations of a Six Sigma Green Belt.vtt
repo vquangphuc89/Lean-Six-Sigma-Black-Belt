@@ -1,0 +1,406 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.933
+Expectations of a Six Sigma Green Belt
+Kỳ Vọng về Chuyên Gia Đai Xanh Six Sigma
+
+2
+00:00:04.933 --> 00:00:09.333
+Welcome back to this session on green belts.
+Chào mừng bạn trở lại với phiên thảo luận về đai xanh này.
+
+3
+00:00:09.333 --> 00:00:14.399
+Now, what I want to do is briefly say, why do we want green belts?
+Bây giờ, điều tôi muốn làm là nói ngắn gọn, tại sao chúng ta cần đai xanh?
+
+4
+00:00:14.400 --> 00:00:19.600
+Well let's go back to the origins of why we implement Six Sigma.
+Hãy cùng quay lại nguồn gốc của việc tại sao chúng ta triển khai Six Sigma.
+
+5
+00:00:19.600 --> 00:00:26.166
+We implement Six Sigma to work productivity issues, to improve productivity.
+Chúng ta triển khai Six Sigma để giải quyết các vấn đề về năng suất, để cải thiện năng suất.
+
+6
+00:00:26.166 --> 00:00:33.132
+We want to improve delivery times.
+Chúng ta muốn cải thiện thời gian giao hàng.
+
+7
+00:00:33.133 --> 00:00:38.166
+We want to reduce inventory.
+Chúng ta muốn giảm lượng hàng tồn kho.
+
+8
+00:00:38.166 --> 00:00:42.466
+Again, these are some of the reasons we implement Six Sigma.
+Một lần nữa, đây là một vài lý do tại sao chúng ta triển khai Six Sigma.
+
+9
+00:00:42.466 --> 00:00:48.999
+We want to utilize our capacity.
+Chúng ta muốn tận dụng tối đa năng lực sản xuất của mình.
+
+10
+00:00:49.000 --> 00:00:52.700
+Full capacity utilization.
+Tận dụng tối đa công suất.
+
+11
+00:00:52.700 --> 00:00:55.766
+For example, if we improve throughput yield, we improve capacity.
+Ví dụ, nếu chúng ta cải thiện năng suất đầu ra, chúng ta sẽ cải thiện được năng lực sản xuất.
+
+12
+00:00:55.766 --> 00:01:00.332
+So, if we improve the throughput yield of a factory, we improve its capacity.
+Vì vậy, nếu chúng ta cải thiện năng suất đầu ra của một nhà máy, chúng ta sẽ cải thiện được năng lực sản xuất của nhà máy đó.
+
+13
+00:01:00.333 --> 00:01:06.866
+So, we might be able to squeeze out more production, not have to build another facility.
+Vì vậy, chúng ta có thể gia tăng sản lượng mà không cần phải xây dựng thêm cơ sở mới.
+
+14
+00:01:06.866 --> 00:01:13.532
+We want to reduce overtime, anywhere that we can in our organization.
+Chúng ta muốn giảm giờ làm thêm, ở bất cứ đâu có thể trong tổ chức của mình.
+
+15
+00:01:13.533 --> 00:01:19.233
+We want to get reliable products.
+Chúng ta muốn có được những sản phẩm đáng tin cậy.
+
+16
+00:01:19.233 --> 00:01:25.399
+We want to reduce defects.
+Chúng ta muốn giảm thiểu khuyết tật.
+
+17
+00:01:25.400 --> 00:01:29.133
+We want to improve designs.
+Chúng ta muốn cải thiện thiết kế.
+
+18
+00:01:29.133 --> 00:01:33.066
+Producibility of our designs.
+Tính khả thi sản xuất của các thiết kế của chúng ta.
+
+19
+00:01:33.066 --> 00:01:38.532
+The manufacturability. The repeatability. The performance of our designs.
+Tính khả thi chế tạo. Tính lặp lại. Hiệu suất của các thiết kế của chúng ta.
+
+20
+00:01:38.533 --> 00:01:42.533
+And we want to get predictable cash flow.
+Và chúng ta muốn có được dòng tiền dự đoán được.
+
+21
+00:01:42.533 --> 00:01:46.533
+And we want to improve our suppliers.
+Và chúng ta muốn cải thiện các nhà cung cấp của mình.
+
+22
+00:01:46.533 --> 00:01:51.833
+Wow. What a list. Now, let's take a look at something.
+Ồ. Thật là một danh sách dài. Bây giờ, hãy cùng xem xét một điều.
+
+23
+00:01:51.833 --> 00:01:58.866
+If we go out in an organization and we go get the best of the best
+Nếu chúng ta đi ra ngoài một tổ chức và tìm kiếm những người giỏi nhất trong số những người giỏi nhất
+
+24
+00:01:58.866 --> 00:02:03.532
+out there for black belts let's say.
+cho vị trí đai đen chẳng hạn.
+
+25
+00:02:03.533 --> 00:02:09.499
+And we have 10,000 people in the organization.
+Và chúng ta có 10.000 người trong tổ chức.
+
+26
+00:02:09.500 --> 00:02:14.566
+No, let's say 100,000 people. Let's say it's a big company.
+Không, hãy nói là 100.000 người. Giả sử đó là một công ty lớn.
+
+27
+00:02:14.566 --> 00:02:20.966
+How many black belts are we going to get, out of there? Around 2%.
+Chúng ta sẽ có bao nhiêu chuyên gia đai đen từ số đó? Khoảng 2%.
+
+28
+00:02:20.966 --> 00:02:26.932
+Roughly, say about 2,000 of the 100,000 becoming black belts.
+Khoảng chừng, giả sử khoảng 2.000 trong số 100.000 người trở thành chuyên gia đai đen.
+
+29
+00:02:26.933 --> 00:02:33.833
+And we give them intensive training under DMAIC, for a long period of time.
+Và chúng ta cung cấp cho họ đào tạo chuyên sâu theo DMAIC, trong một khoảng thời gian dài.
+
+30
+00:02:33.833 --> 00:02:40.633
+Make them experts in this. Do you think 2,000 people can go achieve all of this
+Biến họ thành chuyên gia trong lĩnh vực này. Bạn có nghĩ rằng 2.000 người có thể đạt được tất cả những điều này
+
+31
+00:02:40.633 --> 00:02:44.633
+in a relatively short period of time?
+trong một khoảng thời gian tương đối ngắn?
+
+32
+00:02:44.633 --> 00:02:50.166
+Well you know, time has shown, black belts are very, very powerful instruments
+Bạn biết đấy, thời gian đã chứng minh, các chuyên gia đai đen là những công cụ rất, rất mạnh mẽ
+
+33
+00:02:50.166 --> 00:02:57.166
+toward these things, but they need another line of players.
+hướng tới những mục tiêu này, nhưng họ cần một đội ngũ hỗ trợ khác.
+
+34
+00:02:57.166 --> 00:03:00.366
+And that's why green belts were brought about.
+Và đó là lý do tại sao đai xanh được giới thiệu.
+
+35
+00:03:00.366 --> 00:03:06.166
+They were first brought about to simply assist black belts.
+Ban đầu họ được đưa ra chỉ đơn giản là để hỗ trợ các chuyên gia đai đen.
+
+36
+00:03:06.166 --> 00:03:12.532
+I first started using them to extend the reach of a black belt
+Ban đầu tôi bắt đầu sử dụng họ để mở rộng phạm vi tiếp cận của một chuyên gia đai đen
+
+37
+00:03:12.533 --> 00:03:19.533
+to get at more of these things. But as time progressed,
+để giải quyết được nhiều vấn đề hơn trong số này. Nhưng khi thời gian trôi qua,
+
+38
+00:03:19.533 --> 00:03:25.866
+we found that we could take a project, a black belt type project,
+chúng tôi nhận thấy rằng chúng ta có thể lấy một dự án, một dự án kiểu đai đen,
+
+39
+00:03:25.866 --> 00:03:32.899
+and it might be capable of being broken up into several
+và nó có thể có khả năng được chia thành nhiều
+
+40
+00:03:32.900 --> 00:03:39.866
+green belt projects with its own accountable improvement target.
+dự án đai xanh với mục tiêu cải tiến có trách nhiệm riêng.
+
+41
+00:03:39.866 --> 00:03:46.432
+And that project then given to a green belt.
+Và dự án đó sau đó được giao cho một đai xanh.
+
+42
+00:03:46.433 --> 00:03:52.766
+And guess what we found? We put a person into that role,
+Và đoán xem chúng tôi đã phát hiện ra điều gì? Chúng tôi đặt một người vào vai trò đó,
+
+43
+00:03:52.766 --> 00:03:59.799
+provided them with the training. Gave them this kind of project and what come out was success.
+cung cấp cho họ đào tạo. Giao cho họ loại dự án này và kết quả là thành công.
+
+44
+00:03:59.800 --> 00:04:06.766
+So, we got to thinking about that. In an organization with 100,000 people.
+Vì vậy, chúng tôi đã bắt đầu suy nghĩ về điều đó. Trong một tổ chức với 100.000 người.
+
+45
+00:04:06.766 --> 00:04:12.666
+Let's say we trained 15,000 of them as green belts.
+Giả sử chúng ta đào tạo 15.000 người trong số họ thành đai xanh.
+
+46
+00:04:12.666 --> 00:04:16.599
+Wow, look at the multiplier effect of that.
+Wow, hãy nhìn vào hiệu ứng nhân rộng của điều đó.
+
+47
+00:04:16.600 --> 00:04:21.866
+So, this is one of the ways, the whole idea green belts come about.
+Vì vậy, đây là một trong những cách, toàn bộ ý tưởng về đai xanh ra đời.
+
+48
+00:04:21.866 --> 00:04:26.732
+Was to provide them a little less training, so they got a little less reach,
+Là cung cấp cho họ đào tạo ít hơn một chút, để họ có phạm vi tiếp cận nhỏ hơn một chút,
+
+49
+00:04:26.733 --> 00:04:31.866
+a little less depth, and a little less scope, than say a black belt.
+độ sâu ít hơn một chút và phạm vi nhỏ hơn một chút, so với một chuyên gia đai đen.
+
+50
+00:04:31.866 --> 00:04:38.866
+But the relative power of their ability to create change
+Nhưng sức mạnh tương đối về khả năng tạo ra thay đổi của họ
+
+51
+00:04:38.866 --> 00:04:44.199
+as a absolute quantity in the organization
+như một số lượng tuyệt đối trong tổ chức
+
+52
+00:04:44.200 --> 00:04:51.033
+and impact a lot of these things is huge.
+và tác động đến rất nhiều vấn đề trong số này là rất lớn.
+
+53
+00:04:51.033 --> 00:04:56.633
+You see, with 15,000 people. I can go address a lot more of these issues
+Bạn thấy đấy, với 15.000 người. Tôi có thể giải quyết được nhiều vấn đề hơn trong số này
+
+54
+00:04:56.633 --> 00:04:59.733
+than I can with 2,000 people.
+so với 2.000 người.
+
+55
+00:04:59.733 --> 00:05:04.833
+Now, if I take my 2,000 black belts
+Bây giờ, nếu tôi có 2.000 chuyên gia đai đen của mình
+
+56
+00:05:04.833 --> 00:05:11.866
+and I take 15,000 green belts out there. Or 17,000 of these experts.
+và tôi có 15.000 đai xanh ngoài kia. Hoặc 17.000 chuyên gia này.
+
+57
+00:05:11.866 --> 00:05:18.266
+Chopping away with their intellectual knowledge and tools at these programs.
+Cùng nhau làm việc với kiến thức và công cụ trí tuệ của họ cho các chương trình này.
+
+58
+00:05:18.266 --> 00:05:25.299
+Applying DMAIC to productivity projects. DMAIC to delivery, etc. Wow, what an impact.
+Áp dụng DMAIC cho các dự án năng suất. DMAIC cho giao hàng, v.v. Wow, thật là một tác động lớn.
+
+59
+00:05:25.300 --> 00:05:31.066
+So, what we did was we elevated the role of a green belt.
+Vì vậy, những gì chúng tôi đã làm là nâng cao vai trò của một đai xanh.
+
+60
+00:05:31.066 --> 00:05:36.766
+And we discovered that that green belt plays a very
+Và chúng tôi phát hiện ra rằng đai xanh đóng một vai trò rất
+
+61
+00:05:36.766 --> 00:05:39.999
+critical role in the organization.
+quan trọng trong tổ chức.
+
+62
+00:05:40.000 --> 00:05:45.733
+Let's take a company that's comprised of say 100,000 people.
+Hãy lấy một công ty bao gồm khoảng 100.000 người.
+
+63
+00:05:45.733 --> 00:05:51.599
+But it breaks down in to a series of say
+Nhưng nó được chia nhỏ thành một loạt các
+
+64
+00:05:51.600 --> 00:05:57.100
+fifty, 2,000 employee firms.
+năm mươi công ty nhỏ hơn, mỗi công ty 2.000 nhân viên.
+
+65
+00:05:57.100 --> 00:06:04.133
+Autonomous business units. Fifty business units of 2,000 people each.
+Các đơn vị kinh doanh tự chủ. Năm mươi đơn vị kinh doanh, mỗi đơn vị 2.000 người.
+
+66
+00:06:04.133 --> 00:06:10.766
+Well, in a business unit of maybe this size and given the nature of their work.
+Trong một đơn vị kinh doanh có quy mô như vậy và xét đến tính chất công việc của họ.
+
+67
+00:06:10.766 --> 00:06:17.166
+Only having two or three black belts makes sense. Two or three black belts.
+Chỉ có hai hoặc ba chuyên gia đai đen là hợp lý. Hai hoặc ba chuyên gia đai đen.
+
+68
+00:06:17.166 --> 00:06:20.266
+Now how much leverage is two or three people going to have
+Vậy hai hoặc ba người sẽ có bao nhiêu đòn bẩy
+
+69
+00:06:20.266 --> 00:06:24.999
+in a business unit of 2,000 people on these things.
+trong một đơn vị kinh doanh 2.000 người về những vấn đề này.
+
+70
+00:06:25.000 --> 00:06:28.033
+See, handling their chunk of it.
+Bạn thấy đấy, để xử lý phần việc của họ.
+
+71
+00:06:28.033 --> 00:06:35.033
+So, the strategy then might be to go out there and create a bunch of green belt's.
+Vì vậy, chiến lược sau đó có thể là đi ra ngoài và tạo ra một nhóm lớn các đai xanh.
+
+72
+00:06:35.033 --> 00:06:40.299
+So, these green belts are not like surrogate black belts.
+Vì vậy, những đai xanh này không giống như các chuyên gia đai đen thay thế.
+
+73
+00:06:40.300 --> 00:06:45.200
+They simply have a little less scope and depth of black belt and a little less reach.
+Họ chỉ đơn giản là có phạm vi và độ sâu kiến thức ít hơn một chút so với đai đen và phạm vi tiếp cận nhỏ hơn một chút.
+
+74
+00:06:45.200 --> 00:06:48.933
+But the impact they can have by virtue of their numbers.
+Nhưng tác động mà họ có thể tạo ra nhờ số lượng đông đảo của mình.
+
+75
+00:06:48.933 --> 00:06:52.933
+And the types and quantities of projects they work,
+Và các loại và số lượng dự án mà họ thực hiện,
+
+76
+00:06:52.933 --> 00:06:56.633
+have an enormous impact on that smaller organization.
+có tác động rất lớn đến tổ chức nhỏ hơn đó.
+
+77
+00:06:56.633 --> 00:06:59.666
+So again, that's another role
+Vì vậy, một lần nữa, đó là một vai trò khác
+
+78
+00:06:59.666 --> 00:07:02.899
+of a green belt and how they're viewed and how they're utilized.
+của đai xanh và cách họ được nhìn nhận và sử dụng.
+
+79
+00:07:02.900 --> 00:07:07.866
+So, the green belt becomes very much a vital part
+Vì vậy, đai xanh trở thành một phần rất quan trọng
+
+80
+00:07:07.866 --> 00:07:13.699
+of an improvement strategy even for large-size corporations.
+của một chiến lược cải tiến ngay cả đối với các tập đoàn quy mô lớn.
+
+81
+00:07:13.700 --> 00:07:18.700
+Thank you for choosing SSMI.
+Cảm ơn bạn đã lựa chọn SSMI.

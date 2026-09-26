@@ -453,7 +453,7 @@
     <span class="hero-badge">04. Process Management • 04. Establishing Baselines</span>
     <h1 class="hero-title">Phát Triển Đường Cơ Sở Năng Lực Quy Trình</h1>
     <div class="hero-title-en">Development of Process Capability Baselines</div>
-    <p class="hero-desc">Quy trình 5 bước phát triển đường cơ sở năng lực chuẩn tắc: Tách biệt biến động ngắn hạn Z_ST và dài hạn Z_LT, tích hợp phân tích tiềm năng Cp và thực tế Cpk.</p>
+    <p class="hero-desc">Quy trình 5 bước phát triển đường cơ sở năng lực chuẩn tắc: Tách biệt biến động ngắn hạn Z<sub>ST</sub> và dài hạn Z<sub>LT</sub>, tích hợp phân tích tiềm năng Cp và thực tế Cpk.</p>
   </div>
 </header>
 
@@ -464,10 +464,10 @@
     <span class="section-num">TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH</span>
     <h2 class="section-heading">Tóm Tắt Điều Hành (Executive Summary)</h2>
     <div class="section-subheading">Nắm trọn tinh hoa bài học trong 60 giây</div>
-    <div class="exec-summary"><ul><li>Đường cơ sở năng lực (Process Capability Baseline) là bản tổng phổ đánh giá khả năng đáp ứng yêu cầu kỹ thuật của khách hàng.</li><li>Phân biệt rõ ràng giữa Năng lực Tiềm năng ($C_p$) và Năng lực Thực tế ($C_{pk}$): $C_p$ phản ánh độ rộng của phân bố, $C_{pk}$ phản ánh độ lệch tâm so với Target.</li><li>Dịch chuyển 1.5 Sigma của Motorola: Năng lực ngắn hạn ($Z_{ST}$) luôn vượt trội hơn năng lực dài hạn ($Z_{LT}$) một khoảng $1.5\sigma$ do trôi dạt nhiệt độ, mòn dao cụ và nguyên vật liệu.</li><li>Tác động điều hành: Đạt $C_{pk} \ge 1.67$ ($5.0\sigma$) ở trạng thái ngắn hạn đảm bảo trong dài hạn quy trình luôn vận hành an toàn trên $3.5\sigma$ ($C_{pk} \ge 1.17$).</li></ul></div>
+    <div class="exec-summary"><ul><li>Đường cơ sở năng lực (Process Capability Baseline) là bản tổng phổ đánh giá khả năng đáp ứng yêu cầu kỹ thuật của khách hàng.</li><li>Phân biệt rõ ràng giữa Năng lực Tiềm năng (C<sub>p</sub>) và Năng lực Thực tế (C<sub>pk</sub>): C<sub>p</sub> phản ánh độ rộng của phân bố, C<sub>pk</sub> phản ánh độ lệch tâm so với Target.</li><li>Dịch chuyển 1.5 Sigma của Motorola: Năng lực ngắn hạn (Z<sub>ST</sub>) luôn vượt trội hơn năng lực dài hạn (Z<sub>LT</sub>) một khoảng 1.5&sigma; do trôi dạt nhiệt độ, mòn dao cụ và nguyên vật liệu.</li><li>Tác động điều hành: Đạt C<sub>pk</sub> &ge; 1.67 (5.0&sigma;) ở trạng thái ngắn hạn đảm bảo trong dài hạn quy trình luôn vận hành an toàn trên 3.5&sigma; (C<sub>pk</sub> &ge; 1.17).</li></ul></div>
     <div class="pro-tip">
       <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Insight)</div>
-      <p class="pro-tip-desc">Đừng bao giờ nhầm lẫn giữa Z_ST và Z_LT. Khi báo cáo cho khách hàng, hãy chỉ rõ: 'Đây là năng lực ngắn hạn Z_ST = 6.0 hay năng lực dài hạn Z_LT = 4.5'!</p>
+      <p class="pro-tip-desc">Đừng bao giờ nhầm lẫn giữa Z<sub>ST</sub> và Z<sub>LT</sub>. Khi báo cáo cho khách hàng, hãy chỉ rõ: 'Đây là năng lực ngắn hạn Z<sub>ST</sub> = 6.0 hay năng lực dài hạn Z<sub>LT</sub> = 4.5'!</p>
     </div>
   </section>
 
@@ -495,7 +495,7 @@
     </div>
     <div class="pro-tip">
       <div class="pro-tip-title">MBB Interpretation • Diễn giải điều hành</div>
-      <p class="pro-tip-desc">Phát triển đường cơ sở năng lực cho phép doanh nghiệp nhìn thấy trước tương lai. Nếu Z_ST chỉ đạt 3.0 Sigma, chắc chắn trong dài hạn Z_LT sẽ tụt xuống 1.5 Sigma và tạo ra thảm họa 66,800 DPMO phế phẩm.</p>
+      <p class="pro-tip-desc">Phát triển đường cơ sở năng lực cho phép doanh nghiệp nhìn thấy trước tương lai. Nếu Z<sub>ST</sub> chỉ đạt 3.0 Sigma, chắc chắn trong dài hạn Z<sub>LT</sub> sẽ tụt xuống 1.5 Sigma và tạo ra thảm họa 66,800 DPMO phế phẩm.</p>
     </div>
   </section>
 
@@ -508,24 +508,24 @@
       <div class="case-card mfg">
         <span class="case-tag mfg">Sản xuất • Đúc nẹp kính chắn gió xe hơi</span>
         <h3 class="case-title">Xác lập Baseline Cpk ngắn hạn và dài hạn</h3>
-        <p class="case-body">Đo lường 50 mẫu trong ca sáng: &mu; = 15.02 mm, &sigma;_within = 0.04 mm (Dung sai 15.00 &plusmn; 0.20 mm). Nhóm tính Z_ST = 0.18 / 0.04 = 4.5 Sigma (Cpk = 1.50). Khi theo dõi dữ liệu dài hạn 6 tháng: &sigma;_total = 0.09 mm do trôi nhiệt độ mùa hè/mùa đông. Z_LT thực tế chỉ đạt 3.0 Sigma.</p>
-        <div class="case-metric"><strong>Phân tích MBB:</strong> Lắp đặt phòng đúc kiểm soát nhiệt độ phòng &plusmn;1°C, đưa Z_LT dài hạn lên 4.6 Sigma, Cpk dài hạn đạt 1.53.</div>
+        <p class="case-body">Đo lường 50 mẫu trong ca sáng: &mu; = 15.02 mm, &sigma;_within = 0.04 mm (Dung sai 15.00 &plusmn; 0.20 mm). Nhóm tính Z<sub>ST</sub> = 0.18 / 0.04 = 4.5 Sigma (Cpk = 1.50). Khi theo dõi dữ liệu dài hạn 6 tháng: &sigma;_total = 0.09 mm do trôi nhiệt độ mùa hè/mùa đông. Z<sub>LT</sub> thực tế chỉ đạt 3.0 Sigma.</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Lắp đặt phòng đúc kiểm soát nhiệt độ phòng &plusmn;1°C, đưa Z<sub>LT</sub> dài hạn lên 4.6 Sigma, Cpk dài hạn đạt 1.53.</div>
       </div>
       <div class="case-card svc">
         <span class="case-tag svc">Dịch vụ • Trung tâm Xử lý Giao dịch Chứng khoán</span>
         <h3 class="case-title">Năng lực xử lý lệnh khớp trong giờ cao điểm</h3>
-        <p class="case-body">Thời gian khớp lệnh yêu cầu &le; 200 ms. Trong điều kiện thường (Ngắn hạn): &mu; = 45 ms, &sigma; = 15 ms &rarr; Z_ST = (200 - 45)/15 = 10.3 Sigma. Trong ngày đáo hạn phái sinh (Dài hạn): Lượng lệnh tăng đột biến khiến &mu; = 140 ms, &sigma; = 35 ms &rarr; Z_LT = 1.71 Sigma (Nhiều lệnh bị trễ &gt; 200 ms).</p>
-        <div class="case-metric"><strong>Phân tích MBB:</strong> Nâng cấp cụm máy chủ xử lý song song, bảo đảm Z_LT trong giờ cao điểm luôn &ge; 5.2 Sigma (Cpk &ge; 1.73).</div>
+        <p class="case-body">Thời gian khớp lệnh yêu cầu &le; 200 ms. Trong điều kiện thường (Ngắn hạn): &mu; = 45 ms, &sigma; = 15 ms &rarr; Z<sub>ST</sub> = (200 - 45)/15 = 10.3 Sigma. Trong ngày đáo hạn phái sinh (Dài hạn): Lượng lệnh tăng đột biến khiến &mu; = 140 ms, &sigma; = 35 ms &rarr; Z<sub>LT</sub> = 1.71 Sigma (Nhiều lệnh bị trễ &gt; 200 ms).</p>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> Nâng cấp cụm máy chủ xử lý song song, bảo đảm Z<sub>LT</sub> trong giờ cao điểm luôn &ge; 5.2 Sigma (Cpk &ge; 1.73).</div>
       </div></div>
     <div class="vs-grid">
       <div class="vs-col bad">
         <span class="vs-badge bad">Bad / Trap • Tư duy sai lầm</span>
-        <ul><li>Báo cáo hiệu suất chỉ bằng con số Năng suất cổ điển (Classic Yield) che giấu phế phẩm làm lại.</li><li>Bỏ qua sự khác biệt giữa Năng lực ngắn hạn (Z_ST) và Năng lực dài hạn (Z_LT), làm mất cơ sở dịch chuyển 1.5 Sigma.</li><li>Tính toán Baseline trên dữ liệu quy trình đang mất ổn định thống kê (Out of Control) có nguyên nhân đặc biệt.</li><li>Xem việc thiết lập đường cơ sở chỉ là thủ tục giấy tờ mà không gắn kết với mô hình chuyển đổi xác suất Poisson.</li></ul>
+        <ul><li>Báo cáo hiệu suất chỉ bằng con số Năng suất cổ điển (Classic Yield) che giấu phế phẩm làm lại.</li><li>Bỏ qua sự khác biệt giữa Năng lực ngắn hạn (Z<sub>ST</sub>) và Năng lực dài hạn (Z<sub>LT</sub>), làm mất cơ sở dịch chuyển 1.5 Sigma.</li><li>Tính toán Baseline trên dữ liệu quy trình đang mất ổn định thống kê (Out of Control) có nguyên nhân đặc biệt.</li><li>Xem việc thiết lập đường cơ sở chỉ là thủ tục giấy tờ mà không gắn kết với mô hình chuyển đổi xác suất Poisson.</li></ul>
       </div>
       <div class="vs-divider">VS</div>
       <div class="vs-col good">
         <span class="vs-badge good">Good / MBB • Chuẩn Six Sigma</span>
-        <ul><li>Thiết lập Đường cơ sở Năng lực (Capability Baseline) khách quan dựa trên phân phối chuẩn tắc và dữ liệu ổn định.</li><li>Làm chủ họ Năng suất toàn diện: FTY (First Time Yield), RTY (Rolled Throughput Yield) và Y_norm (Normalized Yield).</li><li>Ứng dụng phân phối Poisson Y = e^(-DPU) để kết nối số lượng khuyết tật trên đơn vị với xác suất không có lỗi.</li><li>Chuyển đổi minh bạch giữa Xác suất lỗi, DPMO, Z_ST, Z_LT và các chỉ số Cpk trong báo cáo quản trị cấp cao.</li></ul>
+        <ul><li>Thiết lập Đường cơ sở Năng lực (Capability Baseline) khách quan dựa trên phân phối chuẩn tắc và dữ liệu ổn định.</li><li>Làm chủ họ Năng suất toàn diện: FTY (First Time Yield), RTY (Rolled Throughput Yield) và Y<sub>norm</sub> (Normalized Yield).</li><li>Ứng dụng phân phối Poisson Y = e^(-DPU) để kết nối số lượng khuyết tật trên đơn vị với xác suất không có lỗi.</li><li>Chuyển đổi minh bạch giữa Xác suất lỗi, DPMO, Z<sub>ST</sub>, Z<sub>LT</sub> và các chỉ số Cpk trong báo cáo quản trị cấp cao.</li></ul>
       </div>
     </div>
   </section>
@@ -538,14 +538,14 @@
     
     <div class="quiz-card">
       <span class="quiz-tag">Câu 1 • Tầng 1 • Recall & Concept</span>
-      <div class="quiz-q">Theo mô hình chất lượng Six Sigma của Motorola, mức dịch chuyển tiêu chuẩn giữa năng lực ngắn hạn (Z_ST) và dài hạn (Z_LT) là bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-1', &quot;Motorola standardizes a 1.50&amp;sigma; shift between short-term capability (Z_ST) and long-term reality (Z_LT).&quot;, &quot;Quy chuẩn Six Sigma tính đến độ trôi dạt 1.5 Sigma của quy trình trong dài hạn.&quot;)">A. Dịch chuyển 1.50 Sigma (Z_LT = Z_ST - 1.50&amp;sigma;)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-1', &quot;Motorola standardizes a 1.50&amp;sigma; shift between short-term capability (Z_ST) and long-term reality (Z_LT).&quot;, &quot;Quy chuẩn Six Sigma tính đến độ trôi dạt 1.5 Sigma của quy trình trong dài hạn.&quot;)">B. Dịch chuyển 0.50 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-1', &quot;Motorola standardizes a 1.50&amp;sigma; shift between short-term capability (Z_ST) and long-term reality (Z_LT).&quot;, &quot;Quy chuẩn Six Sigma tính đến độ trôi dạt 1.5 Sigma của quy trình trong dài hạn.&quot;)">C. Không có sự dịch chuyển nào</button></div>
+      <div class="quiz-q">Theo mô hình chất lượng Six Sigma của Motorola, mức dịch chuyển tiêu chuẩn giữa năng lực ngắn hạn (Z<sub>ST</sub>) và dài hạn (Z<sub>LT</sub>) là bao nhiêu?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-1', &quot;Motorola standardizes a 1.50&amp;sigma; shift between short-term capability (Z<sub>ST</sub>) and long-term reality (Z<sub>LT</sub>).&quot;, &quot;Quy chuẩn Six Sigma tính đến độ trôi dạt 1.5 Sigma của quy trình trong dài hạn.&quot;)">A. Dịch chuyển 1.50 Sigma (Z<sub>LT</sub> = Z<sub>ST</sub> - 1.50&amp;sigma;)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-1', &quot;Motorola standardizes a 1.50&amp;sigma; shift between short-term capability (Z<sub>ST</sub>) and long-term reality (Z<sub>LT</sub>).&quot;, &quot;Quy chuẩn Six Sigma tính đến độ trôi dạt 1.5 Sigma của quy trình trong dài hạn.&quot;)">B. Dịch chuyển 0.50 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-1', &quot;Motorola standardizes a 1.50&amp;sigma; shift between short-term capability (Z<sub>ST</sub>) and long-term reality (Z<sub>LT</sub>).&quot;, &quot;Quy chuẩn Six Sigma tính đến độ trôi dạt 1.5 Sigma của quy trình trong dài hạn.&quot;)">C. Không có sự dịch chuyển nào</button></div>
       <div id="fb-q8-1" class="quiz-fb"></div>
     </div>
     <div class="quiz-card">
       <span class="quiz-tag">Câu 2 • Tầng 1 • Recall & Concept</span>
-      <div class="quiz-q">Khi một quy trình có chỉ số Cpk = 1.33, mức Sigma ngắn hạn (Z_ST) ước lượng tương đương là bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-2', &quot;Z_ST &amp;approx; 3 × Cpk = 3 × 1.33 = 4.0 Sigma.&quot;, &quot;Quy tắc nhân 3: Cpk = 1.33 tương đương với mức năng lực ngắn hạn 4.0 Sigma.&quot;)">A. Z_ST &amp;approx; 3 × 1.33 = 4.0 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-2', &quot;Z_ST &amp;approx; 3 × Cpk = 3 × 1.33 = 4.0 Sigma.&quot;, &quot;Quy tắc nhân 3: Cpk = 1.33 tương đương với mức năng lực ngắn hạn 4.0 Sigma.&quot;)">B. Z_ST = 1.33 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-2', &quot;Z_ST &amp;approx; 3 × Cpk = 3 × 1.33 = 4.0 Sigma.&quot;, &quot;Quy tắc nhân 3: Cpk = 1.33 tương đương với mức năng lực ngắn hạn 4.0 Sigma.&quot;)">C. Z_ST = 6.0 Sigma</button></div>
+      <div class="quiz-q">Khi một quy trình có chỉ số Cpk = 1.33, mức Sigma ngắn hạn (Z<sub>ST</sub>) ước lượng tương đương là bao nhiêu?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-2', &quot;Z<sub>ST</sub> &amp;approx; 3 × Cpk = 3 × 1.33 = 4.0 Sigma.&quot;, &quot;Quy tắc nhân 3: Cpk = 1.33 tương đương với mức năng lực ngắn hạn 4.0 Sigma.&quot;)">A. Z<sub>ST</sub> &amp;approx; 3 × 1.33 = 4.0 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-2', &quot;Z<sub>ST</sub> &amp;approx; 3 × Cpk = 3 × 1.33 = 4.0 Sigma.&quot;, &quot;Quy tắc nhân 3: Cpk = 1.33 tương đương với mức năng lực ngắn hạn 4.0 Sigma.&quot;)">B. Z<sub>ST</sub> = 1.33 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-2', &quot;Z<sub>ST</sub> &amp;approx; 3 × Cpk = 3 × 1.33 = 4.0 Sigma.&quot;, &quot;Quy tắc nhân 3: Cpk = 1.33 tương đương với mức năng lực ngắn hạn 4.0 Sigma.&quot;)">C. Z<sub>ST</sub> = 6.0 Sigma</button></div>
       <div id="fb-q8-2" class="quiz-fb"></div>
     </div>
     <div class="quiz-card">
@@ -556,14 +556,14 @@
     </div>
     <div class="quiz-card">
       <span class="quiz-tag">Câu 4 • Tầng 2 • Analytical & Math</span>
-      <div class="quiz-q">Để đảm bảo trong dài hạn quy trình đạt chất lượng tối thiểu Z_LT &amp;ge; 4.0 Sigma, mức năng lực ngắn hạn Z_ST tối thiểu cần thiết lập ở giai đoạn bàn giao dự án là bao nhiêu?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-4', &quot;Required Z_ST = Z_LT + 1.50&amp;sigma; = 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83).&quot;, &quot;Phải thiết kế năng lực ngắn hạn đạt 5.5 Sigma để bù đắp cho độ trôi dạt 1.5 Sigma trong dài hạn.&quot;)">A. Z_ST &amp;ge; 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-4', &quot;Required Z_ST = Z_LT + 1.50&amp;sigma; = 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83).&quot;, &quot;Phải thiết kế năng lực ngắn hạn đạt 5.5 Sigma để bù đắp cho độ trôi dạt 1.5 Sigma trong dài hạn.&quot;)">B. Z_ST = 4.0 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-4', &quot;Required Z_ST = Z_LT + 1.50&amp;sigma; = 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83).&quot;, &quot;Phải thiết kế năng lực ngắn hạn đạt 5.5 Sigma để bù đắp cho độ trôi dạt 1.5 Sigma trong dài hạn.&quot;)">C. Z_ST = 3.0 Sigma</button></div>
+      <div class="quiz-q">Để đảm bảo trong dài hạn quy trình đạt chất lượng tối thiểu Z<sub>LT</sub> &amp;ge; 4.0 Sigma, mức năng lực ngắn hạn Z<sub>ST</sub> tối thiểu cần thiết lập ở giai đoạn bàn giao dự án là bao nhiêu?</div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-4', &quot;Required Z<sub>ST</sub> = Z<sub>LT</sub> + 1.50&amp;sigma; = 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83).&quot;, &quot;Phải thiết kế năng lực ngắn hạn đạt 5.5 Sigma để bù đắp cho độ trôi dạt 1.5 Sigma trong dài hạn.&quot;)">A. Z<sub>ST</sub> &amp;ge; 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-4', &quot;Required Z<sub>ST</sub> = Z<sub>LT</sub> + 1.50&amp;sigma; = 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83).&quot;, &quot;Phải thiết kế năng lực ngắn hạn đạt 5.5 Sigma để bù đắp cho độ trôi dạt 1.5 Sigma trong dài hạn.&quot;)">B. Z<sub>ST</sub> = 4.0 Sigma</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-4', &quot;Required Z<sub>ST</sub> = Z<sub>LT</sub> + 1.50&amp;sigma; = 4.0 + 1.5 = 5.5 Sigma (Cpk &amp;ge; 1.83).&quot;, &quot;Phải thiết kế năng lực ngắn hạn đạt 5.5 Sigma để bù đắp cho độ trôi dạt 1.5 Sigma trong dài hạn.&quot;)">C. Z<sub>ST</sub> = 3.0 Sigma</button></div>
       <div id="fb-q8-4" class="quiz-fb"></div>
     </div>
     <div class="quiz-card">
       <span class="quiz-tag">Câu 5 • Tầng 3 • Executive Decision</span>
       <div class="quiz-q">Một nhà cung cấp nộp báo cáo chất lượng ghi: &#x27;Năng lực đạt 6 Sigma (Z = 6.0)&#x27;. Là MBB, câu hỏi kỹ thuật đầu tiên bạn cần chất vấn là gì?</div>
-      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-5', &quot;Always clarify whether reported Sigma is short-term (Z_ST) or long-term (Z_LT) to evaluate real defect risk.&quot;, &quot;Bắt buộc phải phân định rõ Z_ST và Z_LT để đánh giá đúng rủi ro sai lỗi thực tế của nhà cung cấp.&quot;)">A. Yêu cầu làm rõ: &#x27;Con số Z = 6.0 này là Z_ST (Ngắn hạn - 3.4 DPMO) hay Z_LT (Dài hạn - 0.001 DPMO) và phương pháp tính toán cụ thể là gì?&#x27;</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-5', &quot;Always clarify whether reported Sigma is short-term (Z_ST) or long-term (Z_LT) to evaluate real defect risk.&quot;, &quot;Bắt buộc phải phân định rõ Z_ST và Z_LT để đánh giá đúng rủi ro sai lỗi thực tế của nhà cung cấp.&quot;)">B. Ký duyệt hợp đồng ngay lập tức</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-5', &quot;Always clarify whether reported Sigma is short-term (Z_ST) or long-term (Z_LT) to evaluate real defect risk.&quot;, &quot;Bắt buộc phải phân định rõ Z_ST và Z_LT để đánh giá đúng rủi ro sai lỗi thực tế của nhà cung cấp.&quot;)">C. Yêu cầu giảm giá 10%</button></div>
+      <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q8-5', &quot;Always clarify whether reported Sigma is short-term (Z<sub>ST</sub>) or long-term (Z<sub>LT</sub>) to evaluate real defect risk.&quot;, &quot;Bắt buộc phải phân định rõ Z<sub>ST</sub> và Z<sub>LT</sub> để đánh giá đúng rủi ro sai lỗi thực tế của nhà cung cấp.&quot;)">A. Yêu cầu làm rõ: &#x27;Con số Z = 6.0 này là Z<sub>ST</sub> (Ngắn hạn - 3.4 DPMO) hay Z<sub>LT</sub> (Dài hạn - 0.001 DPMO) và phương pháp tính toán cụ thể là gì?&#x27;</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-5', &quot;Always clarify whether reported Sigma is short-term (Z<sub>ST</sub>) or long-term (Z<sub>LT</sub>) to evaluate real defect risk.&quot;, &quot;Bắt buộc phải phân định rõ Z<sub>ST</sub> và Z<sub>LT</sub> để đánh giá đúng rủi ro sai lỗi thực tế của nhà cung cấp.&quot;)">B. Ký duyệt hợp đồng ngay lập tức</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q8-5', &quot;Always clarify whether reported Sigma is short-term (Z<sub>ST</sub>) or long-term (Z<sub>LT</sub>) to evaluate real defect risk.&quot;, &quot;Bắt buộc phải phân định rõ Z<sub>ST</sub> và Z<sub>LT</sub> để đánh giá đúng rủi ro sai lỗi thực tế của nhà cung cấp.&quot;)">C. Yêu cầu giảm giá 10%</button></div>
       <div id="fb-q8-5" class="quiz-fb"></div>
     </div>
     <div class="quiz-card">
@@ -577,8 +577,8 @@
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Short-Term Capability (Z_ST)</div>
-            <div class="term-vi">Năng lực ngắn hạn Z_ST</div>
+            <div class="term">Short-Term Capability (Z<sub>ST</sub>)</div>
+            <div class="term-vi">Năng lực ngắn hạn Z<sub>ST</sub></div>
             <div class="hint">Click to reveal • Nhấn để lật</div>
           </div>
           <div class="flashcard-back">
@@ -590,8 +590,8 @@
       <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
           <div class="flashcard-front">
-            <div class="term">Long-Term Capability (Z_LT)</div>
-            <div class="term-vi">Năng lực dài hạn Z_LT</div>
+            <div class="term">Long-Term Capability (Z<sub>LT</sub>)</div>
+            <div class="term-vi">Năng lực dài hạn Z<sub>LT</sub></div>
             <div class="hint">Click to reveal • Nhấn để lật</div>
           </div>
           <div class="flashcard-back">
@@ -646,7 +646,7 @@
     <span class="section-num">Phần 5 • 1-Page Action Checklist &amp; Template</span>
     <h2 class="section-heading">Checklist Hành Động Tại Doanh Nghiệp</h2>
     <div class="section-subheading">Thực thi quản trị quy trình theo chuẩn mực Master Black Belt</div>
-    <label class="action-item"><input type="checkbox"><span class="action-text"><strong>Tính toán đồng thời Cp, Cpk và Z_ST:</strong> Thu thập dữ liệu phụ nhóm (Subgroups) để tách biệt phương sai trong và giữa các nhóm.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Ước lượng năng lực dài hạn Z_LT = Z_ST - 1.5:</strong> Dự báo tỷ lệ DPMO thực tế mà khách hàng sẽ nhận được.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Khử độ lệch tâm k để đưa Cpk tiệm cận Cp:</strong> Hiệu chỉnh điểm đặt máy (Offset) để đưa trung bình về đúng Target.</span></label>
+    <label class="action-item"><input type="checkbox"><span class="action-text"><strong>Tính toán đồng thời Cp, Cpk và Z<sub>ST</sub>:</strong> Thu thập dữ liệu phụ nhóm (Subgroups) để tách biệt phương sai trong và giữa các nhóm.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Ước lượng năng lực dài hạn Z<sub>LT</sub> = Z<sub>ST</sub> - 1.5:</strong> Dự báo tỷ lệ DPMO thực tế mà khách hàng sẽ nhận được.</span></label><label class="action-item"><input type="checkbox"><span class="action-text"><strong>Khử độ lệch tâm k để đưa Cpk tiệm cận Cp:</strong> Hiệu chỉnh điểm đặt máy (Offset) để đưa trung bình về đúng Target.</span></label>
     <h3 style="color:var(--wood-dark); margin-top:28px;">Template Quản Trị Quy Trình (Process Management Template)</h3>
     <div style="overflow-x:auto;">
       <table style="width:100%; border-collapse:collapse; margin-top:12px; font-size:0.92rem; background:#ffffff;">
@@ -655,7 +655,7 @@
           <th style="padding:10px; text-align:left;">Thông số / Dữ liệu cần xác lập</th>
           <th style="padding:10px; text-align:left; border-radius:0 6px 0 0;">Tiêu chuẩn kiểm chứng (Deliverable)</th>
         </tr></thead>
-        <tbody><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Quy trình / Đặc tính CTQ</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Năng lực ngắn hạn (Z_ST / Cp)</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Năng lực dài hạn (Z_LT / Cpk)</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Nẹp kính chắn gió xe hơi</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z_ST = 4.50&amp;sigma;, Cp = 1.50</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z_LT = 3.00&amp;sigma;, Cpk = 1.00</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Khớp lệnh chứng khoán</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z_ST = 10.3&amp;sigma;, Cp = 3.44</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z_LT = 5.20&amp;sigma;, Cpk = 1.73</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Hàn mạch điện thoại</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z_ST = 3.60&amp;sigma;, Cp = 1.20</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z_LT = 2.10&amp;sigma;, Cpk = 0.70</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Độ dày lớp sơn tĩnh điện</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z_ST = 5.10&amp;sigma;, Cp = 1.70</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z_LT = 3.60&amp;sigma;, Cpk = 1.20</td></tr></tbody>
+        <tbody><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Quy trình / Đặc tính CTQ</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Năng lực ngắn hạn (Z<sub>ST</sub> / Cp)</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Năng lực dài hạn (Z<sub>LT</sub> / Cpk)</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Nẹp kính chắn gió xe hơi</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z<sub>ST</sub> = 4.50&amp;sigma;, Cp = 1.50</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z<sub>LT</sub> = 3.00&amp;sigma;, Cpk = 1.00</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Khớp lệnh chứng khoán</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z<sub>ST</sub> = 10.3&amp;sigma;, Cp = 3.44</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z<sub>LT</sub> = 5.20&amp;sigma;, Cpk = 1.73</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Hàn mạch điện thoại</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z<sub>ST</sub> = 3.60&amp;sigma;, Cp = 1.20</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z<sub>LT</sub> = 2.10&amp;sigma;, Cpk = 0.70</td></tr><tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;">Độ dày lớp sơn tĩnh điện</td><td style="padding:10px; border-bottom:1px solid #e2e8f0;">Z<sub>ST</sub> = 5.10&amp;sigma;, Cp = 1.70</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; color:var(--vi-green-2);">Z<sub>LT</sub> = 3.60&amp;sigma;, Cpk = 1.20</td></tr></tbody>
       </table>
     </div>
     <p style="margin-top:18px; color:var(--vi-green-2);"><strong>Định nghĩa hoàn tất:</strong> Đo lường chính xác sức mạnh hệ thống đo, xác lập đường cơ sở Baseline, thiết lập benchmark và đếm cơ hội sai lỗi theo chuẩn Six Sigma quốc tế.</p>

@@ -449,8 +449,8 @@
     <div class="exec-summary">
       <ul>
         <li><strong>Bẫy Biến Thiên Xung Quanh Thiết Lập (Variation Around Settings):</strong> Đổi thiết lập giờ giao báo sang 06:00 sáng là bước tiến lớn. Nhưng nếu có hôm giao lúc 05:45, hôm khác giao lúc 07:15, thì "Cửa sổ biến thiên" (Window of Variation) vẫn để ngỏ rủi ro cho con chó hàng xóm cắn nát báo vào ngày có tin tuyển dụng quyết định (Định luật Murphy).</li>
-        <li><strong>Kiểm Soát Đầu Vào Để Bảo Toàn Đầu Ra:</strong> Chất lượng đầu ra $Y$ không thể ổn định nếu các tham số đầu vào $X$ rung lắc hỗn loạn. Kiểm soát biến thiên $\sigma_X$ là chiếc khiên sắt bảo vệ thiết lập hành động tối ưu đã dày công xác lập.</li>
-        <li><strong>Đoạn Tuyệt Tư Duy "Chữa Cháy":</strong> Dr. Mikel Harry đặt câu hỏi: <em>"Người ta bảo hiểu DMAIC từ 30 năm trước, vậy tại sao không ai làm?"</em> Vì phần lớn doanh nghiệp chỉ quan sát và sửa lỗi ở đầu ra $Y$ thay vì kiểm soát biến thiên của các $X$ ở đầu vào.</li>
+        <li><strong>Kiểm Soát Đầu Vào Để Bảo Toàn Đầu Ra:</strong> Chất lượng đầu ra Y không thể ổn định nếu các tham số đầu vào X rung lắc hỗn loạn. Kiểm soát biến thiên &sigma;_X là chiếc khiên sắt bảo vệ thiết lập hành động tối ưu đã dày công xác lập.</li>
+        <li><strong>Đoạn Tuyệt Tư Duy "Chữa Cháy":</strong> Dr. Mikel Harry đặt câu hỏi: <em>"Người ta bảo hiểu DMAIC từ 30 năm trước, vậy tại sao không ai làm?"</em> Vì phần lớn doanh nghiệp chỉ quan sát và sửa lỗi ở đầu ra Y thay vì kiểm soát biến thiên của các X ở đầu vào.</li>
         <li><strong>Chuyển Hóa Từ Tiềm Thức Sang Ý Thức (Conscious Habit):</strong> Kiểm soát biến thiên phải được rèn luyện thành thói quen kỷ luật, có quy chuẩn hóa và giám sát định kỳ tại Gemba để ngăn chặn quy trình trôi dạt về trạng thái hỗn độn tự nhiên.</li>
       </ul>
     </div>
@@ -478,7 +478,7 @@
         <span style="font-size:1.4rem;">)</span><sup>2</sup> &middot; &sigma;<sub><i>X<sub>i</sub></i></sub><sup>2</sup>
       </div>
       <div class="desc">
-        Phương sai đầu ra $\sigma_Y^2$ là tổng độ nhạy bình phương nhân với phương sai đầu vào $\sigma_{X_i}^2$. Muốn giá trị $Y$ ổn định hoàn hảo, bắt buộc phải ép $\sigma_{X_i} \to 0$ trên các biến số có độ dốc nhạy cảm cao.
+        Phương sai đầu ra &sigma;_Y<sup>2</sup> là tổng độ nhạy bình phương nhân với phương sai đầu vào &sigma;<sub>X<sub>i</sub></sub><sup>2</sup>. Muốn giá trị Y ổn định hoàn hảo, bắt buộc phải ép &sigma;<sub>X<sub>i</sub></sub> &rarr; 0 trên các biến số có độ dốc nhạy cảm cao.
       </div>
     </div>
 
@@ -498,7 +498,7 @@
         <span style="font-size:1.6rem;">]</span> &ge; 1.50 &nbsp;(Chuẩn Six Sigma)
       </div>
       <div class="desc">
-        Một thiết lập được xem là kiểm soát đạt chuẩn khi và chỉ khi phân phối dao động thực tế của nó nằm lọt thỏm trong cửa sổ dung sai cho phép với $C_{pk} \ge 1.50$.
+        Một thiết lập được xem là kiểm soát đạt chuẩn khi và chỉ khi phân phối dao động thực tế của nó nằm lọt thỏm trong cửa sổ dung sai cho phép với C<sub>pk</sub> &ge; 1.50.
       </div>
     </div>
 
@@ -579,7 +579,7 @@
         <ul>
           <li>Nhận diện biến thiên xung quanh thiết lập hành động là kẻ thù số 1 của chất lượng.</li>
           <li>Chủ động thắt chặt băng thông biến thiên (&plusmn;3&sigma;) bằng cơ cấu Poka-Yoke và tự động hóa.</li>
-          <li>Xây dựng Biểu đồ Kiểm soát (SPC Control Charts) giám sát biến thiên của $X$ theo thời gian thực.</li>
+          <li>Xây dựng Biểu đồ Kiểm soát (SPC Control Charts) giám sát biến thiên của X theo thời gian thực.</li>
           <li>Rèn luyện tư duy kiểm soát phương sai thành phản xạ có ý thức ăn sâu vào văn hóa doanh nghiệp.</li>
         </ul>
       </div>
@@ -621,12 +621,12 @@
     <!-- Câu 3 -->
     <div class="quiz-card">
       <span class="quiz-tag">Câu 3 &bull; Tầng 2: Tính Toán Độ Biến Thiên Dung Sai (Tolerance Capability Math)</span>
-      <div class="quiz-q">Một thiết lập hành động của áp lực khí nén $X$ có giá trị tối ưu $\mu = 5.0\ \text{bar}$, giới hạn dung sai cho phép là $USL = 5.6\ \text{bar}$ và $LSL = 4.4\ \text{bar}$. Hiện tại độ lệch chuẩn đo được là $\sigma = 0.30\ \text{bar}$. Chỉ số năng lực $C_p$ hiện tại là bao nhiêu và quy trình đã đạt chuẩn Six Sigma ($C_p \ge 1.50$) chưa?</div>
+      <div class="quiz-q">Một thiết lập hành động của áp lực khí nén X có giá trị tối ưu &mu; = 5.0\ bar, giới hạn dung sai cho phép là USL = 5.6\ bar và LSL = 4.4\ bar. Hiện tại độ lệch chuẩn đo được là &sigma; = 0.30\ bar. Chỉ số năng lực C<sub>p</sub> hiện tại là bao nhiêu và quy trình đã đạt chuẩn Six Sigma (C<sub>p</sub> &ge; 1.50) chưa?</div>
       <div class="quiz-opts">
-        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3', 'Correct. Tolerance = USL - LSL = 5.6 - 4.4 = 1.2 bar. Cp = 1.2 / (6 * 0.30) = 1.2 / 1.8 = 0.67. Since Cp = 0.67 < 1.50, the input variation is dangerously excessive and must be compressed by at least 2.25x.', 'Chính xác! Dung sai = 5.6 - 4.4 = 1.2 bar. Chỉ số Cp = 1.2 / (6 &times; 0.30) = 1.2 / 1.8 = 0.67. Vì Cp = 0.67 nhỏ hơn rất nhiều so với 1.50, độ biến thiên đầu vào đang cực kỳ nguy hiểm, có nguy cơ gây phế phẩm lớn.')">A. $C_p = 0.67$; chưa đạt chuẩn (biến thiên quá rộng, cần nén độ lệch chuẩn xuống $\le 0.13\ \text{bar}$)</button>
-        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Arithmetic calculation error.', 'Sai lầm: Tính toán sai công thức năng lực quy trình Cp.')">B. $C_p = 1.33$; đã đạt chuẩn chất lượng quốc tế</button>
-        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Denominator must be 6*sigma, not 3*sigma for bilateral Cp.', 'Sai lầm: Chia cho 3*sigma thay vì 6*sigma của dung sai hai phía.')">C. $C_p = 2.00$; đạt chuẩn đẳng cấp thế giới</button>
-        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Completely wrong formula and interpretation.', 'Sai lầm: Nhận định sai hoàn toàn về chỉ số năng lực.')">D. $C_p = 0.30$; quy trình hoàn toàn không có sai số</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3', 'Correct. Tolerance = USL - LSL = 5.6 - 4.4 = 1.2 bar. Cp = 1.2 / (6 * 0.30) = 1.2 / 1.8 = 0.67. Since Cp = 0.67 < 1.50, the input variation is dangerously excessive and must be compressed by at least 2.25x.', 'Chính xác! Dung sai = 5.6 - 4.4 = 1.2 bar. Chỉ số Cp = 1.2 / (6 &times; 0.30) = 1.2 / 1.8 = 0.67. Vì Cp = 0.67 nhỏ hơn rất nhiều so với 1.50, độ biến thiên đầu vào đang cực kỳ nguy hiểm, có nguy cơ gây phế phẩm lớn.')">A. C<sub>p</sub> = 0.67; chưa đạt chuẩn (biến thiên quá rộng, cần nén độ lệch chuẩn xuống &le; 0.13\ bar)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Arithmetic calculation error.', 'Sai lầm: Tính toán sai công thức năng lực quy trình Cp.')">B. C<sub>p</sub> = 1.33; đã đạt chuẩn chất lượng quốc tế</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Denominator must be 6*sigma, not 3*sigma for bilateral Cp.', 'Sai lầm: Chia cho 3*sigma thay vì 6*sigma của dung sai hai phía.')">C. C<sub>p</sub> = 2.00; đạt chuẩn đẳng cấp thế giới</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Completely wrong formula and interpretation.', 'Sai lầm: Nhận định sai hoàn toàn về chỉ số năng lực.')">D. C<sub>p</sub> = 0.30; quy trình hoàn toàn không có sai số</button>
       </div>
       <div id="fb-q3" class="quiz-fb"></div>
     </div>
@@ -634,10 +634,10 @@
     <!-- Câu 4 -->
     <div class="quiz-card">
       <span class="quiz-tag">Câu 4 &bull; Tầng 2: Lan Truyền Phương Sai (Variance Contribution)</span>
-      <div class="quiz-q">Một quy trình lắp ráp có độ dày thành phẩm $Y = 2\cdot X_1 + 3\cdot X_2$. Biết độ lệch chuẩn của $X_1$ là $\sigma_1 = 0.2\ \text{mm}$ và của $X_2$ là $\sigma_2 = 0.1\ \text{mm}$. Biến số nào đóng góp phương sai lớn hơn vào sự dao động của $Y$?</div>
+      <div class="quiz-q">Một quy trình lắp ráp có độ dày thành phẩm Y = 2&sdot; X<sub>1</sub> + 3&sdot; X<sub>2</sub>. Biết độ lệch chuẩn của X<sub>1</sub> là &sigma;_1 = 0.2\ mm và của X<sub>2</sub> là &sigma;_2 = 0.1\ mm. Biến số nào đóng góp phương sai lớn hơn vào sự dao động của Y?</div>
       <div class="quiz-opts">
-        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Contribution of X1 is (2)^2 * (0.2)^2 = 4 * 0.04 = 0.16. Contribution of X2 is (3)^2 * (0.1)^2 = 9 * 0.01 = 0.09. X1 contributes more!', 'Sai lầm: Phương sai do X1 tạo ra là 4 * 0.04 = 0.16; do X2 tạo ra là 9 * 0.01 = 0.09. X1 đóng góp lớn hơn X2.')">A. Biến số $X_2$ đóng góp lớn hơn vì có hệ số nhạy cảm là 3</button>
-        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q4', 'Correct. Variance contribution: Var(2*X1) = 2^2 * Var(X1) = 4 * (0.2)^2 = 0.16. Var(3*X2) = 3^2 * Var(X2) = 9 * (0.1)^2 = 0.09. Since 0.16 > 0.09, X1 accounts for 64% of total output variance and must be controlled first.', 'Chính xác! Lan truyền phương sai: $\sigma^2(X_1) = 2^2 \times 0.2^2 = 4 \times 0.04 = 0.16$; $\sigma^2(X_2) = 3^2 \times 0.1^2 = 9 \times 0.01 = 0.09$. Biến số $X_1$ chiếm tới 64% tổng phương sai đầu ra ($0.16 / 0.25$) và phải được ưu tiên kiểm soát biến thiên trước.')">B. Biến số $X_1$ đóng góp lớn hơn (chiếm 64% tổng phương sai đầu ra do $\sigma_1$ lớn gấp đôi)</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Contribution of X1 is (2)<sup>2</sup> * (0.2)<sup>2</sup> = 4 * 0.04 = 0.16. Contribution of X2 is (3)<sup>2</sup> * (0.1)<sup>2</sup> = 9 * 0.01 = 0.09. X1 contributes more!', 'Sai lầm: Phương sai do X1 tạo ra là 4 * 0.04 = 0.16; do X2 tạo ra là 9 * 0.01 = 0.09. X1 đóng góp lớn hơn X2.')">A. Biến số X<sub>2</sub> đóng góp lớn hơn vì có hệ số nhạy cảm là 3</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q4', 'Correct. Variance contribution: Var(2*X1) = 2<sup>2</sup> * Var(X1) = 4 * (0.2)<sup>2</sup> = 0.16. Var(3*X2) = 3<sup>2</sup> * Var(X2) = 9 * (0.1)<sup>2</sup> = 0.09. Since 0.16 > 0.09, X1 accounts for 64% of total output variance and must be controlled first.', 'Chính xác! Lan truyền phương sai: &sigma;<sup>2</sup>(X<sub>1</sub>) = 2<sup>2</sup> &times; 0.2<sup>2</sup> = 4 &times; 0.04 = 0.16; &sigma;<sup>2</sup>(X<sub>2</sub>) = 3<sup>2</sup> &times; 0.1<sup>2</sup> = 9 &times; 0.01 = 0.09. Biến số X<sub>1</sub> chiếm tới 64% tổng phương sai đầu ra (0.16 / 0.25) và phải được ưu tiên kiểm soát biến thiên trước.')">B. Biến số X<sub>1</sub> đóng góp lớn hơn (chiếm 64% tổng phương sai đầu ra do &sigma;_1 lớn gấp đôi)</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Contributions are unequal: 0.16 vs 0.09.', 'Sai lầm: Hai biến số đóng góp không bằng nhau.')">C. Hai biến số đóng góp hoàn toàn bằng nhau</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q4', 'Trap: Output variance is mathematically determined by input variances in linear combinations.', 'Sai lầm: Tổng phương sai hoàn toàn có thể tính được bằng công thức giải tích.')">D. Không thể xác định được nếu không chạy mô phỏng Monte Carlo 10,000 lần</button>
       </div>
@@ -647,7 +647,7 @@
     <!-- Câu 5 -->
     <div class="quiz-card">
       <span class="quiz-tag">Câu 5 &bull; Tầng 2: Công Cụ Giám Sát Phương Sai (Statistical Process Control - SPC)</span>
-      <div class="quiz-q">Để phát hiện sớm các dấu hiệu trôi dạt biến thiên của biến số đầu vào $X$ trước khi nó kịp tạo ra phế phẩm ở đầu ra $Y$, công cụ thống kê thực chiến nào là chuẩn mực bắt buộc?</div>
+      <div class="quiz-q">Để phát hiện sớm các dấu hiệu trôi dạt biến thiên của biến số đầu vào X trước khi nó kịp tạo ra phế phẩm ở đầu ra Y, công cụ thống kê thực chiến nào là chuẩn mực bắt buộc?</div>
       <div class="quiz-opts">
         <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q5', 'Correct. Statistical Process Control (SPC) control charts (such as X-bar & R or I-MR charts) track process mean and variance in real-time, signaling special causes before defects are produced.', 'Chính xác! Biểu đồ kiểm soát quá trình bằng thống kê (SPC Control Charts, ví dụ X-bar & R hoặc I-MR) giám sát độ dịch chuyển trung bình và phương sai theo thời gian thực, phát cảnh báo trước khi lỗi xuất hiện.')">A. Biểu đồ kiểm soát thống kê SPC (X-bar &amp; R hoặc I-MR Chart) với các giới hạn kiểm soát thống kê UCL/LCL</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Pie charts are static descriptive tools, useless for tracking time-series variation.', 'Sai lầm: Biểu đồ hình tròn chỉ mô tả tỷ lệ tĩnh, hoàn toàn vô dụng trong theo dõi chuỗi thời gian.')">B. Biểu đồ hình tròn phân chia tỷ lệ phần trăm các loại lỗi</button>
@@ -675,7 +675,7 @@
       <span class="quiz-tag">Câu 7 &bull; Tầng 3: Xung Đột Dung Sai Mua Hàng (Procurement Tolerance Dispute)</span>
       <div class="quiz-q">Phòng Thu Mua muốn nới rộng dung sai độ tròn của trục thép từ &plusmn;0.01 mm thành &plusmn;0.05 mm để có thể chọn được nhà cung cấp giá rẻ hơn 15%. Black Belt dùng mô hình lan truyền biến thiên chứng minh điều gì với Giám đốc Điều hành?</div>
       <div class="quiz-opts">
-        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q7', 'Correct. Show variance transmission to Y: Demonstrate quantitatively that increasing input variance by 5x on raw shafts causes 18% vibration failure in the finished motor, increasing warranty and scrap costs by $480k, completely wiping out the $60k purchase discount.', 'Chính xác! Chứng minh bằng mô hình lan truyền phương sai: Việc nới rộng biến thiên đầu vào lên gấp 5 lần sẽ khuếch đại độ rung lắc mô-tơ thành phẩm, làm tăng 18% tỷ lệ lỗi bảo hành tương đương thiệt hại 480,000 USD, triệt tiêu sạch khoản tiết kiệm mua hàng 60,000 USD.')">A. Chứng minh bằng toán học: Nới rộng biến thiên đầu vào gấp 5 lần sẽ khuếch đại rung lắc mô-tơ, gây thiệt hại bảo hành 480,000 USD, xóa sạch khoản tiết kiệm mua hàng 60,000 USD</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q7', 'Correct. Show variance transmission to Y: Demonstrate quantitatively that increasing input variance by 5x on raw shafts causes 18% vibration failure in the finished motor, increasing warranty and scrap costs by 480k, completely wiping out the 60k purchase discount.', 'Chính xác! Chứng minh bằng mô hình lan truyền phương sai: Việc nới rộng biến thiên đầu vào lên gấp 5 lần sẽ khuếch đại độ rung lắc mô-tơ thành phẩm, làm tăng 18% tỷ lệ lỗi bảo hành tương đương thiệt hại 480,000 USD, triệt tiêu sạch khoản tiết kiệm mua hàng 60,000 USD.')">A. Chứng minh bằng toán học: Nới rộng biến thiên đầu vào gấp 5 lần sẽ khuếch đại rung lắc mô-tơ, gây thiệt hại bảo hành 480,000 USD, xóa sạch khoản tiết kiệm mua hàng 60,000 USD</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Yielding to poor input quality triggers downstream manufacturing chaos.', 'Sai lầm: Đồng ý với thu mua để đạt KPI ngắn hạn sẽ phá hủy danh tiếng chất lượng công ty.')">B. Đồng ý với phòng Thu Mua để giúp công ty đạt chỉ tiêu cắt giảm chi phí quý này</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Emotional arguments without engineering math fail in executive forums.', 'Sai lầm: Tố cáo phòng Thu Mua phá hoại công ty mà không có số liệu phân tích kỹ thuật.')">C. Đăng đàn tố cáo phòng Thu Mua đang tìm cách phá hoại uy tín chất lượng công ty</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Hand-sorting raw materials is a colossal waste of lean labor.', 'Sai lầm: Thuê thêm người đo thủ công từng thanh thép làm chi phí vận hành bùng nổ.')">D. Chấp nhận thép kém chất lượng và thuê thêm 20 công nhân ngồi sàng lọc từng thanh thép</button>
@@ -708,7 +708,7 @@
           </div>
           <div class="flashcard-back">
             <strong>Variance occurring around optimal action settings</strong>
-            <span class="vi">Sự dao động chập chờn của các biến số điều kiện đầu vào $X$ xung quanh tọa độ thiết lập mục tiêu.</span>
+            <span class="vi">Sự dao động chập chờn của các biến số điều kiện đầu vào X xung quanh tọa độ thiết lập mục tiêu.</span>
           </div>
         </div>
       </div>
@@ -736,7 +736,7 @@
           </div>
           <div class="flashcard-back">
             <strong>Mathematical amplification of input noise into output defects</strong>
-            <span class="vi">Quy luật toán học giải thích sự biến thiên nhỏ ở đầu vào $X$ bị khuếch đại thành phế phẩm khổng lồ ở đầu ra $Y$.</span>
+            <span class="vi">Quy luật toán học giải thích sự biến thiên nhỏ ở đầu vào X bị khuếch đại thành phế phẩm khổng lồ ở đầu ra Y.</span>
           </div>
         </div>
       </div>
@@ -780,7 +780,7 @@
     <label class="action-item">
       <input type="checkbox">
       <span class="action-text">
-        <strong>Bước 1: Tính toán dung sai cho phép và xác lập băng thông $\pm 3\sigma$ (Calculate Tolerance Window):</strong> Áp dụng công thức lan truyền phương sai để quy định giới hạn trên ($USL_X$) và giới hạn dưới ($LSL_X$) cho từng biến số đầu vào then chốt; yêu cầu $C_{pk}(X) \ge 1.50$.
+        <strong>Bước 1: Tính toán dung sai cho phép và xác lập băng thông &plusmn; 3&sigma; (Calculate Tolerance Window):</strong> Áp dụng công thức lan truyền phương sai để quy định giới hạn trên (USL_X) và giới hạn dưới (LSL_X) cho từng biến số đầu vào then chốt; yêu cầu C<sub>pk</sub>(X) &ge; 1.50.
       </span>
     </label>
 

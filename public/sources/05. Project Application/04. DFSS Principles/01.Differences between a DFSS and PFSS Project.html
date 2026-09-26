@@ -393,10 +393,10 @@
       
       <div class="exec-summary">
         <ul>
-          <li><strong>Trạng thái "IS" (Thực trạng hiện hữu):</strong> Thể hiện phân phối năng lực thực tế của quy trình đang vận hành. Phân phối này có giá trị trung bình $\bar{X}$ và độ biến thiên $\sigma$. Trong hầu hết các dây chuyền hiện hữu, tâm phân phối $\bar{X}$ luôn bị lệch so với mục tiêu $T$, và độ phân tán còn quá rộng gây ra phế phẩm ở hai đầu đuôi phân phối.</li>
+          <li><strong>Trạng thái "IS" (Thực trạng hiện hữu):</strong> Thể hiện phân phối năng lực thực tế của quy trình đang vận hành. Phân phối này có giá trị trung bình <span style="text-decoration:overline;">X</span> và độ biến thiên &sigma;. Trong hầu hết các dây chuyền hiện hữu, tâm phân phối <span style="text-decoration:overline;">X</span> luôn bị lệch so với mục tiêu T, và độ phân tán còn quá rộng gây ra phế phẩm ở hai đầu đuôi phân phối.</li>
           <li><strong>Mục tiêu của PFSS (Processing for Six Sigma):</strong> Tập trung căn tâm phân phối trùng khít với mục tiêu (put on center) và đồng thời thu hẹp độ tán xạ (narrow the spread/variation). PFSS coi biến thiên là kẻ thù số một vì nó đại diện cho sự bất định (uncertainty).</li>
-          <li><strong>Trạng thái "OUGHT" (Điều nên là / Kỳ vọng thiết kế):</strong> Đặt ra câu hỏi căn bản: <em>"Ai là người có thẩm quyền và phương pháp luận để xác định xem mục tiêu $T$, giới hạn đặc tả trên (USL) và giới hạn đặc tả dưới (LSL) nên nằm ở đâu?"</em> Đó chính là sứ mệnh tối thượng của DFSS.</li>
-          <li><strong>Khoảng cách Delta (Gap $\Delta$):</strong> Đo lường sự sai lệch giữa năng lực vận hành hiện tại $\bar{X}_{\text{IS}}$ và kỳ vọng thiết kế $T_{\text{OUGHT}}$. Nếu thiết kế ban đầu không có tính toán dung sai (tolerancing), việc áp dụng PFSS sẽ nhanh chóng chạm trần giới hạn đặc quyền (Entitlement Barrier).</li>
+          <li><strong>Trạng thái "OUGHT" (Điều nên là / Kỳ vọng thiết kế):</strong> Đặt ra câu hỏi căn bản: <em>"Ai là người có thẩm quyền và phương pháp luận để xác định xem mục tiêu T, giới hạn đặc tả trên (USL) và giới hạn đặc tả dưới (LSL) nên nằm ở đâu?"</em> Đó chính là sứ mệnh tối thượng của DFSS.</li>
+          <li><strong>Khoảng cách Delta (Gap &Delta;):</strong> Đo lường sự sai lệch giữa năng lực vận hành hiện tại <span style="text-decoration:overline;">X</span><sub>IS</sub> và kỳ vọng thiết kế T<sub>OUGHT</sub>. Nếu thiết kế ban đầu không có tính toán dung sai (tolerancing), việc áp dụng PFSS sẽ nhanh chóng chạm trần giới hạn đặc quyền (Entitlement Barrier).</li>
         </ul>
       </div>
     
@@ -424,7 +424,7 @@
         </div>
       </div>
 
-      <p>Sự khác biệt căn bản về mặt toán học giữa PFSS và DFSS được thể hiện rõ qua hai chỉ số năng lực quá trình $C_p$ và $C_{pk}$:</p>
+      <p>Sự khác biệt căn bản về mặt toán học giữa PFSS và DFSS được thể hiện rõ qua hai chỉ số năng lực quá trình C<sub>p</sub> và C<sub>pk</sub>:</p>
 
       <div class="math-card">
         <div class="title">Chỉ Số Tiềm Năng Quy Trình (Process Potential Index - Cp)</div>
@@ -504,8 +504,8 @@
       <div class="case-box">
         <span class="case-tag">Nghiên Cứu Tình Huống 1 • Chế Tạo Cơ Khí Ô Tô</span>
         <h3 class="case-title">Hệ Thống Trục Cơ Cấu Lái Trợ Lực Điện (EPS Actuator)</h3>
-        <p><strong>Bối cảnh:</strong> Dây chuyền phay CNC trục lái ô tô gặp tỷ lệ lỗi kẹt khớp nối lên tới 4.2% khi lắp ráp cụm động cơ. Đội ngũ kỹ sư nhà máy đã triển khai 2 dự án PFSS (DMAIC) liên tiếp trong 8 tháng: cân chỉnh dao tiện, bổ sung dung dịch làm mát cao cấp, huấn luyện công nhân gá đặt phôi, nâng $C_{pk}$ gia công từ 0.85 lên 1.18. Tuy nhiên, tỷ lệ lỗi không thể giảm xuống dưới 1.5% vì dung sai tích lũy của 5 chi tiết cơ khí cộng lại vượt quá khe hở khớp nối.</p>
-        <p><strong>Giải pháp DFSS:</strong> Ban Giám đốc phê duyệt chuyển đổi sang dự án DFSS. Đội ngũ thiết kế R&amp;D tái cấu hình lại cơ cấu: chuyển từ cơ chế gá ép chặt đa chi tiết sang cơ chế khớp tự lựa (self-aligning splined sleeve) kết hợp vòng đệm đàn hồi bù sai số. Sự thay đổi trong cấu hình thiết kế này đã mở rộng cửa sổ dung sai chức năng (OUGHT window) lên gấp 3 lần. Dây chuyền sản xuất đạt ngay mức $C_{pk} = 2.15$, triệt tiêu hoàn toàn 100% lỗi kẹt khớp mà không cần đòi hỏi máy phay CNC phải đạt độ chính xác siêu vi mô.</p>
+        <p><strong>Bối cảnh:</strong> Dây chuyền phay CNC trục lái ô tô gặp tỷ lệ lỗi kẹt khớp nối lên tới 4.2% khi lắp ráp cụm động cơ. Đội ngũ kỹ sư nhà máy đã triển khai 2 dự án PFSS (DMAIC) liên tiếp trong 8 tháng: cân chỉnh dao tiện, bổ sung dung dịch làm mát cao cấp, huấn luyện công nhân gá đặt phôi, nâng C<sub>pk</sub> gia công từ 0.85 lên 1.18. Tuy nhiên, tỷ lệ lỗi không thể giảm xuống dưới 1.5% vì dung sai tích lũy của 5 chi tiết cơ khí cộng lại vượt quá khe hở khớp nối.</p>
+        <p><strong>Giải pháp DFSS:</strong> Ban Giám đốc phê duyệt chuyển đổi sang dự án DFSS. Đội ngũ thiết kế R&amp;D tái cấu hình lại cơ cấu: chuyển từ cơ chế gá ép chặt đa chi tiết sang cơ chế khớp tự lựa (self-aligning splined sleeve) kết hợp vòng đệm đàn hồi bù sai số. Sự thay đổi trong cấu hình thiết kế này đã mở rộng cửa sổ dung sai chức năng (OUGHT window) lên gấp 3 lần. Dây chuyền sản xuất đạt ngay mức C<sub>pk</sub> = 2.15, triệt tiêu hoàn toàn 100% lỗi kẹt khớp mà không cần đòi hỏi máy phay CNC phải đạt độ chính xác siêu vi mô.</p>
       </div>
 
       <div class="case-box">
@@ -633,7 +633,7 @@
         <div class="quiz-q">Sự khác biệt căn bản về mặt chi phí giữa việc giải quyết lỗi ở giai đoạn DFSS so với PFSS được mô tả qua quy luật nào?</div>
         <div class="quiz-opts">
           
-          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-01-7', 'Fixing a flaw in DFSS (design phase) costs $1, in PFSS (manufacturing) costs $10-$100, and at the customer field costs $1,000+.', 'Quy tắc 1-10-100 chỉ ra rằng sửa lỗi trong giai đoạn DFSS chỉ tốn $1, nhưng nếu để lọt sang PFSS tốn $10-$100, và lọt đến tay khách hàng tốn hàng nghìn USD.')">A. Quy luật Chi phí theo Cấp số nhân (Quy tắc 1-10-100: Chi phí sửa chữa tăng gấp 10 lần qua mỗi giai đoạn vòng đời)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-01-7', 'Fixing a flaw in DFSS (design phase) costs 1, in PFSS (manufacturing) costs 10-100, and at the customer field costs 1,000+.', 'Quy tắc 1-10-100 chỉ ra rằng sửa lỗi trong giai đoạn DFSS chỉ tốn 1, nhưng nếu để lọt sang PFSS tốn 10-$100, và lọt đến tay khách hàng tốn hàng nghìn USD.')">A. Quy luật Chi phí theo Cấp số nhân (Quy tắc 1-10-100: Chi phí sửa chữa tăng gấp 10 lần qua mỗi giai đoạn vòng đời)</button>
           
           <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-01-7', 'Diminishing returns describes marginal output, not lifecycle defect cost escalation.', 'Lợi suất giảm dần mô tả năng suất cận biên, không phản ánh cấp số nhân chi phí sửa lỗi.')">B. Quy luật lợi suất giảm dần trong kinh tế học vĩ mô</button>
           

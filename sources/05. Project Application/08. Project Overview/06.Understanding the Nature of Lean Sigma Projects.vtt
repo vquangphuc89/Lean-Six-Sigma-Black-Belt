@@ -1,0 +1,291 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Understanding the Nature of Lean Sigma Projects
+Hiểu Bản chất của các Dự án Lean Sigma
+
+2
+00:00:05.000 --> 00:00:10.800
+Hello, Mike Harry and welcome to this session on Six Sigma application projects.
+Xin chào, Mike Harry và chào mừng đến với phiên học về các dự án ứng dụng Six Sigma này.
+
+3
+00:00:10.800 --> 00:00:14.633
+We’re going to be looking at the use of projects
+Chúng ta sẽ xem xét việc sử dụng các dự án
+
+4
+00:00:14.633 --> 00:00:20.633
+to focus the application of tools, carefully defined projects.
+để tập trung ứng dụng các công cụ, các dự án được xác định cẩn thận.
+
+5
+00:00:20.633 --> 00:00:26.466
+To exploit the full power of those tools toward the realization of specific benefits
+Để khai thác toàn bộ sức mạnh của các công cụ đó hướng tới việc hiện thực hóa các lợi ích cụ thể
+
+6
+00:00:26.466 --> 00:00:30.466
+for the stakeholders involved with that project.
+cho các bên liên quan đến dự án đó.
+
+7
+00:00:30.466 --> 00:00:33.199
+And often times I get asked the question,
+Và thường thì tôi nhận được câu hỏi,
+
+8
+00:00:33.200 --> 00:00:37.900
+Mike, what's the difference between, say, a just do it kind of program, and a
+Mike, sự khác biệt giữa, ví dụ, một chương trình kiểu "cứ làm đi", và một
+
+9
+00:00:37.900 --> 00:00:40.800
+kaizen event, and a Six Sigma project.
+sự kiện kaizen, và một dự án Six Sigma là gì.
+
+10
+00:00:40.800 --> 00:00:43.833
+Well, let’s start to look at those differences.
+Chà, hãy bắt đầu xem xét những khác biệt đó.
+
+11
+00:00:43.833 --> 00:00:47.833
+They’re really pretty simple. It's a function of scope and depth.
+Chúng thực sự khá đơn giản. Đó là một hàm của phạm vi và độ sâu.
+
+12
+00:00:47.833 --> 00:00:52.499
+In a just do it kind of project, it’s about 1 to 2 days long.
+Trong một dự án kiểu "cứ làm đi", nó kéo dài khoảng 1 đến 2 ngày.
+
+13
+00:00:52.500 --> 00:00:56.500
+We quickly identify and eliminate obvious problems.
+Chúng ta nhanh chóng xác định và loại bỏ các vấn đề hiển nhiên.
+
+14
+00:00:56.500 --> 01:01:066
+It’s business line control. There's no real portfolio management.
+Đó là kiểm soát tuyến kinh doanh. Không có quản lý danh mục đầu tư thực sự.
+
+15
+01:01:066 --> 01:06:566
+And you can get started immediately. It doesn't require a lot of effort to do it.
+Và bạn có thể bắt đầu ngay lập tức. Nó không đòi hỏi nhiều nỗ lực để thực hiện.
+
+16
+01:06:566 --> 01:11:732
+Now, for example, we all know that a sloppy workstation is a problem.
+Bây giờ, ví dụ, tất cả chúng ta đều biết rằng một nơi làm việc cẩu thả là một vấn đề.
+
+17
+01:11:733 --> 01:15:533
+So, we go in an area. We see it's generally not orderly.
+Vì vậy, chúng ta đi vào một khu vực. Chúng ta thấy nó thường không có trật tự.
+
+18
+01:15:533 --> 01:20:366
+So, you can take immediate action on it. Just do it. Now.
+Vì vậy, bạn có thể hành động ngay lập tức về nó. Cứ làm đi. Bây giờ.
+
+19
+01:20:366 --> 01:26:466
+A kaizen event is usually under a week. It’s a short, intensive project.
+Một sự kiện kaizen thường kéo dài dưới một tuần. Đó là một dự án ngắn, chuyên sâu.
+
+20
+01:26:466 --> 01:32:399
+It does require some organization of small teams led by a green belt.
+Nó đòi hỏi một số tổ chức các nhóm nhỏ do green belt lãnh đạo.
+
+21
+01:32:400 --> 01:35:866
+And maybe coached by a black belt.
+Và có thể được huấn luyện bởi một black belt.
+
+22
+01:35:866 --> 01:41:699
+A black belt can have several green belts performing individual kaizen events
+Một black belt có thể có một số green belt thực hiện các sự kiện kaizen riêng lẻ
+
+23
+01:41:700 --> 01:44:666
+that forms to a total black belt project.
+điều đó tạo thành một dự án black belt tổng thể.
+
+24
+01:44:666 --> 01:49:199
+Assuming they're all interrelated and connected, leading toward a higher order goal.
+Giả sử tất cả chúng có liên quan và kết nối với nhau, dẫn đến một mục tiêu thứ bậc cao hơn.
+
+25
+01:49:200 --> 01:53:933
+And it’s business line controlled, but no portfolio management.
+Và nó được kiểm soát tuyến kinh doanh, nhưng không có quản lý danh mục đầu tư.
+
+26
+01:53:933 --> 02:00:233
+And the guidance and training has to be there. There does require some training.
+Và hướng dẫn và đào tạo phải có ở đó. Nó thực sự đòi hỏi một số đào tạo.
+
+27
+02:00:233 --> 02:07:333
+So, a kaizen is kind of in between a just do it program and a black belt led program.
+Vì vậy, kaizen là một loại ở giữa chương trình "cứ làm đi" và chương trình do black belt lãnh đạo.
+
+28
+02:07:333 --> 02:13:333
+Now, a black belt led project addresses more complex problems.
+Bây giờ, một dự án do black belt lãnh đạo giải quyết các vấn đề phức tạp hơn.
+
+29
+02:13:333 --> 02:17:333
+And it requires a trained black belt.
+Và nó đòi hỏi một black belt được đào tạo.
+
+30
+02:17:333 --> 02:20:599
+And it's also subject to portfolio management.
+Và nó cũng phải tuân theo quản lý danh mục đầu tư.
+
+31
+02:20:600 --> 02:24:933
+In other words, a formal review process, etc.
+Nói cách khác, một quy trình xem xét chính thức, v.v.
+
+32
+02:24:933 --> 02:31:266
+As well as review from senior management and their monitoring of it.
+Cũng như xem xét từ quản lý cấp cao và việc giám sát của họ đối với nó.
+
+33
+02:31:266 --> 02:34:232
+They have more significant impact.
+Chúng có tác động đáng kể hơn.
+
+34
+02:34:233 --> 02:41:166
+Now generally, also correlated with these three, is time. You can see time is increasing.
+Bây giờ nói chung, cũng tương quan với ba điều này, là thời gian. Bạn có thể thấy thời gian đang tăng lên.
+
+35
+02:41:166 --> 02:47:832
+Well, so is complexity. The scope and depth usually increases. As do the stakes.
+Chà, độ phức tạp cũng vậy. Phạm vi và độ sâu thường tăng lên. Cũng như các cổ phần.
+
+36
+02:47:833 --> 02:51:566
+As well as the risks. As well as the resources.
+Cũng như rủi ro. Cũng như các nguồn lực.
+
+37
+02:51:566 --> 02:57:299
+So, as we progress along a continuum of longer periods of time.
+Vì vậy, khi chúng ta tiến triển dọc theo một chuỗi liên tục các khoảng thời gian dài hơn.
+
+38
+02:57:300 --> 03:01:300
+From a just do it, to a kaizen event, to a black belt led project,
+Từ "cứ làm đi", đến một sự kiện kaizen, đến một dự án do black belt lãnh đạo,
+
+39
+03:01:300 --> 03:07:100
+on to even a larger one, which would be a master black belt led project.
+đến thậm chí một dự án lớn hơn, đó sẽ là một dự án do master black belt lãnh đạo.
+
+40
+03:07:100 --> 03:11:900
+You can see things are increasing with greater complexity,
+Bạn có thể thấy mọi thứ đang tăng lên với độ phức tạp lớn hơn,
+
+41
+03:11:900 --> 03:17:100
+greater need for management overview, supervision, and so on.
+nhu cầu lớn hơn về tổng quan quản lý, giám sát, v.v.
+
+42
+03:17:100 --> 03:22:433
+But again, the stakes are higher here with black belt projects.
+Nhưng một lần nữa, cổ phần cao hơn ở đây với các dự án black belt.
+
+43
+03:22:433 --> 03:26:433
+There's more to be gained, usually, and more to be benefited from.
+Thường có nhiều thứ để đạt được hơn, và nhiều thứ để được hưởng lợi hơn.
+
+44
+03:26:433 --> 03:30:866
+Now in general, we can say that a black belt project, we can expect to see,
+Bây giờ nói chung, chúng ta có thể nói rằng một dự án black belt, chúng ta có thể mong đợi thấy,
+
+45
+03:30:866 --> 03:35:966
+anywhere between 250 and 350,000 a project.
+bất cứ đâu từ 250 đến 350.000 một dự án.
+
+46
+03:35:966 --> 03:38:966
+A lot of data out there to support that,
+Rất nhiều dữ liệu ngoài kia để hỗ trợ điều đó,
+
+47
+03:38:966 --> 03:42:966
+from surveys that have been done with black belts, and so on.
+từ các cuộc khảo sát đã được thực hiện với black belt, v.v.
+
+48
+03:42:966 --> 03:47:599
+Green belt type of events is much less.
+Các loại sự kiện green belt thì ít hơn nhiều.
+
+49
+03:47:600 --> 03:53:166
+We can expect to see on the order of maybe 50 to 100,000 dollars improvement.
+Chúng ta có thể mong đợi thấy vào khoảng có lẽ 50 đến 100.000 đô la cải thiện.
+
+50
+03:53:166 --> 03:57:032
+Just do it, those are bottom line.
+"Cứ làm đi", đó là điểm mấu chốt.
+
+51
+03:57:033 --> 04:01:833
+Often times doesn't involve formal goals of
+Thông thường không liên quan đến các mục tiêu chính thức về
+
+52
+04:01:833 --> 04:04:766
+cost reduction targets and so on.
+mục tiêu giảm chi phí, v.v.
+
+53
+04:04:766 --> 04:09:266
+They tend to be items of immediate convenience.
+Chúng có xu hướng là các mục tiện lợi ngay lập tức.
+
+54
+04:09:266 --> 04:13:766
+There also usually line of sight, extremely line of sight.
+Chúng cũng thường là tầm nhìn trực tiếp, cực kỳ tầm nhìn trực tiếp.
+
+55
+04:13:766 --> 04:20:432
+Doesn't require any external help. Any type of real expert knowledge, and so on.
+Không yêu cầu bất kỳ sự trợ giúp bên ngoài nào. Bất kỳ loại kiến thức chuyên môn thực sự nào, v.v.
+
+56
+04:20:433 --> 04:24:233
+So, I think by now you kinda get the idea of what the difference is
+Vì vậy, tôi nghĩ đến giờ bạn đã hiểu được ý tưởng về sự khác biệt là gì
+
+57
+04:24:233 --> 04:29:833
+between a black belt project, a kaizen event, and a just do it initiative.
+giữa một dự án black belt, một sự kiện kaizen và một sáng kiến "cứ làm đi".
+
+58
+04:29:833 --> 04:36:066
+And that kinda provides a general overview of Six Sigma projects.
+Và điều đó cung cấp một cái nhìn tổng quan chung về các dự án Six Sigma.

@@ -453,7 +453,7 @@
     <span class="hero-badge">04. Process Management • 04. Establishing Baselines</span>
     <h1 class="hero-title">Đường Cơ Sở Hiệu Suất Và Độ Lệch Chuẩn</h1>
     <div class="hero-title-en">Performance Baselines and the Standard Deviation</div>
-    <p class="hero-desc">Độ lệch chuẩn $\sigma$ như một thước đo phổ quát: Giải mã toán học tính toán $\sigma_{	ext{within}}$ và $\sigma_{	ext{overall}}$, hiểu sâu về phân phối xác suất và quy luật 68-95-99.7.</p>
+    <p class="hero-desc">Độ lệch chuẩn &sigma; như một thước đo phổ quát: Giải mã toán học tính toán &sigma;_{	ext{within}} và &sigma;_{	ext{overall}}, hiểu sâu về phân phối xác suất và quy luật 68-95-99.7.</p>
   </div>
 </header>
 
@@ -464,10 +464,10 @@
     <span class="section-num">TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH</span>
     <h2 class="section-heading">Tóm Tắt Điều Hành (Executive Summary)</h2>
     <div class="section-subheading">Nắm trọn tinh hoa bài học trong 60 giây</div>
-    <div class="exec-summary"><ul><li>Độ lệch chuẩn ($\sigma$) là thước đo phổ quát đo lường mức độ phân tán của mọi quy trình: $\sigma$ càng nhỏ, quy trình càng mạnh và ổn định.</li><li>Phân biệt $\sigma_{	ext{within}}$ (Biến thiên nội bộ phụ nhóm - dùng cho $C_p, C_{pk}$) và $\sigma_{	ext{overall}}$ (Biến thiên toàn thể - dùng cho $P_p, P_{pk}$).</li><li>Quy luật Thực nghiệm 68-95-99.7: $\mu \pm 1\sigma$ chứa 68.27% dữ liệu; $\mu \pm 2\sigma$ chứa 95.45%; $\mu \pm 3\sigma$ chứa 99.73%; $\mu \pm 6\sigma$ chứa 99.9999998%.</li><li>Tác động kinh tế: Cắt giảm một nửa độ lệch chuẩn ($\sigma / 2$) sẽ tăng gấp đôi năng lực $C_{pk}$ và giảm 99% chi phí phế phẩm.</li></ul></div>
+    <div class="exec-summary"><ul><li>Độ lệch chuẩn (&sigma;) là thước đo phổ quát đo lường mức độ phân tán của mọi quy trình: &sigma; càng nhỏ, quy trình càng mạnh và ổn định.</li><li>Phân biệt &sigma;_{	ext{within}} (Biến thiên nội bộ phụ nhóm - dùng cho C<sub>p</sub>, C<sub>pk</sub>) và &sigma;_{	ext{overall}} (Biến thiên toàn thể - dùng cho P<sub>p</sub>, P<sub>pk</sub>).</li><li>Quy luật Thực nghiệm 68-95-99.7: &mu; &plusmn; 1&sigma; chứa 68.27% dữ liệu; &mu; &plusmn; 2&sigma; chứa 95.45%; &mu; &plusmn; 3&sigma; chứa 99.73%; &mu; &plusmn; 6&sigma; chứa 99.9999998%.</li><li>Tác động kinh tế: Cắt giảm một nửa độ lệch chuẩn (&sigma; / 2) sẽ tăng gấp đôi năng lực C<sub>pk</sub> và giảm 99% chi phí phế phẩm.</li></ul></div>
     <div class="pro-tip">
       <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Insight)</div>
-      <p class="pro-tip-desc">Đừng bao giờ dùng hàm STDEV.S trong Excel một cách tùy tiện mà không phân biệt nó là $\sigma_{	ext{overall}}$ hay $\sigma_{	ext{within}}$! Dùng sai $\sigma$ sẽ dẫn đến tính sai hoàn toàn năng lực quy trình!</p>
+      <p class="pro-tip-desc">Đừng bao giờ dùng hàm STDEV.S trong Excel một cách tùy tiện mà không phân biệt nó là &sigma;_{	ext{overall}} hay &sigma;_{	ext{within}}! Dùng sai &sigma; sẽ dẫn đến tính sai hoàn toàn năng lực quy trình!</p>
     </div>
   </section>
 
@@ -495,7 +495,7 @@
     </div>
     <div class="pro-tip">
       <div class="pro-tip-title">MBB Interpretation • Diễn giải điều hành</div>
-      <p class="pro-tip-desc">Độ lệch chuẩn là nhịp đập trái tim của hệ thống Six Sigma. Kiểm soát được $\sigma$ là kiểm soát được toàn bộ vận mệnh chất lượng của doanh nghiệp.</p>
+      <p class="pro-tip-desc">Độ lệch chuẩn là nhịp đập trái tim của hệ thống Six Sigma. Kiểm soát được &sigma; là kiểm soát được toàn bộ vận mệnh chất lượng của doanh nghiệp.</p>
     </div>
   </section>
 
@@ -520,12 +520,12 @@
     <div class="vs-grid">
       <div class="vs-col bad">
         <span class="vs-badge bad">Bad / Trap • Tư duy sai lầm</span>
-        <ul><li>Báo cáo hiệu suất chỉ bằng con số Năng suất cổ điển (Classic Yield) che giấu phế phẩm làm lại.</li><li>Bỏ qua sự khác biệt giữa Năng lực ngắn hạn (Z_ST) và Năng lực dài hạn (Z_LT), làm mất cơ sở dịch chuyển 1.5 Sigma.</li><li>Tính toán Baseline trên dữ liệu quy trình đang mất ổn định thống kê (Out of Control) có nguyên nhân đặc biệt.</li><li>Xem việc thiết lập đường cơ sở chỉ là thủ tục giấy tờ mà không gắn kết với mô hình chuyển đổi xác suất Poisson.</li></ul>
+        <ul><li>Báo cáo hiệu suất chỉ bằng con số Năng suất cổ điển (Classic Yield) che giấu phế phẩm làm lại.</li><li>Bỏ qua sự khác biệt giữa Năng lực ngắn hạn (Z<sub>ST</sub>) và Năng lực dài hạn (Z<sub>LT</sub>), làm mất cơ sở dịch chuyển 1.5 Sigma.</li><li>Tính toán Baseline trên dữ liệu quy trình đang mất ổn định thống kê (Out of Control) có nguyên nhân đặc biệt.</li><li>Xem việc thiết lập đường cơ sở chỉ là thủ tục giấy tờ mà không gắn kết với mô hình chuyển đổi xác suất Poisson.</li></ul>
       </div>
       <div class="vs-divider">VS</div>
       <div class="vs-col good">
         <span class="vs-badge good">Good / MBB • Chuẩn Six Sigma</span>
-        <ul><li>Thiết lập Đường cơ sở Năng lực (Capability Baseline) khách quan dựa trên phân phối chuẩn tắc và dữ liệu ổn định.</li><li>Làm chủ họ Năng suất toàn diện: FTY (First Time Yield), RTY (Rolled Throughput Yield) và Y_norm (Normalized Yield).</li><li>Ứng dụng phân phối Poisson Y = e^(-DPU) để kết nối số lượng khuyết tật trên đơn vị với xác suất không có lỗi.</li><li>Chuyển đổi minh bạch giữa Xác suất lỗi, DPMO, Z_ST, Z_LT và các chỉ số Cpk trong báo cáo quản trị cấp cao.</li></ul>
+        <ul><li>Thiết lập Đường cơ sở Năng lực (Capability Baseline) khách quan dựa trên phân phối chuẩn tắc và dữ liệu ổn định.</li><li>Làm chủ họ Năng suất toàn diện: FTY (First Time Yield), RTY (Rolled Throughput Yield) và Y<sub>norm</sub> (Normalized Yield).</li><li>Ứng dụng phân phối Poisson Y = e^(-DPU) để kết nối số lượng khuyết tật trên đơn vị với xác suất không có lỗi.</li><li>Chuyển đổi minh bạch giữa Xác suất lỗi, DPMO, Z<sub>ST</sub>, Z<sub>LT</sub> và các chỉ số Cpk trong báo cáo quản trị cấp cao.</li></ul>
       </div>
     </div>
   </section>

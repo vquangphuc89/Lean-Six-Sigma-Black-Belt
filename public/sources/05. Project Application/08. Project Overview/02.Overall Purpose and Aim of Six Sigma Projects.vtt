@@ -1,0 +1,466 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Overall Purpose and Aim of Six Sigma Projects
+Mục tiêu và Mục đích Tổng thể của các Dự án Six Sigma
+
+2
+00:00:05.000 --> 00:00:10.133
+Welcome to the session on application projects.
+Chào mừng đến với phiên học về các dự án ứng dụng.
+
+3
+00:00:10.133 --> 00:00:15.466
+I would imagine right up front that we should ask the question
+Tôi hình dung ngay từ đầu rằng chúng ta nên đặt câu hỏi
+
+4
+00:00:15.466 --> 00:00:22.499
+what is an application project? What constitutes a project? A black belt project?
+dự án ứng dụng là gì? Điều gì tạo nên một dự án? Một dự án Black Belt?
+
+5
+00:00:22.500 --> 00:00:28.233
+Well, we not only have black belt projects.
+Chà, chúng ta không chỉ có các dự án Black Belt.
+
+6
+00:00:28.233 --> 00:00:32.333
+We also have green belt projects
+Chúng ta còn có các dự án Green Belt
+
+7
+00:00:32.333 --> 00:00:36.333
+and white belt projects.
+và các dự án White Belt.
+
+8
+00:00:36.333 --> 00:00:42.433
+Now recognize, that these forms of projects
+Bây giờ hãy nhận ra, rằng các hình thức dự án này
+
+9
+00:00:42.433 --> 00:00:47.766
+are different than just simple problem solving undertakings.
+khác với các hoạt động giải quyết vấn đề đơn giản.
+
+10
+00:00:47.766 --> 00:00:54.699
+They’re formal projects that have been declared and approved
+Chúng là các dự án chính thức đã được tuyên bố và phê duyệt
+
+11
+00:00:54.700 --> 00:00:59.933
+through a system. Allocated to the various black, green, and white belts.
+thông qua một hệ thống. Được phân bổ cho các cấp độ Black Belt, Green Belt và White Belt khác nhau.
+
+12
+00:00:59.933 --> 00:01:06.166
+to execute toward a larger initiative. And that's one of the things that were going to talk about.
+để thực hiện hướng tới một sáng kiến lớn hơn. Và đó là một trong những điều mà chúng ta sẽ nói đến.
+
+13
+00:01:06.166 --> 00:01:13.132
+Let's begin this discussion about projects with a simple concept.
+Hãy bắt đầu cuộc thảo luận này về các dự án với một khái niệm đơn giản.
+
+14
+00:01:13.133 --> 00:01:18.299
+What I'd like for us to do. I’m going to start with half of a triangle here.
+Điều tôi muốn chúng ta làm. Tôi sẽ bắt đầu với một nửa hình tam giác ở đây.
+
+15
+00:01:18.300 --> 00:01:23.400
+Recognizing our three levels. The business level,
+Nhận biết ba cấp độ của chúng ta. Cấp độ kinh doanh,
+
+16
+00:01:23.400 --> 00:01:26.966
+operations, and process level.
+cấp độ vận hành và cấp độ quy trình.
+
+17
+00:01:26.966 --> 00:01:33.966
+And, let's recognize that we have metrics, performance metrics.
+Và, hãy nhận ra rằng chúng ta có các số liệu, số liệu hiệu suất.
+
+18
+00:01:33.966 --> 00:01:40.966
+And those metrics, up here, are business metrics,
+Và những số liệu đó, ở trên này, là số liệu kinh doanh,
+
+19
+00:01:40.966 --> 00:01:47.966
+operational metrics, and process metrics.
+số liệu vận hành và số liệu quy trình.
+
+20
+00:01:47.966 --> 00:01:54.932
+Now, some examples of what we mean by that, in the world of process metrics,
+Bây giờ, một số ví dụ về ý của chúng ta về điều đó, trong thế giới số liệu quy trình,
+
+21
+00:01:54.933 --> 00:01:59.633
+we have indices like Cp.
+chúng ta có các chỉ số như Cp.
+
+22
+00:01:59.633 --> 00:02:05.966
+Operations metrics are things like yield.
+Số liệu vận hành là những thứ như năng suất.
+
+23
+00:02:05.966 --> 00:02:13.332
+And business metrics are things like profit.
+Và số liệu kinh doanh là những thứ như lợi nhuận.
+
+24
+00:02:13.333 --> 00:02:20.233
+So, what we want is a line of connectivity, correlated metrics.
+Vì vậy, những gì chúng ta muốn là một đường kết nối, các số liệu tương quan.
+
+25
+00:02:20.233 --> 00:02:27.233
+We want to be able to see in a process, how all the Cp’s,
+Chúng ta muốn có thể thấy trong một quy trình, tất cả các Cp,
+
+26
+00:02:27.233 --> 00:02:31.933
+from the different processes out there.
+từ các quy trình khác nhau ở ngoài kia.
+
+27
+00:02:31.933 --> 00:02:38.666
+Organize together, to correlate to yield. And how all the different yields
+Tổ chức cùng nhau, để tương quan với năng suất. Và cách tất cả các năng suất khác nhau
+
+28
+00:02:38.666 --> 00:02:43.232
+of different processes organize together
+của các quy trình khác nhau tổ chức cùng nhau
+
+29
+00:02:43.233 --> 00:02:48.699
+to create profit. Their contribution to profit.
+để tạo ra lợi nhuận. Đóng góp của chúng vào lợi nhuận.
+
+30
+00:02:48.700 --> 00:02:51.966
+This is what we mean by correlated metrics.
+Đây là ý của chúng ta về số liệu tương quan.
+
+31
+00:02:51.966 --> 00:02:57.999
+Now, this is an extremely important concept as we look at application projects.
+Bây giờ, đây là một khái niệm cực kỳ quan trọng khi chúng ta xem xét các dự án ứng dụng.
+
+32
+00:02:58.000 --> 00:03:02.633
+Because what we want is a flow down.
+Bởi vì những gì chúng ta muốn là một dòng chảy xuống.
+
+33
+00:03:02.633 --> 00:03:08.666
+We want to know a change in
+Chúng ta muốn biết sự thay đổi trong
+
+34
+00:03:08.666 --> 00:03:15.632
+profit expectation. How that translates to a change in yield.
+kỳ vọng lợi nhuận. Điều đó chuyển thành sự thay đổi về năng suất như thế nào.
+
+35
+00:03:15.633 --> 00:03:19.466
+And how that might represent and manifest itself
+Và điều đó có thể đại diện và biểu hiện như thế nào
+
+36
+00:03:19.466 --> 00:03:24.599
+as a change in process capability ratios.
+như một sự thay đổi trong tỷ lệ khả năng của quy trình.
+
+37
+00:03:24.600 --> 00:03:31.600
+So, let's understand this. Again, because it's such an important concept.
+Vì vậy, hãy hiểu điều này. Một lần nữa, bởi vì nó là một khái niệm rất quan trọng.
+
+38
+00:03:31.600 --> 00:03:37.700
+Out in a business. I have different business units.
+Trong một doanh nghiệp. Tôi có các đơn vị kinh doanh khác nhau.
+
+39
+00:03:37.700 --> 00:03:44.200
+I’ll represent that. Supposed to be a house, like a roof, with a little chimney on it. Like a factory.
+Tôi sẽ đại diện cho điều đó. Giả sử là một ngôi nhà, như một mái nhà, với một ống khói nhỏ trên đó. Giống như một nhà máy.
+
+40
+00:03:44.200 --> 00:03:49.833
+See, I have different factories around the globe.
+Xem, tôi có các nhà máy khác nhau trên toàn cầu.
+
+41
+00:03:49.833 --> 00:03:56.866
+And inside of every one of those factories.
+Và bên trong mỗi một trong những nhà máy đó.
+
+42
+00:03:56.866 --> 00:04:03.732
+I have processes. Process A, process B, and so on.
+Tôi có các quy trình. Quy trình A, quy trình B, v.v.
+
+43
+00:04:03.733 --> 00:04:09.799
+That's true of every business unit.
+Điều đó đúng với mọi đơn vị kinh doanh.
+
+44
+00:04:09.800 --> 00:04:16.666
+Every factory. Now, at every one of those operations.
+Mỗi nhà máy. Bây giờ, tại mỗi một trong những hoạt động đó.
+
+45
+00:04:16.666 --> 00:04:23.632
+Each operation has a capability, denoted by Cp, process capability.
+Mỗi hoạt động có một khả năng, được biểu thị bằng Cp, khả năng của quy trình.
+
+46
+00:04:23.633 --> 00:04:29.299
+Now, that could be Four Sigma capability, Five Sigma capability,
+Bây giờ, đó có thể là khả năng Bốn Sigma, khả năng Năm Sigma,
+
+47
+00:04:29.300 --> 00:04:32.300
+Three Sigma capability.
+khả năng Ba Sigma.
+
+48
+00:04:32.300 --> 00:04:36.800
+Now, as a total, considering the process
+Bây giờ, về tổng thể, xem xét quy trình
+
+49
+00:04:36.800 --> 00:04:41.200
+as a total, as a total state.
+về tổng thể, như một trạng thái tổng thể.
+
+50
+00:04:41.200 --> 00:04:46.766
+Recognize that each operation here has a Cp,
+Nhận ra rằng mỗi hoạt động ở đây có một Cp,
+
+51
+00:04:46.766 --> 00:04:52.332
+a process capability ratio. Collectively as we come out of the process looking at the product,
+một tỷ lệ khả năng của quy trình. Tập hợp lại khi chúng ta đi ra khỏi quy trình nhìn vào sản phẩm,
+
+52
+00:04:52.333 --> 00:04:59.299
+that process as a whole has a yield. This process has a yield.
+quy trình đó nói chung có một năng suất. Quy trình này có một năng suất.
+
+53
+00:04:59.300 --> 00:05:06.266
+As these yields are merged together, we wind up at this level.
+Khi các năng suất này được hợp nhất với nhau, chúng ta kết thúc ở cấp độ này.
+
+54
+00:05:06.266 --> 00:05:13.266
+With some form of profit. See, I want to really kinda zero in and understand this now.
+Với một số hình thức lợi nhuận. Xem, tôi muốn thực sự tập trung và hiểu điều này bây giờ.
+
+55
+00:05:13.266 --> 00:05:17.966
+At this level, we have profit. Now, we reverse it.
+Ở cấp độ này, chúng ta có lợi nhuận. Bây giờ, chúng ta đảo ngược nó.
+
+56
+00:05:17.966 --> 00:05:21.966
+If I have a certain target amount profit,
+Nếu tôi có một số lượng lợi nhuận mục tiêu nhất định,
+
+57
+00:05:21.966 --> 00:05:27.832
+I can break that up into what the yield has to be, at this process and this process,
+Tôi có thể chia nó thành năng suất phải là bao nhiêu, tại quy trình này và quy trình này,
+
+58
+00:05:27.833 --> 00:05:30.799
+to achieve my profit goals.
+để đạt được mục tiêu lợi nhuận của tôi.
+
+59
+00:05:30.800 --> 00:05:33.800
+In turn, I can take that yield.
+Đến lượt, tôi có thể lấy năng suất đó.
+
+60
+00:05:33.800 --> 00:05:39.066
+Break it down in the process capability I need at each step,
+Chia nhỏ nó thành khả năng quy trình tôi cần ở mỗi bước,
+
+61
+00:05:39.066 --> 00:05:44.099
+say Five Sigma, not Four, to achieve my yield goals.
+ví dụ Năm Sigma, không phải Bốn, để đạt được mục tiêu năng suất của tôi.
+
+62
+00:05:44.100 --> 00:05:49.900
+So, this is a hierarchical decomposition of the goals.
+Vì vậy, đây là một sự phân rã thứ bậc của các mục tiêu.
+
+63
+00:05:49.900 --> 00:05:55.533
+Now, at the bottom level. Let's say for example that my goal
+Bây giờ, ở cấp độ thấp nhất. Giả sử chẳng hạn như mục tiêu của tôi
+
+64
+00:05:55.533 --> 00:06:01.933
+here is to be Five Sigma. That's my goal. I got to be Five Sigma.
+ở đây là đạt được Năm Sigma. Đó là mục tiêu của tôi. Tôi phải đạt được Năm Sigma.
+
+65
+00:06:01.933 --> 00:06:05.766
+And I'm currently at Four Sigma.
+Và hiện tại tôi đang ở Bốn Sigma.
+
+66
+00:06:05.766 --> 00:06:12.766
+Recognize that this is the is condition. This is the ought condition.
+Nhận ra rằng đây là điều kiện "hiện tại". Đây là điều kiện "nên là".
+
+67
+00:06:12.766 --> 00:06:17.799
+What ought to be, to help me achieve my larger goal.
+Điều gì "nên là", để giúp tôi đạt được mục tiêu lớn hơn của mình.
+
+68
+00:06:17.800 --> 00:06:23.900
+The differential here is the gap. We gotta close the gap.
+Sự khác biệt ở đây là khoảng cách. Chúng ta phải thu hẹp khoảng cách.
+
+69
+00:06:23.900 --> 00:06:30.100
+We gotta go and find the critical X’s in this operation,
+Chúng ta phải đi và tìm ra các X quan trọng trong hoạt động này,
+
+70
+00:06:30.100 --> 00:06:35.433
+this operation, this operation, that controls the process capability.
+hoạt động này, hoạt động này, kiểm soát khả năng của quy trình.
+
+71
+00:06:35.433 --> 00:06:42.399
+So, recall the relationship Y is a function of X.
+Vì vậy, hãy nhớ lại mối quan hệ Y là một hàm của X.
+
+72
+00:06:42.400 --> 00:06:48.766
+Remember that, Y is a function of X. This is our CTP's, critical process characteristics.
+Hãy nhớ rằng, Y là một hàm của X. Đây là CTP của chúng ta, các đặc tính quy trình quan trọng.
+
+73
+00:06:48.766 --> 00:06:54.432
+This is the CTQ’s, out here, critical quality characteristics.
+Đây là CTQ của chúng ta, ở ngoài này, các đặc tính chất lượng quan trọng.
+
+74
+00:06:54.433 --> 00:07:00.899
+So, if I want to improve the process capability of my CTQ’s,
+Vì vậy, nếu tôi muốn cải thiện khả năng quy trình của CTQ của mình,
+
+75
+00:07:00.900 --> 00:07:07.066
+I got to find the critical CTP's: process knobs and dials and switches.
+Tôi phải tìm ra các CTP quan trọng: các nút, mặt số và công tắc quy trình.
+
+76
+00:07:07.066 --> 00:07:12.532
+And the right settings of those variables, in order to maximize the capability.
+Và cài đặt phù hợp của các biến đó, để tối đa hóa khả năng.
+
+77
+00:07:12.533 --> 00:07:17.733
+To go from like Four Sigma to Five Sigma. So, that narrows the gap.
+Để đi từ khoảng Bốn Sigma lên Năm Sigma. Vì vậy, điều đó thu hẹp khoảng cách.
+
+78
+00:07:17.733 --> 00:07:23.466
+That takes me over time to maybe Four Sigma to 4.5 Sigma,
+Điều đó đưa tôi theo thời gian có thể từ Bốn Sigma lên 4.5 Sigma,
+
+79
+00:07:23.466 --> 00:07:28.266
+on my path to Six Sigma. To the ought condition.
+trên con đường của tôi đến Six Sigma. Đến điều kiện "nên là".
+
+80
+00:07:28.266 --> 00:07:34.932
+Well, if I single out one of those cases. Just pick one.
+Chà, nếu tôi chọn ra một trong những trường hợp đó. Chỉ cần chọn một.
+
+81
+00:07:34.933 --> 00:07:41.966
+Say arbitrarily, this one right here. And I assign it to a black belt.
+Giả sử tùy ý, cái này ngay đây. Và tôi giao nó cho một Black Belt.
+
+82
+00:07:41.966 --> 00:07:48.799
+That's a black belt project, or it could be a green belt project or maybe a white belt project.
+Đó là một dự án Black Belt, hoặc nó có thể là một dự án Green Belt hoặc có thể là một dự án White Belt.
+
+83
+00:07:48.800 --> 00:07:52.900
+It's an application project. That's the key.
+Đó là một dự án ứng dụng. Đó là chìa khóa.
+
+84
+00:07:52.900 --> 00:07:58.000
+I’ve made an application project to improve the process capability
+Tôi đã thực hiện một dự án ứng dụng để cải thiện khả năng quy trình
+
+85
+00:07:58.000 --> 00:08:02.566
+from the is, to the ought condition. To better the yield.
+từ điều kiện "hiện tại", đến điều kiện "nên là". Để cải thiện năng suất.
+
+86
+00:08:02.566 --> 00:08:07.866
+To ultimately stack up to improve the profitability of this business.
+Để cuối cùng tích lũy để cải thiện lợi nhuận của doanh nghiệp này.
+
+87
+00:08:07.866 --> 00:08:13.066
+So, that these businesses can come together
+Vì vậy, các doanh nghiệp này có thể hợp nhất với nhau
+
+88
+00:08:13.066 --> 00:08:17.066
+together to create the corporate level goal which might be growth.
+cùng nhau để tạo ra mục tiêu cấp công ty, có thể là tăng trưởng.
+
+89
+00:08:17.066 --> 00:08:24.099
+So that's how we hierarchically flow down our objectives,
+Vì vậy, đó là cách chúng ta phân cấp mục tiêu của mình theo thứ bậc,
+
+90
+00:08:24.100 --> 00:08:28.100
+define individual projects,
+xác định các dự án riêng lẻ,
+
+91
+00:08:28.100 --> 00:08:32.966
+assign those projects to people that have the knowledge to go execute.
+giao các dự án đó cho những người có kiến thức để thực hiện.
+
+92
+00:08:32.966 --> 00:08:36.832
+That's the essence of application projects.
+Đó là bản chất của các dự án ứng dụng.
+
+93
+00:08:36.833 --> 00:08:41.833
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

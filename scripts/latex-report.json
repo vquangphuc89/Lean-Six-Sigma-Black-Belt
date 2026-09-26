@@ -1,0 +1,1286 @@
+[
+  {
+    "file": "sources\\04. Process Management\\03. Measurement Power\\01.Driving the Need for Product and Process Measurement.html",
+    "totalCount": 4,
+    "items": [
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\mu",
+          "\\pm",
+          "\\sigma"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Đo lường là giác quan của tổ chức: Nếu không có hệ thống đo lường chuẩn xác, ban lãnh đạo hoàn toàn mù tịt trước các biến động ngầm của quy trình.</li><li>Sức mạnh của Dữ liệu Định lượng: Chuyển đổi từ đánh giá cảm tính ('hàng nhìn ổn', 'chạy khá nhanh') sang các chỉ số vật lý có dung sai ($\\mu \\pm 3\\sigma$).</li><li>Nâng cao Sức mạnh Đo lường (Measurement Power): Dữ liệu liên tục (Continuous) giúp giảm 99% cỡ mẫu cần thiết so với dữ liệu thuộc tính rời rạc (Discrete).</li><li>Tác động tài chính: Đo lường chính xác giúp phát hiện trôi dạt quy trình từ sớm, ngăn ngừa hàng triệu đô la phế phẩm và thu hồi sản phẩm.</li></ul></div>"
+      },
+      {
+        "lineNum": 470,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<p class=\"pro-tip-desc\">Đừng bao giờ chấp nhận báo cáo 'Chất lượng tháng này rất tốt'. Hãy yêu cầu: 'Cpk là bao nhiêu, độ lệch chuẩn $\\sigma$ đã giảm bao nhiêu % và Z-score hiện tại là mấy'!</p>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\03. Measurement Power\\02.Six Sigma and the Role of Measurement.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Đo lường là trái tim của phương pháp luận Six Sigma: Không có dữ liệu đo lường tin cậy, toàn bộ các công cụ thống kê ANOVA, Hồi quy và DOE đều trở thành rác (Garbage In, Garbage Out).</li><li>Phương trình phân tách phương sai đo lường: $\\sigma^2_{\text{Total}} = \\sigma^2_{\text{Part-to-Part}} + \\sigma^2_{\text{Measurement System}}$.</li><li>Quy tắc Gage R&R của Master Black Belt: Sai số hệ thống đo (%GRR) bắt buộc phải $< 10\\%$ (Xuất sắc) hoặc $< 30\\%$ (Chấp nhận có điều kiện).</li><li>Đo lường dẫn dắt sự thật: Loại bỏ hoàn toàn sự tranh cãi giữa phòng Sản xuất và phòng Quản lý Chất lượng nhờ chuẩn đo lường thống nhất.</li></ul></div>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\03. Measurement Power\\03.Connecting Defects to the Idea of Uncertainty.html",
+    "totalCount": 2,
+    "items": [
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Sai lỗi (Defect) không phải là sự xui xẻo ngẫu nhiên; sai lỗi là biểu hiện vật lý của Sự bất định (Uncertainty) trong hệ thống.</li><li>Phương sai $\\sigma^2$ là thước đo định lượng của sự bất định: $\\sigma$ càng lớn, độ bất định càng cao và xác suất sản phẩm vượt ra ngoài dung sai kỹ thuật càng lớn.</li><li>Nguyên lý Giảm thiểu Bất định: Mọi hành động cải tiến Six Sigma đều quy về một mục tiêu duy nhất là thu hẹp entropy và bóp nghẹt độ phân tán của thông tin.</li><li>Tác động kinh tế: Khách hàng mua sự chắc chắn. Giảm bất định đồng nghĩa với việc nâng cao độ tin cậy và tạo dựng lòng trung thành thương hiệu tuyệt đối.</li></ul></div>"
+      },
+      {
+        "lineNum": 470,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<p class=\"pro-tip-desc\">Khi bạn nghe ai đó nói 'Quy trình này không đoán trước được', hãy hiểu ngay rằng: Họ chưa xác định được các biến Vital X và chưa nén được phương sai $\\sigma$!</p>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\03. Measurement Power\\05.Critical Connections Between Measurements and Statistics.html",
+    "totalCount": 4,
+    "items": [
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\mu",
+          "\\sigma"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Đo lường thu thập con số thô; Thống kê biến con số thô thành trí tuệ điều hành (Operational Intelligence).</li><li>Bốn tham số thống kê mô tả cốt lõi: Giá trị trung bình ($\\mu$ - Vị trí tâm), Phương sai ($\\sigma^2$ - Độ phân tán), Độ lệch (Skewness - Tính bất đối xứng), và Độ nhọn (Kurtosis - Trọng lượng của đuôi rủi ro).</li><li>Thống kê suy diễn (Inferential Statistics): Sử dụng cỡ mẫu nhỏ $n$ để suy diễn chính xác về toàn bộ tổng thể $N$ với Khoảng tin cậy (Confidence Interval) 95% hoặc 99%.</li><li>Tránh bẫy thống kê: Nhầm lẫn giữa Tương quan (Correlation) và Nhân quả (Causation); kiểm định giả thuyết vô tư để bảo vệ sự thật khách quan.</li></ul></div>"
+      },
+      {
+        "lineNum": 470,
+        "matches": [
+          "\\mu",
+          "\\sigma"
+        ],
+        "content": "<p class=\"pro-tip-desc\">Đừng bao giờ chỉ báo cáo giá trị trung bình $\\mu$. Trung bình chỉ nói lên một nửa sự thật; nửa sự thật còn lại - và cũng là nơi ẩn chứa rủi ro lớn nhất - nằm ở độ lệch chuẩn $\\sigma$ và độ nhọn Kurtosis!</p>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\08.Development of Process Capability Baselines.html",
+    "totalCount": 2,
+    "items": [
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\sigma",
+          "\\ge"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Đường cơ sở năng lực (Process Capability Baseline) là bản tổng phổ đánh giá khả năng đáp ứng yêu cầu kỹ thuật của khách hàng.</li><li>Phân biệt rõ ràng giữa Năng lực Tiềm năng ($C_p$) và Năng lực Thực tế ($C_{pk}$): $C_p$ phản ánh độ rộng của phân bố, $C_{pk}$ phản ánh độ lệch tâm so với Target.</li><li>Dịch chuyển 1.5 Sigma của Motorola: Năng lực ngắn hạn ($Z_{ST}$) luôn vượt trội hơn năng lực dài hạn ($Z_{LT}$) một khoảng $1.5\\sigma$ do trôi dạt nhiệt độ, mòn dao cụ và nguyên vật liệu.</li><li>Tác động điều hành: Đạt $C_{pk} \\ge 1.67$ ($5.0\\sigma$) ở trạng thái ngắn hạn đảm bảo trong dài hạn quy trình luôn vận hành an toàn trên $3.5\\sigma$ ($C_{pk} \\ge 1.17$).</li></ul></div>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\09.Performance Baselines and the Standard Deviation.html",
+    "totalCount": 6,
+    "items": [
+      {
+        "lineNum": 456,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<p class=\"hero-desc\">Độ lệch chuẩn $\\sigma$ như một thước đo phổ quát: Giải mã toán học tính toán $\\sigma_{\text{within}}$ và $\\sigma_{\text{overall}}$, hiểu sâu về phân phối xác suất và quy luật 68-95-99.7.</p>"
+      },
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\sigma",
+          "\\mu",
+          "\\pm"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Độ lệch chuẩn ($\\sigma$) là thước đo phổ quát đo lường mức độ phân tán của mọi quy trình: $\\sigma$ càng nhỏ, quy trình càng mạnh và ổn định.</li><li>Phân biệt $\\sigma_{\text{within}}$ (Biến thiên nội bộ phụ nhóm - dùng cho $C_p, C_{pk}$) và $\\sigma_{\text{overall}}$ (Biến thiên toàn thể - dùng cho $P_p, P_{pk}$).</li><li>Quy luật Thực nghiệm 68-95-99.7: $\\mu \\pm 1\\sigma$ chứa 68.27% dữ liệu; $\\mu \\pm 2\\sigma$ chứa 95.45%; $\\mu \\pm 3\\sigma$ chứa 99.73%; $\\mu \\pm 6\\sigma$ chứa 99.9999998%.</li><li>Tác động kinh tế: Cắt giảm một nửa độ lệch chuẩn ($\\sigma / 2$) sẽ tăng gấp đôi năng lực $C_{pk}$ và giảm 99% chi phí phế phẩm.</li></ul></div>"
+      },
+      {
+        "lineNum": 470,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<p class=\"pro-tip-desc\">Đừng bao giờ dùng hàm STDEV.S trong Excel một cách tùy tiện mà không phân biệt nó là $\\sigma_{\text{overall}}$ hay $\\sigma_{\text{within}}$! Dùng sai $\\sigma$ sẽ dẫn đến tính sai hoàn toàn năng lực quy trình!</p>"
+      },
+      {
+        "lineNum": 498,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<p class=\"pro-tip-desc\">Độ lệch chuẩn là nhịp đập trái tim của hệ thống Six Sigma. Kiểm soát được $\\sigma$ là kiểm soát được toàn bộ vận mệnh chất lượng của doanh nghiệp.</p>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\10.Sigma Reporting and Performance Benchmarking.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Báo cáo mức Sigma (Sigma Reporting) cung cấp một thước đo phổ quát duy nhất giúp so sánh công bằng giữa một dây chuyền ép nhựa, một phòng IT và một trung tâm dịch vụ khách hàng.</li><li>Bảng quy đổi Sigma chuẩn mực: Kết nối trực tiếp giữa Mức Sigma ($Z$), Tỷ lệ sai lỗi DPMO, Xác suất đạt chuẩn ($Yield$) và Chi phí tổn thất chất lượng ($COPQ$).</li><li>Thiết lập Điểm chuẩn Hiệu suất (Performance Benchmarking): Nhận diện khoảng cách giữa năng lực doanh nghiệp ($3.0 - 4.0\\sigma$) và chuẩn mực thế giới ($6.0\\sigma$).</li><li>Văn hóa minh bạch dữ liệu: Chuyển đổi từ văn hóa báo cáo thành tích che giấu lỗi sang văn hóa đối diện sự thật định lượng bằng số liệu Sigma.</li></ul></div>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\13.Steps for Calculating a Performance Baseline - Part C.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Bước 5 - Tính toán DPMO (Defects Per Million Opportunities): $DPMO = DPO \times 1,000,000$.</li><li>Bước 6 - Tra cứu Bảng phân phối chuẩn tắc ngược: $Z_{ST} = \\Phi^{-1}(1 - DPO) + 1.50$ (theo chuẩn Motorola) hoặc $Z_{ST} = \\Phi^{-1}(1 - DPO)$.</li><li>Quy đổi Năng lực dài hạn: $Z_{LT} = Z_{ST} - 1.50\\sigma$.</li><li>Hoàn tất Báo cáo Đường cơ sở: Tổng hợp đầy đủ $U, D, O, DPU, DPO, DPMO, Z_{ST}, Z_{LT}$ và $C_{pk}$ vào Project Charter.</li></ul></div>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\14.Calculation of a Six Sigma Performance Baseline - Part A.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\sum"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Thực hành tính toán thực chiến trong sản xuất: Đi từng bước từ dữ liệu kiểm tra phân xưởng đến bảng tổng phổ năng lực Six Sigma.</li><li>Case Study Toàn diện: Dây chuyền sản xuất Trục khuỷu động cơ ô tô (Crankshaft) gồm 4 công đoạn: Phôi đúc &rarr; Tiện thô &rarr; Mài bóng &rarr; Nhiệt luyện.</li><li>Phân rã ma trận cơ hội sai lỗi theo từng công đoạn: Xác định tổng số $TOP = \\sum (U_i \times O_i)$ và tính toán Năng suất dồn ($RTY$).</li><li>Xác lập đường cơ sở tổng thể của dây chuyền và khoanh vùng chính xác công đoạn đang là điểm nghẽn năng lực (Bottleneck).</li></ul></div>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\06.Global Benchmarks for World-Class Quality.html",
+    "totalCount": 2,
+    "items": [
+      {
+        "lineNum": 456,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<p class=\"hero-desc\">Khám phá các chuẩn mực chất lượng toàn cầu: Từ ngành hàng không vũ trụ ($6\\sigma$) đến bán dẫn, ô tô và bài học từ các tập đoàn tiên phong như Motorola, GE và Toyota.</p>"
+      },
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Đẳng cấp Thế giới (World-Class Quality) không phải là một khẩu hiệu mơ hồ; đó là các mốc số liệu Sigma cụ thể được công nhận trên toàn cầu.</li><li>Bản đồ Sigma các ngành công nghiệp: Hàng không thương mại ($\u0007pprox 6.0\\sigma$ - An toàn tuyệt đối); Công nghiệp Bán dẫn ($\u0007pprox 5.5 - 6.0\\sigma$); Công nghiệp Ô tô ($\u0007pprox 4.5 - 5.0\\sigma$); Ngành Dịch vụ / Nhà hàng ($\u0007pprox 2.5 - 3.5\\sigma$).</li><li>Mô hình Chi phí Taguchi (Taguchi Loss Function): Chất lượng đẳng cấp thế giới không chỉ là 'nằm trong dung sai' mà là 'đúng ngay tâm Target' với phương sai cực tiểu.</li><li>Bài học lãnh đạo: Cam kết sắt đá của Ban điều hành là động lực duy nhất có thể kéo một tổ chức từ mức trung bình 3 Sigma lên đỉnh cao 6 Sigma.</li></ul></div>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\07.Key Benchmarks for the Healthcare Industry.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Y tế là ngành kinh tế có rủi ro cao nhất: Sai sót trong bệnh viện không chỉ gây tổn thất tài chính mà còn đo bằng sinh mạng con người.</li><li>Nghiên cứu thực chứng của Dr. Mikel Harry trong ngành y tế: Tỷ lệ lỗi phòng hồi sức cấp cứu (ICU Medication Error $\u0007pprox 3.2 - 3.8\\sigma$); Tỷ lệ nhiễm trùng vết mổ sau phẫu thuật ($\u0007pprox 3.5\\sigma$).</li><li>Mỗi ngày một bệnh viện lớn thực hiện hàng chục ngàn thao tác điều dưỡng và y lệnh (hàng triệu cơ hội lỗi $O$). Nếu chỉ vận hành ở mức 3.5 Sigma, hàng trăm bệnh nhân sẽ gặp sự cố y khoa nguy hiểm mỗi tháng.</li><li>Chuyển đổi văn hóa y tế: Ứng dụng Six Sigma để loại bỏ 'văn hóa giấu lỗi' và thiết lập quy trình kiểm tra chéo Poka-Yoke bảo vệ an toàn người bệnh.</li></ul></div>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\08.Rate-of-Change Needed to Achieve World-Class Status.html",
+    "totalCount": 5,
+    "items": [
+      {
+        "lineNum": 456,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<p class=\"hero-desc\">Phương trình động lực học cải tiến: Tính toán Tốc độ thay đổi năng lực ($\\Delta Z / \text{năm}$) và Quy luật nhân đôi chất lượng (Quality Halving Rule) trên con đường tiến tới 6 Sigma.</p>"
+      },
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\Delta",
+          "\\ge",
+          "\\sigma"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Đạt đẳng cấp thế giới là một cuộc đua về Tốc độ (Rate of Change): Đứng yên là tụt hậu; cải tiến chậm hơn đối thủ đồng nghĩa với việc tự sát thương mại.</li><li>Quy luật Kinh nghiệm Motorola (Motorola 10x Rule): Một tổ chức đẳng cấp thế giới phải giảm tỷ lệ sai lỗi DPMO ít nhất 10 lần (10x reduction) sau mỗi chu kỳ 2 năm.</li><li>Phương trình Tốc độ Thay đổi: $\text{ROC} = \frac{\\Delta Z}{\\Delta t}$. Để đi từ 3 Sigma lên 6 Sigma trong 4-5 năm, doanh nghiệp bắt buộc phải đạt tốc độ $\\Delta Z \\ge 0.60 - 0.75\\sigma / \text{năm}$.</li><li>Đo lường Vận tốc Cải tiến (Improvement Velocity): Quản trị danh mục dự án Belt dựa trên tốc độ đóng khoảng cách năng lực định kỳ hàng quý.</li></ul></div>"
+      },
+      {
+        "lineNum": 470,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<p class=\"pro-tip-desc\">Đừng tự hào vì bạn đang cải tiến 5% mỗi năm. Đối thủ của bạn đang cắt giảm lỗi 50% mỗi năm! Hãy đo lường Tốc độ Thay đổi $\\Delta Z/\text{năm}$ để biết bạn đang thắng hay đang thua trong cuộc đua đường trường!</p>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\12.Process Redesign and the Five Sigma Wall.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<div class=\"exec-summary\"><ul><li>Bức tường 5 Sigma (The 5-Sigma Wall): Mọi quy trình hiện hữu đều có một trần công nghệ vật lý; DMAIC truyền thống chỉ có thể đưa quy trình chạm ngưỡng $4.8 - 5.0\\sigma$.</li><li>Nghịch lý Cải tiến Giới hạn: Khi đã tối ưu hóa 100% các biến $X$ hiện tại, việc tiếp tục ép quy trình cũ sẽ chỉ làm tăng chi phí mà không thể giảm thêm phế phẩm.</li><li>Bước chuyển dịch bắt buộc sang DFSS (Design for Six Sigma): Muốn vượt qua bức tường $5\\sigma$ để chạm tới $6\\sigma$, tổ chức bắt buộc phải đập bỏ quy trình cũ và Tái thiết kế từ đầu (Process Redesign).</li><li>Phương pháp luận DMADV / IDOV: Khung sườn thiết kế sản phẩm và quy trình mới đạt ngay mức $6.0\\sigma$ ngay từ bản vẽ kỹ thuật.</li></ul></div>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\04.Analyze Contributing Forces.html",
+    "totalCount": 7,
+    "items": [
+      {
+        "lineNum": 613,
+        "matches": [
+          "\\vec"
+        ],
+        "content": "<div class=\"quiz-q\">Một dự án giảm thời gian lưu kho có tổng các lực dẫn hướng (+Driving Forces) đo được là +18.5 điểm. Tổng các lực cản trở (-Restraining Forces) là -23.0 điểm. Vectơ lực tổng hợp $\\vec{F}_{Net}$ và trạng thái của cơ hội hiện tại là gì?</div>"
+      },
+      {
+        "lineNum": 615,
+        "matches": [
+          "\\vec"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q3', 'Trap: Misinterpreting negative net force as positive progress.', 'Sai lầm: Nhầm lẫn dấu âm và cho rằng cơ hội đang mở rộng.')\">A. $\\vec{F}_{Net} = +4.5$ điểm; cơ hội đang tự động mở rộng</button>"
+      },
+      {
+        "lineNum": 616,
+        "matches": [
+          "\\vec"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q3', 'Correct. F_Net = +18.5 - 23.0 = -4.5 points. Since F_Net < 0, the system is being pushed backward away from the opportunity. Immediate action must be taken to reduce restraining forces.', 'Chính xác! Lực tổng hợp: $\\vec{F}_{Net} = +18.5 - 23.0 = -4.5$ điểm. Vì lực cản đang áp đảo ($\\vec{F}_{Net} < 0$), cơ hội đang bị thoái lui và teo tóp; dự án chắc chắn thất bại nếu không can thiệp hạ giảm lực cản.')\">B. $\\vec{F}_{Net} = -4.5$ điểm; hệ thống đang bị đẩy lùi theo hướng tiêu cực, cơ hội đang bị bóp nghẹt</button>"
+      },
+      {
+        "lineNum": 617,
+        "matches": [
+          "\\vec"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q3', 'Trap: Adding absolute values without considering directional vectors.', 'Sai lầm: Cộng gộp độ lớn tuyệt đối mà bỏ qua hướng của vector lực.')\">C. $\\vec{F}_{Net} = +41.5$ điểm; hệ thống đạt trạng thái siêu ổn định</button>"
+      },
+      {
+        "lineNum": 618,
+        "matches": [
+          "\\vec"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q3', 'Trap: Incorrect arithmetic calculation.', 'Sai lầm: Lỗi tính toán sai số học.')\">D. $\\vec{F}_{Net} = 0.0$ điểm; hệ thống đạt trạng thái cân bằng tuyệt đối</button>"
+      },
+      {
+        "lineNum": 779,
+        "matches": [
+          "\\vec",
+          "\\le"
+        ],
+        "content": "<strong>Bước 2: Lượng hóa độ dài vector lực và tính toán Net Force:</strong> Đánh giá độ mạnh của từng lực trên thang điểm 1-10; tính tổng đại số $\\vec{F}_{Net}$; nếu $\\vec{F}_{Net} \\le 0$, ưu tiên lập kế hoạch triệt tiêu ít nhất 2 lực cản lớn nhất."
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\05.Improve Action Settings.html",
+    "totalCount": 4,
+    "items": [
+      {
+        "lineNum": 549,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<li>Đo lường sự lan truyền chuyển dịch từ $\\Delta X$ sang $\\Delta Y$ để chứng minh hiệu quả tài chính.</li>"
+      },
+      {
+        "lineNum": 591,
+        "matches": [
+          "\\cdot",
+          "\\mu",
+          "\\text"
+        ],
+        "content": "<div class=\"quiz-q\">Hàm truyền của độ dày lớp mạ vàng $Y$ (&mu;m) theo thời gian nhúng bể $X$ (giây) là: $Y = 0.05 \\cdot X + 0.20$. Hiện tại bể mạ đang cài đặt ở mức 40 giây (Is Setting), cho độ dày $Y_{is} = 2.20\\ \\mu\\text{m}$. Yêu cầu kỹ thuật Ought của khách hàng là $3.50\\ \\mu\\text{m}$. Thiết lập hành động mới ($X_{ought}$) cần cài đặt cho bể mạ là bao nhiêu giây?</div>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\06.Control Input Variations.html",
+    "totalCount": 14,
+    "items": [
+      {
+        "lineNum": 501,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "Một thiết lập được xem là kiểm soát đạt chuẩn khi và chỉ khi phân phối dao động thực tế của nó nằm lọt thỏm trong cửa sổ dung sai cho phép với $C_{pk} \\ge 1.50$."
+      },
+      {
+        "lineNum": 624,
+        "matches": [
+          "\\mu",
+          "\\text",
+          "\\sigma",
+          "\\ge"
+        ],
+        "content": "<div class=\"quiz-q\">Một thiết lập hành động của áp lực khí nén $X$ có giá trị tối ưu $\\mu = 5.0\\ \\text{bar}$, giới hạn dung sai cho phép là $USL = 5.6\\ \\text{bar}$ và $LSL = 4.4\\ \\text{bar}$. Hiện tại độ lệch chuẩn đo được là $\\sigma = 0.30\\ \\text{bar}$. Chỉ số năng lực $C_p$ hiện tại là bao nhiêu và quy trình đã đạt chuẩn Six Sigma ($C_p \\ge 1.50$) chưa?</div>"
+      },
+      {
+        "lineNum": 626,
+        "matches": [
+          "\\le",
+          "\\text"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q3', 'Correct. Tolerance = USL - LSL = 5.6 - 4.4 = 1.2 bar. Cp = 1.2 / (6 * 0.30) = 1.2 / 1.8 = 0.67. Since Cp = 0.67 < 1.50, the input variation is dangerously excessive and must be compressed by at least 2.25x.', 'Chính xác! Dung sai = 5.6 - 4.4 = 1.2 bar. Chỉ số Cp = 1.2 / (6 &times; 0.30) = 1.2 / 1.8 = 0.67. Vì Cp = 0.67 nhỏ hơn rất nhiều so với 1.50, độ biến thiên đầu vào đang cực kỳ nguy hiểm, có nguy cơ gây phế phẩm lớn.')\">A. $C_p = 0.67$; chưa đạt chuẩn (biến thiên quá rộng, cần nén độ lệch chuẩn xuống $\\le 0.13\\ \\text{bar}$)</button>"
+      },
+      {
+        "lineNum": 637,
+        "matches": [
+          "\\cdot",
+          "\\text"
+        ],
+        "content": "<div class=\"quiz-q\">Một quy trình lắp ráp có độ dày thành phẩm $Y = 2\\cdot X_1 + 3\\cdot X_2$. Biết độ lệch chuẩn của $X_1$ là $\\sigma_1 = 0.2\\ \\text{mm}$ và của $X_2$ là $\\sigma_2 = 0.1\\ \\text{mm}$. Biến số nào đóng góp phương sai lớn hơn vào sự dao động của $Y$?</div>"
+      },
+      {
+        "lineNum": 640,
+        "matches": [
+          "\\sigma",
+          "\\times"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4', 'Correct. Variance contribution: Var(2*X1) = 2^2 * Var(X1) = 4 * (0.2)^2 = 0.16. Var(3*X2) = 3^2 * Var(X2) = 9 * (0.1)^2 = 0.09. Since 0.16 > 0.09, X1 accounts for 64% of total output variance and must be controlled first.', 'Chính xác! Lan truyền phương sai: $\\sigma^2(X_1) = 2^2 \\times 0.2^2 = 4 \\times 0.04 = 0.16$; $\\sigma^2(X_2) = 3^2 \\times 0.1^2 = 9 \\times 0.01 = 0.09$. Biến số $X_1$ chiếm tới 64% tổng phương sai đầu ra ($0.16 / 0.25$) và phải được ưu tiên kiểm soát biến thiên trước.')\">B. Biến số $X_1$ đóng góp lớn hơn (chiếm 64% tổng phương sai đầu ra do $\\sigma_1$ lớn gấp đôi)</button>"
+      },
+      {
+        "lineNum": 783,
+        "matches": [
+          "\\pm",
+          "\\sigma",
+          "\\ge"
+        ],
+        "content": "<strong>Bước 1: Tính toán dung sai cho phép và xác lập băng thông $\\pm 3\\sigma$ (Calculate Tolerance Window):</strong> Áp dụng công thức lan truyền phương sai để quy định giới hạn trên ($USL_X$) và giới hạn dưới ($LSL_X$) cho từng biến số đầu vào then chốt; yêu cầu $C_{pk}(X) \\ge 1.50$."
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\07.Standardize Success Factors.html",
+    "totalCount": 7,
+    "items": [
+      {
+        "lineNum": 462,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "Trong đó: <strong>SF<sub>i</sub></strong> là các yếu tố thành công cốt lõi đã được kiểm chứng; <strong>T</strong> là toán tử chuyển giao thích ứng theo đặc thù phân xưởng mới. Dự án Six Sigma xuất sắc phải có $VMR \\ge 5.0$, tức giá trị nhân rộng gấp ít nhất 5 lần chi phí dự án gốc."
+      },
+      {
+        "lineNum": 598,
+        "matches": [
+          "\\times"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q3', 'Trap: Calculated using only pilot savings: 50k / 30k = 1.67x.', 'Sai lầm: Chỉ tính riêng xưởng pilot mà bỏ qua toàn bộ giá trị nhân rộng thể chế.')\">A. $VMR = 1.67\\times$</button>"
+      },
+      {
+        "lineNum": 599,
+        "matches": [
+          "\\times"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q3', 'Trap: Omitted pilot savings in total hard savings numerator.', 'Sai lầm: Quên cộng khoản tiết kiệm 50,000 USD của xưởng gốc vào tử số.')\">B. $VMR = 20.0\\times$</button>"
+      },
+      {
+        "lineNum": 600,
+        "matches": [
+          "\\times"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q3', 'Correct. Total Hard Savings = $50k (pilot) + $600k (replications) = $650,000/year. Initial Investment = $30,000. VMR = 650,000 / 30,000 = 21.67x. This massive multiplication proves the extraordinary financial leverage of Step 7 Standardization.', 'Chính xác! Tổng Hard Savings = 50,000 USD (pilot) + 600,000 USD (nhân rộng) = 650,000 USD/năm. Vốn đầu tư ban đầu = 30,000 USD. VMR = 650,000 / 30,000 = 21.67 lần. Con số này chứng minh đòn bẩy tài chính khổng lồ của việc chuẩn hóa và nhân rộng yếu tố thành công.')\">C. $VMR = 21.67\\times$ (Giá trị thu về gấp hơn 21 lần chi phí đầu tư ban đầu)</button>"
+      },
+      {
+        "lineNum": 601,
+        "matches": [
+          "\\times"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q3', 'Trap: Arithmetic division error.', 'Sai lầm: Lỗi số học trong phép chia.')\">D. $VMR = 12.0\\times$</button>"
+      },
+      {
+        "lineNum": 769,
+        "matches": [
+          "\\ge",
+          "\\times"
+        ],
+        "content": "<strong>Bước 3: Lập kế hoạch nhân rộng ra các dây chuyền khác (Replication Roadmap &amp; VMR Tracking):</strong> Trình bày trước Champion kế hoạch chuyển giao giải pháp cho các phân xưởng tương đồng trong tập đoàn; theo dõi chỉ số Nhân Rộng Giá Trị ($VMR \\ge 5.0\\times$) báo cáo trực tiếp cho CFO."
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\08.Integrate Lessons Learned.html",
+    "totalCount": 3,
+    "items": [
+      {
+        "lineNum": 472,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "Một bài học chỉ được công nhận là đã tích hợp thành công khi tỷ lệ tái phát sinh sai hỏng của chính vấn đề đó trong 12 tháng tiếp theo giảm ít nhất 95% ($RPF \\ge 0.95$)."
+      },
+      {
+        "lineNum": 596,
+        "matches": [
+          "\\times"
+        ],
+        "content": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q3', 'Trap: RPF cannot exceed 1.0 (100%).', 'Sai lầm: Tỷ số RPF tối đa là 1.0 (100%), không thể bằng 60 lần.')\">D. $RPF = 60.0\\times$</button>"
+      },
+      {
+        "lineNum": 764,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<strong>Bước 3: Tích hợp vào chương trình đào tạo nhập môn và đo lường RPF hàng quý (Onboarding &amp; RPF Audit):</strong> Bắt buộc 100% nhân viên mới và nhà thầu phải được huấn luyện các bài học Universal Don'ts; theo dõi định kỳ chỉ số Phòng ngừa tái diễn ($RPF \\ge 0.95$) báo cáo Hội đồng Quản trị."
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\04. DFSS Principles\\01.Differences between a DFSS and PFSS Project.html",
+    "totalCount": 3,
+    "items": [
+      {
+        "lineNum": 396,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<li><strong>Trạng thái \"IS\" (Thực trạng hiện hữu):</strong> Thể hiện phân phối năng lực thực tế của quy trình đang vận hành. Phân phối này có giá trị trung bình $\\bar{X}$ và độ biến thiên $\\sigma$. Trong hầu hết các dây chuyền hiện hữu, tâm phân phối $\\bar{X}$ luôn bị lệch so với mục tiêu $T$, và độ phân tán còn quá rộng gây ra phế phẩm ở hai đầu đuôi phân phối.</li>"
+      },
+      {
+        "lineNum": 399,
+        "matches": [
+          "\\Delta",
+          "\\text"
+        ],
+        "content": "<li><strong>Khoảng cách Delta (Gap $\\Delta$):</strong> Đo lường sự sai lệch giữa năng lực vận hành hiện tại $\\bar{X}_{\\text{IS}}$ và kỳ vọng thiết kế $T_{\\text{OUGHT}}$. Nếu thiết kế ban đầu không có tính toán dung sai (tolerancing), việc áp dụng PFSS sẽ nhanh chóng chạm trần giới hạn đặc quyền (Entitlement Barrier).</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\04. DFSS Principles\\03.Practical Applications of the DFSS Methodology - Part B.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 411,
+        "matches": [
+          "\\pm"
+        ],
+        "content": "<div class=\"pro-tip-desc\">Đừng cho phép nhóm thiết kế bàn giao bản vẽ cho xưởng sản xuất nếu chưa thực hiện phép chiếu ngược Six Sigma. Bạn phải chứng minh được rằng thiết bị hiện có tại công đoạn đủ năng lực kiểm soát biến số CTP trong dải $\\pm 6\\sigma_X$ tương ứng. Nếu thiết bị không đủ khả năng, phải nâng cấp công nghệ kiểm soát trước khi bấm nút sản xuất hàng loạt.</div>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\07.Understanding the Black Belt Naming Convention.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 491,
+        "matches": [
+          "\\times"
+        ],
+        "content": "&bull; <strong>Ở mức Six Sigma đột phá của Dr. Harry</strong> ($DPO = 3.4 \\times 10^{-6}$):<br>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\08.Deployment Roles Commonly Associated With Six Sigma.html",
+    "totalCount": 4,
+    "items": [
+      {
+        "lineNum": 514,
+        "matches": [
+          "\\approx"
+        ],
+        "content": "&bull; <strong>White Belt (20h - Ống nghe):</strong> $P \\approx 20\\% - 30\\%$ (Chỉ nhận diện được các nguyên nhân bề mặt hoặc lỗi con người rõ ràng).<br>"
+      },
+      {
+        "lineNum": 515,
+        "matches": [
+          "\\approx"
+        ],
+        "content": "&bull; <strong>Green Belt (80h - X-quang):</strong> $P \\approx 60\\% - 70\\%$ (Nhận diện được biến thiên quy trình đơn biến hoặc tương tác 2 yếu tố).<br>"
+      },
+      {
+        "lineNum": 516,
+        "matches": [
+          "\\ge",
+          "\\times"
+        ],
+        "content": "&bull; <strong>Black Belt (160h - MRI):</strong> $P \\ge 95\\%$ (Bóc tách chính xác các tương tác đa biến phức tạp bậc cao $X_1 \\times X_2 \\times X_3$ ẩn sâu dưới hệ thống)."
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\09.Typical Project Goals for a Six Sigma Black Belt.html",
+    "totalCount": 22,
+    "items": [
+      {
+        "lineNum": 418,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<li><strong>Mục tiêu năng lực quy trình ($C_p, C_{pk} \\ge 1.5$):</strong> Di chuyển quy trình từ trạng thái bất an ($C_{pk} < 1.0$) lên ngưỡng ổn định vượt bậc ($C_{pk} \\ge 1.33$ đối với quy trình hiện hữu, và $C_{pk} \\ge 1.67$ đối với quy trình trọng yếu).</li>"
+      },
+      {
+        "lineNum": 466,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<td>$C_{pk} \\ge 1.33$</td>"
+      },
+      {
+        "lineNum": 467,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<td><strong>$C_{pk} \\ge 1.50$ (hoặc 1.67)</strong></td>"
+      },
+      {
+        "lineNum": 501,
+        "matches": [
+          "\\text",
+          "\\le",
+          "\\sigma"
+        ],
+        "content": "&bull; Ví dụ: Quy trình mạ linh kiện có $\\text{DPMO}_{baseline} = 10,000$. Mục tiêu chuẩn SSMI là giảm 70%, đưa $\\text{DPMO}_{target} \\le 3,000$, tương đương kéo mức Sigma từ $3.82\\sigma$ lên $4.25\\sigma$."
+      },
+      {
+        "lineNum": 628,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<div class=\"quiz-q\">Một quy trình lắp ráp vi mạch có mức sai lỗi ban đầu $\\text{DPMO}_{baseline} = 15,000$ (tương đương mức chất lượng khoảng 3.67 Sigma). Theo chuẩn mực đột phá của Dr. Harry, Black Belt đặt mục tiêu giảm 70% tỷ lệ sai lỗi. Giá trị $\\text{DPMO}_{target}$ cần đạt được tại cổng Control là bao nhiêu?</div>"
+      },
+      {
+        "lineNum": 649,
+        "matches": [
+          "\\pm",
+          "\\text",
+          "\\mu",
+          "\\sigma",
+          "\\ge"
+        ],
+        "content": "<div class=\"quiz-q\">Một quy trình tiện trục cơ khí có giới hạn kỹ thuật là $50.0 \\pm 0.2\\text{ mm}$ ($\\text{USL} = 50.2$, $\\text{LSL} = 49.8$). Hiện tại quy trình có trung bình $\\mu = 50.05\\text{ mm}$ và độ lệch chuẩn $\\sigma = 0.06\\text{ mm}$. Chỉ số $C_{pk}$ hiện tại là bao nhiêu, và để đạt mục tiêu chuẩn SSMI $C_{pk} \\ge 1.50$ khi căn tâm hoàn hảo ($\\mu = 50.0$), độ lệch chuẩn $\\sigma$ phải giảm xuống mức nào?</div>"
+      },
+      {
+        "lineNum": 652,
+        "matches": [
+          "\\sigma",
+          "\\le",
+          "\\text"
+        ],
+        "content": "A. $C_{pk}$ hiện tại = 0.83 &bull; Độ lệch chuẩn mục tiêu $\\sigma \\le 0.044\\text{ mm}$."
+      },
+      {
+        "lineNum": 655,
+        "matches": [
+          "\\sigma",
+          "\\le",
+          "\\text"
+        ],
+        "content": "B. $C_{pk}$ hiện tại = 1.11 &bull; Độ lệch chuẩn mục tiêu $\\sigma \\le 0.050\\text{ mm}$."
+      },
+      {
+        "lineNum": 658,
+        "matches": [
+          "\\sigma",
+          "\\le",
+          "\\text"
+        ],
+        "content": "C. $C_{pk}$ hiện tại = 0.50 &bull; Độ lệch chuẩn mục tiêu $\\sigma \\le 0.020\\text{ mm}$."
+      },
+      {
+        "lineNum": 798,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<span class=\"action-text\"><strong>Bước 2: Chuẩn Hóa Bộ 3 Mục Tiêu Kỹ Thuật (DPMO, Cpk &amp; Cycle Time):</strong> Thiết lập rõ đường cơ sở (Baseline) từ dữ liệu đã qua kiểm định MSA; chốt mục tiêu kỹ thuật tối thiểu: giảm &ge; 50% DPMO và đạt $C_{pk} \\ge 1.33$ trước khi khép cổng Measure.</span>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\10.Key Responsibilities of a Six Sigma Black Belt.html",
+    "totalCount": 3,
+    "items": [
+      {
+        "lineNum": 510,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "Trong nhiệm vụ <strong>Discover</strong>, Black Belt tiếp nhận một bài toán với hàng chục biến số nhiễu ban đầu ($n \\ge 30-50$ biến qua sơ đồ xương cá).<br>"
+      },
+      {
+        "lineNum": 511,
+        "matches": [
+          "\\approx",
+          "\\ge"
+        ],
+        "content": "&bull; Bằng cách thực hiện Thiết kế thí nghiệm (DOE) và phân tích hồi quy nâng cao, Black Belt cô lập được $k \\approx 3 - 5$ biến số trọng yếu (Critical X's) giải thích được trên **85% độ biến thiên ($R^2_{adj} \\ge 85\\%$)** của biến đầu ra $Y$, loại bỏ hoàn toàn việc phán đoán theo cảm tính."
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\11.Creating Effective Six Sigma Black Belts.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 468,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<td>Nghiệm thu cổng Improve: Chứng minh giảm 70% DPMO và đạt $C_{pk} \\ge 1.50$.</td>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\12.Primary Characteristics of a Black Belt - Part A.html",
+    "totalCount": 4,
+    "items": [
+      {
+        "lineNum": 509,
+        "matches": [
+          "\\text"
+        ],
+        "content": "&bull; <strong>Dịch sang ngôn ngữ tiền tệ:</strong> Độ lệch $15.5\\text{ cm/s}$ làm phát sinh thêm $2.5\\%$ sản phẩm lỗi trên sản lượng 2,000,000 sản phẩm/năm với giá thành $8/sản phẩm hỏng:<br>"
+      },
+      {
+        "lineNum": 527,
+        "matches": [
+          "\\text"
+        ],
+        "content": "Nếu một dự án 16 tuần mà đến tuần thứ 10 Black Belt vẫn chưa hoàn thành cổng Analyze ($\\text{APRI} = 62.5\\% > 50\\%$), dự án đang bị sa lầy vào \"nghiên cứu rễ cây mà quên mất khu rừng\". Black Belt cần phải dũng cảm dừng việc thu thập dữ liệu thứ cấp và tiến hành chạy thử nghiệm giải pháp tại cổng Improve!"
+      },
+      {
+        "lineNum": 620,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<div class=\"quiz-q\">Một kỹ sư đúc báo cáo: <em>\"Độ biến thiên nhiệt độ khuôn đúc đang dao động lệch $12^\\circ\\text{C}$ so với tâm quy định\"</em>. Biết rằng nhà máy sản xuất 400,000 phôi động cơ/năm; cứ mỗi độ lệch $1^\\circ\\text{C}$ vượt chuẩn làm tăng tỷ lệ nứt phôi thêm $0.2\\%$; chi phí gia công lại một phôi nứt là $15. Để ban giám đốc phê duyệt ngân sách lắp hệ thống kiểm soát nhiệt độ, Black Belt cần dịch thông điệp kỹ thuật này sang con số tài chính P&amp;L như thế nào?</div>"
+      },
+      {
+        "lineNum": 623,
+        "matches": [
+          "\\text"
+        ],
+        "content": "A. Báo cáo: \"Độ lệch nhiệt độ $12^\\circ\\text{C}$ này đang gây thiệt hại tài chính trực tiếp $144,000 chi phí phế phẩm mỗi năm cho nhà máy!\""
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\13.Functional Tasks for a Six Sigma Black Belt.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 485,
+        "matches": [
+          "\\le"
+        ],
+        "content": "<li><strong>P_success:</strong> Xác suất thành công về mặt kỹ thuật dựa trên năng lực kiểm soát các Critical Xs ($0 \\le P_{success} \\le 1$).</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\14.Primary Characteristics of a Black Belt - Part B.html",
+    "totalCount": 4,
+    "items": [
+      {
+        "lineNum": 462,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<li><strong>&sigma;_baseline:</strong> Độ lệch chuẩn lịch sử trước khi can thiệp. Tỷ số $[\\Delta Y / \\sigma_{baseline}]$ phản ánh bước nhảy vọt tính bằng số lượng Sigma cải tiến.</li>"
+      },
+      {
+        "lineNum": 464,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<li><strong>Định chuẩn SSMI:</strong> Dự án đạt đẳng cấp Black Belt thực thụ khi $CBQ \\ge 2.5$, chứng minh bước nhảy vọt về hiệu năng vượt xa tư duy thông thường trong hộp.</li>"
+      },
+      {
+        "lineNum": 481,
+        "matches": [
+          "\\times"
+        ],
+        "content": "<li><strong>&Sigma; Knowledge_Units:</strong> Số lượng giả định sai lầm được bác bỏ hoặc mối quan hệ tương tác phi tuyến tính ($X_i \\times X_j$) được xác nhận qua các lần thử nghiệm thất bại.</li>"
+      },
+      {
+        "lineNum": 533,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>Khai thác sức mạnh của thất bại (Power of Failure):</strong> Thay vì suy sụp, Black Belt dẫn dắt nhóm phân tích vi cấu trúc kim loại của lô phôi hỏng. Họ phát hiện một hiện tượng biến dạng nhiệt phi tuyến tính xảy ra chính xác ở dải nhiệt độ $845^\\circ\\text{C} - 860^\\circ\\text{C}$ — một phát hiện khoa học mang tính đột phá mà tài liệu thiết kế của nhà sản xuất động cơ suốt 15 năm qua chưa từng ghi nhận!</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\15.Primary Characteristics of a Black Belt - Part C.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 498,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<li><strong>Định mức tối ưu:</strong> $TLP \\ge 0.85$ phản ánh năng lực lập kế hoạch và quản trị tài nguyên con người đạt chuẩn mực SSMI chuyên nghiệp.</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\16.Psychology of a Six Sigma Black Belt.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 459,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<li><strong>Ngưỡng cảnh báo:</strong> Nếu $BRI \\ge 1.8$, nguy cơ nhân tài xin nghỉ việc hoặc đổ vỡ tinh thần tác chiến đạt mức báo động đỏ!</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\17.Duration of Six Sigma Black Belt Training.html",
+    "totalCount": 2,
+    "items": [
+      {
+        "lineNum": 475,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<li><strong>Black Belt:</strong> Không chỉ dừng lại ở tương quan, Black Belt xác định hệ số góc $b_1$ (độ nhạy), ước lượng sai số ngẫu nhiên $\\epsilon \\sim N(0, \\sigma^2)$, kiểm định ý nghĩa thống kê của hệ số qua $t$-statistic ($p$-value &lt; 0.05) và hệ số xác định $R^2$ hiệu chỉnh.</li>"
+      },
+      {
+        "lineNum": 495,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<li><strong>Hệ số sinh lời:</strong> $ROI_{training} \\ge 350\\% &ndash; 750\\%$. Một Black Belt thành công mang lại dòng tiền ròng gấp 4 đến 8 lần tổng chi phí đào tạo họ!</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\18.Nature of Purpose of Six Sigma Green Belts.html",
+    "totalCount": 2,
+    "items": [
+      {
+        "lineNum": 455,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<li><strong>Quy tắc quyết định SSMI:</strong> Nếu $LFI \\ge 0.70$, dự án là <strong>Line-of-Sight hoàn hảo</strong> cho Green Belt tự chủ trì. Nếu $LFI &lt; 0.50$, bài toán đã vượt khỏi tầm với cục bộ và bắt buộc phải chuyển giao cho Black Belt!</li>"
+      },
+      {
+        "lineNum": 694,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<span class=\"action-text\"><strong>Bước 1: Rà Soát &amp; Phân Loại Đề Tài Theo Chỉ Số LFI (Line-of-Sight Audit):</strong> Đánh giá toàn bộ danh mục đề tài dự kiến giao cho Green Belts; đảm bảo các bài toán có chỉ số $LFI \\ge 0.70$ (nằm trong tầm mắt và quyền hạn bộ phận), chuyển các bài toán ma sát liên phòng ban lên Black Belt.</span>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\19.Expectations of a Six Sigma Green Belt.html",
+    "totalCount": 7,
+    "items": [
+      {
+        "lineNum": 442,
+        "matches": [
+          "\\text",
+          "\\times"
+        ],
+        "content": "<li><strong>Kịch bản A (Chỉ dùng Black Belt):</strong> $2,000 \\text{ BB} \\times \\$250,000 \\times 2 \\text{ dự án/năm} = \\mathbf{\\$1.0 \\text{ Tỷ USD}}$. Khả năng bao phủ chỉ đạt dưới 5% tổng số quy trình.</li>"
+      },
+      {
+        "lineNum": 445,
+        "matches": [
+          "\\text",
+          "\\times"
+        ],
+        "content": "<li>Lực lượng BB: $2,000 \\text{ BB} \\times \\$250,000 \\times 2 = \\$1.0 \\text{ Tỷ USD}$.</li>"
+      },
+      {
+        "lineNum": 446,
+        "matches": [
+          "\\text",
+          "\\times"
+        ],
+        "content": "<li>Lực lượng GB: $15,000 \\text{ GB} \\times \\$60,000 \\times 1.5 \\text{ dự án/năm} = \\mathbf{\\$1.35 \\text{ Tỷ USD}}$.</li>"
+      },
+      {
+        "lineNum": 449,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>Tổng giá trị chuyển giao:</strong> $\\mathbf{\\$2.35 \\text{ Tỷ USD}}$ cùng độ phủ bao trùm tới 85% các công đoạn hiện trường, tạo ra bước nhảy vọt toàn diện về văn hóa chất lượng!</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\20.Utilization of Six Sigma Green Belts.html",
+    "totalCount": 1,
+    "items": [
+      {
+        "lineNum": 464,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<li><strong>Định chuẩn SSMI:</strong> Cơ sở đạt chuẩn vận hành Six Sigma xuất sắc khi $PVS \\ge 92\\%$, chứng minh lực lượng Green Belt đã hoàn thành xuất sắc vai trò tấm lá chắn bảo vệ chất lượng.</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\21.Scope and Depth of a Six Sigma White Belt.html",
+    "totalCount": 6,
+    "items": [
+      {
+        "lineNum": 472,
+        "matches": [
+          "\\text",
+          "\\times"
+        ],
+        "content": "<li><strong>White Belt:</strong> $WVI_{WB} = 80 \\text{ giờ/năm} \\times 1 \\text{ (Local)} \\times 1 \\text{ (Basic)} = \\mathbf{80 \\text{ đơn vị}}$.</li>"
+      },
+      {
+        "lineNum": 473,
+        "matches": [
+          "\\text",
+          "\\times"
+        ],
+        "content": "<li><strong>Green Belt:</strong> $WVI_{GB} = 400 \\text{ giờ/năm} \\times 4 \\text{ (Process)} \\times 3 \\text{ (Intermediate)} = \\mathbf{4,800 \\text{ đơn vị}}$ (Gấp 60 lần WB).</li>"
+      },
+      {
+        "lineNum": 474,
+        "matches": [
+          "\\text",
+          "\\times"
+        ],
+        "content": "<li><strong>Black Belt:</strong> $WVI_{BB} = 1,800 \\text{ giờ/năm} \\times 10 \\text{ (Enterprise)} \\times 5 \\text{ (Advanced)} = \\mathbf{90,000 \\text{ đơn vị}}$ (Gấp 1,125 lần WB).</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\22.Primary Skills of a Six Sigma White Belt.html",
+    "totalCount": 19,
+    "items": [
+      {
+        "lineNum": 387,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<li><strong>Thu Hẹp Khoảng Cách Delta ($\\Delta$ Reduction):</strong> Nhiệm vụ trọng tâm của White Belt là nhận diện khoảng chênh lệch giữa điều kiện đang diễn ra (What is) và điều kiện tiêu chuẩn cần đạt (What ought to be) trong bán kính tầm nhìn LOSR, sau đó áp dụng các công cụ cơ bản để triệt tiêu khoảng cách này.</li>"
+      },
+      {
+        "lineNum": 408,
+        "matches": [
+          "\\text"
+        ],
+        "content": "Theo tiến sĩ Mikel J. Harry, cải tiến chất lượng về bản chất là một quá trình liên tục thu hẹp độ lệch giữa giá trị đo lường quan sát thực tế ($Y_{\\text{observed}}$) và giá trị chuẩn mực kỳ vọng theo thiết kế ($Y_{\\text{expected}}$). Tại cấp độ White Belt, quá trình này diễn ra trực tiếp trên các đặc tính quan trọng đối với giá trị (Critical to Value Characteristics - CTV) nằm trọn trong bán kính tầm nhìn LOSR."
+      },
+      {
+        "lineNum": 414,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<span>📐</span> Công Thức Xác Lập Khoảng Cách Sai Lệch Delta ($\\Delta_{\\text{LOSR}}$)"
+      },
+      {
+        "lineNum": 422,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>$Y_{\\text{observed}}$:</strong> Giá trị hoặc trạng thái thực tế quan sát được tại trạm làm việc (ví dụ: nhiệt độ dầu máy 68°C, thời gian gá phôi 45 giây, dung sai kẹp 0.35 mm).</li>"
+      },
+      {
+        "lineNum": 423,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>$Y_{\\text{expected}}$:</strong> Trạng thái chuẩn mực danh định cần đạt theo tiêu chuẩn thao tác chuẩn SOP (ví dụ: nhiệt độ dầu 50°C, thời gian gá phôi 25 giây, dung sai kẹp 0.05 mm).</li>"
+      },
+      {
+        "lineNum": 424,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<li><strong>$\\Delta$:</strong> Độ lệch (Delta/Gap) thể hiện sự suy hao chất lượng hoặc lãng phí vận hành. Vùng thu hẹp được gọi chính thức là <em>Cải tiến (Improvement)</em>.</li>"
+      },
+      {
+        "lineNum": 479,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<td>Khoảng cách vận hành cụ thể ($\\Delta_{\\text{local}} = 10\\text{k} - 25\\text{k}\\$$)</td>"
+      },
+      {
+        "lineNum": 480,
+        "matches": [
+          "\\text",
+          "\\ge"
+        ],
+        "content": "<td>Khoảng cách kinh doanh đột phá ($\\Delta_{\\text{business}} \\ge 350\\text{k}\\$$)</td>"
+      },
+      {
+        "lineNum": 501,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<li>Không trang bị kỹ năng quan sát sai lệch $\\Delta$ đơn giản, khiến lỗi lặp đi lặp lại hàng ngày.</li>"
+      },
+      {
+        "lineNum": 510,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<li>Công nhân tự phát hiện $\\Delta$ (rung lắc bất thường, nhiệt độ phôi tăng) và xử lý ngay theo Kaizen.</li>"
+      },
+      {
+        "lineNum": 526,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li>Anh Nguyễn Văn Nam (công nhân đứng máy tiện số 4) sử dụng óc quan sát thông thường và phát hiện: sau mỗi chu kỳ 15 sản phẩm, phoi tiện nhôm bị vướng lại ở hốc kẹp gá dao tạo ra một gờ sắt siêu nhỏ cọ xát vào thân van ($\\Delta_{\\text{kẹp}} = 0.4\\text{ mm}$).</li>"
+      },
+      {
+        "lineNum": 545,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<em>Bài học cốt lõi:</em> Không cần đến các thuật toán thống kê phức tạp triệu đô, một công nhân White Belt sở hữu óc quan sát nhạy bén và hiểu rõ khái niệm thu hẹp khoảng cách $\\Delta$ đã giải quyết triệt để lỗi chất lượng dai dẳng."
+      },
+      {
+        "lineNum": 674,
+        "matches": [
+          "\\Delta",
+          "\\text"
+        ],
+        "content": "<div class=\"fc-a\"><strong>Thu hẹp Delta:</strong> $\\Delta = |Y_{\\text{observed}} - Y_{\\text{expected}}|$. Cải tiến chính là hành động thu hẹp liên tục khoảng cách giữa những gì đang có và những gì chuẩn mực nên có.</div>"
+      },
+      {
+        "lineNum": 718,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<span class=\"action-text\"><strong>Bước 2: Triển Khai Phiếu Quan Sát Sai Lệch Delta Hàng Ngày (Daily Delta Sheet):</strong> Hướng dẫn công nhân White Belt dành 5 phút đầu mỗi ca để quan sát trạm máy, ghi nhận các độ lệch $\\Delta$ về nhiệt độ, độ rung, gá kẹp hoặc dụng cụ thất lạc.</span>"
+      },
+      {
+        "lineNum": 723,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<span class=\"action-text\"><strong>Bước 3: Tổ Chức Mini-Kaizen Xử Lý Sai Lệch Trong Vòng 24 Giờ:</strong> Khi công nhân phát hiện $\\Delta$, tổ trưởng và Green Belt tại khu vực phải phối hợp xử lý dứt điểm trong 24 giờ bằng các giải pháp Poka-yoke hoặc 5S đơn giản, khen thưởng ngay cho phát hiện xuất sắc.</span>"
+      },
+      {
+        "lineNum": 732,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<th>Khả Năng Nhận Diện Delta ($\\Delta$)</th>"
+      },
+      {
+        "lineNum": 755,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<td>Đề xuất và trực tiếp tạo giải pháp Poka-yoke thu hẹp $\\Delta$</td>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\23.Six Sigma Roles and Business-Focused Projects.html",
+    "totalCount": 8,
+    "items": [
+      {
+        "lineNum": 408,
+        "matches": [
+          "\\text"
+        ],
+        "content": "Theo tiến sĩ Mikel J. Harry, tổng giá trị tài chính do chương trình Six Sigma tạo ra ($\\text{Total Financial Value} - \\text{TFV}$) không đến từ một nỗ lực đơn độc, mà là tích phân của tất cả các dự án được thực thi đồng bộ trên toàn bộ phổ bán kính tầm nhìn LOSR."
+      },
+      {
+        "lineNum": 422,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>$N_{\\text{WB}}, N_{\\text{GB}}, N_{\\text{BB}}$:</strong> Số lượng dự án tương ứng của White Belt, Green Belt, và Black Belt được hoàn thành và nghiệm thu trong năm tài chính.</li>"
+      },
+      {
+        "lineNum": 423,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>$V_{\\text{WB}}$:</strong> Giá trị tiết kiệm trung bình của dự án White Belt (tiêu chuẩn: <strong>10.000$ &ndash; 25.000$</strong>).</li>"
+      },
+      {
+        "lineNum": 424,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>$V_{\\text{GB}}$:</strong> Giá trị tiết kiệm trung bình của dự án Green Belt (tiêu chuẩn: <strong>50.000$ &ndash; 60.000$</strong>).</li>"
+      },
+      {
+        "lineNum": 425,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>$V_{\\text{BB}}$:</strong> Giá trị tiết kiệm trung bình của dự án Black Belt (tiêu chuẩn: <strong>350.000$</strong> từ chi phí nhân công và vật liệu trực tiếp).</li>"
+      },
+      {
+        "lineNum": 441,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>White Belt ($\\text{LOS}_{\\text{WB}}$):</strong> $1 &ndash; 2$ trạm máy cục bộ, không có ranh giới phòng ban, phạm vi vài mét vuông.</li>"
+      },
+      {
+        "lineNum": 442,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>Green Belt ($\\text{LOS}_{\\text{GB}}$):</strong> Quy trình đơn tuyến ($5 &ndash; 15$ bước thao tác), giới hạn trong phạm vi một phân xưởng hoặc một phòng ban chức năng.</li>"
+      },
+      {
+        "lineNum": 443,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>Black Belt ($\\text{LOS}_{\\text{BB}} = \\text{Process Plus}$):</strong> Giao thoa giữa nhiều phòng ban, liên tỉnh/xuyên quốc gia, tích hợp nhà cung cấp đến khách hàng cuối.</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\24.Knowledge Base of a Six Sigma White Belt.html",
+    "totalCount": 12,
+    "items": [
+      {
+        "lineNum": 388,
+        "matches": [
+          "\\Delta"
+        ],
+        "content": "<li><strong>Tập Trung Vào Đặc Tính Quan Trọng Đối Với Giá Trị (CTV):</strong> White Belt áp dụng tri thức này vào trong bán kính tầm nhìn LOSR nhằm thu hẹp khoảng cách Gap ($\\Delta$) giữa trạng thái thực tế quan sát được và tiêu chuẩn thiết kế kỳ vọng trên các đặc tính CTV (Critical to Value).</li>"
+      },
+      {
+        "lineNum": 423,
+        "matches": [
+          "\\text",
+          "\\approx"
+        ],
+        "content": "<li>$\\text{RTY} = 0.95^5 \\approx 0.7738$ (chỉ còn <strong>77.4%</strong> sản phẩm hoàn hảo, hơn 22% bị lãng phí do phế phẩm hoặc phải làm lại).</li>"
+      },
+      {
+        "lineNum": 440,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>$\\text{CTV}_{\\text{obs}}$ vs $\\text{CTV}_{\\text{exp}}$:</strong> Giá trị đặc tính quan sát thực tế so với tiêu chuẩn mong đợi (ví dụ: mô-men xoắn siết ốc, độ dày màng sơn).</li>"
+      },
+      {
+        "lineNum": 441,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>Benefit:</strong> Lợi ích kinh tế được mở khóa khi White Belt áp dụng công cụ hiệp lực để đưa $\\Delta_{\\text{CTV}} \\to 0$.</li>"
+      },
+      {
+        "lineNum": 519,
+        "matches": [
+          "\\approx"
+        ],
+        "content": "<strong>Hiện trạng:</strong> MicroTech sản xuất bo mạch điều khiển cho máy bay không người lái. Dây chuyền SMT gồm 6 công đoạn liên tiếp có First Time Yield từng trạm dao động từ 92% đến 96%. Tuy nhiên, tỷ lệ thành phẩm hoàn chỉnh cuối chuyền (RTY) chỉ đạt mức báo động <strong>68.5%</strong> ($0.94^6 \\approx 0.6898$), khiến chi phí sửa chữa bo mạch bo lên tới 310.000 USD/quý."
+      },
+      {
+        "lineNum": 526,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li>Tại công đoạn hàn linh kiện dán (SMT), chị Trần Thị Mai (White Belt) sử dụng <em>Sơ đồ xương cá (Fishbone)</em> cùng tổ làm việc và phát hiện: hiện tượng lệch chân IC chủ yếu do kem hàn bị khô sau 45 phút tiếp xúc không khí tại khay gạt ($\\Delta_{\\text{độ nhớt}}$).</li>"
+      },
+      {
+        "lineNum": 662,
+        "matches": [
+          "\\text",
+          "\\prod"
+        ],
+        "content": "<div class=\"fc-a\"><strong>Rolled Throughput Yield:</strong> $\\text{RTY} = \\prod Y_i$. Tích lũy tỷ lệ không lỗi của từng trạm máy. Sai lệch nhỏ tại trạm White Belt sẽ làm sụt giảm nghiêm trọng năng suất toàn xưởng.</div>"
+      },
+      {
+        "lineNum": 744,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<td>Duy trì ổn định $Y_i \\ge 95\\%$</td>"
+      },
+      {
+        "lineNum": 751,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<td>Nâng tỷ lệ không lỗi lên $Y_i \\ge 98\\%$</td>"
+      },
+      {
+        "lineNum": 758,
+        "matches": [
+          "\\ge"
+        ],
+        "content": "<td>Đạt chuẩn đẳng cấp thế giới $Y_i \\ge 99.5\\%$</td>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\25.Understanding the Scope of Six Sigma White Belt Projects.html",
+    "totalCount": 21,
+    "items": [
+      {
+        "lineNum": 388,
+        "matches": [
+          "\\text"
+        ],
+        "content": "<li><strong>Tương Quan Trực Tiếp Về Hoàn Vốn (Direct Payback Correlation):</strong> Mức độ lợi tức đầu tư tỉ lệ thuận trực tiếp với độ sâu công cụ và thời gian cam kết: Lợi tức lớn nhất luôn nằm ở vùng Six Sigma ($350\\text{k}\\$$), tiếp theo là Lean ($50\\text{k} - 60\\text{k}\\$$), và Kaizen ($10\\text{k} - 25\\text{k}\\$$).</li>"
+      },
+      {
+        "lineNum": 408,
+        "matches": [
+          "\\text"
+        ],
+        "content": "Theo tiến sĩ Mikel J. Harry, khi chúng ta di chuyển trên hệ quy chiếu 3 trục (Time, Scope, Depth), vị thế của các phương pháp cải tiến phát triển theo một vectơ đồng hướng với mức hoàn vốn tài chính ($\\text{Payback}$)."
+      },
+      {
+        "lineNum": 417,
+        "matches": [
+          "\\vec",
+          "\\text",
+          "\\alpha",
+          "\\cdot",
+          "\\beta",
+          "\\gamma"
+        ],
+        "content": "\\vec{V}_{\\text{Method}} = \\alpha \\cdot \\text{Time} + \\beta \\cdot \\text{Scope} + \\gamma \\cdot \\text{Depth}"
+      },
+      {
+        "lineNum": 422,
+        "matches": [
+          "\\vec",
+          "\\text"
+        ],
+        "content": "<li><strong>$\\vec{V}_{\\text{Kaizen}}$ (White Belt Core):</strong> $\\text{Time} \\in [Hours, Days]$, $\\text{Scope} = 1 \\text{ Workstation}$, $\\text{Depth} = \\text{7 QC Tools}$.</li>"
+      },
+      {
+        "lineNum": 423,
+        "matches": [
+          "\\vec",
+          "\\text"
+        ],
+        "content": "<li><strong>$\\vec{V}_{\\text{Lean}}$ (White/Green Overlap):</strong> $\\text{Time} \\in [Days, Weeks]$, $\\text{Scope} = 1 \\text{ Process (VSM)}$, $\\text{Depth} = \\text{Kanban, 5S, SMED}$.</li>"
+      },
+      {
+        "lineNum": 424,
+        "matches": [
+          "\\vec",
+          "\\text"
+        ],
+        "content": "<li><strong>$\\vec{V}_{\\text{Six Sigma}}$ (Black Belt Domain):</strong> $\\text{Time} \\in [Weeks, Months]$, $\\text{Scope} = \\text{Process Plus}$, $\\text{Depth} = \\text{ANOVA, DOE, Regression}$.</li>"
+      },
+      {
+        "lineNum": 435,
+        "matches": [
+          "\\text"
+        ],
+        "content": "Payback_{\\text{Project}} \\propto f(\\text{Complexity}, \\text{Dedicated\\_Time}, \\text{Statistical\\_Rigor})"
+      },
+      {
+        "lineNum": 440,
+        "matches": [
+          "\\text",
+          "\\approx"
+        ],
+        "content": "<li>$\\text{Payback}_{\\text{Kaizen}} \\approx 10.000\\$ &ndash; 25.000\\$$ (Loại bỏ lãng phí nhìn thấy tức thì).</li>"
+      },
+      {
+        "lineNum": 441,
+        "matches": [
+          "\\text",
+          "\\approx"
+        ],
+        "content": "<li>$\\text{Payback}_{\\text{Lean}} \\approx 50.000\\$ &ndash; 60.000\\$$ (Tối ưu hóa dòng chảy chuỗi giá trị và nhịp takt time).</li>"
+      },
+      {
+        "lineNum": 442,
+        "matches": [
+          "\\text",
+          "\\ge"
+        ],
+        "content": "<li>$\\text{Payback}_{\\text{Six Sigma}} \\ge 350.000\\$$ (Giải quyết biến động ẩn sâu trong đặc tính vật liệu và dung sai máy móc).</li>"
+      }
+    ]
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\26.Analytical Tools Related to the Practice of Six Sigma.html",
+    "totalCount": 14,
+    "items": [
+      {
+        "lineNum": 409,
+        "matches": [
+          "\\vec",
+          "\\text"
+        ],
+        "content": "Theo tiến sĩ Mikel J. Harry, năng lực giải quyết bài toán của mỗi cấp đai được định hình bởi vectơ trọng số kiến thức $\\vec{W}_{\\text{Belt}} = [w_{\\text{Quality}}, w_{\\text{Diagnostic}}, w_{\\text{SPC}}, w_{\\text{DOE}}]$, với tổng trọng số luôn chuẩn hóa về 100%."
+      },
+      {
+        "lineNum": 418,
+        "matches": [
+          "\\vec",
+          "\\text",
+          "\\quad"
+        ],
+        "content": "\\vec{W}_{\\text{WB}} = [0.80, 0.20, 0.00, 0.00] \\quad | \\quad \\vec{W}_{\\text{BB}} = [0.00, 0.20, 0.20_{\\text{SPC}}, 0.60_{\\text{DOE}}]"
+      },
+      {
+        "lineNum": 423,
+        "matches": [
+          "\\vec",
+          "\\text"
+        ],
+        "content": "<li><strong>White Belt ($\\vec{W}_{\\text{WB}}$):</strong> 80% công cụ chất lượng định tính + 20% chẩn đoán hình ảnh. Cực kỳ hiệu quả cho việc phát hiện và dọn dẹp lỗi nhìn thấy bằng mắt.</li>"
+      },
+      {
+        "lineNum": 424,
+        "matches": [
+          "\\vec",
+          "\\text"
+        ],
+        "content": "<li><strong>Green Belt ($\\vec{W}_{\\text{GB}}$):</strong> $[0.30, 0.30, 0.30, 0.10]$ &mdash; Phân bổ đều giữa công cụ định tính, chẩn đoán, SPC và một phần nhỏ DOE.</li>"
+      },
+      {
+        "lineNum": 425,
+        "matches": [
+          "\\vec",
+          "\\text"
+        ],
+        "content": "<li><strong>Black Belt ($\\vec{W}_{\\text{BB}}$):</strong> ~80% tập trung vào vùng thống kê thực nghiệm giải pháp đột phá (DOE + SPC) và 20% chẩn đoán sâu trong pha Analyze.</li>"
+      },
+      {
+        "lineNum": 436,
+        "matches": [
+          "\\text",
+          "\\equiv"
+        ],
+        "content": "\\text{DMAIC} \\equiv \\text{Define}(VOC) \\rightarrow \\text{Measure}(Gage\\_R\\&R) \\rightarrow \\text{Analyze}(\\text{Diagnostics}) \\rightarrow \\text{Improve}(\\text{DOE}) \\rightarrow \\text{Control}(\\text{SPC})"
+      },
+      {
+        "lineNum": 497,
+        "matches": [
+          "\\sigma"
+        ],
+        "content": "<li>Bắt công nhân White Belt phải tính độ lệch chuẩn $\\sigma$ và vẽ biểu đồ kiểm soát SPC bằng tay.</li>"
+      }
+    ]
+  }
+]

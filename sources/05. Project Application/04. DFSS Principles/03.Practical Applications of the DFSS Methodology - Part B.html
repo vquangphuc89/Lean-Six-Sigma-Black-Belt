@@ -393,22 +393,22 @@
       
       <div class="exec-summary">
         <ul>
-          <li><strong>Tư duy Truyền thống (Forward Engineering):</strong> Kỹ sư mua máy về, chạy thử ở một dải nhiệt độ $X$ có độ biến thiên $sigma_X$, sau đó đo lường xem chất lượng đầu ra $Y$ đạt được bao nhiêu Sigma. Nếu $Y$ có phế phẩm thì cố gắng đi sửa chữa bằng các nỗ lực vận hành.</li>
+          <li><strong>Tư duy Truyền thống (Forward Engineering):</strong> Kỹ sư mua máy về, chạy thử ở một dải nhiệt độ X có độ biến thiên sigma_X, sau đó đo lường xem chất lượng đầu ra Y đạt được bao nhiêu Sigma. Nếu Y có phế phẩm thì cố gắng đi sửa chữa bằng các nỗ lực vận hành.</li>
           <li><strong>Tư duy Đảo ngược của DFSS (Reverse Engineering for Six Sigma):</strong> 
             <ol>
-              <li>Bắt đầu từ mục tiêu chất lượng mong muốn của khách hàng trên trục $Y$: Yêu cầu quy trình phải đạt đẳng cấp Six Sigma ($pm 6sigma_Y$ nằm lọt hoàn toàn trong khoảng $[LSL_Y, USL_Y]$).</li>
-              <li>Chiếu ngược các giới hạn $pm 6sigma_Y$ thông qua hàm chuyển giao và dải bao biên để tìm ra băng thông tối đa cho phép của biến số quy trình trên trục $X$: $6sigma_X le 	ext{Bandwidth allowable}$.</li>
-              <li>Chỉ thị rõ cho các kỹ sư chế tạo thiết bị: <em>"Bạn phải tìm ra một thiết bị kiểm soát nhiệt độ (như bộ điều khiển PID vòng kín, cảm biến phản hồi hồng ngoại) có khả năng giữ nhiệt độ không được dao động vượt quá $pm Delta X_{	ext{max}}$!"</em></li>
+              <li>Bắt đầu từ mục tiêu chất lượng mong muốn của khách hàng trên trục Y: Yêu cầu quy trình phải đạt đẳng cấp Six Sigma (pm 6sigma_Y nằm lọt hoàn toàn trong khoảng [LSL_Y, USL_Y]).</li>
+              <li>Chiếu ngược các giới hạn pm 6sigma_Y thông qua hàm chuyển giao và dải bao biên để tìm ra băng thông tối đa cho phép của biến số quy trình trên trục X: 6sigma_X le 	ext{Bandwidth allowable}.</li>
+              <li>Chỉ thị rõ cho các kỹ sư chế tạo thiết bị: <em>"Bạn phải tìm ra một thiết bị kiểm soát nhiệt độ (như bộ điều khiển PID vòng kín, cảm biến phản hồi hồng ngoại) có khả năng giữ nhiệt độ không được dao động vượt quá pm Delta X_{	ext{max}}!"</em></li>
             </ol>
           </li>
-          <li><strong>Bảo chứng Năng suất Dồn (Rolled Throughput Yield - RTY):</strong> Khi từng công đoạn Op 1, Op 2, Op 3 đều được thiết kế dung sai theo cơ chế chiếu ngược Six Sigma, năng suất từng công đoạn đạt mức $99.99966%$, bảo vệ toàn diện năng suất dồn toàn nhà máy không bị suy thoái theo chuỗi nhân tích lũy.</li>
+          <li><strong>Bảo chứng Năng suất Dồn (Rolled Throughput Yield - RTY):</strong> Khi từng công đoạn Op 1, Op 2, Op 3 đều được thiết kế dung sai theo cơ chế chiếu ngược Six Sigma, năng suất từng công đoạn đạt mức 99.99966%, bảo vệ toàn diện năng suất dồn toàn nhà máy không bị suy thoái theo chuỗi nhân tích lũy.</li>
         </ul>
       </div>
     
 
     <div class="pro-tip">
       <div class="pro-tip-title">⚡ Lời Khuyên Của Master Black Belt (Executive Takeaway)</div>
-      <div class="pro-tip-desc">Đừng cho phép nhóm thiết kế bàn giao bản vẽ cho xưởng sản xuất nếu chưa thực hiện phép chiếu ngược Six Sigma. Bạn phải chứng minh được rằng thiết bị hiện có tại công đoạn đủ năng lực kiểm soát biến số CTP trong dải $\pm 6\sigma_X$ tương ứng. Nếu thiết bị không đủ khả năng, phải nâng cấp công nghệ kiểm soát trước khi bấm nút sản xuất hàng loạt.</div>
+      <div class="pro-tip-desc">Đừng cho phép nhóm thiết kế bàn giao bản vẽ cho xưởng sản xuất nếu chưa thực hiện phép chiếu ngược Six Sigma. Bạn phải chứng minh được rằng thiết bị hiện có tại công đoạn đủ năng lực kiểm soát biến số CTP trong dải &plusmn; 6&sigma;_X tương ứng. Nếu thiết bị không đủ khả năng, phải nâng cấp công nghệ kiểm soát trước khi bấm nút sản xuất hàng loạt.</div>
     </div>
   </section>
 
@@ -419,7 +419,7 @@
     <div class="section-subheading">Phân rã hàm số truyền biến thiên (Transmission of Variation) và tác động dây chuyền lên RTY</div>
 
     
-      <p>Mối quan hệ toán học giữa biến thiên đầu vào và biến thiên đầu ra qua hàm chuyển giao $Y = f(X)$ được mô tả bằng chuỗi Taylor bậc nhất:</p>
+      <p>Mối quan hệ toán học giữa biến thiên đầu vào và biến thiên đầu ra qua hàm chuyển giao Y = f(X) được mô tả bằng chuỗi Taylor bậc nhất:</p>
 
       <div class="math-card">
         <div class="title">Định Luật Truyền Biến Thiên Tuyến Tính (Transmission of Variation)</div>
@@ -465,15 +465,15 @@
       <div class="case-box">
         <span class="case-tag">Nghiên Cứu Tình Huống 1 • Đóng Gói Vi Mạch Bán Dẫn</span>
         <h3 class="case-title">Hàn Dây Vàng Nối Chip (Gold Wire Bonding Interconnect)</h3>
-        <p><strong>Bối cảnh:</strong> Một bộ vi xử lý máy chủ có 2,400 mối hàn dây vàng (wire bonds) kết nối từ chip silicon ra khung chân đỡ (leadframe). Khách hàng yêu cầu tỷ lệ đứt mối hàn khi đóng gói phải dưới 1 ppm (tương đương RTY &ge; 99.76% cho toàn bộ chip sau 2,400 mối hàn). Nếu chỉ một mối hàn bị đứt, toàn bộ vi xử lý giá $1,500 sẽ thành rác thải.</p>
-        <p><strong>Giải pháp DFSS:</strong> Nhóm Black Belt áp dụng phép chiếu ngược Six Sigma: Để cả con chip đạt RTY &ge; 99.76%, từng mối hàn đơn lẻ bắt buộc phải đạt độ tin cậy $6sigma$ ($Y_{	ext{bond}} ge 99.99966%$, lực bứt dây kéo tối thiểu 8.0 gf). Từ $LSL_Y = 8.0	ext{ gf}$, nhóm chiếu ngược qua hàm chuyển giao để xác định yêu cầu đối với 3 thông số máy hàn siêu âm: Lực ép đầu kim $F = 35 pm 1.5	ext{ gf}$, Công suất siêu âm $P = 65 pm 2.0	ext{ mW}$, và Thời gian hàn $t = 15 pm 0.8	ext{ ms}$. Công ty lắp đặt hệ thống kiểm soát biến áp số tốc độ cao để khóa chặt 3 tham số này trong dải $pm 6sigma$. Kết quả: Năng suất dồn nhà máy đạt 99.85%, tiết kiệm $12.4 triệu USD mỗi năm.</p>
+        <p><strong>Bối cảnh:</strong> Một bộ vi xử lý máy chủ có 2,400 mối hàn dây vàng (wire bonds) kết nối từ chip silicon ra khung chân đỡ (leadframe). Khách hàng yêu cầu tỷ lệ đứt mối hàn khi đóng gói phải dưới 1 ppm (tương đương RTY &ge; 99.76% cho toàn bộ chip sau 2,400 mối hàn). Nếu chỉ một mối hàn bị đứt, toàn bộ vi xử lý giá 1,500 sẽ thành rác thải.</p>
+        <p><strong>Giải pháp DFSS:</strong> Nhóm Black Belt áp dụng phép chiếu ngược Six Sigma: Để cả con chip đạt RTY &ge; 99.76%, từng mối hàn đơn lẻ bắt buộc phải đạt độ tin cậy 6sigma (Y_{	ext{bond}} ge 99.99966%, lực bứt dây kéo tối thiểu 8.0 gf). Từ LSL_Y = 8.0	ext{ gf}, nhóm chiếu ngược qua hàm chuyển giao để xác định yêu cầu đối với 3 thông số máy hàn siêu âm: Lực ép đầu kim F = 35 pm 1.5	ext{ gf}, Công suất siêu âm P = 65 pm 2.0	ext{ mW}, và Thời gian hàn t = 15 pm 0.8	ext{ ms}. Công ty lắp đặt hệ thống kiểm soát biến áp số tốc độ cao để khóa chặt 3 tham số này trong dải pm 6sigma. Kết quả: Năng suất dồn nhà máy đạt 99.85%, tiết kiệm 12.4 triệu USD mỗi năm.</p>
       </div>
 
       <div class="case-box">
         <span class="case-tag">Nghiên Cứu Tình Huống 2 • Năng Lượng Mới &amp; Xe Điện</span>
         <h3 class="case-title">Hàn Thanh Dẫn Dòng Cụm Pin Lithium (EV Battery Pack Busbar Welding)</h3>
-        <p><strong>Bối cảnh:</strong> Một pack pin xe điện gồm 440 cell pin hình trụ được nối song song và nối tiếp thông qua thanh busbar nhôm bằng công nghệ hàn laser sợi quang (Fiber Laser). Điện trở tiếp xúc tại mỗi điểm hàn là đặc tính CTQ sống còn ($Y_{	ext{res}} le 12.0 muOmega$); nếu một mối hàn có điện trở cao sẽ gây phát nhiệt cục bộ (thermal runaway) dẫn tới cháy xe.</p>
-        <p><strong>Giải pháp DFSS:</strong> Thông qua phép chiếu ngược Six Sigma, nhóm DFSS xác định để toàn bộ 440 mối hàn đạt tiêu chuẩn với xác suất rủi ro $0	ext{ ppm}$, độ sâu ngấu mối hàn phải duy trì ổn định ở mức $0.85	ext{ mm} pm 0.04	ext{ mm}$. Từ đó chiếu ngược ra yêu cầu đối với CTP: Công suất chùm tia laser phải được giữ ổn định ở $1,850	ext{ W} pm 15	ext{ W}$ (độ biến động $< 0.8%$) và tốc độ quét gương quang học $v = 120	ext{ mm/s} pm 2	ext{ mm/s}$. Nhà máy trang bị hệ thống giám sát quang phổ plasma thời gian thực, khóa chặt mọi biến thiên nhiệt.</p>
+        <p><strong>Bối cảnh:</strong> Một pack pin xe điện gồm 440 cell pin hình trụ được nối song song và nối tiếp thông qua thanh busbar nhôm bằng công nghệ hàn laser sợi quang (Fiber Laser). Điện trở tiếp xúc tại mỗi điểm hàn là đặc tính CTQ sống còn (Y_{	ext{res}} le 12.0 muOmega); nếu một mối hàn có điện trở cao sẽ gây phát nhiệt cục bộ (thermal runaway) dẫn tới cháy xe.</p>
+        <p><strong>Giải pháp DFSS:</strong> Thông qua phép chiếu ngược Six Sigma, nhóm DFSS xác định để toàn bộ 440 mối hàn đạt tiêu chuẩn với xác suất rủi ro 0	ext{ ppm}, độ sâu ngấu mối hàn phải duy trì ổn định ở mức 0.85	ext{ mm} pm 0.04	ext{ mm}. Từ đó chiếu ngược ra yêu cầu đối với CTP: Công suất chùm tia laser phải được giữ ổn định ở 1,850	ext{ W} pm 15	ext{ W} (độ biến động < 0.8%) và tốc độ quét gương quang học v = 120	ext{ mm/s} pm 2	ext{ mm/s}. Nhà máy trang bị hệ thống giám sát quang phổ plasma thời gian thực, khóa chặt mọi biến thiên nhiệt.</p>
       </div>
     
   </section>
@@ -545,7 +545,7 @@
           
           <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-03-4', 'Yield does not add linearly.', 'Năng suất không cộng tuyến tính đơn giản.')">A. RTY = &sum; Y<sub>i</sub> (Phép cộng tổng năng suất)</button>
           
-          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-03-4', 'Rolled Throughput Yield is the compounding product of individual operation yields: RTY = &prod; Y_i.', 'Năng suất dồn RTY là tích số nhân dồn của từng xác suất công đoạn đơn lẻ: RTY = &prod; Y_i.')">B. RTY = &prod; Y<sub>i</sub> = Y<sub>1</sub> &times; Y<sub>2</sub> &times; Y<sub>3</sub> &times; ... &times; Y<sub>k</sub> (Tích số xác suất nhân dồn)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-03-4', 'Rolled Throughput Yield is the compounding product of individual operation yields: RTY = &prod; Y<sub>i</sub>.', 'Năng suất dồn RTY là tích số nhân dồn của từng xác suất công đoạn đơn lẻ: RTY = &prod; Y<sub>i</sub>.')">B. RTY = &prod; Y<sub>i</sub> = Y<sub>1</sub> &times; Y<sub>2</sub> &times; Y<sub>3</sub> &times; ... &times; Y<sub>k</sub> (Tích số xác suất nhân dồn)</button>
           
           <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-03-4', 'Range formula is not RTY.', 'Khoảng biến thiên Range không phải là công thức RTY.')">C. RTY = Y<sub>max</sub> - Y<sub>min</sub></button>
           
@@ -560,7 +560,7 @@
         <div class="quiz-q">Tại sao việc từng công đoạn đơn lẻ đạt năng suất 95% vẫn dẫn tới kết quả thảm họa cho nhà máy có 20 công đoạn liên tiếp?</div>
         <div class="quiz-opts">
           
-          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-03-5', 'Compounding yield loss: 0.95^20 &asymp; 0.3585 (35.85% RTY). Nearly 64% of product units suffer defects or rework along the chain.', 'Hiệu ứng nhân dồn xác suất: 0.95 lũy thừa 20 chỉ đạt xấp xỉ 35.85%. Gần 64% sản phẩm bị dính lỗi hoặc phải làm lại trong toàn chuỗi.')">A. Vì 0.95 mũ 20 chỉ cho ra Năng suất dồn RTY xấp xỉ 35.8% (hơn 64% sản phẩm bị lỗi trong chuỗi)</button>
+          <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-04-03-5', 'Compounding yield loss: 0.95<sup>20</sup> &asymp; 0.3585 (35.85% RTY). Nearly 64% of product units suffer defects or rework along the chain.', 'Hiệu ứng nhân dồn xác suất: 0.95 lũy thừa 20 chỉ đạt xấp xỉ 35.85%. Gần 64% sản phẩm bị dính lỗi hoặc phải làm lại trong toàn chuỗi.')">A. Vì 0.95 mũ 20 chỉ cho ra Năng suất dồn RTY xấp xỉ 35.8% (hơn 64% sản phẩm bị lỗi trong chuỗi)</button>
           
           <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-04-03-5', 'Floating point arithmetic is exact enough.', 'Lỗi phần mềm không liên quan đến định luật xác suất tích lũy.')">B. Vì máy tính bị lỗi tràn bộ nhớ khi tính toán số thập phân</button>
           
@@ -660,7 +660,7 @@
             <div class="fc-hint">Chạm để lật đáp án &rarr;</div>
           </div>
           <div class="fc-back">
-            <div class="fc-a">Vì Năng suất dồn RTY là tích số nhân: 0.95^20 ≈ 35.8%, nghĩa là có tới 64.2% sản phẩm bị lỗi hoặc phải làm lại trong toàn bộ chuỗi.</div>
+            <div class="fc-a">Vì Năng suất dồn RTY là tích số nhân: 0.95<sup>20</sup> ≈ 35.8%, nghĩa là có tới 64.2% sản phẩm bị lỗi hoặc phải làm lại trong toàn bộ chuỗi.</div>
           </div>
         </div>
       </div>

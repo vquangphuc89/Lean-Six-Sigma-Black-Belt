@@ -453,7 +453,7 @@
     <span class="hero-badge">04. Process Management • 04. Establishing Baselines</span>
     <h1 class="hero-title">Thực Hành Tính Toán Đường Cơ Sở Six Sigma — Phần A (Sản Xuất)</h1>
     <div class="hero-title-en">Calculation of a Six Sigma Performance Baseline - Part A</div>
-    <p class="hero-desc">Thực hành tính toán đường cơ sở trong môi trường sản xuất công nghiệp: Bài toán gia công cơ khí chính xác đa công đoạn, phân giải ma trận DPU, DPO và Z_ST.</p>
+    <p class="hero-desc">Thực hành tính toán đường cơ sở trong môi trường sản xuất công nghiệp: Bài toán gia công cơ khí chính xác đa công đoạn, phân giải ma trận DPU, DPO và Z<sub>ST</sub>.</p>
   </div>
 </header>
 
@@ -464,10 +464,10 @@
     <span class="section-num">TRỤ CỘT 1 • TÓM TẮT ĐIỀU HÀNH</span>
     <h2 class="section-heading">Tóm Tắt Điều Hành (Executive Summary)</h2>
     <div class="section-subheading">Nắm trọn tinh hoa bài học trong 60 giây</div>
-    <div class="exec-summary"><ul><li>Thực hành tính toán thực chiến trong sản xuất: Đi từng bước từ dữ liệu kiểm tra phân xưởng đến bảng tổng phổ năng lực Six Sigma.</li><li>Case Study Toàn diện: Dây chuyền sản xuất Trục khuỷu động cơ ô tô (Crankshaft) gồm 4 công đoạn: Phôi đúc &rarr; Tiện thô &rarr; Mài bóng &rarr; Nhiệt luyện.</li><li>Phân rã ma trận cơ hội sai lỗi theo từng công đoạn: Xác định tổng số $TOP = \sum (U_i 	imes O_i)$ và tính toán Năng suất dồn ($RTY$).</li><li>Xác lập đường cơ sở tổng thể của dây chuyền và khoanh vùng chính xác công đoạn đang là điểm nghẽn năng lực (Bottleneck).</li></ul></div>
+    <div class="exec-summary"><ul><li>Thực hành tính toán thực chiến trong sản xuất: Đi từng bước từ dữ liệu kiểm tra phân xưởng đến bảng tổng phổ năng lực Six Sigma.</li><li>Case Study Toàn diện: Dây chuyền sản xuất Trục khuỷu động cơ ô tô (Crankshaft) gồm 4 công đoạn: Phôi đúc &rarr; Tiện thô &rarr; Mài bóng &rarr; Nhiệt luyện.</li><li>Phân rã ma trận cơ hội sai lỗi theo từng công đoạn: Xác định tổng số TOP = &sum; (U_i 	imes O_i) và tính toán Năng suất dồn (RTY).</li><li>Xác lập đường cơ sở tổng thể của dây chuyền và khoanh vùng chính xác công đoạn đang là điểm nghẽn năng lực (Bottleneck).</li></ul></div>
     <div class="pro-tip">
       <div class="pro-tip-title">💡 Lời khuyên Master Black Belt (MBB Insight)</div>
-      <p class="pro-tip-desc">Khi tính Baseline cho dây chuyền sản xuất nhiều công đoạn, đừng chỉ tính con số tổng thể. Hãy tính Z_score cho từng công đoạn; công đoạn có Z thấp nhất chính là nơi dự án Six Sigma phải tấn công đầu tiên!</p>
+      <p class="pro-tip-desc">Khi tính Baseline cho dây chuyền sản xuất nhiều công đoạn, đừng chỉ tính con số tổng thể. Hãy tính Z<sub>score</sub> cho từng công đoạn; công đoạn có Z thấp nhất chính là nơi dự án Six Sigma phải tấn công đầu tiên!</p>
     </div>
   </section>
 
@@ -509,23 +509,23 @@
         <span class="case-tag mfg">Sản xuất • Gia công trục khuỷu ô tô</span>
         <h3 class="case-title">Tính toán Baseline 4 công đoạn trục khuỷu</h3>
         <p class="case-body">Theo dõi 1,000 trục khuỷu qua 4 công đoạn: (1) Phôi đúc: O=5, D=80 &rarr; DPU=0.080, DPO=0.0160; (2) Tiện thô: O=8, D=140 &rarr; DPU=0.140, DPO=0.0175; (3) Mài bóng: O=12, D=30 &rarr; DPU=0.030, DPO=0.0025; (4) Nhiệt luyện: O=4, D=10 &rarr; DPU=0.010, DPO=0.0025. Tổng DPU = 0.260 defects/trục.</p>
-        <div class="case-metric"><strong>Phân tích MBB:</strong> RTY = e^(-0.260) = 77.11% &rarr; Z_RTY = 2.24 Sigma. Công đoạn Tiện thô chiếm 53.8% tổng số lỗi &rarr; Khoanh vùng làm điểm nghẽn chính.</div>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> RTY = e^(-0.260) = 77.11% &rarr; Z<sub>RTY</sub> = 2.24 Sigma. Công đoạn Tiện thô chiếm 53.8% tổng số lỗi &rarr; Khoanh vùng làm điểm nghẽn chính.</div>
       </div>
       <div class="case-card svc">
         <span class="case-tag svc">Dịch vụ • Dịch vụ Bảo dưỡng và Hiệu chuẩn Máy CNC</span>
         <h3 class="case-title">Baseline quy trình hiệu chuẩn máy tiện chính xác</h3>
         <p class="case-body">Đánh giá 500 lượt bảo dưỡng máy CNC qua 3 bước: Kiểm tra độ đảo trục chính (O=4, D=12), Cân chỉnh thước quang (O=4, D=8), Thử tải gia công (O=4, D=4). Tổng DPU = 0.048.</p>
-        <div class="case-metric"><strong>Phân tích MBB:</strong> RTY = e^(-0.048) = 95.31% &rarr; Z_ST = 4.68 Sigma, bảo đảm máy CNC luôn đạt năng lực Cpk &ge; 1.67.</div>
+        <div class="case-metric"><strong>Phân tích MBB:</strong> RTY = e^(-0.048) = 95.31% &rarr; Z<sub>ST</sub> = 4.68 Sigma, bảo đảm máy CNC luôn đạt năng lực Cpk &ge; 1.67.</div>
       </div></div>
     <div class="vs-grid">
       <div class="vs-col bad">
         <span class="vs-badge bad">Bad / Trap • Tư duy sai lầm</span>
-        <ul><li>Báo cáo hiệu suất chỉ bằng con số Năng suất cổ điển (Classic Yield) che giấu phế phẩm làm lại.</li><li>Bỏ qua sự khác biệt giữa Năng lực ngắn hạn (Z_ST) và Năng lực dài hạn (Z_LT), làm mất cơ sở dịch chuyển 1.5 Sigma.</li><li>Tính toán Baseline trên dữ liệu quy trình đang mất ổn định thống kê (Out of Control) có nguyên nhân đặc biệt.</li><li>Xem việc thiết lập đường cơ sở chỉ là thủ tục giấy tờ mà không gắn kết với mô hình chuyển đổi xác suất Poisson.</li></ul>
+        <ul><li>Báo cáo hiệu suất chỉ bằng con số Năng suất cổ điển (Classic Yield) che giấu phế phẩm làm lại.</li><li>Bỏ qua sự khác biệt giữa Năng lực ngắn hạn (Z<sub>ST</sub>) và Năng lực dài hạn (Z<sub>LT</sub>), làm mất cơ sở dịch chuyển 1.5 Sigma.</li><li>Tính toán Baseline trên dữ liệu quy trình đang mất ổn định thống kê (Out of Control) có nguyên nhân đặc biệt.</li><li>Xem việc thiết lập đường cơ sở chỉ là thủ tục giấy tờ mà không gắn kết với mô hình chuyển đổi xác suất Poisson.</li></ul>
       </div>
       <div class="vs-divider">VS</div>
       <div class="vs-col good">
         <span class="vs-badge good">Good / MBB • Chuẩn Six Sigma</span>
-        <ul><li>Thiết lập Đường cơ sở Năng lực (Capability Baseline) khách quan dựa trên phân phối chuẩn tắc và dữ liệu ổn định.</li><li>Làm chủ họ Năng suất toàn diện: FTY (First Time Yield), RTY (Rolled Throughput Yield) và Y_norm (Normalized Yield).</li><li>Ứng dụng phân phối Poisson Y = e^(-DPU) để kết nối số lượng khuyết tật trên đơn vị với xác suất không có lỗi.</li><li>Chuyển đổi minh bạch giữa Xác suất lỗi, DPMO, Z_ST, Z_LT và các chỉ số Cpk trong báo cáo quản trị cấp cao.</li></ul>
+        <ul><li>Thiết lập Đường cơ sở Năng lực (Capability Baseline) khách quan dựa trên phân phối chuẩn tắc và dữ liệu ổn định.</li><li>Làm chủ họ Năng suất toàn diện: FTY (First Time Yield), RTY (Rolled Throughput Yield) và Y<sub>norm</sub> (Normalized Yield).</li><li>Ứng dụng phân phối Poisson Y = e^(-DPU) để kết nối số lượng khuyết tật trên đơn vị với xác suất không có lỗi.</li><li>Chuyển đổi minh bạch giữa Xác suất lỗi, DPMO, Z<sub>ST</sub>, Z<sub>LT</sub> và các chỉ số Cpk trong báo cáo quản trị cấp cao.</li></ul>
       </div>
     </div>
   </section>
@@ -550,13 +550,13 @@
     </div>
     <div class="quiz-card">
       <span class="quiz-tag">Câu 3 • Tầng 2 • Analytical & Math</span>
-      <div class="quiz-q">Dây chuyền gồm 3 công đoạn có DPU lần lượt là 0.05, 0.10 và 0.05. Tổng DPU_Total và Năng suất dồn RTY (e^-DPU) là bao nhiêu?</div>
+      <div class="quiz-q">Dây chuyền gồm 3 công đoạn có DPU lần lượt là 0.05, 0.10 và 0.05. Tổng DPU_Total và Năng suất dồn RTY (e<sup>-</sup>DPU) là bao nhiêu?</div>
       <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q14-3', &quot;DPU_Total = 0.05 + 0.10 + 0.05 = 0.20 &amp;rarr; RTY = e^(-0.20) = 81.87%.&quot;, &quot;Tổng DPU là 0.20, dẫn đến Năng suất dồn RTY thực tế chỉ đạt 81.87% (gần 19% sản phẩm phải làm lại/loại bỏ).&quot;)">A. DPU_Total = 0.20 và RTY = e^(-0.20) &amp;approx; 81.87%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q14-3', &quot;DPU_Total = 0.05 + 0.10 + 0.05 = 0.20 &amp;rarr; RTY = e^(-0.20) = 81.87%.&quot;, &quot;Tổng DPU là 0.20, dẫn đến Năng suất dồn RTY thực tế chỉ đạt 81.87% (gần 19% sản phẩm phải làm lại/loại bỏ).&quot;)">B. DPU_Total = 0.10 và RTY = 90.0%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q14-3', &quot;DPU_Total = 0.05 + 0.10 + 0.05 = 0.20 &amp;rarr; RTY = e^(-0.20) = 81.87%.&quot;, &quot;Tổng DPU là 0.20, dẫn đến Năng suất dồn RTY thực tế chỉ đạt 81.87% (gần 19% sản phẩm phải làm lại/loại bỏ).&quot;)">C. DPU_Total = 0.20 và RTY = 98.0%</button></div>
       <div id="fb-q14-3" class="quiz-fb"></div>
     </div>
     <div class="quiz-card">
       <span class="quiz-tag">Câu 4 • Tầng 2 • Analytical & Math</span>
-      <div class="quiz-q">Tổng DPU của dây chuyền là 0.50 (RTY = e^-0.50 = 60.65%). Nếu dự án Six Sigma cắt giảm DPU xuống còn 0.05, RTY mới đạt bao nhiêu?</div>
+      <div class="quiz-q">Tổng DPU của dây chuyền là 0.50 (RTY = e<sup>-0</sup>.50 = 60.65%). Nếu dự án Six Sigma cắt giảm DPU xuống còn 0.05, RTY mới đạt bao nhiêu?</div>
       <div class="quiz-opts"><button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q14-4', &quot;RTY_new = e^(-0.05) = 95.12%, recovering over 34% in lost production capacity.&quot;, &quot;Năng suất dồn tăng vọt từ 60.65% lên 95.12%, giải phóng 34% công suất bị chôn vùi trong nhà máy ẩn.&quot;)">A. RTY_new = e^(-0.05) &amp;approx; 95.12% (Tăng thêm 34.47% năng suất ròng)</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q14-4', &quot;RTY_new = e^(-0.05) = 95.12%, recovering over 34% in lost production capacity.&quot;, &quot;Năng suất dồn tăng vọt từ 60.65% lên 95.12%, giải phóng 34% công suất bị chôn vùi trong nhà máy ẩn.&quot;)">B. RTY_new = 80.0%</button><button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q14-4', &quot;RTY_new = e^(-0.05) = 95.12%, recovering over 34% in lost production capacity.&quot;, &quot;Năng suất dồn tăng vọt từ 60.65% lên 95.12%, giải phóng 34% công suất bị chôn vùi trong nhà máy ẩn.&quot;)">C. RTY_new = 99.9%</button></div>
       <div id="fb-q14-4" class="quiz-fb"></div>
     </div>

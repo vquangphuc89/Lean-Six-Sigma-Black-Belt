@@ -396,7 +396,7 @@
           <li><strong>Mô hình phần cứng:</strong> Bo mạch in (PCB) với các linh kiện xuyên lỗ (Through-hole components) như điện trở. Mối hàn thiếc có nhiệm vụ kép: Khóa chặt linh kiện cơ học không cho rung lắc và dẫn dòng điện ổn định qua các đường mạch (copper traces).</li>
           <li><strong>Đặc tính CTQ Đầu Ra (Y - Pull Strength):</strong> Lực kéo tới hạn tính bằng Newton (N) hoặc Pound-force (lbf) cần thiết để làm bung chân linh kiện khỏi mối hàn. Đây là thước đo sống còn đảm bảo thiết bị hoạt động bền bỉ, không bị đứt mạch trong môi trường rung chấn.</li>
           <li><strong>Biến số Quy Trình CTP Đầu Vào (X - Solder Temperature):</strong> Nhiệt độ nóng chảy của hợp kim hàn tại thời điểm tạo mối nối.</li>
-          <li><strong>Biểu đồ Phân tán (Scatter Diagram):</strong> Mỗi bo mạch được sản xuất ở các nhiệt độ khác nhau và đem đi kiểm tra lực kéo phá hủy. Dữ liệu thực nghiệm hình thành một đám mây điểm biểu thị mối quan hệ tương quan giữa $X$ và $Y$.</li>
+          <li><strong>Biểu đồ Phân tán (Scatter Diagram):</strong> Mỗi bo mạch được sản xuất ở các nhiệt độ khác nhau và đem đi kiểm tra lực kéo phá hủy. Dữ liệu thực nghiệm hình thành một đám mây điểm biểu thị mối quan hệ tương quan giữa <i>X</i> và <i>Y</i>.</li>
           <li><strong>Dải Băng thông Tương quan (Correlation Band / Envelope):</strong> Dữ liệu thực tế không bao giờ là một đường thẳng hoàn hảo mà là một dải giới hạn trên và dưới bao bọc lấy các điểm dữ liệu.</li>
         </ul>
       </div>
@@ -440,9 +440,9 @@
       <h3 style="color:var(--wood-dark); margin-top:28px;">Quy Tắc Chiếu Điểm Điển Hình Của Dr. Harry</h3>
       <div class="exec-summary">
         <ul>
-          <li><strong>Bước 1 - Xác định Giới hạn Khách hàng trên trục Y:</strong> Khách hàng quy định Lực kéo tối thiểu chấp nhận được ($LSL_Y$, Minimum acceptable pull strength) và Lực kéo tối đa cho phép ($USL_Y$ để tránh giòn vật liệu).</li>
-          <li><strong>Bước 2 - Chiếu Ngang qua Dải Tương quan:</strong> Từ $LSL_Y$, kẻ đường nằm ngang cắt biên dưới của dải tương quan. Từ $USL_Y$, kẻ đường nằm ngang cắt biên trên của dải tương quan.</li>
-          <li><strong>Bước 3 - Chiếu Đứng xuống Trục X:</strong> Từ các điểm giao cắt, gióng vuông góc xuống trục hoành để tìm ra $LSL_X$ (Nhiệt độ tối thiểu) và $USL_X$ (Nhiệt độ tối đa).</li>
+          <li><strong>Bước 1 - Xác định Giới hạn Khách hàng trên trục Y:</strong> Khách hàng quy định Lực kéo tối thiểu chấp nhận được (LSL<sub>Y</sub>, Minimum acceptable pull strength) và Lực kéo tối đa cho phép (USL<sub>Y</sub> để tránh giòn vật liệu).</li>
+          <li><strong>Bước 2 - Chiếu Ngang qua Dải Tương quan:</strong> Từ LSL<sub>Y</sub>, kẻ đường nằm ngang cắt biên dưới của dải tương quan. Từ USL<sub>Y</sub>, kẻ đường nằm ngang cắt biên trên của dải tương quan.</li>
+          <li><strong>Bước 3 - Chiếu Đứng xuống Trục X:</strong> Từ các điểm giao cắt, gióng vuông góc xuống trục hoành để tìm ra LSL<sub>X</sub> (Nhiệt độ tối thiểu) và USL<sub>X</sub> (Nhiệt độ tối đa).</li>
           <li><strong>Hiện tượng Uốn cong ngược (Roll-over Effect):</strong> Dr. Harry lưu ý rằng khi nhiệt độ vượt quá một ngưỡng giới hạn vật lý, chất lượng mối hàn sẽ bắt đầu suy giảm (cháy lớp flux, oxy hóa thiếc, rỗ khí làm lực kéo giảm sút). Do đó, cửa sổ thiết kế DFSS chỉ được phép vận hành trong vùng tương quan đơn điệu tăng ổn định.</li>
         </ul>
       </div>
@@ -460,14 +460,14 @@
         <span class="case-tag">Nghiên Cứu Tình Huống 1 • Thiết Bị Hàng Không Vũ Trụ</span>
         <h3 class="case-title">Mối Hàn Khớp Nối Cảm Biến Áp Suất Động Cơ Phản Lực</h3>
         <p><strong>Bối cảnh:</strong> Tập đoàn hàng không yêu cầu lực kéo mối hàn chân tụ điện chống sét trên bo mạch điều khiển FADEC tối thiểu phải đạt 45.0 N để chịu được rung chấn khi máy bay cất cánh. Nhà sản xuất bo mạch trước đây cài đặt nhiệt độ lò hàn sóng theo kinh nghiệm của thợ máy ở mức 235&deg;C &plusmn; 15&deg;C, dẫn tới tỷ lệ 2.8% bo mạch bị tuột mối hàn khi thử nghiệm rung động ngẫu nhiên.</p>
-        <p><strong>Giải pháp DFSS:</strong> Nhóm Black Belt thiết lập thực nghiệm thu thập 150 cặp mẫu (Nhiệt độ vs Lực kéo). Dải bao biên cho thấy ở 220&deg;C thiếc chưa chảy hoàn toàn tạo mối hàn nguội (cold solder joint, lực kéo chỉ đạt 32 N); nhưng ở 260&deg;C thiếc bị cháy lớp phủ kim loại quý. Bằng cách chiếu ngang từ mức $LSL_Y = 45.0	ext{ N}$ vào biên dưới của dải tương quan và chiếu xuống trục $X$, nhóm xác định cửa sổ nhiệt độ khả thi bắt buộc phải là từ 242&deg;C đến 251&deg;C ($246.5^circ	ext{C} pm 4.5^circ	ext{C}$). Sau khi nâng cấp hệ thống kiểm soát nhiệt PID vòng kín, tỷ lệ lỗi giảm về 0 ppm.</p>
+        <p><strong>Giải pháp DFSS:</strong> Nhóm Black Belt thiết lập thực nghiệm thu thập 150 cặp mẫu (Nhiệt độ vs Lực kéo). Dải bao biên cho thấy ở 220&deg;C thiếc chưa chảy hoàn toàn tạo mối hàn nguội (cold solder joint, lực kéo chỉ đạt 32 N); nhưng ở 260&deg;C thiếc bị cháy lớp phủ kim loại quý. Bằng cách chiếu ngang từ mức LSL<sub>Y</sub> = 45.0 N vào biên dưới của dải tương quan và chiếu xuống trục <i>X</i>, nhóm xác định cửa sổ nhiệt độ khả thi bắt buộc phải là từ 242&deg;C đến 251&deg;C (246.5&deg;C &plusmn; 4.5&deg;C). Sau khi nâng cấp hệ thống kiểm soát nhiệt PID vòng kín, tỷ lệ lỗi giảm về 0 ppm.</p>
       </div>
 
       <div class="case-box">
         <span class="case-tag">Nghiên Cứu Tình Huống 2 • Thiết Bị Y Tế Cấy Ghép</span>
         <h3 class="case-title">Hàn Siêu Âm Đầu Ống Thông Tim Can Thiệp (Cardiac Catheter)</h3>
         <p><strong>Bối cảnh:</strong> Ống thông tim can thiệp có khớp hàn siêu âm giữa thân ống polymer và đầu nong bóng. Khách hàng là các bác sĩ phẫu thuật tim yêu cầu lực kéo đứt mối hàn phải nằm trong khoảng từ 18.0 N đến 28.0 N (dưới 18 N có nguy cơ đứt đầu bóng trong mạch máu bệnh nhân; trên 28 N chứng tỏ mối hàn bị cháy cứng, làm mất độ dẻo của thành ống gây thủng mạch vành).</p>
-        <p><strong>Giải pháp DFSS:</strong> Nhóm R&amp;D thực hiện dự án DFSS ánh xạ giữa Năng lượng hàn siêu âm (Joules) và Lực kéo mối hàn (N). Thông qua biểu đồ phân tán và phép chiếu Top-to-Top / Bottom-to-Bottom, dải năng lượng an toàn tuyệt đối được xác lập là $125	ext{ J} pm 8	ext{ J}$. Quy trình được khóa tự động bằng cảm biến ngắt dòng; toàn bộ 500,000 sản phẩm xuất xưởng không ghi nhận bất kỳ sự cố lâm sàng nào.</p>
+        <p><strong>Giải pháp DFSS:</strong> Nhóm R&amp;D thực hiện dự án DFSS ánh xạ giữa Năng lượng hàn siêu âm (Joules) và Lực kéo mối hàn (N). Thông qua biểu đồ phân tán và phép chiếu Top-to-Top / Bottom-to-Bottom, dải năng lượng an toàn tuyệt đối được xác lập là 125 J &plusmn; 8 J. Quy trình được khóa tự động bằng cảm biến ngắt dòng; toàn bộ 500,000 sản phẩm xuất xưởng không ghi nhận bất kỳ sự cố lâm sàng nào.</p>
       </div>
     
   </section>

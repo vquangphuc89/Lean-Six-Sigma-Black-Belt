@@ -1,0 +1,2102 @@
+[
+  {
+    "file": "sources\\01. Foundation Vision\\01. Introduction\\01.Welcome to MindPro — SSMI’s Lean Six Sigma Training_Done.html",
+    "line": 417,
+    "match": "$250,000 = $",
+    "inner": "250,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-in1-6', 'Correct! 4 Black Belts x 2 proj"
+  },
+  {
+    "file": "sources\\01. Foundation Vision\\01. Introduction\\03.Innovation versus Invention.html",
+    "line": 393,
+    "match": "$1 -> Prototype $",
+    "inner": "1 -> Prototype",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-in3-6', 'Correct! The Rule of 10 states "
+  },
+  {
+    "file": "sources\\01. Foundation Vision\\01. Introduction\\03.Innovation versus Invention.html",
+    "line": 393,
+    "match": "$100 -> Customer Field Failure $",
+    "inner": "100 -> Customer Field Failure",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-in3-6', 'Correct! The Rule of 10 states "
+  },
+  {
+    "file": "sources\\01. Foundation Vision\\01. Introduction\\03.Innovation versus Invention.html",
+    "line": 393,
+    "match": "$ -> Làm mẫu 10$",
+    "inner": "-> Làm mẫu 10",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-in3-6', 'Correct! The Rule of 10 states "
+  },
+  {
+    "file": "sources\\01. Foundation Vision\\01. Introduction\\03.Innovation versus Invention.html",
+    "line": 393,
+    "match": "$ -> Ra tay khách hàng 1.000$",
+    "inner": "-> Ra tay khách hàng 1.000",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-in3-6', 'Correct! The Rule of 10 states "
+  },
+  {
+    "file": "sources\\01. Foundation Vision\\01. Introduction\\03.Innovation versus Invention.html",
+    "line": 393,
+    "match": "$ &rarr; Sản xuất 100$",
+    "inner": "&rarr; Sản xuất 100",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-in3-6', 'Correct! The Rule of 10 states "
+  },
+  {
+    "file": "sources\\01. Foundation Vision\\01. Introduction\\03.Innovation versus Invention.html",
+    "line": 431,
+    "match": "$1 &rarr; Sản xuất $",
+    "inner": "1 &rarr; Sản xuất",
+    "context": "<div class=\"back\">Chi phí sửa lỗi tăng gấp 10 lần ở mỗi giai đoạn sau: Thiết kế $1 &rarr; Sản xuất $"
+  },
+  {
+    "file": "sources\\01. Foundation Vision\\02. Fathers\\05.The Fathers of Six Sigma Part C.html",
+    "line": 423,
+    "match": "$) so với chi phí giải quyết hậu quả khi sản phẩm lỗi đã đến tay khách hàng (100$",
+    "inner": ") so với chi phí giải quyết hậu quả khi sản phẩm lỗi đã đến tay khách hàng (100",
+    "context": "<div class=\"quiz-q\">Theo mô hình 1-10-100 của quản trị chất lượng, chi phí bỏ ra để ngăn ngừa lỗi ở "
+  },
+  {
+    "file": "sources\\01. Foundation Vision\\02. Fathers\\06.The Fathers of Six Sigma Part D.html",
+    "line": 432,
+    "match": "$12 Billion in cumulative net financial benefits from Six Sigma within its first 5 years of deployment.', 'Chính xác! GE tạo ra hơn 12 Tỷ USD lợi nhuận ròng bổ sung từ các dự án Six Sigma trong 5 năm đầu tiên triển khai.')\">A. Hơn 12 Tỷ USD ($",
+    "inner": "12 Billion in cumulative net financial benefits from Six Sigma within its first 5 years of deployment.', 'Chính xác! GE tạo ra hơn 12 Tỷ USD lợi nhuận ròng bổ sung từ các dự án Six Sigma trong 5 năm đầu tiên triển khai.')\">A. Hơn 12 Tỷ USD (",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-fat6-8', 'Correct! GE generated over $12"
+  },
+  {
+    "file": "sources\\01. Foundation Vision\\04. Evolution\\07.Key Milestones in the Development and Use of Six Sigma.html",
+    "line": 432,
+    "match": "$12 Billion in cumulative net financial benefits from Six Sigma within its first 5 years under Jack Welch.', 'Chính xác! GE tạo ra hơn 12 Tỷ USD lợi nhuận ròng bổ sung từ các dự án Six Sigma trong 5 năm đầu tiên triển khai.')\">A. Hơn 12 Tỷ USD ($",
+    "inner": "12 Billion in cumulative net financial benefits from Six Sigma within its first 5 years under Jack Welch.', 'Chính xác! GE tạo ra hơn 12 Tỷ USD lợi nhuận ròng bổ sung từ các dự án Six Sigma trong 5 năm đầu tiên triển khai.')\">A. Hơn 12 Tỷ USD (",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-ev7-6', 'Correct! General Electric gener"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\01. Content Overview\\05.Focused Use and Application of Six Sigma.html",
+    "line": 384,
+    "match": "$100,000 USD đến $",
+    "inner": "100,000 USD đến",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-bv5-4', 'Correct! A full-time Black Belt"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\01. Content Overview\\05.Focused Use and Application of Six Sigma.html",
+    "line": 385,
+    "match": "$10k) should be handled via Green Belts or Quick Wins.', 'Sai. Dự án dưới $",
+    "inner": "10k) should be handled via Green Belts or Quick Wins.', 'Sai. Dự án dưới",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-bv5-4', 'Incorrect. Low-value projects "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\01. Content Overview\\05.Focused Use and Application of Six Sigma.html",
+    "line": 417,
+    "match": "$50,000+ in salary and overhead to save $",
+    "inner": "50,000+ in salary and overhead to save",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-bv5-7', 'Correct! The opportunity cost l"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\01. Content Overview\\05.Focused Use and Application of Six Sigma.html",
+    "line": 417,
+    "match": "$50,000 USD chi phí lương và vận hành chuyên gia để chỉ thu về $",
+    "inner": "50,000 USD chi phí lương và vận hành chuyên gia để chỉ thu về",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-bv5-7', 'Correct! The opportunity cost l"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\01. Content Overview\\05.Focused Use and Application of Six Sigma.html",
+    "line": 417,
+    "match": "$50,000 lương chuyên gia để chỉ cứu được $",
+    "inner": "50,000 lương chuyên gia để chỉ cứu được",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-bv5-7', 'Correct! The opportunity cost l"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\02.Six Sigma and the Bottom-Line of a Business.html",
+    "line": 289,
+    "match": "$1 USD</strong> tiết kiệm được từ COPQ sẽ chuyển hóa trực tiếp <strong>100% thành $",
+    "inner": "1 USD</strong> tiết kiệm được từ COPQ sẽ chuyển hóa trực tiếp <strong>100% thành",
+    "context": "Mỗi <strong>$1 USD</strong> tiết kiệm được từ COPQ sẽ chuyển hóa trực tiếp <strong>100% thành $1 USD"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\02.Six Sigma and the Bottom-Line of a Business.html",
+    "line": 289,
+    "match": "$1 USD lợi nhuận từ bán hàng, doanh nghiệp phải đạt doanh thu $",
+    "inner": "1 USD lợi nhuận từ bán hàng, doanh nghiệp phải đạt doanh thu",
+    "context": "Mỗi <strong>$1 USD</strong> tiết kiệm được từ COPQ sẽ chuyển hóa trực tiếp <strong>100% thành $1 USD"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\02.Six Sigma and the Bottom-Line of a Business.html",
+    "line": 377,
+    "match": "$100,000 in net profit at an 8% profit margin, the sales team would need to generate: $",
+    "inner": "100,000 in net profit at an 8% profit margin, the sales team would need to generate:",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn2-1', 'Correct! To generate $100,000 i"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\02.Six Sigma and the Bottom-Line of a Business.html",
+    "line": 377,
+    "match": "$1,250,000 in new sales revenue!', 'Chính xác! Để tạo ra $",
+    "inner": "1,250,000 in new sales revenue!', 'Chính xác! Để tạo ra",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn2-1', 'Correct! To generate $100,000 i"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\02.Six Sigma and the Bottom-Line of a Business.html",
+    "line": 377,
+    "match": "$100,000 / 0.08 = $",
+    "inner": "100,000 / 0.08 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn2-1', 'Correct! To generate $100,000 i"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\02.Six Sigma and the Bottom-Line of a Business.html",
+    "line": 377,
+    "match": "$1,250,000 USD doanh thu bán hàng mới ($",
+    "inner": "1,250,000 USD doanh thu bán hàng mới (",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn2-1', 'Correct! To generate $100,000 i"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\02.Six Sigma and the Bottom-Line of a Business.html",
+    "line": 378,
+    "match": "$100,000 divided by the 8% margin.', 'Sai. Phải lấy $",
+    "inner": "100,000 divided by the 8% margin.', 'Sai. Phải lấy",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-dn2-1', 'Incorrect. Calculate $100,000 "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\03.Viewpoints of Six Sigma from a Quality Perspective.html",
+    "line": 418,
+    "match": "$1. Fixing it during manufacturing costs $",
+    "inner": "1. Fixing it during manufacturing costs",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn3-7', 'Correct! Rule of Ten: Fixing a "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\03.Viewpoints of Six Sigma from a Quality Perspective.html",
+    "line": 418,
+    "match": "$100+!', 'Chính xác! Quy tắc Bội số 10 (Rule of Ten): Sửa lỗi trên bản vẽ thiết kế chỉ tốn $",
+    "inner": "100+!', 'Chính xác! Quy tắc Bội số 10 (Rule of Ten): Sửa lỗi trên bản vẽ thiết kế chỉ tốn",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn3-7', 'Correct! Rule of Ten: Fixing a "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\03.Viewpoints of Six Sigma from a Quality Perspective.html",
+    "line": 418,
+    "match": "$10; nhưng phải đi thu hồi sửa lỗi tại tay khách hàng sẽ tốn hơn $",
+    "inner": "10; nhưng phải đi thu hồi sửa lỗi tại tay khách hàng sẽ tốn hơn",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn3-7', 'Correct! Rule of Ten: Fixing a "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\03.Viewpoints of Six Sigma from a Quality Perspective.html",
+    "line": 418,
+    "match": "$1, trong khi sửa lỗi khi đã giao cho khách hàng tốn hơn $",
+    "inner": "1, trong khi sửa lỗi khi đã giao cho khách hàng tốn hơn",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn3-7', 'Correct! Rule of Ten: Fixing a "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\03.Viewpoints of Six Sigma from a Quality Perspective.html",
+    "line": 440,
+    "match": "$1) &rarr; Sản xuất ($",
+    "inner": "1) &rarr; Sản xuất (",
+    "context": "<div class=\"back\">Chi phí sửa lỗi tăng gấp 10 lần qua mỗi giai đoạn: Thiết kế ($1) &rarr; Sản xuất ("
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\10.Success Factors for Effectively Deploying Six Sigma.html",
+    "line": 362,
+    "match": "$1M+ in savings), completely freed from daily routine firefighting.', 'Chính xác! 100% toàn thời gian chuyên trách (hoàn tất 4&ndash;6 dự án/năm mang lại $",
+    "inner": "1M+ in savings), completely freed from daily routine firefighting.', 'Chính xác! 100% toàn thời gian chuyên trách (hoàn tất 4&ndash;6 dự án/năm mang lại",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn10-2', 'Correct! World-class Black Bel"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\10.Success Factors for Effectively Deploying Six Sigma.html",
+    "line": 395,
+    "match": "$100k savings), 3. Have unknown root cause, and 4. Have an assigned executive Sponsor.', 'Chính xác! 1. Liên kết trực tiếp với mục tiêu chiến lược của công ty, 2. Nhắm vào khu vực COPQ cao (&gt; $",
+    "inner": "100k savings), 3. Have unknown root cause, and 4. Have an assigned executive Sponsor.', 'Chính xác! 1. Liên kết trực tiếp với mục tiêu chiến lược của công ty, 2. Nhắm vào khu vực COPQ cao (&gt;",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn10-5', 'Correct! High-impact projects "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\02. Driving Need\\11.Business Needs and Performance Gaps.html",
+    "line": 390,
+    "match": "$5M in locked capital. Target is to reduce DSO to 38 days by Q3, unlocking $",
+    "inner": "5M in locked capital. Target is to reduce DSO to 38 days by Q3, unlocking",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-dn11-4', 'Correct! Convert abstract goal"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\03. Customer Focus\\01.Characterizing Business as a Need-Do Interaction.html",
+    "line": 373,
+    "match": "$5/hộp), nhưng khách hàng mua đồ ăn mang về chỉ cần hộp giữ nhiệt tốt và dễ mở (giá $",
+    "inner": "5/hộp), nhưng khách hàng mua đồ ăn mang về chỉ cần hộp giữ nhiệt tốt và dễ mở (giá",
+    "context": "<div class=\"quiz-q\">Một nhà hàng sang trọng sử dụng hộp đựng thức ăn mang về bằng gỗ cao cấp chạm kh"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\03. Customer Focus\\04.Domino Effect of Product and Service Quality.html",
+    "line": 364,
+    "match": "$10) -> Manufacturing ($",
+    "inner": "10) -> Manufacturing (",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cf4-2', 'Correct! By the Rule of Ten, co"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\03. Customer Focus\\04.Domino Effect of Product and Service Quality.html",
+    "line": 364,
+    "match": "$1,000) -> Customer Field Failure / Recall ($",
+    "inner": "1,000) -> Customer Field Failure / Recall (",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cf4-2', 'Correct! By the Rule of Ten, co"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\03. Customer Focus\\04.Domino Effect of Product and Service Quality.html",
+    "line": 364,
+    "match": "$10) &rarr; Sản xuất ($",
+    "inner": "10) &rarr; Sản xuất (",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cf4-2', 'Correct! By the Rule of Ten, co"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\03. Customer Focus\\04.Domino Effect of Product and Service Quality.html",
+    "line": 364,
+    "match": "$1,000) &rarr; Thu hồi tại tay khách hàng ($",
+    "inner": "1,000) &rarr; Thu hồi tại tay khách hàng (",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cf4-2', 'Correct! By the Rule of Ten, co"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\05.Understanding and Extending the Six Sigma Manifesto.html",
+    "line": 418,
+    "match": "$1 invested in training and infrastructure).', 'Chính xác! Tỷ suất ROI Đẳng Cấp: Các chương trình Six Sigma chuẩn mực luôn mang lại ROI từ 5:1 đến 10:1 (tạo ra $",
+    "inner": "1 invested in training and infrastructure).', 'Chính xác! Tỷ suất ROI Đẳng Cấp: Các chương trình Six Sigma chuẩn mực luôn mang lại ROI từ 5:1 đến 10:1 (tạo ra",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb5-7', 'Correct! Best-in-Class ROI: Mat"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\05.Understanding and Extending the Six Sigma Manifesto.html",
+    "line": 418,
+    "match": "$10 tiền tiết kiệm cứng đã kiểm toán cho mỗi $",
+    "inner": "10 tiền tiết kiệm cứng đã kiểm toán cho mỗi",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb5-7', 'Correct! Best-in-Class ROI: Mat"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\07.Core Beliefs Inherent to Six Sigma - Part B.html",
+    "line": 365,
+    "match": "$18.00 USD per part. Even though inside specification limits, each part loses $",
+    "inner": "18.00 USD per part. Even though inside specification limits, each part loses",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb7-2', 'Correct! Taguchi Loss: L(y) = k"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\07.Core Beliefs Inherent to Six Sigma - Part B.html",
+    "line": 365,
+    "match": "$18.00 USD/sản phẩm. Dù vẫn nằm trong dung sai, sản phẩm vẫn gây thiệt hại kinh tế $",
+    "inner": "18.00 USD/sản phẩm. Dù vẫn nằm trong dung sai, sản phẩm vẫn gây thiệt hại kinh tế",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb7-2', 'Correct! Taguchi Loss: L(y) = k"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\07.Core Beliefs Inherent to Six Sigma - Part B.html",
+    "line": 365,
+    "match": "$18.00 USD/sản phẩm (<i>L</i> = 200 &times; 0.3<sup>2</sup> = $",
+    "inner": "18.00 USD/sản phẩm (<i>L</i> = 200 &times; 0.3<sup>2</sup> =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb7-2', 'Correct! Taguchi Loss: L(y) = k"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\07.Core Beliefs Inherent to Six Sigma - Part B.html",
+    "line": 409,
+    "match": "$1 invested in prevention eliminates $",
+    "inner": "1 invested in prevention eliminates",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb7-6', 'Correct! Total PAF cost drops d"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\07.Core Beliefs Inherent to Six Sigma - Part B.html",
+    "line": 409,
+    "match": "$10 in internal failure (rework/scrap) and external failure (warranty/recalls), dramatically shrinking total COPQ.', 'Chính xác! Tổng chi phí chất lượng giảm mạnh: Mỗi $",
+    "inner": "10 in internal failure (rework/scrap) and external failure (warranty/recalls), dramatically shrinking total COPQ.', 'Chính xác! Tổng chi phí chất lượng giảm mạnh: Mỗi",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb7-6', 'Correct! Total PAF cost drops d"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\07.Core Beliefs Inherent to Six Sigma - Part B.html",
+    "line": 409,
+    "match": "$1 phòng ngừa giúp tiết kiệm $",
+    "inner": "1 phòng ngừa giúp tiết kiệm",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb7-6', 'Correct! Total PAF cost drops d"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\08.Core Beliefs Inherent to Six Sigma - Part C.html",
+    "line": 422,
+    "match": "$50, while 1 cracked turbine blade costs $",
+    "inner": "50, while 1 cracked turbine blade costs",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb8-7', 'Correct! Financial Weighting: 1"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\08.Core Beliefs Inherent to Six Sigma - Part C.html",
+    "line": 422,
+    "match": "$50 khắc phục, trong khi 1 cánh tuabin bị nứt tốn tới $",
+    "inner": "50 khắc phục, trong khi 1 cánh tuabin bị nứt tốn tới",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb8-7', 'Correct! Financial Weighting: 1"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\08.Core Beliefs Inherent to Six Sigma - Part C.html",
+    "line": 422,
+    "match": "$50, trong khi 1 lỗi nghiêm trọng tốn $",
+    "inner": "50, trong khi 1 lỗi nghiêm trọng tốn",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb8-7', 'Correct! Financial Weighting: 1"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\12.Big Ideas Related to the Practice of Six Sigma - Part B.html",
+    "line": 345,
+    "match": "$5,000) &rarr; Cpk duy trì ổn định ở mức 1.8, tiết kiệm trọn vẹn $",
+    "inner": "5,000) &rarr; Cpk duy trì ổn định ở mức 1.8, tiết kiệm trọn vẹn",
+    "context": "<li>Tẩy cặn đường ống và lắp van điều lưu tự động (chi phí $5,000) &rarr; Cpk duy trì ổn định ở mức "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\04. Core Beliefs\\14.Big Ideas Related to the Practice of Six Sigma - Part D.html",
+    "line": 394,
+    "match": "$500,000 đến hơn $",
+    "inner": "500,000 đến hơn",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-cb14-4', 'Correct! Global Benchmark: A f"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\04.Pragmatic Understandings of Operational Leverage.html",
+    "line": 513,
+    "match": "$180,000/năm với chi phí đầu tư chỉ $",
+    "inner": "180,000/năm với chi phí đầu tư chỉ",
+    "context": "<div class=\"case-metric\"><strong>Phân tích MBB:</strong> Loại bỏ hoàn toàn lỗi rò rỉ, giảm 4 nhân cô"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\04.Pragmatic Understandings of Operational Leverage.html",
+    "line": 560,
+    "match": "$20,000 chi phí nghiên cứu X và thu về mức cắt giảm COPQ là $",
+    "inner": "20,000 chi phí nghiên cứu X và thu về mức cắt giảm COPQ là",
+    "context": "<div class=\"quiz-q\">Một dự án cải tiến đầu tư $20,000 chi phí nghiên cứu X và thu về mức cắt giảm CO"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\04.Pragmatic Understandings of Operational Leverage.html",
+    "line": 561,
+    "match": "$1 đầu tư vào phân tích đòn bẩy mang lại $",
+    "inner": "1 đầu tư vào phân tích đòn bẩy mang lại",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4-4', &quot;Leve"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\04.Pragmatic Understandings of Operational Leverage.html",
+    "line": 561,
+    "match": "$1 đầu tư vào phân tích đòn bẩy mang lại $",
+    "inner": "1 đầu tư vào phân tích đòn bẩy mang lại",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4-4', &quot;Leve"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\04.Pragmatic Understandings of Operational Leverage.html",
+    "line": 561,
+    "match": "$1 đầu tư vào phân tích đòn bẩy mang lại $",
+    "inner": "1 đầu tư vào phân tích đòn bẩy mang lại",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4-4', &quot;Leve"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\04.Pragmatic Understandings of Operational Leverage.html",
+    "line": 659,
+    "match": "$240,000 tiết kiệm / $",
+    "inner": "240,000 tiết kiệm /",
+    "context": "<tbody><tr><td style=\"padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;\">Mục tiêu cải "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\06.Analytical Understandings of Leverage - Part B.html",
+    "line": 561,
+    "match": "$400,000 × (1 - 0.6)^2 = $",
+    "inner": "400,000 × (1 - 0.6)^2 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;New "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\06.Analytical Understandings of Leverage - Part B.html",
+    "line": 561,
+    "match": "$64,000.&quot;, &quot;Giảm 60% &amp;sigma; giúp hạ tổn thất xuống chỉ còn 16% ban đầu, tiết kiệm $",
+    "inner": "64,000.&quot;, &quot;Giảm 60% &amp;sigma; giúp hạ tổn thất xuống chỉ còn 16% ban đầu, tiết kiệm",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;New "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\06.Analytical Understandings of Leverage - Part B.html",
+    "line": 561,
+    "match": "$64,000/năm (giảm 84% do 0.4^2 = 0.16)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q6-4', &quot;New loss = $",
+    "inner": "64,000/năm (giảm 84% do 0.4^2 = 0.16)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q6-4', &quot;New loss =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;New "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\06.Analytical Understandings of Leverage - Part B.html",
+    "line": 561,
+    "match": "$400,000 × 0.16 = $",
+    "inner": "400,000 × 0.16 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;New "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\06.Analytical Understandings of Leverage - Part B.html",
+    "line": 561,
+    "match": "$336,000/năm.&quot;)\">B. $",
+    "inner": "336,000/năm.&quot;)\">B.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;New "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\06.Analytical Understandings of Leverage - Part B.html",
+    "line": 561,
+    "match": "$400,000 × (1 - 0.6)^2 = $",
+    "inner": "400,000 × (1 - 0.6)^2 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;New "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\06.Analytical Understandings of Leverage - Part B.html",
+    "line": 561,
+    "match": "$64,000.&quot;, &quot;Giảm 60% &amp;sigma; giúp hạ tổn thất xuống chỉ còn 16% ban đầu, tiết kiệm $",
+    "inner": "64,000.&quot;, &quot;Giảm 60% &amp;sigma; giúp hạ tổn thất xuống chỉ còn 16% ban đầu, tiết kiệm",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;New "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\06.Analytical Understandings of Leverage - Part B.html",
+    "line": 659,
+    "match": "$280,000 &amp;rarr; Mục tiêu: $",
+    "inner": "280,000 &amp;rarr; Mục tiêu:",
+    "context": "<tbody><tr><td style=\"padding:10px; border-bottom:1px solid #e2e8f0; font-weight:600;\">Công đoạn phâ"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\08.Development of Breakthrough Power - Part A.html",
+    "line": 494,
+    "match": "$)</div><div class=\"math-den\"><i>Input Resources Invested</i> ($",
+    "inner": ")</div><div class=\"math-den\"><i>Input Resources Invested</i> (",
+    "context": "<div class=\"math-equation\"><i>BLM</i> = <div class=\"math-frac\"><div class=\"math-num\"><i>Net Financia"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\08.Development of Breakthrough Power - Part A.html",
+    "line": 555,
+    "match": "$1.2M / 3 = $",
+    "inner": "1.2M / 3 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q8-3', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\08.Development of Breakthrough Power - Part A.html",
+    "line": 555,
+    "match": "$2.4M / 12 = $",
+    "inner": "2.4M / 12 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q8-3', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\08.Development of Breakthrough Power - Part A.html",
+    "line": 555,
+    "match": "$1.2M / 3 = $",
+    "inner": "1.2M / 3 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q8-3', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\08.Development of Breakthrough Power - Part A.html",
+    "line": 555,
+    "match": "$2.4M / 12 = $",
+    "inner": "2.4M / 12 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q8-3', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\08.Development of Breakthrough Power - Part A.html",
+    "line": 555,
+    "match": "$1.2M / 3 = $",
+    "inner": "1.2M / 3 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q8-3', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\08.Development of Breakthrough Power - Part A.html",
+    "line": 555,
+    "match": "$2.4M / 12 = $",
+    "inner": "2.4M / 12 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q8-3', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 495,
+    "match": "$1 để ngăn lỗi ở khâu Design (DFSS).<br>&bull; Tốn $",
+    "inner": "1 để ngăn lỗi ở khâu Design (DFSS).<br>&bull; Tốn",
+    "context": "<div class=\"desc\"><strong>Quy tắc 1-10-100:</strong><br>&bull; Tốn $1 để ngăn lỗi ở khâu Design (DFS"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 543,
+    "match": "$1 so với $",
+    "inner": "1 so với",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-1', &quot;DFSS"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 543,
+    "match": "$100 ngoài thị trường.&quot;)\">A. Design for Six Sigma (DFSS) - Khâu thiết kế sản phẩm và quy trình</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q9-1', &quot;DFSS prevents 70-80% of defects at the concept and design stage before any production begins.&quot;, &quot;DFSS có đòn bẩy lớn nhất vì sửa lỗi trên bản vẽ tốn $",
+    "inner": "100 ngoài thị trường.&quot;)\">A. Design for Six Sigma (DFSS) - Khâu thiết kế sản phẩm và quy trình</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q9-1', &quot;DFSS prevents 70-80% of defects at the concept and design stage before any production begins.&quot;, &quot;DFSS có đòn bẩy lớn nhất vì sửa lỗi trên bản vẽ tốn",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-1', &quot;DFSS"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 543,
+    "match": "$10 trên chuyền và $",
+    "inner": "10 trên chuyền và",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-1', &quot;DFSS"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 543,
+    "match": "$1 so với $",
+    "inner": "1 so với",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-1', &quot;DFSS"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 554,
+    "match": "$500/lỗi. Nếu để lọt ra thị trường tốn $",
+    "inner": "500/lỗi. Nếu để lọt ra thị trường tốn",
+    "context": "<div class=\"quiz-q\">Doanh nghiệp phát hiện 100 lỗi thiết kế. Nếu khắc phục ngay ở giai đoạn DFSS tốn"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 555,
+    "match": "$4,950,000.&quot;, &quot;Đòn bẩy kinh tế của DFSS cứu doanh nghiệp gần 5 triệu USD chi phí bảo hành và xử lý khủng hoảng.&quot;)\">A. $",
+    "inner": "4,950,000.&quot;, &quot;Đòn bẩy kinh tế của DFSS cứu doanh nghiệp gần 5 triệu USD chi phí bảo hành và xử lý khủng hoảng.&quot;)\">A.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-3', &quot;Savi"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 555,
+    "match": "$5.0M xuống $",
+    "inner": "5.0M xuống",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-3', &quot;Savi"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 555,
+    "match": "$4,950,000.&quot;, &quot;Đòn bẩy kinh tế của DFSS cứu doanh nghiệp gần 5 triệu USD chi phí bảo hành và xử lý khủng hoảng.&quot;)\">B. $",
+    "inner": "4,950,000.&quot;, &quot;Đòn bẩy kinh tế của DFSS cứu doanh nghiệp gần 5 triệu USD chi phí bảo hành và xử lý khủng hoảng.&quot;)\">B.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-3', &quot;Savi"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 555,
+    "match": "$4,950,000.&quot;, &quot;Đòn bẩy kinh tế của DFSS cứu doanh nghiệp gần 5 triệu USD chi phí bảo hành và xử lý khủng hoảng.&quot;)\">C. $",
+    "inner": "4,950,000.&quot;, &quot;Đòn bẩy kinh tế của DFSS cứu doanh nghiệp gần 5 triệu USD chi phí bảo hành và xử lý khủng hoảng.&quot;)\">C.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-3', &quot;Savi"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 561,
+    "match": "$2M / 2mo = $",
+    "inner": "2M / 2mo =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 561,
+    "match": "$2M / 10mo = $",
+    "inner": "2M / 10mo =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 561,
+    "match": "$200k/tháng lên $",
+    "inner": "200k/tháng lên",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 561,
+    "match": "$2M / 2mo = $",
+    "inner": "2M / 2mo =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 561,
+    "match": "$2M / 10mo = $",
+    "inner": "2M / 10mo =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 561,
+    "match": "$2M / 2mo = $",
+    "inner": "2M / 2mo =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\09.Development of Breakthrough Power - Part B.html",
+    "line": 561,
+    "match": "$2M / 10mo = $",
+    "inner": "2M / 10mo =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Powe"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\06. Leverage Principle\\13.Competing Strategies for Realizing Leverage - Part D.html",
+    "line": 489,
+    "match": "$)</div><div class=\"math-den\"><i>Targeted Investment</i> ($",
+    "inner": ")</div><div class=\"math-den\"><i>Targeted Investment</i> (",
+    "context": "<div class=\"math-equation\"><i>LC</i> = <div class=\"math-frac\"><div class=\"math-num\">% &Delta;<i>&sig"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\02.Performance Breakthrough and the DMAIC Methodology.html",
+    "line": 560,
+    "match": "$30,000 chi phí phân tích và mang lại lợi ích tài chính ròng đã được Giám đốc Tài chính ký duyệt là $",
+    "inner": "30,000 chi phí phân tích và mang lại lợi ích tài chính ròng đã được Giám đốc Tài chính ký duyệt là",
+    "context": "<div class=\"quiz-q\">Dự án Six Sigma đầu tư $30,000 chi phí phân tích và mang lại lợi ích tài chính r"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\03.Connecting DMAIC to Business Process Management.html",
+    "line": 561,
+    "match": "$80,000 × 0.70 = $",
+    "inner": "80,000 × 0.70 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q3-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\03.Connecting DMAIC to Business Process Management.html",
+    "line": 561,
+    "match": "$280,000/năm (5 × $",
+    "inner": "280,000/năm (5 ×",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q3-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\03.Connecting DMAIC to Business Process Management.html",
+    "line": 561,
+    "match": "$80,000 × 0.70 = $",
+    "inner": "80,000 × 0.70 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q3-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\03.Connecting DMAIC to Business Process Management.html",
+    "line": 561,
+    "match": "$400,000/năm</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q3-4', &quot;Annual savings = 5 × $",
+    "inner": "400,000/năm</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q3-4', &quot;Annual savings = 5 ×",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q3-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\03.Connecting DMAIC to Business Process Management.html",
+    "line": 561,
+    "match": "$280,000/year.&quot;, &quot;Năm dự án DMAIC giải phóng 280,000 USD lãng phí cho hệ thống BPM.&quot;)\">C. $",
+    "inner": "280,000/year.&quot;, &quot;Năm dự án DMAIC giải phóng 280,000 USD lãng phí cho hệ thống BPM.&quot;)\">C.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q3-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\04.Problem Solving Focus of the DMAIC Method - Part A.html",
+    "line": 513,
+    "match": "$3,500) đã triệt tiêu hoàn toàn lỗi xì gas, chuyển lại dùng roong nắp tiêu chuẩn, tiết kiệm $",
+    "inner": "3,500) đã triệt tiêu hoàn toàn lỗi xì gas, chuyển lại dùng roong nắp tiêu chuẩn, tiết kiệm",
+    "context": "<div class=\"case-metric\"><strong>Phân tích MBB:</strong> Thay thế van điều áp tự động ($3,500) đã tr"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\04.Problem Solving Focus of the DMAIC Method - Part A.html",
+    "line": 554,
+    "match": "$10,000/tháng để thuê công nhân kiểm tra và sửa lỗi sản phẩm (chữa triệu chứng). Dự án DMAIC tốn $",
+    "inner": "10,000/tháng để thuê công nhân kiểm tra và sửa lỗi sản phẩm (chữa triệu chứng). Dự án DMAIC tốn",
+    "context": "<div class=\"quiz-q\">Doanh nghiệp tốn $10,000/tháng để thuê công nhân kiểm tra và sửa lỗi sản phẩm (c"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\04.Problem Solving Focus of the DMAIC Method - Part A.html",
+    "line": 555,
+    "match": "$120,000/năm sau đó.&quot;)\">A. 2.5 tháng ($",
+    "inner": "120,000/năm sau đó.&quot;)\">A. 2.5 tháng (",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4-3', &quot;Payb"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\04.Problem Solving Focus of the DMAIC Method - Part A.html",
+    "line": 555,
+    "match": "$10,000)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q4-3', &quot;Payback Period = $",
+    "inner": "10,000)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q4-3', &quot;Payback Period =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4-3', &quot;Payb"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\04.Problem Solving Focus of the DMAIC Method - Part A.html",
+    "line": 555,
+    "match": "$10,000 per month = 2.5 months.&quot;, &quot;Chỉ sau 2.5 tháng, giải pháp triệt tiêu nguyên nhân gốc đã thu hồi toàn bộ vốn đầu tư và tiết kiệm $",
+    "inner": "10,000 per month = 2.5 months.&quot;, &quot;Chỉ sau 2.5 tháng, giải pháp triệt tiêu nguyên nhân gốc đã thu hồi toàn bộ vốn đầu tư và tiết kiệm",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4-3', &quot;Payb"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\05.Problem Solving Focus of the DMAIC Method - Part B.html",
+    "line": 513,
+    "match": "$200), tỷ lệ lỗi toàn bộ khuôn giảm từ 6.2% xuống 0.05%, cứu vãn khuôn ép trị giá $",
+    "inner": "200), tỷ lệ lỗi toàn bộ khuôn giảm từ 6.2% xuống 0.05%, cứu vãn khuôn ép trị giá",
+    "context": "<div class=\"case-metric\"><strong>Phân tích MBB:</strong> Thông rửa đường nước làm mát lỗ 4 và 13 (ch"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\06.Recognizing the Existence of Performance Problems.html",
+    "line": 561,
+    "match": "$50,000,000 × 0.037 = $",
+    "inner": "50,000,000 × 0.037 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\06.Recognizing the Existence of Performance Problems.html",
+    "line": 561,
+    "match": "$1,850,000/năm (50 triệu USD × 3.7%)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q6-4', &quot;Annual COPQ impact = $",
+    "inner": "1,850,000/năm (50 triệu USD × 3.7%)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q6-4', &quot;Annual COPQ impact =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\06.Recognizing the Existence of Performance Problems.html",
+    "line": 561,
+    "match": "$1,850,000.&quot;, &quot;Khoảng cách hiệu suất 3.7% đang làm bốc hơi 1.85 triệu USD lợi nhuận mỗi năm.&quot;)\">B. $",
+    "inner": "1,850,000.&quot;, &quot;Khoảng cách hiệu suất 3.7% đang làm bốc hơi 1.85 triệu USD lợi nhuận mỗi năm.&quot;)\">B.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\06.Recognizing the Existence of Performance Problems.html",
+    "line": 561,
+    "match": "$50,000,000 × 0.037 = $",
+    "inner": "50,000,000 × 0.037 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\12.Standardizing Proven Process Solutions.html",
+    "line": 554,
+    "match": "$10/chi tiết nhưng có Cpk = 0.80 (gây tỷ lệ lỗi 1.5%, chi phí khắc phục $",
+    "inner": "10/chi tiết nhưng có Cpk = 0.80 (gây tỷ lệ lỗi 1.5%, chi phí khắc phục",
+    "context": "<div class=\"quiz-q\">Vendor A chào giá $10/chi tiết nhưng có Cpk = 0.80 (gây tỷ lệ lỗi 1.5%, chi phí "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\12.Standardizing Proven Process Solutions.html",
+    "line": 555,
+    "match": "$10.00 + (0.015 × $",
+    "inner": "10.00 + (0.015 ×",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q12-3', &quot;Ven"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\12.Standardizing Proven Process Solutions.html",
+    "line": 555,
+    "match": "$10.30 + downtime loss &gt;&gt; Vendor C total cost of quality.&quot;, &quot;Tính đủ chi phí tổn thất chất lượng COPQ thì nhà cung cấp chất lượng cao Vendor C luôn mang lại tổng chi phí rẻ nhất.&quot;)\">A. Vendor C rẻ hơn: Vendor C tốn $",
+    "inner": "10.30 + downtime loss &gt;&gt; Vendor C total cost of quality.&quot;, &quot;Tính đủ chi phí tổn thất chất lượng COPQ thì nhà cung cấp chất lượng cao Vendor C luôn mang lại tổng chi phí rẻ nhất.&quot;)\">A. Vendor C rẻ hơn: Vendor C tốn",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q12-3', &quot;Ven"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\12.Standardizing Proven Process Solutions.html",
+    "line": 555,
+    "match": "$10 + (1.5% × $",
+    "inner": "10 + (1.5% ×",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q12-3', &quot;Ven"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\12.Standardizing Proven Process Solutions.html",
+    "line": 555,
+    "match": "$10.30? (Thực tế lỗi phế phẩm làm Vendor A tốn hơn)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q12-3', &quot;Vendor A real cost = $",
+    "inner": "10.30? (Thực tế lỗi phế phẩm làm Vendor A tốn hơn)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q12-3', &quot;Vendor A real cost =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q12-3', &quot;Ven"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\12.Standardizing Proven Process Solutions.html",
+    "line": 555,
+    "match": "$20) = $",
+    "inner": "20) =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q12-3', &quot;Ven"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\12.Standardizing Proven Process Solutions.html",
+    "line": 555,
+    "match": "$10.00 + (0.015 × $",
+    "inner": "10.00 + (0.015 ×",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q12-3', &quot;Ven"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\13.Integrating the SOP with Best Practices.html",
+    "line": 485,
+    "match": "$200,000 &rarr; Nhân rộng ra 20 nhà máy với tỷ lệ áp dụng 90% tạo ra $",
+    "inner": "200,000 &rarr; Nhân rộng ra 20 nhà máy với tỷ lệ áp dụng 90% tạo ra",
+    "context": "<div class=\"desc\"><strong>Sức mạnh nhân bản:</strong><br>&bull; Dự án thí điểm tiết kiệm $200,000 &r"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\13.Integrating the SOP with Best Practices.html",
+    "line": 555,
+    "match": "$150,000 × 30 sites × 0.80 adoption = $",
+    "inner": "150,000 × 30 sites × 0.80 adoption =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q13-3', &quot;Rep"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\13.Integrating the SOP with Best Practices.html",
+    "line": 555,
+    "match": "$3,600,000/năm ($",
+    "inner": "3,600,000/năm (",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q13-3', &quot;Rep"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\13.Integrating the SOP with Best Practices.html",
+    "line": 555,
+    "match": "$150,000 × 30 sites × 0.80 adoption = $",
+    "inner": "150,000 × 30 sites × 0.80 adoption =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q13-3', &quot;Rep"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\13.Integrating the SOP with Best Practices.html",
+    "line": 555,
+    "match": "$4,500,000/năm</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q13-3', &quot;Replicated Value = $",
+    "inner": "4,500,000/năm</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q13-3', &quot;Replicated Value =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q13-3', &quot;Rep"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\13.Integrating the SOP with Best Practices.html",
+    "line": 555,
+    "match": "$3,600,000/year.&quot;, &quot;Nhân rộng giải pháp giúp khuếch đại giá trị kinh tế gấp 24 lần, mang về 3.6 triệu USD/năm.&quot;)\">C. $",
+    "inner": "3,600,000/year.&quot;, &quot;Nhân rộng giải pháp giúp khuếch đại giá trị kinh tế gấp 24 lần, mang về 3.6 triệu USD/năm.&quot;)\">C.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q13-3', &quot;Rep"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\14.Basic Tools for Realizing Performance Breakthrough.html",
+    "line": 554,
+    "match": "$250,000 COPQ và giải phóng $",
+    "inner": "250,000 COPQ và giải phóng",
+    "context": "<div class=\"quiz-q\">Một chương trình RDMAIC(SI) cấp tập đoàn hoàn tất 12 dự án. Mỗi dự án tiết kiệm "
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\14.Basic Tools for Realizing Performance Breakthrough.html",
+    "line": 555,
+    "match": "$4,800,000.&quot;, &quot;Chương trình 8 bước mang lại tổng giá trị kinh tế khổng lồ 4.8 triệu USD cho doanh nghiệp.&quot;)\">A. $",
+    "inner": "4,800,000.&quot;, &quot;Chương trình 8 bước mang lại tổng giá trị kinh tế khổng lồ 4.8 triệu USD cho doanh nghiệp.&quot;)\">A.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q14-3', &quot;Tot"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\14.Basic Tools for Realizing Performance Breakthrough.html",
+    "line": 555,
+    "match": "$400k)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q14-3', &quot;Total breakthrough value = 12 projects × ($",
+    "inner": "400k)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q14-3', &quot;Total breakthrough value = 12 projects × (",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q14-3', &quot;Tot"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\14.Basic Tools for Realizing Performance Breakthrough.html",
+    "line": 555,
+    "match": "$150,000) = $",
+    "inner": "150,000) =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q14-3', &quot;Tot"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\14.Basic Tools for Realizing Performance Breakthrough.html",
+    "line": 555,
+    "match": "$3,000,000</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q14-3', &quot;Total breakthrough value = 12 projects × ($",
+    "inner": "3,000,000</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q14-3', &quot;Total breakthrough value = 12 projects × (",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q14-3', &quot;Tot"
+  },
+  {
+    "file": "sources\\02. Breakthrough Vision\\08. Performance Breakthrough\\14.Basic Tools for Realizing Performance Breakthrough.html",
+    "line": 555,
+    "match": "$150,000) = $",
+    "inner": "150,000) =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q14-3', &quot;Tot"
+  },
+  {
+    "file": "sources\\03. Business Principles\\02. Value Proposition\\05.Velocity of Value Creation.html",
+    "line": 270,
+    "match": "$< 5\\%$",
+    "inner": "< 5\\%",
+    "context": "<li><strong>Hiệu Suất Chu Trình Quy Trình (Process Cycle Efficiency - PCE):</strong> Trong phần lớn "
+  },
+  {
+    "file": "sources\\03. Business Principles\\03. Success Factors\\12.Questing for the Realization of Operational Freedom.html",
+    "line": 273,
+    "match": "$< 3.4\text{ DPMO}$",
+    "inner": "< 3.4\text{ DPMO}",
+    "context": "<li><strong>Định Nghĩa Tự Do Vận Hành (Operational Freedom):</strong> Là trạng thái mà mọi quy trình"
+  },
+  {
+    "file": "sources\\03. Business Principles\\04. Metrics Reporting\\09.Improving Rates-of-Change Versus Absolute Performance.html",
+    "line": 422,
+    "match": "$4.2&sigma; nhưng không có cải tiến trong 2 năm (<i>dY/dt</i> = 0). Giám đốc Khối B nâng nhà máy từ 2.8&sigma; lên $",
+    "inner": "4.2&sigma; nhưng không có cải tiến trong 2 năm (<i>dY/dt</i> = 0). Giám đốc Khối B nâng nhà máy từ 2.8&sigma; lên",
+    "context": "<div class=\"quiz-q\">Giám đốc Khối A duy trì nhà máy ở $4.2&sigma; nhưng không có cải tiến trong 2 nă"
+  },
+  {
+    "file": "sources\\03. Business Principles\\04. Metrics Reporting\\14.Correlating Performance Characteristics - Part B.html",
+    "line": 386,
+    "match": "$20 = 2,900 defects eliminated * 20 =58,000 USD per year.', 'Chính xác! Tiết kiệm = 1,000,000 &times; [(3,000 &minus; 100) / 1,000,000] &times; $",
+    "inner": "20 = 2,900 defects eliminated * 20 =58,000 USD per year.', 'Chính xác! Tiết kiệm = 1,000,000 &times; [(3,000 &minus; 100) / 1,000,000] &times;",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-mr14-2', 'Correct! Savings = 1,000,000 *"
+  },
+  {
+    "file": "sources\\03. Business Principles\\04. Metrics Reporting\\14.Correlating Performance Characteristics - Part B.html",
+    "line": 386,
+    "match": "$58,000 USD / năm (2,900 lỗi được triệt tiêu &t&times;; 20/lỗi = $",
+    "inner": "58,000 USD / năm (2,900 lỗi được triệt tiêu &t&times;; 20/lỗi =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-mr14-2', 'Correct! Savings = 1,000,000 *"
+  },
+  {
+    "file": "sources\\04. Process Management\\01. Performance Yield\\Quiz - Performance Yield Review.html",
+    "line": 751,
+    "match": "${q.id} / $",
+    "inner": "{q.id} /",
+    "context": "<span class=\"q-meta\">Câu ${q.id} / ${questionsData.length}</span>"
+  },
+  {
+    "file": "sources\\04. Process Management\\01. Performance Yield\\Quiz - Performance Yield Review.html",
+    "line": 765,
+    "match": "${optClass}\" onclick=\"selectAnswer($",
+    "inner": "{optClass}\" onclick=\"selectAnswer(",
+    "context": "<button class=\"${optClass}\" onclick=\"selectAnswer(${q.id}, ${optIdx})\" ${isAnswered ? 'disabled' : '"
+  },
+  {
+    "file": "sources\\04. Process Management\\01. Performance Yield\\Quiz - Performance Yield Review.html",
+    "line": 765,
+    "match": "${optIdx})\" $",
+    "inner": "{optIdx})\"",
+    "context": "<button class=\"${optClass}\" onclick=\"selectAnswer(${q.id}, ${optIdx})\" ${isAnswered ? 'disabled' : '"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\06.Extending the Need for Performance Baselining.html",
+    "line": 560,
+    "match": "$100,000,000 × 0.25 × 0.60 = $",
+    "inner": "100,000,000 × 0.25 × 0.60 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\06.Extending the Need for Performance Baselining.html",
+    "line": 560,
+    "match": "$15,000,000/năm (100 triệu USD × 25% × 60%)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q6-4', &quot;Annual savings = $",
+    "inner": "15,000,000/năm (100 triệu USD × 25% × 60%)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q6-4', &quot;Annual savings =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\06.Extending the Need for Performance Baselining.html",
+    "line": 560,
+    "match": "$15,000,000/year.&quot;, &quot;Đóng 60% khoảng cách Baseline giải phóng ngay 15 triệu USD dòng tiền mặt cho công ty.&quot;)\">B. $",
+    "inner": "15,000,000/year.&quot;, &quot;Đóng 60% khoảng cách Baseline giải phóng ngay 15 triệu USD dòng tiền mặt cho công ty.&quot;)\">B.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\06.Extending the Need for Performance Baselining.html",
+    "line": 560,
+    "match": "$100,000,000 × 0.25 × 0.60 = $",
+    "inner": "100,000,000 × 0.25 × 0.60 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6-4', &quot;Annu"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\07.Nature and Use of Performance Baselines.html",
+    "line": 560,
+    "match": "$1,000,000 × 0.70 = $",
+    "inner": "1,000,000 × 0.70 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q7-4', &quot;Targ"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\07.Nature and Use of Performance Baselines.html",
+    "line": 560,
+    "match": "$700,000 (1 triệu USD × 70%)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q7-4', &quot;Targeted bottleneck allocation = $",
+    "inner": "700,000 (1 triệu USD × 70%)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q7-4', &quot;Targeted bottleneck allocation =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q7-4', &quot;Targ"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\07.Nature and Use of Performance Baselines.html",
+    "line": 560,
+    "match": "$700,000.&quot;, &quot;Dành tối thiểu 70% ngân sách cho các điểm nghẽn có Baseline thấp nhất để tối ưu hóa ROI.&quot;)\">B. $",
+    "inner": "700,000.&quot;, &quot;Dành tối thiểu 70% ngân sách cho các điểm nghẽn có Baseline thấp nhất để tối ưu hóa ROI.&quot;)\">B.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q7-4', &quot;Targ"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\07.Nature and Use of Performance Baselines.html",
+    "line": 560,
+    "match": "$1,000,000 × 0.70 = $",
+    "inner": "1,000,000 × 0.70 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q7-4', &quot;Targ"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\15.Calculation of a Six Sigma Performance Baseline - Part B.html",
+    "line": 560,
+    "match": "$15 = $",
+    "inner": "15 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q15-4', &quot;Ann"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\15.Calculation of a Six Sigma Performance Baseline - Part B.html",
+    "line": 560,
+    "match": "$975,000/năm (100,000 × 65% × $",
+    "inner": "975,000/năm (100,000 × 65% ×",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q15-4', &quot;Ann"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\15.Calculation of a Six Sigma Performance Baseline - Part B.html",
+    "line": 560,
+    "match": "$15)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q15-4', &quot;Annual rework COPQ = 100,000 × 0.65 rework rate × $",
+    "inner": "15)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q15-4', &quot;Annual rework COPQ = 100,000 × 0.65 rework rate ×",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q15-4', &quot;Ann"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\15.Calculation of a Six Sigma Performance Baseline - Part B.html",
+    "line": 560,
+    "match": "$975,000/year.&quot;, &quot;Nhà máy ẩn giấy tờ đang tiêu tốn gần 1 triệu USD mỗi năm chỉ riêng tiền nhân sự gọi điện xin bổ sung hồ sơ.&quot;)\">B. $",
+    "inner": "975,000/year.&quot;, &quot;Nhà máy ẩn giấy tờ đang tiêu tốn gần 1 triệu USD mỗi năm chỉ riêng tiền nhân sự gọi điện xin bổ sung hồ sơ.&quot;)\">B.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q15-4', &quot;Ann"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\15.Calculation of a Six Sigma Performance Baseline - Part B.html",
+    "line": 560,
+    "match": "$15 = $",
+    "inner": "15 =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q15-4', &quot;Ann"
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\16.Conversion of Probabilities to the Sigma Scale.html",
+    "line": 467,
+    "match": "$Z_{ST} = &Phi;^{-1}(P(0)) + 1.50 = &Phi;^{-1}(e^{-DPU}) + 1.50$",
+    "inner": "Z_{ST} = &Phi;^{-1}(P(0)) + 1.50 = &Phi;^{-1}(e^{-DPU}) + 1.50",
+    "context": "<div class=\"exec-summary\"><ul><li>Thang đo Sigma là ngôn ngữ chung: Mọi dạng dữ liệu (Liên tục, Đếm "
+  },
+  {
+    "file": "sources\\04. Process Management\\04. Establishing Baselines\\16.Conversion of Probabilities to the Sigma Scale.html",
+    "line": 467,
+    "match": "$DPU &harr; Yield &harr; DPMO &harr; Z_{ST} &harr; Z_{LT} &harr; C_{pk}$",
+    "inner": "DPU &harr; Yield &harr; DPMO &harr; Z_{ST} &harr; Z_{LT} &harr; C_{pk}",
+    "context": "<div class=\"exec-summary\"><ul><li>Thang đo Sigma là ngôn ngữ chung: Mọi dạng dữ liệu (Liên tục, Đếm "
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\04.Analytical Cookbook for Sigma-Based Benchmarking.html",
+    "line": 493,
+    "match": "$)</div><div class=\"math-den\"><i>Study Cost</i> ($",
+    "inner": ")</div><div class=\"math-den\"><i>Study Cost</i> (",
+    "context": "<div class=\"math-equation\"><i>ROI</i><sub>Benchmark</sub> = <div class=\"math-frac\"><div class=\"math-"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\04.Analytical Cookbook for Sigma-Based Benchmarking.html",
+    "line": 554,
+    "match": "$500,000,000 × (0.18 - 0.02) = $",
+    "inner": "500,000,000 × (0.18 - 0.02) =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4-3', &quot;Annu"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\04.Analytical Cookbook for Sigma-Based Benchmarking.html",
+    "line": 554,
+    "match": "$80,000,000/năm (500 triệu USD × (18% - 2%) = 500M × 16%)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q4-3', &quot;Annual COPQ disadvantage = $",
+    "inner": "80,000,000/năm (500 triệu USD × (18% - 2%) = 500M × 16%)</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q4-3', &quot;Annual COPQ disadvantage =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4-3', &quot;Annu"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\04.Analytical Cookbook for Sigma-Based Benchmarking.html",
+    "line": 554,
+    "match": "$80,000,000/year.&quot;, &quot;Doanh nghiệp đang chịu thiệt thòi tới 80 triệu USD chi phí lãng phí mỗi năm so với đối thủ cạnh tranh.&quot;)\">B. $",
+    "inner": "80,000,000/year.&quot;, &quot;Doanh nghiệp đang chịu thiệt thòi tới 80 triệu USD chi phí lãng phí mỗi năm so với đối thủ cạnh tranh.&quot;)\">B.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4-3', &quot;Annu"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\04.Analytical Cookbook for Sigma-Based Benchmarking.html",
+    "line": 554,
+    "match": "$500,000,000 × (0.18 - 0.02) = $",
+    "inner": "500,000,000 × (0.18 - 0.02) =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4-3', &quot;Annu"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\09.Cookbook for Benchmarking Products and Services.html",
+    "line": 559,
+    "match": "$25,000. Giải pháp học hỏi từ đối tác giúp tái thiết kế quy trình tiết kiệm $",
+    "inner": "25,000. Giải pháp học hỏi từ đối tác giúp tái thiết kế quy trình tiết kiệm",
+    "context": "<div class=\"quiz-q\">Chuyến nghiên cứu benchmark tốn $25,000. Giải pháp học hỏi từ đối tác giúp tái t"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\09.Cookbook for Benchmarking Products and Services.html",
+    "line": 560,
+    "match": "$25,000 / ($",
+    "inner": "25,000 / (",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Payb"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\09.Cookbook for Benchmarking Products and Services.html",
+    "line": 560,
+    "match": "$25,000 / ($",
+    "inner": "25,000 / (",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Payb"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\09.Cookbook for Benchmarking Products and Services.html",
+    "line": 560,
+    "match": "$25,000 / ($",
+    "inner": "25,000 / (",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Payb"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\09.Cookbook for Benchmarking Products and Services.html",
+    "line": 560,
+    "match": "$25,000 / ($",
+    "inner": "25,000 / (",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q9-4', &quot;Payb"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\10.Magnitude of Change Associated with Breakthrough.html",
+    "line": 554,
+    "match": "$100,000,000 × (0.25 - 0.05) = $",
+    "inner": "100,000,000 × (0.25 - 0.05) =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q10-3', &quot;Lib"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\10.Magnitude of Change Associated with Breakthrough.html",
+    "line": 554,
+    "match": "$20,000,000 (100 triệu USD × (25% - 5%))</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q10-3', &quot;Liberated capital = $",
+    "inner": "20,000,000 (100 triệu USD × (25% - 5%))</button><button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-q10-3', &quot;Liberated capital =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q10-3', &quot;Lib"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\10.Magnitude of Change Associated with Breakthrough.html",
+    "line": 554,
+    "match": "$20,000,000.&quot;, &quot;Giải phóng ngay 20 triệu USD tiền mặt bị chôn vùi trong phế phẩm để tái đầu tư mở rộng kinh doanh.&quot;)\">B. $",
+    "inner": "20,000,000.&quot;, &quot;Giải phóng ngay 20 triệu USD tiền mặt bị chôn vùi trong phế phẩm để tái đầu tư mở rộng kinh doanh.&quot;)\">B.",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q10-3', &quot;Lib"
+  },
+  {
+    "file": "sources\\04. Process Management\\05. Performance Benchmarks\\10.Magnitude of Change Associated with Breakthrough.html",
+    "line": 554,
+    "match": "$100,000,000 × (0.25 - 0.05) = $",
+    "inner": "100,000,000 × (0.25 - 0.05) =",
+    "context": "<div class=\"quiz-opts\"><button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q10-3', &quot;Lib"
+  },
+  {
+    "file": "sources\\04. Process Management\\06. Defect Opportunity\\08.Methods of Counting Defect Opportunities - Part B.html",
+    "line": 604,
+    "match": "$122.68. That’s a defect. That’s a type of defect. That’s a defect opportunity.&quot;', 'Khoản chênh lệch $",
+    "inner": "122.68. That’s a defect. That’s a type of defect. That’s a defect opportunity.&quot;', 'Khoản chênh lệch",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-08-2', 'Dr. Harry: &quot;The reconciled"
+  },
+  {
+    "file": "sources\\04. Process Management\\06. Defect Opportunity\\08.Methods of Counting Defect Opportunities - Part B.html",
+    "line": 605,
+    "match": "$122.68. That’s a defect. That’s a type of defect. That’s a defect opportunity.&quot;', 'Khoản chênh lệch $",
+    "inner": "122.68. That’s a defect. That’s a type of defect. That’s a defect opportunity.&quot;', 'Khoản chênh lệch",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-08-2', 'Dr. Harry: &quot;The reconciled "
+  },
+  {
+    "file": "sources\\04. Process Management\\06. Defect Opportunity\\08.Methods of Counting Defect Opportunities - Part B.html",
+    "line": 606,
+    "match": "$122.68. That’s a defect. That’s a type of defect. That’s a defect opportunity.&quot;', 'Khoản chênh lệch $",
+    "inner": "122.68. That’s a defect. That’s a type of defect. That’s a defect opportunity.&quot;', 'Khoản chênh lệch",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-08-2', 'Dr. Harry: &quot;The reconciled"
+  },
+  {
+    "file": "sources\\04. Process Management\\06. Defect Opportunity\\08.Methods of Counting Defect Opportunities - Part B.html",
+    "line": 607,
+    "match": "$122.68. That’s a defect. That’s a type of defect. That’s a defect opportunity.&quot;', 'Khoản chênh lệch $",
+    "inner": "122.68. That’s a defect. That’s a type of defect. That’s a defect opportunity.&quot;', 'Khoản chênh lệch",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-08-2', 'Dr. Harry: &quot;The reconciled"
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\02.Define Value Opportunities.html",
+    "line": 434,
+    "match": "$Opportunity = f(Condition_1, Condition_2, &hellip;, Condition_N)$",
+    "inner": "Opportunity = f(Condition_1, Condition_2, &hellip;, Condition_N)",
+    "context": "<li><strong>Hàm Số Cơ Hội Six Sigma:</strong> Trong ngôn ngữ thống kê, $Opportunity = f(Condition_1,"
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\02.Define Value Opportunities.html",
+    "line": 603,
+    "match": "$1,200/min/year = $",
+    "inner": "1,200/min/year =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q4', 'Correct. Delta C = |20 - 90| = 70 "
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\02.Define Value Opportunities.html",
+    "line": 629,
+    "match": "$10,000 in raw material purchase creates $",
+    "inner": "10,000 in raw material purchase creates",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q6', 'Correct. Elevate to Total Cost of "
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\03.Measure Value Conditions.html",
+    "line": 591,
+    "match": "$&delta;_{X1}$",
+    "inner": "&delta;_{X1}",
+    "context": "<div class=\"quiz-q\">Một quy trình đúc kim loại có điều kiện đầu vào then chốt là nhiệt độ rót nhôm ("
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\03.Measure Value Conditions.html",
+    "line": 757,
+    "match": "$X_1 &hellip; X_K$",
+    "inner": "X_1 &hellip; X_K",
+    "context": "<strong>Bước 2: Thu thập dữ liệu Gemba thiết lập Baseline Is State:</strong> Trực tiếp ghi nhận tối "
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\03.Measure Value Conditions.html",
+    "line": 757,
+    "match": "$&mu;_{baseline}$",
+    "inner": "&mu;_{baseline}",
+    "context": "<strong>Bước 2: Thu thập dữ liệu Gemba thiết lập Baseline Is State:</strong> Trực tiếp ghi nhận tối "
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\03.Measure Value Conditions.html",
+    "line": 757,
+    "match": "$&sigma;_{baseline}$",
+    "inner": "&sigma;_{baseline}",
+    "context": "<strong>Bước 2: Thu thập dữ liệu Gemba thiết lập Baseline Is State:</strong> Trực tiếp ghi nhận tối "
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\03.Measure Value Conditions.html",
+    "line": 764,
+    "match": "$&delta;_X = |X_{entitlement} - X_{baseline}|$",
+    "inner": "&delta;_X = |X_{entitlement} - X_{baseline}|",
+    "context": "<strong>Bước 3: Xác lập Entitlement Ought Target và lượng hóa khoảng trống cấp thấp:</strong> Nghiên"
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\09.Describing the Essence of Value Creation.html",
+    "line": 454,
+    "match": "$R &rarr; D &rarr; M &rarr; A &rarr; I &rarr; C &rarr; S &rarr; I$",
+    "inner": "R &rarr; D &rarr; M &rarr; A &rarr; I &rarr; C &rarr; S &rarr; I",
+    "context": "<li><strong>Cỗ Máy 8 Bước Tự Nhân Bản Giá Trị:</strong> Chu trình khép kín $R &rarr; D &rarr; M &rar"
+  },
+  {
+    "file": "sources\\05. Project Application\\01. Value Creation\\09.Describing the Essence of Value Creation.html",
+    "line": 659,
+    "match": "$30 = $",
+    "inner": "30 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-q3', 'Correct. Input units at 80% yield "
+  },
+  {
+    "file": "sources\\05. Project Application\\02. MFSS Principle\\01.Nature and Mission of MFSS in a Business Environment.html",
+    "line": 543,
+    "match": "$)</div><div class=\"math-den\">&sum; <i>Capital &amp; Resource Invested in Six Sigma</i> ($",
+    "inner": ")</div><div class=\"math-den\">&sum; <i>Capital &amp; Resource Invested in Six Sigma</i> (",
+    "context": "<div class=\"math-equation\"><i>MTE</i> = <div class=\"math-frac\"><div class=\"math-num\">&Delta; <i>Hard"
+  },
+  {
+    "file": "sources\\05. Project Application\\04. DFSS Principles\\02.Practical Applications of the DFSS Methodology - Part A.html",
+    "line": 463,
+    "match": "$246.5^circ\text{C} pm 4.5^circ\text{C}$",
+    "inner": "246.5^circ\text{C} pm 4.5^circ\text{C}",
+    "context": "<p><strong>Giải pháp DFSS:</strong> Nhóm Black Belt thiết lập thực nghiệm thu thập 150 cặp mẫu (Nhiệ"
+  },
+  {
+    "file": "sources\\05. Project Application\\04. DFSS Principles\\02.Practical Applications of the DFSS Methodology - Part A.html",
+    "line": 470,
+    "match": "$125\text{ J} pm 8\text{ J}$",
+    "inner": "125\text{ J} pm 8\text{ J}",
+    "context": "<p><strong>Giải pháp DFSS:</strong> Nhóm R&amp;D thực hiện dự án DFSS ánh xạ giữa Năng lượng hàn siê"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 462,
+    "match": "$1</strong> chi phí COPQ tiết kiệm được từ Six Sigma sẽ đóng góp trọn vẹn $",
+    "inner": "1</strong> chi phí COPQ tiết kiệm được từ Six Sigma sẽ đóng góp trọn vẹn",
+    "context": "<div class=\"desc\">Công thức phản ánh đòn bẩy P&L: Cứ mỗi <strong>$1</strong> chi phí COPQ tiết kiệm "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 462,
+    "match": "$1 lợi nhuận đó thông qua bán hàng trong điều kiện biên lợi nhuận hoạt động 8%, phòng kinh doanh phải bán thêm <strong>$",
+    "inner": "1 lợi nhuận đó thông qua bán hàng trong điều kiện biên lợi nhuận hoạt động 8%, phòng kinh doanh phải bán thêm <strong>",
+    "context": "<div class=\"desc\">Công thức phản ánh đòn bẩy P&L: Cứ mỗi <strong>$1</strong> chi phí COPQ tiết kiệm "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 531,
+    "match": "$180 triệu/năm với mức tăng trưởng 10%/năm. Ban giám đốc luôn tự hào vì công ty vẫn có lãi ròng $",
+    "inner": "180 triệu/năm với mức tăng trưởng 10%/năm. Ban giám đốc luôn tự hào vì công ty vẫn có lãi ròng",
+    "context": "<p style=\"margin:0 0 10px; font-size:0.96rem; color:#334155;\"><strong>Bối cảnh &amp; Thách thức:</st"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 598,
+    "match": "$120,000,000 = $",
+    "inner": "120,000,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-01-3', 'Correct calculation: COPQ "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 598,
+    "match": "$120,000,000 = $",
+    "inner": "120,000,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-01-3', 'Correct calculation: COPQ "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 610,
+    "match": "$18 triệu/năm), giả sử biên lợi nhuận ròng trên doanh thu (Net Profit Margin) hiện tại của công ty là 6%. Để tạo ra được $",
+    "inner": "18 triệu/năm), giả sử biên lợi nhuận ròng trên doanh thu (Net Profit Margin) hiện tại của công ty là 6%. Để tạo ra được",
+    "context": "<div class=\"quiz-q\">Với doanh nghiệp Tân Á ở Câu 3 (lãng phí COPQ là $18 triệu/năm), giả sử biên lợi"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 613,
+    "match": "$180M × 6% chỉ mang lại $",
+    "inner": "180M × 6% chỉ mang lại",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-05-06-01-4', '180M * 6% = 10.8M, not 18"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 616,
+    "match": "$18,000,000 / 0.06 = $",
+    "inner": "18,000,000 / 0.06 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-01-4', 'Correct: Required Revenue "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 616,
+    "match": "$18,000,000 / 0.06 = $",
+    "inner": "18,000,000 / 0.06 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-01-4', 'Correct: Required Revenue "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 658,
+    "match": "$8M hiện tại đang che giấu khoản lãng phí $",
+    "inner": "8M hiện tại đang che giấu khoản lãng phí",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-01-6', 'Correct. Dr. Harry emphasi"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\01.Profile and Characterization of an Average Company.html",
+    "line": 659,
+    "match": "$15-20 triệu lãng phí ẩn; khi giá thị trường giảm 3-5% do đối thủ cạnh tranh, toàn bộ $",
+    "inner": "15-20 triệu lãng phí ẩn; khi giá thị trường giảm 3-5% do đối thủ cạnh tranh, toàn bộ",
+    "context": "B. Trưng dẫn số liệu kiểm toán COPQ cho thấy công ty đang mất $15-20 triệu lãng phí ẩn; khi giá thị "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 583,
+    "match": "$240 triệu/năm, tỷ lệ chi phí chất lượng kém (COPQ) ước tính là 15% ($",
+    "inner": "240 triệu/năm, tỷ lệ chi phí chất lượng kém (COPQ) ước tính là 15% (",
+    "context": "<div class=\"quiz-q\">Doanh nghiệp Vĩnh Phát có doanh thu $240 triệu/năm, tỷ lệ chi phí chất lượng kém"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 592,
+    "match": "$36M / 12 = $",
+    "inner": "36M / 12 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-02-3', 'Correct: Monthly COPQ = $3"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 592,
+    "match": "$3M = $",
+    "inner": "3M =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-02-3', 'Correct: Monthly COPQ = $3"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 592,
+    "match": "$36M / 12 = $",
+    "inner": "36M / 12 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-02-3', 'Correct: Monthly COPQ = $3"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 610,
+    "match": "$25,000,000 = $",
+    "inner": "25,000,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-02-4', 'Correct: Startup investmen"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 610,
+    "match": "$25,000,000 = $",
+    "inner": "25,000,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-02-4', 'Correct: Startup investmen"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 625,
+    "match": "$600,000. Ban lãnh đạo phê duyệt ngân sách trực tiếp $",
+    "inner": "600,000. Ban lãnh đạo phê duyệt ngân sách trực tiếp",
+    "context": "<div class=\"quiz-q\">Tại một tập đoàn có yêu cầu ngân sách chuẩn triển khai là $600,000. Ban lãnh đạo"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 631,
+    "match": "$300 = $",
+    "inner": "300 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-02-5', 'Correct: Value of executiv"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 631,
+    "match": "$600,000. ECI = $",
+    "inner": "600,000. ECI =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-02-5', 'Correct: Value of executiv"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 631,
+    "match": "$600k = 1.0.', 'Chính xác! Giá trị thời gian điều hành = 500 giờ × $",
+    "inner": "600k = 1.0.', 'Chính xác! Giá trị thời gian điều hành = 500 giờ ×",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-02-5', 'Correct: Value of executiv"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 631,
+    "match": "$150,000. Tổng nguồn lực = $",
+    "inner": "150,000. Tổng nguồn lực =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-02-5', 'Correct: Value of executiv"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\02.Making the Decision to Adopt and Implement Six Sigma.html",
+    "line": 631,
+    "match": "$150,000 = $",
+    "inner": "150,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-02-5', 'Correct: Value of executiv"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 586,
+    "match": "$80,000. Do tư vấn kém năng lực, 15 Black Belt (lương $",
+    "inner": "80,000. Do tư vấn kém năng lực, 15 Black Belt (lương",
+    "context": "<div class=\"quiz-q\">Công ty Đông Đô thuê một đơn vị tư vấn giá rẻ với chi phí $80,000. Do tư vấn kém"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 592,
+    "match": "$80,000; Wasted payroll = 15 Belts * $",
+    "inner": "80,000; Wasted payroll = 15 Belts *",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-3', 'Correct calculation: Fees "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 592,
+    "match": "$150,000; COPQ delay loss = 6 months * $",
+    "inner": "150,000; COPQ delay loss = 6 months *",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-3', 'Correct calculation: Fees "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 592,
+    "match": "$900,000. Total = $",
+    "inner": "900,000. Total =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-3', 'Correct calculation: Fees "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 592,
+    "match": "$1,130,000.', 'Chính xác! Phí tư vấn: $",
+    "inner": "1,130,000.', 'Chính xác! Phí tư vấn:",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-3', 'Correct calculation: Fees "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 592,
+    "match": "$2k × 5 tháng = $",
+    "inner": "2k × 5 tháng =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-3', 'Correct calculation: Fees "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 592,
+    "match": "$150k = $",
+    "inner": "150k =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-3', 'Correct calculation: Fees "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 592,
+    "match": "$900k = $",
+    "inner": "900k =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-3', 'Correct calculation: Fees "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 628,
+    "match": "$250,000/năm. Nếu hoàn tất chuyển giao năng lực cho 4 Master Black Belt nội bộ (phụ cấp $",
+    "inner": "250,000/năm. Nếu hoàn tất chuyển giao năng lực cho 4 Master Black Belt nội bộ (phụ cấp",
+    "context": "<div class=\"quiz-q\">Nếu tiếp tục thuê tư vấn bên ngoài giảng dạy sau 24 tháng, công ty phải trả $250"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 634,
+    "match": "$250,000 - (4 * $",
+    "inner": "250,000 - (4 *",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-5', 'Correct: Annual net saving"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 634,
+    "match": "$210,000/year. For 3 years: 3 * $",
+    "inner": "210,000/year. For 3 years: 3 *",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-5', 'Correct: Annual net saving"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 634,
+    "match": "$630,000.', 'Chính xác! Tiết kiệm mỗi năm = $",
+    "inner": "630,000.', 'Chính xác! Tiết kiệm mỗi năm =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-5', 'Correct: Annual net saving"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 634,
+    "match": "$10k) = $",
+    "inner": "10k) =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-5', 'Correct: Annual net saving"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\03.Conducting a Six Sigma Due Diligence Investigation.html",
+    "line": 634,
+    "match": "$210k = $",
+    "inner": "210k =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-03-5', 'Correct: Annual net saving"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 524,
+    "match": "$6.8M EBITDA so với $",
+    "inner": "6.8M EBITDA so với",
+    "context": "<p style=\"margin:0 0 10px; font-size:0.96rem; color:#334155;\"><strong>Giải pháp can thiệp Six Sigma:"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 580,
+    "match": "$6M, Tính cấp thiết 4, Độ phức tạp 2, Lực cản 2); Phương án B (Nhà máy Bình Dương: Cơ hội $",
+    "inner": "6M, Tính cấp thiết 4, Độ phức tạp 2, Lực cản 2); Phương án B (Nhà máy Bình Dương: Cơ hội",
+    "context": "<div class=\"quiz-q\">Tại Hội nghị Thượng đỉnh, ban điều hành xem xét 2 phương án trọng tâm: Phương án"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 605,
+    "match": "$1.75 triệu; BU2: $",
+    "inner": "1.75 triệu; BU2:",
+    "context": "A. BU1: $1.75 triệu; BU2: $1.75 triệu"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 607,
+    "match": "$7.0M = $",
+    "inner": "7.0M =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-04-4', 'Correct: BU1 = 40% of $7.0"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 607,
+    "match": "$7.0M = $",
+    "inner": "7.0M =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-04-4', 'Correct: BU1 = 40% of $7.0"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 607,
+    "match": "$7.0M = $",
+    "inner": "7.0M =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-04-4', 'Correct: BU1 = 40% of $7.0"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 607,
+    "match": "$7.0M = $",
+    "inner": "7.0M =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-04-4', 'Correct: BU1 = 40% of $7.0"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 608,
+    "match": "$2.80 triệu; BU2: $",
+    "inner": "2.80 triệu; BU2:",
+    "context": "B. BU1: $2.80 triệu; BU2: $2.10 triệu"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 611,
+    "match": "$3.50 triệu; BU2: $",
+    "inner": "3.50 triệu; BU2:",
+    "context": "C. BU1: $3.50 triệu; BU2: $1.50 triệu"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 614,
+    "match": "$2.00 triệu; BU2: $",
+    "inner": "2.00 triệu; BU2:",
+    "context": "D. BU1: $2.00 triệu; BU2: $2.00 triệu"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 622,
+    "match": "$2.8 triệu (từ Câu 4), và định mức chuẩn của Dr. Harry là mỗi Black Belt tạo ra trung bình $",
+    "inner": "2.8 triệu (từ Câu 4), và định mức chuẩn của Dr. Harry là mỗi Black Belt tạo ra trung bình",
+    "context": "<div class=\"quiz-q\">Với mục tiêu cam kết của BU1 là $2.8 triệu (từ Câu 4), và định mức chuẩn của Dr."
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 625,
+    "match": "$350k = $",
+    "inner": "350k =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-05-06-04-5', '4 * $350k = $1.4M (only h"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 628,
+    "match": "$350k = $",
+    "inner": "350k =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-05-06-04-5', '6 * $350k = $2.1M.', 'Sai"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\04.Holding a Six Sigma Executive Leadership Summit.html",
+    "line": 634,
+    "match": "$350k = $",
+    "inner": "350k =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-05-06-04-5', '12 * $350k = $4.2M (excee"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\05.Training and Managing Six Sigma Champions.html",
+    "line": 601,
+    "match": "$360,000 Hard Savings/năm (tương đương $",
+    "inner": "360,000 Hard Savings/năm (tương đương",
+    "context": "<div class=\"quiz-q\">Một dự án Black Belt có tiềm năng mang lại $360,000 Hard Savings/năm (tương đươn"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\05.Training and Managing Six Sigma Champions.html",
+    "line": 607,
+    "match": "$1,000/day = $",
+    "inner": "1,000/day =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-05-4', 'Correct: Delay duration = "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\05.Training and Managing Six Sigma Champions.html",
+    "line": 607,
+    "match": "$1,000/ngày = $",
+    "inner": "1,000/ngày =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-05-4', 'Correct: Delay duration = "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\05.Training and Managing Six Sigma Champions.html",
+    "line": 622,
+    "match": "$35,000. Đội ngũ 10 Champion này bảo trợ thành công 20 dự án Black Belt Wave 1, mang lại tổng cộng $",
+    "inner": "35,000. Đội ngũ 10 Champion này bảo trợ thành công 20 dự án Black Belt Wave 1, mang lại tổng cộng",
+    "context": "<div class=\"quiz-q\">Khóa học MFSS cho 10 Champion tiêu tốn tổng chi phí $35,000. Đội ngũ 10 Champion"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 404,
+    "match": "$350,000/Belt ($",
+    "inner": "350,000/Belt (",
+    "context": "<p class=\"hero-desc\">Cột mốc Tháng 2-3 đến Tháng 8: Quy trình đào tạo Black Belt theo từng giai đoạn"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 435,
+    "match": "$350,000/Belt:</strong> Đây là chuẩn mực kiểm toán của Dr. Harry. Với 25 Belts, một đợt sóng tạo ra <strong>$",
+    "inner": "350,000/Belt:</strong> Đây là chuẩn mực kiểm toán của Dr. Harry. Với 25 Belts, một đợt sóng tạo ra <strong>",
+    "context": "<li><strong>Chỉ tiêu tài chính cứng $350,000/Belt:</strong> Đây là chuẩn mực kiểm toán của Dr. Harry"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 455,
+    "match": "$350,000 = $",
+    "inner": "350,000 =",
+    "context": "<div class=\"formula\">Yield<sub>Wave</sub> = N<sub>BB</sub> &times; S&#772;<sub>BB</sub> = 25 &times;"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 456,
+    "match": "$350,000). Nếu triển khai 2 đợt sóng song song (Parallel Waves), tổng giá trị kiểm toán đạt tới <strong>$",
+    "inner": "350,000). Nếu triển khai 2 đợt sóng song song (Parallel Waves), tổng giá trị kiểm toán đạt tới <strong>",
+    "context": "<div class=\"desc\">Trong đó: <strong>N<sub>BB</sub></strong> là số lượng Black Belt trong 1 đợt sóng "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 531,
+    "match": "$8.1 triệu tiền mặt tiết kiệm thực tế (bình quân $",
+    "inner": "8.1 triệu tiền mặt tiết kiệm thực tế (bình quân",
+    "context": "<p style=\"margin:0; font-size:0.96rem; color:var(--vi-green-2); font-weight:700;\"><strong>Kết quả tà"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 571,
+    "match": "$350,000 per black belt.&quot;', 'Chính xác! Chuẩn mực SSMI là khoảng 25 Black Belt cho mỗi đợt sóng, với chỉ tiêu tiết kiệm tài chính cứng trung bình là $",
+    "inner": "350,000 per black belt.&quot;', 'Chính xác! Chuẩn mực SSMI là khoảng 25 Black Belt cho mỗi đợt sóng, với chỉ tiêu tiết kiệm tài chính cứng trung bình là",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-06-2', 'Correct. Dr. Harry states:"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 589,
+    "match": "$350k = $",
+    "inner": "350k =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-05-06-06-3', 'This is the savings of on"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 592,
+    "match": "$350,000 = 50 Belts * $",
+    "inner": "350,000 = 50 Belts *",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-06-3', 'Correct: Total yield = 2 w"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 592,
+    "match": "$17,500,000.', 'Chính xác! Tổng lợi nhuận = 2 đợt × 25 Belt × $",
+    "inner": "17,500,000.', 'Chính xác! Tổng lợi nhuận = 2 đợt × 25 Belt ×",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-06-3', 'Correct: Total yield = 2 w"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 607,
+    "match": "$400,000, phần mềm thống kê $",
+    "inner": "400,000, phần mềm thống kê",
+    "context": "<div class=\"quiz-q\">Chi phí đầu tư cho Làn sóng 1 gồm 25 Black Belt (bao gồm chi phí tư vấn MBB $400"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 607,
+    "match": "$1,000,000) tổng cộng là $",
+    "inner": "1,000,000) tổng cộng là",
+    "context": "<div class=\"quiz-q\">Chi phí đầu tư cho Làn sóng 1 gồm 25 Black Belt (bao gồm chi phí tư vấn MBB $400"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 616,
+    "match": "$7,300,000. ROI = ($",
+    "inner": "7,300,000. ROI = (",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-06-4', 'Correct: Net Savings = $8,"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 616,
+    "match": "$1,450,000) * 100% = 503.4%.', 'Chính xác! Lợi nhuận ròng = $",
+    "inner": "1,450,000) * 100% = 503.4%.', 'Chính xác! Lợi nhuận ròng =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-06-4', 'Correct: Net Savings = $8,"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 616,
+    "match": "$1,450,000 = $",
+    "inner": "1,450,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-06-4', 'Correct: Net Savings = $8,"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 616,
+    "match": "$1 đầu tư mang về hơn $",
+    "inner": "1 đầu tư mang về hơn",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-06-4', 'Correct: Net Savings = $8,"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 746,
+    "match": "$350,000 Hard Savings đã được CFO kiểm toán cho mỗi Black Belt (tổng $",
+    "inner": "350,000 Hard Savings đã được CFO kiểm toán cho mỗi Black Belt (tổng",
+    "context": "<div class=\"fc-a\">Trung bình $350,000 Hard Savings đã được CFO kiểm toán cho mỗi Black Belt (tổng $8"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 791,
+    "match": "$350k Target):</strong> Mỗi Black Belt cùng Project Champion và đại diện Tài chính ký cam kết mục tiêu Hard Savings tối thiểu $",
+    "inner": "350k Target):</strong> Mỗi Black Belt cùng Project Champion và đại diện Tài chính ký cam kết mục tiêu Hard Savings tối thiểu",
+    "context": "<span class=\"action-text\"><strong>Bước 2: Ký Hợp Đồng Trách Nhiệm P&L Dự Án ($350k Target):</strong>"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\06.Training and Managing Six Sigma Black Belts.html",
+    "line": 819,
+    "match": "$350k/Belt ($",
+    "inner": "350k/Belt (",
+    "context": "<td><strong>Kiểm soát & Bàn giao (Control)</strong></td><td>Tháng 7-8 (Tuần 29-32)</td><td>Lập biểu "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 543,
+    "match": "$500M doanh thu) khởi động Six Sigma năm 2021 với ngân sách ban đầu $",
+    "inner": "500M doanh thu) khởi động Six Sigma năm 2021 với ngân sách ban đầu",
+    "context": "<p style=\"margin:0 0 10px; font-size:0.96rem; color:#334155;\"><strong>Bối cảnh &amp; Thách thức:</st"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 546,
+    "match": "$8.2M chi phí vật tư. Đến Tháng 36, chương trình mang lại tổng cộng $",
+    "inner": "8.2M chi phí vật tư. Đến Tháng 36, chương trình mang lại tổng cộng",
+    "context": "<p style=\"margin:0; font-size:0.96rem; color:var(--vi-green-2); font-weight:700;\"><strong>Kết quả tà"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 601,
+    "match": "$40 triệu. Chi phí khởi động Six Sigma năm đầu tiên ước tính bằng 2% quỹ lương ($",
+    "inner": "40 triệu. Chi phí khởi động Six Sigma năm đầu tiên ước tính bằng 2% quỹ lương (",
+    "context": "<div class=\"quiz-q\">Doanh nghiệp An Phát có tổng quỹ lương hàng năm là $40 triệu. Chi phí khởi động "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 604,
+    "match": "$400k (only half of the startup cost).', 'Sai. 8 × $",
+    "inner": "400k (only half of the startup cost).', 'Sai. 8 ×",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-05-06-07-3', '8 * 50k = $400k (only hal"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 607,
+    "match": "$800,000 / 8 Belts = $",
+    "inner": "800,000 / 8 Belts =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-07-3', 'Correct: Breakeven saving "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 607,
+    "match": "$800,000 / 8 = $",
+    "inner": "800,000 / 8 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-07-3', 'Correct: Breakeven saving "
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 613,
+    "match": "$2.8M vs $",
+    "inner": "2.8M vs",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-05-06-07-3', 'This is the standard targ"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 622,
+    "match": "$350,000 Hard Savings). Nhờ đã đào tạo được MBB nội bộ, chi phí duy trì chương trình chỉ còn $",
+    "inner": "350,000 Hard Savings). Nhờ đã đào tạo được MBB nội bộ, chi phí duy trì chương trình chỉ còn",
+    "context": "<div class=\"quiz-q\">Từ Tháng 13 trở đi, doanh nghiệp duy trì đều đặn 20 Black Belt hoạt động mỗi năm"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 628,
+    "match": "$350,000 = $",
+    "inner": "350,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-07-4', 'Correct: Annual Gross Savi"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 628,
+    "match": "$6,700,000 per year.', 'Chính xác! Tổng tiết kiệm = 20 × $",
+    "inner": "6,700,000 per year.', 'Chính xác! Tổng tiết kiệm = 20 ×",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-07-4', 'Correct: Annual Gross Savi"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 628,
+    "match": "$7,000,000. Lợi nhuận ròng thuần túy = $",
+    "inner": "7,000,000. Lợi nhuận ròng thuần túy =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-07-4', 'Correct: Annual Gross Savi"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 628,
+    "match": "$300,000 = $",
+    "inner": "300,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-07-4', 'Correct: Annual Gross Savi"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 649,
+    "match": "$80,000,000 * 0.035 = $",
+    "inner": "80,000,000 * 0.035 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-07-5', 'Correct: Annual supply sav"
+  },
+  {
+    "file": "sources\\05. Project Application\\06. Deployment Timeline\\07.Implementing DFSS and Supply-Based Initiatives.html",
+    "line": 649,
+    "match": "$80,000,000 × 3.5% = $",
+    "inner": "80,000,000 × 3.5% =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-06-07-5', 'Correct: Annual supply sav"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\03.Defining the CXO Roles for a Six Sigma Deployment.html",
+    "line": 573,
+    "match": "$60M = $",
+    "inner": "60M =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-03-3', 'Correct. 2% of $60M = $1.2M star"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\03.Defining the CXO Roles for a Six Sigma Deployment.html",
+    "line": 573,
+    "match": "$1.2M * 5 = $",
+    "inner": "1.2M * 5 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-03-3', 'Correct. 2% of $60M = $1.2M star"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\03.Defining the CXO Roles for a Six Sigma Deployment.html",
+    "line": 573,
+    "match": "$60M = $",
+    "inner": "60M =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-03-3', 'Correct. 2% of $60M = $1.2M star"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\03.Defining the CXO Roles for a Six Sigma Deployment.html",
+    "line": 573,
+    "match": "$1.2M * 5 = $",
+    "inner": "1.2M * 5 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-03-3', 'Correct. 2% of $60M = $1.2M star"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\03.Defining the CXO Roles for a Six Sigma Deployment.html",
+    "line": 574,
+    "match": "$1,200,000 &bull; Kỳ vọng Hard Savings tối thiểu: $",
+    "inner": "1,200,000 &bull; Kỳ vọng Hard Savings tối thiểu:",
+    "context": "A. Ngân sách khởi động: $1,200,000 &bull; Kỳ vọng Hard Savings tối thiểu: $6,000,000."
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\03.Defining the CXO Roles for a Six Sigma Deployment.html",
+    "line": 576,
+    "match": "$1.2M, not $",
+    "inner": "1.2M, not",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-03-3', 'Incorrect. 2% is $1.2M, not $60"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\03.Defining the CXO Roles for a Six Sigma Deployment.html",
+    "line": 576,
+    "match": "$60,000,000 là $",
+    "inner": "60,000,000 là",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-03-3', 'Incorrect. 2% is $1.2M, not $60"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\03.Defining the CXO Roles for a Six Sigma Deployment.html",
+    "line": 577,
+    "match": "$600,000 &bull; Kỳ vọng Hard Savings tối thiểu: $",
+    "inner": "600,000 &bull; Kỳ vọng Hard Savings tối thiểu:",
+    "context": "B. Ngân sách khởi động: $600,000 &bull; Kỳ vọng Hard Savings tối thiểu: $3,000,000."
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\03.Defining the CXO Roles for a Six Sigma Deployment.html",
+    "line": 580,
+    "match": "$1,200,000 &bull; Kỳ vọng Hard Savings tối thiểu: $",
+    "inner": "1,200,000 &bull; Kỳ vọng Hard Savings tối thiểu:",
+    "context": "C. Ngân sách khởi động: $1,200,000 &bull; Kỳ vọng Hard Savings tối thiểu: $2,400,000."
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\03.Defining the CXO Roles for a Six Sigma Deployment.html",
+    "line": 583,
+    "match": "$6,000,000 &bull; Kỳ vọng Hard Savings tối thiểu: $",
+    "inner": "6,000,000 &bull; Kỳ vọng Hard Savings tối thiểu:",
+    "context": "D. Ngân sách khởi động: $6,000,000 &bull; Kỳ vọng Hard Savings tối thiểu: $12,000,000."
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\04.Making the Six Sigma Champion as a Deployment Leader.html",
+    "line": 775,
+    "match": "$5M–$",
+    "inner": "5M–",
+    "context": "<span class=\"action-text\"><strong>Bước 2: Ký Bản Cam Kết Song Phương (The Executive Catch Accord):</"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\05.Comparing the Functional Roles of a Six Sigma Champion.html",
+    "line": 470,
+    "match": "$10M–$",
+    "inner": "10M–",
+    "context": "<td>Tổng lợi nhuận ròng toàn tập đoàn (&ge; $10M–$50M); Văn hóa chuyển đổi.</td>"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\05.Comparing the Functional Roles of a Six Sigma Champion.html",
+    "line": 472,
+    "match": "$150k–$",
+    "inner": "150k–",
+    "context": "<td>Khoản Hard Savings thực tế của dự án (&ge; $150k–$250k / dự án BB).</td>"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\05.Comparing the Functional Roles of a Six Sigma Champion.html",
+    "line": 604,
+    "match": "$200,000 = $",
+    "inner": "200,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-4', 'Correct. Total savings = 4 * $20"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\05.Comparing the Functional Roles of a Six Sigma Champion.html",
+    "line": 604,
+    "match": "$160,000/month. Multiplied by eta 0.95 = $",
+    "inner": "160,000/month. Multiplied by eta 0.95 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-4', 'Correct. Total savings = 4 * $20"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\05.Comparing the Functional Roles of a Six Sigma Champion.html",
+    "line": 604,
+    "match": "$200k = $",
+    "inner": "200k =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-4', 'Correct. Total savings = 4 * $20"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\05.Comparing the Functional Roles of a Six Sigma Champion.html",
+    "line": 604,
+    "match": "$160,000/tháng; Nhân hệ số &eta; 0.95 = $",
+    "inner": "160,000/tháng; Nhân hệ số &eta; 0.95 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-05-4', 'Correct. Total savings = 4 * $20"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\05.Comparing the Functional Roles of a Six Sigma Champion.html",
+    "line": 607,
+    "match": "$160,000 * 0.95 = $",
+    "inner": "160,000 * 0.95 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-05-4', 'Incorrect. Forgot to apply the "
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 572,
+    "match": "$400,000 / năm khi hoàn thành nghiệm thu cổng Control. Sau 12 tháng bàn giao, kiểm toán độc lập của CFO xác nhận số tiền tiết kiệm thực tế đạt $",
+    "inner": "400,000 / năm khi hoàn thành nghiệm thu cổng Control. Sau 12 tháng bàn giao, kiểm toán độc lập của CFO xác nhận số tiền tiết kiệm thực tế đạt",
+    "context": "<div class=\"quiz-q\">Một dự án giảm phế phẩm lốc máy động cơ cam kết tiết kiệm $400,000 / năm khi hoà"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 595,
+    "match": "$50k = $",
+    "inner": "50k =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-06-4', 'Correct. Monthly waste recurring"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 595,
+    "match": "$40,000 = $",
+    "inner": "40,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-06-4', 'Correct. Monthly waste recurring"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 595,
+    "match": "$50,000 = $",
+    "inner": "50,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-06-4', 'Correct. Monthly waste recurring"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 595,
+    "match": "$40,000 = $",
+    "inner": "40,000 =",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-06-4', 'Correct. Monthly waste recurring"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 598,
+    "match": "$40,000 is only for 1 single month, not the 6-month cumulative loss.', 'Chưa chính xác. $",
+    "inner": "40,000 is only for 1 single month, not the 6-month cumulative loss.', 'Chưa chính xác.",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-06-4', 'Incorrect. $40,000 is only for "
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 601,
+    "match": "$300k, loss is $",
+    "inner": "300k, loss is",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, false, 'fb-06-4', 'Incorrect. Total possible savin"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 616,
+    "match": "$30k sensor investment eliminates $",
+    "inner": "30k sensor investment eliminates",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-06-5', 'Correct. Champion speaks the lan"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 616,
+    "match": "$150k hard savings year 1.', 'Chính xác! Nói ngôn ngữ tiền bạc: Chứng minh khoản đầu tư $",
+    "inner": "150k hard savings year 1.', 'Chính xác! Nói ngôn ngữ tiền bạc: Chứng minh khoản đầu tư",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-06-5', 'Correct. Champion speaks the lan"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 616,
+    "match": "$15,000 phế phẩm mỗi tháng, hòa vốn sau đúng 2 tháng và mang lại $",
+    "inner": "15,000 phế phẩm mỗi tháng, hòa vốn sau đúng 2 tháng và mang lại",
+    "context": "<button class=\"quiz-btn\" onclick=\"checkQuiz(this, true, 'fb-06-5', 'Correct. Champion speaks the lan"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\06.Critical Management Skills for a Six Sigma Champion.html",
+    "line": 617,
+    "match": "$30,000 sẽ giúp triệt tiêu $",
+    "inner": "30,000 sẽ giúp triệt tiêu",
+    "context": "A. Chứng minh bằng bảng phân tích dòng tiền: Khoản đầu tư $30,000 sẽ giúp triệt tiêu $15,000 phế phẩ"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\10.Key Responsibilities of a Six Sigma Black Belt.html",
+    "line": 525,
+    "match": "$1,290,000$",
+    "inner": "1,290,000",
+    "context": "&bull; <strong>Tổng giá trị thực tế tạo ra:</strong> \\1,050,000 + \\240,000 = $1,290,000$ / năm. Đó l"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\14.Primary Characteristics of a Black Belt - Part B.html",
+    "line": 424,
+    "match": "$0.8$",
+    "inner": "0.8",
+    "context": "<td>Tạo bước nhảy vọt C<sub>pk</sub> từ $0.8$ lên 1.67+ mà không đòi hỏi đầu tư dây chuyền mới đắt đ"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\14.Primary Characteristics of a Black Belt - Part B.html",
+    "line": 483,
+    "match": "$0.1$",
+    "inner": "0.1",
+    "context": "<li><strong>&alpha;_ownership (Hệ số nhận lãnh trách nhiệm):</strong> Có giá trị từ $0.1$ (đổ lỗi ch"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\14.Primary Characteristics of a Black Belt - Part B.html",
+    "line": 483,
+    "match": "$1.0$",
+    "inner": "1.0",
+    "context": "<li><strong>&alpha;_ownership (Hệ số nhận lãnh trách nhiệm):</strong> Có giá trị từ $0.1$ (đổ lỗi ch"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\15.Primary Characteristics of a Black Belt - Part C.html",
+    "line": 475,
+    "match": "$1.0$",
+    "inner": "1.0",
+    "context": "<li><strong>RFT_factor (Right First Time):</strong> Hệ số chất lượng giải pháp; đạt $1.0$ nếu giải p"
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\18.Nature of Purpose of Six Sigma Green Belts.html",
+    "line": 454,
+    "match": "$0.0$",
+    "inner": "0.0",
+    "context": "<li><strong>Cross_Dept_Friction_Ratio:</strong> Tỷ lệ ma sát chính trị giữa các phòng ban liên quan "
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\18.Nature of Purpose of Six Sigma Green Belts.html",
+    "line": 454,
+    "match": "$0.8$",
+    "inner": "0.8",
+    "context": "<li><strong>Cross_Dept_Friction_Ratio:</strong> Tỷ lệ ma sát chính trị giữa các phòng ban liên quan "
+  },
+  {
+    "file": "sources\\05. Project Application\\07. Roles\\25.Understanding the Scope of Six Sigma White Belt Projects.html",
+    "line": 388,
+    "match": "$), và Kaizen (10k - 25k$",
+    "inner": "), và Kaizen (10k - 25k",
+    "context": "<li><strong>Tương Quan Trực Tiếp Về Hoàn Vốn (Direct Payback Correlation):</strong> Mức độ lợi tức đ"
+  }
+]

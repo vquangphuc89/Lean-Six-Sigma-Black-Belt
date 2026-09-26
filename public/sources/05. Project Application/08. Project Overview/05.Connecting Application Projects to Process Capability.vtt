@@ -1,0 +1,456 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Connecting Application Projects to Process Capability
+Kết nối Dự án Ứng dụng với Năng lực Quy trình
+
+2
+00:00:05.000 --> 00:00:09.000
+Welcome back to this session on application projects.
+Chào mừng bạn trở lại với phiên học về các dự án ứng dụng.
+
+3
+00:00:09.000 --> 00:00:14.200
+Recognize that Six Sigma
+Nhận ra rằng Six Sigma
+
+4
+00:00:14.200 --> 00:00:19.233
+is about process improvement.
+là về cải tiến quy trình.
+
+5
+00:00:19.233 --> 00:00:23.233
+So again, we start off at the business level
+Vì vậy, một lần nữa, chúng ta bắt đầu ở cấp độ kinh doanh
+
+6
+00:00:23.233 --> 00:00:29.266
+and define, you know from a BOP point of view B O P.
+và xác định, bạn biết đấy từ quan điểm BOP, B O P.
+
+7
+00:00:29.266 --> 00:00:34.432
+We define our business metrics, such as profit.
+Chúng ta xác định các số liệu kinh doanh của mình, chẳng hạn như lợi nhuận.
+
+8
+00:00:34.433 --> 00:00:40.233
+We break that down into operational metrics like yield.
+Chúng ta chia nhỏ nó thành các số liệu vận hành như năng suất.
+
+9
+00:00:40.233 --> 00:00:45.699
+And we break that down into process metrics like process capability.
+Và chúng ta chia nhỏ nó thành các số liệu quy trình như năng lực quy trình.
+
+10
+00:00:45.700 --> 00:00:50.866
+Like for example Cp. So that if I improve all of
+Ví dụ như Cp. Vì vậy, nếu tôi cải thiện tất cả
+
+11
+00:00:50.866 --> 00:00:55.699
+the process capabilities of all of my CTP's.
+các năng lực quy trình của tất cả CTP của tôi.
+
+12
+00:00:55.700 --> 00:01:01.800
+The yields will increase, which improves at the business level, profit.
+Năng suất sẽ tăng lên, điều này cải thiện lợi nhuận ở cấp độ kinh doanh.
+
+13
+00:01:01.800 --> 00:01:08.533
+So, basically what we do is we start off with something like, for example,
+Vì vậy, về cơ bản những gì chúng ta làm là chúng ta bắt đầu với một thứ như, ví dụ,
+
+14
+00:01:08.533 --> 00:01:14.466
+earnings per share.
+lợi nhuận trên mỗi cổ phiếu.
+
+15
+00:01:14.466 --> 00:01:18.999
+At the business level.
+Ở cấp độ kinh doanh.
+
+16
+00:01:19.000 --> 00:01:24.700
+And we take that earnings per share or what I will call EPS.
+Và chúng ta lấy lợi nhuận trên mỗi cổ phiếu đó hoặc những gì tôi sẽ gọi là EPS.
+
+17
+00:01:24.700 --> 00:01:28.766
+I’m going to move to another sheet of paper here.
+Tôi sẽ chuyển sang một tờ giấy khác ở đây.
+
+18
+00:01:28.766 --> 00:01:32.899
+EPS and I allocate out.
+EPS và tôi phân bổ ra.
+
+19
+00:01:32.900 --> 00:01:38.866
+If I want to get, say, here's my current EPS
+Nếu tôi muốn đạt được, giả sử, đây là EPS hiện tại của tôi
+
+20
+00:01:38.866 --> 00:01:45.366
+and here's where I want to be for earnings per share. This is what's desired.
+và đây là nơi tôi muốn đạt được về lợi nhuận trên mỗi cổ phiếu. Đây là điều mong muốn.
+
+21
+00:01:45.366 --> 00:01:52.332
+Then this distance right here is a gap and that's of a certain quantity.
+Thì khoảng cách ngay tại đây là một khoảng trống và đó là một số lượng nhất định.
+
+22
+00:01:52.333 --> 00:01:58.233
+Well, I take that quantity and allocate it out to each
+Chà, tôi lấy số lượng đó và phân bổ nó cho mỗi
+
+23
+00:01:58.233 --> 00:02:04.933
+of my business units. So again, that's EPS allocates out
+trong số các đơn vị kinh doanh của tôi. Vì vậy, một lần nữa, đó là EPS phân bổ ra
+
+24
+00:02:04.933 --> 00:02:08.933
+to each of my business units, for example.
+cho mỗi đơn vị kinh doanh của tôi, ví dụ.
+
+25
+00:02:08.933 --> 00:02:15.966
+In turn, my business units allocate backwards, based on weightings,
+Đến lượt, các đơn vị kinh doanh của tôi phân bổ ngược lại, dựa trên trọng số,
+
+26
+00:02:15.966 --> 00:02:22.899
+all the way down to how much savings needs to come
+cho đến mức tiết kiệm cần phải đến bao nhiêu
+
+27
+00:02:22.900 --> 00:02:27.100
+from each
+từ mỗi
+
+28
+00:02:27.100 --> 00:02:31.533
+critical process
+quy trình quan trọng
+
+29
+00:02:31.533 --> 00:02:34.799
+that’s required to run the business.
+cần thiết để vận hành doanh nghiệp.
+
+30
+00:02:34.800 --> 00:02:40.066
+So, I take EPS which is a dollar amount. Let's say for example, it's simple here.
+Vì vậy, tôi lấy EPS là một số tiền đô la. Giả sử ví dụ, ở đây đơn giản thôi.
+
+31
+00:02:40.066 --> 00:02:46.199
+Let's say I need to save one dollar, then that means I need 33 cents
+Giả sử tôi cần tiết kiệm một đô la, thì điều đó có nghĩa là tôi cần 33 xu
+
+32
+00:02:46.200 --> 00:02:50.233
+from each of these business units, if I have equal allocation.
+từ mỗi đơn vị kinh doanh này, nếu tôi phân bổ đều.
+
+33
+00:02:50.233 --> 00:02:57.099
+In turn, if it's equal on down here. I now need about 11 cents
+Đến lượt, nếu nó bằng nhau ở dưới đây. Bây giờ tôi cần khoảng 11 xu
+
+34
+00:02:57.100 --> 00:03:02.466
+from each of these. Till I get down to here. That's what I'm saying.
+từ mỗi cái này. Cho đến khi tôi xuống đến đây. Đó là những gì tôi đang nói.
+
+35
+00:03:02.466 --> 00:03:08.632
+We start off with a business metric, which is usually in the form of money and time.
+Chúng ta bắt đầu với một số liệu kinh doanh, thường ở dạng tiền và thời gian.
+
+36
+00:03:08.633 --> 00:03:15.666
+Translate it down.  Flow it all the way down to where each critical process
+Dịch nó xuống. Truyền đạt nó xuống đến nơi mà mỗi quy trình quan trọng
+
+37
+00:03:15.666 --> 00:03:21.366
+has an allocation. Each critical process has its allocation.
+có một sự phân bổ. Mỗi quy trình quan trọng có sự phân bổ của nó.
+
+38
+00:03:21.366 --> 00:03:27.432
+Now, what I’m gonna do is take that process and show it here.
+Bây giờ, những gì tôi sẽ làm là lấy quy trình đó và hiển thị nó ở đây.
+
+39
+00:03:27.433 --> 00:03:32.666
+So, that's operation 1, 2, 3. That's a critical process
+Vì vậy, đó là hoạt động 1, 2, 3. Đó là một quy trình quan trọng
+
+40
+00:03:32.666 --> 00:03:37.232
+that I have to create an improvement in
+mà tôi phải tạo ra một sự cải thiện trong
+
+41
+00:03:37.233 --> 00:03:43.466
+to yield X dollars. That's my goal.
+để mang lại X đô la. Đó là mục tiêu của tôi.
+
+42
+00:03:43.466 --> 00:03:49.732
+Is to get X dollars of savings, from this process.
+Là để đạt được X đô la tiết kiệm, từ quy trình này.
+
+43
+00:03:49.733 --> 00:03:54.199
+In order to realize this.
+Để nhận ra điều này.
+
+44
+00:03:54.200 --> 00:04:00.400
+To help me realize this goal. To help me ultimately realize the top-level goal.
+Để giúp tôi nhận ra mục tiêu này. Để giúp tôi cuối cùng nhận ra mục tiêu cấp cao nhất.
+
+45
+00:04:00.400 --> 00:04:05.400
+See how that's kind of a flow up and flow down through the system.
+Xem cách đó là một loại dòng chảy lên và dòng chảy xuống thông qua hệ thống.
+
+46
+00:04:05.400 --> 00:04:12.266
+Well, the question becomes. And the big question. What do I need to do
+Chà, câu hỏi đặt ra là. Và câu hỏi lớn. Tôi cần làm gì
+
+47
+00:04:12.266 --> 00:04:17.566
+in here, that will get me that money?
+ở đây, điều đó sẽ mang lại cho tôi số tiền đó?
+
+48
+00:04:17.566 --> 00:04:23.832
+Or reduce the time? Or create the improvement that we're looking for?
+Hoặc giảm thời gian? Hoặc tạo ra sự cải thiện mà chúng ta đang tìm kiếm?
+
+49
+00:04:23.833 --> 00:04:30.866
+That will create the performance, quality, cost, or cycle time improvement
+Điều đó sẽ tạo ra hiệu suất, chất lượng, chi phí hoặc cải thiện thời gian chu kỳ
+
+50
+00:04:30.866 --> 00:04:36.066
+that I need to get my part of the goal?
+mà tôi cần để đạt được phần mục tiêu của mình?
+
+51
+00:04:36.066 --> 00:04:42.932
+What do I need to do in that process? Well here's what it usually comes down to.
+Tôi cần làm gì trong quy trình đó? Chà, đây là những gì nó thường quy về.
+
+52
+00:04:42.933 --> 00:04:48.099
+If I take that operation, that process.
+Nếu tôi thực hiện hoạt động đó, quy trình đó.
+
+53
+00:04:48.100 --> 00:04:55.100
+Again, there's the process operation 1, 2, and 3.
+Một lần nữa, đó là hoạt động quy trình 1, 2 và 3.
+
+54
+00:04:55.100 --> 00:05:02.100
+If I blow that operation out, it has certain CTQ’s.
+Nếu tôi mở rộng hoạt động đó, nó có các CTQ nhất định.
+
+55
+00:05:02.100 --> 00:05:08.633
+In turn, each CTQ is dependent
+Đến lượt, mỗi CTQ phụ thuộc
+
+56
+00:05:08.633 --> 00:05:15.366
+upon several CTP's. Thus I’m able to say,
+vào một số CTP. Do đó, tôi có thể nói,
+
+57
+00:05:15.366 --> 00:05:18.499
+in a very succinct way
+một cách rất ngắn gọn
+
+58
+00:05:18.500 --> 00:05:25.000
+that CTQ’s are a function of CTP's.
+rằng CTQ là một hàm của CTP.
+
+59
+00:05:25.000 --> 00:05:32.033
+So, if I go in and improve the capability of these CTP's,
+Vì vậy, nếu tôi đi vào và cải thiện khả năng của các CTP này,
+
+60
+00:05:32.033 --> 00:05:38.833
+that will improve the CTQ’s. Now, what is it we’re going to attack?
+điều đó sẽ cải thiện CTQ. Bây giờ, chúng ta sẽ tấn công vào điều gì?
+
+61
+00:05:38.833 --> 00:05:45.499
+We normally attack variation and here's what I mean by that.
+Chúng ta thường tấn công sự biến động và đây là ý của tôi về điều đó.
+
+62
+00:05:45.500 --> 00:05:52.300
+If I have a CTQ, its performance,
+Nếu tôi có một CTQ, hiệu suất của nó,
+
+63
+00:05:52.300 --> 00:05:58.266
+with some upper limit and some lower limit and some target.
+với một số giới hạn trên và một số giới hạn dưới và một số mục tiêu.
+
+64
+00:05:58.266 --> 00:06:05.099
+My process certainly has a capability.
+Quy trình của tôi chắc chắn có một khả năng.
+
+65
+00:06:05.100 --> 00:06:10.133
+And that produces defects.
+Và điều đó tạo ra các khuyết tật.
+
+66
+00:06:10.133 --> 00:06:15.933
+And in this particular example I’m showing, we can see that the process center
+Và trong ví dụ cụ thể này tôi đang hiển thị, chúng ta có thể thấy rằng trung tâm quy trình
+
+67
+00:06:15.933 --> 00:06:19.066
+is slightly off target.
+hơi lệch mục tiêu.
+
+68
+00:06:19.066 --> 00:06:25.199
+So, my goal is to take that process center,
+Vì vậy, mục tiêu của tôi là đưa trung tâm quy trình đó,
+
+69
+00:06:25.200 --> 00:06:30.866
+put it right on target and make the distribution narrower.
+đặt nó ngay vào mục tiêu và làm cho sự phân phối hẹp hơn.
+
+70
+00:06:30.866 --> 00:06:36.366
+So, I want to move from an is condition to an ought condition.
+Vì vậy, tôi muốn chuyển từ điều kiện hiện tại sang điều kiện nên là.
+
+71
+00:06:36.366 --> 00:06:43.399
+Now, a lot of people think that ought condition is going to be such that this is +6σ and -6σ.
+Bây giờ, rất nhiều người nghĩ rằng điều kiện nên là sẽ như vậy để đây là +6σ và -6σ.
+
+72
+00:06:43.400 --> 00:06:49.000
+Which translates to Cp equals 2. Well that may or may not be the case. But let me tell you this.
+Điều này chuyển thành Cp bằng 2. Chà, điều đó có thể đúng hoặc không đúng. Nhưng hãy để tôi nói với bạn điều này.
+
+73
+00:06:49.000 --> 00:06:54.666
+You may only need to crank this up to say Five Sigma capability.
+Bạn có thể chỉ cần tăng điều này lên, giả sử khả năng Năm Sigma.
+
+74
+00:06:54.666 --> 00:06:59.566
+Your is condition might be Four Sigma. Your ought may need to be Five.
+Điều kiện hiện tại của bạn có thể là Bốn Sigma. Điều kiện nên là của bạn có thể cần là Năm.
+
+75
+00:06:59.566 --> 00:07:03.099
+If you can make a one Sigma improvement by putting this on target
+Nếu bạn có thể tạo ra sự cải thiện một Sigma bằng cách đưa cái này vào mục tiêu
+
+76
+00:07:03.100 --> 00:07:07.733
+and narrowing that distribution, through the application
+và thu hẹp sự phân phối đó, thông qua việc áp dụng
+
+77
+00:07:07.733 --> 00:07:13.799
+of define, measure, analyze, improve, control. Through the DMAIC strategy.
+của xác định, đo lường, phân tích, cải tiến, kiểm soát. Thông qua chiến lược DMAIC.
+
+78
+00:07:13.800 --> 00:07:18.933
+Define the CTQ, measure the CTQ, analyze the CTQ,
+Xác định CTQ, đo lường CTQ, phân tích CTQ,
+
+79
+00:07:18.933 --> 00:07:25.033
+improve the CTP's that create that CTQ and control those CTP’s over time.
+cải thiện các CTP tạo ra CTQ đó và kiểm soát các CTP đó theo thời gian.
+
+80
+00:07:25.033 --> 00:07:28.033
+You will put it on target and narrow it.
+Bạn sẽ đặt nó vào mục tiêu và thu hẹp nó.
+
+81
+00:07:28.033 --> 00:07:32.033
+Simply stated, as that happens, you improve variation.
+Nói một cách đơn giản, khi điều đó xảy ra, bạn cải thiện sự biến động.
+
+82
+00:07:32.033 --> 00:07:37.633
+Which means the capability of your CTP’s get better which means you improve the CTQ’s.
+Điều đó có nghĩa là khả năng của CTP của bạn trở nên tốt hơn, điều đó có nghĩa là bạn cải thiện CTQ.
+
+83
+00:07:37.633 --> 00:07:44.333
+Which ultimately allows you to track and come back and get your money goal for that process.
+Điều này cuối cùng cho phép bạn theo dõi và quay lại và đạt được mục tiêu tiền bạc của bạn cho quy trình đó.
+
+84
+00:07:44.333 --> 00:07:48.699
+Which very much in turn
+Điều này rất nhiều đến lượt
+
+85
+00:07:48.700 --> 00:07:51.700
+brings you to the earnings per share.
+mang bạn đến với lợi nhuận trên mỗi cổ phiếu.
+
+86
+00:07:51.700 --> 00:07:55.400
+Helps you achieve the goal at the highest level of the business.
+Giúp bạn đạt được mục tiêu ở cấp cao nhất của doanh nghiệp.
+
+87
+00:07:55.400 --> 00:08:00.866
+So, we go all the way down here from process capability, all the way up here.
+Vì vậy, chúng ta đi xuống tận đây từ năng lực quy trình, lên tận đây.
+
+88
+00:08:00.866 --> 00:08:03.899
+That's correlated all the way through.
+Điều đó tương quan xuyên suốt.
+
+89
+00:08:03.900 --> 00:08:10.933
+Well,when we get down to this point. This whole thing right here, on how to go do this.
+Chà, khi chúng ta xuống đến điểm này. Toàn bộ điều này ngay tại đây, về cách thực hiện điều này.
+
+90
+00:08:10.933 --> 00:08:16.066
+That's an application project.
+Đó là một dự án ứng dụng.
+
+91
+00:08:16.066 --> 00:08:21.066
+Thank you for choosing SSMI.
+Cảm ơn bạn đã chọn SSMI.

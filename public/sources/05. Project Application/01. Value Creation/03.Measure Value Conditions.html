@@ -432,7 +432,7 @@
       <ul>
         <li><strong>Đo Lường Là Thang Đo Tọa Độ (Scaling Every Condition):</strong> Mọi điều kiện cấu thành cơ hội đều phải được đặt lên một thang đo cụ thể. Dù là thang đo vật lý chính xác (giây, nhiệt độ, milimet) hay thang đo đánh giá định tính (thang điểm 1 đến 5), Black Belt bắt buộc phải xác định được tọa độ hiện trạng.</li>
         <li><strong>Thiết Lập Đường Cơ Sở (Baseline The Is State):</strong> Không có đường cơ sở thực tế, không thể có sự tiến bộ. Baseline phản ánh trung thực trạng thái hiện hữu của điều kiện tại Gemba trước khi can thiệp bất kỳ giải pháp nào.</li>
-        <li><strong>Khoảng Trống Cấp Thấp (Lower Order Gap):</strong> Khoảng trống trên kết quả đầu ra $Y$ (Value Gap) thực chất được tạo thành từ các khoảng trống cấp thấp hơn trên các biến số điều kiện đầu vào $X$ ($Gap_X = |X_{goal} - X_{baseline}|$).</li>
+        <li><strong>Khoảng Trống Cấp Thấp (Lower Order Gap):</strong> Khoảng trống trên kết quả đầu ra <i>Y</i> (Value Gap) thực chất được tạo thành từ các khoảng trống cấp thấp hơn trên các biến số điều kiện đầu vào <i>X</i> (Gap<sub>X</sub> = |X<sub>goal</sub> - X<sub>baseline</sub>|).</li>
         <li><strong>Khái Niệm Quyền Lợi Kỳ Vọng (Entitlement):</strong> Đặt mục tiêu không phải là ước đoán bừa bãi. Entitlement là mức hiệu suất tốt nhất có thể đạt được trong giới hạn thiết kế hiện tại mà doanh nghiệp có quyền chính đáng đòi hỏi quy trình phải đáp ứng.</li>
       </ul>
     </div>
@@ -465,7 +465,7 @@
         <span>Lower Order Gap (&delta;<sub>X</sub>)</span> = |&nbsp;<i>X<sub>Entitlement</sub></i> &minus; <i>X<sub>Baseline</sub></i>&nbsp;|
       </div>
       <div class="desc">
-        Ví dụ trong bài giảng của Mikel Harry: Điều kiện giao báo hiện tại là $X_{is} = 08:30$, mục tiêu $X_{ought} = 06:00$. Khoảng trống cấp thấp $\delta_X = 2.5$ giờ. Thu hẹp được 2.5 giờ này sẽ giải phóng 100% giá trị cơ hội việc làm.
+        Ví dụ trong bài giảng của Mikel Harry: Điều kiện giao báo hiện tại là X<sub>is</sub> = 08:30, mục tiêu X<sub>ought</sub> = 06:00. Khoảng trống cấp thấp &delta;<sub>X</sub> = 2.5 giờ. Thu hẹp được 2.5 giờ này sẽ giải phóng 100% giá trị cơ hội việc làm.
       </div>
     </div>
 
@@ -518,7 +518,7 @@
       <div class="case-card mfg">
         <span class="case-tag mfg">Sản Xuất • Dây Chuyền Hàn Siêu Âm Pin Xe Điện</span>
         <h3 class="case-title">Đo Lường Lực Ép Mối Hàn Để Đạt Entitlement</h3>
-        <p class="case-body">Quy trình hàn cell pin bị lỗi nội trở cao, tỷ lệ phế phẩm 14% (Is Y). Thay vì đo đạc chất lượng mối hàn sau khi đã hỏng, Black Belt quay lại đo lường điều kiện đầu vào $X_1$ (áp lực nén khí nén). Baseline đo được là 2.8 bar chập chờn, trong khi Entitlement kỹ thuật yêu cầu 4.2 bar ổn định. Khoảng trống cấp thấp $\delta_X = 1.4$ bar.</p>
+        <p class="case-body">Quy trình hàn cell pin bị lỗi nội trở cao, tỷ lệ phế phẩm 14% (Is Y). Thay vì đo đạc chất lượng mối hàn sau khi đã hỏng, Black Belt quay lại đo lường điều kiện đầu vào <i>X</i><sub>1</sub> (áp lực nén khí nén). Baseline đo được là 2.8 bar chập chờn, trong khi Entitlement kỹ thuật yêu cầu 4.2 bar ổn định. Khoảng trống cấp thấp &delta;<sub>X</sub> = 1.4 bar.</p>
         <div class="case-metric"><strong>Kết quả điều chỉnh:</strong> Nâng áp lực lên 4.2 bar đã kéo tỷ lệ lỗi mối hàn rơi thẳng đứng từ 14% xuống 0.2%, tiết kiệm 860,000 USD phế phẩm pin Lithium mỗi quý.</div>
       </div>
 
@@ -535,7 +535,7 @@
         <span class="vs-badge bad">Tư Duy Đo Lường Sai Lệch / Trap</span>
         <ul>
           <li>Hành động mù quáng dựa trên trực giác mà không thu thập dữ liệu Baseline Is State.</li>
-          <li>Chỉ đo lường kết quả đầu ra $Y$ (than phiền, lợi nhuận) mà không đo lường điều kiện đầu vào $X$.</li>
+          <li>Chỉ đo lường kết quả đầu ra <i>Y</i> (than phiền, lợi nhuận) mà không đo lường điều kiện đầu vào <i>X</i>.</li>
           <li>Đặt mục tiêu kỳ vọng bất khả thi hoặc quá thấp, không dựa trên khái niệm Entitlement.</li>
           <li>Đòi hỏi hệ thống đo lường cực kỳ đắt tiền mới chịu bắt đầu, từ chối thang đo định tính 1-5.</li>
         </ul>
@@ -545,7 +545,7 @@
         <span class="vs-badge good">Chuẩn Đo Lường SSMI / Master Black Belt</span>
         <ul>
           <li>Xác lập đường cơ sở Baseline định lượng cho 100% các điều kiện trọng yếu trước khi can thiệp.</li>
-          <li>Ứng dụng triệt để mô hình $Y = f(X)$, đo lường chính xác các khoảng trống cấp thấp $\delta_X$.</li>
+          <li>Ứng dụng triệt để mô hình <i>Y = f(X)</i>, đo lường chính xác các khoảng trống cấp thấp &delta;<sub>X</sub>.</li>
           <li>Xác định chuẩn Entitlement dựa trên năng lực thiết kế lý thuyết tốt nhất của quy trình.</li>
           <li>Linh hoạt áp dụng thang đo vật lý hoặc thang đo đánh giá 1-5 có cấu trúc, đảm bảo hành động nhanh.</li>
         </ul>
@@ -588,7 +588,7 @@
     <!-- Câu 3 -->
     <div class="quiz-card">
       <span class="quiz-tag">Câu 3 &bull; Tầng 2: Tính Toán Khoảng Trống Cấp Thấp (Lower Order Gap Math)</span>
-      <div class="quiz-q">Một quy trình đúc kim loại có điều kiện đầu vào then chốt là nhiệt độ rót nhôm ($X_1$). Baseline đo đạc thực tế tại hiện trường là 680&deg;C. Mức Entitlement kỹ thuật tối ưu để ngăn ngừa khuyết tật rỗ co ngót là 735&deg;C. Khoảng trống cấp thấp ($\delta_{X1}$) trên thang đo điều kiện là bao nhiêu?</div>
+      <div class="quiz-q">Một quy trình đúc kim loại có điều kiện đầu vào then chốt là nhiệt độ rót nhôm (<i>X</i><sub>1</sub>). Baseline đo đạc thực tế tại hiện trường là 680&deg;C. Mức Entitlement kỹ thuật tối ưu để ngăn ngừa khuyết tật rỗ co ngót là 735&deg;C. Khoảng trống cấp thấp (&delta;<sub>X1</sub>) trên thang đo điều kiện là bao nhiêu?</div>
       <div class="quiz-opts">
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q3', 'Trap: Subtraction calculation error.', 'Sai lầm: Lỗi tính toán hiệu số nhiệt độ.')">A. 45&deg;C</button>
         <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q3', 'Correct. Lower Order Gap delta_X = |735 - 680| = 55 deg C. Closing this 55 deg C gap directly drives the improvement in casting yield on the Y side.', 'Chính xác! Khoảng trống cấp thấp: &delta;X = |735 - 680| = 55&deg;C. Việc nâng và giữ nhiệt độ rót thêm 55&deg;C sẽ trực tiếp đóng khoảng trống khuyết tật rỗ co ngót trên trục giá trị Y.')">B. 55&deg;C</button>
@@ -617,7 +617,7 @@
       <div class="quiz-q">Một kỹ sư chất lượng báo cáo: "Chúng tôi đã đo lường tỷ lệ lỗi phế phẩm Y là 8.5%, nhưng chúng tôi không biết phải làm gì tiếp theo". Lời khuyên chuẩn mực của một Master Black Belt dành cho kỹ sư này là gì?</div>
       <div class="quiz-opts">
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Re-measuring Y without investigating X yields zero actionable insights.', 'Sai lầm: Đo lại Y thêm 1,000 lần nữa chỉ tốn thời gian mà không chỉ ra nguyên nhân gốc rễ.')">A. Tiếp tục đo lường Y thêm 6 tháng nữa để có mẫu dữ liệu lớn hơn</button>
-        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q5', 'Correct. Ground in Y = f(X): Y is merely an outcome; it waits upon X. Move backward into the process to identify and measure the specific existing conditions (X1..Xn) that cause Y to be 8.5%.', 'Chính xác! Chuyển dịch trọng tâm từ Y sang X: Y chỉ là kết quả bị động phụ thuộc vào X. Hãy quay ngược vào quy trình để đo lường các điều kiện hiện hữu X (áp suất, tốc độ, nhiệt độ) đang chi phối mức lỗi 8.5%.')">B. Chuyển dịch trọng tâm từ Y sang X: Y chỉ là kết quả bị động; hãy đi vào quy trình để đo lường các điều kiện hiện tại $X_1, X_2 \dots X_N$ đang tạo ra mức lỗi 8.5% đó</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q5', 'Correct. Ground in Y = f(X): Y is merely an outcome; it waits upon X. Move backward into the process to identify and measure the specific existing conditions (X1..Xn) that cause Y to be 8.5%.', 'Chính xác! Chuyển dịch trọng tâm từ Y sang X: Y chỉ là kết quả bị động phụ thuộc vào X. Hãy quay ngược vào quy trình để đo lường các điều kiện hiện hữu X (áp suất, tốc độ, nhiệt độ) đang chi phối mức lỗi 8.5%.')">B. Chuyển dịch trọng tâm từ Y sang X: Y chỉ là kết quả bị động; hãy đi vào quy trình để đo lường các điều kiện hiện tại X<sub>1</sub>, X<sub>2</sub> &hellip; X<sub>N</sub> đang tạo ra mức lỗi 8.5% đó</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Blaming operator discipline without root-cause data is poor leadership.', 'Sai lầm: Phạt tiền công nhân mà không điều tra nguyên nhân hệ thống là cách quản lý yếu kém.')">C. Phạt tiền bộ phận vận hành mỗi khi tỷ lệ lỗi Y vượt quá 5%</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q5', 'Trap: Setting targets without fixing underlying X conditions achieves nothing.', 'Sai lầm: Đổi mục tiêu trên giấy từ 8.5% xuống 1% mà không cải tiến X là hoang tưởng.')">D. Thay đổi mục tiêu Y xuống 1% trên báo cáo để tạo động lực cho nhà máy</button>
       </div>
@@ -627,7 +627,7 @@
     <!-- Câu 6 -->
     <div class="quiz-card">
       <span class="quiz-tag">Câu 6 &bull; Tầng 3: Khủng Hoảng Dữ Liệu Bị Làm Đẹp (Data Tampering Crisis)</span>
-      <div class="quiz-q">Khi xuống Gemba đo lường Baseline cho điều kiện tốc độ băng chuyền ($X_1$), Black Belt phát hiện sổ tay ghi chép của tổ trưởng luôn ghi "chuẩn 10 m/phút", nhưng đồng hồ đo tốc độ thực tế của máy dao động hỗn loạn từ 6 đến 14 m/phút. MBB xử lý khủng hoảng này như thế nào?</div>
+      <div class="quiz-q">Khi xuống Gemba đo lường Baseline cho điều kiện tốc độ băng chuyền (<i>X</i><sub>1</sub>), Black Belt phát hiện sổ tay ghi chép của tổ trưởng luôn ghi "chuẩn 10 m/phút", nhưng đồng hồ đo tốc độ thực tế của máy dao động hỗn loạn từ 6 đến 14 m/phút. MBB xử lý khủng hoảng này như thế nào?</div>
       <div class="quiz-opts">
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q6', 'Trap: Conspiring with falsified records destroys Six Sigma credibility.', 'Sai lầm: Đồng lõa với số liệu giả là vi phạm nghiêm trọng tính liêm chính thống kê.')">A. Giữ nguyên số liệu 10 m/phút của tổ trưởng trong hồ sơ dự án để tránh xung đột nội bộ</button>
         <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q6', 'Correct. Discard subjective hand-written logs. Calibrate and install automated continuous measurement (IoT sensors/calibrated tachometers) to record the unvarnished Is condition, and educate leadership on the true cost of hidden variance.', 'Chính xác! Loại bỏ sổ tay ghi chép làm đẹp; lắp đặt cảm biến đo tốc độ tự động liên tục để ghi nhận trung thực Is State dao động 6-14 m/phút, đồng thời báo cáo với Champion về rủi ro chất lượng do biến thiên ngầm.')">B. Vô hiệu hóa dữ liệu ghi tay làm đẹp; dùng thiết bị đo tốc độ độc lập hiệu chuẩn để ghi nhận trung thực hiện trạng dao động 6-14 m/phút làm Baseline thực tế</button>
@@ -642,7 +642,7 @@
       <span class="quiz-tag">Câu 7 &bull; Tầng 3: Đối Thoại Với Giám Đốc Kỹ Thuật Về Entitlement (C-Level Negotiation)</span>
       <div class="quiz-q">Giám đốc Kỹ thuật phản bác: "Quy trình này đã chạy 15 năm qua ở mức hiệu suất 70%, đó là bản chất của máy móc rồi, không thể có Entitlement 92% như Black Belt nói". Luận cứ khoa học nào giúp Black Belt bảo vệ mức Entitlement 92%?</div>
       <div class="quiz-opts">
-        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q7', 'Correct. Demonstrate demonstrated capability through historical entitlement analysis: Isolate the top 5% of historical production runs where machines ran without disruption at 92%, proving that 92% is physically achievable under optimal condition settings without new capital.', 'Chính xác! Trích xuất dữ liệu phân tích &quot;Best Demonstrated Capability&quot;: Lọc ra 5% các ca sản xuất tốt nhất trong lịch sử khi máy móc đã từng chạy đạt 92% hoàn hảo, chứng minh 92% là khả thi về mặt vật lý nếu các điều kiện X được duy trì tối ưu.')">A. Trích xuất dữ liệu "Best Demonstrated Runs" trong lịch sử, chỉ ra các ca máy từng đạt 92% khi điều kiện $X$ chuẩn, chứng minh 92% là khả thi mà không cần mua máy mới</button>
+        <button class="quiz-btn" onclick="checkQuiz(this, true, 'fb-q7', 'Correct. Demonstrate demonstrated capability through historical entitlement analysis: Isolate the top 5% of historical production runs where machines ran without disruption at 92%, proving that 92% is physically achievable under optimal condition settings without new capital.', 'Chính xác! Trích xuất dữ liệu phân tích &quot;Best Demonstrated Capability&quot;: Lọc ra 5% các ca sản xuất tốt nhất trong lịch sử khi máy móc đã từng chạy đạt 92% hoàn hảo, chứng minh 92% là khả thi về mặt vật lý nếu các điều kiện X được duy trì tối ưu.')">A. Trích xuất dữ liệu "Best Demonstrated Runs" trong lịch sử, chỉ ra các ca máy từng đạt 92% khi điều kiện <i>X</i> chuẩn, chứng minh 92% là khả thi mà không cần mua máy mới</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Aggressive debate without analytical proof damages stakeholder relationships.', 'Sai lầm: Cãi tay đôi và thách thức năng lực của Giám đốc Kỹ thuật chỉ dẫn đến bế tắc chính trị.')">B. Khẳng định Giám đốc Kỹ thuật đã lạc hậu và thách ông từ chức nếu Black Belt đạt 92%</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Compromising below rightful entitlement forfeits project breakthrough potential.', 'Sai lầm: Dễ dàng hạ mục tiêu xuống 72% làm mất đi tính đột phá của Six Sigma.')">C. Nhượng bộ hạ mục tiêu xuống 72% để làm hài lòng Giám đốc Kỹ thuật</button>
         <button class="quiz-btn" onclick="checkQuiz(this, false, 'fb-q7', 'Trap: Relying blindly on external competitors ignores unique internal operating context.', 'Sai lầm: Mang catalog của đối thủ ra so sánh mà không chứng minh được tính khả thi trên máy móc hiện tại.')">D. Mang brochure quảng cáo của hãng máy đối thủ ra để phê phán máy móc công ty mình</button>
@@ -703,7 +703,7 @@
           </div>
           <div class="flashcard-back">
             <strong>The delta between baseline and entitlement on the X-axis</strong>
-            <span class="vi">Khoảng cách giữa hiện trạng và mục tiêu trên trục biến số điều kiện đầu vào $X$.</span>
+            <span class="vi">Khoảng cách giữa hiện trạng và mục tiêu trên trục biến số điều kiện đầu vào <i>X</i>.</span>
           </div>
         </div>
       </div>
@@ -754,14 +754,14 @@
     <label class="action-item">
       <input type="checkbox">
       <span class="action-text">
-        <strong>Bước 2: Thu thập dữ liệu Gemba thiết lập Baseline Is State:</strong> Trực tiếp ghi nhận tối thiểu 30-50 quan sát thực tế của các điều kiện Vital Few $X_1 \dots X_K$; tính toán trung bình $\mu_{baseline}$ và độ biến thiên $\sigma_{baseline}$.
+        <strong>Bước 2: Thu thập dữ liệu Gemba thiết lập Baseline Is State:</strong> Trực tiếp ghi nhận tối thiểu 30-50 quan sát thực tế của các điều kiện Vital Few <i>X</i><sub>1</sub> &hellip; <i>X<sub>K</sub></i>; tính toán trung bình &mu;<sub>baseline</sub> và độ biến thiên &sigma;<sub>baseline</sub>.
       </span>
     </label>
 
     <label class="action-item">
       <input type="checkbox">
       <span class="action-text">
-        <strong>Bước 3: Xác lập Entitlement Ought Target và lượng hóa khoảng trống cấp thấp:</strong> Nghiên cứu dữ liệu lịch sử các ca chạy máy tốt nhất (Best Demonstrated Runs) để chốt mục tiêu Entitlement; tính toán khoảng cách số học $\delta_X = |X_{entitlement} - X_{baseline}|$ và đưa vào kế hoạch phân tích lực.
+        <strong>Bước 3: Xác lập Entitlement Ought Target và lượng hóa khoảng trống cấp thấp:</strong> Nghiên cứu dữ liệu lịch sử các ca chạy máy tốt nhất (Best Demonstrated Runs) để chốt mục tiêu Entitlement; tính toán khoảng cách số học &delta;<sub>X</sub> = |<i>X</i><sub>entitlement</sub> &minus; <i>X</i><sub>baseline</sub>| và đưa vào kế hoạch phân tích lực.
       </span>
     </label>
 
